@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: c2393540-e852-4f7c-aafd-1427209065d2
 translation-type: tm+mt
-source-git-commit: 2c05eb4610e35d5126c6c67e44f4b71f3026c887
+source-git-commit: 16893b8bcd2b2d681a14bb6be3786e358e1952fb
 
 ---
 
@@ -34,7 +34,13 @@ Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
 
 1. Klicka på **Konfigurera program** för att starta installationsprocessen i [!UICONTROL Cloud Manager].
 
-   ![](assets/SetUpProgram1.png)
+   ![image1](assets/set-up-program/setup1.png)
+
+   >[!NOTE]
+   > Du kan alltid växla, redigera eller lägga till ett nytt program från åtgärdsfältet enligt bilden nedan.
+
+   ![image1](assets/set-up-program/setup2.png)
+
 
 1. Skärmen **Installationsprogram** visar Redigera programinformation.
 
