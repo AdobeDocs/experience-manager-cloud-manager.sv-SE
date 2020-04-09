@@ -4,7 +4,7 @@ seo-title: Övervaka era miljöer
 description: 'null'
 seo-description: Följ den här sidan om du vill veta mer om systemövervakning i Cloud Manager som görs genom att observera de enskilda instanserna i en miljö och spåra en mängd mätvärden för varje instans.
 translation-type: tm+mt
-source-git-commit: 1edfbc0adb04026cd29ba93b4ba155d3b61439dc
+source-git-commit: 16893b8bcd2b2d681a14bb6be3786e358e1952fb
 
 ---
 
@@ -23,9 +23,9 @@ Du kan navigera till funktionen Systemövervakning på två sätt.
 
    ![](assets/ProgramLanding.png)
 
-1. Klicka på den tredje ikonen på programkortet.
+1. Klicka på den fjärde ikonen på programkortet.
 
-   ![](assets/program-card.png)
+   ![](assets/first-timea1.png)
 
    *Eller*,
 
