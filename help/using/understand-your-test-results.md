@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 translation-type: tm+mt
-source-git-commit: 278858465592482449080fedc3c0165805db223d
+source-git-commit: 4edbbff4e519a1403c3140cc742def35f9516eff
 workflow-type: tm+mt
 source-wordcount: '1461'
 ht-degree: 2%
@@ -54,7 +54,7 @@ Som en del av pipeline skannas källkoden för att säkerställa att distributio
 | Överhoppade enhetstester | Antal överhoppade enhetstester. | Information | > 1 |
 | Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Information | > 1 |
 | Duplicerade rader | Antal rader som ingår i duplicerade block. <br/>För att ett kodblock ska betraktas som duplicerat: <br/><ul><li>**Projekt som inte är Java:**</li><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa tokens bör spridas åtminstone på: </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li><li>**Java-projekt:**</li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul> <br/>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Information | > 1% |
-| Kompatibilitet med molntjänster | Antal identifierade kompatibilitetsproblem med molntjänster. | Information | >0 |
+| Kompatibilitet med molntjänster | Antal identifierade kompatibilitetsproblem med molntjänster. | Information | > 0 |
 
 
 >[!NOTE]
