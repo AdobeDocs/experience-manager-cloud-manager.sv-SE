@@ -1,35 +1,43 @@
 ---
-title: Versionsinformation för 2020.4.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2020.4.0
-description: Följ den här sidan för att få information om Cloud Manager version 2020.4.0
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.4.0
+title: Versionsinformation för 2020.5.0
+seo-title: Versionsinformation om AEM Cloud Manager för 2020.5.0
+description: Följ den här sidan för att få information om Cloud Manager version 2020.5.0
+seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.5.0
 translation-type: tm+mt
-source-git-commit: ee7fc8a23dd0719eda84638c810842c2dc1772bb
+source-git-commit: 278858465592482449080fedc3c0165805db223d
+workflow-type: tm+mt
+source-wordcount: '187'
+ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2020.4.0 {#release-notes-for}
+# Versionsinformation för 2020.5.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.4.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.5.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2020.4.0 är 9 april 2020.
+Releasedatum för [!UICONTROL Cloud Manager] version 2020.5.0 är 7 maj 2020.
 
-## Nyheter {#whats-new}
+## What&#39;s New {#whats-new}
 
-* Ändringar i navigeringssidan för Cloud Manager - översikt, så att användare kan redigera eller byta program.
-* Ändringar som gör att användaren kan redigera program från programkortet på Cloud Managers startsida.
-* Ny pipeline-status **Pipeline som körs** visas mot den miljö som den är associerad med.
-* Förbättringar av förståelsen av sidan för att implementera pipeline. Detta inkluderar visning av Pipeline-namn (endast icke-produktionspipeline) och Type, och ett märke som anger om pipelinestatusen pågår/avbryts/misslyckades.
-* Processen som används för att generera Git-lösenord har gjorts mer flexibel mot problem i det underliggande tjänstskiktet.
+* Sex ytterligare regler för kodkvalitet har lagts till för att hjälpa kunderna att identifiera potentiella problem när de planerar en migrering till molntjänsten.
 
-## Felkorrigeringar {#bug-fixes}
+* Ett nytt mått på *molntjänstkompatibilitet* har lagts till för att sammanfatta antalet kompatibilitetsrelaterade problem.
 
-* Övervakningsuppgifterna kan ibland visas på ett felaktigt sätt eller inte alls baserat på mindre avvikelser i de tekniska värdena.
-* Den Maven-konfiguration som används i byggbehållaren har uppdaterats för att undvika dödlägen när artefaktmetadata hämtas.
-* Prestandatestningsprocessen för Assets kunde ibland inte dekryptera AEM-lösenordet, vilket medförde att testningen misslyckades.
-* Vissa topologier med standby-instanser kan ha falska negativ vid säkerhetstestning.
-* Om scenmiljön innehåller en stoppad instans kan säkerhetstestningssteget ibland misslyckas.
-* Experience Cloud-meddelanden togs inte emot konsekvent.
+* Prestanda för aktivitetssidan och Pipeline Executions List API har förbättrats.
+
+* Loggen för kodkvalitet innehåller nu fullständiga stackspår för undantag.
+
+## Bug Fixes {#bug-fixes}
+
+* Ett missvisande kort visades på översiktssidan när produktionsflödet kördes.
+
+* Kodkvalitetsregeln *DontImplementOrExtendProviderTypesPomCheck* kan ibland generera ett Null-pekarundantag.
+
+* Vissa dokumentationslänkar från översiktssidan fungerade inte korrekt.
+
+* Vissa kort på översiktssidan visade inte enhetsnamn korrekt.
+
+* Vissa topologikonfigurationer skulle få prestandatestningssteget att generera ett fel i stället för att rapportera saknade mätvärden.
 
