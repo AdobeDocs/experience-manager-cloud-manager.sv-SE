@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
 translation-type: tm+mt
-source-git-commit: 278858465592482449080fedc3c0165805db223d
+source-git-commit: cd6272bfd1ffdbf1802c30217e0c615392076109
 workflow-type: tm+mt
-source-wordcount: '2289'
+source-wordcount: '2282'
 ht-degree: 5%
 
 ---
@@ -558,6 +558,35 @@ public void doThis(Resource resource) {
 }
 ```
 
+### Sling Scheduler ska inte användas {#sonarqube-sling-scheduler}
+
+**Nyckel**: CQRules:AMSCORE-554
+
+**Typ**: Code Smell
+
+**Allvarlighetsgrad**: Mindre
+
+**Sedan**: Version 2020.5.0
+
+Sling Scheduler får inte användas för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
+
+Läs mer om hur [Sling-jobb hanteras i klustermiljöer i](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) Apache Sling-händelser och jobbhantering.
+
+### AEM-inaktuella API:er får inte användas {#sonarqube-aem-deprecated}
+
+**Nyckel**: AMSCORE-553
+
+**Typ**: Code Smell
+
+**Allvarlighetsgrad**: Mindre
+
+**Sedan**: Version 2020.5.0
+
+AEM API-ytan är under ständig revision för att identifiera API:er som inte används och därför betraktas som inaktuella.
+
+I många fall används standardanteckningen Java *@Deprecated* , som identifieras av `squid:CallToDeprecatedMethod`.
+
+Det finns emellertid fall där ett API är inaktuellt i AEM-kontexten men inte kan bli inaktuellt i andra sammanhang. Den här regeln identifierar den andra klassen.
 
 ## OakPAL-innehållsregler {#oakpal-rules}
 
@@ -642,7 +671,7 @@ Ett vanligt problem är att använda noder som namnges `config` i komponentdialo
       + rtePlugins [nt:unstructured]
 ```
 
-#### Paket får inte överlappa {#oakpal-no-overlap}
+### Paket får inte överlappa {#oakpal-no-overlap}
 
 **Nyckel**: PackageOverlaps
 
@@ -654,7 +683,7 @@ Ett vanligt problem är att använda noder som namnges `config` i komponentdialo
 
 På liknande sätt som *Paket bör inte innehålla duplicerade OSGi-konfigurationer* är detta ett vanligt problem i komplexa projekt där samma nodsökväg skrivs till av flera separata innehållspaket. Även om beroenden för innehållspaket kan användas för att säkerställa ett konsekvent resultat är det bättre att undvika överlappningar helt och hållet.
 
-#### OakPAL - Standardredigeringsläget får inte vara klassiskt användargränssnitt {#oakpal-default-authoring}
+### Standardredigeringsläget får inte vara ett klassiskt användargränssnitt {#oakpal-default-authoring}
 
 **Nyckel**: KlassisktUIAuthoringMode
 
@@ -666,7 +695,7 @@ På liknande sätt som *Paket bör inte innehålla duplicerade OSGi-konfiguratio
 
 OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. Eftersom det klassiska användargränssnittet har tagits bort sedan AEM 6.4 kommer ett problem nu att uppstå när standardredigeringsläget är konfigurerat till Classic UI.
 
-#### OakPal - Komponenter med dialogrutor bör ha dialogrutor för Touch UI {#oakpal-components-dialogs}
+### Komponenter med dialogrutor bör ha gränssnittsdialogrutor med pekskärmar {#oakpal-components-dialogs}
 
 **Nyckel**: ComponentWithOnlyClassicUIDialog
 
@@ -684,7 +713,7 @@ AEM-komponenter som har en klassisk gränssnittsdialogruta bör alltid ha en mot
 
 Dokumentationen för AEM Modernization Tools innehåller dokumentation och verktyg för hur du konverterar komponenter från Classic UI till Touch UI. Mer information finns [i AEM Modernization Tools](https://opensource.adobe.com/aem-modernize-tools/pages/tools.html) .
 
-#### OakPal - Paket får inte innehålla blandbart och oföränderligt innehåll {#oakpal-packages-immutable}
+### Paketen får inte innehålla blandbart och oföränderligt innehåll {#oakpal-packages-immutable}
 
 **Nyckel**: ImmutableMutableMixedPackage
 
@@ -698,7 +727,7 @@ För att vara kompatibel med driftsättningsmodellen för molntjänster måste e
 
 Mer information finns i [AEM-projektstruktur](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/implementing/developing/aem-project-content-package-structure.html) .
 
-### OakPal - Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
+### Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
 
 **Nyckel**: ReverseReplication
 
@@ -712,35 +741,7 @@ Stöd för omvänd replikering är inte tillgängligt i distributioner av molntj
 
 Kunder som använder omvänd replikering bör kontakta Adobe för att få alternativa lösningar.
 
-### SonarQube - Sling Scheduler ska inte användas {#sonarqube-sling-scheduler}
 
-**Nyckel**: CQRules:AMSCORE-554
-
-**Typ**: Code Smell
-
-**Allvarlighetsgrad**: Mindre
-
-**Sedan**: Version 2020.5.0
-
-Sling Scheduler får inte användas för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
-
-Läs mer om hur [Sling-jobb hanteras i klustermiljöer i](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) Apache Sling-händelser och jobbhantering.
-
-### SonarQube - SonarQube - API:er som är inaktuella i AEM ska inte användas {#sonarqube-aem-deprecated}
-
-**Nyckel**: AMSCORE-553
-
-**Typ**: Code Smell
-
-**Allvarlighetsgrad**: Mindre
-
-**Sedan**: Version 2020.5.0
-
-AEM API-ytan är under ständig revision för att identifiera API:er som inte används och därför betraktas som inaktuella.
-
-I många fall används standardanteckningen Java *@Deprecated* , som identifieras av `squid:CallToDeprecatedMethod`.
-
-Det finns emellertid fall där ett API är inaktuellt i AEM-kontexten men inte kan bli inaktuellt i andra sammanhang. Den här regeln identifierar den andra klassen.
 
 
 
