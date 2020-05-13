@@ -10,7 +10,10 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: fb84c2d41c76c64fc0be1e9f86356ee0cb5bcf9c
+source-git-commit: 18b539951e286cb14d5c10404b42ba80682bbef0
+workflow-type: tm+mt
+source-wordcount: '1563'
+ht-degree: 1%
 
 ---
 
@@ -50,7 +53,7 @@ Innan du börjar distribuera koden måste du konfigurera dina pipeline-inställn
 >
 >Du kan ändra pipeline-inställningarna efter den första konfigurationen.
 
-### Konfigurera Pipeline-inställningarna från [!UICONTROL Cloud Manager]{#configuring-the-pipeline-settings-from-cloud-manager}
+### Konfigurera Pipeline-inställningarna från [!UICONTROL Cloud Manager] {#configuring-the-pipeline-settings-from-cloud-manager}
 
 När du har konfigurerat programmet med [!UICONTROL Cloud Manager] användargränssnittet är du redo att konfigurera ditt flöde.
 
@@ -125,7 +128,7 @@ Det visas sedan som ett separat steg under pipeline-körningen:
 
 **Dispatcher Invalidation**
 
-Som distributionshanterare kan du konfigurera en uppsättning sökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen när du konfigurerar eller redigerar pipeline.
+Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen när du konfigurerar eller redigerar pipeline.
 
 Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder standardbeteendet AEM Dispatcher - invalidate utför en cacheogiltigförklaring som liknar när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
 
