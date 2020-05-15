@@ -9,7 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: 67a54bae-99a9-4405-91e3-9a0a8b3ccc98
 translation-type: tm+mt
-source-git-commit: 7cbc42108a6ccc8f7303eb76fd8ca2e9027f49e0
+source-git-commit: e2187565e7f06d64841eb2af9b4b1a56feb5ebe4
+workflow-type: tm+mt
+source-wordcount: '231'
+ht-degree: 0%
 
 ---
 
@@ -27,7 +30,7 @@ Kunder som använder [!UICONTROL Cloud Manager] måste ha sina IMS-autentisering
 
 ## Datasäkerhet {#data-security}
 
-Koden i [!UICONTROL Cloud Manager] är krypterad i transit. Binärfiler som byggs i Coud Manager krypteras också när de skickas och krypteras när de lagras.
+Koden i [!UICONTROL Cloud Manager] är krypterad i transit. Binärfiler som skapas i Cloud Manager krypteras också när de skickas och krypteras när de lagras.
 
 Varje kund får sin egen **Git-databas** och koden är säker och inte delad med andra **organisationer**.
 
