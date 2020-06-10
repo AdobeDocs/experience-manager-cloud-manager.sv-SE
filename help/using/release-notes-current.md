@@ -4,7 +4,7 @@ seo-title: Versionsinformation om AEM Cloud Manager för 2020.6.0
 description: Följ den här sidan för att få information om Cloud Manager version 2020.6.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.6.0
 translation-type: tm+mt
-source-git-commit: 0652436ec0c1c95d270a06a600424dbfd0140b27
+source-git-commit: fddfc8cef28bc07fb32d7f8ca6a815e888beefef
 workflow-type: tm+mt
 source-wordcount: '177'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Versionsinformation för 2020.6.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.5.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.6.0.
 
 ## Releasedatum {#release-date}
 
@@ -33,9 +33,6 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.6.0 är 4 juni 2020.
 
 ## Bug Fixes {#bug-fixes}
 
-
 * När produktionsflödet konfigurerades var alternativet för schemalagd distribution inte synligt för vissa kunder.
 
 * Vissa distributionsmeddelanden har trunkerats.
-
-
