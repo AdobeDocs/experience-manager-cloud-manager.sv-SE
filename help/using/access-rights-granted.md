@@ -8,7 +8,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: requirements
 discoiquuid: 072dbc1b-e608-4b1f-b0e8-0e4f88c8ad12
 translation-type: tm+mt
-source-git-commit: e8484052124c23d4849c59f6c76262a3284ef2ac
+source-git-commit: e48f9121423f46f4cf858c4951ad412582020bdb
 workflow-type: tm+mt
 source-wordcount: '231'
 ht-degree: 30%
@@ -26,6 +26,6 @@ Om du vill komma igång med ett Adobe-ID går du till [Hantera Adobe-identitetst
 
 ### Användare och roller {#users-and-roles}
 
-När Adobe har skapat en organisation för företaget läggs administratören till som den första medlemmen i den här organisationen. Administratören får som standard administratörsbehörighet och tilldelas **produkten** [!UICONTROL AEM Managed Services] och en eller flera **produktfiler** för [!UICONTROL Cloud Manager]. Gå till [Lägg till användare och roller](setting-up-users-and-roles.md) om du vill veta mer om hur du konfigurerar och hanterar teamanvändare med Admin Console.
+När Adobe har skapat en organisation för företaget läggs administratören till som den första medlemmen i den här organisationen. Administratören får som standard administratörsbehörighet och tilldelas produkten [!UICONTROL AEM Managed Services] och en eller flera produktfiler för [!UICONTROL Cloud Manager]. Gå till [Lägg till användare och roller](setting-up-users-and-roles.md) om du vill veta mer om hur du konfigurerar och hanterar teamanvändare med Admin Console.
 
 Med de här rättigheterna beviljade har administratören nu en enda inloggning (med Adobe-id) för att få tillgång till [!UICONTROL Experience Cloud] tjänsterna, logga in i din AEM-molnmiljö och använda [!UICONTROL Cloud Manager].
