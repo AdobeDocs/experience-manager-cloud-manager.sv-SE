@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
 translation-type: tm+mt
-source-git-commit: 3663bd773c0043282359d690621de5023fa2974c
+source-git-commit: 8c651bcb187d911448475f6031c93bf956277e9f
 workflow-type: tm+mt
 source-wordcount: '2282'
 ht-degree: 5%
@@ -621,7 +621,8 @@ Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-kompon
 
 #### Icke-kompatibel kod {#non-compliant-code-osgi}
 
-```+ apps
+```
++ apps
   + projectA
     + config
       + com.day.cq.commons.impl.ExternalizerImpl
@@ -632,7 +633,8 @@ Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-kompon
 
 #### Kompatibel kod {#compliant-code-osgi}
 
-```+ apps
+```
++ apps
   + shared-config
     + config
       + com.day.cq.commons.impl.ExternalizerImpl
@@ -705,7 +707,7 @@ OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` defin
 
 **Sedan**: Version 2020.5.0
 
-AEM-komponenter som har en klassisk gränssnittsdialogruta bör alltid ha en motsvarande Touch-gränssnittsdialogruta, både för att ge en optimal redigeringsupplevelse och för att vara kompatibel med distributionsmodellen för molntjänsten, där Classic UI inte stöds. Den här regeln verifierar följande scenarier:
+AEM-komponenter som har en klassisk användargränssnittsdialogruta bör alltid ha en motsvarande användargränssnittsdialogruta, både för att ge en optimal redigeringsupplevelse och för att vara kompatibla med Cloud Servicens distributionsmodell, där det klassiska användargränssnittet inte stöds. Den här regeln verifierar följande scenarier:
 
 * En komponent med en klassisk gränssnittsdialogruta (d.v.s. en underordnad dialogrutenod) måste ha en motsvarande Touch UI-dialogruta (d.v.s. en underordnad nod). `cq:dialog`
 * En komponent med en klassisk dialogruta för användargränssnittsdesign (d.v.s. en design_dialog-nod) måste ha en motsvarande designdialogruta för användargränssnittet (d.v.s. en `cq:design_dialog` underordnad nod).
@@ -723,9 +725,9 @@ Dokumentationen för AEM Modernization Tools innehåller dokumentation och verkt
 
 **Sedan**: Version 2020.5.0
 
-För att vara kompatibel med driftsättningsmodellen för molntjänster måste enskilda innehållspaket innehålla antingen innehåll för de oföränderliga områdena i databasen (d.v.s. inte ändras av kundkoden och orsakar en separat överträdelse) eller det ändringsbara området (d.v.s. allt annat), men inte båda. `/apps and /libs, although /libs` Ett paket som innehåller båda `/apps/myco/components/text and /etc/clientlibs/myco` är till exempel inte kompatibelt med molntjänsten och orsakar att ett problem rapporteras.
+För att vara kompatibel med databasens distributionsmodell måste enskilda innehållspaket innehålla antingen innehåll för de oföränderliga områdena i databasen (d.v.s. inte ändras av kundkoden och orsakar en separat överträdelse) eller det ändringsbara området (d.v.s. allt annat), men inte båda. `/apps and /libs, although /libs` Ett paket som innehåller båda `/apps/myco/components/text and /etc/clientlibs/myco` är till exempel inte kompatibelt med Cloud Service och orsakar att ett problem rapporteras.
 
-Mer information finns i [AEM-projektstruktur](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/implementing/developing/aem-project-content-package-structure.html) .
+Refer to [AEM Project Structure](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/implementing/developing/aem-project-content-package-structure.html) for more details.
 
 ### Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
 
@@ -737,7 +739,7 @@ Mer information finns i [AEM-projektstruktur](https://docs.adobe.com/content/hel
 
 **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i distributioner av molntjänster, vilket beskrivs i [versionsinformationen: Borttagning av replikeringsagenter](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/release-notes/aem-cloud-changes.html#replication-agents).
+Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [versionsinformationen: Borttagning av replikeringsagenter](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/release-notes/aem-cloud-changes.html#replication-agents).
 
 Kunder som använder omvänd replikering bör kontakta Adobe för att få alternativa lösningar.
 
