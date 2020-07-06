@@ -9,7 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: bc9454120c92181503efbf8270ce621af26801d9
+source-git-commit: ce3ed17e74a5cb7e798bb583ddd75b18518a59bd
+workflow-type: tm+mt
+source-wordcount: '953'
+ht-degree: 2%
 
 ---
 
@@ -126,7 +129,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    >[!NOTE]
    >
-   >Du kan hoppa över ändringar av belastningsutjämnaren i utvecklings- och scendistributioner, d.v.s. frigöra och bifoga steg i både icke-produktionspipelines, för utvecklingsmiljöer och i produktionsflödet för scenmiljöer.
+   >Du kan hoppa över ändringar av belastningsutjämnaren i utvecklings- och scendistributioner, det vill säga koppla loss och bifoga steg i både icke-produktionspipelines, för utvecklingsmiljöer och i produktionsflödet för scenmiljöer.
 
 ### Distribution till produktionsfas {#deployment-production-phase}
 
