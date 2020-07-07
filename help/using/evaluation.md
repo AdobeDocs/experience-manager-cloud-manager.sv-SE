@@ -8,7 +8,10 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: 9e33b90818c686f0b7aacaf0955c3f2eba05488f
+source-git-commit: 3bb435aae932b9446867c30b7dd6b0a8e0839ee2
+workflow-type: tm+mt
+source-wordcount: '289'
+ht-degree: 0%
 
 ---
 
@@ -24,9 +27,10 @@ I den genererade rapporten kan du kontrollera om Author-instansen kan uppgradera
 
 * Använd en AEM 6.x-funktion eller ett API som inte är bakåtkompatibelt med den nya AEM-filen och som kan brytas efter uppgraderingen.
 
-Detta är en bedömning av den utvecklingsinsats som krävs för att uppgradera till Adobe Experience Manager (AEM) 6.5.
+Detta är en bedömning av den utvecklingsinsats som ingår i uppgraderingen till Adobe Experience Manager (AEM) 6.5.
 
 >[!NOTE]
+>
 >Mer information om mönsteravkännare finns i [Utvärdera uppgraderingskomplexiteten med mönsteravkännaren](https://helpx.adobe.com/experience-manager/6-4/sites/deploying/using/pattern-detector.html)
 
 ## Köra utvärderaren {#running-evaluator}
@@ -47,5 +51,6 @@ Följ stegen nedan för att generera en utvärderingsrapport:
    ![](assets/Evaluation-1.png)
 
 
->[!NOTE]
->Den aktuella versionen av produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen** . De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande** , kommer snart.
+   >[!NOTE]
+   >
+   >Den aktuella versionen av produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen** . De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande** , kommer snart.
