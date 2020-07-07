@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
 translation-type: tm+mt
-source-git-commit: 8c651bcb187d911448475f6031c93bf956277e9f
+source-git-commit: 3bb435aae932b9446867c30b7dd6b0a8e0839ee2
 workflow-type: tm+mt
 source-wordcount: '2282'
 ht-degree: 5%
@@ -593,6 +593,7 @@ Det finns emellertid fall där ett API är inaktuellt i AEM-kontexten men inte k
 Nedan finns de OakPAL-kontroller som körs av Cloud Manager.
 
 >[!NOTE]
+>
 >OakPAL är ett ramverk som utvecklats av en AEM-partner (och vinnare av 2019 AEM Rockstar North America) som validerar innehållspaket med en fristående Oak-databas.
 
 ### Kundpaket får inte skapa eller ändra noder under /libs {#oakpal-customer-package}
