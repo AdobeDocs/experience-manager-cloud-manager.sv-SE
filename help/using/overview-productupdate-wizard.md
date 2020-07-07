@@ -8,20 +8,23 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: 7769911253c149f4b1f7d9dec5d94888ccdbcb59
+source-git-commit: 3bb435aae932b9446867c30b7dd6b0a8e0839ee2
+workflow-type: tm+mt
+source-wordcount: '202'
+ht-degree: 1%
 
 ---
 
 
 # Översikt {#overview-product-update-wizard}
 
-Produktuppdateringsguiden är en guidad, stegvis upplevelse för kunder med Cloud Manager som uppgraderar till den senaste versionen av Adobe Experience Manager (AEM) 6.5. Det effektiviserar hela processen, säkerställer att AEM-praxis följs med Cloud Managers CI/CD-ramverk och inbyggda automatiska tester.
+Produktuppdateringsguiden är en guidad, stegvis upplevelse för kunder med Cloud Manager som uppgraderar till den senaste Adobe Experience Manager (AEM) 6.5. Det effektiviserar hela processen, säkerställer att AEM-praxis följs med Cloud Managers CI/CD-ramverk och inbyggda automatiska tester.
 
 Guiden innehåller fem faser som guidar användaren under en AEM-produktuppdatering:
 
 * **Utvärdering**
 * **Reparation**
-* **Körning**
+* **Körning** 
 * **Validering**
 * **Slutförande**
 
@@ -29,6 +32,7 @@ Guiden innehåller fem faser som guidar användaren under en AEM-produktuppdater
 ## Använda guiden Produktuppdatering {#using-product-update-wizard}
 
 >[!NOTE]
+>
 >Kunder som har anslutit till Cloud Manager och som har rätt att uppgradera till AEM 6.5 kan utnyttja produktuppdateringsguiden. Kontakta en Customer Success Engineer (CSE) om du vill ha mer information.
 
 1. Du får ett pulsmeddelande via Cloud Manager som informerar dig om att AEM 6.5 är tillgängligt för ditt program.
