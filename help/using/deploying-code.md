@@ -9,10 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: ce3ed17e74a5cb7e798bb583ddd75b18518a59bd
+source-git-commit: 509a74b2e85d5880bafa56cd0ab3bae9c57b0683
 workflow-type: tm+mt
-source-wordcount: '953'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -112,13 +112,13 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    >[!NOTE]
    >
-   >Alla AEM-artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Mer information om hur du kan trimma AEM-instansen för ett visst ändamål med hjälp av runmodes finns i Körningslägen.
+   >Alla AEM-artefakter distribueras till både författaren och utgivaren. Körningslägen bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM-instansen för ett visst ändamål kan du läsa Körningslägen.
 
 1. Dispatchartefakten distribueras till varje dispatcher enligt följande:
 
    1. Aktuella konfigurationer säkerhetskopieras och kopieras till en temporär plats
    1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i Hantera dina Dispatcher-konfigurationer. Detta rensar katalogerna för att säkerställa att inga överblivna filer lämnas kvar.
-   1. Artefakten extraheras till katalogen httpd.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
+   1. Artefakten extraheras till `httpd` katalogen.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
    1. Apache utför ett config-test. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
    >[!NOTE]
