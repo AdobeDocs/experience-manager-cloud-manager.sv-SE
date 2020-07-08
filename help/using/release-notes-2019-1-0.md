@@ -9,29 +9,32 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 85a1dcf3-2eef-4ba8-b4d1-09e4a88c7bd0
 translation-type: tm+mt
-source-git-commit: 12d787ef2f9b2dd229b8ed0f8c602fbf5c06aa80
+source-git-commit: cdf2c82192c2e9c375316ae6e28646594ba2a462
+workflow-type: tm+mt
+source-wordcount: '345'
+ht-degree: 0%
 
 ---
 
 
 # Versionsinformation för 2019.1.0 {#release-notes-for}
 
-I version [!UICONTROL Cloud Manager] 2018.9.0 finns stöd för testning av AEM Assets-program samt ytterligare pipeline-typer som kör stegen för bygg- och kodkvalitet, och som kan distribueras till en icke-produktionsmiljö.
+I version [!UICONTROL Cloud Manager] 2018.9.0 finns stöd för testning av AEM Assets-program samt ytterligare pipelinetyper som kör konstruktions- och kodkvalitetsstegen, som kan distribueras till en icke-produktionsmiljö.
 
 ## Releasedatum {#release-date}
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2019.1.0 är 17 januari 2019.
 
-## Nyheter {#whats-new}
+## What&#39;s New {#whats-new}
 
 * Stöd för prestandatestning av AEM Assets har lagts till. Mer information finns i Konfigurera [CI/CD-](configuring-pipeline.md)pipeline.
 * Stöd för rörledningar som endast kör steg för bygg- och kodkvalitet samt rörledningar som driftsätts i icke-produktionsmiljöer. Mer information finns i avsnittet **Icke-produktion och Endast kvalitet för pipeline** i [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
-* Stöd för anpassade miljövariabler i byggmiljön har lagts till. Mer information finns i [Skapa ett AEM-programprojekt](create-an-application-project.md) .
+* Stöd för anpassade miljövariabler i byggmiljön har lagts till. Mer information finns i [Skapa ett AEM-programprojekt](/help/using/create-an-application-project.md) .
 * För kunder med flera stadier eller produktionsmiljöer kan du välja vilken miljö som ska distribueras som en del av produktionsflödet på sidan [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
 * httxt2dbm har lagts till för att skapa behållare.
 * Alla hjälpmenyalternativ öppnar en ny flik.
 
-## Felkorrigeringar {#bug-fixes}
+## Bug Fixes {#bug-fixes}
 
 * När du redigerade ett program var det möjligt att avmarkera alla siduppsättningar.
 * Godkännandesteget hade fel namn.
