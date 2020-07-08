@@ -9,7 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: 25edab26146d7d98ef5a38a45b4fe67b0d5e564e
+source-git-commit: c07e88564dc1419bd0305c9d25173a8e0e1f47cf
+workflow-type: tm+mt
+source-wordcount: '1514'
+ht-degree: 6%
 
 ---
 
@@ -18,7 +21,7 @@ source-git-commit: 25edab26146d7d98ef5a38a45b4fe67b0d5e564e
 
 ## Använda guiden för att skapa ett AEM-programprojekt {#using-wizard-to-create-an-aem-application-project}
 
-När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services-kunder (eller AEM-kunder på plats som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
+När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services (AMS-kunder) (eller lokala AEM-kunder som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
 
 För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM-projekt som utgångspunkt. Processen bygger på [**AEM Project Archetype **](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
 
@@ -33,7 +36,8 @@ Följ stegen nedan för att skapa ett AEM-programprojekt i Cloud Manager:
 
    * **Titel** - som standard är detta inställt på *Programnamn*
 
-   * **Nytt grennamn** - som standard är detta *mallnamn*
+   * **Nytt grennamn** - som standard är detta *överordnad*
+
    ![](assets/screen_shot_2018-10-08at55825am.png)
 
    Dialogrutan har en låda som du kan öppna genom att klicka på handtaget längst ned i dialogrutan. I den utökade versionen av dialogrutan visas alla konfigurationsparametrar för Arketypen. Många av dessa parametrar har standardvärden som genereras baserat på **titeln**.
@@ -61,7 +65,7 @@ För att kunna byggas och driftsättas med Cloud Manager måste befintliga AEM-p
 * Du kan lägga till referenser till ytterligare Maven-artefaktdatabaser i dina *pom.xml* -filer. Åtkomst till lösenordsskyddade eller nätverksskyddade artefaktarkiv stöds dock inte.
 * Distribuerbara innehållspaket upptäcks genom att söka efter *zip* -filer för innehållspaket som finns i en katalog med namnet *target*. Ett valfritt antal undermoduler kan producera innehållspaket.
 
-* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip* -filer (återigen i en katalog med namnet *target*) som har kataloger med namnen *conf* och *conf.d*.
+* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip* -filer (återigen i en katalog med namnet *target*) som har katalogerna *conf* och *conf.d*.
 
 * Om det finns mer än ett innehållspaket är det inte säkert att paketdistributioner ordnas. Om en viss ordning behövs kan innehållspaketets beroenden användas för att definiera ordningen. Paket kan [hoppas över](#skipping-content-packages) från distributionen.
 
@@ -81,7 +85,7 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 18.04.
 * Apache Maven 3.6.0 är installerad.
-* Den installerade Java-versionen är Oracle JDK 8u202.
+* De installerade Java-versionerna är Oracle JDK 8u202 och 11.0.2.
 * Det finns ytterligare systempaket installerade som är nödvändiga:
 
    * bzip2
@@ -95,6 +99,37 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 * Maven körs alltid med kommandot: *mvn —batch-mode clean org.jacoco:jacoco-maven-plugin:prepare-agent package*
 * Maven konfigureras på systemnivå med filen settings.xml som automatiskt inkluderar den offentliga Adobe **Artifact** -databasen. (Mer information finns i [Adobe Public Maven Repository](https://repo.adobe.com/) .)
 
+### Använda Java 11 {#using-java-11}
+
+Cloud Manager har nu stöd för att bygga kundprojekt med både Java 8 och Java 11. Som standard byggs projekt med Java 8. Kunder som tänker använda Java 11 i sina projekt kan göra det med [Apache Maven Toolchains Plugin](https://maven.apache.org/plugins/maven-toolchains-plugin/).
+
+Det gör du genom att lägga till en post som ser ut så här i filen pom.xml: `<plugin>`
+
+```xml
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-toolchains-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>toolchain</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <toolchains>
+                    <jdk>
+                    <version>11</version>
+                    <vendor>oracle</vendor>
+                    </jdk>
+                </toolchains>
+            </configuration>
+        </plugin>
+```
+
+>[!NOTE]
+>De leverantörer som stöds är Oracle och Sun Microsystems och de versioner som stöds är 1.8, 1.11 och 1.11.
 
 ## Miljövariabler {#environment-variables}
 
@@ -116,29 +151,35 @@ Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i 
 | CM_PROGRAM_NAME | Programnamnet |
 | ARTIFACTS_VERSION | Den syntetiska versionen som genererats av Cloud Manager för en fas eller produktionsprocess |
 
-### Anpassade miljövariabler {#custom-environ-variables}
+### Rörledningsvariabler {#pipeline-variables}
 
-I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras av en Customer Success Engineer (CSE) per kund. Dessa variabler lagras på en säker lagringsplats och visas bara i byggbehållaren för den specifika kunden. Kunder som vill använda den här funktionen måste kontakta sin CSE för att konfigurera sina variabler.
+I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån filen pom.xml eller andra build-skript.
 
-När variablerna har konfigurerats är de tillgängliga som miljövariabler. Om du vill använda dem som en Maven-egenskap kan du referera till dem i filen pom.xml, eventuellt inom en profil enligt beskrivningen ovan:
+Om du vill ange en variabel med hjälp av CLI kör du ett kommando som:
+
+`$ aio cloudmanager:set-pipeline-variables PIPELINEID --variable MY_CUSTOM_VARIABLE test`
+
+Aktuella variabler kan listas:
+
+`$ aio cloudmanager:list-pipeline-variables PIPELINEID`
+
+Variabelnamn får endast innehålla alfanumeriska tecken och understreck. Namnen ska vara versaler. Det finns en gräns på 200 variabler per pipeline. Varje namn måste innehålla färre än 100 tecken och varje värde måste innehålla färre än 2 048 tecken.
+
+När du använder dem i en Maven pom.xml-fil kan det vara bra att mappa dessa variabler till Maven-egenskaper med en syntax som liknar den här:
 
 ```xml
         <profile>
             <id>cmBuild</id>
             <activation>
-                  <property>
-                        <name>env.CM_BUILD</name>
-                  </property>
+            <property>
+                <name>env.CM_BUILD</name>
+            </property>
             </activation>
-            <properties>
-                  <my.custom.property>${env.MY_CUSTOM_PROPERTY}</my.custom.property>  
-            </properties>
+                <properties>
+                <my.custom.property>${env.MY_CUSTOM_VARIABLE}</my.custom.property> 
+                </properties>
         </profile>
 ```
-
->[!NOTE]
->
->Miljövariabelnamn får endast innehålla alfanumeriska tecken och understreck (_). Namnen ska vara versaler.
 
 ## Aktivera Maven-profiler i Cloud Manager {#activating-maven-profiles-in-cloud-manager}
 
@@ -218,7 +259,6 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
         </profile>
 ```
 
-
 ## Installera ytterligare systempaket {#installing-additional-system-packages}
 
 Vissa byggen kräver att ytterligare systempaket installeras för att fungera helt. Ett bygge kan till exempel anropa ett Python- eller ruby-skript och därför måste ha en lämplig språktolk installerad. Detta kan du göra genom att anropa [exec-maven-plugin](https://www.mojohaus.org/exec-maven-plugin/) för att anropa APT. Den här exekveringen bör normalt omslutas av en molnhanterarspecifik Maven-profil. Så här installerar du python:
@@ -278,7 +318,7 @@ Samma teknik kan användas för att installera språkspecifika paket, dvs. med `
 
 >[!NOTE]
 >
->Om du installerar ett systempaket på det här sättet installeras det **inte** i den körningsmiljö som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM-miljön kontaktar du CSE (Customer Success Engineers).
+>Om du installerar ett systempaket på det här sättet installeras det **inte** i körningsmiljön som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM-miljön kontaktar du CSE (Customer Success Engineers).
 
 ## Hoppar över innehållspaket {#skipping-content-packages}
 
