@@ -9,7 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 9222ac3b-525e-47c1-b481-ac9d22e3d559
 translation-type: tm+mt
-source-git-commit: 15f75ca67c3d52ae511357c5b564daaa3d9def6b
+source-git-commit: cdf2c82192c2e9c375316ae6e28646594ba2a462
+workflow-type: tm+mt
+source-wordcount: '340'
+ht-degree: 0%
 
 ---
 
@@ -22,9 +25,9 @@ I version [!UICONTROL Cloud Manager] 2018.8.0 finns stöd för att automatiskt a
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018.
 
-## Nyheter {#what-s-new}
+## What&#39;s New {#what-s-new}
 
-* **Programinstallation** - Ny guide för att skapa ett programprojekt i Git med hjälp av AEM Project Archetype Mer information finns i [Skapa ett AEM Application Project](create-an-application-project.md) .
+* **Programinstallation** - Ny guide för att skapa ett programprojekt i Git med hjälp av AEM Project Archetype Mer information finns i [Skapa ett AEM Application Project](/help/using/create-an-application-project.md) .
 
 * **CI/CD Pipeline** - Följande ändringar läggs till i CI/CD Pipeline. Mer information finns i [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
 
@@ -40,7 +43,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018
    * Resurslänken i den globala navigeringen kommer att navigera till Runbook i Sharepoint.
    * Hjälpmenyn har ordnats om så att den innehåller mer [!UICONTROL Cloud Manager]specifikt innehåll.
 
-## Felkorrigeringar {#bug-fixes}
+## Bug Fixes {#bug-fixes}
 
 * Vissa detaljer i dialogrutan Prestandatestning var inte synliga i Firefox.
 * Timeout mellan interna system kan ibland leda till att distributionsfel rapporteras.
