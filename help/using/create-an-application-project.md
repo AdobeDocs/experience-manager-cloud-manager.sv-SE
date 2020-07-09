@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: 02515ac6e3ac54909e23a276a78f571ea5c249c4
+source-git-commit: 33aeba59c149e5ba3300b9d798356ec5e9bcd4b8
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1479'
 ht-degree: 6%
 
 ---
@@ -137,7 +137,7 @@ Det gör du genom att lägga till en post som ser ut så här i filen pom.xml: `
 
 I vissa fall tycker kunderna att det är nödvändigt att variera byggprocessen baserat på information om programmet eller pipeline.
 
-Om JavaScript-miniatyrbilder för byggtid utförs, till exempel med hjälp av ett verktyg som Glup, kan det finnas en önskan om att använda en annan miniminivå när du skapar för en utvecklingsmiljö i stället för att bygga för scenen och produktionen.
+Om JavaScript-minifiering under byggtid utförs, till exempel med hjälp av ett verktyg som Glup, kan det finnas en önskan att använda en annan Minification-nivå när du skapar för en utvecklingsmiljö i stället för att bygga för scenen och produktionen.
 
 Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i byggbehållaren för varje körning.
 
@@ -151,37 +151,30 @@ Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i 
 | CM_PROGRAM_NAME | Programnamnet |
 | ARTIFACTS_VERSION | Den syntetiska versionen som genererats av Cloud Manager för en fas eller produktionsprocess |
 
-### Rörledningsvariabler {#pipeline-variables}
+### Anpassade miljövariabler {#custom-variables}
 
-I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som inte skulle kunna placeras i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline.
+I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras av en Customer Success Engineer (CSE) per kund.
 
-Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån filen pom.xml eller andra build-skript.
+Dessa variabler lagras på en säker lagringsplats och visas bara i byggbehållaren för den specifika kunden. Kunder som vill använda den här funktionen måste kontakta sin CSE för att konfigurera sina variabler.
+När variablerna har konfigurerats är de tillgängliga som miljövariabler. Om du vill använda dem som en Maven-egenskap kan du referera till dem i filen pom.xml, eventuellt inom en profil enligt beskrivningen ovan:
 
-Använd kommandot nedan för att ange en variabel med CLI:
-
-`$ aio cloudmanager:set-pipeline-variables PIPELINEID --variable MY_CUSTOM_VARIABLE test`
-
-Du kan lista de aktuella variablerna enligt nedan:
-
-`$ aio cloudmanager:list-pipeline-variables PIPELINEID`
-
-Variabelnamn får endast innehålla alfanumeriska tecken och understreck. Namnen ska vara versaler. Det finns en gräns på 200 variabler per pipeline. Varje namn måste innehålla färre än 100 tecken och varje värde måste innehålla färre än 2 048 tecken.
-
-När du använder dem i en Maven pom.xml-fil kan det vara bra att mappa dessa variabler till Maven-egenskaper med en syntax som liknar den här:
 
 ```xml
         <profile>
             <id>cmBuild</id>
             <activation>
-            <property>
-                <name>env.CM_BUILD</name>
-            </property>
+                  <property>
+                        <name>env.CM_BUILD</name>
+                  </property>
             </activation>
-                <properties>
-                <my.custom.property>${env.MY_CUSTOM_VARIABLE}</my.custom.property> 
-                </properties>
+            <properties>
+                  <my.custom.property>${env.MY_CUSTOM_PROPERTY}</my.custom.property>  
+            </properties>
         </profile>
 ```
+
+>[!NOTE]
+>Miljövariabelnamn får endast innehålla alfanumeriska tecken och understreck (_). Namnen ska vara versaler.
 
 ## Aktivera Maven-profiler i Cloud Manager {#activating-maven-profiles-in-cloud-manager}
 
