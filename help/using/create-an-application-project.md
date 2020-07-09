@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: 33aeba59c149e5ba3300b9d798356ec5e9bcd4b8
+source-git-commit: dd223d678450565c1c9e8f35503eda7e5444c674
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1476'
 ht-degree: 6%
 
 ---
@@ -120,8 +120,8 @@ Det gör du genom att lägga till en post som ser ut så här i filen pom.xml: `
             <configuration>
                 <toolchains>
                     <jdk>
-                    <version>11</version>
-                    <vendor>oracle</vendor>
+                        <version>11</version>
+                        <vendor>oracle</vendor>
                     </jdk>
                 </toolchains>
             </configuration>
@@ -129,7 +129,7 @@ Det gör du genom att lägga till en post som ser ut så här i filen pom.xml: `
 ```
 
 >[!NOTE]
->De leverantörer som stöds är Oracle och Sun Microsystems och de versioner som stöds är 1.8, 1.11 och 1.11.
+>Värdena som stöds är `vendor` och `oracle` och `sun` värdena som stöds är `version` , `1.8`och `1.11``11`.
 
 ## Miljövariabler {#environment-variables}
 
