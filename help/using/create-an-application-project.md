@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: c07e88564dc1419bd0305c9d25173a8e0e1f47cf
+source-git-commit: 02515ac6e3ac54909e23a276a78f571ea5c249c4
 workflow-type: tm+mt
-source-wordcount: '1514'
+source-wordcount: '1518'
 ht-degree: 6%
 
 ---
@@ -153,13 +153,15 @@ Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i 
 
 ### Rörledningsvariabler {#pipeline-variables}
 
-I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån filen pom.xml eller andra build-skript.
+I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som inte skulle kunna placeras i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline.
 
-Om du vill ange en variabel med hjälp av CLI kör du ett kommando som:
+Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån filen pom.xml eller andra build-skript.
+
+Använd kommandot nedan för att ange en variabel med CLI:
 
 `$ aio cloudmanager:set-pipeline-variables PIPELINEID --variable MY_CUSTOM_VARIABLE test`
 
-Aktuella variabler kan listas:
+Du kan lista de aktuella variablerna enligt nedan:
 
 `$ aio cloudmanager:list-pipeline-variables PIPELINEID`
 
