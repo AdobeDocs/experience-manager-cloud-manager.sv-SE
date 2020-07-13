@@ -10,9 +10,9 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: 18b539951e286cb14d5c10404b42ba80682bbef0
+source-git-commit: afbb9a9f9f227309946f0d1891172a89d15de7a7
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1634'
 ht-degree: 1%
 
 ---
@@ -81,6 +81,7 @@ Välj din Git-gren och klicka på **Nästa**.
 
    * **På Git Changes** - startar CI/CD-pipeline när implementeringar har lagts till i den konfigurerade Git-grenen. Även om du väljer det här alternativet kan du alltid starta pipelinen manuellt.
    * **Manuell** - med användargränssnittet startar du pipelinen manuellt.
+
    Under pipeline-konfigurationen eller redigeringen kan Deployment Manager definiera pipeline-beteendet när ett viktigt fel inträffar i någon av kvalitetsportarna, till exempel kodkvalitet, säkerhetstestning och prestandatestning.
 
    Detta är användbart för kunder som vill ha mer automatiserade processer. De tillgängliga alternativen är:
@@ -130,17 +131,17 @@ Det visas sedan som ett separat steg under pipeline-körningen:
 
 Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen när du konfigurerar eller redigerar pipeline.
 
-Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder standardbeteendet AEM Dispatcher - invalidate utför en cacheogiltigförklaring som liknar när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
+Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM Dispatcher-standardbeteende - invalidate utför en cacheogiltigförklaring som liknar när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
 
 I allmänhet är det bättre att använda åtgärden invalidate, men det kan finnas fall där det krävs tömning, särskilt när du använder AEM HTML-klientbibliotek.
 
 >[!NOTE]
 >
->Mer information om Dispatcher-cachning finns i [Dispatcher Overview](dispatcher-configurations.md) .
+>Mer information om cachelagring i Dispatcher finns i [Dispatcher Overview](dispatcher-configurations.md) .
 
 Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
-1. Klicka på **Konfigurera** under rubriken Dispatcher Configuration
+1. Klicka på **Konfigurera** under rubriken Dispatcher-konfiguration
 
    ![](assets/image2018-8-7_14-53-24.png)
 
@@ -159,17 +160,22 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    Nu kan du konfigurera prestandatestparametrarna.
 
-   Du kan konfigurera *AEM Sites* och *AEM Assets* Performance Testing, beroende på vilka produkter du har licensierat.
+   Du kan konfigurera prestandatestning för *AEM Sites* och *AEM Assets* , beroende på vilka produkter du har licensierat.
 
    **AEM Sites:**
 
-   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå.Sidorna väljs av tre **siduppsättningar**. du kan välja var som helst från en till alla tre uppsättningar. Trafikfördelningen baseras på antalet valda grupper, dvs. om alla tre är markerade placeras 33 % av de totala sidvyerna mot varje uppsättning. Om två är markerade går 50 % till varje uppsättning. om en sådan väljs, går 100 % av trafiken till den uppsättningen.
+   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå.
+
+   Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla scenmiljön med en uppsättning *dirigerade* URL:er som konfigurerats av kundens Success Engineer. Från dessa URL:er granskas HTML-koden för varje sida och länkarna gås igenom på bredden först. Denna crawlningsprocess är begränsad till högst 5 000 sidor. Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
+
+   Sidorna väljs med tre **siduppsättningar**. du kan välja var som helst från en till alla tre uppsättningar. Trafikfördelningen baseras på antalet valda grupper, dvs. om alla tre är markerade placeras 33 % av de totala sidvyerna mot varje uppsättning. Om två är markerade går 50 % till varje uppsättning. om en sådan väljs, går 100 % av trafiken till den uppsättningen.
 
    Låt oss till exempel säga att det finns en delning på 50 %/50 % mellan de populära Live-sidorna och de nya sidorna (i det här exemplet används inte andra Live-sidor) och den nya siduppsättningen innehåller 3 000 sidor. Sidvyerna per minut är inställda på 200. Under 30 minuters testperiod:
 
    * Var och en av de 25 sidorna i populära Live Pages-uppsättningen kommer att visas 240 gånger - ((200 * 0.5) / 25) * 30 = 120
 
    * Var och en av de 3 000 sidorna i den nya siduppsättningen kommer att tryckas en gång - ((200 * 0.5) / 3 000) * 30 = 1
+
    ![](assets/Configuring_Pipeline_AEM-Sites.png)
 
    **AEM Assets:**
@@ -194,7 +200,7 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
-Förutom den huvudsakliga rörledningen som distribuerar till scenen och produktionen kan kunderna även lägga upp ytterligare rörledningar, så kallade **icke-produktionsrörledningar**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribuera till Adobes miljö för hanterade tjänster.
+Förutom den huvudsakliga rörledningen som distribuerar till scenen och produktionen kan kunderna även lägga upp ytterligare rörledningar, så kallade **icke-produktionsrörledningar**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribueras till Adobe Managed Services.
 
 ## Videosjälvstudiekurs {#video-tutorial-two}
 
@@ -221,6 +227,7 @@ På startskärmen visas dessa rörledningar i ett nytt kort:
    * **Redigera** - tillåter redigering av pipeline-inställningarna
    * **Detalj** - visar den senaste pipelinekörningen (om det finns någon)
    * **Build** - navigerar till körningssidan, från vilken pipeline kan köras
+
    ![](assets/Non-prod-2.png)
 
    >[!NOTE]
