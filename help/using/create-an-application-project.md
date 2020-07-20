@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: a4ea83c0b64515915871956c1cd3e53606f1c26b
+source-git-commit: 0d46abc386460ccbaf7ba10b93286bc8e4af2395
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1537'
 ht-degree: 6%
 
 ---
@@ -154,30 +154,37 @@ Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i 
 | CM_PROGRAM_NAME | Programnamnet |
 | ARTIFACTS_VERSION | Den syntetiska versionen som genererats av Cloud Manager för en fas eller produktionsprocess |
 
-### Anpassade miljövariabler {#custom-variables}
+### Rörledningsvariabler {#pipeline-variables}
 
-I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen. Med Cloud Manager kan dessa variabler konfigureras av en Customer Success Engineer (CSE) per kund.
+I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen eller som behöver variera mellan olika pipeline-körningar som använder samma gren.
 
-Dessa variabler lagras på en säker lagringsplats och visas bara i byggbehållaren för den specifika kunden. Kunder som vill använda den här funktionen måste kontakta sin CSE för att konfigurera sina variabler.
-När variablerna har konfigurerats är de tillgängliga som miljövariabler. Om du vill använda dem som en Maven-egenskap kan du referera till dem i filen pom.xml, eventuellt inom en profil enligt beskrivningen ovan:
+Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån `pom.xml` filen eller andra byggskript.
 
+Om du vill ange en variabel med hjälp av CLI kör du ett kommando som:
+
+`$ aio cloudmanager:set-pipeline-variables PIPELINEID --variable MY_CUSTOM_VARIABLE test`
+
+Aktuella variabler kan listas:
+
+`$ aio cloudmanager:list-pipeline-variables PIPELINEID`
+
+Variabelnamn får endast innehålla alfanumeriska tecken och understreck (_). Namnen ska vara versaler. Det finns en gräns på 200 variabler per pipeline. Varje namn måste innehålla färre än 100 tecken och varje värde måste innehålla färre än 2 048 tecken.
+
+När de används i en `Maven pom.xml` fil är det praktiskt att mappa dessa variabler till Maven-egenskaper med en syntax som liknar den här:
 
 ```xml
         <profile>
             <id>cmBuild</id>
             <activation>
-                  <property>
-                        <name>env.CM_BUILD</name>
-                  </property>
+                <property>
+                    <name>env.CM_BUILD</name>
+                </property>
             </activation>
             <properties>
-                  <my.custom.property>${env.MY_CUSTOM_PROPERTY}</my.custom.property>  
+                <my.custom.property>${env.MY_CUSTOM_VARIABLE}</my.custom.property> 
             </properties>
         </profile>
 ```
-
->[!NOTE]
->Miljövariabelnamn får endast innehålla alfanumeriska tecken och understreck (_). Namnen ska vara versaler.
 
 ## Aktivera Maven-profiler i Cloud Manager {#activating-maven-profiles-in-cloud-manager}
 
