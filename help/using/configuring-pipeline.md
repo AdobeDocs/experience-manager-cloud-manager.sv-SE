@@ -10,9 +10,9 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: 3be958aa21d5423ddf371c286825d01afd554c4b
+source-git-commit: 68330a3a6d9e1f95782418dbd72cbc0e6ee7362c
 workflow-type: tm+mt
-source-wordcount: '1755'
+source-wordcount: '1759'
 ht-degree: 0%
 
 ---
@@ -205,17 +205,14 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
 Adobe Managed Services-kunder (AMS) med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platstestning.
 
-Användarnamnet och lösenordet anges som pipeline-variabler med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD` .
+Användarnamnet och lösenordet anges som [rörliga variabler](create-an-application-project.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD` .
 
 >[!NOTE]
 > Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
 
-Om du vill ställa in dessa variabler med Cloud Manager CLI kör du:
+Om du vill ställa in dessa variabler med [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager)kör du:
 
 `$ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>`
-
-
-
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
