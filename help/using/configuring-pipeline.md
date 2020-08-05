@@ -10,10 +10,10 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: afbb9a9f9f227309946f0d1891172a89d15de7a7
+source-git-commit: 3be958aa21d5423ddf371c286825d01afd554c4b
 workflow-type: tm+mt
-source-wordcount: '1634'
-ht-degree: 1%
+source-wordcount: '1755'
+ht-degree: 0%
 
 ---
 
@@ -102,7 +102,7 @@ Välj din Git-gren och klicka på **Nästa**.
 
 >[!NOTE]
 >
->Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipeline **efter** scendistributionen (och **Använd GoLive Approval**, om det har aktiverats) för att vänta på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
+>Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipeline **efter** scendistributionen (och **Använd GoLive Approval**, om det har aktiverats) så att du väntar på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
 >
 >Se [**Distribuera koden **](deploying-code.md)för att ställa in distributionsschemat eller köra produktionen direkt.
 
@@ -131,17 +131,17 @@ Det visas sedan som ett separat steg under pipeline-körningen:
 
 Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen när du konfigurerar eller redigerar pipeline.
 
-Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM Dispatcher-standardbeteende - invalidate utför en cacheogiltigförklaring som liknar när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
+Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM standard-Dispatcher-beteende - invalidate utför en cacheogiltigförklaring, på samma sätt som när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
 
 I allmänhet är det bättre att använda åtgärden invalidate, men det kan finnas fall där det krävs tömning, särskilt när du använder AEM HTML-klientbibliotek.
 
 >[!NOTE]
 >
->Mer information om cachelagring i Dispatcher finns i [Dispatcher Overview](dispatcher-configurations.md) .
+>Mer information om Dispatcher-cachning finns i [Dispatcher Overview](dispatcher-configurations.md) .
 
 Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
-1. Klicka på **Konfigurera** under rubriken Dispatcher-konfiguration
+1. Klicka på **Konfigurera** under rubriken Dispatcher Configuration
 
    ![](assets/image2018-8-7_14-53-24.png)
 
@@ -160,11 +160,11 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    Nu kan du konfigurera prestandatestparametrarna.
 
-   Du kan konfigurera prestandatestning för *AEM Sites* och *AEM Assets* , beroende på vilka produkter du har licensierat.
+   Du kan konfigurera *AEM Sites* och *AEM Assets* Performance Testing, beroende på vilka produkter du har licensierat.
 
    **AEM Sites:**
 
-   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå.
+   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare som standard) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå.
 
    Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla scenmiljön med en uppsättning *dirigerade* URL:er som konfigurerats av kundens Success Engineer. Från dessa URL:er granskas HTML-koden för varje sida och länkarna gås igenom på bredden först. Denna crawlningsprocess är begränsad till högst 5 000 sidor. Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
 
@@ -177,6 +177,9 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
    * Var och en av de 3 000 sidorna i den nya siduppsättningen kommer att tryckas en gång - ((200 * 0.5) / 3 000) * 30 = 1
 
    ![](assets/Configuring_Pipeline_AEM-Sites.png)
+
+
+   Mer information om hur du autentiserar AEM Sites prestandatestning finns i Prestandatestning [för](configuring-pipeline.md#authenticated-sites-performance) autentiserade webbplatser.
 
    **AEM Assets:**
 
@@ -198,9 +201,25 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/Production-Pipeline.png)
 
+### Prestandatestning av autentiserade webbplatser {#authenticated-sites-performance}
+
+Adobe Managed Services-kunder (AMS) med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platstestning.
+
+Användarnamnet och lösenordet anges som pipeline-variabler med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD` .
+
+>[!NOTE]
+> Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
+
+Om du vill ställa in dessa variabler med Cloud Manager CLI kör du:
+
+`$ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>`
+
+
+
+
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
-Förutom den huvudsakliga rörledningen som distribuerar till scenen och produktionen kan kunderna även lägga upp ytterligare rörledningar, så kallade **icke-produktionsrörledningar**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribueras till Adobe Managed Services.
+Förutom den huvudsakliga rörledningen som distribuerar till scenen och produktionen kan kunderna även lägga upp ytterligare rörledningar, så kallade **icke-produktionsrörledningar**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribuera till Adobes miljö för hanterade tjänster.
 
 ## Videosjälvstudiekurs {#video-tutorial-two}
 
