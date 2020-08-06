@@ -10,10 +10,10 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: 68330a3a6d9e1f95782418dbd72cbc0e6ee7362c
+source-git-commit: cff6f23a674fda2f57ea481d89644de9be3f5722
 workflow-type: tm+mt
-source-wordcount: '1759'
-ht-degree: 0%
+source-wordcount: '1636'
+ht-degree: 1%
 
 ---
 
@@ -178,9 +178,6 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/Configuring_Pipeline_AEM-Sites.png)
 
-
-   Mer information om hur du autentiserar AEM Sites prestandatestning finns i Prestandatestning [för](configuring-pipeline.md#authenticated-sites-performance) autentiserade webbplatser.
-
    **AEM Assets:**
 
    Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs samt olika mätvärden på systemnivå. Denna funktion kan överföra både bilder och PDF-dokument. Distributionen av hur många resurser av varje typ som överförs per minut anges på skärmen Inställningar för pipeline eller Redigera.
@@ -201,18 +198,6 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/Production-Pipeline.png)
 
-### Prestandatestning av autentiserade webbplatser {#authenticated-sites-performance}
-
-Adobe Managed Services-kunder (AMS) med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platstestning.
-
-Användarnamnet och lösenordet anges som [rörliga variabler](create-an-application-project.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD` .
-
->[!NOTE]
-> Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
-
-Om du vill ställa in dessa variabler med [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager)kör du:
-
-`$ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>`
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
