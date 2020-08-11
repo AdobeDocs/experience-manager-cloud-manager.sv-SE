@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: 200057885f068ff8df889601a401e06d89981209
+source-git-commit: e026c7232c2a848bb60ddbd7112a4a2755527921
 workflow-type: tm+mt
 source-wordcount: '1721'
 ht-degree: 5%
@@ -266,7 +266,7 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
 
 ## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
 
-Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil]{#activating-maven-profiles-in-cloud-manager}, men det är inte absolut nödvändigt.
+Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil](/help/using/create-an-application-project.md#activating-maven-profiles-in-cloud-manager), men det är inte absolut nödvändigt.
 
 Låt oss till exempel säga att databasen finns på https://repository.myco.com/maven2, att användarnamnet Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
 
