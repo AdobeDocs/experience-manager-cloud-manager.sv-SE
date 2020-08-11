@@ -1,17 +1,17 @@
 ---
-title: Skapa ett AEM-programprojekt
-seo-title: Skapa ett AEM-programprojekt
+title: Skapa ett AEM
+seo-title: Skapa ett AEM
 description: 'null'
-seo-description: Följ den här sidan om du vill veta mer om hur du konfigurerar ett AEM-projekt när du börjar med Cloud Manager.
+seo-description: Följ den här sidan om du vill veta mer om hur du konfigurerar ett AEM när du börjar med Cloud Manager.
 uuid: 7b976ebf-5358-49d8-a58d-0bae026303fa
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: 0fda91c2fe319fb58b3a6dd09f75eac7a60d9038
+source-git-commit: 200057885f068ff8df889601a401e06d89981209
 workflow-type: tm+mt
-source-wordcount: '1705'
+source-wordcount: '1721'
 ht-degree: 5%
 
 ---
@@ -19,20 +19,20 @@ ht-degree: 5%
 
 # Create an AEM Application Project {#create-an-aem-application-project}
 
-## Använda guiden för att skapa ett AEM-programprojekt {#using-wizard-to-create-an-aem-application-project}
+## Använda guiden för att skapa ett AEM {#using-wizard-to-create-an-aem-application-project}
 
-När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services (AMS-kunder) (eller lokala AEM-kunder som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
+När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services-kunder (eller lokala AEM-kunder som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
 
-För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM-projekt som utgångspunkt. Processen bygger på [**AEM Project Archetype **](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
+För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM som utgångspunkt. Den här processen baseras på [**AEM projekttyp **](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
 
 
-Följ stegen nedan för att skapa ett AEM-programprojekt i Cloud Manager:
+Följ stegen nedan för att skapa ett AEM programprojekt i Cloud Manager:
 
 1. När du har loggat in på Cloud Manager och den grundläggande programkonfigurationen är klar, visas ett särskilt CTA-kort på skärmen **Översikt**, om databasen är tom.
 
    ![](assets/image2018-10-3_14-29-44.png)
 
-1. Klicka på **Skapa för att** öppna en dialogruta där användaren kan ange de parametrar som krävs för AEM-projektarkitekturen. I standardformuläret frågar dialogrutan efter två värden:
+1. Klicka på **Skapa för att** öppna en dialogruta där användaren kan ange de parametrar som krävs för AEM projekttyp. I standardformuläret frågar dialogrutan efter två värden:
 
    * **Titel** - som standard är detta inställt på *Programnamn*
 
@@ -57,7 +57,7 @@ Följ stegen nedan för att skapa ett AEM-programprojekt i Cloud Manager:
 
 ### Ändra projektinställningsinformation {#modifying-project-setup-details}
 
-För att kunna byggas och driftsättas med Cloud Manager måste befintliga AEM-projekt följa vissa grundläggande regler:
+För att kunna byggas och driftsättas med Cloud Manager måste befintliga AEM följa vissa grundläggande regler:
 
 * Projekt måste byggas med Apache Maven.
 * Det måste finnas en *pom.xml* -fil i Git-databasens rot. Den här *pom.xml* -filen kan referera till så många undermoduler (som i sin tur kan ha andra undermoduler osv.) vid behov.
@@ -65,7 +65,7 @@ För att kunna byggas och driftsättas med Cloud Manager måste befintliga AEM-p
 * Du kan lägga till referenser till ytterligare Maven-artefaktdatabaser i dina *pom.xml* -filer. Åtkomst till [lösenordsskyddade artefaktarkiv](#password-protected-maven-repositories) stöds vid konfigurering. Åtkomst till nätverksskyddade artefaktdatabaser stöds dock inte.
 * Distribuerbara innehållspaket upptäcks genom att söka efter *zip* -filer för innehållspaket som finns i en katalog med namnet *target*. Ett valfritt antal undermoduler kan producera innehållspaket.
 
-* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip* -filer (återigen i en katalog med namnet *target*) som har katalogerna *conf* och *conf.d*.
+* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip* -filer (återigen i en katalog med namnet *target*) som har kataloger med namnen *conf* och *conf.d*.
 
 * Om det finns mer än ett innehållspaket är det inte säkert att paketdistributioner ordnas. Om en viss ordning behövs kan innehållspaketets beroenden användas för att definiera ordningen. Paket kan [hoppas över](#skipping-content-packages) från distributionen.
 
@@ -97,7 +97,7 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 * Andra paket kan installeras vid byggtillfället enligt beskrivningen [nedan](#installing-additional-system-packages).
 * Varje bygge görs i en riktig miljö. byggbehållaren behåller inte något läge mellan körningar.
 * Maven körs alltid med kommandot: *mvn —batch-mode clean org.jacoco:jacoco-maven-plugin:prepare-agent package*
-* Maven konfigureras på systemnivå med filen settings.xml som automatiskt inkluderar den offentliga Adobe **Artifact** -databasen. (Mer information finns i [Adobe Public Maven Repository](https://repo.adobe.com/) .)
+* Maven är konfigurerad på systemnivå med filen settings.xml som automatiskt inkluderar databasen för Adobe **Artifact** . (Mer information finns i [Adobe Public Maven Repository](https://repo.adobe.com/) .)
 
 >[!NOTE]
 >Även om Cloud Manager inte definierar en specifik version av `jacoco-maven-plugin`filen måste den version som används vara minst `0.7.5.201505241946`.
@@ -266,7 +266,7 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
 
 ## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
 
-Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil]{#activating-maven-profiles-in-cloud-manager}, men det är inte absolut nödvändigt.
+Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil]{#activating-maven-profiles-in-cloud-manager}, men det är inte absolut nödvändigt.
 
 Låt oss till exempel säga att databasen finns på https://repository.myco.com/maven2, att användarnamnet Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
 
@@ -392,7 +392,7 @@ Samma teknik kan användas för att installera språkspecifika paket, dvs. med `
 
 >[!NOTE]
 >
->Om du installerar ett systempaket på det här sättet installeras det **inte** i körningsmiljön som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM-miljön kontaktar du CSE (Customer Success Engineers).
+>Om du installerar ett systempaket på det här sättet installeras det **inte** i den körningsmiljö som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM ska du kontakta din Customer Success Engineers (CSE).
 
 ## Hoppar över innehållspaket {#skipping-content-packages}
 
@@ -433,4 +433,4 @@ Med content-package-maven-plugin är den ungefär så här:
 
 ## Utveckla din kod baserat på bästa praxis {#develop-your-code-based-on-best-practices}
 
-Adobes tekniker och konsultteam har utvecklat en [omfattande uppsättning metodtips för AEM-utvecklare](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/best-practices.html).
+Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning bästa metoder för AEM utvecklare](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/best-practices.html).
