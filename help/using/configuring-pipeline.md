@@ -10,10 +10,10 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: cff6f23a674fda2f57ea481d89644de9be3f5722
+source-git-commit: c2f5caf50f2e20c07807369aee7914c17fded4de
 workflow-type: tm+mt
-source-wordcount: '1636'
-ht-degree: 1%
+source-wordcount: '1751'
+ht-degree: 0%
 
 ---
 
@@ -104,7 +104,7 @@ Välj din Git-gren och klicka på **Nästa**.
 >
 >Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipeline **efter** scendistributionen (och **Använd GoLive Approval**, om det har aktiverats) så att du väntar på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
 >
->Se [**Distribuera koden **](deploying-code.md)för att ställa in distributionsschemat eller köra produktionen direkt.
+>Se [**Distribuera koden**](deploying-code.md) för att ställa in distributionsschemat eller köra produktionen direkt.
 
 ![](assets/configure-pipeline3.png)
 
@@ -129,7 +129,7 @@ Det visas sedan som ett separat steg under pipeline-körningen:
 
 **Dispatcher Invalidation**
 
-Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen när du konfigurerar eller redigerar pipeline.
+Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen blir **ogiltiga** eller **tömda** från AEM Dispatcher-cachen för publiceringsinstanser, samtidigt som du konfigurerar eller redigerar pipeline.
 
 Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM standard-Dispatcher-beteende - invalidate utför en cacheogiltigförklaring, på samma sätt som när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
 
@@ -178,6 +178,8 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/Configuring_Pipeline_AEM-Sites.png)
 
+   Mer information finns i [Autentiserad prestandatestning](#authenticated-performance-testing) .
+
    **AEM Assets:**
 
    Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs samt olika mätvärden på systemnivå. Denna funktion kan överföra både bilder och PDF-dokument. Distributionen av hur många resurser av varje typ som överförs per minut anges på skärmen Inställningar för pipeline eller Redigera.
@@ -198,6 +200,17 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/Production-Pipeline.png)
 
+### Autentiserad prestandatestning {#authenticated-performance-testing}
+
+AMS-kunder med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platsprestandatestning.
+
+Användarnamnet och lösenordet anges som [rörliga variabler](/help/using/create-an-application-project.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD`.
+
+Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
+
+Om du vill ställa in dessa variabler med [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager)kör du:
+
+`$ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>`
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
