@@ -4,9 +4,9 @@ seo-title: Versionsinformation om AEM Cloud Manager för 2020.8.0
 description: Följ den här sidan för att få information om Cloud Manager version 2020.8.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.8.0
 translation-type: tm+mt
-source-git-commit: cff6f23a674fda2f57ea481d89644de9be3f5722
+source-git-commit: c2f5caf50f2e20c07807369aee7914c17fded4de
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '192'
 ht-degree: 0%
 
 ---
@@ -37,5 +37,9 @@ Stöd finns nu för autentiseringsbundna privata Maven-databaser.
 
 * Verktygstipset på programkorten var inte konsekvent korrekt.
 
-* Översiktssidan innehöll en färgmatchning.
+* Det fanns ett färgmatchningsfel på **översiktssidan** .
+
+* Testning av webbplatsprestanda har nu stöd för valfri användning av autentisering.
+
+* Dispatcher-cacheminnen för författarinstanser rensas automatiskt när dispatcherkonfigurationer distribueras via Cloud Manager.
 
