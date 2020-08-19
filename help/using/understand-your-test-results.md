@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 translation-type: tm+mt
-source-git-commit: f062ee126ad12d164c36b2e1535ee709f43b6900
+source-git-commit: 1143e58d4c3a02d85676f94fc1a30cc1c2856222
 workflow-type: tm+mt
-source-wordcount: '1461'
+source-wordcount: '1544'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,15 @@ För var och en av dessa portar finns det en struktur på tre nivåer för probl
 
 ## Testning av kodkvalitet {#code-quality-testing}
 
-Som en del av pipeline skannas källkoden för att säkerställa att distributionerna uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. I följande tabell sammanfattas klassificeringen för testkriterier:
+I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet för en rörledning med enbart kodkvalitet och genomförs omedelbart efter byggsteget i alla rörledningar för icke-produktion och produktion. Mer information om olika typer av pipelines finns i [Konfigurera CI-CD-pipeline](/help/using/configuring-pipeline.md) .
+
+### Förstå testning av kodkvalitet {#understanding-code-quality-testing}
+
+I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [anpassade regler](/help/using/custom-code-quality-rules.md)för kodkvalitet.
+
+Du kan hämta listan med regler [här](/help/using/assets/CodeQuality-rules-latest.xlsx).
+
+Resultatet av det här steget visas som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
 
 | Namn | Definition | Kategori | Feltröskel |
 |--- |--- |--- |--- |
@@ -54,14 +62,12 @@ Som en del av pipeline skannas källkoden för att säkerställa att distributio
 | Överhoppade enhetstester | Antal överhoppade enhetstester. | Information | > 1 |
 | Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Information | > 0 |
 | Duplicerade rader | Antal rader som ingår i duplicerade block. <br/>För att ett kodblock ska betraktas som duplicerat: <br/><ul><li>**Projekt som inte är Java:**</li><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa tokens bör spridas åtminstone på: </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li><li>**Java-projekt:**</li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul> <br/>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Information | > 1% |
-| Kompatibilitet med molntjänster | Antal identifierade kompatibilitetsproblem med molntjänster. | Information | > 0 |
+| Cloud Service-kompatibilitet | Antal identifierade kompatibilitetsproblem för Cloud Service. | Information | > 0 |
 
 
 >[!NOTE]
 >
 >Mer detaljerade definitioner finns i [Måttdefinitioner](https://docs.sonarqube.org/display/SONAR/Metric+Definitions) .
-
-Du kan hämta listan med regler här [code-quality-rules.xlsx](/help/using/assets/CodeQuality-rules-latest.xlsx)
 
 >[!NOTE]
 >
@@ -73,7 +79,7 @@ Kvalitetsskanningsprocessen är inte perfekt och kan ibland felaktigt identifier
 
 I dessa fall kan källkoden kommenteras med Java- `@SuppressWarnings` standardanteckningen som anger regel-ID som anteckningsattribut. Ett vanligt problem är att regeln SonarQube för att identifiera hårdkodade lösenord kan vara aggressiv om hur ett hårdkodat lösenord identifieras.
 
-Om du vill titta på ett specifikt exempel är koden ganska vanlig i ett AEM-projekt som har kod för att ansluta till en extern tjänst:
+Om du vill titta på ett specifikt exempel är koden ganska vanlig i ett AEM projekt som har kod att ansluta till en extern tjänst:
 
 ```java
 @Property(label = "Service Password")
@@ -103,7 +109,7 @@ Den rätta lösningen är sedan att ta bort det hårdkodade lösenordet.
 
 ## Säkerhetstestning {#security-testing}
 
-[!UICONTROL Cloud Manager] kör de befintliga ***AEM Security Heath Checks*** på scenen efter distributionen och rapporterar statusen via användargränssnittet. Resultaten sammanställs från alla AEM-instanser i miljön.
+[!UICONTROL Cloud Manager] kör de befintliga ***AEM säkerhetskontrollerna*** på scenen efter distributionen och rapporterar statusen via användargränssnittet. Resultaten sammanställs från alla AEM instanser i miljön.
 
 Om någon av **instanserna** rapporterar ett fel för en viss hälsokontroll misslyckas hälsokontrollen i hela **miljön** . Precis som för kodkvalitets- och prestandatestning är dessa hälsokontroller ordnade i kategorier och rapporterade med hjälp av ett system med tre nivåer. Den enda skillnaden är att det inte finns något tröskelvärde när det gäller säkerhetstestning. Alla hälsokontroller godkänns eller misslyckas helt enkelt.
 
@@ -116,13 +122,13 @@ I följande tabell visas de aktuella kontrollerna:
 | Brandväggen för deserialisering har lästs in | Brandvägg för deserialisering har lästs in | Kritisk |
 | AuthorizableNodeName-implementeringen visar inte auktoriseringsbart ID i nodens namn/sökväg. | Generering av auktoriseringsbart nodnamn | Kritisk |
 | Standardlösenord har ändrats | Standardinloggningskonton | Kritisk |
-| GET-standardservern för Sling är skyddad från DOS-attacker. | Sling Get Servlet | Kritisk |
+| Sling standardserver för GET är skyddad från DOS-attacker. | Sling Get Servlet | Kritisk |
 | Hanteraren för Sling-Java-skript är korrekt konfigurerad | Sling Java Script Handler | Kritisk |
 | Sling JSP Script Handler är korrekt konfigurerad | Sling JSP Script Handler | Kritisk |
 | SSL är korrekt konfigurerat | SSL-konfiguration | Kritisk |
 | Inga uppenbart osäkra profiler för användarprofiler hittades | Standardåtkomst för användarprofil | Kritisk |
 | Sling Referrer-filtret är konfigurerat för att förhindra CSRF-attacker | Sling-referensfilter | Viktigt |
-| Adobe Granite HTML Library Manager är korrekt konfigurerat | CQ HTML Library Manager Config | Viktigt |
+| HTML-bibliotekshanteraren för Adobe Granite är korrekt konfigurerad | CQ HTML Library Manager Config | Viktigt |
 | Supportpaketet för CRXDE är inaktiverat | Stöd för CRXDE | Viktigt |
 | Sling DavEx-paket och -servlet är inaktiverade | DavEx-hälsokontroll | Viktigt |
 | Exempelinnehåll är inte installerat | Exempel på innehållspaket | Viktigt |
