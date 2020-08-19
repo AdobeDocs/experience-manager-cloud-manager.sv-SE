@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: 509a74b2e85d5880bafa56cd0ab3bae9c57b0683
+source-git-commit: 1143e58d4c3a02d85676f94fc1a30cc1c2856222
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '953'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Distribuera kod med Cloud Manager {#deploying-code-with-cloud-manager}
 
-När du har konfigurerat **pipeline** (databas, miljö och testmiljö) är du redo att driftsätta koden.
+Once you have configured your Production **Pipeline** (repository, environment, and testing environment), you are ready to deploy your code.
 
 1. Klicka på **Distribuera** från Cloud Manager för att starta distributionsprocessen.
 
@@ -40,6 +40,7 @@ När du har konfigurerat **pipeline** (databas, miljö och testmiljö) är du re
    1. Scendistribution
    1. Scentestning
    1. Produktionsdistribution
+
    >[!NOTE]
    >
    >Dessutom kan du granska stegen från olika distributionsprocesser genom att visa loggar eller granska resultaten för att se testvillkoren.
@@ -50,12 +51,14 @@ När du har konfigurerat **pipeline** (databas, miljö och testmiljö) är du re
    * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Skapa ett AEM-programprojekt](create-an-application-project.md) .
    * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
    * Distribuera till scenen
+
    ![](assets/Stage_Deployment1.png)
 
    The **Stage Testing**, involves the following steps:
 
-   * Säkerhetstestning: I det här steget utvärderas hur programkoden påverkar säkerheten i AEM-miljön. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
+   * Säkerhetstestning: I det här steget utvärderas säkerhetseffekten av programkoden på AEM. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
    * Prestandatestning: I det här steget utvärderas prestanda för programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
+
    ![](assets/Stage_Testing1.png)
 
    The **Production Deployment**, involves the following steps:
@@ -64,6 +67,7 @@ När du har konfigurerat **pipeline** (databas, miljö och testmiljö) är du re
    * **Schemalägg produktionsdistribution** (om aktiverat)
    * **CSE-stöd** (om aktiverat)
    * **Distribuera till produktion**
+
    ![](assets/Prod_Deployment1.png)
 
    >[!NOTE]
@@ -112,7 +116,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    >[!NOTE]
    >
-   >Alla AEM-artefakter distribueras till både författaren och utgivaren. Körningslägen bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM-instansen för ett visst ändamål kan du läsa Körningslägen.
+   >Alla AEM artefakter distribueras till både författaren och utgivaren. Körningslägen bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan justera AEM för ett visst ändamål, se Körningslägen.
 
 1. Dispatchartefakten distribueras till varje dispatcher enligt följande:
 
@@ -121,11 +125,12 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
    1. Artefakten extraheras till `httpd` katalogen.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
    1. Apache utför ett config-test. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
+
    >[!NOTE]
    >
    >Dispatcher-artefakten förväntas innehålla hela filuppsättningen.  Alla konfigurationsfiler för dispatcher måste finnas i Git-databasen. Om filer eller mappar saknas kommer distributionen att misslyckas.
 
-1. Efter den lyckade distributionen av alla AEM- och dispatcherpaket till alla noder läggs utskickarna till i belastningsutjämnaren och distributionen är klar.
+1. Efter den lyckade distributionen av alla AEM- och dispatcherpaket till alla noder läggs avsändarna tillbaka till belastningsutjämnaren och distributionen är klar.
 
    >[!NOTE]
    >
@@ -133,16 +138,16 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
 ### Distribution till produktionsfas {#deployment-production-phase}
 
-Processen för att distribuera till produktionstopologier skiljer sig något för att minimera påverkan för AEM Site-besökare.
+Processen för att distribuera till produktionstopologier skiljer sig något för att minimera påverkan för AEM webbplatsbesökare.
 
 Produktionsinstallationer följer i allmänhet samma steg som ovan, men på ett rullande sätt:
 
-1. Distribuera AEM-paket till författaren.
+1. Distribuera AEM som ska författas.
 1. Koppla loss dispatcher1 från belastningsutjämnaren.
-1. Distribuera AEM-paket till publish1 och dispatcherns paket till dispatcher1, flush dispatcher cache.
+1. Distribuera AEM paket till publish1 och dispatcherpaketet till dispatcher1, flush dispatcher cache.
 1. Placera dispatcher1 i belastningsutjämnaren igen.
 1. När dispatcher1 är tillbaka i tjänst frigör du dispatcher2 från belastningsutjämnaren.
-1. Distribuera AEM-paket till publish2 och dispatcherpaketet till dispatcher2, flush dispatcher cache.
+1. Distribuera AEM paket till publish2 och dispatcherpaketet till dispatcher2, flush dispatcher cache.
 1. Placera dispatcher2 i belastningsutjämnaren igen.
 Den här processen fortsätter tills distributionen har nått alla utgivare och utgivare i topologin.
 
