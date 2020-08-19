@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 translation-type: tm+mt
-source-git-commit: 1143e58d4c3a02d85676f94fc1a30cc1c2856222
+source-git-commit: d38b6da61c552a3e9ad03dac49a64553f0cb00b4
 workflow-type: tm+mt
 source-wordcount: '1544'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 # Förstå testresultat {#understand-your-test-results}
 
-Under **pipeline** -processen hämtas och jämförs ett antal mätvärden med nyckeltal (KPI) som definieras av företagsägaren, eller standarder som anges av Adobe Managed Services.
+Under Pipeline-körningen registreras och jämförs ett antal mätvärden med nyckeltal (KPI) som definieras av företagsägaren, eller standarder som anges av Adobe Managed Services.
 
 Dessa rapporteras med hjälp av ett system med tre nivåer av klassificering enligt definitionen i detta avsnitt.
 
@@ -49,7 +49,8 @@ I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet f
 
 I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [anpassade regler](/help/using/custom-code-quality-rules.md)för kodkvalitet.
 
-Du kan hämta listan med regler [här](/help/using/assets/CodeQuality-rules-latest.xlsx).
+>[!NOTE]
+>Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-latest.xlsx).
 
 Resultatet av det här steget visas som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
 
