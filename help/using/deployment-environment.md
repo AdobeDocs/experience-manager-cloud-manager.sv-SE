@@ -9,12 +9,15 @@ contentOwner: jsyal
 discoiquuid: 4ac3e831-2227-4ea8-abcc-c5734e023424
 preview: true
 translation-type: tm+mt
-source-git-commit: f135526c6a47f1502395e6d53f9e286c0f935da5
+source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+workflow-type: tm+mt
+source-wordcount: '75'
+ht-degree: 2%
 
 ---
 
 
-# Distributionsmiljö{#deployment-environment}
+# Distributionsmiljö {#deployment-environment}
 
 Du kanske inte har använt Adobe Experience Manager (AEM) 6.4 tidigare eller behöver uppgradera till AEM 6.4.
 
