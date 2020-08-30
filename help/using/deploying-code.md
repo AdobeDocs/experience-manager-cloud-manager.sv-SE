@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: d38b6da61c552a3e9ad03dac49a64553f0cb00b4
+source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
 workflow-type: tm+mt
 source-wordcount: '953'
 ht-degree: 0%
@@ -75,7 +75,7 @@ När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) �
    >Schemalägg **produktionsdistribution** är aktiverat när pipeline konfigureras.
    >
    >
-   >Med det här alternativet kan du antingen schemalägga produktionsdistributionen eller klicka på **Nu** för att köra produktionsdistributionen direkt.
+   >Med det här alternativet kan du antingen schemalägga din produktionsdistribution eller klicka på **Nu** för att köra produktionsdistributionen direkt.
    >
    >
    >Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
@@ -127,13 +127,11 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
 
    >[!NOTE]
-   >
    >Dispatcher-artefakten förväntas innehålla hela filuppsättningen.  Alla konfigurationsfiler för dispatcher måste finnas i Git-databasen. Om filer eller mappar saknas kommer distributionen att misslyckas.
 
 1. Efter den lyckade distributionen av alla AEM- och dispatcherpaket till alla noder läggs avsändarna tillbaka till belastningsutjämnaren och distributionen är klar.
 
    >[!NOTE]
-   >
    >Du kan hoppa över ändringar av belastningsutjämnaren i utvecklings- och scendistributioner, det vill säga koppla loss och bifoga steg i både icke-produktionspipelines, för utvecklingsmiljöer och i produktionsflödet för scenmiljöer.
 
 ### Distribution till produktionsfas {#deployment-production-phase}
