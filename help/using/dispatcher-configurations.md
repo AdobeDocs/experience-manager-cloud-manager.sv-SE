@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 8888dd80-d908-464e-927d-779db1a832a4
 translation-type: tm+mt
-source-git-commit: cdf2c82192c2e9c375316ae6e28646594ba2a462
+source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '597'
 ht-degree: 0%
 
 ---
@@ -19,21 +19,21 @@ ht-degree: 0%
 
 # Hantera dina Dispatcher-konfigurationer {#manage-your-dispatcher-configurations}
 
-## Använda Cloud Manager för att distribuera Dispatcher konfigurationsfiler {#using-cloud-manager-to-deploy-dispatcher-configuration-files}
+## Distribuera Dispatcher-konfigurationsfiler med hjälp av Cloud Manager {#using-cloud-manager-to-deploy-dispatcher-configuration-files}
 
-Molnhanteraren kan distribuera webbservrar och Dispatcher konfigurationsfiler under förutsättning att de lagras i **Git-databasen**, utöver vanliga AEM-innehållspaket.
+Molnhanteraren kan distribuera webbserver- och Dispatcher-konfigurationsfiler under förutsättning att de lagras i **Git-databasen**, utöver AEM vanliga innehållspaket.
 
-För att utnyttja denna funktion bör Maven skapa en zip-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som genereras av Cloud Manager med den inbyggda [guiden](/help/using/create-an-application-project.md) har den korrekta Maven-projektstrukturen som skapas när projektet skapas. Detta är den rekommenderade vägen för nya kunder med hanterade tjänster.
+För att utnyttja denna funktion bör Maven skapa en zip-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som genereras av Cloud Manager med den inbyggda [guiden](/help/using/create-an-application-project.md) har den korrekta Maven-projektstrukturen som skapas när projektet skapas. Detta är den rekommenderade vägen för nya Managed Services-kunder.
 
-När innehållet i katalogerna distribueras till en dispatcher **Instance** skrivs innehållet i katalogerna över i Dispatcher-instansen. Eftersom webbservrar och Dispatcher konfigurationsfiler ofta kräver miljöspecifik information måste du först arbeta med dina Customer Success Engineers (CSE) för att kunna använda funktionen på rätt sätt, så att du kan ange dessa systemvariabler i ***/etc/sysconfig/httpd***.
+När innehållet i katalogerna distribueras till en dispatcher **Instance** skrivs innehållet i katalogerna över i Dispatcher-instansen. Eftersom webbserver- och Dispatcher-konfigurationsfiler ofta kräver miljöspecifik information måste du, för att funktionen ska kunna användas på rätt sätt, först arbeta med dina Customer Success Engineers (CSE) för att ställa in dessa miljövariabler i `/etc/sysconfig/httpd`.
 
-### Steg för konfigurering av Dispatcher för befintliga kunder med hanterade tjänster {#steps-for-configuring-dispatcher}
+### Steg för konfigurering av utskickning för befintliga Managed Services-kunder {#steps-for-configuring-dispatcher}
 
 Följ stegen nedan för att slutföra den inledande processen när du konfigurerar Dispatcher:
 
 1. Hämta aktuella produktionskonfigurationsfiler från din CSE.
 1. Ta bort hårdkodade miljöspecifika data (till exempel IP för publiceringsrenderare) och ersätt med variabler.
-1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att din CSE ska lägga till i ***/etc/sysconfig/httpd*** för varje instans.
+1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att din CSE ska läggas till `/etc/sysconfig/httpd` i varje instans.
 1. Testa de uppdaterade konfigurationerna i din scenmiljö och begär sedan att din CSE distribuerar till produktionen.
 1. Verkställ filer i **Git-databasen**.
 
@@ -41,18 +41,18 @@ Följ stegen nedan för att slutföra den inledande processen när du konfigurer
 
 >[!NOTE]
 >
->Du kan migrera Dispatcher- och webbserverkonfigurationer till **Git-databasen** under introduktionen av Cloud Manager, men det kan även göras vid en senare tidpunkt.
+>Migrering av Dispatcher- och webbserverkonfigurationer till **Git-databasen** kan utföras under introduktionen av Cloud Manager, men kan också göras vid en senare tidpunkt.
 
 ### Exempel {#example}
 
-Den specifika fil- och katalogstrukturen kan variera beroende på projektets specifika egenskaper, men i det här exemplet bör du få en handledning om hur du strukturerar ditt projekt så att det omfattar Apache och Dispatcher Configurations.
+Den specifika fil- och katalogstrukturen kan variera beroende på projektets specifika egenskaper, men i det här exemplet bör du få en handledning om hur du strukturerar projektet så att det omfattar Apache och Dispatcher Configurations.
 
 1. Skapa en underkatalog med namnet `dispatcher`.
 
    >[!NOTE]
    Du kan använda vilket namn som helst här, men katalognamnet som skapas i det här steget måste vara samma som namnet som används i steg 6.
 
-1. Den här underkatalogen innehåller en Maven-modul som bygger Dispatcher zip-filen med Maven Assembly Plugin. Börja med att skapa en `dispatcher` fil med det här innehållet i `pom.xml` katalogen och ändra den överordnade referensen, artefactId och name efter behov.
+1. Den här underkatalogen innehåller en Maven-modul som bygger zip-filen Dispatcher med plugin-programmet Maven Assembly. Börja med att skapa en `dispatcher` fil med det här innehållet i `pom.xml` katalogen och ändra den överordnade referensen, artefactId och name efter behov.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
