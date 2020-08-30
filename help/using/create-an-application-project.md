@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 76c1a8e4-d66f-4a3b-8c0c-b80c9e17700e
 translation-type: tm+mt
-source-git-commit: ea9c4836caba1221cae75c600f77fd542a71d52c
+source-git-commit: f281b919b0ffaf4ca20a241d056c132e08e95206
 workflow-type: tm+mt
-source-wordcount: '1741'
+source-wordcount: '1867'
 ht-degree: 5%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 5%
 
 När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services-kunder (eller lokala AEM-kunder som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
 
-För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM som utgångspunkt. Den här processen baseras på [**AEM projekttyp **](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
+För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM som utgångspunkt. Den här processen baseras på [**AEM projekttyp**](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
 
 
 Följ stegen nedan för att skapa ett AEM programprojekt i Cloud Manager:
@@ -266,6 +266,9 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
 
 ## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
 
+>[!NOTE]
+>Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras via den här mekanismen för närvarande inte körs via Cloud Managers Quality Gates. Därför bör det endast användas i sällsynta fall och för kod som inte är knuten till AEM. Du bör också distribuera Java-källorna samt hela projektets källkod tillsammans med binärfilen.
+
 Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. Server-ID:n som **inte** matchar något av dessa prefix, eller standard-ID:t `central` speglas aldrig av Cloud Manager. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil](/help/using/create-an-application-project.md#activating-maven-profiles-in-cloud-manager), även om det inte är absolut nödvändigt.
 
 Låt oss till exempel säga att databasen finns på https://repository.myco.com/maven2, att användarnamnet Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
@@ -331,6 +334,54 @@ Och referera slutligen till server-ID:t i `pom.xml` filen:
         </build>
     </profile>
 </profiles>
+```
+
+### Distribuera källor {#deploying-sources}
+
+Det är en god vana att driftsätta Java-källorna tillsammans med binärfilen i en Maven-databas.
+
+Konfigurera maven-source-plugin i ditt projekt:
+
+```xml
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>attach-sources</id>
+                    <goals>
+                        <goal>jar-no-fork</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+```
+
+### Distribuera projektkällor {#deploying-project-sources}
+
+Det är en god vana att driftsätta hela projektkällan tillsammans med binärfilen i en Maven-databas, vilket innebär att den exakta artefakten kan återskapas.
+
+Konfigurera maven-assembly-plugin i ditt projekt:
+
+```xml
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>project-assembly</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                    <configuration>
+                        <descriptorRefs>
+                            <descriptorRef>project</descriptorRef>
+                        </descriptorRefs>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
 ```
 
 ## Installera ytterligare systempaket {#installing-additional-system-packages}
