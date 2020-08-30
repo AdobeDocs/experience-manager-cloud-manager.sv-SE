@@ -9,7 +9,10 @@ topic-tags: release-notes
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 discoiquuid: b64bf9ab-27ed-4f33-adc8-d73d34094f1b
 translation-type: tm+mt
-source-git-commit: b78c29520414726ad2bbf86e5b7f8e65710c7f75
+source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+workflow-type: tm+mt
+source-wordcount: '350'
+ht-degree: 0%
 
 ---
 
@@ -24,7 +27,7 @@ I följande avsnitt beskrivs [!UICONTROL Cloud Manager] 2018.7.0-versionen som i
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2018.7.0 är 10 september 2018.
 
-## Nyheter {#what-s-new}
+## What&#39;s New {#what-s-new}
 
 * **Provisioning** - [!UICONTROL Cloud Manager] kan nu automatiskt skala upp produktionsmiljön i kundprogrammet genom att skala ut horisontellt med Dispatcher-/Publish-segmenten. Nytt i användargränssnittet är provisioneringsavsnittet i Programinställningar som visas om autoskalning är aktiverat i kundprogrammet. Mer information finns i [Konfigurera ditt program](setting-up-program.md) .
 
@@ -32,11 +35,11 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.7.0 är 10 september 2
 
 * **Kodkvalitetsanalys** - ny regel som identifierar felaktig API-användning. Mer information finns i [Anpassade regler](custom-code-quality-rules.md) för kodkvalitet.
 
-* **Prestandatestning** - När du visar prestandatestresultat finns det diagram för CPU-användning, disk-I/O-väntetid, sidfelsfrekvens, användning av diskbandbredd, användning av nätverksbandbredd, svarstid för toppsida och 95:e procentig sidsvarstid. Se avsnittet *Prestandatestning *på [sidan Testresultat](understand-your-test-results.md) .
+* **Prestandatestning** - När du visar prestandatestresultat finns det diagram för CPU-användning, disk-I/O-väntetid, sidfelsfrekvens, användning av diskbandbredd, användning av nätverksbandbredd, svarstid för toppsida och 95:e procentig sidsvarstid. Se avsnittet *Prestandatestning* på sidan [Testresultat](understand-your-test-results.md) .
 
-* **Prestandatestning** - När du visar prestandatestresultat kan du hämta listan över sidfel och långsamma begäranden. Se avsnittet *Prestandatestning *på [sidan Testresultat](understand-your-test-results.md) .
+* **Prestandatestning** - När du visar prestandatestresultat kan du hämta listan över sidfel och långsamma begäranden. Se avsnittet *Prestandatestning* på sidan [Testresultat](understand-your-test-results.md) .
 
-## Felkorrigeringar {#bug-fixes}
+## Bug Fixes {#bug-fixes}
 
 * Under vissa omständigheter misslyckades den interna systemsynkroniseringen felaktigt, vilket leder till inkonsekventa datavyer.
 * I vissa fall valdes inte den manuella utlösaren automatiskt vilket ledde till formulärvalideringsproblem.
