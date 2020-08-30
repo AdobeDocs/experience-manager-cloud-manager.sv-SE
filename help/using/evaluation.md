@@ -8,7 +8,7 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: 3bb435aae932b9446867c30b7dd6b0a8e0839ee2
+source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
 workflow-type: tm+mt
 source-wordcount: '289'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]** fas.
 Här kan du bedöma uppgraderingens komplexitet med mönsterdetektorn som du kan nå direkt från guiden. Efter det här steget har du tillgång till utvärderingsrapporten.
 
-I den genererade rapporten kan du kontrollera om Author-instansen kan uppgraderas genom att identifiera mönster som:
+I den genererade rapporten kan du kontrollera om Author-instansen har uppgraderat genom att identifiera mönster som:
 
 * Brott mot vissa regler och görs i områden som kommer att påverkas eller skrivas över av uppgraderingen.
 
-* Använd en AEM 6.x-funktion eller ett API som inte är bakåtkompatibelt med den nya AEM-filen och som kan brytas efter uppgraderingen.
+* Använd en AEM 6.x-funktion eller ett API som inte är bakåtkompatibelt på den nya AEM och som kan brytas efter uppgraderingen.
 
 Detta är en bedömning av den utvecklingsinsats som ingår i uppgraderingen till Adobe Experience Manager (AEM) 6.5.
 
