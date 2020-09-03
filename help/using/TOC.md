@@ -5,9 +5,9 @@ archetype: administrator
 user-guide-title: Hjälp om Experience Manager Cloud Manager
 user-guide-description: Learn to use Adobe Managed Services to self-manage Experience Manager in the cloud.
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: c1d07c95088a279376ef495001a5165c7e459642
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '218'
 ht-degree: 16%
 
 ---
@@ -31,7 +31,9 @@ ht-degree: 16%
 + Komma igång {#getting-started}
    + [Inloggning för första gången](first-time-login.md)
    + [Konfigurera ditt program](setting-up-program.md)
-   + [Skapa ett AEM](create-an-application-project.md)
+   + Create an AEM Application Project {#create-application-project}
+      + [Skapa ett AEM](create-an-application-project.md)
+      + [Använda guiden](using-the-wizard.md)
    + [Konfigurera dina Release-grenar](configure-your-release-branches.md)
    + [Hantera dina Dispatcher-konfigurationer](dispatcher-configurations.md)
 + Användning {#how-to-use}
@@ -52,7 +54,8 @@ ht-degree: 16%
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
-   + [Aktuell versionsinformation (2020.8.0)](release-notes-current.md)
+   + [Aktuell versionsinformation (2020.9.0)](release-notes-current.md)
+   + [Versionsinformation för 2020.8.0](release-notes-2020-8-0.md)
    + [Versionsinformation för 2020.7.0](release-notes-2020-7-0.md)
    + [Versionsinformation för 2020.6.0](release-notes-2020-6-0.md)
    + [Versionsinformation för 2020.5.0](release-notes-2020-5-0.md)
