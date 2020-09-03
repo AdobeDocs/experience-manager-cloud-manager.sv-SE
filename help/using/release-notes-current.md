@@ -1,45 +1,28 @@
 ---
-title: Versionsinformation för 2020.8.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2020.8.0
-description: Följ den här sidan för att få information om Cloud Manager version 2020.8.0
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.8.0
+title: Versionsinformation för 2020.9.0
+seo-title: Versionsinformation om AEM Cloud Manager för 2020.9.0
+description: Följ den här sidan för att få information om Cloud Manager version 2020.9.0
+seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.9.0
 translation-type: tm+mt
-source-git-commit: c2f5caf50f2e20c07807369aee7914c17fded4de
+source-git-commit: c1d07c95088a279376ef495001a5165c7e459642
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '99'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2020.8.0 {#release-notes-for}
+# Versionsinformation för 2020.9.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.8.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.9.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2020.8.0 är 6 augusti 2020.
+Releasedatum för [!UICONTROL Cloud Manager] version 2020.8.0 är 3 september 2020.
 
 ## What&#39;s New {#whats-new}
 
-Stöd finns nu för autentiseringsbundna privata Maven-databaser.
+* Byggprocessen har delats upp i tre separata Maven-kommandon.
+* Om Git-databasen inte kan klonas görs ett nytt försök upp till tre gånger.
+* Det finns nu en indikator på informationssidan om pipeline-körning när autentisering används under prestandatestning
 
-## Bug Fixes {#bug-fixes}
-
-* Vissa onödiga och oönskade SonarQube-plugin-program kördes som en del av kodkvalitetskontrollen.
-
-* På sidan för pipeline-körning var förgreningsnamnet felaktigt formaterat.
-
-* När du distribuerar till topologier med en enda publicering, en enda dispatcher och en kall skapare i vänteläge togs dispatchern felaktigt bort från belastningsutjämnaren.
-
-* I vissa fall kunde slutförda pipeline-körningar inte registreras som slutförda, vilket hindrade nya körningar av pipeline.
-
-* Körningar av rörledningar *fastnar* ibland på grund av interna kommunikationsproblem.
-
-* Verktygstipset på programkorten var inte konsekvent korrekt.
-
-* Det fanns ett färgmatchningsfel på **översiktssidan** .
-
-* Testning av webbplatsprestanda har nu stöd för valfri användning av autentisering.
-
-* Dispatcher-cacheminnen för författarinstanser rensas automatiskt när dispatcherkonfigurationer distribueras via Cloud Manager.
 
