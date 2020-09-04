@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 8888dd80-d908-464e-927d-779db1a832a4
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: 2ada697ca21acd0c73dbce2bce3e9481ac50272c
 workflow-type: tm+mt
 source-wordcount: '597'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Molnhanteraren kan distribuera webbserver- och Dispatcher-konfigurationsfiler under förutsättning att de lagras i **Git-databasen**, utöver AEM vanliga innehållspaket.
 
-För att utnyttja denna funktion bör Maven skapa en zip-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som genereras av Cloud Manager med den inbyggda [guiden](/help/using/create-an-application-project.md) har den korrekta Maven-projektstrukturen som skapas när projektet skapas. Detta är den rekommenderade vägen för nya Managed Services-kunder.
+För att utnyttja denna funktion bör Maven skapa en zip-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som genereras av Cloud Manager med den inbyggda [guiden](/help/using/using-the-wizard.md) har den korrekta Maven-projektstrukturen som skapas när projektet skapas. Detta är den rekommenderade vägen för nya Managed Services-kunder.
 
 När innehållet i katalogerna distribueras till en dispatcher **Instance** skrivs innehållet i katalogerna över i Dispatcher-instansen. Eftersom webbserver- och Dispatcher-konfigurationsfiler ofta kräver miljöspecifik information måste du, för att funktionen ska kunna användas på rätt sätt, först arbeta med dina Customer Success Engineers (CSE) för att ställa in dessa miljövariabler i `/etc/sysconfig/httpd`.
 
