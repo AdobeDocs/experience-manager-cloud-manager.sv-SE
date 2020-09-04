@@ -2,16 +2,16 @@
 title: Versionsinformation för 2018.8.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2018.8.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2018.8.0.
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2018.8.0.
+seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2018.8.0.
 uuid: e8aaba32-89b4-4bc5-b295-09b753252612
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 9222ac3b-525e-47c1-b481-ac9d22e3d559
 translation-type: tm+mt
-source-git-commit: cdf2c82192c2e9c375316ae6e28646594ba2a462
+source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '329'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 # Versionsinformation för 2018.8.0 {#release-notes-for}
 
-I version [!UICONTROL Cloud Manager] 2018.8.0 finns stöd för att automatiskt aktivera CI/CD-flödet när Git implementeras och en ny guide för att skapa programprojekt i Git baserat på AEM Project Archetype.
+I version [!UICONTROL Cloud Manager] 2018.8.0 finns stöd för att automatiskt aktivera CI/CD-flödet när Git implementeras och en ny guide för att skapa programprojekt i Git baserat på AEM Project Archettype.
 
 ## Releasedatum {#release-date}
 
@@ -27,7 +27,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018
 
 ## What&#39;s New {#what-s-new}
 
-* **Programinstallation** - Ny guide för att skapa ett programprojekt i Git med hjälp av AEM Project Archetype Mer information finns i [Skapa ett AEM Application Project](/help/using/create-an-application-project.md) .
+* **Programinstallation** - ny guide för att skapa ett programprojekt i Git med hjälp av AEM Project Archetype
 
 * **CI/CD Pipeline** - Följande ändringar läggs till i CI/CD Pipeline. Mer information finns i [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
 
