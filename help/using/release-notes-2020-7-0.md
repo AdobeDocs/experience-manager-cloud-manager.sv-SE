@@ -4,7 +4,7 @@ seo-title: Versionsinformation om AEM Cloud Manager för 2020.7.0
 description: Följ den här sidan för att få information om Cloud Manager version 2020.7.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.7.0
 translation-type: tm+mt
-source-git-commit: 3be958aa21d5423ddf371c286825d01afd554c4b
+source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.7.0 är 9 juli 2020.
 * Molnhanterarens byggbehållare har nu stöd för både Java 8 och Java 11.
 
 * Molnhanterarens pipelines har nu stöd för kundspecifika variabler och hemligheter.
-Mer information finns i [Pipeline-variabler](/help/using/create-an-application-project.md#pipeline-variables) .
+Mer information finns i [Pipeline-variabler](/help/using/build-environment-details.md#pipeline-variables) .
 
 ## Bug Fixes {#bug-fixes}
 
