@@ -10,7 +10,7 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: c2f5caf50f2e20c07807369aee7914c17fded4de
+source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
 workflow-type: tm+mt
 source-wordcount: '1751'
 ht-degree: 0%
@@ -82,7 +82,7 @@ Välj din Git-gren och klicka på **Nästa**.
    * **På Git Changes** - startar CI/CD-pipeline när implementeringar har lagts till i den konfigurerade Git-grenen. Även om du väljer det här alternativet kan du alltid starta pipelinen manuellt.
    * **Manuell** - med användargränssnittet startar du pipelinen manuellt.
 
-   Under pipeline-konfigurationen eller redigeringen kan Deployment Manager definiera pipeline-beteendet när ett viktigt fel inträffar i någon av kvalitetsportarna, till exempel kodkvalitet, säkerhetstestning och prestandatestning.
+   Under pipeline-konfigurationen eller -redigeringen kan Deployment Manager välja att definiera pipeline-beteendet när ett viktigt fel inträffar i någon av kvalitetsportarna, till exempel kodkvalitet, säkerhetstestning och prestandatestning.
 
    Detta är användbart för kunder som vill ha mer automatiserade processer. De tillgängliga alternativen är:
 
@@ -204,7 +204,7 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
 AMS-kunder med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platsprestandatestning.
 
-Användarnamnet och lösenordet anges som [rörliga variabler](/help/using/create-an-application-project.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD`.
+Användarnamnet och lösenordet anges som [rörliga variabler](/help/using/build-environment-details.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD`.
 
 Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
 
@@ -218,7 +218,7 @@ Förutom den huvudsakliga rörledningen som distribuerar till scenen och produkt
 
 ## Videosjälvstudiekurs {#video-tutorial-two}
 
-### Cloud Manager - endast icke-produktion- och kodkvalitet {#non-prod-video}
+### Cloud Manager - endast icke-produktion- och kodkvalitet - pipelines {#non-prod-video}
 
 Rörledningar för komprimerad/cd-produktion delas upp i två kategorier, nämligen pipelines för kodkvalitet och distributionsrörledningar. Kodkvalitetsledningarna genererar all kod från en Git-gren och utvärderas mot Cloud Managers skanning av kodkvalitet.
 
