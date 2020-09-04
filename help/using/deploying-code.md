@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '952'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) �
    Följande steg ingår i **mellanlagringsdistributionen**:
 
    * Validering: Detta steg säkerställer att pipeline är konfigurerad att använda de tillgängliga resurserna, till exempel att den konfigurerade grenen finns, och att miljöerna är tillgängliga.
-   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Skapa ett AEM-programprojekt](create-an-application-project.md) .
+   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Förstå byggmiljön](/help/using/build-environment-details.md) .
    * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
    * Distribuera till scenen
 
