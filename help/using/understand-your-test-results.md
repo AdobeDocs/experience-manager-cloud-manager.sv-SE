@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 translation-type: tm+mt
-source-git-commit: d38b6da61c552a3e9ad03dac49a64553f0cb00b4
+source-git-commit: 39e6af753cdd43da96746c7609a8f502b3ac9e77
 workflow-type: tm+mt
 source-wordcount: '1544'
 ht-degree: 2%
@@ -162,7 +162,7 @@ I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett system m
 | Sidvyer per minut | Viktigt | &lt; KPI på programnivå |
 | Användning av diskbandbredd | Viktigt | >= 90% |
 | Utnyttjande av nätverksbandbredd | Viktigt | >= 90% |
-| Begäranden per minut | Information | &lt; 6000 |
+| Begäranden per minut | Information | >= 6000 |
 
 ### Resultatdiagram för prestandatestning {#performance-testing-results-graphs}
 
