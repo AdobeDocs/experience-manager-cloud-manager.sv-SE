@@ -1,28 +1,28 @@
 ---
-title: Versionsinformation för 2020.9.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2020.9.0
-description: Följ den här sidan för att få information om Cloud Manager version 2020.9.0
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.9.0
+title: Versionsinformation för 2020.10.0
+seo-title: Versionsinformation om AEM Cloud Manager för 2020.10.0
+description: Följ den här sidan för att få information om Cloud Manager version 2020.10.0
+seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.10.0
 translation-type: tm+mt
-source-git-commit: 92249cbb7134082fcc66455c90dda8bdcb9dbf1d
+source-git-commit: aad2da58e5934999884553619dd97d42cc725d88
 workflow-type: tm+mt
-source-wordcount: '99'
+source-wordcount: '102'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2020.9.0 {#release-notes-for}
+# Versionsinformation för 2020.10.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.9.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.10.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2020.9.0 är 3 september 2020.
+Releasedatum för [!UICONTROL Cloud Manager] version 2020.10.0 är 1 oktober 2020.
 
-## What&#39;s New {#whats-new}
+## Bug Fixes {#bug-fixes}
 
-* Byggprocessen har delats upp i tre separata Maven-kommandon.
-* Om Git-databasen inte kan klonas görs ett nytt försök upp till tre gånger.
-* Nu finns det en indikator på informationssidan för pipeline-körning när autentisering används under prestandatestning.
+* Crawlningen som användes för prestandatestning bedömde felaktigt vissa resurstyper som giltiga webblänkar.
 
+* I vissa situationer hanterades inte slutförandesteget i prestandatestningen korrekt, vilket ledde till långa körningssteg.
 
+* När invalideringen av dispatchercachen konfigurerades för produktionsdistributioner kördes ibland ogiltigförklaringen två gånger.
