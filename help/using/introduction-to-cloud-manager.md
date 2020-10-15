@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: 4838de3d6c78884333d8088eb38f388fbcd0e707
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '680'
 ht-degree: 4%
 
 ---
@@ -70,4 +70,4 @@ Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Dist
 
 Under en autoskalningshändelse utlöser automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskalningshändelsen och lägger till ytterligare kapacitet online på några minuter. [!UICONTROL Cloud Manager] Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/Publish-noder som körs.
 
-Funktionen för autoskalning gäller bara skiktet Dispatcher/Publish och kommer alltid att utföras med en vågrät skalförändringsmetod, med minst ett ytterligare segment i paret Dispatcher/Publish och upp till högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer).
+Funktionen för autoskalning gäller bara skiktet Dispatcher/Publish och kommer alltid att utföras med en vågrät skalförändringsmetod, med minst ett ytterligare segment i paret Dispatcher/Publish och upp till högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer). Kunder som vill ta reda på om Automatisk skalning är lämplig för respektive program måste kontakta sin CSE- eller Adobe-representant.
