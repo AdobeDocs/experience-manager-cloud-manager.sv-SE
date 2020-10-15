@@ -9,7 +9,10 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 2221d1d5-dbc2-4175-8371-60344f932a82
 translation-type: tm+mt
-source-git-commit: 16893b8bcd2b2d681a14bb6be3786e358e1952fb
+source-git-commit: 2005b7e7689d3bc0656f92ecdbe368519f0d52a9
+workflow-type: tm+mt
+source-wordcount: '247'
+ht-degree: 6%
 
 ---
 
@@ -19,20 +22,19 @@ source-git-commit: 16893b8bcd2b2d681a14bb6be3786e358e1952fb
 När du har konfigurerat de allmänna konfigurationerna för [!UICONTROL Cloud Manager]är du redo att använda användargränssnittet för [!UICONTROL Cloud Manager].
 
 >[!NOTE]
->
 >Beroende på vilka roller som har tilldelats i [!UICONTROL Cloud Manager] och programmets status visas olika skärmar när du använder [!UICONTROL Cloud Manager] användargränssnittet.
 
 ## Videosjälvstudiekurs {#video-tutorial-one}
 
 ### Cloud Manager-program {#programs-video}
 
-Följande video ger en översikt till Cloud Manager-program som representerar uppsättningar av AEM-miljöer som stöder logiska uppsättningar av affärsinitiativ, som vanligtvis motsvarar ett köpt serviceavtal (SLA).
+Följande video ger en översikt till Cloud Manager-program som representerar uppsättningar AEM miljöer som stöder logiska uppsättningar av affärsinitiativ, som vanligtvis motsvarar ett köpt serviceavtal (SLA).
 
 >[!VIDEO](https://video.tv.adobe.com/v/26313/)
 
 ## Logga in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in på **Adobe[!UICONTROL Experience Cloud]**så ser du listan över** program **.
+1. Logga in på **Adobe[!UICONTROL Experience Cloud]** så ser du listan över **program**.
 
    ![](assets/screen_shot_2018-06-04at120643pm.png)
 
