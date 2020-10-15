@@ -9,7 +9,7 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: 2005b7e7689d3bc0656f92ecdbe368519f0d52a9
+source-git-commit: d3f17b1fd4fcc1c75836c9dd67d54e22422db120
 workflow-type: tm+mt
 source-wordcount: '680'
 ht-degree: 4%
@@ -73,4 +73,4 @@ Under en autoskalningshändelse utlöser automatiskt provisioneringsprocessen f�
 Funktionen för autoskalning gäller bara skiktet Dispatcher/Publish och kommer alltid att utföras med en vågrät skalförändringsmetod, med minst ett ytterligare segment i paret Dispatcher/Publish och upp till högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer).
 
 >[!NOTE]
->Kunder som vill ta reda på om Automatisk skalning är lämplig för respektive program måste kontakta sin CSE- eller Adobe-representant.
+>Kunder som vill ta reda på om autoskalning är lämpligt för respektive program måste kontakta sin CSE- eller Adobe-representant.
