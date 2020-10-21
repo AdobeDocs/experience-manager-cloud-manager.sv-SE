@@ -1,9 +1,16 @@
 ---
-source-git-commit: a80615b7ed7dcf8c1743f7f12ecf0fd8c76d4cc5
+source-git-commit: 4979307a5e7e9223775b25584e17cde68b76a711
+workflow-type: tm+mt
 translation-type: tm+mt
+source-wordcount: '157'
+ht-degree: 0%
 
 ---
 # Dokumentation för Adobe Experience Manager Cloud Manager
+
+| EXL-PR | EXL | Förhandsgranska | Aktivera | Publicerad | Hjälp |
+|--- |--- |--- |--- |--- |--- |
+| [![Byggstatus](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-cloud-manager.en_pr-exl/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-cloud-manager.en_pr-exl/lastBuild/) | [![Byggstatus](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-cloud-manager.en_exl/lastBuild/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-cloud-manager.en_exl/lastBuild/lastBuild) | [Förhandsgranska URL](https://experienceleague.corp.adobe.com/docs/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html?lang=en) | [activate-exl](https://docs.ci.corp.adobe.com/job/activate-exl/build/) | [Live-URL](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html?lang=en) | [Redigeringshandbok](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en) |
 
 Det här är databasen för Adobe Experience Manager Cloud Manager-dokumentation.
 
