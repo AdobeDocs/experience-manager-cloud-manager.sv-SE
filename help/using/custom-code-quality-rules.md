@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
 translation-type: tm+mt
-source-git-commit: a8cd1ac2448b9f875c1d925c62e7fe42c8ceec2a
+source-git-commit: 71a760997ec2a0873a7f39d206086a8b4fd6854e
 workflow-type: tm+mt
-source-wordcount: '2296'
+source-wordcount: '2314'
 ht-degree: 6%
 
 ---
@@ -561,7 +561,7 @@ public void doThis(Resource resource) {
 
 **Nyckel**: CQRules:AMSCORE-554
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
@@ -575,7 +575,7 @@ Läs mer om hur [Sling-jobb hanteras i klustermiljöer i](https://sling.apache.o
 
 **Nyckel**: AMSCORE-553
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
@@ -689,7 +689,7 @@ På liknande sätt som *Paket bör inte innehålla duplicerade OSGi-konfiguratio
 
 **Nyckel**: KlassisktUIAuthoringMode
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
@@ -701,7 +701,7 @@ OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` defin
 
 **Nyckel**: ComponentWithOnlyClassicUIDialog
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
@@ -719,7 +719,7 @@ Dokumentationen för AEM Moderniseringsverktyg innehåller dokumentation och ver
 
 **Nyckel**: ImmutableMutableMixedPackage
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
@@ -733,7 +733,7 @@ Refer to [AEM Project Structure](https://docs.adobe.com/content/help/en/experien
 
 **Nyckel**: ReverseReplication
 
-**Typ**: Code Smell
+**Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
 
 **Allvarlighetsgrad**: Mindre
 
