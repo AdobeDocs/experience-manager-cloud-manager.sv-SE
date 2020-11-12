@@ -10,9 +10,9 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
+source-git-commit: 30d782f5a095b1b07ec4f2039def9ba30a559325
 workflow-type: tm+mt
-source-wordcount: '1751'
+source-wordcount: '1776'
 ht-degree: 0%
 
 ---
@@ -164,7 +164,7 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    **AEM Sites:**
 
-   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare som standard) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå.
+   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare som standard) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå. Dessa begäranden kommer från en uppsättning kända, dedikerade adresser. Adressintervallen kan hämtas från din Customer Success Engineer eller Adobe representant.
 
    Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla scenmiljön med en uppsättning *dirigerade* URL:er som konfigurerats av kundens Success Engineer. Från dessa URL:er granskas HTML-koden för varje sida och länkarna gås igenom på bredden först. Denna crawlningsprocess är begränsad till högst 5 000 sidor. Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
 
