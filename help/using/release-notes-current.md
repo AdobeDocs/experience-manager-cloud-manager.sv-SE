@@ -1,28 +1,36 @@
 ---
-title: Versionsinformation för 2020.10.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2020.10.0
-description: Följ den här sidan för att få information om Cloud Manager version 2020.10.0
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.10.0
+title: Versionsinformation för 2020.11.0
+seo-title: Versionsinformation om AEM Cloud Manager för 2020.11.0
+description: Följ den här sidan för att få information om Cloud Manager version 2020.11.0
+seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.11.0
 translation-type: tm+mt
-source-git-commit: aad2da58e5934999884553619dd97d42cc725d88
+source-git-commit: 30d782f5a095b1b07ec4f2039def9ba30a559325
 workflow-type: tm+mt
-source-wordcount: '102'
-ht-degree: 0%
+source-wordcount: '160'
+ht-degree: 1%
 
 ---
 
-# Versionsinformation för 2020.10.0 {#release-notes-for}
+# Versionsinformation för 2020.11.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.10.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2020.11.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2020.10.0 är 1 oktober 2020.
+Releasedatum för [!UICONTROL Cloud Manager] version 2020.11.0 är 12 november 2020.
+
+## Nyheter {#whats-new}
+
+* Fliken **Lär dig** i Cloud Manager uppdateras med nya bilder i användargränssnittet.
 
 ## Bug Fixes {#bug-fixes}
 
-* Crawlningen som användes för prestandatestning bedömde felaktigt vissa resurstyper som giltiga webblänkar.
+* Vissa kundrelaterade distributionsfel kommer nu att upptäckas explicit i distributionsloggarna.
 
-* I vissa situationer hanterades inte slutförandesteget i prestandatestningen korrekt, vilket ledde till långa körningssteg.
+* Inläsningen av beroenden som gjorts före körningen av bygget krävde hämtning av ett Maven-plugin-program.
 
-* När invalideringen av dispatchercachen konfigurerades för produktionsdistributioner kördes ibland ogiltigförklaringen två gånger.
+* Länken från molnhanterarens sidfot för att välja ett språk navigerar nu till rätt plats.
+
+* Ibland startar inte SonarQube-processen under kodskanningen. Detta identifieras nu automatiskt och ett omstartsförsök görs.
+
+* Under processen för crawlning av webbplatser som används i prestandatestning kommer begäranden som går ut under de tre första djupgenomgången automatiskt att provas igen.
