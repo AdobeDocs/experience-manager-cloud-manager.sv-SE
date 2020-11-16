@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: d3f17b1fd4fcc1c75836c9dd67d54e22422db120
+source-git-commit: 213d1b2ee52496cc8cf6bc699488d9da9f7b9946
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '682'
 ht-degree: 4%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 4%
 
 ## Introduktion {#introduction}
 
-[!UICONTROL Cloud Manager]som ingår i Adobes hanterade tjänster gör det möjligt för organisationer att självhantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet.
+[!UICONTROL Cloud Manager], som ingår i Adobe Experience Manager (AEM) i Cloud, gör det möjligt för organisationer att självhantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet.
 
 Med hjälp av kundportalen för [!UICONTROL Cloud Manager] självbetjäning kan **organisationer** utföra/utnyttja följande:
 
