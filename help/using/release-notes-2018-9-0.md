@@ -12,38 +12,38 @@ translation-type: tm+mt
 source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
 workflow-type: tm+mt
 source-wordcount: '275'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation för 2018.9.0 {#release-notes-for}
 
-I version [!UICONTROL Cloud Manager] 2018.9.0 finns stöd för ett I/O-baserat Adobe-API, inklusive händelser, för integrering av [!UICONTROL Cloud Manager]CI/CD-pipeline med andra system. Det börjar också skriva om UI-lagret i React.
+[!UICONTROL Cloud Manager] 2018.9.0-versionen har stöd för ett Adobe I/O-baserat API, inklusive händelser, för integrering av CI/CD-flödet för [!UICONTROL Cloud Manager] med andra system. Det börjar också skriva om UI-lagret i React.
 
 ## Releasedatum {#release-date}
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2018.9.0 är 1 november 2018.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
-* **CI/CD Pipeline** - Nytt API- och Event-system för integrering av [!UICONTROL Cloud Manager]CI/CD-pipeline med andra system. Mer information finns i API-dokumentationen (https://www.adobe.io/apis/experiencecloud/cloud-manager/docs.html). [!UICONTROL Cloud Manager]
+* **CI/CD Pipeline**  - Nytt API och Event-system för integrering av  [!UICONTROL Cloud Manager]CI/CD-pipeline med andra system. Mer information finns i [!UICONTROL Cloud Manager] API-dokumentation (https://www.adobe.io/apis/experiencecloud/cloud-manager/docs.html).
 
-* **Gränssnitt** - Introduktion till ett nytt användargränssnittslager som är mer responsivt.
+* **Användargränssnitt**  - Introduktion till ett nytt användargränssnittslager som är mer responsivt.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
-* Under [!UICONTROL Cloud Manager] 2018.8.0 listades varaktigheterna för aktivitetssidan i minuter och timmar, men den informationen visades inte i tabellrubriken.
+* I [!UICONTROL Cloud Manager] 2018.8.0 listades varaktigheterna för aktivitetssidan i minuter och timmar, men den informationen visades inte i tabellhuvudet.
 * I enstaka fall kunde man inte starta den nya programprojektguiden.
 * Knappetiketten i den nya programprojektguiden var vilseledande.
 * I vissa fall kan du klicka på knappen Detaljer på sidan Aktivitet för att dirigera om sidan Översikt.
 * Vissa sällsynta och oväntade omständigheter har lett till att ett kort saknas på sidan Översikt.
 * Ikonen Resurser visades på sidan Programlista för alla kunder.
-* När det finns serverdelsfel verkar ibland en pipeline-körning finnas kvar i *steget Validera* .
+* När fel uppstod i bakomliggande led verkar ibland en pipeline-körning finnas kvar i *steget Validera*.
 * Under vissa omständigheter var längden på programbeskrivningen felaktig.
 
 ## Kända fel {#known-issues}
 
 * Förgreningar som har skapats med programprojektguiden får inte innehålla streck.
-* Sidlisten Adobe [!UICONTROL Experience Cloud] Notification kanske inte läser in meddelanden på ett konsekvent sätt. Meddelanden visas dock i Adobe [!UICONTROL Experience Cloud] och om de är konfigurerade skickas de fortfarande via e-post.
+* Meddelandesidlisten i Adobe [!UICONTROL Experience Cloud] kanske inte läser in meddelanden på ett konsekvent sätt. Meddelanden visas emellertid i Adobe [!UICONTROL Experience Cloud] och, om de är konfigurerade, skickas de fortfarande via e-post.
 
