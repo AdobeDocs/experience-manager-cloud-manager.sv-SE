@@ -29,7 +29,7 @@ Guiden innehåller fem faser som guidar användaren under en AEM produktuppdater
 * **Slutförande**
 
 
-## Använda guiden Produktuppdatering {#using-product-update-wizard}
+## Använder produktuppdateringsguiden {#using-product-update-wizard}
 
 >[!NOTE]
 >
@@ -37,8 +37,8 @@ Guiden innehåller fem faser som guidar användaren under en AEM produktuppdater
 
 1. Du får ett pulsmeddelande via Cloud Manager som informerar dig om att AEM 6.5 är tillgänglig för ditt program.
 
-1. Ett **[!UICONTROL AEM 6.5 Update]** kort visas på översiktsskärmen i [!UICONTROL Cloud Manager]. Med det här kortet kan du spåra vilken fas av uppdateringsprocessen du befinner dig i och du får information om vilket steg som ska tas härnäst. Välj **[!UICONTROL Start Update]** att starta guiden.
+1. Ett **[!UICONTROL AEM 6.5 Update]**-kort visas på översiktsskärmen för [!UICONTROL Cloud Manager]. Med det här kortet kan du spåra vilken fas av uppdateringsprocessen du befinner dig i och du får information om vilket steg som ska tas härnäst. Välj **[!UICONTROL Start Update]** för att starta guiden.
 
    ![](assets/Start-Update.png)
 
-   Guiden visar nu den första fasen av **[!UICONTROL AEM 6.5 Update]** processen enligt [utvärderingsfasen](evaluation.md).
+   Guiden visar nu den första fasen av **[!UICONTROL AEM 6.5 Update]**-processen som den visas i [utvärderingsfasen](evaluation.md).
