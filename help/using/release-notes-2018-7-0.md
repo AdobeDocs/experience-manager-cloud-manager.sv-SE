@@ -12,34 +12,34 @@ translation-type: tm+mt
 source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
 workflow-type: tm+mt
 source-wordcount: '350'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation för 2018.7.0 {#release-notes-for}
 
-I följande avsnitt beskrivs [!UICONTROL Cloud Manager] 2018.7.0-versionen som innehåller *funktionen för autoskalning* .
+I följande avsnitt beskrivs [!UICONTROL Cloud Manager] 2018.7.0-versionen som innehåller *funktionen autoskalning*.
 
-**Automatisk skalning** aktiveras via en horisontell skalning av `Dispatcher/Publish` segment i produktionsmiljön för en plötslig ökning av belastning, volym, åtkomst och andra definierade övervakade mätvärden.
+**Automatisk** skalning aktiveras via horisontell skalning av  `Dispatcher/Publish` segment i produktionsmiljön för att ge stöd åt en plötslig ökning av belastning, volym, åtkomst och andra definierade övervakade mätvärden.
 
 ## Releasedatum {#release-date}
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2018.7.0 är 10 september 2018.
 
-## What&#39;s New {#what-s-new}
+## Nyheter {#what-s-new}
 
-* **Provisioning** - [!UICONTROL Cloud Manager] kan nu automatiskt skala upp produktionsmiljön i kundprogrammet genom att skala ut horisontellt med Dispatcher-/Publish-segmenten. Nytt i användargränssnittet är provisioneringsavsnittet i Programinställningar som visas om autoskalning är aktiverat i kundprogrammet. Mer information finns i [Konfigurera ditt program](setting-up-program.md) .
+* **Provisioning**  -  [!UICONTROL Cloud Manager] kan nu automatiskt skala upp produktionsmiljön i kundprogrammet genom att skala ut horisontellt med segmenten Dispatcher/Publish. Nytt i användargränssnittet är provisioneringsavsnittet i Programinställningar som visas om autoskalning är aktiverat i kundprogrammet. Mer information finns i [Konfigurera ditt program](setting-up-program.md).
 
-* **Miljö** - Det går nu att se en detaljerad översikt över produktions- och scenmiljöer tillsammans med storlek, lagring, region och status för de noder som är kopplade till varje miljö. Mer information finns i [Hantera dina miljöer](manage-your-environment.md) .
+* **Miljö**  - Det går nu att se en detaljerad översikt över produktions- och scenmiljöer tillsammans med storlek, lagring, region och status för de noder som är kopplade till varje miljö. Mer information finns i [Hantera dina miljöer](manage-your-environment.md).
 
-* **Kodkvalitetsanalys** - ny regel som identifierar felaktig API-användning. Mer information finns i [Anpassade regler](custom-code-quality-rules.md) för kodkvalitet.
+* **Kodkvalitetsanalys**  - Ny regel som identifierar felaktig API-användning. Mer information finns i [Anpassade regler för kodkvalitet](custom-code-quality-rules.md).
 
-* **Prestandatestning** - När du visar prestandatestresultat finns det diagram för CPU-användning, disk-I/O-väntetid, sidfelsfrekvens, användning av diskbandbredd, användning av nätverksbandbredd, svarstid för toppsida och 95:e procentig sidsvarstid. Se avsnittet *Prestandatestning* på sidan [Testresultat](understand-your-test-results.md) .
+* **Prestandatestning**  - När du visar prestandatestresultat finns det diagram för CPU-användning, disk-I/O-väntetid, sidfelsfrekvens, användning av diskbandbredd, användning av nätverksbandbredd, svarstid för toppsida och 95:e procentig sidsvarstid. Se avsnittet *Prestandatestning* på [Förstå sidan Testresultat](understand-your-test-results.md).
 
-* **Prestandatestning** - När du visar prestandatestresultat kan du hämta listan över sidfel och långsamma begäranden. Se avsnittet *Prestandatestning* på sidan [Testresultat](understand-your-test-results.md) .
+* **Prestandatestning**  - När du visar prestandatestresultat kan du hämta en lista över sidfel och långsamma begäranden. Se avsnittet *Prestandatestning* på [Förstå sidan Testresultat](understand-your-test-results.md).
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Under vissa omständigheter misslyckades den interna systemsynkroniseringen felaktigt, vilket leder till inkonsekventa datavyer.
 * I vissa fall valdes inte den manuella utlösaren automatiskt vilket ledde till formulärvalideringsproblem.
@@ -48,5 +48,5 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.7.0 är 10 september 2
 ## Kända fel {#known-issues}
 
 * Även om kunderna kan välja en utlösare för implementering, kanske inte pipelinen faktiskt börjar baserat på nya implementeringar.
-* Det går inte att läsa in meddelanden konsekvent med hjälp av sidofältet för meddelanden. [!UICONTROL Experience Cloud] Meddelanden visas dock i [!UICONTROL Experience Cloud] och, om de är konfigurerade, skickas de fortfarande via e-post.
+* Sidlisten för [!UICONTROL Experience Cloud]-meddelanden kan inte läsa in meddelanden konsekvent. Meddelanden visas emellertid i [!UICONTROL Experience Cloud] och, om de är konfigurerade, skickas de fortfarande via e-post.
 
