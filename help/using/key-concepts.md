@@ -17,32 +17,32 @@ ht-degree: 0%
 ---
 
 
-# Viktiga begrepp {#key-concepts}
+# Nyckelbegrepp {#key-concepts}
 
 Den här sidan beskriver en del grundläggande terminologi som används i Cloud Manager. Vi rekommenderar att du läser den här sidan innan du granskar resten av Cloud Manager-dokumentationen.
 
-**Tillämpning** Den uppsättning anpassningar och konfigurationer som en kund skapar för att anpassa den underliggande lösningen efter deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera artefakter.
+**** ProgramDen uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande lösningen efter deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera artefakter.
 
 Till exempel *We.Retail*.
 
 **Artefakt** En driftsättningsbar enhet. Resultatet av någon byggprocess som omvandlar källkoden till en enda enhet. En ZIP-fil som innehåller källkoden.
 
-**Artefaktdatabas** En lagringsplats där kundspecifika artefakter sparas och skyddas.
+**Artefaktarkiv** En lagringsplats där kundspecifika artefakter sparas och skyddas.
 
-**Miljö** Ett enda kluster med virtuella datorer i ett program. För AEM består detta av en författarinstans (eventuellt med ytterligare en författarinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera dispatcherinstanser och en belastningsutjämnare.
+**Miljö** Ett kluster med virtuella datorer i ett program. För AEM består detta av en författarinstans (eventuellt med ytterligare en författarinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera dispatcherinstanser och en belastningsutjämnare.
 
-**Git-databas** En plats där kundspecifik källkod lagras, tillgänglig via Git-protokollet.
+**Git** RepositoryEn plats där kundspecifik källkod lagras, tillgänglig via Git-protokollet.
 
-**Instans** En specifik virtuell server som kör AEM. Förekomster representerar en enda logisk enhet från ett distributionsperspektiv.
+**** InstanceEn specifik virtuell server som kör AEM. Förekomster representerar en enda logisk enhet från ett distributionsperspektiv.
 
-**Konstruktionen Organization** Adobe som representerar en Enterprise-kund. Ett företag kan ha flera organisationer beroende på hur de ursprungligen etablerades i Adobe Identity Management System.
+**** OrganisationAdobe-konstruktioner som representerar en Enterprise-kund. Ett företag kan ha flera organisationer beroende på hur de ursprungligen etablerades i Adobe Identity Management System.
 
-**Pipeline** En uppsättning distributionssteg som körs i sekvens.
+**PipelineEn** uppsättning distributionssteg som körs i följd.
 
-**Produkt** En specifik uppsättning funktioner i en lösning som licensierats av en organisation. Olika program inom en organisation kan ha rätt till olika produktuppsättningar. Exempel: Sites, Assets of Forms.
+**** ProduktEn specifik uppsättning funktioner i en lösning som licensierats av en organisation. Olika program inom en organisation kan ha rätt till olika produktuppsättningar. Exempel: Sites, Assets of Forms.
 
-**Program** En uppsättning miljöer som stöder en logisk gruppering av kundinitiativ, som vanligtvis motsvarar ett inköpt serviceavtal (SLA). Varje program har exakt en produktionsmiljö och kan ha många icke-produktionsmiljöer.
+**Program** En uppsättning miljöer som stöder en logisk gruppering av kundinitiativ, som vanligtvis motsvarar ett köpt serviceavtal (SLA). Varje program har exakt en produktionsmiljö och kan ha många icke-produktionsmiljöer.
 
-**Lösning** En av Adobe:s [!UICONTROL Experience Cloud] lösningar. Exempel: Adobe Experience Manager, Adobe Target eller Adobe Analytics.
+**** SolutionEn av Adobe:s  [!UICONTROL Experience Cloud] lösningar. Exempel: Adobe Experience Manager, Adobe Target eller Adobe Analytics.
 
-**Steg** En konfigurerad instruktionsuppsättning som utför en viss arbetsenhet, byggstenar för en pipeline.
+**** StegEn konfigurerad instruktionsuppsättning som utför en viss arbetsenhet, byggstenar för en pipeline.
