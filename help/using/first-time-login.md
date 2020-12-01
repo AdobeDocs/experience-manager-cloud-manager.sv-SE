@@ -17,12 +17,12 @@ ht-degree: 6%
 ---
 
 
-# Inloggning för första gången {#first-time-login}
+# Första gången du loggar in {#first-time-login}
 
-När du har konfigurerat de allmänna konfigurationerna för [!UICONTROL Cloud Manager]är du redo att använda användargränssnittet för [!UICONTROL Cloud Manager].
+När du har konfigurerat de allmänna konfigurationerna för [!UICONTROL Cloud Manager] är du redo att använda användargränssnittet (UI) för [!UICONTROL Cloud Manager].
 
 >[!NOTE]
->Beroende på vilka roller som har tilldelats i [!UICONTROL Cloud Manager] och programmets status visas olika skärmar när du använder [!UICONTROL Cloud Manager] användargränssnittet.
+>Beroende på vilka roller som har tilldelats i [!UICONTROL Cloud Manager] och programmets status visas olika skärmar när du använder användargränssnittet för [!UICONTROL Cloud Manager].
 
 ## Videosjälvstudiekurs {#video-tutorial-one}
 
@@ -32,17 +32,17 @@ Följande video ger en översikt till Cloud Manager-program som representerar up
 
 >[!VIDEO](https://video.tv.adobe.com/v/26313/)
 
-## Logga in för första gången {#logging-in-for-the-first-time}
+## Loggar in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in på **Adobe[!UICONTROL Experience Cloud]** så ser du listan över **program**.
+1. Logga in på **Adobe[!UICONTROL Experience Cloud]** så ser du listan **Program**.
 
    ![](assets/screen_shot_2018-06-04at120643pm.png)
 
-1. Markera programmet (till exempel **We.Retail Global**) och klicka på den övre vänstra ikonen för att öppna [!UICONTROL Cloud Manager].
+1. Markera programmet (till exempel **We.Retail Global**) och klicka på ikonen längst upp till vänster för att öppna [!UICONTROL Cloud Manager].
 
    ![](assets/first-timea1.png)
 
-1. Kontrollpanelen för [!UICONTROL Cloud Manager] visning.
+1. Kontrollpanelen för [!UICONTROL Cloud Manager] visas.
 
    ![](assets/FirstLogin1.png)
 
@@ -54,7 +54,7 @@ Följande video ger en översikt till Cloud Manager-program som representerar up
 
 ## Videosjälvstudiekurs {#video-tutorial-two}
 
-### Fliken Aktivitet för Cloud Manager {#activity-video}
+### Fliken Aktivitet i molnhanteraren {#activity-video}
 
 Cloud Manager ger en samlad vy över en aktivitet i ett program, med en lista över alla CI/CD Pipeline-körningar, både produktion och icke-produktion, som ger insyn i den tidigare och nuvarande aktiviteten och alla aktiviteters detaljer kan granskas.
 
