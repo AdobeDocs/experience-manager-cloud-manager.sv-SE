@@ -2,16 +2,19 @@
 title: Versionsinformation för 2019.5.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2019.5.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2019.5.0.
-seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2019.5.0.
+seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2019.5.0.
 translation-type: tm+mt
 source-git-commit: 75563d3f4b2a27d943c052993c97d830338ead9c
+workflow-type: tm+mt
+source-wordcount: '115'
+ht-degree: 0%
 
 ---
 
 
 # Versionsinformation för 2019.5.0 {#release-notes-for}
 
-Versionen [!UICONTROL Cloud Manager] 2019.5.0 innehåller inga betydande funktionsändringar. Mer information finns i avsnitten nedan.
+[!UICONTROL Cloud Manager] 2019.5.0-versionen innehåller inga betydande funktionsändringar. Mer information finns i avsnitten nedan.
 
 ## Releasedatum {#release-date}
 
