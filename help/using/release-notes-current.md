@@ -23,7 +23,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.11.0 är 12 november 2
 
 * Fliken **Lär dig** i Cloud Manager uppdateras med nya bilder i användargränssnittet.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Vissa kundrelaterade distributionsfel kommer nu att upptäckas explicit i distributionsloggarna.
 
