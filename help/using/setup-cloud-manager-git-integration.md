@@ -5,6 +5,9 @@ seo-title: Git-integrering med Adobe Cloud Manager
 seo-description: En videoserie som går igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
 translation-type: tm+mt
 source-git-commit: 519f43ff16e0474951f97798a8e070141e5c124b
+workflow-type: tm+mt
+source-wordcount: '403'
+ht-degree: 5%
 
 ---
 
@@ -25,7 +28,7 @@ I den här videoserien utforskas flera användningsexempel när det gäller att 
 * [Produktionsdistribution](#production-deployment)
 * [Synkroniserar versionstaggar](#sync-tags)
 
-En fullständig översikt finns i användarhandboken för [Cloud Manager](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html). Videoserien bygger på grundläggande kunskaper i Git och källkodshantering. Se [ytterligare resurser nedan](#additional-resources) för mer information om Git.
+En fullständig översikt finns i [användarhandboken för Cloud Manager](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html). Videoserien bygger på grundläggande kunskaper i Git och källkodshantering. Se [ytterligare resurser nedan](#additional-resources) för mer information om Git.
 
 >[!NOTE]
 >
@@ -39,11 +42,11 @@ Första steget för synkronisering av en kundhanterad Git-databas med Cloud Mana
 
 ## Grundläggande förgreningsstrategi {#branching-strategy}
 
-Skapa en grundläggande förgreningsstrategi för att dra nytta av Cloud Managers [produktion och icke-produktion-pipelines](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html).
+Konfigurera en grundläggande förgreningsstrategi för att kunna utnyttja Cloud Managers [produktionsledningar och icke-produktionsrörledningar](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html).
 
 >[!VIDEO](https://video.tv.adobe.com/v/28712/?quality=12)
 
-## Funktionsutveckling {#feature-development}
+## Funktionsavsnittsutveckling {#feature-development}
 
 Använd en funktionsgren för att isolera kodändringar i en kundhanterad Git-databas och synkronisera med Cloud Managers Git-databas för att använda en icke-produktionsprocess för kodkvalitets- och valideringstestning.
 
@@ -57,13 +60,13 @@ Förbered kod för en produktionsrelease i en kundhanterad Git-databas och synkr
 
 ## Synkroniserar versionstaggar {#sync-tags}
 
-Synkronisera versionstaggar från en Cloud Manager Git-databas i en kundhanterad Git-databas för att ge dig en bild av vilken kod som har distribuerats till scen- och produktionsmiljöer.
+Synkronisera versionstaggar från en Cloud Manager Git-databas till en kundhanterad Git-databas för att ge dig en bild av vilken kod som har distribuerats till scen- och produktionsmiljöer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/28725/?quality=12)
 
-## Additional Resources {#additional-resources}
+## Ytterligare resurser {#additional-resources}
 
 * [Dokumentation om Cloud Manager](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html)
 * [GitHub-resurser](https://try.github.io)
-* [Atlassiska Git-självstudiekurser](https://www.atlassian.com/git/tutorials/what-is-version-control)
+* [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
 * [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
