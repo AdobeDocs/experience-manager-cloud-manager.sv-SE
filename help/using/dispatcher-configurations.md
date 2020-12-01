@@ -19,29 +19,29 @@ ht-degree: 0%
 
 # Hantera dina Dispatcher-konfigurationer {#manage-your-dispatcher-configurations}
 
-## Distribuera Dispatcher-konfigurationsfiler med hjälp av Cloud Manager {#using-cloud-manager-to-deploy-dispatcher-configuration-files}
+## Använda Cloud Manager för att distribuera Dispatcher-konfigurationsfiler {#using-cloud-manager-to-deploy-dispatcher-configuration-files}
 
-Molnhanteraren kan distribuera webbserver- och Dispatcher-konfigurationsfiler under förutsättning att de lagras i **Git-databasen**, utöver AEM vanliga innehållspaket.
+Molnhanteraren kan distribuera webbserver- och Dispatcher-konfigurationsfiler under förutsättning att de lagras i **Git-databasen**, utöver vanliga AEM.
 
-För att utnyttja denna funktion bör Maven skapa en zip-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som genereras av Cloud Manager med den inbyggda [guiden](/help/using/using-the-wizard.md) har den korrekta Maven-projektstrukturen som skapas när projektet skapas. Detta är den rekommenderade vägen för nya Managed Services-kunder.
+För att kunna utnyttja den här funktionen bör Maven-bygget skapa en ZIP-fil som innehåller minst två kataloger - ***conf*** och ***conf.d***. Zip-filen kan skapas med maven-assembly-plugin. Projekt som skapats med Cloud Manager med den inbyggda [guiden](/help/using/using-the-wizard.md) har rätt projektstruktur för Maven som skapats som en del av projektskapandet. Detta är den rekommenderade vägen för nya Managed Services-kunder.
 
-När innehållet i katalogerna distribueras till en dispatcher **Instance** skrivs innehållet i katalogerna över i Dispatcher-instansen. Eftersom webbserver- och Dispatcher-konfigurationsfiler ofta kräver miljöspecifik information måste du, för att funktionen ska kunna användas på rätt sätt, först arbeta med dina Customer Success Engineers (CSE) för att ställa in dessa miljövariabler i `/etc/sysconfig/httpd`.
+Vid distribution till en dispatcher **Instance** skriver innehållet i katalogerna över innehållet i katalogerna i Dispatcher-instansen. Eftersom webbserver- och Dispatcher-konfigurationsfiler ofta kräver miljöspecifik information måste du, för att funktionen ska kunna användas på rätt sätt, först arbeta med dina Customer Success Engineers (CSE) för att ställa in dessa miljövariabler i `/etc/sysconfig/httpd`.
 
-### Steg för konfigurering av utskickning för befintliga Managed Services-kunder {#steps-for-configuring-dispatcher}
+### Steg för konfigurering av utskickare för befintliga Managed Services-kunder {#steps-for-configuring-dispatcher}
 
 Följ stegen nedan för att slutföra den inledande processen när du konfigurerar Dispatcher:
 
 1. Hämta aktuella produktionskonfigurationsfiler från din CSE.
 1. Ta bort hårdkodade miljöspecifika data (till exempel IP för publiceringsrenderare) och ersätt med variabler.
-1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att din CSE ska läggas till `/etc/sysconfig/httpd` i varje instans.
+1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att din CSE ska lägga till i `/etc/sysconfig/httpd` för varje instans.
 1. Testa de uppdaterade konfigurationerna i din scenmiljö och begär sedan att din CSE distribuerar till produktionen.
-1. Verkställ filer i **Git-databasen**.
+1. Spara filer i **Git-databas**.
 
 1. Driftsätt via Cloud Manager.
 
 >[!NOTE]
 >
->Migrering av Dispatcher- och webbserverkonfigurationer till **Git-databasen** kan utföras under introduktionen av Cloud Manager, men kan också göras vid en senare tidpunkt.
+>Migrering av Dispatcher- och webbserverkonfigurationer till **Git-databas** kan göras under introduktionen av Cloud Manager, men kan också göras vid en senare tidpunkt.
 
 ### Exempel {#example}
 
@@ -52,7 +52,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    >[!NOTE]
    Du kan använda vilket namn som helst här, men katalognamnet som skapas i det här steget måste vara samma som namnet som används i steg 6.
 
-1. Den här underkatalogen innehåller en Maven-modul som bygger zip-filen Dispatcher med plugin-programmet Maven Assembly. Börja med att skapa en `dispatcher` fil med det här innehållet i `pom.xml` katalogen och ändra den överordnade referensen, artefactId och name efter behov.
+1. Den här underkatalogen innehåller en Maven-modul som bygger zip-filen Dispatcher med plugin-programmet Maven Assembly. Börja med att skapa en `pom.xml`-fil med det här innehållet i katalogen `dispatcher` och ändra den överordnade referensen, artefactId och name efter behov.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -95,7 +95,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    >[!NOTE]
    Som i steg 1 kan artefactId och name här vara andra värden om du vill. `dispatcher` här bara ett exempel som används för enkelhet.
 
-1. Plugin-programmet Maven Assembly kräver en *beskrivning* som definierar hur zip-filen skapas. Om du vill skapa den här beskrivningen skapar du en fil (igen i `dispatcher` underkatalogen) `assembly.xml`med det här innehållet. Observera att det finns referenser till det här filnamnet på rad 26 i `pom.xml` filen ovan.
+1. Plugin-programmet Maven Assembly kräver en *beskrivning* som definierar hur zip-filen skapas. Om du vill skapa den här beskrivningen skapar du en fil (igen, i underkatalogen `dispatcher`) med namnet `assembly.xml`med det här innehållet. Observera att det här filnamnet refereras på rad 26 i `pom.xml`-filen ovan.
 
    ```xml
    <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
@@ -118,8 +118,8 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    </assembly>
    ```
 
-1. Skapa nu en underkatalog med namnet `src` (som det refereras till i sammansättningsbeskrivningen ovan på rad 11) inuti dispatcher-underkatalogen för att lagra de faktiska Apache- och Dispatcher-konfigurationerna. I den här `src` katalogen skapar du kataloger med namnen `conf`, `conf.d`, `conf.dispatcher.d`och `conf.modules.d`.
-1. Nu kan du fylla i `conf`katalogerna, `conf.d`katalogerna `conf.dispatcher.d`och `conf.modules.d` katalogerna med dina konfigurationsfiler. Standardkonfigurationen består till exempel av dessa filer och symboliska länkar.
+1. Skapa nu en underkatalog med namnet `src` (som det refereras till i sammansättningsbeskrivningen ovan på rad 11) inuti dispatcherunderkatalogen för att lagra de faktiska Apache- och Dispatcher-konfigurationerna. Skapa kataloger med namnen `conf`, `conf.d`, `conf.dispatcher.d` och `conf.modules.d` i den här `src`-katalogen.
+1. Nu kan du fylla i katalogerna `conf`, `conf.d`, `conf.dispatcher.d` och `conf.modules.d` med konfigurationsfilerna. Standardkonfigurationen består till exempel av dessa filer och symboliska länkar.
 
    ```
    dispatcher
@@ -194,7 +194,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
            └── 02-dispatcher.conf
    ```
 
-1. I filen pom.xml i projektets rot lägger du till ett `<module>` element som ska innehålla dispatchermodulen.
+1. Till sist lägger du till ett `<module>`-element i pom.xml-filen i projektets rot för att inkludera dispatchermodulen.
 
    Om din befintliga modullista till exempel är
 
@@ -218,7 +218,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    ```
 
    >[!NOTE]
-   Så som beskrivs i steg 1 `<module>` måste **** elementets värde matcha det katalognamn som skapas.
+   Som anges i steg 1 måste värdet för `<module>`-elementet **** matcha det katalognamn som skapas.
 
 1. Slutligen kör du det rena paketet mvn i projektets rotkatalog för att testa det. Du bör se linjer som detta i utdata
 
