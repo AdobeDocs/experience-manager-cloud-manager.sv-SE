@@ -19,7 +19,7 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2020.10.0 är 1 oktober 2020.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Crawlningen som användes för prestandatestning bedömde felaktigt vissa resurstyper som giltiga webblänkar.
 
