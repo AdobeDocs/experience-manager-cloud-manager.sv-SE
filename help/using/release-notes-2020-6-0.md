@@ -7,7 +7,7 @@ translation-type: tm+mt
 source-git-commit: f673a7c6e0d8e0814101beab1ad529ea69350a2a
 workflow-type: tm+mt
 source-wordcount: '177'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -19,11 +19,11 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2020.6.0 är 4 juni 2020.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
 * Tips på landningssidan som informerar och instruerar användaren om grundläggande navigering.
 
-* En **LEARN** -sida är nu tillgänglig i Cloud Manager, som du når via den övre navigeringen. Den här sidan innehåller resurser som hjälper användare att lära sig mer om de mest använda arbetsflödena som är relevanta för deras roller i Cloud Manager.
+* En **LEARN**-sida är nu tillgänglig i Cloud Manager, som du kommer åt via den övre navigeringen. Den här sidan innehåller resurser som hjälper användare att lära sig mer om de mest använda arbetsflödena som är relevanta för deras roller i Cloud Manager.
 
 * Det högsta värdet för resursens 95:e procentiga bearbetningstid har ökats till 500 sekunder.
 
@@ -31,7 +31,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.6.0 är 4 juni 2020.
 
 * I steget Skapa valideras nu att alla genererade innehållspaket innehåller alla obligatoriska egenskaper - namn, grupp och version.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * När produktionsflödet konfigurerades var alternativet för schemalagd distribution inte synligt för vissa kunder.
 
