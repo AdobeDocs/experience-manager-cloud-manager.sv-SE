@@ -12,29 +12,29 @@ translation-type: tm+mt
 source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
 workflow-type: tm+mt
 source-wordcount: '335'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # Versionsinformation för 2019.1.0 {#release-notes-for}
 
-I version [!UICONTROL Cloud Manager] 2018.9.0 finns stöd för testning av AEM Assets-program samt ytterligare pipelinetyper som kör steg för bygg- och kodkvalitet, och som kan distribueras till en icke-produktionsmiljö.
+[!UICONTROL Cloud Manager] 2018.9.0-utgåvan innehåller stöd för testning av AEM Assets-program samt ytterligare pipelinetyper som kör stegen för bygg- och kodkvalitet, och kan distribueras till en icke-produktionsmiljö.
 
 ## Releasedatum {#release-date}
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2019.1.0 är 17 januari 2019.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
-* Stöd för prestandatestning av AEM Assets har lagts till. Mer information finns i Konfigurera [CI/CD-](configuring-pipeline.md)pipeline.
-* Stöd för rörledningar som endast kör steg för bygg- och kodkvalitet samt rörledningar som driftsätts i icke-produktionsmiljöer. Mer information finns i avsnittet **Icke-produktion och Endast kvalitet för pipeline** i [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
+* Stöd för prestandatestning av AEM Assets har lagts till. Mer information finns i Konfigurera din [CI/CD-pipeline](configuring-pipeline.md).
+* Stöd för rörledningar som endast kör steg för bygg- och kodkvalitet samt rörledningar som driftsätts i icke-produktionsmiljöer. Mer information finns i avsnittet **Icke-produktion och Endast kodkvalitet i pipeline** i [Konfigurera CI/CD-pipeline](configuring-pipeline.md).
 * Stöd för anpassade miljövariabler i byggmiljön har lagts till.
-* För kunder med flera stadier eller produktionsmiljöer kan du välja vilken miljö som ska distribueras som en del av produktionsflödet på sidan [Konfigurera CI/CD-pipeline](configuring-pipeline.md) .
+* För kunder med flera stadier eller produktionsmiljöer kan du välja vilken miljö som ska distribueras som en del av produktionsflödet på sidan [Konfigurera CI/CD Pipeline](configuring-pipeline.md).
 * httxt2dbm har lagts till för att skapa behållare.
 * Alla hjälpmenyalternativ öppnar en ny flik.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * När du redigerade ett program var det möjligt att avmarkera alla siduppsättningar.
 * Godkännandesteget hade fel namn.
@@ -48,4 +48,4 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2019.1.0 är 17 januari 201
 
 ## Kända fel {#known-issues}
 
-* När du öppnar ett program som har Sites, men inte Assets, KPI:er, visas ett anrop till åtgärdskortet med en **Setup Program** -knapp. Det är dock bara användare med rollen Business Owner som kan klicka på knappen **Setup Program** .
+* När du öppnar ett program som har Sites, men inte Assets, KPI:er, visas ett anrop till åtgärdskortet med knappen **Setup Program**. Endast användare med rollen Affärsägare kan dock klicka på knappen **Setup Program**.
