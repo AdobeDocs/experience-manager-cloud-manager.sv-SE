@@ -25,17 +25,17 @@ De KPI:er som definieras fungerar som en baslinje för prestandatestning som ski
 
 >[!NOTE]
 >
->De nyckeltal som definieras mäts i tester som körs i **scenmiljön** . Vanligtvis skalas dessa KPI:er ned så att de passar scenmiljöns funktioner.
+>De definierade nyckeltal mäts i tester som körs på **scenen**-miljön. Vanligtvis skalas dessa KPI:er ned så att de passar scenmiljöns funktioner.
 >
->En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktionsmiljö **** och som har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut (förutsatt att scenmiljön bara består av ett enda dispatcher-/publiceringsserverpar).
+>En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktion **Miljö** och som har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut (förutsatt att scenmiljön bara består av ett enda dispatcher-/publiceringsserverpar).
 >
->Dessutom har många användare ett CDN (Content Delivery Network), till exempel Akamai eller CloudFront, framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] tester utförs direkt mot scenmiljön bör KPI endast återspegla den trafik som förväntas passera genom CDN, dvs. cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
+>Dessutom har många användare ett CDN (Content Delivery Network), till exempel Akamai eller CloudFront, framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot scenmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga, cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
 
-## Använda [!UICONTROL Cloud Manager] för att konfigurera ditt program {#using-cloud-manager-to-setup-your-program}
+## Använda [!UICONTROL Cloud Manager] för att installera programmet {#using-cloud-manager-to-setup-your-program}
 
 Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
 
-1. Klicka på **Konfigurera program** för att starta installationsprocessen i [!UICONTROL Cloud Manager].
+1. Klicka på **Setup Program** för att starta installationsprocessen i [!UICONTROL Cloud Manager].
 
    ![image1](assets/set-up-program/setup1.png)
 
@@ -45,9 +45,9 @@ Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
    ![image1](assets/set-up-program/setup2.png)
 
 
-1. Skärmen **Installationsprogram** visar Redigera programinformation.
+1. Skärmen **Setup Program** visar Redigera programinformation.
 
-1. Du kan se tre alternativ som **Allmänt**, **KPI** och **Etablering** .
+1. Du kan se tre alternativ som **Allmänt**, **KPI** och **Provisioning**.
 
 1. På fliken **Allmänt** överför du en miniatyrbild till programmet. Du kan också lägga till en beskrivning till programmet.
 
@@ -63,16 +63,18 @@ Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
    1. Hur många sidvisningar per minut under toppbelastningen?
 
       * Rekommenderat värde - 200 sidvisningar per minut
+
    **AEM Assets**
 
-   Sedan den första versionen har Cloud Manager kunnat köra prestandatestning för AEM Sites-program. I den här versionen har funktionen även lagts till för att utföra prestandatester för AEM Assets-program. Resursprestandatestning utförs genom att resurser laddas upp upprepade gånger under en 30-minuters testperiod och att bearbetningstiden för varje tillgång samt olika mätvärden på systemnivå mäts.
+   Sedan den första versionen har Cloud Manager kunnat utföra prestandatestning för AEM Sites-program. I den här versionen har funktionen även lagts till för att utföra prestandatester för AEM Assets-program. Resursprestandatestning utförs genom att resurser laddas upp upprepade gånger under en 30-minuters testperiod och att bearbetningstiden för varje tillgång samt olika mätvärden på systemnivå mäts.
 Under programinstallationen anges resursspecifika nyckeltal:
 
    * 95:e percentilens bearbetningstid
    * Överförda resurser per minut
+
    ![](assets/Setup_Program-KPIs.png)
 
-1. Under **Provisioning** kan du visa eller redigera provisioneringskonfigurationen för produktions- och icke-produktionsmiljöer i ditt program. Du ser att **Automatisk skalning är aktiverat** om autoskalning har aktiverats för programmet.
+1. Under **Provisioning** kan du visa eller redigera provisioneringskonfigurationen för produktionsmiljöer och icke-produktionsmiljöer i ditt program. Du ser **Automatisk skalning är på** om autoskalning har aktiverats för programmet.
 
    >[!NOTE]
    >
@@ -90,7 +92,7 @@ Under programinstallationen anges resursspecifika nyckeltal:
 
 ## Redigera ett program
 
-1. Navigera till lösningen på startskärmen i **Cloud Manager** .
+1. Navigera till lösningen på startskärmen för **Cloud Manager**.
 
    ![](assets/SetUpProgram5.png)
 
@@ -98,7 +100,7 @@ Under programinstallationen anges resursspecifika nyckeltal:
 
    ![](assets/SetUpProgram6.png)
 
-1. Skärmen **Redigera program** visas där du kan uppdatera eller ändra programmet.
+1. Skärmen **Redigera program** som gör att du kan uppdatera eller ändra programmet visas.
 
    ![](assets/Editing_Program-screen3.png)
 
@@ -106,4 +108,4 @@ Under programinstallationen anges resursspecifika nyckeltal:
 
 Om du redan har konfigurerat **pipeline** kommer de uppdaterade inställningarna att beaktas vid nästa körning. Om du inte har konfigurerat pipeline än följer du stegen för att konfigurera din pipeline först.
 
-Se [Konfigurera CI/CD-pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html) för att konfigurera pipeline.
+Se [Konfigurera CI/CD Pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html) för att konfigurera pipeline.
