@@ -7,7 +7,7 @@ translation-type: tm+mt
 source-git-commit: c1d07c95088a279376ef495001a5165c7e459642
 workflow-type: tm+mt
 source-wordcount: '192'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -19,11 +19,11 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2020.8.0 är 6 augusti 2020.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
 Stöd finns nu för autentiseringsbundna privata Maven-databaser.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Vissa onödiga och oönskade SonarQube-plugin-program kördes som en del av kodkvalitetskontrollen.
 
@@ -33,11 +33,11 @@ Stöd finns nu för autentiseringsbundna privata Maven-databaser.
 
 * I vissa fall kunde slutförda pipeline-körningar inte registreras som slutförda, vilket hindrade nya körningar av pipeline.
 
-* Körningar av rörledningar *fastnar* ibland på grund av interna kommunikationsproblem.
+* Pipeline-körningar får ibland *fastna* på grund av interna kommunikationsproblem.
 
 * Verktygstipset på programkorten var inte konsekvent korrekt.
 
-* Det fanns ett färgmatchningsfel på **översiktssidan** .
+* Det fanns ett färgmatchningsfel på sidan **Översikt**.
 
 * Testning av webbplatsprestanda har nu stöd för valfri användning av autentisering.
 
