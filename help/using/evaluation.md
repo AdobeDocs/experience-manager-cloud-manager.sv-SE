@@ -18,7 +18,7 @@ ht-degree: 0%
 
 # Utvärderingsfas {#evaluation}
 
-Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]** fas.
+Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]**-fasen.
 Här kan du bedöma uppgraderingens komplexitet med mönsterdetektorn som du kan nå direkt från guiden. Efter det här steget har du tillgång till utvärderingsrapporten.
 
 I den genererade rapporten kan du kontrollera om Author-instansen har uppgraderat genom att identifiera mönster som:
@@ -45,7 +45,7 @@ Följ stegen nedan för att generera en utvärderingsrapport:
 
    ![](assets/Run-Evaluation.png)
 
-1. Guiden informerar dig om åtgärdens status. Du kommer att meddela **Pågående** eller **slutförd** när utvärderingsrapporten skapas.
+1. Guiden informerar dig om åtgärdens status. Du kommer att lägga märke till **Pågår** eller **slutförd** som tillämpligt när utvärderingsrapporten genereras.
 
    När rapporten har skapats kan du klicka på **[!UICONTROL Download report]** för att spara en kopia.
 
@@ -54,4 +54,4 @@ Följ stegen nedan för att generera en utvärderingsrapport:
 
    >[!NOTE]
    >
-   >Den aktuella versionen av produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen** . De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande** , kommer snart.
+   >Den aktuella versionen av produktuppdateringsguiden i Cloud Manager stöder endast fasen **Evaluation**. Övriga fyra faser, som **Reparation**, **Körning**, **Verifiering** och **Slutförande**, kommer snart.
