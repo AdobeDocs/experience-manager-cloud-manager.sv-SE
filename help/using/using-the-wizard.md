@@ -14,7 +14,7 @@ ht-degree: 9%
 
 När kunderna är ombord på Cloud Manager får de en tom Git-databas. Nuvarande Adobe Managed Services-kunder (eller lokala AEM-kunder som migrerar till AMS) har vanligtvis redan sin projektkod i Git (eller något annat versionskontrollsystem) och kommer att importera sitt projekt till Cloud Managers Git-databas. Nya kunder har dock inga befintliga projekt.
 
-För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM som utgångspunkt. Den här processen baseras på [**AEM projekttyp**](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
+För att hjälpa nya kunder att komma igång kan Cloud Manager nu skapa ett minimalt AEM som utgångspunkt. Den här processen baseras på [**AEM Project Archetype**](https://github.com/Adobe-Marketing-Cloud/aem-project-archetype).
 
 
 Följ stegen nedan för att skapa ett AEM programprojekt i Cloud Manager:
@@ -23,11 +23,11 @@ Följ stegen nedan för att skapa ett AEM programprojekt i Cloud Manager:
 
    ![](assets/image2018-10-3_14-29-44.png)
 
-1. Klicka på **Skapa för att** öppna en dialogruta där användaren kan ange de parametrar som krävs för AEM projekttyp. I standardformuläret frågar dialogrutan efter två värden:
+1. Klicka på **Skapa till** för att öppna en dialogruta där användaren kan ange de parametrar som krävs för den AEM projekttypen. I standardformuläret frågar dialogrutan efter två värden:
 
-   * **Titel** - som standard är detta inställt på *Programnamn*
+   * **Titel**  - som standard är detta inställt på  *programnamnet*
 
-   * **Nytt grennamn** - som standard är detta *överordnad*
+   * **Nytt grennamn**  - som standard är detta  *överordnad*
 
    ![](assets/screen_shot_2018-10-08at55825am.png)
 
@@ -37,9 +37,9 @@ Följ stegen nedan för att skapa ett AEM programprojekt i Cloud Manager:
 
    >[!NOTE]
    >
-   >Om t.ex. **Title** är ***We.Finance*** genereras parametern Base Maven Artifact Id som ***com.weFinance***. Om du vill kan du ändra dessa värden.
+   >Om exempelvis **Title** är ***We.Finance***, genereras parametern Base Maven Artifact Id som ***com.weFinance***. Om du vill kan du ändra dessa värden.
    >
    >
    >Du kan till exempel ändra från det genererade ***värdet com.weFinance*** till ***net.weFinance***.
 
-1. Klicka på **Skapa** i det föregående steget för att skapa startprojektet med hjälp av arkitypen och spara i den namngivna Git-grenen. När det är klart kan du konfigurera pipeline.
+1. Klicka på **Skapa** i det föregående steget för att skapa startprojektet med hjälp av arketypen och spara i den namngivna Git-grenen. När det är klart kan du konfigurera pipeline.
