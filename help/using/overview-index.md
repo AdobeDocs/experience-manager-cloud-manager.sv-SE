@@ -19,9 +19,9 @@ ht-degree: 0%
 
 [!UICONTROL Cloud Manager] är ett ramverk av verktyg och tekniker som är tillgängliga för alla Adobe Managed Services-kunder.
 
-I det här avsnittet finns en högnivåvy med en lista över resurser som du kan komma igång med [!UICONTROL Cloud Manager].
+I det här avsnittet finns en högnivåvy med en lista över resurser som gör att du kan komma igång med [!UICONTROL Cloud Manager].
 
-Följ resurserna nedan för att börja använda [!UICONTROL Cloud Manager], från att förstå viktiga koncept och terminologier till att konfigurera konfigurationer (krav), så att du äntligen kan komma igång med [!UICONTROL Cloud Manager].
+Följ resurserna nedan när du vill börja använda [!UICONTROL Cloud Manager], från att förstå viktiga begrepp och terminologier till att konfigurera konfigurationer (krav), så att du äntligen kan komma igång med [!UICONTROL Cloud Manager].
 
 Bilden nedan visar vägen till din inlärning av [!UICONTROL Cloud Manager]:
 
