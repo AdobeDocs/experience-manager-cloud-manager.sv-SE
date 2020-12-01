@@ -23,7 +23,7 @@ ht-degree: 0%
 
 När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) är du redo att distribuera koden.
 
-1. Klicka på **Distribuera** från Cloud Manager för att starta distributionsprocessen.
+1. Klicka på **Distribuera** i Cloud Manager för att starta distributionsprocessen.
 
    ![](assets/Deploy1.png)
 
@@ -48,46 +48,46 @@ När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) �
    Följande steg ingår i **mellanlagringsdistributionen**:
 
    * Validering: Detta steg säkerställer att pipeline är konfigurerad att använda de tillgängliga resurserna, till exempel att den konfigurerade grenen finns, och att miljöerna är tillgängliga.
-   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Förstå byggmiljön](/help/using/build-environment-details.md) .
-   * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
+   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Förstå byggmiljön](/help/using/build-environment-details.md).
+   * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
    * Distribuera till scenen
 
    ![](assets/Stage_Deployment1.png)
 
-   The **Stage Testing**, involves the following steps:
+   I **Stage Testing** utförs följande steg:
 
-   * Säkerhetstestning: I det här steget utvärderas säkerhetseffekten av programkoden på AEM. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
-   * Prestandatestning: I det här steget utvärderas prestanda för programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
+   * Säkerhetstestning: I det här steget utvärderas säkerhetseffekten av programkoden på AEM. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
+   * Prestandatestning: I det här steget utvärderas prestanda för programkoden. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
 
    ![](assets/Stage_Testing1.png)
 
-   The **Production Deployment**, involves the following steps:
+   **Produktionsdistributionen** omfattar följande steg:
 
-   * **Ansökan om godkännande** (om aktiverad)
-   * **Schemalägg produktionsdistribution** (om aktiverat)
-   * **CSE-stöd** (om aktiverat)
+   * **Ansökan om godkännande**  (om aktiverad)
+   * **Schemalägg produktionsdistribution**  (om aktiverat)
+   * **CSE-stöd**  (om aktiverat)
    * **Distribuera till produktion**
 
    ![](assets/Prod_Deployment1.png)
 
    >[!NOTE]
    >
-   >Schemalägg **produktionsdistribution** är aktiverat när pipeline konfigureras.
+   >**Schemalägg produktionsdistribution** är aktiverat när pipeline konfigureras.
    >
    >
-   >Med det här alternativet kan du antingen schemalägga din produktionsdistribution eller klicka på **Nu** för att köra produktionsdistributionen direkt.
+   >Med det här alternativet kan du antingen schemalägga din produktionsdistribution eller klicka på **Now** för att köra produktionsdistributionen direkt.
    >
    >
    >Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
    >
    >
-   >Klicka på **Bekräfta** för att bekräfta inställningarna.
+   >Klicka på **Bekräfta** för att verifiera dina inställningar.
 
    ![](assets/Production_Deployment1.png)
 
    När du har bekräftat distributionsschemat slutförs koddistributionen.
 
-   Följande skärm visas när alternativet **Nu** är valt i ovanstående steg.
+   Följande skärm visar när **Now**-alternativet är valt i ovanstående steg.
 
    ![](assets/Production_Deployment2.png)
 
@@ -122,7 +122,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    1. Aktuella konfigurationer säkerhetskopieras och kopieras till en temporär plats
    1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i Hantera dina Dispatcher-konfigurationer. Detta rensar katalogerna för att säkerställa att inga överblivna filer lämnas kvar.
-   1. Artefakten extraheras till `httpd` katalogen.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
+   1. Artefakten extraheras till katalogen `httpd`.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
    1. Apache utför ett config-test. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
 
