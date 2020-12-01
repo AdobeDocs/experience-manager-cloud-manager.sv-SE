@@ -7,7 +7,7 @@ translation-type: tm+mt
 source-git-commit: 0652436ec0c1c95d270a06a600424dbfd0140b27
 workflow-type: tm+mt
 source-wordcount: '187'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -19,17 +19,17 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2020.5.0 är 7 maj 2020.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
-* Sex ytterligare regler för kodkvalitet har lagts till för att hjälpa kunderna att identifiera potentiella problem när de planerar en migrering till molntjänsten.
+* Sex ytterligare regler för kodkvalitet har lagts till för att hjälpa kunderna att identifiera potentiella problem när de planerar en migrering till Cloud Service.
 
-* Ett nytt mått på *molntjänstkompatibilitet* har lagts till för att sammanfatta antalet kompatibilitetsrelaterade problem.
+* Ett nytt mått *Cloud Service Compatibility* har lagts till för att sammanfatta antalet kompatibilitetsrelaterade problem.
 
 * Prestanda för aktivitetssidan och Pipeline Executions List API har förbättrats.
 
 * Loggen för kodkvalitet innehåller nu fullständiga stackspår för undantag.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Ett missvisande kort visades på översiktssidan när produktionsflödet kördes.
 
