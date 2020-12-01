@@ -19,7 +19,7 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 
 Releasedatum för [!UICONTROL Cloud Manager] version 2020.4.0 är 9 april 2020.
 
-## What&#39;s New {#whats-new}
+## Nyheter {#whats-new}
 
 * Ändringar i navigeringssidan för Cloud Manager - översikt, så att användare kan redigera eller byta program.
 * Ändringar som gör att användaren kan redigera program från programkortet på Cloud Managers startsida.
@@ -27,12 +27,12 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.4.0 är 9 april 2020.
 * Förbättringar av förståelsen av sidan för att implementera pipeline. Detta inkluderar visning av Pipeline-namn (endast icke-produktionspipeline) och Type, och ett märke som anger om pipelinestatusen pågår/avbryts/misslyckades.
 * Processen som används för att generera Git-lösenord har gjorts mer flexibel mot problem i det underliggande tjänstskiktet.
 
-## Bug Fixes {#bug-fixes}
+## Felkorrigeringar {#bug-fixes}
 
 * Övervakningsuppgifterna kan ibland visas på ett felaktigt sätt eller inte alls baserat på mindre avvikelser i de tekniska värdena.
 * Den Maven-konfiguration som används i byggbehållaren har uppdaterats för att undvika dödlägen när artefaktmetadata hämtas.
-* Prestandatestningsprocessen för Assets kunde ibland inte dekryptera AEM-lösenordet, vilket medförde att testningen misslyckades.
+* Prestandatestningsprocessen för Assets kunde ibland inte dekryptera AEM lösenord, vilket medförde att testningen misslyckades.
 * Vissa topologier med standby-instanser kan ha falska negativ vid säkerhetstestning.
 * Om scenmiljön innehåller en stoppad instans kan säkerhetstestningssteget ibland misslyckas.
-* Experience Cloud-meddelanden togs inte emot konsekvent.
+* Meddelanden från Experience Cloud mottogs inte konsekvent.
 
