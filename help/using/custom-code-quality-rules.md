@@ -17,12 +17,12 @@ ht-degree: 6%
 ---
 
 
-# Custom Code Quality Rules {#custom-code-quality-rules}
+# Anpassade regler för kodkvalitet {#custom-code-quality-rules}
 
 Den här sidan beskriver de anpassade regler för kodkvalitet som körs av Cloud Manager och som baseras på de bästa metoderna från AEM.
 
 >[!NOTE]
->De kodexempel som anges här är endast avsedda som illustrationer. Läs [Concepts](https://docs.sonarqube.org/7.4/user-guide/concepts/) om du vill veta mer om SonarQube-koncept och kvalitetsregler.
+>De kodexempel som anges här är endast avsedda som illustrationer. Mer information om SonarQube-koncept och kvalitetsregler finns i [Concepts](https://docs.sonarqube.org/7.4/user-guide/concepts/).
 
 ## SonarQube-regler {#sonarqube-rules}
 
@@ -201,7 +201,7 @@ API:t för AEM innehåller Java-gränssnitt och -klasser som bara är avsedda at
 
 När nya metoder läggs till i dessa gränssnitt påverkar inte dessa ytterligare metoder befintlig kod som använder dessa gränssnitt, och därför anses tillägg av nya metoder i dessa gränssnitt vara bakåtkompatibelt. Men om anpassad kod ***implementerar*** ett av dessa gränssnitt har den anpassade koden skapat en risk vad gäller bakåtkompatibilitet för kunden.
 
-Gränssnitt (och klasser) som bara är avsedda att implementeras av AEM kommenteras med *org.osgi.annotation.versioning.ProviderType* (eller, i vissa fall, en liknande äldre anteckning *aQute.bnd.annotation.ProviderType*). Den här regeln identifierar de fall där ett sådant gränssnitt implementeras (eller där en klass utökas) med anpassad kod.
+Gränssnitt (och klasser) som endast är avsedda att implementeras av AEM kommenteras med *org.osgi.annotation.versioning.ProviderType* (eller, i vissa fall, en liknande äldre anteckning *Qute.bnd.annotation.ProviderType*). Den här regeln identifierar de fall där ett sådant gränssnitt implementeras (eller där en klass utökas) med anpassad kod.
 
 #### Icke-kompatibel kod {#non-compliant-code-3}
 
@@ -268,7 +268,7 @@ public void orDoThis(Session session) throws Exception {
 
 **Sedan**: Version 2018.4.0
 
-Så som beskrivs i [Sling-dokumentationen](http://sling.apache.org/documentation/the-sling-engine/servlets.html)rekommenderas inte bindningar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
+Så som beskrivs i [Sling-dokumentationen](http://sling.apache.org/documentation/the-sling-engine/servlets.html) rekommenderas inte bindningsservrar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
 
 #### Icke-kompatibel kod {#non-compliant-code-5}
 
@@ -281,7 +281,7 @@ public class DontDoThis extends SlingAllMethodsServlet {
 }
 ```
 
-### Undantag som fångats upp ska loggas eller kastas, men inte båda {#caught-exceptions-should-be-logged-or-thrown-but-not-both}
+### Undantag som fångats upp ska loggas eller kastas, men inte både {#caught-exceptions-should-be-logged-or-thrown-but-not-both}
 
 **Nyckel**: CQRules:CQBP-44—CatchAndeitherLogOrThrow
 
@@ -326,7 +326,7 @@ public void orDoThis() throws MyCustomException {
 }
 ```
 
-### Undvik att ha en log-programsats omedelbart följt av en throw-programsats {#avoid-having-a-log-statement-immediately-followed-by-a-throw-statement}
+### Undvik att ha en loggsats som omedelbart följs av en throw-sats {#avoid-having-a-log-statement-immediately-followed-by-a-throw-statement}
 
 **Nyckel**: CQRules:CQBP-44 - ConsecutiousLogAndThrow
 
@@ -355,7 +355,7 @@ public void doThis() throws Exception {
 }
 ```
 
-### Undvik att logga på INFO när du hanterar GET- eller HEAD-förfrågningar {#avoid-logging-at-info-when-handling-get-or-head-requests}
+### Undvik att logga vid INFO när du hanterar förfrågningar från GET eller HEAD {#avoid-logging-at-info-when-handling-get-or-head-requests}
 
 **Nyckel**: CQRules:CQBP-44—LogInfoInGetOrHeadRequests
 
@@ -431,7 +431,7 @@ public void doThis() {
 
 **Sedan**: Version 2018.4.0
 
-Som namnet antyder bör Java-undantag alltid användas i *undantagsfall* . Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp - antingen WARN eller ERROR. Detta garanterar att meddelandena visas korrekt i loggarna.
+Java-undantag ska alltid användas i *exceptionella*-situationer, vilket namnet föreslår. Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp - antingen WARN eller ERROR. Detta garanterar att meddelandena visas korrekt i loggarna.
 
 #### Icke-kompatibel kod {#non-compliant-code-10}
 
@@ -493,7 +493,7 @@ public void doThis() {
 }
 ```
 
-### Skriv inte ut till standardutdata eller standardfel {#do-not-output-to-standard-output-or-standard-error}
+### Exportera inte till standardutdata eller standardfel {#do-not-output-to-standard-output-or-standard-error}
 
 **Nyckel**: CQRules:CQBP-44—LogLevelConsolePrinters
 
@@ -529,7 +529,7 @@ public void doThis() {
 }
 ```
 
-### Undvik hårdkodade/appar- och/libs-sökvägar {#avoid-hardcoded-apps-and-libs-paths}
+### Undvik hårdkodade /appar och /libs-sökvägar {#avoid-hardcoded-apps-and-libs-paths}
 
 **Nyckel**: CQRules:CQBP-71
 
@@ -569,7 +569,7 @@ public void doThis(Resource resource) {
 
 Sling Scheduler får inte användas för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
 
-Läs mer om hur [Sling-jobb hanteras i klustermiljöer i](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) Apache Sling-händelser och jobbhantering.
+Läs [Apache Sling Eventing och Job Handling](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) om du vill veta mer om hur Sling-jobb hanteras i klustrade miljöer.
 
 ### AEM inaktuella API:er ska inte användas {#sonarqube-aem-deprecated}
 
@@ -583,7 +583,7 @@ Läs mer om hur [Sling-jobb hanteras i klustermiljöer i](https://sling.apache.o
 
 AEM API-yta är under ständig revision för att identifiera API:er som inte används och därför betraktas som inaktuella.
 
-I många fall används standardanteckningen Java *@Deprecated* , som identifieras av `squid:CallToDeprecatedMethod`.
+I många fall är dessa API:er föråldrade med Java-standardanteckningen *@Undertryckt* och, som sådana, enligt `squid:CallToDeprecatedMethod`.
 
 Det finns dock fall där ett API är inaktuellt i AEM men inte i andra sammanhang. Den här regeln identifierar den andra klassen.
 
@@ -595,7 +595,7 @@ Nedan finns de OakPAL-kontroller som körs av Cloud Manager.
 >
 >OakPAL är ett ramverk som utvecklats av en AEM partner (och vinnare av 2019 AEM Rockstar North America) som validerar innehållspaket med en fristående Oak-databas.
 
-### Kundpaket får inte skapa eller ändra noder under /libs {#oakpal-customer-package}
+### Kundpaket ska inte skapa eller ändra noder under /libs {#oakpal-customer-package}
 
 **Nyckel**: BannedPaths
 
@@ -605,7 +605,7 @@ Nedan finns de OakPAL-kontroller som körs av Cloud Manager.
 
 **Sedan**: Version 2019.6.0
 
-Det har varit en god praxis sedan länge att innehållsträdet /libs i AEM ska betraktas som skrivskyddat av kunderna. Att ändra noder och egenskaper under */libs* skapar en betydande risk för större och mindre uppdateringar. Ändringar av */libs* bör endast göras av Adobe via officiella kanaler.
+Det har varit en god praxis sedan länge att innehållsträdet /libs i AEM ska betraktas som skrivskyddat av kunderna. Att ändra noder och egenskaper under */libs* skapar en betydande risk för större och mindre uppdateringar. Ändringar av */libs* ska endast göras av Adobe via officiella kanaler.
 
 ### Paket får inte innehålla dubbletter av OSGi-konfigurationer {#oakpal-package-osgi}
 
@@ -650,9 +650,9 @@ Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-kompon
 
 **Sedan**: Version 2019.6.0
 
-Av säkerhetsskäl kan sökvägar som innehåller */config/ och /install/* endast läsas av administrationsanvändare i AEM och bör endast användas för OSGi-konfigurationer och OSGi-paket. Om du placerar andra typer av innehåll under banor som innehåller dessa segment, kommer programbeteendet att variera oavsiktligt mellan administrativa och icke-administrativa användare.
+Av säkerhetsskäl kan sökvägar som innehåller */config/ och /install/* bara läsas av administrationsanvändare i AEM och bör endast användas för OSGi-konfigurationer och OSGi-paket. Om du placerar andra typer av innehåll under banor som innehåller dessa segment, kommer programbeteendet att variera oavsiktligt mellan administrativa och icke-administrativa användare.
 
-Ett vanligt problem är att använda noder som namnges `config` i komponentdialogrutor eller när du anger RTF-redigeringskonfigurationen för infogad redigering. För att lösa detta bör den felande noden byta namn till ett kompatibelt namn. För RTF-redigerarkonfigurationen använder du egenskapen `configPath` på `cq:inplaceEditing` noden för att ange den nya platsen.
+Ett vanligt problem är att använda noder med namnet `config` i komponentdialogrutor eller när du anger RTF-redigerarkonfigurationen för infogad redigering. För att lösa detta bör den felande noden byta namn till ett kompatibelt namn. Använd egenskapen `configPath` på noden `cq:inplaceEditing` för att ange den nya platsen för konfigurationen av textredigeraren.
 
 #### Icke-kompatibel kod {#non-compliant-code-config-install}
 
@@ -683,9 +683,9 @@ Ett vanligt problem är att använda noder som namnges `config` i komponentdialo
 
 **Sedan**: Version 2019.6.0
 
-På liknande sätt som *Paket bör inte innehålla duplicerade OSGi-konfigurationer* är detta ett vanligt problem i komplexa projekt där samma nodsökväg skrivs till av flera separata innehållspaket. Även om beroenden för innehållspaket kan användas för att säkerställa ett konsekvent resultat är det bättre att undvika överlappningar helt och hållet.
+På samma sätt som *Paket ska inte innehålla dubbletter av OSGi-konfigurationer* är detta ett vanligt problem i komplexa projekt där samma nodsökväg skrivs till av flera separata innehållspaket. Även om beroenden för innehållspaket kan användas för att säkerställa ett konsekvent resultat är det bättre att undvika överlappningar helt och hållet.
 
-### Standardredigeringsläget får inte vara ett klassiskt användargränssnitt {#oakpal-default-authoring}
+### Standardredigeringsläget får inte vara klassiskt användargränssnitt {#oakpal-default-authoring}
 
 **Nyckel**: KlassisktUIAuthoringMode
 
@@ -697,7 +697,7 @@ På liknande sätt som *Paket bör inte innehålla duplicerade OSGi-konfiguratio
 
 OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. Eftersom det klassiska användargränssnittet har tagits bort sedan AEM 6.4 kommer ett problem nu att uppstå när standardredigeringsläget är konfigurerat till Classic UI.
 
-### Komponenter med dialogrutor bör ha gränssnittsdialogrutor med pekskärmar {#oakpal-components-dialogs}
+### Komponenter med dialogrutor bör ha Touch UI-dialogrutor {#oakpal-components-dialogs}
 
 **Nyckel**: ComponentWithOnlyClassicUIDialog
 
@@ -709,13 +709,13 @@ OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` defin
 
 AEM som har en klassisk användargränssnittsdialogruta ska alltid ha en motsvarande användargränssnittsdialogruta för att både tillhandahålla en optimal redigeringsupplevelse och vara kompatibel med distributionsmodellen för Cloud Servicen, där det klassiska användargränssnittet inte stöds. Den här regeln verifierar följande scenarier:
 
-* En komponent med en klassisk gränssnittsdialogruta (d.v.s. en underordnad dialogrutenod) måste ha en motsvarande Touch UI-dialogruta (d.v.s. en underordnad nod). `cq:dialog`
-* En komponent med en klassisk dialogruta för användargränssnittsdesign (d.v.s. en design_dialog-nod) måste ha en motsvarande designdialogruta för användargränssnittet (d.v.s. en `cq:design_dialog` underordnad nod).
+* En komponent med en klassisk gränssnittsdialogruta (d.v.s. en underordnad dialogrutenod) måste ha en motsvarande Touch UI-dialogruta (d.v.s. en underordnad `cq:dialog`-nod).
+* En komponent med en klassisk dialogruta för användargränssnittsdesign (d.v.s. en design_dialog-nod) måste ha en motsvarande dialogruta för användargränssnittsdesign (d.v.s. en `cq:design_dialog`-underordnad nod).
 * En komponent med både en klassisk användargränssnittsdialogruta och en klassisk dialogruta för användargränssnittsdesign måste ha både en motsvarande dialogruta för användargränssnittet för touchredigering och en motsvarande designdialogruta för användargränssnittet för touchgränssnitt.
 
-Dokumentationen för AEM Moderniseringsverktyg innehåller dokumentation och verktyg för hur du konverterar komponenter från det klassiska gränssnittet till Touch-gränssnittet. Mer information finns [i AEM Moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/pages/tools.html) .
+Dokumentationen för AEM Moderniseringsverktyg innehåller dokumentation och verktyg för hur du konverterar komponenter från det klassiska gränssnittet till Touch-gränssnittet. Mer information finns i [Verktygen för AEM (a1/>).](https://opensource.adobe.com/aem-modernize-tools/pages/tools.html)
 
-### Paketen får inte innehålla blandbart och oföränderligt innehåll {#oakpal-packages-immutable}
+### Paket får inte blandas med muterbart och oföränderligt innehåll {#oakpal-packages-immutable}
 
 **Nyckel**: ImmutableMutableMixedPackage
 
@@ -725,9 +725,9 @@ Dokumentationen för AEM Moderniseringsverktyg innehåller dokumentation och ver
 
 **Sedan**: Version 2020.5.0
 
-För att vara kompatibel med databasens distributionsmodell måste enskilda innehållspaket innehålla antingen innehåll för de oföränderliga områdena i databasen (d.v.s. inte ändras av kundkoden och orsakar en separat överträdelse) eller det ändringsbara området (d.v.s. allt annat), men inte båda. `/apps and /libs, although /libs` Ett paket som innehåller båda `/apps/myco/components/text and /etc/clientlibs/myco` är till exempel inte kompatibelt med Cloud Service och orsakar att ett problem rapporteras.
+För att vara kompatibel med databasens distributionsmodell måste enskilda innehållspaket innehålla antingen innehåll för de oföränderliga områdena i databasen (d.v.s. `/apps and /libs, although /libs` ska inte ändras av kundkoden och orsaka en separat överträdelse) eller det ändringsbara området (d.v.s. allt annat), men inte båda. Ett paket som innehåller både `/apps/myco/components/text and /etc/clientlibs/myco` är till exempel inte kompatibelt med Cloud Service och orsakar att ett problem rapporteras.
 
-Refer to [AEM Project Structure](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/implementing/developing/aem-project-content-package-structure.html) for more details.
+Mer information finns i [AEM projektstruktur](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/implementing/developing/aem-project-content-package-structure.html).
 
 ### Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
 
@@ -739,7 +739,7 @@ Refer to [AEM Project Structure](https://docs.adobe.com/content/help/en/experien
 
 **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [versionsinformationen: Borttagning av replikeringsagenter](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/release-notes/aem-cloud-changes.html#replication-agents).
+Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://docs.adobe.com/content/help/en/experience-manager-cloud-service/release-notes/aem-cloud-changes.html#replication-agents).
 
 Kunder som använder omvänd replikering bör kontakta Adobe för att få alternativa lösningar.
 
