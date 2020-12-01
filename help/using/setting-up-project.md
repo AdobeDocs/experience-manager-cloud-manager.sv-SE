@@ -17,19 +17,19 @@ ht-degree: 7%
 För att kunna byggas och driftsättas med Cloud Manager måste befintliga AEM följa vissa grundläggande regler:
 
 * Projekt måste byggas med Apache Maven.
-* Det måste finnas en *pom.xml* -fil i Git-databasens rot. Den här *pom.xml* -filen kan referera till så många undermoduler (som i sin tur kan ha andra undermoduler osv.) vid behov.
+* Det måste finnas en *pom.xml*-fil i roten för Git-databasen. Den här *pom.xml*-filen kan referera till så många undermoduler (som i sin tur kan ha andra undermoduler, osv.) vid behov.
 
-* Du kan lägga till referenser till ytterligare Maven-artefaktdatabaser i dina *pom.xml* -filer. Åtkomst till [lösenordsskyddade artefaktarkiv](#password-protected-maven-repositories) stöds vid konfigurering. Åtkomst till nätverksskyddade artefaktdatabaser stöds dock inte.
-* Distribuerbara innehållspaket upptäcks genom att söka efter *zip* -filer för innehållspaket som finns i en katalog med namnet *target*. Ett valfritt antal undermoduler kan producera innehållspaket.
+* Du kan lägga till referenser till ytterligare Maven-artefaktdatabaser i dina *pom.xml*-filer. Åtkomst till [lösenordsskyddade artefaktdatabaser](#password-protected-maven-repositories) stöds vid konfigurering. Åtkomst till nätverksskyddade artefaktdatabaser stöds dock inte.
+* Distribuerbara innehållspaket upptäcks genom att söka efter innehållspaketet *zip*-filer som finns i en katalog med namnet *target*. Ett valfritt antal undermoduler kan producera innehållspaket.
 
-* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip* -filer (återigen i en katalog med namnet *target*) som har kataloger med namnen *conf* och *conf.d*.
+* Distribuerbara Dispatcher-artefakter upptäcks genom att söka efter *zip*-filer (igen, i en katalog med namnet *target*) som har kataloger med namnet *conf* och *conf.d*.
 
 * Om det finns mer än ett innehållspaket är det inte säkert att paketdistributioner ordnas. Om en viss ordning behövs kan innehållspaketets beroenden användas för att definiera ordningen. Paket kan [hoppas över](#skipping-content-packages) från distributionen.
 
 
 ## Aktivera Maven-profiler i Cloud Manager {#activating-maven-profiles-in-cloud-manager}
 
-I vissa begränsade fall kan du behöva ändra din byggprocess något när du kör i Cloud Manager i stället för när den körs på arbetsstationer för utvecklare. I dessa fall kan [Maven Profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html) användas för att definiera hur bygget ska vara olika i olika miljöer, inklusive Cloud Manager.
+I vissa begränsade fall kan du behöva ändra din byggprocess något när du kör i Cloud Manager i stället för när den körs på arbetsstationer för utvecklare. I dessa fall kan [Maven-profiler](https://maven.apache.org/guides/introduction/introduction-to-profiles.html) användas för att definiera hur bygget ska vara olika i olika miljöer, inklusive Cloud Manager.
 
 Aktivering av en Maven-profil i Cloud Managers byggmiljö bör göras genom att söka efter miljövariabeln CM_BUILD som beskrivs ovan. Omvänt bör en profil som bara är avsedd att användas utanför Cloud Manager-byggmiljön göras genom att leta efter denna variabel som saknas.
 
@@ -105,20 +105,20 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
         </profile>
 ```
 
-## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
+## Lösenordsskyddat stöd för Maven-databas {#password-protected-maven-repositories}
 
 >[!NOTE]
 >Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras via den här mekanismen för närvarande inte körs via Cloud Managers Quality Gates. Därför bör det endast användas i sällsynta fall och för kod som inte är knuten till AEM. Du bör också distribuera Java-källorna samt hela projektets källkod tillsammans med binärfilen.
 
-Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](/help/using/build-environment-details.md#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat. När Cloud Manager-byggprocessen startar sammanfogas elementet i den här filen till den standardfil som finns i `<servers>` `settings.xml` Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. Server-ID:n som **inte** matchar något av dessa prefix, eller standard-ID:t `central` speglas aldrig av Cloud Manager. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>` och/eller `<pluginRepository>` element i `pom.xml` filen. I allmänhet finns dessa `<repository>` och/eller `<pluginRepository>` -element i en [Cloud Manager-specifik profil](#activating-maven-profiles-in-cloud-manager), även om det inte är absolut nödvändigt.
+Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [förloppsvariabel](/help/using/build-environment-details.md#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer schemat [Maven Settings File](https://maven.apache.org/settings.html). När Cloud Manager-byggprocessen startar sammanfogas elementet `<servers>` i den här filen med standardfilen `settings.xml` som tillhandahålls av Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. Server-ID:n **inte** som matchar något av dessa prefix, eller standard-ID:t `central` kommer aldrig att speglas av Cloud Manager. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>`- och/eller `<pluginRepository>`-element i `pom.xml`-filen. I allmänhet finns dessa `<repository>`- och/eller `<pluginRepository>`-element i en [Cloud Manager-specifik profil](#activating-maven-profiles-in-cloud-manager), även om det inte är absolut nödvändigt.
 
-Låt oss till exempel säga att databasen finns på https://repository.myco.com/maven2, att användarnamnet Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
+Låt oss till exempel säga att databasen finns på https://repository.myco.com/maven2. Användarnamnet för Cloud Manager är `cloudmanager` och lösenordet är `secretword`.
 
 Först anger du lösenordet som en hemlighet i pipeline:
 
 `$ aio cloudmanager:set-pipeline-variables PIPELINEID --secret CUSTOM_MYCO_REPOSITORY_PASSWORD secretword`
 
-Referera sedan från `.cloudmanager/maven/settings.xml` filen:
+Referera sedan detta från `.cloudmanager/maven/settings.xml`-filen:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,7 +134,7 @@ Referera sedan från `.cloudmanager/maven/settings.xml` filen:
 </settings>
 ```
 
-Och referera slutligen till server-ID:t i `pom.xml` filen:
+Och referera slutligen till server-ID:t i `pom.xml`-filen:
 
 ```xml
 <profiles>
@@ -177,7 +177,7 @@ Och referera slutligen till server-ID:t i `pom.xml` filen:
 </profiles>
 ```
 
-### Distribuera källor {#deploying-sources}
+### Distribuerar källor {#deploying-sources}
 
 Det är en god vana att driftsätta Java-källorna tillsammans med binärfilen i en Maven-databas.
 
@@ -198,7 +198,7 @@ Konfigurera maven-source-plugin i ditt projekt:
         </plugin>
 ```
 
-### Distribuera projektkällor {#deploying-project-sources}
+### Distribuerar projektkällor {#deploying-project-sources}
 
 Det är en god vana att driftsätta hela projektkällan tillsammans med binärfilen i en Maven-databas, vilket innebär att den exakta artefakten kan återskapas.
 
@@ -264,4 +264,4 @@ Med content-package-maven-plugin är den ungefär så här:
 
 ## Utveckla din kod baserat på bästa praxis {#develop-your-code-based-on-best-practices}
 
-Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning bästa metoder för AEM utvecklare](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/best-practices.html).
+Adobe tekniker och konsultteam har utvecklat en [heltäckande uppsättning med bästa praxis för AEM utvecklare](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/best-practices.html).
