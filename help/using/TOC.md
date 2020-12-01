@@ -32,7 +32,7 @@ ht-degree: 14%
 + Komma igång {#getting-started}
    + [Inloggning för första gången](first-time-login.md)
    + [Konfigurera ditt program](setting-up-program.md)
-   + Create an AEM Application Project {#create-application-project}
+   + Skapa ett AEM programprojekt {#create-application-project}
       + [Använda guiden](using-the-wizard.md)
       + [Konfigurera projektet](setting-up-project.md)
       + [Förstå byggmiljön](build-environment-details.md)
@@ -52,7 +52,7 @@ ht-degree: 14%
    + [Versionshantering för Maven Project](activating-maven-project.md)
    + [Åtkomst till Git](accessing-git.md)
    + [Integrera med Git](setup-cloud-manager-git-integration.md)
-+ Produktuppdateringsguide {#product-update-wizard}
++ Produktuppdateringsguiden {#product-update-wizard}
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
