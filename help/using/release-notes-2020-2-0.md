@@ -5,6 +5,9 @@ description: Följ den här sidan för att få information om Cloud Manager vers
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.2.0
 translation-type: tm+mt
 source-git-commit: 44671d89edad0ccb6ded998b62beb5fa012678e9
+workflow-type: tm+mt
+source-wordcount: '194'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +21,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2020.2.0 är 13 februari 20
 
 ## Nyheter {#whats-new}
 
-* Adobe Experience Managers arkivtypsversion har uppdaterats till version 22.
+* Adobe Experience Manager arkivtypsversion har uppdaterats till version 22.
 * Lagt till aktiva instanser i scendistributionsloggar
 * URL:er som används i Experience Cloud-meddelanden har optimerats för att undvika en extra omdirigering.
 * Körningssteg för pipeline som nådde tidsgränsen anger nu uttryckligen detta.
