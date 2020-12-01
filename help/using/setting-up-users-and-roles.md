@@ -10,68 +10,71 @@ topic-tags: requirements
 discoiquuid: 1b421993-22c3-4de0-ba64-c1080d07ad5e
 translation-type: tm+mt
 source-git-commit: a96500b57c980d31d3a70341d8be7b92ae73a1c5
+workflow-type: tm+mt
+source-wordcount: '616'
+ht-degree: 32%
 
 ---
 
 
 # Lägg till användare och roller {#add-users-and-roles}
 
-Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter för att fungera. Exempelvis kan bara vissa användare ange KPI:er (Key Performance Indicators) för ett program. Dessa behörigheter är logiskt grupperade i roller.
+Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter för att kunna användas. Exempelvis kan bara vissa användare ange KPI:er (Key Performance Indicators) för ett program. Dessa behörigheter är logiskt grupperade i roller.
 
 [!UICONTROL Cloud Manager] definierar för närvarande fyra roller för användare som styr tillgängligheten av specifika funktioner:
 
-* Företagsägare
-* Programhanteraren
-* Distributionshanteraren
-* Utvecklare
+* Business Owner
+* Program Manager
+* Deployment Manager
+* Developer
 
 >[!CAUTION]
 >
->För att kunna använda [!UICONTROL Cloud Manager]måste du ha ett Adobe-ID och Adobe Managed Services Product Context.
+>Om du vill använda [!UICONTROL Cloud Manager] måste du ha en Adobe ID och produktkontexten för Adobes hanterade tjänster.
 
 ## Rolldefinitioner {#role-definitions}
 
 >[!NOTE]
 >
->Utvecklarrollen i Admin Console är inte relevant för utvecklarrollen i [!UICONTROL Cloud Manager].
+>Utvecklarrollen i Admin Console är inte relaterad till utvecklarrollen i [!UICONTROL Cloud Manager].
 
 I följande tabell sammanfattas rollerna:
 
 | [!UICONTROL Cloud Manager] Roller | Beskrivning |
 |--- |--- |
 | Företagsägare | Ansvarig för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-skiktsfel. |
-| Programhanteraren | Används [!UICONTROL Cloud Manager] för att konfigurera team, granska status och visa KPI:er. Kan godkänna viktiga fel i tre nivåer. |
-| Distributionshanteraren | Hanterar distributionsåtgärder. Används [!UICONTROL Cloud Manager] för att köra fas-/produktionsdistributioner. Kan redigera CI/CD-rör. Kan godkänna viktiga fel i tre nivåer. Kan få åtkomst till Git-databasen. |
-| Utvecklare | Utvecklar och testar anpassad programkod. Används främst [!UICONTROL Cloud Manager] för att visa status. Kan få åtkomst till Git-databasen för kodimplementering. |
-| Customer Success Engineer | Stöder vanligtvis kundframgångar för AMS-kunder. Interagerar med [!UICONTROL Cloud Manager] i syfte att genomföra distributioner som kräver CSE-tillsyn. |
-| Innehållsförfattare | I allmänhet interagerar inte med [!UICONTROL Cloud Manager]. Kan använda [!UICONTROL Cloud Manager] Program Switcher (efter att ha navigerat från [!UICONTROL Experience Cloud]) för att få åtkomst till AEM. |
+| Programhanteraren | Använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status och visa KPI:er. Kan godkänna viktiga fel i tre nivåer. |
+| Distributionshanteraren | Hanterar distributionsåtgärder. Använder [!UICONTROL Cloud Manager] för att köra scen-/produktionsdistributioner. Kan redigera CI/CD-rör. Kan godkänna viktiga fel i tre nivåer. Kan få åtkomst till Git-databasen. |
+| Utvecklare | Utvecklar och testar anpassad programkod. I används främst [!UICONTROL Cloud Manager] för att visa status. Kan få åtkomst till Git-databasen för kodimplementering. |
+| Customer Success Engineer | Stöder vanligtvis kundframgångar för AMS-kunder. Interagerar med [!UICONTROL Cloud Manager] för att köra distributioner som kräver CSE-övervakning. |
+| Innehållsförfattare | I allmänhet interagerar inte med [!UICONTROL Cloud Manager]. Använd [!UICONTROL Cloud Manager] Programväljaren (när du har navigerat från [!UICONTROL Experience Cloud]) för att få åtkomst till AEM. |
 
-## Skapa en profil med Admin Console {#using-admin-console-to-create-a-profile}
+## Skapa en profil {#using-admin-console-to-create-a-profile} med Admin Console
 
-Roller hanteras för [!UICONTROL Cloud Manager] från Adobe Admin Console. Specifika rollmedlemskap erbjuds genom att användaren läggs till i en [!UICONTROL Cloud Manager] produktprofil i Admin Console.
+Roller hanteras för [!UICONTROL Cloud Manager] från Adobe Admin Console. Specifika rollmedlemskap erbjuds genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
 
 Du kan tilldela specifika rollmedlemskap genom att lägga till användaren i en **produktprofil** för [!UICONTROL Cloud Manager] i Adobe Admin Console, en central plats där du kan hantera Adobe-behörigheter för hela organisationen. Mer information om Adobe Admin Console finns i dokumentationen för [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 >[!NOTE]
 >
->Öppna en webbläsare och gå till Admin Console och konfigurera ditt team (användare och roller) på [https://adminconsole.adobe.com](https://adminconsole.adobe.com/enterprise).
+>Öppna en webbläsare och gå till Admin Console och konfigurera ditt team (användare och roller) och gå till [https://adminconsole.adobe.com](https://adminconsole.adobe.com/enterprise).
 
 För att kunna ge [!UICONTROL Cloud Manager]-användarna rätt rollbaserade behörigheter måste en administratör i kundens **organisation** skapa nya produktprofiler för [!UICONTROL AEM Managed Services].
 
-Om du vill ge [!UICONTROL Cloud Manager] användarna rätt rollbaserade behörigheter måste du som administratör skapa fyra nya produktprofiler under [!UICONTROL AEM Managed Services] produktkontexten som motsvarar de fyra [!UICONTROL Cloud Manager] rollerna:
+För att ge rätt rollbaserade behörigheter till [!UICONTROL Cloud Manager]-användare måste du som administratör skapa fyra nya produktprofiler under [!UICONTROL AEM Managed Services] produktkontext som motsvarar var och en av de fyra [!UICONTROL Cloud Manager]-rollerna:
 
 * Företagsägare
 * Distributionshanteraren
 * Utvecklare
 * Programhanteraren
 
-Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med [Admin Console](https://adminconsole.adobe.com/) for [!UICONTROL Cloud Manager], vilket visas i bilden nedan:
+Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med [Admin Console](https://adminconsole.adobe.com/) för [!UICONTROL Cloud Manager], vilket visas i bilden nedan:
 
 1. Logga in på Admin Console och klicka på **Ny profil** för att lägga till en ny profil.
 
    ![](assets/admin_console_roles-1.png)
 
-1. Fyll i fälten för att ange en ny roll för [!UICONTROL Cloud Manager].
+1. Fyll i fälten för att konfigurera en ny roll för [!UICONTROL Cloud Manager].
 
    Ange **profilnamn**, **visningsnamn** för att skapa en ny profil. Dessutom kan du välja en **behörighetsgrupp** för profilen.
 
