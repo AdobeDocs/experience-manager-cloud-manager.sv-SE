@@ -23,7 +23,7 @@ Under Pipeline-körningen registreras och jämförs ett antal mätvärden med ny
 
 Dessa rapporteras med hjälp av ett system med tre nivåer av klassificering enligt definitionen i detta avsnitt.
 
-## Tre nivåportar under körning av en pipeline  {#three-tier-gates-while-running-a-pipeline}
+## Tre nivåportar när en pipeline körs {#three-tier-gates-while-running-a-pipeline}
 
 Det finns tre portar i pipeline:
 
@@ -33,9 +33,9 @@ Det finns tre portar i pipeline:
 
 För var och en av dessa portar finns det en struktur på tre nivåer för problem som identifieras av porten.
 
-* **Kritiskt** - Detta är problem som identifieras av porten och som orsakar ett omedelbart fel i rörledningen.
-* **Viktigt** - Det här är problem som identifieras av porten och som gör att pipelinen försätts i pausläge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
-* **Info** - Detta är frågor som identifieras av portalen och som endast tillhandahålls i informationssyfte och som inte har någon inverkan på ledningen.
+* **Kritiskt**  - Detta är problem som identifieras av porten och som orsakar ett omedelbart fel i rörledningen.
+* **Viktigt**  - Det här är problem som identifieras av porten och som gör att pipelinen försätts i pausläge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
+* **Info**  - Det rör sig om frågor som identifieras av portalen och som endast tillhandahålls i informationssyfte och som inte har någon inverkan på ledningen.
 
 >[!NOTE]
 >
@@ -43,42 +43,42 @@ För var och en av dessa portar finns det en struktur på tre nivåer för probl
 
 ## Testning av kodkvalitet {#code-quality-testing}
 
-I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet för en rörledning med enbart kodkvalitet och genomförs omedelbart efter byggsteget i alla rörledningar för icke-produktion och produktion. Mer information om olika typer av pipelines finns i [Konfigurera CI-CD-pipeline](/help/using/configuring-pipeline.md) .
+I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet för en rörledning med enbart kodkvalitet och genomförs omedelbart efter byggsteget i alla rörledningar för icke-produktion och produktion. Mer information om olika typer av pipelines finns i [Konfigurera CI-CD-pipeline](/help/using/configuring-pipeline.md).
 
-### Förstå testning av kodkvalitet {#understanding-code-quality-testing}
+### Om kodkvalitetstestning {#understanding-code-quality-testing}
 
-I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [anpassade regler](/help/using/custom-code-quality-rules.md)för kodkvalitet.
+I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
 >[!NOTE]
 >Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-latest.xlsx).
 
-Resultatet av det här steget visas som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
+Resultatet av det här steget levereras som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
 
 | Namn | Definition | Kategori | Feltröskel |
 |--- |--- |--- |--- |
-| Säkerhetsklassificering | A = 0 Sårbarhet <br/>B = minst 1 Mindre sårbarhet<br/> C = minst 1 Större sårbarhet <br/>D = minst 1 Kritisk sårbarhet <br/>E = minst 1 Blockerare Sårbarhet | Kritisk | &lt; B |
-| Tillförlitlighetsklassificering | A = 0 Fel <br/>B = minst 1 mindre fel <br/>C = minst 1 större fel <br/>D = minst 1 kritiskt<br/>fel E = minst 1 blockeringsfel | Viktigt | &lt; C |
-| Underhållbarhetsklassificering | Oöverträffade reparationskostnader för illaluktande kod är: <br/><ul><li>&lt;=5 % av tiden som redan har gått in i programmet är klassificeringen A </li><li>Betyg 6-10 % är B </li><li>Betyg mellan 11 och 20 % är ett C </li><li>Betyg mellan 21 och 50 % är ett D</li><li>över 50 % är ett E</li></ul> | Viktigt | &lt; A |
-| Täckning | En blandning av radens disponering och villkorstäckning med denna formel: <br/>`Coverage = (CT + CF + LC)/(2*B + EL)`  <br/>där: CT = villkor som har utvärderats till &#39;true&#39; minst en gång under enhetstester <br/>CF = villkor som har utvärderats till &#39;false&#39; minst en gång under enhetstester <br/>LC = täckta linjer = lines_to_cover - uncover_lines <br/><br/> B = totalt antal villkor <br/>EL = totalt antal körbara rader (lines_to_cover) | Viktigt | &lt; 50% |
+| Säkerhetsklassificering | A = 0 Sårbarhet <br/>B = minst 1 Minor Sulnerability<br/> C = minst 1 Allvarlig sårbarhet <br/>D = minst 1 Kritisk sårbarhet <br/>E = minst 1 Blockerarsårbarhet | Kritisk | &lt; B |
+| Tillförlitlighetsklassificering | A = 0 fel <br/>B = minst 1 mindre fel <br/>C = minst 1 större fel <br/>D = minst 1 allvarlig fel<br/>E = minst 1 blockeringsfel | Viktigt | &lt; C |
+| Underhållbarhetsklassificering | Oöverträffade reparationskostnader för illaluktande kod är: <br/><ul><li>&lt;> </li><li>Betyg 6-10 % är B </li><li>Betyg mellan 11 och 20 % är ett C </li><li>Betyg mellan 21 och 50 % är ett D</li><li>över 50 % är ett E</li></ul> | Viktigt | &lt; A |
+| Täckning | En blandning av radens disponering och villkorstäckning med denna formel: <br/>`Coverage = (CT + CF + LC)/(2*B + EL)` <br/>där: CT = villkor som har utvärderats till &#39;true&#39; minst en gång under enhetstester <br/>CF = villkor som har utvärderats till &#39;false&#39; minst en gång under enhetstester <br/>LC = täckta rader = lines_to_cover - uncover_lines <br/><br/> B = totalt antal villkor <br/>EL = totalt antal körbara rader (lines_to_cover) | Viktigt | &lt; 50=&quot;&quot;> |
 | Överhoppade enhetstester | Antal överhoppade enhetstester. | Information | > 1 |
 | Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Information | > 0 |
-| Duplicerade rader | Antal rader som ingår i duplicerade block. <br/>För att ett kodblock ska betraktas som duplicerat: <br/><ul><li>**Projekt som inte är Java:**</li><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa tokens bör spridas åtminstone på: </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li><li>**Java-projekt:**</li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul> <br/>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Information | > 1% |
+| Duplicerade rader | Antal rader som ingår i duplicerade block. <br/>För att ett kodblock ska betraktas som duplicerat:  <br/><ul><li>**Projekt som inte är Java:**</li><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa tokens bör spridas åtminstone på: </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li><li>**Java-projekt:**</li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul> <br/>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Information | > 1% |
 | Cloud Service-kompatibilitet | Antal identifierade kompatibilitetsproblem för Cloud Service. | Information | > 0 |
 
 
 >[!NOTE]
 >
->Mer detaljerade definitioner finns i [Måttdefinitioner](https://docs.sonarqube.org/display/SONAR/Metric+Definitions) .
+>Mer detaljerade definitioner finns i [Måttdefinitioner](https://docs.sonarqube.org/display/SONAR/Metric+Definitions).
 
 >[!NOTE]
 >
->Mer information om de anpassade regler för kodkvalitet som körs av [!UICONTROL Cloud Manager]finns i [Anpassade regler](custom-code-quality-rules.md)för kodkvalitet.
+>Mer information om de anpassade regler för kodkvalitet som körs av [!UICONTROL Cloud Manager] finns i [Anpassade regler för kodkvalitet](custom-code-quality-rules.md).
 
 ### Hantera med falskt positiva {#dealing-with-false-positives}
 
 Kvalitetsskanningsprocessen är inte perfekt och kan ibland felaktigt identifiera problem som inte är problematiska. Detta kallas &quot;falskt positivt&quot;.
 
-I dessa fall kan källkoden kommenteras med Java- `@SuppressWarnings` standardanteckningen som anger regel-ID som anteckningsattribut. Ett vanligt problem är att regeln SonarQube för att identifiera hårdkodade lösenord kan vara aggressiv om hur ett hårdkodat lösenord identifieras.
+I dessa fall kan källkoden kommenteras med Java `@SuppressWarnings`-standardanteckningen som anger regel-ID som anteckningsattribut. Ett vanligt problem är att regeln SonarQube för att identifiera hårdkodade lösenord kan vara aggressiv om hur ett hårdkodat lösenord identifieras.
 
 Om du vill titta på ett specifikt exempel är koden ganska vanlig i ett AEM projekt som har kod att ansluta till en extern tjänst:
 
@@ -106,13 +106,13 @@ Den rätta lösningen är sedan att ta bort det hårdkodade lösenordet.
 
 >[!NOTE]
 >
->Även om det är en god vana att göra anteckningen så specifik som möjligt, dvs. bara anteckna den specifika programsats eller det block som orsakar problemet, är det möjligt att anteckna på klassnivå. `@SuppressWarnings`
+>Även om det är en god vana att göra `@SuppressWarnings`-anteckningen så specifik som möjligt, d.v.s. bara anteckna den specifika programsats eller det block som orsakar problemet, är det möjligt att anteckna på en klassnivå.
 
 ## Säkerhetstestning {#security-testing}
 
-[!UICONTROL Cloud Manager] kör de befintliga ***AEM säkerhetskontrollerna*** på scenen efter distributionen och rapporterar statusen via användargränssnittet. Resultaten sammanställs från alla AEM instanser i miljön.
+[!UICONTROL Cloud Manager] kör det befintliga  ***AEM Security Heath*** Checkson-steget efter distributionen och rapporterar statusen via användargränssnittet. Resultaten sammanställs från alla AEM instanser i miljön.
 
-Om någon av **instanserna** rapporterar ett fel för en viss hälsokontroll misslyckas hälsokontrollen i hela **miljön** . Precis som för kodkvalitets- och prestandatestning är dessa hälsokontroller ordnade i kategorier och rapporterade med hjälp av ett system med tre nivåer. Den enda skillnaden är att det inte finns något tröskelvärde när det gäller säkerhetstestning. Alla hälsokontroller godkänns eller misslyckas helt enkelt.
+Om någon av **instanserna** rapporterar ett fel för en given hälsokontroll misslyckas hela **miljön** den hälsokontrollen. Precis som för kodkvalitets- och prestandatestning är dessa hälsokontroller ordnade i kategorier och rapporterade med hjälp av ett system med tre nivåer. Den enda skillnaden är att det inte finns något tröskelvärde när det gäller säkerhetstestning. Alla hälsokontroller godkänns eller misslyckas helt enkelt.
 
 I följande tabell visas de aktuella kontrollerna:
 
@@ -140,7 +140,7 @@ I följande tabell visas de aktuella kontrollerna:
 
 ## Prestandatestning {#performance-testing}
 
-*Prestandatestning* i [!UICONTROL Cloud Manager] implementeras med 30 minuters test.
+*Prestandatestning*  [!UICONTROL Cloud Manager] implementeras med 30 minuters test.
 
 Under pipeline-konfigurationen kan driftsättningshanteraren bestämma hur mycket trafik som ska dirigeras till varje bucket.
 
@@ -155,13 +155,13 @@ I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett system m
 | **Mått** | **Kategori** | **Feltröskel** |
 |---|---|---|
 | Felfrekvens för sidbegäran % | Kritisk | >= 2% |
-| CPU-utnyttjandegrad | Kritisk | >= 80% |
-| Väntetid för disk-I/O | Kritisk | >= 50% |
+| CPU-utnyttjandegrad | Kritisk | >= 80 % |
+| Väntetid för disk-I/O | Kritisk | >= 50 % |
 | 95 % svarstid | Viktigt | >= KPI på programnivå |
 | Tid för högsta svar | Viktigt | >= 18 sekunder |
-| Sidvyer per minut | Viktigt | &lt; KPI på programnivå |
-| Användning av diskbandbredd | Viktigt | >= 90% |
-| Utnyttjande av nätverksbandbredd | Viktigt | >= 90% |
+| Sidvyer per minut | Viktigt | &lt; Program-level=&quot;&quot; KPI=&quot;&quot;> |
+| Användning av diskbandbredd | Viktigt | >= 90 % |
+| Utnyttjande av nätverksbandbredd | Viktigt | >= 90 % |
 | Begäranden per minut | Information | >= 6000 |
 
 ### Resultatdiagram för prestandatestning {#performance-testing-results-graphs}
@@ -170,7 +170,7 @@ Nya diagram och nedladdningsalternativ har lagts till i dialogrutan Resultat av 
 
 När du öppnar dialogrutan Prestandatest kan du expandera mätpanelerna för att visa ett diagram, skapa en länk till en hämtning eller båda.
 
-I version 2018.7.0 [!UICONTROL Cloud Manager] är den här funktionen tillgänglig för följande mått:
+För [!UICONTROL Cloud Manager] version 2018.7.0 är den här funktionen tillgänglig för följande mått:
 
 * **CPU-användning**
    * En graf över CPU-användningen under testperioden.
