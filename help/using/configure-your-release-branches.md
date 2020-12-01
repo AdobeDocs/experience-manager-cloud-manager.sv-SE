@@ -10,6 +10,9 @@ topic-tags: getting-started
 discoiquuid: 53807ea6-9464-429d-9322-85c9f405dff6
 translation-type: tm+mt
 source-git-commit: 9c0df236c1e800802d62dea09996bb8e1e7033f7
+workflow-type: tm+mt
+source-wordcount: '307'
+ht-degree: 0%
 
 ---
 
@@ -18,7 +21,7 @@ source-git-commit: 9c0df236c1e800802d62dea09996bb8e1e7033f7
 
 ## Konfigurera din första gren i Git {#setting-up-your-first-branch-in-git}
 
-En enda, till att börja med tom, **Git-databas** tillhandahålls för varje program som introduceras i Cloud Manager. Den här databasen kan innehålla så många (eller så få) grenar som utvecklingsprocessen följer, men det måste finnas minst en gren som används av CI/CD-pipeline för att distribuera programkod till scenen och produktionen. Det bästa sättet är att använda `master` som namn på den här grenen. Detta är bekvämt standardbeteendet för Git-klienter när nya projekt konfigureras.
+En enskild, inledningsvis tom, **Git-databas** har etablerats för varje program som introduceras i Cloud Manager. Den här databasen kan innehålla så många (eller så få) grenar som utvecklingsprocessen följer, men det måste finnas minst en gren som används av CI/CD-pipeline för att distribuera programkod till scenen och produktionen. Det bästa sättet är att använda `master` som namn på den här grenen. Detta är bekvämt standardbeteendet för Git-klienter när nya projekt konfigureras.
 
 När du skapar ett nytt projekt kommer du att köra en uppsättning kommandon som följande:
 
@@ -54,9 +57,9 @@ $ git commit -m "initial commit"
 >
 >Det är inte ett krav att använda kommandoradsklienten. Det finns en mängd grafiska Git-klienter tillgängliga antingen som fristående program eller som en del av en integrerad utvecklingsmiljö (IDE), till exempel Eclipse eller IntelliJ. Så länge klientprogrammet stöder Git med HTTPS bör det vara kompatibelt med [!UICONTROL Cloud Manager].
 
-## Knuffa din första gren {#pushing-your-first-branch}
+## Tryck på din första gren {#pushing-your-first-branch}
 
-När du har implementerat minst en revision kan du lägga till databasen som en [!UICONTROL Cloud Manager] fjärrdatabas **** och sedan skicka dina implementeringar till den:
+När du har implementerat minst en revision kan du lägga till databasen [!UICONTROL Cloud Manager] som en **fjärr** och sedan överföra dina implementeringar till den:
 
 ```shell
 $ git remote add adobe <url>
@@ -72,12 +75,12 @@ To <url>
 
 >[!NOTE]
 >
->Den specifika URL:en, tillsammans med dina inloggningsuppgifter, tillhandahålls av din Customer Success Engineering under [!UICONTROL Cloud Manager] introduktionen.
+>Den specifika URL:en, tillsammans med dina inloggningsuppgifter, tillhandahålls av din Customer Success Engineering under [!UICONTROL Cloud Manager]-introduktionen.
 
 ## Ytterligare grenar {#additional-branches}
 
-Det kan räcka med en enda `master` gren för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som kallas `develop` och där utvecklingsgrenen sammanfogas i `master` grenen när det är dags för en distribution.
+En enskild `master`-gren kan räcka för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som heter `develop` och där framkallningsgrenen slås samman i `master`-grenen när det är dags för en distribution.
 
 >[!NOTE]
 >
->Mer information om vanliga Git-kommandon finns i [Git-värmebladet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet).
+>Mer information om vanliga Git-kommandon finns i [Git Cheat Sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet).
