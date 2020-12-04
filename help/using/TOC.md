@@ -6,9 +6,9 @@ user-guide-title: Handbok för Experience Manager Cloud Manager
 breadcrumb-title: Handbok för Cloud Manager
 user-guide-description: Lär dig använda Adobes hanterade tjänster för att självhantera Experience Manager i molnet.
 translation-type: tm+mt
-source-git-commit: 30d782f5a095b1b07ec4f2039def9ba30a559325
+source-git-commit: f5359dee907b32cefa2db2c4ad2baf8e337f6060
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '249'
 ht-degree: 14%
 
 ---
@@ -52,6 +52,7 @@ ht-degree: 14%
    + [Versionshantering för Maven Project](activating-maven-project.md)
    + [Åtkomst till Git](accessing-git.md)
    + [Integrera med Git](setup-cloud-manager-git-integration.md)
+   + [Arbeta med Git-databaser med flera källor](/help/using/working-with-multiple-source-git-repos.md)
 + Produktuppdateringsguiden {#product-update-wizard}
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
