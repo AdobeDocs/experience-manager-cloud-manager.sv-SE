@@ -10,7 +10,7 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: d02292e4f6369e0e0bf8fcf60cb8fe299854b3cc
+source-git-commit: bbcd5e59a9f9e8cb83cefb8af79d3ce7987bf388
 workflow-type: tm+mt
 source-wordcount: '1776'
 ht-degree: 0%
@@ -170,7 +170,7 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    Låt oss till exempel säga att det finns en delning på 50 %/50 % mellan de populära Live-sidorna och de nya sidorna (i det här exemplet används inte andra Live-sidor) och den nya siduppsättningen innehåller 3 000 sidor. Sidvyerna per minut är inställda på 200. Under 30 minuters testperiod:
 
-   * Var och en av de 25 sidorna i populära Live Pages-uppsättningen kommer att visas 240 gånger - ((200 * 0.5) / 25) * 30 = 120
+   * Var och en av de 25 sidorna i populära Live Pages-uppsättningen kommer att tryckas 120 gånger - ((200 * 0.5) / 25) * 30 = 120
 
    * Var och en av de 3 000 sidorna i den nya siduppsättningen kommer att tryckas en gång - ((200 * 0.5) / 3 000) * 30 = 1
 
