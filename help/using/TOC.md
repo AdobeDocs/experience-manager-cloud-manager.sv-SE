@@ -6,7 +6,7 @@ user-guide-title: Handbok för Experience Manager Cloud Manager
 breadcrumb-title: Handbok för Cloud Manager
 user-guide-description: Lär dig använda Adobes hanterade tjänster för att självhantera Experience Manager i molnet.
 translation-type: tm+mt
-source-git-commit: 5688e956c4c21968ce691b560a6ce519496f7563
+source-git-commit: f3e5e4be7ac4ba7eef158cea3c1c19ea83ec4d75
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 13%
@@ -45,7 +45,7 @@ ht-degree: 13%
    + [Hantera dina miljöer](manage-your-environment.md)
    + [Övervaka era miljöer](monitor-your-environments.md)
    + [API för Cloud Manager](https://www.adobe.io/apis/experiencecloud/cloud-manager/docs.html)
-   + [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/master/README.md)
+   + [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/main/README.md)
    + [Meddelanden](notifications.md)
    + [Anpassade regler för kodkvalitet](custom-code-quality-rules.md)
 + Hantera din kod {#managing-code}
