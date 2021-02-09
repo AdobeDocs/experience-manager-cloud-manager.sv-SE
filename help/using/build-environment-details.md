@@ -2,9 +2,9 @@
 title: Förstå byggmiljön
 description: Följ den här sidan om du vill veta mer om miljöer
 translation-type: tm+mt
-source-git-commit: 000843f902a180181981de2b1307fd2777d32994
+source-git-commit: 60270a7adb612355ff6d6928adcff8e94cabe092
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '768'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,14 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 
 >[!NOTE]
 >Även om Cloud Manager inte definierar en specifik version av `jacoco-maven-plugin` måste den version som används vara minst `0.7.5.201505241946`.
+
+
+>[!NOTE]
+>Mer information om hur du använder API:er för Cloud Manager finns i följande extraresurser:
+> * [aio-cli-plugin-cloud-manager](https://github.com/adobe/aio-cli-plugin-cloudmanager)
+>* [Skapa en API-integrering](https://www.adobe.io/apis/experiencecloud/cloud-manager/docs.html#!AdobeDocs/cloudmanager-api-docs/master/create-api-integration.md)
+>* [API-behörigheter](https://www.adobe.io/apis/experiencecloud/cloud-manager/docs.html#!AdobeDocs/cloudmanager-api-docs/master/permissions.md)
+
 
 ## Använda Java 11 {#using-java-11}
 
@@ -124,6 +132,7 @@ När de används i en `Maven pom.xml`-fil är det vanligtvis praktiskt att mappa
             </properties>
         </profile>
 ```
+
 
 ## Installerar ytterligare systempaket {#installing-additional-system-packages}
 
