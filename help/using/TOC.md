@@ -6,9 +6,9 @@ user-guide-title: Handbok för Experience Manager Cloud Manager
 breadcrumb-title: Handbok för Cloud Manager
 user-guide-description: Lär dig använda Adobes hanterade tjänster för att självhantera Experience Manager i molnet.
 translation-type: tm+mt
-source-git-commit: f3e5e4be7ac4ba7eef158cea3c1c19ea83ec4d75
+source-git-commit: 88b17f05a577b5c46b5b352d7340228353b49a38
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '255'
 ht-degree: 13%
 
 ---
@@ -57,7 +57,8 @@ ht-degree: 13%
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
-   + [Aktuell versionsinformation (2020.12.0)](release-notes-current.md)
+   + [Aktuell versionsinformation (2021.2.0)](release-notes-current.md)
+   + [Versionsinformation för 2020.12.0](release-notes-2020-12-0.md)
    + [Versionsinformation för 2020.11.0](release-notes-2020-11-0.md)
    + [Versionsinformation för 2020.10.0](release-notes-2020-10-0.md)
    + [Versionsinformation för 2020.9.0](release-notes-2020-9-0.md)
