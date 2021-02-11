@@ -1,7 +1,7 @@
 ---
 title: Hantera dina miljöer
 seo-title: Hantera dina miljöer
-description: 'null'
+description: Läs om Cloud Manager-miljön
 seo-description: Följ den här sidan för att visa en lista över produktions- och icke-produktionsmiljöer som används för att konfigurera och köra CI/CD-pipeline i Cloud Manager.
 uuid: 04e67572-11db-4d5d-acf3-fd7f644a95f0
 contentOwner: jsyal
@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: c5b39de2-3a9b-437f-98e8-e6e6249a5b3a
 translation-type: tm+mt
-source-git-commit: c81243708d938a8bffdec8a35f32a2cf552c1c95
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '269'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Statusen är det sammanslagna energiläget över alla noder i miljön. Det är g
 
 Klicka på **Hantera** för att visa skärmen **Miljö**.
 
-Skärmen **Environment** visar ett kort vardera för *Production* och *Stage*-miljöer (beroende på vad som är tillämpligt) i ditt program. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
+Skärmen **Environment** visar ett kort vardera för *Production*- och *Stage*-miljöer (beroende på vad som är tillämpligt) i ditt program. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
 
 >[!NOTE]
 >
