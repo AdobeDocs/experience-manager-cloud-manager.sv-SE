@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation för 2018.7.0
 seo-title: Versionsinformation för 2018.7.0
-description: 'null'
+description: Läs om Cloud Manager version 2018.7.0
 seo-description: Följ den här sidan om du vill ha information om Cloud Manager version 2018.7.0.
 uuid: d7b49e32-01dc-48ce-b744-e6a806fbdd8a
 contentOwner: jsyal
@@ -9,9 +9,9 @@ topic-tags: release-notes
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 discoiquuid: b64bf9ab-27ed-4f33-adc8-d73d34094f1b
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '354'
 ht-degree: 1%
 
 ---
