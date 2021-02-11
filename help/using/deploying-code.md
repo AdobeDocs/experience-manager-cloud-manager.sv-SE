@@ -1,17 +1,17 @@
 ---
 title: Distribuera koden
 seo-title: Distribuera koden
-description: 'null'
-seo-description: När du har konfigurerat din pipeline (databas, miljö och testmiljö) är du redo att distribuera koden. Följ den här sidan om du vill veta mer.
+description: Ger en översikt över distributionsprocessen i Cloud Manager
+seo-description: Lär dig hur du distribuerar koden när du har konfigurerat din pipeline (databas-, miljö- och testmiljö)
 uuid: 4e3807e1-437e-4922-ba48-0bcadf293a99
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 translation-type: tm+mt
-source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '952'
+source-wordcount: '957'
 ht-degree: 0%
 
 ---
@@ -142,10 +142,10 @@ Produktionsinstallationer följer i allmänhet samma steg som ovan, men på ett 
 
 1. Distribuera AEM som ska författas.
 1. Koppla loss dispatcher1 från belastningsutjämnaren.
-1. Distribuera AEM paket till publish1 och dispatcherpaketet till dispatcher1, flush dispatcher cache.
+1. Distribuera AEM paket till publish1 och dispatcherns paket till dispatcher1 parallellt, tömma dispatchercachen.
 1. Placera dispatcher1 i belastningsutjämnaren igen.
 1. När dispatcher1 är tillbaka i tjänst frigör du dispatcher2 från belastningsutjämnaren.
-1. Distribuera AEM paket till publish2 och dispatcherpaketet till dispatcher2, flush dispatcher cache.
+1. Distribuera AEM paket för att publicera2 och dispatcherpaketet till dispatcher2 parallellt, tömma dispatchercachen.
 1. Placera dispatcher2 i belastningsutjämnaren igen.
 Den här processen fortsätter tills distributionen har nått alla utgivare och utgivare i topologin.
 
