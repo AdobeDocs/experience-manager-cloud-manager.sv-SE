@@ -1,15 +1,15 @@
 ---
 title: CI/CD-pipeline
 seo-title: CI/CD-pipeline
-description: 'null'
-seo-description: Följ det här avsnittet för att lära dig mer om CI/CD-flödet, som hanterar distributioner till scenen och produktionen i Cloud Manager.
+description: Översikt över CI/CD Pipeline, som hanterar distributioner till scener och produktion i Cloud Manager
+seo-description: Följ det här avsnittet för att lära dig mer om CI/CD-flödet, som hanterar distributioner till scenen och produktionen i Cloud Manager
 uuid: 763ddb24-05cd-463f-8d72-a2e69bbe6b7e
 topic-tags: introduction
 discoiquuid: 1cdb76eb-1a91-4689-8579-0fa9fccc0592
 translation-type: tm+mt
-source-git-commit: 8580cec50ac5dafb4e2525371a39d58c82f1cbc9
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '546'
 ht-degree: 0%
 
 ---
