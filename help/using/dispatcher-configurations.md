@@ -1,7 +1,7 @@
 ---
 title: Hantera dina Dispatcher-konfigurationer
 seo-title: Hantera dina Dispatcher-konfigurationer
-description: 'null'
+description: Lär dig hur du distribuerar dispatcherkonfigurationsfiler med hjälp av Cloud Manager
 seo-description: Följ den här sidan om du vill veta mer om hur du konfigurerar dispatcher.
 uuid: 3ecd8ca3-5241-4811-87fd-3284a8012eda
 contentOwner: jsyal
@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 8888dd80-d908-464e-927d-779db1a832a4
 translation-type: tm+mt
-source-git-commit: 2ada697ca21acd0c73dbce2bce3e9481ac50272c
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '597'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
