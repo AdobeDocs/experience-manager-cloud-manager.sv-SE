@@ -1,12 +1,12 @@
 ---
 title: Övervaka era miljöer
 seo-title: Övervaka era miljöer
-description: 'null'
+description: Lär dig övervaka dina miljöer i Cloud Manager
 seo-description: Följ den här sidan om du vill veta mer om systemövervakning i Cloud Manager som görs genom att observera de enskilda instanserna i en miljö och spåra en mängd mätvärden för varje instans.
 translation-type: tm+mt
-source-git-commit: 16893b8bcd2b2d681a14bb6be3786e358e1952fb
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '966'
 ht-degree: 0%
 
 ---
