@@ -1,18 +1,18 @@
 ---
 title: Distributionsmiljö
 seo-title: Distributionsmiljö
-description: 'null'
-seo-description: 'null'
+description: Lär dig distribuera miljö
+seo-description: Distributionsmiljö
 page-status-flag: never-activated
 uuid: 73436882-a3f7-4048-bb8d-7f5819d29c8f
 contentOwner: jsyal
 discoiquuid: 4ac3e831-2227-4ea8-abcc-c5734e023424
 preview: true
 translation-type: tm+mt
-source-git-commit: ace032fbb26235d87d61552a11996ec2bb42abce
+source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
 workflow-type: tm+mt
-source-wordcount: '75'
-ht-degree: 2%
+source-wordcount: '80'
+ht-degree: 0%
 
 ---
 
