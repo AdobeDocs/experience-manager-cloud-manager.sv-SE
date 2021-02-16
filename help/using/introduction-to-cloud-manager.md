@@ -9,21 +9,28 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 translation-type: tm+mt
-source-git-commit: 213d1b2ee52496cc8cf6bc699488d9da9f7b9946
+source-git-commit: 6ff4b6e950e153c98b6981ec09dfa0648809c693
 workflow-type: tm+mt
-source-wordcount: '682'
-ht-degree: 4%
+source-wordcount: '749'
+ht-degree: 8%
 
 ---
 
 
 # Introduktion till [!UICONTROL Cloud Manager]{#introduction-to-cloud-manager}
 
+>[!CONTEXTUALHELP]
+>id="aemcloud_cloudmanager_introduction"
+>title="Introduktion till Cloud Manager"
+>abstract="Organisationer kan själva hantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet."
+>additional-url="https://experienceleague.adobe.com/docs/experience-manager-learn/cloud-service/cloud-manager/programs.html?lang=en#cloud-manager" text="Skapa program"
+>additional-url="https://experienceleague.adobe.com/docs/experience-manager-learn/cloud-service/cloud-manager/environments.html?lang=en#cloud-manager" text="Skapa miljöer"
+
 ## Introduktion {#introduction}
 
 [!UICONTROL Cloud Manager], som ingår i Adobe Experience Manager (AEM) i Cloud, gör det möjligt för organisationer att självhantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet.
 
-[!UICONTROL Cloud Manager]Organisationer **kan utföra/utnyttja följande med hjälp av självbetjäningsportalen:**
+**Organisationer** kan utföra/utnyttja följande med hjälp av självbetjäningsportalen:[!UICONTROL Cloud Manager]
 
 * **Kontinuerlig integrering/kontinuerlig** leverans av kod för att minska time to market från månader/veckor till dagar/timmar.
 * **Code Inspection, performance testing and security** validering based on best practices before push to production to minimize production ruption.
@@ -66,7 +73,7 @@ Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Dist
 
 ### Automatisk skalning {#autoscaling}
 
-[!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet när produktionsmiljön utsätts för ovanligt hög belastning och automatiskt tillför ytterligare kapacitet online via funktionen för autoskalning.
+[!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet när produktionsmiljön är ovanligt hög och automatiskt lägger till ytterligare kapacitet online via funktionen för autoskalning.
 
 Under en autoskalningshändelse utlöser [!UICONTROL Cloud Manager] automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger till ytterligare kapacitet online på några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/Publish-noder som körs.
 
