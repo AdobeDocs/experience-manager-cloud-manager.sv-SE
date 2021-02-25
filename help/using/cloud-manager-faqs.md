@@ -4,9 +4,9 @@ seo-title: Vanliga frågor om Cloud Manager
 description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Följ den här sidan för att få svar på vanliga frågor om Cloud Manager
 translation-type: tm+mt
-source-git-commit: cb63a8bbe30b28668313dc851f17aa34fc166474
+source-git-commit: 1d4f07ba0aa4630585ccbb35f2d48f0c7e1f3df2
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '881'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # Vanliga frågor om Cloud Manager {#cloud-manager-faqs}
 
-I följande avsnitt ges svar på några av de vanligaste frågorna och svaren om Cloud Manager.
+Följande avsnitt ger svar på några vanliga frågor och svar om Cloud Manager.
 
 ## 1. Går det att använda Java 11 med Cloud Manager-byggen? {#java-11-cloud-manager}
 
-Det går inte att skapa AEM Cloud Manager när du försöker byta från Java 8 till Java 11. Problemet kan ha många orsaker och de vanligaste är beskrivna nedan:
+Det går inte att skapa AEM Cloud Manager när du försöker byta från Java 8 till 11. Problemet kan ha många orsaker och de vanligaste är beskrivna nedan:
 
 * Lägg till maven-toolchains-plugin med rätt inställningar för Java 11 enligt [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/getting-started/create-application-project/using-the-wizard.html?lang=en#getting-started).  Se till exempel [exempelprojektkoden](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75).
 
@@ -43,7 +43,7 @@ Anteckningar om prestandateststeget:
 * *Prestandasteget* är ett webbprestandasteg, vilket innebär att det är dags att läsa in sidan med en webbläsare.
 * De URL:er som anges i den resulterande CSV-filen läses in i en Chrome-webbläsare i Cloud Manager-infrastrukturen under testet.
 * Ett vanligt mått som misslyckas är *felfrekvensen*. För att en URL ska kunna skickas måste huvud-URL:en läsas in med status 200 och på mindre än 20 sekunder. Sidinläsningar som överstiger 20 sekunder markeras som 504 fel.
-* Om din webbplats kräver användarautentisering läser du den här dokumentationen för hur du konfigurerar testet för autentisering till din plats.
+* Om din plats kräver användarautentisering läser du [Autentiserad prestandatestning](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html?lang=en#how-to-use) för att konfigurera testet för autentisering till din plats.
 
 ## 4. Får vi använda SNAPSHOT i maven-projektet? Hur fungerar versionshantering av paketen och källfilerna för driftsättning av scener och produktion? {#snapshot-version}
 
