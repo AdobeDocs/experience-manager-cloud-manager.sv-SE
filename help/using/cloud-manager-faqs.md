@@ -4,9 +4,9 @@ seo-title: Vanliga frågor om Cloud Manager
 description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Följ den här sidan för att få svar på vanliga frågor om Cloud Manager
 translation-type: tm+mt
-source-git-commit: d901fd27626640e71d367d3f138d7ba2e907fa9a
+source-git-commit: 31627bf11a46b2e6f1d0aa196bc4a9cf9648e775
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '882'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Vanliga frågor om Cloud Manager {#cloud-manager-faqs}
 
-Följande avsnitt ger svar på några vanliga frågor och svar om Cloud Manager.
+Följande avsnitt innehåller svar på vanliga frågor om Cloud Manager.
 
 ## Går det att använda Java 11 med Cloud Manager-byggen? {#java-11-cloud-manager}
 
@@ -22,7 +22,7 @@ Det går inte att skapa AEM Cloud Manager när du försöker byta från Java 8 t
 
 * Lägg till maven-toolchains-plugin med rätt inställningar för Java 11 enligt [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/getting-started/create-application-project/using-the-wizard.html?lang=en#getting-started).  Se till exempel [exempelprojektkoden](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75).
 
-* Om du råkar ut för felet nedan måste du ta bort användningen av maven-scr-plugin och konvertera alla OSGi-anteckningar till OSGi R6-anteckningar. Mer information finns i [här](https://cqdump.wordpress.com/2019/01/03/from-scr-annotations-to-osgi-annotations/).
+* Om du råkar ut för felet nedan måste du ta bort användningen av `maven-scr-plugin` och konvertera alla OSGi-anteckningar till OSGi R6-anteckningar. Mer information finns i [här](https://cqdump.wordpress.com/2019/01/03/from-scr-annotations-to-osgi-annotations/).
 
    `[main] [ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.26.4:scr (generate-scr-scrdescriptor) on project helloworld.core: /build_root/build/testsite/src/main/java/com/adobe/HelloWorldServiceImpl.java : Unable to load compiled class: com.adobe.HelloWorldServiceImpl: com/adobe/HelloWorldServiceImpl has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0 -> [Help 1]`
 
@@ -47,11 +47,11 @@ Anteckningar om prestandateststeget:
 
 ## Får vi använda SNAPSHOT i den version av projektet Maven? Hur fungerar versionshantering av paketen och källfilerna för driftsättning av scener och produktion? {#snapshot-version}
 
-1. För dev-distributioner måste Git-grenen `pom.xml`-filer innehålla -SNAPSHOT i slutet av `<version>`-värdet. Detta gör att efterföljande distribution där versionen inte ändras kan installeras. I dev-distributioner läggs ingen automatisk version till eller genereras för mven-bygget.
+1. För dev-distributioner måste Git-grenen `pom.xml`-filerna innehålla `-SNAPSHOT` i slutet av `<version>`-värdet. Detta gör att efterföljande distribution där versionen inte ändras kan installeras. I dev-distributioner läggs ingen automatisk version till eller genereras för maven-bygget.
 
 1. I fas- och produktionsdistributionen genereras en automatisk version enligt [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/managing-code/activating-maven-project.html?lang=en#managing-code).
 
-1. För anpassad versionshantering i scen- och produktionsdistributioner ställer du in en 3-dels korrekt Maven-version som `1.0.0`. Öka versionen varje gång du ska göra en ny distribution till produktion.
+1. För anpassad versionshantering i scen- och produktionsdistributioner ställer du in en korrekt version med 3 delar som `1.0.0`. Öka versionen varje gång du ska göra en ny distribution till produktion.
 
 1. Cloud Manager lägger automatiskt till sin version i Stage- och Production-byggen och skapar till och med en Git-gren. Ingen särskild konfiguration krävs. Om steg 3 ovan hoppas över fungerar distributionen ändå som den ska och en version ställs in automatiskt.
 
