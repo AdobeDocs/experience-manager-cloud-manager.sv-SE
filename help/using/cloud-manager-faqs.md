@@ -4,7 +4,7 @@ seo-title: Vanliga frågor om Cloud Manager
 description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Följ den här sidan för att få svar på vanliga frågor om Cloud Manager
 translation-type: tm+mt
-source-git-commit: fbf91ad0d200a9f1cbde4e87cf6b78a8479d0614
+source-git-commit: 0db6a6a4e430cd2619db1739fd322224e4e129e7
 workflow-type: tm+mt
 source-wordcount: '881'
 ht-degree: 0%
@@ -47,11 +47,11 @@ Anteckningar om prestandateststeget:
 
 ## Får vi använda SNAPSHOT i den version av projektet Maven? Hur fungerar versionshantering av paketen och källfilerna för driftsättning av scener och produktion? {#snapshot-version}
 
-1. För dev-distributioner måste Git-grenen `pom.xml`-filerna innehålla `-SNAPSHOT` i slutet av `<version>`-värdet. Detta gör att efterföljande distribution där versionen inte ändras kan installeras. I dev-distributioner läggs ingen automatisk version till eller genereras för maven-bygget.
+1. För utvecklardistributioner måste Git-grenen `pom.xml`-filerna innehålla `-SNAPSHOT` i slutet av `<version>`-värdet. Detta gör att efterföljande distribution där versionen inte ändras kan installeras. I utvecklingsmiljöer läggs ingen automatisk version till eller genereras för maven-bygget.
 
-1. I fas- och produktionsdistributionen genereras en automatisk version enligt [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/managing-code/activating-maven-project.html?lang=en#managing-code).
+1. I scen- och produktionsdistributionen genereras en automatisk version enligt [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/managing-code/activating-maven-project.html?lang=en#managing-code).
 
-1. För anpassad versionshantering i scen- och produktionsdistributioner ställer du in en korrekt version med 3 delar som `1.0.0`. Öka versionen varje gång du ska göra en ny distribution till produktion.
+1. För anpassad versionshantering i Stage- och Production-distributioner anger du en korrekt maven-version på 3 delar som `1.0.0`. Öka versionen varje gång du ska göra en ny distribution till produktion.
 
 1. Cloud Manager lägger automatiskt till sin version i Stage- och Production-byggen och skapar till och med en Git-gren. Ingen särskild konfiguration krävs. Om steg 3 ovan hoppas över fungerar distributionen ändå som den ska och en version ställs in automatiskt.
 
@@ -82,8 +82,8 @@ Relaterade kommandon och fel:
 
 `$ aio cloudmanager:list-pipeline-variables 222`
 
-Fel: `Cannot get variables: https://cloudmanager.adobe.io/api/program/111/pipeline/222/variables (403 Forbidden)`
+*Fel*:  `Cannot get variables: https://cloudmanager.adobe.io/api/program/111/pipeline/222/variables (403 Forbidden)`
 
 `$ aio cloudmanager:set-pipeline-variables 222 --variable TEST 1`
 
-Fel: `Cannot get variables: https://cloudmanager.adobe.io/api/program/111/pipeline/222/variables (403 Forbidden)`
+*Fel*:  `Cannot get variables: https://cloudmanager.adobe.io/api/program/111/pipeline/222/variables (403 Forbidden)`
