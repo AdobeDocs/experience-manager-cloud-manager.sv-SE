@@ -4,9 +4,9 @@ seo-title: Vanliga frågor om Cloud Manager
 description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Följ den här sidan för att få svar på vanliga frågor om Cloud Manager
 translation-type: tm+mt
-source-git-commit: 0db6a6a4e430cd2619db1739fd322224e4e129e7
+source-git-commit: da3346852df4e421a69321830d7efee81d58e20c
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '880'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Anteckningar om prestandateststeget:
 
 1. Cloud Manager lägger automatiskt till sin version i Stage- och Production-byggen och skapar till och med en Git-gren. Ingen särskild konfiguration krävs. Om steg 3 ovan hoppas över fungerar distributionen ändå som den ska och en version ställs in automatiskt.
 
-1. Om du lämnar versionen med `-SNAPSHOT` för scen- och produktionsbyggen eller distributioner är även det OK. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
+1. Det finns inga problem om du lämnar versionen med `-SNAPSHOT` för Stage- och Production-byggen eller -distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
 1. Om du vill testa experimentell kod i utvecklingsmiljön kan du skapa en ny Git-gren och ställa in pipeline så att den använder den andra grenen. Detta är användbart när distributioner börjar misslyckas och du vill testa med äldre versioner av koden för att se när den gick sönder.
 
