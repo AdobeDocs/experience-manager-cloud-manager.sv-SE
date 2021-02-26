@@ -4,9 +4,9 @@ seo-title: Vanliga frågor om Cloud Manager
 description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Följ den här sidan för att få svar på vanliga frågor om Cloud Manager
 translation-type: tm+mt
-source-git-commit: da3346852df4e421a69321830d7efee81d58e20c
+source-git-commit: cf5c02c8c594015b6baa00e1a8aaa2d898aa60a9
 workflow-type: tm+mt
-source-wordcount: '880'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,9 @@ Anteckningar om prestandateststeget:
 * Ett vanligt mått som misslyckas är *felfrekvensen*. För att en URL ska kunna skickas måste huvud-URL:en läsas in med `200`-status och på mindre än `20` sekunder. Sidinläsningar som överskrider `20` sekunder markeras som `504`-fel.
 * Om din plats kräver användarautentisering läser du [Autentiserad prestandatestning](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html?lang=en#how-to-use) för att konfigurera testet för autentisering till din plats.
 
-## Får vi använda SNAPSHOT i den version av projektet Maven? Hur fungerar versionshantering av paketen och källfilerna för driftsättning av scener och produktion? {#snapshot-version}
+## Får vi använda SNAPSHOT i den version av projektet Maven? Hur fungerar versionshantering av paketen och paketburkfilerna för Stage- och Production-distributioner? {#snapshot-version}
+
+Titta på följande scenarier för att lära dig mer om versionshantering av paketen och källfilerna för Stage- och Production-distributioner:
 
 1. För utvecklardistributioner måste Git-grenen `pom.xml`-filerna innehålla `-SNAPSHOT` i slutet av `<version>`-värdet. Detta gör att efterföljande distribution där versionen inte ändras kan installeras. I utvecklingsmiljöer läggs ingen automatisk version till eller genereras för maven-bygget.
 
