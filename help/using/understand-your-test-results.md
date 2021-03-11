@@ -9,9 +9,9 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 translation-type: tm+mt
-source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
+source-git-commit: b5233e1932888b515d8dc26a6493cbd26686bc3c
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1563'
 ht-degree: 2%
 
 ---
@@ -47,10 +47,10 @@ I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet f
 
 ### Om kodkvalitetstestning {#understanding-code-quality-testing}
 
-I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube och granskning på innehållspaketnivå med hjälp av OakPAL. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
+I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube, granskning på innehållspaketnivå med hjälp av OakPAL och dispatchervalidering med Dispatcher Optimization Tool. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
 >[!NOTE]
->Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-latest-AMS.xlsx).
+>Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-AMS.xlsx).
 
 Resultatet av det här steget levereras som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
 
