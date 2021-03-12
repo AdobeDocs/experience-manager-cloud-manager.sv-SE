@@ -10,7 +10,7 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: bbcd5e59a9f9e8cb83cefb8af79d3ce7987bf388
+source-git-commit: 5542942da33efc2926e62cce00ea39e3c65b3e16
 workflow-type: tm+mt
 source-wordcount: '1776'
 ht-degree: 0%
@@ -85,8 +85,8 @@ Välj din Git-gren och klicka på **Nästa**.
    Detta är användbart för kunder som vill ha mer automatiserade processer. De tillgängliga alternativen är:
 
 * **Fråga varje gång**  - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
-* **Misslyckas omedelbart** - Om du väljer detta avbryts pipelinen varje gång ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
-* **Fortsätt omedelbart** - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
+* **Avbryt omedelbart** - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
+* **Godkänn omedelbart**  - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
 
    Nu definierar du parametrarna som styr produktionsdistributionen. De tre tillgängliga alternativen är följande:
 
@@ -104,7 +104,7 @@ Välj din Git-gren och klicka på **Nästa**.
 >
 >Se [**Distribuera koden**](deploying-code.md) för att ställa in distributionsschemat eller köra produktionen direkt.
 
-![](assets/configure-pipeline3.png)
+![](assets/configure-pipeline-new.png)
 
 >[!NOTE]
 >
