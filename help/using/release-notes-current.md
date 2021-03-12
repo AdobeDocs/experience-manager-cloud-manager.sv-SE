@@ -4,9 +4,9 @@ seo-title: Versionsinformation om AEM Cloud Manager för 2021.3.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.3.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2021.3.0
 translation-type: tm+mt
-source-git-commit: 5542942da33efc2926e62cce00ea39e3c65b3e16
+source-git-commit: 090505e737b8cb224d87f117a9b5e786a4f99851
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2021.3.0 är 11 mars 2021.
 
 * **Versionsetiketten** har ändrats till **Git-tagg** på körningsskärmen för produktionspipeline.
 
-* Etiketterna som definierar beteendet när viktiga mätvärden inte uppfyller det definierade tröskelvärdet har märkts om för att återspegla deras verkliga beteende - **Avbryt omedelbart** och **Godkänn omedelbart**.
+* Etiketterna som definierar beteendet när viktiga mätvärden inte uppfyller det definierade tröskelvärdet har märkts om för att återspegla deras verkliga beteende - **Avbryt omedelbart** och **Godkänn omedelbart**. Mer information finns i [Konfigurera förloppsinställningarna från Cloud Manager](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html?lang=en#configuring-the-pipeline-settings-from-cloud-manager).
 
 * Listorna över klass- och metodborttagning har uppdaterats baserat på version `2021.3.4997.20210303T022849Z-210225` av AEM Cloud Service-SDK.
 
