@@ -4,7 +4,7 @@ seo-title: Versionsinformation om AEM Cloud Manager för 2021.3.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.3.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2021.3.0
 translation-type: tm+mt
-source-git-commit: b0c29ed6712abd556458aea6d49f6382f183cdae
+source-git-commit: e12adf3549af6ecd5e7487ef27f25abc44eaa794
 workflow-type: tm+mt
 source-wordcount: '279'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2021.3.0 är 11 mars 2021.
 
 * Användare med nödvändig behörighet kan nu redigera program och göra följande på ett självbetjäningssätt:
 
-   *Lägg till Sites-lösning i ett befintligt program med Assets (eller vice versa).
+   * Lägg till Sites-lösning i ett befintligt program med Assets (eller vice versa).
    * Ta bort platser (eller resurser) från ett befintligt program med både platser och resurser.
    * Du kan lägga till (tillbaka) en lösning till det befintliga programmet eller som ett nytt program.
 
