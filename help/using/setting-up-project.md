@@ -1,10 +1,11 @@
 ---
 title: Konfigurera projektet
 description: Följ den här sidan för att lära dig hur du konfigurerar ett projekt
+feature: Komma igång, produktion
 translation-type: tm+mt
-source-git-commit: 2ada697ca21acd0c73dbce2bce3e9481ac50272c
+source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '876'
 ht-degree: 7%
 
 ---
