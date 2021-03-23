@@ -8,10 +8,11 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 2221d1d5-dbc2-4175-8371-60344f932a82
+feature: Komma igång
 translation-type: tm+mt
-source-git-commit: 2005b7e7689d3bc0656f92ecdbe368519f0d52a9
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '249'
 ht-degree: 6%
 
 ---
