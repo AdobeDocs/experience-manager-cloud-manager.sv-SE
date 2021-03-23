@@ -8,11 +8,12 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: requirements
 discoiquuid: 1b421993-22c3-4de0-ba64-c1080d07ad5e
+feature: Användarroller
 translation-type: tm+mt
-source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
+source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt
-source-wordcount: '630'
-ht-degree: 32%
+source-wordcount: '632'
+ht-degree: 31%
 
 ---
 
