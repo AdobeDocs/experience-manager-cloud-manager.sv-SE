@@ -1,10 +1,11 @@
 ---
 title: Förstå byggmiljön
 description: Följ den här sidan om du vill veta mer om miljöer
+feature: Miljöer
 translation-type: tm+mt
-source-git-commit: 5a6148fd7750544def87147c5f012c09077b2b60
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '769'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 18.04.
 * Apache Maven 3.6.0 är installerad.
-* Java-versionerna är Oracle JDK 8u202 och 11.0.2.
+* De Java-versioner som är installerade är Oracle JDK 8u202 och 11.0.2.
 * Det finns ytterligare systempaket installerade som är nödvändiga:
 
    * bzip2
