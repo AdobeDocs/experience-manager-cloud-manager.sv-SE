@@ -3,10 +3,11 @@ title: Versionsinformation för 2019.9.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2019.9.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2019.9.0.
 seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2019.9.0.
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: de9d2834ffa6c235e580227bd020fb8a0b94d22c
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '279'
 ht-degree: 1%
 
 ---
@@ -24,7 +25,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2019.9.0 är 12 september 2
 * Kategoriseringen av hälsokontrollen för Sling Referrer-filtret har ändrats från Kritisk till Viktigt.
 * Kategoriseringen av HTML Library Manager Config-hälsokontrollen har ändrats från Kritisk till Viktigt.
 * Det går nu att hämta övervakningsdiagram. Mer information finns i [Övervaka dina miljöer](monitor-your-environments.md).
-* Om ett program inte har någon AEM för produktion kommer du att navigera till översiktssidan för Cloud Manager genom att klicka på programkortet från landningssidan, utan att skapa någon feldialogruta.
+* Om ett program inte har någon AEM för produktion, kommer du att navigera till översiktssidan för Cloud Manager genom att klicka på programkortet från landningssidan. Det ger ingen feldialogruta.
 * Kortet **Pipeline Settings** på sidan **Översikt** har fått namnet **Production Pipeline Settings**.
 * Alternativknapparna för det viktiga felbeteendet har tagits bort från enbart pipelines för kodkvalitet.
 * Sidan **Aktivitet** visar nu namnet på pipeline för varje körning.
