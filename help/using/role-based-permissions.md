@@ -5,10 +5,11 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: 67a54bae-99a9-4405-91e3-9a0a8b3ccc98
+feature: Användarroller
 translation-type: tm+mt
-source-git-commit: 9cbe8f58cf04001ba9851ba321f03c7687e58014
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '519'
 ht-degree: 15%
 
 ---
