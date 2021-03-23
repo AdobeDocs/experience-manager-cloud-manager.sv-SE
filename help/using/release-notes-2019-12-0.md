@@ -3,10 +3,11 @@ title: Versionsinformation för 2019.12.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2019.12.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2019.12.0.
 seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2019.12.0.
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: 0fa1fedccb013e82c8df5838a612ce26a1efb7e8
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
