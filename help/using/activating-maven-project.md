@@ -3,11 +3,12 @@ title: Versionshantering för Maven Project
 seo-title: Versionshantering för Maven Project
 description: Läs mer om versionshantering för Maven Project.
 seo-description: Följ den här sidan om du vill veta mer om versionshantering för Maven Project.
+feature: Komma igång
 translation-type: tm+mt
-source-git-commit: e2187565e7f06d64841eb2af9b4b1a56feb5ebe4
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '253'
-ht-degree: 7%
+source-wordcount: '255'
+ht-degree: 8%
 
 ---
 
