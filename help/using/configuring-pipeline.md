@@ -10,10 +10,10 @@ topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 translation-type: tm+mt
-source-git-commit: 5542942da33efc2926e62cce00ea39e3c65b3e16
+source-git-commit: 7a33d6dc2240b61c9413bba34880ee5e7d49e02d
 workflow-type: tm+mt
-source-wordcount: '1776'
-ht-degree: 0%
+source-wordcount: '1249'
+ht-degree: 1%
 
 ---
 
@@ -99,7 +99,6 @@ Välj din Git-gren och klicka på **Nästa**.
 * **Schemalagd**  - Med det här alternativet kan användaren aktivera den schemalagda produktionsdistributionen.
 
 >[!NOTE]
->
 >Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipelinen **efter** scendistributionen (och **Använd GoLive Approval**, om detta har aktiverats) för att vänta på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
 >
 >Se [**Distribuera koden**](deploying-code.md) för att ställa in distributionsschemat eller köra produktionen direkt.
@@ -153,62 +152,17 @@ Följ stegen nedan för att konfigurera Dispatcher Invalidations:
 
    ![](assets/image2018-8-7_15-4-30.png)
 
+1. Gå till fliken **Testning** för att definiera testvillkoren för programmet. Du kan nu konfigurera prestandatestparametrarna.
 
-1. Gå till fliken **Testning** för att definiera testvillkoren för programmet.
-
-   Nu kan du konfigurera prestandatestparametrarna.
-
-   Du kan konfigurera *AEM Sites* och *AEM Assets* Performance Testing, beroende på vilka produkter du har licensierat.
-
-   **AEM Sites:**
-
-   Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor (som en oautentiserad användare som standard) på scenens publiceringsserver under en 30-minuters testperiod och mäta svarstiden för varje sida samt olika mätvärden på systemnivå. Dessa begäranden kommer från en uppsättning kända, dedikerade adresser. Adressintervallen kan hämtas från din Customer Success Engineer eller Adobe representant.
-
-   Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla scenmiljön med en uppsättning *dirigerings-URL:er som konfigurerats av kundens Success Engineer.* Från dessa URL:er granskas HTML-koden för varje sida och länkarna gås igenom på bredden först. Denna crawlningsprocess är begränsad till högst 5 000 sidor. Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
-
-   Sidorna markeras med tre **siduppsättningar**; du kan välja var som helst från en till alla tre uppsättningar. Trafikfördelningen baseras på antalet valda grupper, dvs. om alla tre är markerade placeras 33 % av de totala sidvyerna mot varje uppsättning. Om två är markerade går 50 % till varje uppsättning. om en sådan väljs, går 100 % av trafiken till den uppsättningen.
-
-   Låt oss till exempel säga att det finns en delning på 50 %/50 % mellan de populära Live-sidorna och de nya sidorna (i det här exemplet används inte andra Live-sidor) och den nya siduppsättningen innehåller 3 000 sidor. Sidvyerna per minut är inställda på 200. Under 30 minuters testperiod:
-
-   * Var och en av de 25 sidorna i populära Live Pages-uppsättningen kommer att tryckas 120 gånger - ((200 * 0.5) / 25) * 30 = 120
-
-   * Var och en av de 3 000 sidorna i den nya siduppsättningen kommer att tryckas en gång - ((200 * 0.5) / 3 000) * 30 = 1
-
-   ![](assets/Configuring_Pipeline_AEM-Sites.png)
-
-   Mer information finns i [Autentiserad prestandatestning](#authenticated-performance-testing).
-
-   **AEM Assets:**
-
-   Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs samt olika mätvärden på systemnivå. Denna funktion kan överföra både bilder och PDF-dokument. Distributionen av hur många resurser av varje typ som överförs per minut anges på skärmen Inställningar för pipeline eller Redigera.
-
-   Om t.ex. en delning på 70/30 används, vilket visas i figuren nedan. 10 resurser överförs per minut, 7 bilder överförs per minut och 3 dokument.
-
-   ![](assets/Configuring_Pipeline_AEM-Assets.png)
-
-   >[!NOTE]
-   >
-   >Det finns en standardbild och ett PDF-dokument, men i de flesta fall vill kunderna överföra sina egna resurser. Detta kan du göra på skärmen Inställningar för pipeline eller Redigera. Vanliga bildformat som JPEG, PNG, GIF och BMP stöds tillsammans med Photoshop-, Illustrator- och Postscript-filer.
+   Du kan konfigurera *AEM Sites* och *AEM Assets* Performance Testing, beroende på vilka produkter du har licensierat. Mer information finns i [Prestandatestning](understand-your-test-results.md#performance-testing).
 
 1. Klicka på **Spara** för att slutföra konfigurationen av pipeline-processen.
 
    >[!NOTE]
-   >
    >När du har konfigurerat pipelinen kan du dessutom fortfarande redigera inställningar för den med **Inställningar för produktionspipeline** i [!UICONTROL Cloud Manager]-gränssnittet.
 
    ![](assets/Production-Pipeline.png)
 
-### Autentiserad prestandatestning {#authenticated-performance-testing}
-
-AMS-kunder med autentiserade webbplatser kan ange ett användarnamn och lösenord som Cloud Manager ska använda för att komma åt webbplatsen under platsprestandatestning.
-
-Användarnamnet och lösenordet har angetts som [Pipeline-variabler](/help/using/build-environment-details.md#pipeline-variables) med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD`.
-
-Även om det inte är strikt obligatoriskt rekommenderar vi att du använder strängvariabeltypen för användarnamnet och hemligaString-variabeltypen för lösenordet. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
-
-Om du vill ställa in dessa variabler med [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager) kör du:
-
-`$ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>`
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
