@@ -8,10 +8,11 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: c5b39de2-3a9b-437f-98e8-e6e6249a5b3a
+feature: Miljöer
 translation-type: tm+mt
-source-git-commit: 2dda85baa5e7ed9bfd8933df3580ec6fc3c210fd
+source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
@@ -45,7 +46,7 @@ Statusen är det sammanslagna energiläget över alla noder i miljön. Det är g
 
 Klicka på **Hantera** för att visa skärmen **Miljö**.
 
-Skärmen **Environment** visar ett kort vardera för *Production*- och *Stage*-miljöer (beroende på vad som är tillämpligt) i ditt program. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
+Skärmen **Environment** visar ett kort vardera för *Production* och *Stage*-miljöer (beroende på vad som är tillämpligt) i ditt program. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
 
 >[!NOTE]
 >
