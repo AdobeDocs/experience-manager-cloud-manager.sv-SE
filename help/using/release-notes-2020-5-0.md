@@ -3,10 +3,11 @@ title: Versionsinformation för 2020.5.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2020.5.0
 description: Följ den här sidan för att få information om Cloud Manager version 2020.5.0
 seo-description: Följ den här sidan för att få information om AEM Cloud Manager version 2020.5.0
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: 0652436ec0c1c95d270a06a600424dbfd0140b27
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '189'
 ht-degree: 1%
 
 ---
