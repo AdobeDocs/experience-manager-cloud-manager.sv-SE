@@ -5,10 +5,13 @@ archetype: administrator
 user-guide-title: Handbok för Experience Manager Cloud Manager
 breadcrumb-title: Handbok för Cloud Manager
 user-guide-description: Lär dig använda Adobes hanterade tjänster för att självhantera Experience Manager i molnet.
+feature-set: Experience Manager Cloud Manager
+role: Administratör
+level: Mellanliggande
 translation-type: tm+mt
-source-git-commit: b5233e1932888b515d8dc26a6493cbd26686bc3c
+source-git-commit: 12a7d6199983e2d19ef401051f60e3f24bb6d4f8
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '263'
 ht-degree: 13%
 
 ---
