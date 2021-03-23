@@ -1,17 +1,18 @@
 ---
 title: Versionsinformation för 2018.6.0
 seo-title: Versionsinformation om AEM Cloud Manager för 2018.6.0
-description: Följ den här sidan för att få information om Cloud Manager version 2018.6.0.
+description: Följ den här sidan om du vill ha information om Cloud Manager version 2018.6.0.
 seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2018.6.0.
 uuid: 211b6e1b-10fb-46b0-b591-44d5e44abd77
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 8584f467-3e61-41ea-98e4-f79e68c86469
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: 15f75ca67c3d52ae511357c5b564daaa3d9def6b
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '336'
 ht-degree: 0%
 
 ---
