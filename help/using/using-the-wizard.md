@@ -1,11 +1,12 @@
 ---
 title: Använda guiden
 description: Följ den här sidan för att lära dig hur du använder guiden för att skapa ett AEM
+feature: Komma igång
 translation-type: tm+mt
-source-git-commit: 7146a41d64365c9de03d32f4fc4c33f9e366c244
+source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 9%
+source-wordcount: '334'
+ht-degree: 10%
 
 ---
 
