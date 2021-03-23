@@ -8,10 +8,11 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 85a1dcf3-2eef-4ba8-b4d1-09e4a88c7bd0
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: c35398110e9d8311bf58f217efdd082cf0cfd90a
+source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '337'
 ht-degree: 1%
 
 ---
