@@ -1,41 +1,43 @@
 ---
-title: Versionsinformation för 2021.3.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.3.0
+title: Versionsinformation för 2021.4.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.4.0
 feature: Versionsinformation
+exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
 translation-type: tm+mt
-source-git-commit: 12a7d6199983e2d19ef401051f60e3f24bb6d4f8
+source-git-commit: 0c33fd9f1af4c98564c9fd14a468fc3bf27744ee
 workflow-type: tm+mt
-source-wordcount: '242'
-ht-degree: 0%
+source-wordcount: '192'
+ht-degree: 1%
 
 ---
 
+# Versionsinformation för 2021.4.0 {#release-notes-for}
 
-# Versionsinformation för 2021.3.0 {#release-notes-for}
-
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.3.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.4.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.3.0 är 11 mars 2021.
-Nästa version är planerad till den 8 april 2021.
+Releasedatum för [!UICONTROL Cloud Manager] Version 2021.4.0 är 8 april 2021.
+Nästa version är planerad till 6 maj 2021.
 
 ## Nyheter {#whats-new}
 
-* Ett nytt kodkvalitetsverktyg [Dispatcher Optimization Tool](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/custom-code-quality-rules.html?lang=en#dispatcher-optimization-tool-rules) har introducerats för att validera kunddispatcherkonfigurationen.
+* Timeout för begäran för virtuella användare för prestandatestning har ökats från 20 sekunder till 60 sekunder.
 
-* Användarna kan nu se sin molnhanterarroll(er) genom att välja alternativet **Visa molnhanterarroll(er)** efter att ha navigerat till ikonen Användarprofil (överst till höger) i Unified Shell.
+* Knappen Hantera Git visas på pipelines-kortet även när inga pipelines har konfigurerats.
 
-* Etiketten **Ansökan om godkännande** har ändrats till **Produktionsgodkännande** för större tydlighet.
+* Under distributionssteget på körningssidan för pipeline kommer användaren att kunna se de slutförda och framtida distributionsstegen utöver det aktuella steget i användargränssnittet för tillståndet *Pågår*.
 
-* **Versionsetiketten** har ändrats till **Git-tagg** på körningsskärmen för produktionspipeline.
+* Den version av AEM projekttyp som används av Cloud Manager har uppdaterats till version 27.
 
-* Etiketterna som definierar beteendet när viktiga mätvärden inte uppfyller det definierade tröskelvärdet har märkts om för att återspegla deras verkliga beteende - **Avbryt omedelbart** och **Godkänn omedelbart**. Mer information finns i [Konfigurera förloppsinställningarna](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html?lang=en#configuring-the-pipeline-settings-from-cloud-manager).
+* Felmeddelandet när en pipeline startades när en miljö togs bort har klargjorts.
 
-* Listorna över klass- och metodborttagning har uppdaterats baserat på version `2021.3.4997.20210303T022849Z-210225` av AEM Cloud Service-SDK.
+* OSGi-paket som tillhandahålls av Eclipse-projekt är nu uteslutna från regeln.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Vissa kvalitetsproblem upptäcktes inte korrekt när paket bäddats in i andra paket.
+* Sällsynta, övergående fel som kan uppstå vid Assets Test-steget i produktionsflödet.
 
-* Om användaren navigerar bort från sidan för pipeline-körning omedelbart efter att ha startat en pipeline visas ett felmeddelande om att åtgärden misslyckades, även om körningen faktiskt startar.
+* Ett avslutande snedstreck i produktionsflödet Load Test orsakade ett 404-fel.
+
+* `Runmode`-kontrollen genererade falskt positiva värden på noder som inte finns i mappen.
