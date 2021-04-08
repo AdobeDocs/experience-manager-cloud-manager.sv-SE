@@ -9,14 +9,14 @@ products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: getting-started
 discoiquuid: 2221d1d5-dbc2-4175-8371-60344f932a82
 feature: Komma igång
+exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
 translation-type: tm+mt
-source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
+source-git-commit: 9be78d21b455095c1b1bd49cdb267a8aa5624927
 workflow-type: tm+mt
-source-wordcount: '249'
-ht-degree: 6%
+source-wordcount: '213'
+ht-degree: 7%
 
 ---
-
 
 # Första gången du loggar in {#first-time-login}
 
@@ -24,14 +24,6 @@ När du har konfigurerat de allmänna konfigurationerna för [!UICONTROL Cloud M
 
 >[!NOTE]
 >Beroende på vilka roller som har tilldelats i [!UICONTROL Cloud Manager] och programmets status visas olika skärmar när du använder användargränssnittet för [!UICONTROL Cloud Manager].
-
-## Videosjälvstudiekurs {#video-tutorial-one}
-
-### Cloud Manager-program {#programs-video}
-
-Följande video ger en översikt till Cloud Manager-program som representerar uppsättningar AEM miljöer som stöder logiska uppsättningar av affärsinitiativ, som vanligtvis motsvarar ett köpt serviceavtal (SLA).
-
->[!VIDEO](https://video.tv.adobe.com/v/26313/)
 
 ## Loggar in för första gången {#logging-in-for-the-first-time}
 
