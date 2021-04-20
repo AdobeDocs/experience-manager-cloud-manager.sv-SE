@@ -1,6 +1,6 @@
 ---
 solution: Experience Manager
-type: Dokumentation
+type: Documentation
 cloud: Experience Cloud
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-cloud-manager.sv-SE
 translation-type: tm+mt

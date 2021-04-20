@@ -1,7 +1,7 @@
 ---
 title: Förstå byggmiljön
 description: Följ den här sidan om du vill veta mer om miljöer
-feature: Miljöer
+feature: Environments
 translation-type: tm+mt
 source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt

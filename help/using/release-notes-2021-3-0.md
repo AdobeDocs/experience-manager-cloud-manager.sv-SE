@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation för 2021.3.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.3.0
-feature: Versionsinformation
+feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea,e05b22fe-f071-4b69-9db1-e3d7ee4cfbcc
 translation-type: tm+mt
 source-git-commit: 9c3e748f8aed969af861b505ee336eb5501d826f

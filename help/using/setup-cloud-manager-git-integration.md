@@ -3,7 +3,7 @@ title: Git-integrering med Adobe Cloud Manager
 description: En videoserie som går igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
 seo-title: Git-integrering med Adobe Cloud Manager
 seo-description: En videoserie som går igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
-feature: Git-databaser
+feature: Git Repositories
 translation-type: tm+mt
 source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt

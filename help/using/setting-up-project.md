@@ -1,7 +1,7 @@
 ---
 title: Konfigurera projektet
 description: Följ den här sidan för att lära dig hur du konfigurerar ett projekt
-feature: Komma igång, produktion
+feature: Getting Started, Production
 translation-type: tm+mt
 source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt

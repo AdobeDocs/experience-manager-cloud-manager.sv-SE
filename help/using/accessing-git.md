@@ -3,7 +3,7 @@ title: Åtkomst till Git
 seo-title: Åtkomst till Git
 description: På den här sidan beskrivs hur du kan komma åt och hantera Git-databasen.
 seo-description: Följ den här sidan för att lära dig hur du får åtkomst till och hanterar din Git-databas.
-feature: Git-databaser
+feature: Git Repositories
 translation-type: tm+mt
 source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
 workflow-type: tm+mt

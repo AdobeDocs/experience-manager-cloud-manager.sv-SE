@@ -1,7 +1,7 @@
 ---
 title: Använda guiden
 description: Följ den här sidan för att lära dig hur du använder guiden för att skapa ett AEM
-feature: Komma igång
+feature: Getting Started
 translation-type: tm+mt
 source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
 workflow-type: tm+mt
