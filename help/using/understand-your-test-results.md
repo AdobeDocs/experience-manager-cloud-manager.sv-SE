@@ -8,15 +8,15 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
-feature: CI-CD Pipeline, Test Results
+feature: CI-CD-pipeline, testresultat
+exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
 translation-type: tm+mt
-source-git-commit: 12a7d6199983e2d19ef401051f60e3f24bb6d4f8
+source-git-commit: 9e7c6f7241900432155a1a32abfb440fb3f93172
 workflow-type: tm+mt
-source-wordcount: '2685'
+source-wordcount: '2694'
 ht-degree: 1%
 
 ---
-
 
 # Förstå testresultat {#understand-your-test-results}
 
@@ -35,7 +35,7 @@ Det finns tre portar i pipeline:
 För var och en av dessa portar finns det en struktur på tre nivåer för problem som identifieras av porten.
 
 * **Kritiskt**  - Detta är problem som identifieras av porten och som orsakar ett omedelbart fel i rörledningen.
-* **Viktigt**  - Det här är problem som identifieras av porten och som gör att pipelinen försätts i pausläge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
+* **Viktigt**  - Det här är problem som identifieras av porten och som gör att pipelinen försätts i pausläge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel. Åsidosättning av viktiga fel sker enligt [Timeout](deploying-code.md#timeouts).
 * **Info**  - Det rör sig om frågor som identifieras av portalen och som endast tillhandahålls i informationssyfte och som inte har någon inverkan på ledningen.
 
 >[!NOTE]
@@ -274,4 +274,3 @@ I följande bilder visas prestandatestdiagrammen:
 ![](assets/understand_test-results-screen1.png)
 
 ![](assets/screen_shot_2018-09-05at83933pm.png)
-
