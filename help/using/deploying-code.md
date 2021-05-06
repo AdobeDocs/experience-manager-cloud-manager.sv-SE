@@ -8,15 +8,15 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
-feature: Code Deployment
+feature: Koddistribution
+exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
 translation-type: tm+mt
-source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
+source-git-commit: 9e7c6f7241900432155a1a32abfb440fb3f93172
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '994'
 ht-degree: 0%
 
 ---
-
 
 # Distribuera koden {#deploy-your-code}
 
@@ -92,6 +92,19 @@ När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) �
 
    ![](assets/Production_Deployment2.png)
 
+## Timeout {#timeouts}
+
+Följande steg gör timeout om du väntar på användarfeedback:
+
+| Steg | Timeout |
+|--- |--- |
+| Testning av kodkvalitet | 7 dagar |
+| Säkerhetstestning | 7 dagar |
+| Prestandatestning | 7 dagar |
+| Ansökan om godkännande | 7 dagar |
+| Schemalägg produktionsdistribution | 7 dagar |
+| Stöd för CSE | 7 dagar |
+
 ## Distributionsprocess {#deployment-process}
 
 I följande avsnitt beskrivs hur AEM- och dispatcherpaket distribueras i scenfasen och i produktionsfasen.
@@ -149,5 +162,3 @@ Produktionsinstallationer följer i allmänhet samma steg som ovan, men på ett 
 1. Distribuera AEM paket för att publicera2 och dispatcherpaketet till dispatcher2 parallellt, tömma dispatchercachen.
 1. Placera dispatcher2 i belastningsutjämnaren igen.
 Den här processen fortsätter tills distributionen har nått alla utgivare och utgivare i topologin.
-
-
