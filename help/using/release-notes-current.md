@@ -3,10 +3,10 @@ title: Versionsinformation för 2021.5.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.5.0
 feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: 3d6f9a760a1e5bafdae6ece5627358524467a0d2
+source-git-commit: 849a2df2f272973740c1dd8580daaa518f2c9ec4
 workflow-type: tm+mt
-source-wordcount: '202'
-ht-degree: 0%
+source-wordcount: '181'
+ht-degree: 1%
 
 ---
 
@@ -32,8 +32,6 @@ Nästa version är planerad till 3 juni 2021.
 * Redigeringsprogrammet har uppdaterats.
 
 ## Felkorrigeringar {#bug-fixes}
-
-* Ibland kan användaren se en grön *aktiv*-status bredvid ett IP-Tillåtelselista även när den konfigurationen inte har distribuerats.
 
 * I stället för att ta bort &quot;borttagna&quot;-variabler skulle API:t för pipelines-variablerna bara markera dem med statusen &quot;DELETED&quot;.
 
