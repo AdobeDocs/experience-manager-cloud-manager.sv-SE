@@ -1,43 +1,42 @@
 ---
-title: Versionsinformation för 2021.4.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.4.0
-feature: Release Information
-exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
+title: Versionsinformation för 2021.5.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.5.0
+feature: Versionsinformation
 translation-type: tm+mt
-source-git-commit: 1f7f87a4b944d1fadc708958a96a1bda7d41da5d
+source-git-commit: 5f81fdb86b1dfa6c748bb7784ef00dc062c9f8ef
 workflow-type: tm+mt
-source-wordcount: '192'
-ht-degree: 1%
+source-wordcount: '202'
+ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2021.4.0 {#release-notes-for}
+# Versionsinformation för 2021.5.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.4.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.5.0.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] Version 2021.4.0 är 8 april 2021.
-Nästa version är planerad till 6 maj 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.5.0 är 6 maj 2021.
+Nästa version är planerad till 6 juni 2021.
 
 ## Nyheter {#whats-new}
 
-* Timeout för begäran för virtuella användare för prestandatestning har ökats från 20 sekunder till 60 sekunder.
+* Kvalitetsregeln PackageOverlaps identifierar nu fall där samma paket har distribuerats flera gånger, dvs. på flera inbäddade platser, i samma distribuerade paketuppsättning.
 
-* Knappen Hantera Git visas på pipelines-kortet även när inga pipelines har konfigurerats.
+* Databasslutpunkten i det offentliga API:t innehåller nu Git-URL:en.
 
-* Under distributionssteget på körningssidan för pipeline kommer användaren att kunna se de slutförda och framtida distributionsstegen utöver det aktuella steget i användargränssnittet för tillståndet *Pågår*.
+* I arbetsflödet Redigera program kan användaren bara ange icke-decimala KPI-värden.
 
-* Den version av AEM projekttyp som används av Cloud Manager har uppdaterats till version 27.
+* Intermittenta fel som påträffades när kod skickades till Adobe Git har nu åtgärdats.
 
-* Felmeddelandet när en pipeline startades när en miljö togs bort har klargjorts.
-
-* OSGi-paket som tillhandahålls av Eclipse-projekt undantas nu från regeln `CQBP-84--dependencies`.
+* Redigeringsprogrammet har uppdaterats.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Sällsynta, övergående fel som kan uppstå i steget *Resurstest* i produktionsflödet.
+* Ibland kan användaren se en grön *aktiv*-status bredvid ett IP-Tillåtelselista även när den konfigurationen inte har distribuerats.
 
-* Ett avslutande snedstreck i produktionsflödet Load Test orsakade ett 404-fel.
+* I stället för att ta bort &quot;borttagna&quot;-variabler skulle API:t för pipelines-variablerna bara markera dem med statusen &quot;DELETED&quot;.
 
-* `Runmode`-kontrollen genererade falskt positiva värden på noder som inte finns i mappen.
+* Vissa problem med saklig kodkvalitet påverkade felaktigt tillförlitlighetsgraderingen.
+
+* När en pipeline-körning startades mellan midnatt och kl. 1 UTC garanterades inte artefaktversionen som genererades av Cloud Manager att vara större än en version som skapades föregående dag.
