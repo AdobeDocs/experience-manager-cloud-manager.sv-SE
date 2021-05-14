@@ -3,16 +3,15 @@ product: adobe experience manager
 sub-product: experience manager cloud manager
 archetype: administrator
 user-guide-title: Handbok för Experience Manager Cloud Manager
-breadcrumb-title: Handbok för Cloud Manager
+breadcrumb-title: Handbok för Cloud Manager för AEM 6.x
 user-guide-description: Lär dig använda Adobes hanterade tjänster för att självhantera Experience Manager i molnet.
 feature-set: Experience Manager Cloud Manager, Experience Manager
 role: Administrator
 level: Intermediate
-translation-type: tm+mt
-source-git-commit: 5f81fdb86b1dfa6c748bb7784ef00dc062c9f8ef
+source-git-commit: 9cca6fd7d4ef3351fa024bac0f95f5592105dbae
 workflow-type: tm+mt
-source-wordcount: '267'
-ht-degree: 13%
+source-wordcount: '270'
+ht-degree: 12%
 
 ---
 
@@ -61,7 +60,7 @@ ht-degree: 13%
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
-   + [Aktuell versionsinformation (2021.5.0)](release-notes-current.md)
+   + [Aktuell versionsinformation (2021.4.0)](release-notes-current.md)
    + [Versionsinformation för 2021.4.0](release-notes-2021-4-0.md)
    + [Versionsinformation för 2021.3.0](release-notes-2021-3-0.md)
    + [Versionsinformation för 2021.2.0](release-notes-2021-2-0.md)
