@@ -1,15 +1,14 @@
 ---
 title: Förstå byggmiljön
 description: Följ den här sidan om du vill veta mer om miljöer
-feature: Environments
-translation-type: tm+mt
-source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
+feature: Miljöer
+exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
+source-git-commit: 0a5556729e64c9e8736d13b357db001dd57bc03a
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
-
 
 # Förstå byggmiljön {#build-environment-details}
 
@@ -34,7 +33,7 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
    * `mvn --batch-mode org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean -Dmaven.clean.failOnError=false`
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
 
-* Maven konfigureras på systemnivå med filen settings.xml som automatiskt inkluderar databasen public Adobe **Artifact**.
+* Maven konfigureras på systemnivå med filen settings.xml som automatiskt inkluderar databasen Adobe **Artifact** med en profil med namnet `adobe-public`.
 Mer information finns i [Adobe Public Maven Repository](https://repo.adobe.com/).
 
 >[!NOTE]
