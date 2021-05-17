@@ -10,10 +10,9 @@ topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 feature: Koddistribution
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-translation-type: tm+mt
-source-git-commit: 9e7c6f7241900432155a1a32abfb440fb3f93172
+source-git-commit: df2f598f91201d362f54b17e4092ff6bd6a72cec
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '1020'
 ht-degree: 0%
 
 ---
@@ -21,6 +20,9 @@ ht-degree: 0%
 # Distribuera koden {#deploy-your-code}
 
 ## Distribuera kod med Cloud Manager {#deploying-code-with-cloud-manager}
+
+>[!NOTE]
+>Mer information om hur du distribuerar kod för Cloud Manager i AEM som Cloud Service finns här[här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/deploy-code.html?lang=en#using-cloud-manager).
 
 När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) är du redo att distribuera koden.
 
