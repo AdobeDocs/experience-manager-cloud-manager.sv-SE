@@ -8,17 +8,19 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
-feature: Code Quality Rules
-translation-type: tm+mt
-source-git-commit: 12a7d6199983e2d19ef401051f60e3f24bb6d4f8
+feature: Regler för kodkvalitet
+exl-id: 7d118225-5826-434e-8869-01ee186e0754
+source-git-commit: df2f598f91201d362f54b17e4092ff6bd6a72cec
 workflow-type: tm+mt
-source-wordcount: '3625'
+source-wordcount: '3654'
 ht-degree: 4%
 
 ---
 
-
 # Anpassade regler för kodkvalitet {#custom-code-quality-rules}
+
+>[!NOTE]
+>Mer information om regler för anpassad kodkvalitet för Cloud Manager i AEM som Cloud Service finns här[här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/test-results/custom-code-quality-rules.html?lang=en#using-cloud-manager).
 
 Den här sidan beskriver de anpassade regler för kodkvalitet som körs av Cloud Manager och som baseras på de bästa metoderna från AEM.
 
@@ -961,4 +963,3 @@ I följande avsnitt beskrivs de DOT-kontroller som körs av Cloud Manager:
 * [DOT - Dispatcher-filtren för publiceringsgrupper ska ange tillåtna Sling-suffixmönster på tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-suffix-patterns-in-an-allow-list-manner)
 
 * [DOT - Direktivet Kräv alla beviljade ska inte användas i ett VirtualHost-katalogavsnitt med en rotkatalogsökväg](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-require-all-granted-directive-should-not-be-used-in-a-virtualhost-directory-section-with-a-root-directory-path)
-
