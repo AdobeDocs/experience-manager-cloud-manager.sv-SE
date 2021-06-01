@@ -8,16 +8,15 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
-feature: Getting Started
+feature: Komma igång
 level: Beginner
-translation-type: tm+mt
-source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
+exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
+source-git-commit: 81c14382821de6b2d249000a79799747a6d9cb19
 workflow-type: tm+mt
-source-wordcount: '752'
-ht-degree: 8%
+source-wordcount: '805'
+ht-degree: 7%
 
 ---
-
 
 # Introduktion till [!UICONTROL Cloud Manager]{#introduction-to-cloud-manager}
 
@@ -31,6 +30,8 @@ ht-degree: 8%
 ## Introduktion {#introduction}
 
 [!UICONTROL Cloud Manager], som ingår i Adobe Experience Manager (AEM) i Cloud, gör det möjligt för organisationer att självhantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet.
+
+På den här dokumentationswebbplatsen beskrivs de funktioner i Cloud Manager som är tillgängliga för Adobe Managed Services-kunder (AMS). Dokumentation om funktioner och funktioner i Cloud Manager för AEM som Cloud Service finns i [Implementera program för AEM som en Cloud Service](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/home.html?lang=en).
 
 **Organisationer** kan utföra/utnyttja följande med hjälp av självbetjäningsportalen:[!UICONTROL Cloud Manager]
 
