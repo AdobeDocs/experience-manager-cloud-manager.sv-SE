@@ -8,16 +8,15 @@ contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: b702dfc0-3534-4d90-af19-8559d8baf6a6
-feature: Getting Started
+feature: Komma igång
 level: Beginner
-translation-type: tm+mt
-source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
+exl-id: 86dfc976-f3da-479a-9faa-08f40ca909e0
+source-git-commit: f9b33de0f1f2203175f66f261c8ee553f47e0c3b
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
-
 
 # Nyckelbegrepp {#key-concepts}
 
@@ -41,7 +40,7 @@ Till exempel *We.Retail*.
 
 **PipelineEn** uppsättning distributionssteg som körs i följd.
 
-**** ProduktEn specifik uppsättning funktioner i en lösning som licensierats av en organisation. Olika program inom en organisation kan ha rätt till olika produktuppsättningar. Exempel: Sites, Assets of Forms.
+**** ProduktEn specifik uppsättning funktioner i en lösning som licensierats av en organisation. Olika program inom en organisation kan ha rätt till olika produktuppsättningar. Exempel: Sites, Assets eller Forms.
 
 **Program** En uppsättning miljöer som stöder en logisk gruppering av kundinitiativ, som vanligtvis motsvarar ett köpt serviceavtal (SLA). Varje program har exakt en produktionsmiljö och kan ha många icke-produktionsmiljöer.
 
