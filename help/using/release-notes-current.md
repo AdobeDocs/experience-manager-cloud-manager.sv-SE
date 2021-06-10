@@ -1,44 +1,48 @@
 ---
-title: Versionsinformation för 2021.5.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.5.0
+title: Versionsinformation för 2021.6.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.6.0
 feature: Versionsinformation
-source-git-commit: 3f17f252d89a1753c9cb121461b048f619d28415
+source-git-commit: 5111a918b8063ab576ef587dc3c8d66ad976fc1a
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2021.5.0 {#release-notes-for}
+# Versionsinformation för 2021.6.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.5.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.6.0.
 
 >[!NOTE]
 >Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) för att se den senaste versionsinformationen för Cloud Manager i AEM som en Cloud Service.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.5.0 är 6 maj 2021.
-Nästa version är planerad till 10 juni 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.6.0 är 10 juni 2021.
+Nästa version är planerad till 15 juli 2021.
 
 ## Nyheter {#whats-new}
 
-* Kvalitetsregeln PackageOverlaps identifierar nu fall där samma paket har distribuerats flera gånger, dvs. på flera inbäddade platser, i samma distribuerade paketuppsättning.
+* Resurs- och platstesterna kommer nu att köras parallellt (när det är tillämpligt), vilket minskar den totala körningstiden för pipeline. Den här funktionen kommer att aktiveras för kunderna under de kommande veckorna.
 
-* Databasslutpunkten i det offentliga API:t innehåller nu Git-URL:en.
+* Maven Dependencies som laddas ned under byggfasen cachelagras nu mellan pipeline-körningar. Den här funktionen kommer att aktiveras för kunderna under de kommande veckorna.
 
-* I arbetsflödet Redigera program kan användaren bara ange icke-decimala KPI-värden.
+* Det standardförgreningsnamn som används både när projektet skapas och i det förvalda push-kommandot via Hantera Git-arbetsflöden har ändrats till `main`.
 
-* Intermittenta fel som påträffades när kod skickades till Adobe Git har nu åtgärdats.
+* Redigera programupplevelser i användargränssnittet har uppdaterats.
 
-* Redigeringsprogrammet har uppdaterats.
+* Kvalitetsregeln `ImmutableMutableMixCheck` har uppdaterats för att klassificera `/oak:index`-noder som oföränderliga.
+
+* Kvalitetsreglerna `CQBP-84` och `CQBP-84--dependencies` har konsoliderats till en enda regel.
+
+* I vissa situationer kan en misslyckad beräkning av mätvärdet för överhoppade tester leda till att pipeline-körningar misslyckas.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* I stället för att ta bort &quot;borttagna&quot;-variabler skulle API:t för pipelines-variablerna bara markera dem med statusen &quot;DELETED&quot;.
+* JCR-noddefinitioner som innehåller en ny rad efter att rotelementnamnet inte tolkades korrekt.
 
-* Vissa problem med saklig kodkvalitet påverkade felaktigt tillförlitlighetsgraderingen.
+* API för listdatabaser filtrerar inte borttagna databaser.
 
-* När en pipeline-körning startades mellan midnatt och kl. 1 UTC garanterades inte artefaktversionen som genererades av Cloud Manager att vara större än en version som skapades föregående dag.
+* Ett felaktigt felmeddelande visades när ett ogiltigt värde angavs för schemasteget.
 
-* Vissa Adobe Managed Services-kunder (AMS) kunde inte skapa nya projekt i Adobe I/O Developer Console med hjälp av Cloud Managers API.
+* I vissa fall när pipelinekörningen nådde steget Distribuera till produktionssteg och användaren stoppar körningen, visade statusmeddelandet för distributionen i användargränssnittet inte vad som faktiskt hände.
