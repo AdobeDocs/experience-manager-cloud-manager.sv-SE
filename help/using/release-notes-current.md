@@ -2,9 +2,9 @@
 title: Versionsinformation för 2021.6.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.6.0
 feature: Versionsinformation
-source-git-commit: 5111a918b8063ab576ef587dc3c8d66ad976fc1a
+source-git-commit: c39390f34cf4ab6c9b2d5957b169c3c2cb43e6d3
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '285'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Nästa version är planerad till 15 juli 2021.
 
 * Det standardförgreningsnamn som används både när projektet skapas och i det förvalda push-kommandot via Hantera Git-arbetsflöden har ändrats till `main`.
 
-* Redigera programupplevelser i användargränssnittet har uppdaterats.
+* Redigera programupplevelser i användargränssnittet har uppdaterats. Mer information finns i [Redigera ett program](/help/using/setting-up-program.md#editing-program).
 
 * Kvalitetsregeln `ImmutableMutableMixCheck` har uppdaterats för att klassificera `/oak:index`-noder som oföränderliga.
 
