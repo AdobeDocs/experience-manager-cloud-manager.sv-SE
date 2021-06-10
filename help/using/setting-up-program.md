@@ -5,7 +5,7 @@ description: Efter introduktionen måste företagsägaren göra en inledande kon
 seo-description: 'Efter introduktionen måste företagsägaren göra en inledande konfiguration av Adobe AEM Cloud Manager. Detta innebär att ange programbeskrivningen och definiera de nyckeltal som ska användas för prestandatestning. '
 feature: Komma igång
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: f14725f87d5c4c3afe63d4bfc924962a92705c7c
+source-git-commit: c39390f34cf4ab6c9b2d5957b169c3c2cb43e6d3
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -78,7 +78,7 @@ Under programinstallationen anges resursspecifika nyckeltal:
    >[!NOTE]
    >Du kan alltid redigera programmet när det initiala programmet redan har konfigurerats. Följ stegen nedan för mer information.
 
-## Redigera ett program
+## Redigera ett program {#editing-program}
 
 1. Gå till programmet från startskärmen för **Cloud Manager**.
 
