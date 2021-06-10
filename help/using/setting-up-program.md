@@ -3,20 +3,14 @@ title: Konfigurera ditt program
 seo-title: Konfigurera ditt program
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 seo-description: 'Efter introduktionen måste företagsägaren göra en inledande konfiguration av Adobe AEM Cloud Manager. Detta innebär att ange programbeskrivningen och definiera de nyckeltal som ska användas för prestandatestning. '
-uuid: 9ecf8743-1f5a-4744-86af-e2256567642f
-contentOwner: jsyal
-products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
-topic-tags: getting-started
-discoiquuid: c2393540-e852-4f7c-aafd-1427209065d2
-feature: Getting Started
-translation-type: tm+mt
-source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
+feature: Komma igång
+exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
+source-git-commit: a65c413e9ffa96f950cf1c59771b45ce0f810bc0
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '728'
 ht-degree: 1%
 
 ---
-
 
 # Konfigurera ditt program {#setup-your-program}
 
@@ -25,11 +19,8 @@ Efter introduktionen måste företagsägaren slutföra en inledande konfiguratio
 De KPI:er som definieras fungerar som en baslinje för prestandatestning som skickas varje gång pipeline körs.
 
 >[!NOTE]
->
 >De definierade nyckeltal mäts i tester som körs på **scenen**-miljön. Vanligtvis skalas dessa KPI:er ned så att de passar scenmiljöns funktioner.
->
 >En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktion **Miljö** och som har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut (förutsatt att scenmiljön bara består av ett enda dispatcher-/publiceringsserverpar).
->
 >Dessutom har många användare ett CDN (Content Delivery Network), till exempel Akamai eller CloudFront, framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot scenmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga, cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
 
 ## Använda [!UICONTROL Cloud Manager] för att installera programmet {#using-cloud-manager-to-setup-your-program}
@@ -78,17 +69,13 @@ Under programinstallationen anges resursspecifika nyckeltal:
 1. Under **Provisioning** kan du visa eller redigera provisioneringskonfigurationen för produktionsmiljöer och icke-produktionsmiljöer i ditt program. Du ser **Automatisk skalning är på** om autoskalning har aktiverats för programmet.
 
    >[!NOTE]
-   >
-   >* Funktionen för autoskalning kan bara användas i produktionsmiljön och kanske inte är tillgänglig för alla kundprogram.
-   >* On-demand-skalning är inte tillgängligt för den här versionen av [!UICONTROL Cloud Manager].
-
+   >Funktionen för autoskalning kan bara användas i produktionsmiljön och kanske inte är tillgänglig för alla kundprogram.
 
    ![](assets/Setup_Program-Provisioning.png)
 
 1. Klicka på **Spara** för att slutföra installationsguiden.
 
    >[!NOTE]
-   >
    >Du kan alltid redigera programmet när det initiala programmet redan har konfigurerats. Följ stegen nedan för mer information.
 
 ## Redigera ett program
@@ -99,14 +86,26 @@ Under programinstallationen anges resursspecifika nyckeltal:
 
 1. Välj lösningen och klicka på **Redigera** för att uppdatera eller ändra programmet, vilket visas i bilden nedan.
 
-   ![](assets/SetUpProgram6.png)
+   ![](assets/set-up-program/edit-program1.png)
 
 1. Skärmen **Redigera program** som gör att du kan uppdatera eller ändra programmet visas.
 
-   ![](assets/Editing_Program-screen3.png)
+   Du kan uppdatera programnamnet och beskrivningen på fliken **Allmänt**.
+
+   ![](assets/set-up-program/edit-program-general.png)
+
+   Navigera till fliken **KPI** för att uppdatera information om AEM Sites och Assets.
+
+   ![](assets/set-up-program/edit-program-kpi.png)
+
+   Dessutom kan du navigera till fliken **Provisioning** för att redigera provisioneringskonfigurationen för produktionsmiljöer och icke-produktionsmiljöer i programmet.
+
+   ![](assets/set-up-program/edit-program-provision.png)
+
+1. Klicka på **Uppdatera** för att spara ändringarna.
 
 ## Nästa steg {#the-next-steps}
 
-Om du redan har konfigurerat **pipeline** kommer de uppdaterade inställningarna att beaktas vid nästa körning. Om du inte har konfigurerat pipeline än följer du stegen för att konfigurera din pipeline först.
+Om du redan har konfigurerat pipeline kommer de uppdaterade inställningarna att beaktas vid nästa körning. Om du inte har konfigurerat pipeline än följer du stegen för att konfigurera din pipeline först.
 
 Se [Konfigurera CI/CD Pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html) för att konfigurera pipeline.
