@@ -10,7 +10,7 @@ topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 feature: CI-CD-pipeline, testresultat
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: df2f598f91201d362f54b17e4092ff6bd6a72cec
+source-git-commit: 5111a918b8063ab576ef587dc3c8d66ad976fc1a
 workflow-type: tm+mt
 source-wordcount: '2722'
 ht-degree: 1%
@@ -53,7 +53,7 @@ I det här steget utvärderas kvaliteten på programkoden. Det är huvudmålet f
 I Kodkvalitetstestning skannas källkoden så att den uppfyller vissa kvalitetskriterier. För närvarande implementeras detta genom en kombination av SonarQube, granskning på innehållspaketnivå med hjälp av OakPAL och dispatchervalidering med Dispatcher Optimization Tool. Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM specifika reglerna skapas baserat på bästa praxis från AEM och kallas [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
 >[!NOTE]
->Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-AMS.xlsx).
+>Du kan hämta den fullständiga listan med regler [här](/help/using/assets/CodeQuality-rules-latest-AMS.xlsx).
 
 Resultatet av det här steget levereras som *klassificering*. I tabellen nedan sammanfattas klassificeringarna för olika testkriterier:
 
