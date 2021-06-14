@@ -2,9 +2,9 @@
 title: Versionsinformation för 2021.6.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.6.0
 feature: Versionsinformation
-source-git-commit: c39390f34cf4ab6c9b2d5957b169c3c2cb43e6d3
+source-git-commit: 5ddbf718ad01b11dcba5dc2c5d1ab5d3cff2e9a9
 workflow-type: tm+mt
-source-wordcount: '285'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Nästa version är planerad till 15 juli 2021.
 
 * Kvalitetsregeln `ImmutableMutableMixCheck` har uppdaterats för att klassificera `/oak:index`-noder som oföränderliga.
 
-* Kvalitetsreglerna `CQBP-84` och `CQBP-84--dependencies` har konsoliderats till en enda regel.
+* Kvalitetsreglerna `CQBP-84` och `CQBP-84--dependencies` har konsoliderats till en enda regel. Som en del av den här konsolideringen identifierar genomsökningen av beroenden mer korrekt problem i tredjepartsberoenden som distribueras till AEM.
 
 * I vissa situationer kan en misslyckad beräkning av mätvärdet för överhoppade tester leda till att pipeline-körningar misslyckas.
 
