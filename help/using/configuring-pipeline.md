@@ -11,10 +11,10 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD-pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 83fcc49c7e3e3742930a7179b27f899bff3c4ae1
+source-git-commit: 1c103b1c43a1e5fe7a6fa27110fc692bba6fb8b2
 workflow-type: tm+mt
-source-wordcount: '1280'
-ht-degree: 1%
+source-wordcount: '1308'
+ht-degree: 0%
 
 ---
 
@@ -27,7 +27,7 @@ På följande sida beskrivs hur du konfigurerar **pipeline**. Mer konceptuell in
 
 ## Videosjälvstudiekurs {#video-tutorial-one}
 
-### Konfigurerar pipeline i Cloud Manager {#config-pipeline-video}
+### Konfigurera pipeline i Cloud Manager {#config-pipeline-video}
 
 CI/CD Production Pipeline-konfigurationen definierar den utlösare som initierar pipelinen, parametrar som styr produktionsdistributionen och parametrar för prestandatestning.
 
@@ -173,7 +173,7 @@ Förutom den huvudsakliga rörledningen som distribueras till stadium och produk
 
 ## Videosjälvstudiekurs {#video-tutorial-two}
 
-### Cloud Manager - icke-produktion och endast kodkvalitet - pipelines {#non-prod-video}
+### Cloud Manager - endast icke-produktion- och kodkvalitet - pipelines {#non-prod-video}
 
 Rörledningar för komprimerad/cd-produktion delas upp i två kategorier, nämligen pipelines för kodkvalitet och distributionsrörledningar. Kodkvalitetsledningarna genererar all kod från en Git-gren och utvärderas mot Cloud Managers skanning av kodkvalitet.
 
@@ -183,22 +183,23 @@ På startskärmen visas dessa rörledningar i ett nytt kort:
 
 1. Gå till panelen **Icke-produktionspipelines** från startskärmen i Cloud Manager.
 
-   ![](assets/Non-Production-Pipeline.png)
+   ![](/help/using/assets/non-prod-add.png)
 
-1. Klicka på knappen Lägg till för att ange Pipelinenamn, Pipelinetyp och Git-grenen.
+1. Klicka på knappen **Lägg till** för att ange namnet på pipeline, typen av pipeline och Git-grenen.
 
    Dessutom kan du konfigurera utlösare för distribution och Beteende för viktigt fel i alternativen för pipeline.
 
    ![](assets/non-prod-pipe.png)
 
-1. Klicka på **Spara** och pipeline visas på kortet på startskärmen med tre åtgärder:
+1. Klicka på **Spara** så visas pipeline på hemskärmen med fem åtgärder:
 
    * **Redigera**  - tillåter redigering av pipeline-inställningarna
-   * **Detalj**  - visar den senaste pipelinekörningen (om det finns någon)
+   * **Detaljer**  - visar den senaste pipelinekörningen (om det finns någon)
    * **Build** - navigerar till körningssidan, från vilken pipelinen kan köras
+   * **Åtkomst till**  upprepningsinformation - gör att användaren kan få den information som behövs för att komma åt Cloud Manager Git-databasen
+   * **Lär dig mer**  - navigerar till att förstå CI/CD-pipeline-dokumentationsresursen.
 
-   ![](assets/Non-prod-2.png)
-
+      ![](assets/prod-one.png)
    >[!NOTE]
    >
    >Medan pipeline körs visas det aktuella steget och endast åtgärden **Detaljer** är tillgänglig.
