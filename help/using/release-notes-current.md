@@ -2,9 +2,9 @@
 title: Versionsinformation för 2021.7.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.7.0
 feature: Versionsinformation
-source-git-commit: ee701dd2d0c3921455a0960cbb6ca9a3ec4793e7
+source-git-commit: 1da4ceef0d89223580800d9018c46aaec51f8927
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '259'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,9 @@ Nästa version är planerad till den 12 augusti 2021.
 
 * IP för utgående utgång loggas nu i loggfilen för byggsteget.
 
-* Knapparna Hantera Git har fått namnet Åtkomst till Git-information och dialogrutan har uppdaterats visuellt.
+* Knapparna **Hantera Git** har fått namnet **Åtkomst till Git-information** och dialogrutan har uppdaterats visuellt.
+
+* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 28.
 
 * Vissa oväntade omkonfigurationer av topologin kan leda till att detaljerade testrapporter inte längre är tillgängliga från informationssidan för pipeline-körning.
 
