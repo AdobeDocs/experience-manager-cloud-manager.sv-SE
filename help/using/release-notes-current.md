@@ -1,48 +1,42 @@
 ---
-title: Versionsinformation för 2021.6.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.6.0
+title: Versionsinformation för 2021.7.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.7.0
 feature: Versionsinformation
-source-git-commit: 5ddbf718ad01b11dcba5dc2c5d1ab5d3cff2e9a9
+source-git-commit: ee701dd2d0c3921455a0960cbb6ca9a3ec4793e7
 workflow-type: tm+mt
-source-wordcount: '310'
-ht-degree: 0%
+source-wordcount: '243'
+ht-degree: 1%
 
 ---
 
-# Versionsinformation för 2021.6.0 {#release-notes-for}
+# Versionsinformation för 2021.7.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.6.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.7.0.
 
 >[!NOTE]
 >Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) för att se den senaste versionsinformationen för Cloud Manager i AEM som en Cloud Service.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.6.0 är 10 juni 2021.
-Nästa version är planerad till 15 juli 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.7.0 är 15 juli 2021.
+Nästa version är planerad till den 12 augusti 2021.
 
 ## Nyheter {#whats-new}
 
-* Resurs- och platstesterna kommer nu att köras parallellt (när det är tillämpligt), vilket minskar den totala körningstiden för pipeline. Den här funktionen kommer att aktiveras för kunderna under de kommande veckorna.
+* Kunderna kan nu använda Azul 8 och 11 JDK:er för sina Cloud Manager-byggprocesser och kan antingen välja att använda en av dessa JDK:er för verktygskedjor-kompatibla Maven-plugins *eller* hela Maven-processkörningen.
 
-* Maven Dependencies som laddas ned under byggfasen cachelagras nu mellan pipeline-körningar. Den här funktionen kommer att aktiveras för kunderna under de kommande veckorna.
+* IP för utgående utgång loggas nu i loggfilen för byggsteget.
 
-* Det standardförgreningsnamn som används både när projektet skapas och i det förvalda push-kommandot via Hantera Git-arbetsflöden har ändrats till `main`.
+* Knapparna Hantera Git har fått namnet Åtkomst till Git-information och dialogrutan har uppdaterats visuellt.
 
-* Redigera programupplevelser i användargränssnittet har uppdaterats. Mer information finns i [Redigera ett program](/help/using/setting-up-program.md#editing-program).
-
-* Kvalitetsregeln `ImmutableMutableMixCheck` har uppdaterats för att klassificera `/oak:index`-noder som oföränderliga.
-
-* Kvalitetsreglerna `CQBP-84` och `CQBP-84--dependencies` har konsoliderats till en enda regel. Som en del av den här konsolideringen identifierar genomsökningen av beroenden mer korrekt problem i tredjepartsberoenden som distribueras till AEM.
-
-* I vissa situationer kan en misslyckad beräkning av mätvärdet för överhoppade tester leda till att pipeline-körningar misslyckas.
+* Vissa oväntade omkonfigurationer av topologin kan leda till att detaljerade testrapporter inte längre är tillgängliga från informationssidan för pipeline-körning.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* JCR-noddefinitioner som innehåller en ny rad efter att rotelementnamnet inte tolkades korrekt.
+* Manuell navigering till sidan med körningsinformation för en körning som inte finns visade inte på något fel, bara en oändlig inläsningsskärm.
 
-* API för listdatabaser filtrerar inte borttagna databaser.
+* I vissa fall kommer det automatiska återförsöket för misslyckade behållare som används i platsprestanda inte att börja gälla på 2 timmar, vilket resulterar i ett testfel.
 
-* Ett felaktigt felmeddelande visades när ett ogiltigt värde angavs för schemasteget.
+## Kända fel {#known-issues}
 
-* I vissa fall när pipelinekörningen nådde steget Distribuera till produktionssteg och användaren stoppar körningen, visade statusmeddelandet för distributionen i användargränssnittet inte vad som faktiskt hände.
+Kunder som byter till Azul JDK bör vara medvetna om att inte alla befintliga program kompileras utan fel i Azul JDK. Vi rekommenderar att du testar lokalt innan du byter.
