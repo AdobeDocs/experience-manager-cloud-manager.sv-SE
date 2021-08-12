@@ -2,10 +2,10 @@
 title: Versionsinformation för 2021.8.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.8.0
 feature: Versionsinformation
-source-git-commit: 460964e8882a30d9289a25ec7c4162221031b0da
+source-git-commit: 510c523423a8d7cf9ad4c5ba2af11ff12df2b1cc
 workflow-type: tm+mt
-source-wordcount: '186'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -32,7 +32,5 @@ Nästa version är planerad till 9 september 2021.
 * Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 28.
 
 ## Felkorrigeringar {#bug-fixes}
-
-* *Status för* tillgänglig uppdatering ska inte visas när den senaste versionen är mindre än den aktuella versionen.
 
 * När en pipeline aktiveras två gånger av någon anledning resulterar det i att en av körningarna misslyckas med *det går inte att uppdatera pipelinekörningsstatus*-fel.
