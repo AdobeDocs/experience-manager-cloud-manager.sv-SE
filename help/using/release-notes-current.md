@@ -1,44 +1,38 @@
 ---
-title: Versionsinformation för 2021.7.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.7.0
+title: Versionsinformation för 2021.8.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.8.0
 feature: Versionsinformation
-source-git-commit: fec742eb023e9811ee80951bd25fc2023df52d66
+source-git-commit: 460964e8882a30d9289a25ec7c4162221031b0da
 workflow-type: tm+mt
-source-wordcount: '260'
+source-wordcount: '186'
 ht-degree: 1%
 
 ---
 
-# Versionsinformation för 2021.7.0 {#release-notes-for}
+# Versionsinformation för 2021.8.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.7.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.8.0.
 
 >[!NOTE]
 >Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) för att se den senaste versionsinformationen för Cloud Manager i AEM som en Cloud Service.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.7.0 är 15 juli 2021.
-Nästa version är planerad till den 12 augusti 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.8.0 är 12 augusti 2021.
+Nästa version är planerad till 9 september 2021.
 
 ## Nyheter {#whats-new}
 
-* Kunderna kan nu använda Azul 8 och 11 JDK:er för sina Cloud Manager-byggprocesser och kan antingen välja att använda en av dessa JDK:er för verktygskedjor-kompatibla Maven-plugins *eller* hela Maven-processkörningen.
+* Självbetjäning som gör att användare kan skapa och hantera flera databaser via användargränssnittet i Cloud Manager.
 
-* IP för utgående utgång loggas nu i loggfilen för byggsteget.
+* SonarQube läste git-historikdata i onödan. På stora kodbaser kan detta leda till en onödig prestandaförbättring.
 
-* Knapparna **Hantera Git** har ändrats till **Använd Git-information** och dialogrutan har uppdaterats visuellt.
+* Det finns nu ett API för att göra Maven-beroendecachen ogiltig per pipeline.
 
 * Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 28.
 
-* Vissa oväntade omkonfigurationer av topologin kan leda till att detaljerade testrapporter inte längre är tillgängliga från informationssidan för pipeline-körning.
-
 ## Felkorrigeringar {#bug-fixes}
 
-* Manuell navigering till sidan med körningsinformation för en körning som inte finns visade inte på något fel, bara en oändlig inläsningsskärm.
+* *Status för* tillgänglig uppdatering ska inte visas när den senaste versionen är mindre än den aktuella versionen.
 
-* I vissa fall kommer det automatiska återförsöket för misslyckade behållare som används i platsprestanda inte att börja gälla på 2 timmar, vilket resulterar i ett testfel.
-
-## Kända fel {#known-issues}
-
-Kunder som byter till Azul JDK bör vara medvetna om att inte alla befintliga program kompileras utan fel i Azul JDK. Vi rekommenderar att du testar lokalt innan du byter.
+* När en pipeline aktiveras två gånger av någon anledning resulterar det i att en av körningarna misslyckas med *det går inte att uppdatera pipelinekörningsstatus*-fel.
