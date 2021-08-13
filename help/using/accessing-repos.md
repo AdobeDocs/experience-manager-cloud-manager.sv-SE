@@ -1,14 +1,14 @@
 ---
-title: Åtkomst till Git
+title: Åtkomst till databaser
 seo-title: Åtkomst till databaser
 description: På den här sidan beskrivs hur du kan komma åt och hantera Git-databasen.
 seo-description: Följ den här sidan för att lära dig hur du får åtkomst till och hanterar din Git-databas.
 feature: Git-databaser
 exl-id: 403fc93d-60fc-4439-8c9d-0a512ca34458
-source-git-commit: c4deb06615652736ff7584566507a2b42a88bfb1
+source-git-commit: 1d278a47e74ddb50e70dc9d5d29e738a1616768b
 workflow-type: tm+mt
 source-wordcount: '154'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
