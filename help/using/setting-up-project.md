@@ -3,10 +3,9 @@ title: Konfigurera projektet
 description: Följ den här sidan för att lära dig hur du konfigurerar ett projekt
 feature: Komma igång, produktionsprogram
 exl-id: ed994daf-0195-485a-a8b1-87796bc013fa
-translation-type: tm+mt
-source-git-commit: cf19c7dfd593810779c03c51e08081954f8fc11e
+source-git-commit: 2a253abb98fa096f9f1c07bac94804849fad2ebb
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '884'
 ht-degree: 7%
 
 ---
@@ -106,10 +105,10 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
         </profile>
 ```
 
-## Lösenordsskyddat stöd för Maven-databas {#password-protected-maven-repositories}
+## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
 
 >[!NOTE]
->Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras via den här mekanismen för närvarande inte körs via Cloud Managers Quality Gates. Därför bör det endast användas i sällsynta fall och för kod som inte är knuten till AEM. Du bör också distribuera Java-källorna samt hela projektets källkod tillsammans med binärfilen.
+>Artefakter från en lösenordsskyddad Maven-databas bör endast användas med försiktighet eftersom kod som distribueras via den här mekanismen för närvarande inte kan köras med alla kvalitetsregler som implementerats i Cloud Managers Quality Gates. Därför bör det endast användas i sällsynta fall och för kod som inte är knuten till AEM. Du bör också distribuera Java-källorna samt hela projektets källkod tillsammans med binärfilen.
 
 Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [förloppsvariabel](/help/using/build-environment-details.md#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Filen följer schemat [Maven Settings File](https://maven.apache.org/settings.html). När Cloud Manager-byggprocessen startar sammanfogas elementet `<servers>` i den här filen med standardfilen `settings.xml` som tillhandahålls av Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. Server-ID:n **inte** som matchar något av dessa prefix, eller standard-ID:t `central` kommer aldrig att speglas av Cloud Manager. När den här filen är på plats refereras server-ID:t inifrån ett `<repository>`- och/eller `<pluginRepository>`-element i `pom.xml`-filen. I allmänhet finns dessa `<repository>`- och/eller `<pluginRepository>`-element i en [Cloud Manager-specifik profil](#activating-maven-profiles-in-cloud-manager), även om det inte är absolut nödvändigt.
 
@@ -178,7 +177,7 @@ Och referera slutligen till server-ID:t i `pom.xml`-filen:
 </profiles>
 ```
 
-### Distribuerar källor {#deploying-sources}
+### Distribuera källor {#deploying-sources}
 
 Det är en god vana att driftsätta Java-källorna tillsammans med binärfilen i en Maven-databas.
 
@@ -199,7 +198,7 @@ Konfigurera maven-source-plugin i ditt projekt:
         </plugin>
 ```
 
-### Distribuerar projektkällor {#deploying-project-sources}
+### Distribuera projektkällor {#deploying-project-sources}
 
 Det är en god vana att driftsätta hela projektkällan tillsammans med binärfilen i en Maven-databas, vilket innebär att den exakta artefakten kan återskapas.
 
