@@ -3,10 +3,10 @@ title: Versionsinformation för 2021.9.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.9.0
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: ec180b60b24676bf1affe6369b6af66a10d9e8a0
+source-git-commit: 9e9836ad8793540a57048a6e43e4d158abf91579
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '179'
+ht-degree: 1%
 
 ---
 
@@ -32,7 +32,7 @@ Nästa version är planerad till 7 oktober 2021.
 
 * Menyalternativen på sidan Aktivitet kommer nu att innehålla ett alternativ för&quot;Hämtningslogg&quot; för slutförda kodgeneratorkörningar. Om du väljer det här alternativet hämtas loggen för byggsteget.
 
-* Om du klickar direkt på programkortet går du nu till sidan Översikt över Cloud Manager.
+* Om du klickar direkt på programkortet går du nu till sidan **Översikt** i Cloud Manager.
 
 ## Felkorrigeringar {#bug-fixes}
 
