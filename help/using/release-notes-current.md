@@ -1,36 +1,39 @@
 ---
-title: Versionsinformation för 2021.8.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.8.0
-feature: Versionsinformation
-source-git-commit: c4deb06615652736ff7584566507a2b42a88bfb1
+title: Versionsinformation för 2021.9.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.9.0
+feature: Release Information
+exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
+source-git-commit: 3fccb0b577662ebc12b65777cbf9624e06d4259d
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '179'
 ht-degree: 1%
 
 ---
 
-# Versionsinformation för 2021.8.0 {#release-notes-for}
+# Versionsinformation för 2021.9.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.8.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.9.0.
 
 >[!NOTE]
 >Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) för att se den senaste versionsinformationen för Cloud Manager i AEM som en Cloud Service.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.8.0 är 12 augusti 2021.
-Nästa version är planerad till 9 september 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.8.0 är 9 september 2021.
+Nästa version är planerad till 7 oktober 2021.
 
 ## Nyheter {#whats-new}
 
-* Självbetjäning som gör att användare kan skapa och hantera flera databaser via användargränssnittet i Cloud Manager.
+* Programkorten på Cloud Managers landningssida och den tillhörande upplevelsen har uppdaterats.
 
-* SonarQube läste git-historikdata i onödan. På stora kodbaser kan detta leda till en onödig prestandaförbättring.
+* Kodkvalitetsstegloggen innehåller nu utförlig loggningsinformation om OakPal-skanningen.
 
-* Det finns nu ett API för att göra Maven-beroendecachen ogiltig per pipeline.
+* Menyalternativen på sidan Aktivitet kommer nu att innehålla ett alternativ för&quot;Hämtningslogg&quot; för slutförda kodgeneratorkörningar. Om du väljer det här alternativet hämtas loggen för byggsteget.
 
-* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 29.
+* Om du klickar direkt på programkortet går du nu till sidan Översikt över Cloud Manager.
+
+* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 30.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* När en pipeline aktiveras två gånger av någon anledning resulterar det i att en av körningarna misslyckas med *det går inte att uppdatera pipelinekörningsstatus*-fel.
+* Fel URL kopierades när menyalternativet Kopiera URL valdes på skärmen Databaser.
