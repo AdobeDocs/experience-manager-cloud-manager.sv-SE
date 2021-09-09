@@ -3,10 +3,10 @@ title: Versionsinformation för 2021.9.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.9.0
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 4bfd31875a2c1ac29ae93872406308ee1c1328c8
+source-git-commit: ec180b60b24676bf1affe6369b6af66a10d9e8a0
 workflow-type: tm+mt
-source-wordcount: '179'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -24,6 +24,8 @@ Nästa version är planerad till 7 oktober 2021.
 
 ## Nyheter {#whats-new}
 
+* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 30.
+
 * Programkorten på Cloud Managers landningssida och den tillhörande upplevelsen har uppdaterats.
 
 * Kodkvalitetsstegloggen innehåller nu utförlig loggningsinformation om OakPal-skanningen.
@@ -31,8 +33,6 @@ Nästa version är planerad till 7 oktober 2021.
 * Menyalternativen på sidan Aktivitet kommer nu att innehålla ett alternativ för&quot;Hämtningslogg&quot; för slutförda kodgeneratorkörningar. Om du väljer det här alternativet hämtas loggen för byggsteget.
 
 * Om du klickar direkt på programkortet går du nu till sidan Översikt över Cloud Manager.
-
-* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 30.
 
 ## Felkorrigeringar {#bug-fixes}
 
