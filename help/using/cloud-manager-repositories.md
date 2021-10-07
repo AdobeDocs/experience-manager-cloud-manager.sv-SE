@@ -1,9 +1,10 @@
 ---
 title: Cloud Manager-databaser
 description: Cloud Manager-databaser
-source-git-commit: 7bda34be143d2d7587e61c09dab642f3419dfad9
+exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
+source-git-commit: 2a1f471f2e4148a424688ab9858c534935c3fe69
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '425'
 ht-degree: 0%
 
 ---
@@ -51,7 +52,7 @@ Git-undermoduler kan användas för att sammanfoga innehåll från flera grenar 
 $ git submodule update --init
 ```
 
-Då checkas varje undermodul in i lämplig katalog. Den här tekniken är ett möjligt alternativ till https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/managing-code/working-with-multiple-source-git-repositories.html för organisationer som är bekväma med att använda Git-undermoduler och som inte vill hantera en extern sammanfogningsprocess.
+Då checkas varje undermodul in i lämplig katalog. Den här tekniken är ett möjligt alternativ till [att arbeta med flera Git-källdatabaser](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/managing-code/working-with-multiple-source-git-repositories.html) för organisationer som är bekväma med att använda Git-undermoduler och som inte vill hantera en extern sammanfogningsprocess.
 
 Låt oss till exempel säga att det finns tre databaser, där var och en innehåller en gren med namnet main . I den&quot;primära&quot; databasen, d.v.s. den som konfigurerats i pipelines, har huvudgrenen en pom.xml-fil som deklarerar projekten i de två andra databaserna:
 
@@ -101,4 +102,3 @@ Tänk på följande när du använder Git-undermoduler:
 * Git-URL:en måste vara exakt i den syntax som beskrivs ovan. Av säkerhetsskäl ska du inte bädda in autentiseringsuppgifter i dessa URL:er.
 * Det finns bara stöd för undermoduler i roten av förgreningen.
 * Git-undermoduler lagras som specifika Git-implementeringar. När ändringar görs i undermodulens databas måste därför den implementering som refereras uppdateras, till exempel med `git submodule update --remote` .
-
