@@ -11,9 +11,9 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: bdbee51ff0a61c2a72ff7ae3a742e2dd817c671a
+source-git-commit: fd172a7168074630e85f3b110e032f783d39ddca
 workflow-type: tm+mt
-source-wordcount: '1451'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,9 @@ Så här konfigurerar du beteendet och inställningarna för produktionsflödet:
       * **Godkänn efter** driftsättningsfunktioner som liknar godkännandet före driftsättningen, men inträffar omedelbart efter driftsättningssteget, det vill säga innan testningen är klar, jämfört med godkännandet före driftsättningen, som görs när all testning är klar.
 
       * **Hoppa över belastningsutjämnare**
-   1. Välj **Dispatcher Configurations** for Stage.
+   1. Välj **Dispatcher Configurations** for Stage. Ange sökvägen, välj åtgärden från **Skriv** och klicka på **Lägg till sökväg**. Du kan ange upp till 100 sökvägar per miljö.
+
+      ![](/help/using/assets/configure-pipelines/dispatcher-stage.png)
 
    1. Välj **distributionsalternativ** för produktion. Nu definierar du parametrarna som styr produktionsdistributionen. De tre tillgängliga alternativen är följande:
 
@@ -114,7 +116,9 @@ Så här konfigurerar du beteendet och inställningarna för produktionsflödet:
          >Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipelinen **efter** scendistributionen (och **Använd GoLive Approval**, om detta har aktiverats) för att vänta på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
          >
          >Se [Distribuera koden](deploying-code.md) för att ställa in distributionsschemat eller köra produktionen direkt.
-   1. Konfigurera **Dispatcher Configurations** for Production.
+   1. Konfigurera **Dispatcher Configurations** for Production. Ange sökvägen, välj åtgärden från **Skriv** och klicka på **Lägg till sökväg**. Du kan ange upp till 100 sökvägar per miljö.
+
+      ![](/help/using/assets/configure-pipelines/dispatcher-prod.png)
 
       Som distributionshanterare kan du konfigurera en uppsättning innehållssökvägar som antingen **ogiltigförklaras** eller **tömts** från AEM Dispatcher-cachen för publiceringsinstanser när du konfigurerar eller redigerar pipeline.
 
