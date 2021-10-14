@@ -1,19 +1,19 @@
 ---
 title: Konfigurera CI/CD-pipeline
-seo-title: Konfigurera CI/CD-pipeline
+seo-title: Configure your CI/CD Pipeline
 description: Följ den här sidan om du vill konfigurera dina pipeline-inställningar från Cloud Manager.
-seo-description: 'Innan du börjar distribuera koden måste du konfigurera dina pipeline-inställningar från AEM Cloud Manager. '
+seo-description: Before you start to deploy your code, you must configure your pipeline settings from the AEM Cloud Manager.
 uuid: 35fd56ac-dc9c-4aca-8ad6-36c29c4ec497
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
-feature: CI-CD-pipeline
+feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 1c103b1c43a1e5fe7a6fa27110fc692bba6fb8b2
+source-git-commit: dde991d2dbd02f4b4145f79d67b6d2f1244e5648
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1378'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 # Konfigurera CI/CD-pipeline {#configure-your-ci-cd-pipeline}
 
 >[!NOTE]
->Mer information om hur du konfigurerar CI/CD-pipeline för Cloud Manager i AEM som en Cloud Service finns här[här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/configure-pipeline.html?lang=en#using-cloud-manager).
+>Mer information om hur du konfigurerar CI/CD-pipeline för Cloud Manager på AEM as a Cloud Service finns i [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/configure-pipeline.html?lang=en#using-cloud-manager).
 
 På följande sida beskrivs hur du konfigurerar **pipeline**. Mer konceptuell information om hur pipeline fungerar finns i [CI/CD pipeline overview](ci-cd-pipeline.md).
 
@@ -133,7 +133,7 @@ Som distributionshanterare kan du konfigurera en uppsättning innehållssökväg
 
 Du kan konfigurera en separat uppsättning sökvägar för Stage- och Production-distribution. Om den är konfigurerad kommer dessa cacheåtgärder att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM standard-Dispatcher-beteende - invalidate utför en cacheogiltigförklaring, på samma sätt som när innehåll aktiveras från författaren till publiceringen. rensning utför en cacheborttagning.
 
-I allmänhet är det bättre att använda åtgärden invalidate, men det kan finnas fall där det krävs tömning, särskilt när du använder AEM HTML-klientbibliotek.
+I allmänhet är det bättre att använda åtgärden invalidate, men det kan finnas fall där det krävs tömning, särskilt när du använder AEM HTML Client Libraries.
 
 >[!NOTE]
 >
@@ -179,30 +179,53 @@ Rörledningar för komprimerad/cd-produktion delas upp i två kategorier, nämli
 
 >[!VIDEO](https://video.tv.adobe.com/v/26316/)
 
+### Lägga till en icke-produktionspipeline {#add-non-production-pipeline}
+
 På startskärmen visas dessa rörledningar i ett nytt kort:
 
-1. Gå till panelen **Icke-produktionspipelines** från startskärmen i Cloud Manager.
+1. Gå till **Pipelines**-kortet från startskärmen i Cloud Manager. Klicka på **+Lägg till** och välj **Lägg till icke-produktionsförlopp**.
 
-   ![](/help/using/assets/non-prod-add.png)
+   ![](/help/using/assets/configure-pipelines/nonprod-pipeline-add1.png)
 
-1. Klicka på knappen **Lägg till** för att ange namnet på pipeline, typen av pipeline och Git-grenen.
+1. **Dialogrutan Lägg till icke-produktionsförlopp**  visas. Välj den typ av pipeline som du vill skapa, antingen **Kodkvalitetspipeline** eller **Distributionspipeline**.
 
-   Dessutom kan du konfigurera utlösare för distribution och Beteende för viktigt fel i alternativen för pipeline.
+   Dessutom kan du ställa in **Distributionutlösare** och **Viktigt felbeteende** från **Distributionsalternativ**. Klicka på **Fortsätt**.
 
-   ![](assets/non-prod-pipe.png)
+   ![](/help/using/assets/configure-pipelines/nonprod-pipeline-add2.png)
 
-1. Klicka på **Spara** så visas pipeline på hemskärmen med fem åtgärder:
 
-   * **Redigera**  - tillåter redigering av pipeline-inställningarna
-   * **Detaljer**  - visar den senaste pipelinekörningen (om det finns någon)
-   * **Build** - navigerar till körningssidan, från vilken pipelinen kan köras
-   * **Åtkomst till**  upprepningsinformation - gör att användaren kan få den information som behövs för att komma åt Cloud Manager Git-databasen
+1. Den nyligen skapade icke-produktionspipelinen visas nu på **pipelines**-kortet.
+
+   ![](/help/using/assets/configure-pipelines/nonprod-pipeline-add4.png)
+
+
+   Rörledningen visas på kortet på startskärmen med tre åtgärder, som visas nedan:
+
+   * **Lägg till**  - tillåter tillägg av en ny pipeline.
+   * **Åtkomst till replikinformation**  - gör att användaren kan få den information som behövs för att komma åt Cloud Manager Git-databasen.
    * **Lär dig mer**  - navigerar till att förstå CI/CD-pipeline-dokumentationsresursen.
 
-      ![](assets/prod-one.png)
-   >[!NOTE]
-   >
-   >Medan pipeline körs visas det aktuella steget och endast åtgärden **Detaljer** är tillgänglig.
+### Redigera en icke-produktionspipeline {#editing-nonprod-pipeline}
+
+Du kan redigera pipelinekonfigurationerna från sidan **Pipelines card** från **Program Overview**.
+
+Följ stegen nedan för att redigera den konfigurerade icke-produktionsflödet:
+
+1. Navigera till **Pipelines**-kortet från sidan **Programöversikt**.
+
+1. Markera produktionsflödet och klicka på **..**. Klicka på **Redigera**, vilket visas i bilden nedan.
+
+
+1. Dialogrutan **Redigera produktionspipeline** visas.
+
+   1. På fliken **Konfiguration** kan du uppdatera **pipelinenamnet**, **Distributionutlösaren** och **Beteendet Viktigt mätningsfel**.
+
+      >[!NOTE]
+      >Mer information om hur du lägger till och hanterar databaser i Cloud Manager finns i [Lägga till och hantera databaser](/help/implementing/cloud-manager/managing-code/cloud-manager-repositories.md).
+
+
+1. Klicka på **Uppdatera** när du är klar med redigeringen av produktionsflödet.
+
 
 ## Nästa steg {#the-next-steps}
 
