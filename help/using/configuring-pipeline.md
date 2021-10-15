@@ -11,9 +11,9 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 973fec504cd5f35435b10e3d1d28f3ba20ff4ab9
+source-git-commit: 78a6c939cdb7c4335891e27209b221fc3e6efec2
 workflow-type: tm+mt
-source-wordcount: '1478'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
@@ -70,45 +70,45 @@ Så här konfigurerar du beteendet och inställningarna för produktionsflödet:
 
 1. **Dialogrutan Lägg till** produktionspipeline visas.
 
-   1. Ange pipelinenamnet. Du kan välja **databasen** och **Git-grenen**.
+   1. Ange **förloppsnamn**. Du kan välja **databasen** och **Git-grenen**.
 
       ![](/help/using/assets/configure-pipelines/add-prod2.png)
 
-   1. Du kan ställa in **Distributionutlösare** och **Viktigt felbeteende** från **Distributionsalternativ**.
+   1. Du kan ställa in **Distributionutlösare** och **Beteende vid viktiga måttfel** från **Distributionsalternativ**.
 
       ![](/help/using/assets/configure-pipelines/add-prod3.png)
 
 
-      Du kan definiera utlösaren för att starta pipelinen:
+      Du kan tilldela följande distributionsutlösare för att starta pipelinen:
 
       * **Manuell**  - använd gränssnittet för att starta pipelinen manuellt.
       * **På Git Changes**  - startar CI/CD-flödet när implementeringar läggs till i den konfigurerade Git-grenen. Även om du väljer det här alternativet kan du alltid starta pipelinen manuellt.
 
-         >[!NOTE]
-         >Under pipeline-konfigurationen eller -redigeringen kan Deployment Manager välja att definiera pipeline-beteendet när ett viktigt fel påträffas i någon av kvalitetsportarna.
+      Under pipeline-konfigurationen eller -redigeringen kan Deployment Manager välja att definiera pipeline-beteendet när ett viktigt fel påträffas i någon av kvalitetsportarna.
+
       Detta är användbart för kunder som vill ha mer automatiserade processer. De tillgängliga alternativen är:
 
       * **Fråga varje gång**  - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
-      * **Avbryt omedelbart** - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
-      * **Godkänn omedelbart**  - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
+      * **Misslyckas omedelbart**  - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
+      * **Fortsätt omedelbart** - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
    1. Välj **Distributionsalternativ**.
 
       ![](/help/using/assets/configure-pipelines/add-prod4.png)
 
       * **Godkänn efter** driftsättningsfunktioner som liknar godkännandet före driftsättningen, men inträffar omedelbart efter driftsättningssteget, det vill säga innan testningen är klar, jämfört med godkännandet före driftsättningen, som görs när all testning är klar.
 
-      * **Hoppa över belastningsutjämnare**
-   1. Välj **Dispatcher Configurations** for Stage. Ange sökvägen, välj åtgärden från **Skriv** och klicka på **Lägg till sökväg**. Du kan ange upp till 100 sökvägar per miljö.
+      * **Hoppa över** ändringar av belastningsutjämnaren hoppar över ändringarna.
+   1. Välj **Dispatcher Configuration** för Stage. Ange sökvägen, välj åtgärden från **Skriv** och klicka på **Lägg till sökväg**. Du kan ange upp till 100 sökvägar per miljö.
 
       ![](/help/using/assets/configure-pipelines/dispatcher-stage.png)
 
-   1. Välj **distributionsalternativ** för produktion. Nu definierar du parametrarna som styr produktionsdistributionen. De tre tillgängliga alternativen är följande:
+   1. Välj **distributionsalternativ** för produktion. Nu definierar du parametrarna som styr produktionsdistributionen.
+
+      ![](/help/using/assets/configure-pipelines/prod-deploymentoptions.png)
+
+      De tre tillgängliga alternativen är följande:
 
       * **Använd Go Live Approval**  - en distribution måste godkännas manuellt av en företagsägare, projektledare eller driftsättningshanterare via  [!UICONTROL Cloud Manager] användargränssnittet.
-      * **Använd CSE Oversight**  - en CSE är engagerad för att starta distributionen. Under pipeline-konfiguration eller redigering när CSE Oversight är aktiverat kan Distributionshanteraren välja:
-
-      * **Alla fall**: refererar till en tillgänglig CSE
-      * **Mitt fall**: avser en specifik CSE som tilldelats kunden eller deras säkerhetskopia, om CSE-enheten är utanför kontoret
 
       * **Schemalagd**  - Med det här alternativet kan användaren aktivera den schemalagda produktionsdistributionen.
 
@@ -116,6 +116,11 @@ Så här konfigurerar du beteendet och inställningarna för produktionsflödet:
          >Om du väljer alternativet **Schemalagd** kan du schemalägga din produktionsdistribution till pipelinen **efter** scendistributionen (och **Använd GoLive Approval**, om detta har aktiverats) för att vänta på att ett schema ska anges. Användaren kan också välja att köra produktionsdistributionen direkt.
          >
          >Se [Distribuera koden](deploying-code.md) för att ställa in distributionsschemat eller köra produktionen direkt.
+
+         * **Använd CSE Oversight**  - en CSE är engagerad för att starta distributionen. Under pipeline-konfiguration eller redigering när CSE Oversight är aktiverat kan Distributionshanteraren välja:
+
+            * **Alla fall**: refererar till en tillgänglig CSE
+            * **Mitt fall**: avser en specifik CSE som tilldelats kunden eller deras säkerhetskopia, om CSE-enheten är utanför kontoret
    1. Konfigurera **Dispatcher Configurations** for Production. Ange sökvägen, välj åtgärden från **Skriv** och klicka på **Lägg till sökväg**. Du kan ange upp till 100 sökvägar per miljö.
 
       ![](/help/using/assets/configure-pipelines/dispatcher-prod.png)
@@ -172,6 +177,28 @@ Följ stegen nedan för att redigera den konfigurerade pipeline:
 
 1. Klicka på **Uppdatera** när du är klar med redigeringen av pipeline.
 
+### Ytterligare produktionsförloppsåtgärder {#additional-prod-actions}
+
+#### Köra en produktionspipeline {#run-prod}
+
+Du kan köra produktionsflödet från pipelines-kortet:
+
+1. Navigera till **Pipelines**-kortet från sidan **Programöversikt**.
+
+1. Klicka på **..** på **Pipelines**-kortet och klicka på **Kör**, som bilden nedan visar.
+
+   ![](/help/using/assets/configure-pipelines/prod-run.png)
+
+#### Ta bort en produktionspipeline {#delete-prod}
+
+Du kan ta bort produktionsflödet från pipelines-kortet:
+
+1. Navigera till **Pipelines**-kortet från sidan **Programöversikt**.
+
+1. Klicka på **..** på **Pipelines**-kortet och klicka på **Ta bort**, enligt bilden nedan.
+
+   ![](/help/using/assets/configure-pipelines/prod-delete.png)
+
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
 Förutom den huvudsakliga rörledningen som distribueras till stadium och produktion kan kunderna lägga upp ytterligare rörledningar, som kallas **icke-produktionsförlopp**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribuera till Adobes miljö för hanterade tjänster.
@@ -194,7 +221,7 @@ På startskärmen visas dessa rörledningar i ett nytt kort:
 
 1. **Dialogrutan Lägg till icke-produktionsförlopp**  visas. Välj den typ av pipeline som du vill skapa, antingen **Kodkvalitetspipeline** eller **Distributionspipeline**.
 
-   Dessutom kan du ställa in **Distributionutlösare** och **Viktigt felbeteende** från **Distributionsalternativ**. Klicka på **Fortsätt**.
+   Dessutom kan du ställa in **Distributionutlösare** och **Beteende för viktiga måttfel** från **Distributionsalternativ**. Klicka på **Fortsätt**.
 
    ![](/help/using/assets/configure-pipelines/nonprod-pipeline-add2.png)
 
@@ -228,6 +255,17 @@ Följ stegen nedan för att redigera den konfigurerade icke-produktionsflödet:
 
    >[!NOTE]
    >Mer information om hur du lägger till och hanterar databaser i Cloud Manager finns i [Lägga till och hantera databaser](/help/implementing/cloud-manager/managing-code/cloud-manager-repositories.md).
+
+   Du kan tilldela följande distributionsutlösare för att starta pipelinen:
+
+   * **Manuell**  - använd gränssnittet för att starta pipelinen manuellt.
+   * **På Git Changes**  - startar CI/CD-flödet när implementeringar läggs till i den konfigurerade Git-grenen. Även om du väljer det här alternativet kan du alltid starta pipelinen manuellt.
+
+   Under pipeline-konfigurationen eller -redigeringen kan Deployment Manager välja att definiera pipeline-beteendet när ett viktigt fel påträffas i någon av kvalitetsportarna. Detta är användbart för kunder som vill ha mer automatiserade processer. De tillgängliga alternativen är:
+
+   * **Fråga varje gång**  - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
+   * **Misslyckas omedelbart**  - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
+   * **Fortsätt omedelbart** - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
 
 
 1. Klicka på **Uppdatera** när du är klar med redigeringen av produktionsflödet.
