@@ -11,7 +11,7 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 1e3dc17d28ab69dcd6b2337280bb38ba07352beb
+source-git-commit: 9509f83f3cecbeaa81543e3c1f8ec33028009e6a
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -25,14 +25,6 @@ ht-degree: 0%
 
 På följande sida beskrivs hur du konfigurerar **pipeline**. Mer konceptuell information om hur pipeline fungerar finns i [CI/CD pipeline overview](ci-cd-pipeline.md).
 
-## Videosjälvstudiekurs {#video-tutorial-one}
-
-### Konfigurera pipeline i Cloud Manager {#config-pipeline-video}
-
-CI/CD Production Pipeline-konfigurationen definierar den utlösare som initierar pipelinen, parametrar som styr produktionsdistributionen och parametrar för prestandatestning.
-
->[!VIDEO](https://video.tv.adobe.com/v/26314/)
-
 
 ## Förstå flödet {#understanding-the-flow}
 
@@ -43,6 +35,14 @@ Distributionshanteraren ansvarar för att ställa in pipeline. När du gör det 
 * definiera den utlösare som ska starta pipelinen.
 * definiera parametrarna som styr produktionsdistributionen.
 * konfigurera prestandatestparametrarna.
+
+## Videosjälvstudiekurs {#video-tutorial-one}
+
+### Konfigurera pipeline i Cloud Manager {#config-pipeline-video}
+
+CI/CD Production Pipeline-konfigurationen definierar den utlösare som initierar pipelinen, parametrar som styr produktionsdistributionen och parametrar för prestandatestning.
+
+>[!VIDEO](https://video.tv.adobe.com/v/26314/)
 
 ## Konfigurera pipeline {#setting-up-the-pipeline}
 
@@ -56,7 +56,7 @@ Innan du börjar distribuera koden måste du konfigurera dina pipeline-inställn
 >
 >Du kan ändra pipeline-inställningarna efter den första konfigurationen.
 
-## Lägga till en ny produktionspipeline från ett pipelines-kort {#adding-production-pipeline}
+### Lägga till en ny produktionspipeline från ett pipelines-kort {#adding-production-pipeline}
 
 När du har konfigurerat programmet och har minst en miljö med användargränssnittet [!UICONTROL Cloud Manager] är du redo att lägga till en produktionspipeline.
 
