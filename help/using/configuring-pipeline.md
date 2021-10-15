@@ -11,9 +11,9 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 78a6c939cdb7c4335891e27209b221fc3e6efec2
+source-git-commit: 1e3dc17d28ab69dcd6b2337280bb38ba07352beb
 workflow-type: tm+mt
-source-wordcount: '1729'
+source-wordcount: '1834'
 ht-degree: 0%
 
 ---
@@ -199,6 +199,9 @@ Du kan ta bort produktionsflödet från pipelines-kortet:
 
    ![](/help/using/assets/configure-pipelines/prod-delete.png)
 
+   >[!NOTE]
+   >En användare i rollen Distributionshanterare kan nu ta bort produktionsflöde på ett självbetjäningssätt via alternativet **Ta bort** från pipeline-kortet.
+
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
 Förutom den huvudsakliga rörledningen som distribueras till stadium och produktion kan kunderna lägga upp ytterligare rörledningar, som kallas **icke-produktionsförlopp**. Dessa pipelines kör alltid stegen för bygg- och kodkvalitet. De kan också distribuera till Adobes miljö för hanterade tjänster.
@@ -269,6 +272,28 @@ Följ stegen nedan för att redigera den konfigurerade icke-produktionsflödet:
 
 
 1. Klicka på **Uppdatera** när du är klar med redigeringen av produktionsflödet.
+
+### Ytterligare icke-produktionsförloppsindikatorer {#additional-nonprod-actions}
+
+#### Köra en icke-produktionspipeline {#run-nonprod}
+
+Du kan köra produktionsflödet från pipelines-kortet:
+
+1. Navigera till **Pipelines**-kortet från sidan **Programöversikt**.
+
+1. Klicka på **..** på **Pipelines**-kortet och klicka på **Kör**, som bilden nedan visar.
+
+   ![](/help/using/assets/configure-pipelines/nonprod-run1.png)
+
+#### Ta bort en icke-produktionspipeline {#delete-nonprod}
+
+Du kan ta bort produktionsflödet från pipelines-kortet:
+
+1. Navigera till **Pipelines**-kortet från sidan **Programöversikt**.
+
+1. Klicka på **..** på **Pipelines**-kortet och klicka på **Ta bort**, enligt bilden nedan.
+
+   ![](/help/using/assets/configure-pipelines/nonprod-delete.png)
 
 
 ## Nästa steg {#the-next-steps}
