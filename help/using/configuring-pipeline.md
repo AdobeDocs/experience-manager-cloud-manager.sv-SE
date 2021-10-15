@@ -11,9 +11,9 @@ content-type: reference
 discoiquuid: ba6c763a-b78a-439e-8c40-367203a719b3
 feature: CI-CD Pipeline
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: fd172a7168074630e85f3b110e032f783d39ddca
+source-git-commit: 973fec504cd5f35435b10e3d1d28f3ba20ff4ab9
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1478'
 ht-degree: 0%
 
 ---
@@ -158,29 +158,19 @@ Följ stegen nedan för att redigera den konfigurerade pipeline:
 
 1. Klicka på **..** på **Pipelines**-kortet och klicka på **Redigera**, som bilden nedan visar.
 
+   ![](/help/using/assets/configure-pipelines/edit-prod1.png)
 
 1. Dialogrutan **Redigera produktionspipeline** visas.
 
-   1. På fliken **Konfiguration** kan du uppdatera **pipelinenamnet**, **Distributionutlösaren** och **Beteendet Viktigt mätningsfel**.
+   1. På fliken **Konfiguration** kan du uppdatera **Pipelinenamnet**, **Databas**, **Git-grenen**, **Distributionutlösare**, **Beteende vid viktiga mätningsfel&lt;a1 1/>,** Distributionsalternativ **och** Dispatcher Configurations **.**
 
       >[!NOTE]
       >Mer information om hur du lägger till och hanterar databaser i Cloud Manager finns i [Lägga till och hantera databaser](/help/implementing/cloud-manager/managing-code/cloud-manager-repositories.md).
 
 
-   1. På fliken **Källa** kan du kontrollera eller avmarkera alternativen **Paus innan du distribuerar till produktion** och **Schemalagda** från **Alternativ för produktionsdistribution**.
-
-
-   1. Med alternativet **Experience Audit** kan du uppdatera eller lägga till nya sidor.
-
+   1. På fliken **Scentestning** kan du välja att välja dina alternativ på nytt i **Platsinnehållsleverans/Distribuerad lastvikt** och **Resursprestandatestdistribution**.
 
 1. Klicka på **Uppdatera** när du är klar med redigeringen av pipeline.
-
-1. Klicka på **Konfigurera pipeline** för att konfigurera och konfigurera din pipeline.
-
-   ![](assets/Setup-Pipeline.png)
-
-
-
 
 ## Icke-produktion och endast kodkvalitet, rörledningar
 
