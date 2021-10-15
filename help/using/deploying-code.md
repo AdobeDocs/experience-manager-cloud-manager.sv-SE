@@ -1,18 +1,18 @@
 ---
 title: Distribuera koden
-seo-title: Distribuera koden
+seo-title: Deploy your Code
 description: Ger en översikt över distributionsprocessen i Cloud Manager
-seo-description: Lär dig hur du distribuerar koden när du har konfigurerat din pipeline (databas-, miljö- och testmiljö)
+seo-description: Learn how to deploy your code once you have configured your pipeline (repository, environment, and testing environment)
 uuid: 4e3807e1-437e-4922-ba48-0bcadf293a99
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
-feature: Koddistribution
+feature: Code Deployment
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: df2f598f91201d362f54b17e4092ff6bd6a72cec
+source-git-commit: 2fcefda1e30871d44e3a1353470a4728904d7598
 workflow-type: tm+mt
-source-wordcount: '1020'
+source-wordcount: '1220'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 ## Distribuera kod med Cloud Manager {#deploying-code-with-cloud-manager}
 
 >[!NOTE]
->Mer information om hur du distribuerar kod för Cloud Manager i AEM som Cloud Service finns här[här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/deploy-code.html?lang=en#using-cloud-manager).
+>Mer information om hur du distribuerar kod för Cloud Manager på AEM as a Cloud Service finns i [här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/deploy-code.html?lang=en#using-cloud-manager).
 
 När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) är du redo att distribuera koden.
 
@@ -164,3 +164,32 @@ Produktionsinstallationer följer i allmänhet samma steg som ovan, men på ett 
 1. Distribuera AEM paket för att publicera2 och dispatcherpaketet till dispatcher2 parallellt, tömma dispatchercachen.
 1. Placera dispatcher2 i belastningsutjämnaren igen.
 Den här processen fortsätter tills distributionen har nått alla utgivare och utgivare i topologin.
+
+## Körningsläge för nödrörledning {#emergency-pipeline}
+
+I kritiska situationer kan Adobe Managed Services-kunder behöva driftsätta kodändringar i sina scen- och produktionsmiljöer utan att vänta på att en fullständig testcykel för Cloud Manager ska köras.
+
+För att åtgärda dessa situationer kan produktionsflödet i Cloud Manager köras i ett *nödläge*-läge. När detta läge används utförs inte säkerhets- och prestandatestningsstegen. alla andra steg, inklusive konfigurerade godkännandesteg, körs som i det normala körningsläget för pipeline.
+
+>[!NOTE]
+>Körningsläget för nödrörledningar aktiveras på programbasis av Customer Success Engineers.
+
+### Använda körningsläge för nödpipeline {#using-emergency-pipeline}
+
+När du startar en körning av en produktionspipeline kan du, om den här funktionen har aktiverats, starta körningen i normalt läge eller nödläge från dialogrutan, vilket visas i bilden nedan.
+
+![](assets/execution-emergency1.png)
+
+På informationssidan om pipeline-körning för en körning i nödläge visas dessutom en indikator på att nödläget har använts för den aktuella körningen.
+
+![](assets/execution-emergency2.png)
+
+
+Du kan även skapa en pipeline-körning i det här nödläget genom Cloud Manager API eller CLI. Om du vill starta en körning i nödläge skickar du en PUT-begäran till pipelinens körningsslutpunkt med frågeparametern `?pipelineExecutionMode=EMERGENCY` eller, när CLI används:
+
+```
+$ aio cloudmanager:pipeline:create-execution PIPELINE_ID --emergency
+```
+
+>[!IMPORTANT]
+>Om du använder flaggan `--emergency` kan det krävas en uppdatering till den senaste versionen av `aio-cli-plugin-cloudmanager`.
