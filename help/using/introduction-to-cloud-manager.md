@@ -1,20 +1,20 @@
 ---
 title: Introduktion till Cloud Manager
-seo-title: Introduktion till Cloud Manager
+seo-title: Introduction to Cloud Manager
 description: 'Den här sidan är en startpunkt för utbildning i Cloud Manager. '
-seo-description: 'Den här sidan är en startpunkt för utbildning i Adobe AEM Cloud Manager och visar på fördelarna och de viktigaste funktionerna. '
+seo-description: This page serves as a starting point for learning about Adobe AEM Cloud Manager and highlights the benefits and key features.
 uuid: 62d68e79-c2ba-4d8b-ba7d-33709014d5b6
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: introduction
 discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
-feature: Komma igång
+feature: Getting Started
 level: Beginner
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: 81c14382821de6b2d249000a79799747a6d9cb19
+source-git-commit: 08d831c560510d58062ed81fab809c12169810cb
 workflow-type: tm+mt
-source-wordcount: '805'
-ht-degree: 7%
+source-wordcount: '814'
+ht-degree: 3%
 
 ---
 
@@ -29,40 +29,43 @@ ht-degree: 7%
 
 ## Introduktion {#introduction}
 
-[!UICONTROL Cloud Manager], som ingår i Adobe Experience Manager (AEM) i Cloud, gör det möjligt för organisationer att självhantera Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet.
+[!UICONTROL Cloud Manager] för Adobe Experience Manager ger utvecklare möjlighet att skapa slagkraftiga kundupplevelser genom smidiga arbetsflöden som bygger på Adobe Experience Manager bästa praxis. Med CI/CD-ledningar som är optimerade för Adobe Experience Manager kan du enkelt sammanfoga utvecklingsarbetsflöden genom att checka in koden och flytta hela vägen till produktionsklar. Under byggfasen testas era anpassade koduppdateringar grundligt med beprövade och inlärda metoder för att leverera slagkraftiga digitala upplevelser till era kunder. Cloud Manager använder en öppen API-metod och gör det möjligt att integrera med era system utan att störa befintliga processer och verktyg.
 
-På den här dokumentationswebbplatsen beskrivs de funktioner i Cloud Manager som är tillgängliga för Adobe Managed Services-kunder (AMS). Dokumentation om funktioner och funktioner i Cloud Manager för AEM som Cloud Service finns i [Implementera program för AEM som en Cloud Service](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/home.html?lang=en).
+Den här dokumentationswebbplatsen beskriver specifikt funktionerna och funktionerna för kunder med Adobe Managed Services (AMS) i Cloud Manager. Motsvarande dokumentation för AEM as a Cloud Service kunder finns i [Implementera ansökningar för AEM as a Cloud Service](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/home.html?lang=en).
 
-**Organisationer** kan utföra/utnyttja följande med hjälp av självbetjäningsportalen:[!UICONTROL Cloud Manager]
+Med Cloud Manager kan ditt utvecklingsteam utnyttja följande:
 
-* **Kontinuerlig integrering/kontinuerlig** leverans av kod för att minska time to market från månader/veckor till dagar/timmar.
-* **Code Inspection, performance testing and security** validering based on best practices before push to production to minimize production ruption.
-* **Automatisk, schemalagd eller manuell** driftsättning även utanför kontorstid för maximal flexibilitet och kontroll.
-* **Funktionen** Automatisk skalförändring upptäcker behovet av ökad kapacitet och lägger automatiskt till ytterligare Dispatcher/Publish-segment online.
+* Kontinuerlig integrering/kontinuerlig leverans av kod för att minska time to market från månader/veckor till dagar/timmar.
+
+* Code Inspection, performance testing och security validation bygger på bästa praxis innan man övergår till produktion för att minimera produktionsstörningar.
+
+* API Connectivity för att komplettera befintliga DevOps-processer.
+
+* Automatisk skalning upptäcker behovet av ökad kapacitet på ett smart sätt och lägger automatiskt till ytterligare Dispatcher-/Publish-segment online.
 
 Följande bild visar CI/CD-processflödet som används i [!UICONTROL Cloud Manager]:
 
 ![](assets/screen_shot_2018-05-12at73843pm.png)
 
-## Nyckelfunktioner i [!UICONTROL Cloud Manager] {#key-features-in-cloud-manager}
+## Viktiga funktioner i [!UICONTROL Cloud Manager] {#key-features-in-cloud-manager}
 
-Organisationer kan utnyttja följande funktioner med [!UICONTROL Cloud Manager]:
+Man kan utnyttja följande funktioner med [!UICONTROL Cloud Manager]:
 
 ### Självbetjäningsgränssnitt {#self-service-interface}
 
-Med användargränssnittet för [!UICONTROL Cloud Manager] kan kunderna enkelt komma åt och hantera molnmiljön och CI/CD-flödet för Experience Manager-programmen.
+Användargränssnittet för [!UICONTROL Cloud Manager] gör det möjligt för kunder att enkelt komma åt och hantera molnmiljön och CI/CD-flödet för sina Experience Manager-program.
 
 Kunderna definierar programspecifika KPI:er (Key Performance Indicators) - toppmoderna sidvisningar per minut och förväntad svarstid för en sidinläsning, som i slutänden utgör grunden för att mäta en lyckad driftsättning. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Det nya självbetjäningsgränssnittet ger dig kontrollen tillbaka, men det ger även länkar till bästa praxis och tillgång till experter i Adobe som kan ge den vägledning du behöver.
 
-Information om hur du utforskar och kommer igång med användargränssnittet i [!UICONTROL Cloud Manager] finns i [Första gången du loggar in](https://helpx.adobe.com/experience-manager/cloud-manager/using/first-time-login.html).
+Utforska och komma igång med [!UICONTROL Cloud Manager]&#39;s UI, se [Inloggning för första gången](https://helpx.adobe.com/experience-manager/cloud-manager/using/first-time-login.html).
 
 ### CI/CD-pipeline {#ci-cd-pipeline}
 
 En av de viktigaste funktionerna i [!UICONTROL Cloud Manager] är möjligheten att använda en optimerad CI/CD-pipeline för att snabba upp leveransen av anpassad kod eller uppdateringar som att lägga till nya komponenter på webbplatsen.
 
-Genom [!UICONTROL Cloud Manager]-gränssnittet kan kunderna konfigurera och starta sin CI/CD-pipeline. Under denna pipeline utförs en grundlig kodgenomsökning för att säkerställa att endast högkvalitativa program skickas vidare till produktionsmiljön.
+Via [!UICONTROL Cloud Manager] UI kan kunderna konfigurera och starta sin CI/CD-pipeline. Under denna pipeline utförs en grundlig kodgenomsökning för att säkerställa att endast högkvalitativa program skickas vidare till produktionsmiljön.
 
-Mer information om hur du konfigurerar pipeline från användargränssnittet för [!UICONTROL Cloud Manager] finns i [Konfigurera CI/CD-pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html).
+Mer information om hur du konfigurerar pipeline från [!UICONTROL Cloud Manager]&#39;s UI, se [Konfigurera CI/CD-pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html).
 
 ### Flexibla driftsättningslägen {#flexible-deployment-modes}
 
@@ -78,7 +81,7 @@ Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Dist
 
 [!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet när produktionsmiljön är ovanligt hög och automatiskt lägger till ytterligare kapacitet online via funktionen för autoskalning.
 
-Under en autoskalningshändelse utlöser [!UICONTROL Cloud Manager] automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger till ytterligare kapacitet online på några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/Publish-noder som körs.
+Under en autoskalningshändelse, [!UICONTROL Cloud Manager] aktiverar automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger in ytterligare kapacitet online inom några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/Publish-noder som körs.
 
 Funktionen för autoskalning gäller bara skiktet Dispatcher/Publish och kommer alltid att utföras med en vågrät skalförändringsmetod, med minst ett ytterligare segment i paret Dispatcher/Publish och upp till högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer).
 
