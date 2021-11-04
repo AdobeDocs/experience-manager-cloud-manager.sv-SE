@@ -3,9 +3,9 @@ title: Versionsinformation för 2021.11.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.11.0
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 0395fd4263ae37bce49c698e8e72ad7b08af046a
+source-git-commit: e6e5a17c16c42e0b0ed5aedd2f9a6360fd81d8cd
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,8 @@ Nästa version är planerad till 9 december 2021.
 * The `x-request-id` svarshuvudet är nu synligt i API-uppspelningen på [www.adobe.io](https://www.adobe.io/). Det här huvudet är användbart när du skickar in kundvårdsproblem för felsökning.
 
 * Som användare ser jag att Pipeline-kortet med noll rörledningar ger mig lämplig vägledning.
+
+* Det finns nu en ny aktivitetssida där aktiviteter som pipeline och kodkörningar kan visas tillsammans med tillhörande information. Med tiden kommer de aktiviteter som listas på den här sidan att utvidgas tillsammans med den information som ges.
 
 * Nu finns det en ny sida med Pipelines (Pipelines) med en statuspekare som du kan använda när du hovrar för att enkelt visa sammanfattningen av detaljer. Pipeline-körningar kan visas tillsammans med tillhörande information.
 
