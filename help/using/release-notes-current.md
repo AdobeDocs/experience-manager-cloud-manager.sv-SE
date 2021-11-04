@@ -1,52 +1,55 @@
 ---
-title: Versionsinformation för 2021.10.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.10.0
+title: Versionsinformation för 2021.11.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.11.0
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: b28f8f1bedb92428d332716510cbf0fd714fada6
+source-git-commit: 0395fd4263ae37bce49c698e8e72ad7b08af046a
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
 
 # Versionsinformation för 2021.10.0 {#release-notes-for}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.10.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] Version 2021.11.0.
 
 >[!NOTE]
->Läs [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) om du vill se den senaste versionsinformationen för Cloud Manager på AEM as a Cloud Service.
+>Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) om du vill visa den senaste versionsinformationen för Cloud Manager på AEM as a Cloud Service.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.10.0 är 14 oktober 2021.
-Nästa version är planerad till den 4 november 2021.
+Releasedatum för [!UICONTROL Cloud Manager] Version 2021.11.0 är 4 november 2021.
+Nästa version är planerad till 9 december 2021.
 
 ## Nyheter {#whats-new}
 
-* Produktionspipelinjer kan nu köras i&quot;nödläge&quot;, vilket innebär att man slipper utföra säkerhets- och prestandatestningssteg vid driftsättning i nödsituationer.
+* Git-implementerings-ID visas nu i körningsinformationen för pipeline, vilket gör det enklare att spåra koden som skapades.
 
-* För enhetlighet med Cloud Service kommer befintliga distributionsledningar nu att refereras till och märkas i användargränssnittet som&quot;fullständigt stackade&quot;-pipelines.
+* The `x-request-id` svarshuvudet är nu synligt i API-uppspelningen på [www.adobe.io](https://www.adobe.io/). Det här huvudet är användbart när du skickar in kundvårdsproblem för felsökning.
 
-* Pipelinekortet har uppdaterats så att det nu visas ett enda, integrerat ansikte som visar både pipelines för produktion och icke-produktion, och användaren kan välja Kör/Pausa/Fortsätt direkt på den åtgärdsmeny som är kopplad till varje pipeline.
+* Som användare ser jag att Pipeline-kortet med noll rörledningar ger mig lämplig vägledning.
 
-* En användare i rollen Distributionshanterare kan nu ta bort produktionsflödet via självbetjäning via gränssnittet.
+* Nu finns det en ny sida med Pipelines (Pipelines) med en statuspekare som du kan använda när du hovrar för att enkelt visa sammanfattningen av detaljer. Pipeline-körningar kan visas tillsammans med tillhörande information.
 
-* Lägg till och redigera rörliga upplevelser har uppdaterats för att nu använda välbekanta, moderna moduler.
+* API:t för redigering av pipeline har nu stöd för inställning av invaliderings- och tömningsbanor för dispatcher.
 
-* Användare av Cloud Manager kan nu skicka feedback direkt från användargränssnittet via knappen **Feedback** längst upp till höger på landningssidan.
+* API:t Redigera pipeline har nu stöd för att ändra miljön som används i distributionsfaserna.
 
-* Årliga SLA-diagram kan nu hämtas från användargränssnittet i Cloud Manager.
+* En optimering i OakPal-skanningsprocessen har införts för stora paket.
 
-* Kodkvalitet och icke-produktionsrelaterade pipeline-körningar kommer nu att använda en mer effektiv, ytlig kloningsprocess under byggsteget, vilket ger en snabbare byggtid för kunder med särskilt stora Git-databaser.
+* CSV-filen för kvalitetsutgåva kommer nu att innehålla tidsstämpeln för varje kvalitetsproblem.
 
-* API-dokumentationen för Cloud Manager innehåller nu en interaktiv spelningsmiljö som gör att inloggade användare kan experimentera med API:t från sin webbläsare. Mer information finns i [API-spelningsvyn för Cloud Manager](https://www.adobe.io/experience-cloud/cloud-manager/reference/playground/).
-
-* Verktygstipset på programkortet blir mer beskrivande om ett markeringsalternativ under Navigera till är inaktiverat. Nu står det&quot;En produktionsmiljö existerar inte&quot;.
-
+* Knappen Hantera på sidan Miljöer visas inte längre i användargränssnittet.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* När data som lästs in från interna system inte matats in korrekt kan det leda till att orelaterade data från CSE inte återspeglas korrekt i Cloud Manager.
+* Vissa oortodoxa byggkonfigurationer resulterade i att onödiga filer sparades i Pipelins Maven-artefaktcache, vilket resulterade i överflödig nätverks-I/O när byggbehållaren startades och stoppades.
 
-* I specifika kundsituationer ignorerades ogiltiga artefakter som hämtades under byggsteget och som skulle ha orsakat ett byggfel.
+* Pipeline PATCH API misslyckas om det inte finns någon distributionsfas.
+
+* The `ClientlibProxyResourceCheck` kvalitetsregeln genererade falskt positiva problem när det fanns klientbibliotek med gemensamma grundsökvägar.
+
+* Felmeddelandet när det maximala antalet databaser har uppnåtts specificerade inte orsaken till felet.
+
+* I sällsynta fall misslyckades rörledningar på grund av olämplig hantering av vissa svarskoder.
