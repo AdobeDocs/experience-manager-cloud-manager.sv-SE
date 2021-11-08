@@ -8,10 +8,10 @@ user-guide-description: Lär dig använda Adobes hanterade tjänster för att sj
 feature-set: Experience Manager Cloud Manager, Experience Manager
 role: Admin
 level: Intermediate
-source-git-commit: 17f79fdc7278cae532485570a6e2b8700683ef0d
+source-git-commit: 0ba21a1223c5cee5d8a46e08f38fc59b5188fd40
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '288'
+ht-degree: 11%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 + Komma igång {#getting-started}
    + [Inloggning för första gången](first-time-login.md)
    + [Konfigurera ditt program](setting-up-program.md)
-   + Skapa ett AEM programprojekt {#create-application-project}
+   + Skapa ett AEM {#create-application-project}
       + [Använda guiden](using-the-wizard.md)
       + [Konfigurera projektet](setting-up-project.md)
       + [Förstå byggmiljön](build-environment-details.md)
@@ -57,11 +57,12 @@ ht-degree: 0%
    + [Åtkomst till databaser](accessing-repos.md)
    + [Integrera med Git](setup-cloud-manager-git-integration.md)
    + [Arbeta med Git-databaser med flera källor](/help/using/working-with-multiple-source-git-repos.md)
-+ Produktuppdateringsguiden {#product-update-wizard}
++ Produktuppdateringsguide {#product-update-wizard}
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
-   + [Aktuell versionsinformation (2021.9.0)](release-notes-current.md)
+   + [Aktuell versionsinformation (2021.11.0)](release-notes-current.md)
+   + [Versionsinformation för 2021.10.0](release-notes-2021-10-0.md)
    + [Versionsinformation för 2021.9.0](release-notes-2021-9-0.md)
    + [Versionsinformation för 2021.8.0](release-notes-2021-8-0.md)
    + [Versionsinformation för 2021.7.0](release-notes-2021-7-0.md)
