@@ -3,7 +3,7 @@ title: Versionsinformation för 2021.11.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.11.0
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 0a8373f9613715f8945f482198710cefd84b169d
+source-git-commit: 096468d28d70b84286841dd9818c7aab54662b2b
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 0%
@@ -20,7 +20,7 @@ I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTRO
 ## Releasedatum {#release-date}
 
 Releasedatum för [!UICONTROL Cloud Manager] Version 2021.11.0 är 4 november 2021.
-Nästa version är planerad till 9 december 2021.
+Nästa version är planerad till den 16 december 2021.
 
 ## Nyheter {#whats-new}
 
@@ -30,7 +30,7 @@ Nästa version är planerad till 9 december 2021.
 
 * Som användare ser jag att Pipeline-kortet med noll rörledningar ger mig lämplig vägledning.
 
-* Det finns nu en ny aktivitetssida där aktiviteter som pipeline och kodkörningar kan visas tillsammans med tillhörande information. Med tiden kommer de aktiviteter som listas på den här sidan att utvidgas tillsammans med den information som ges.
+* Det finns nu en ny aktivitetssida där aktiviteter som pipeline och kodkörningar kan visas tillsammans med tillhörande information. Med tiden kommer de aktiviteter som listas på den här sidan att utvidgas tillsammans med de angivna detaljerna.
 
 * Nu finns det en ny sida med Pipelines (Pipelines) med en statuspekare som du kan använda när du hovrar för att enkelt visa sammanfattningen av detaljer. Pipeline-körningar kan visas tillsammans med tillhörande information.
 
