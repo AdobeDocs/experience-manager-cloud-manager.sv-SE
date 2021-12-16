@@ -8,9 +8,9 @@ user-guide-description: Lär dig använda Adobes hanterade tjänster för att sj
 feature-set: Experience Manager Cloud Manager, Experience Manager
 role: Admin
 level: Intermediate
-source-git-commit: 0ba21a1223c5cee5d8a46e08f38fc59b5188fd40
+source-git-commit: 53c5aed5e42408ae4503b6003350de3ae1f27edf
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '291'
 ht-degree: 11%
 
 ---
@@ -61,7 +61,8 @@ ht-degree: 11%
    + [Översikt](overview-productupdate-wizard.md)
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
-   + [Aktuell versionsinformation (2021.11.0)](release-notes-current.md)
+   + [Aktuell versionsinformation](release-notes-current.md)
+   + [Versionsinformation för 2021.11.0](release-notes-2021-11-0.md)
    + [Versionsinformation för 2021.10.0](release-notes-2021-10-0.md)
    + [Versionsinformation för 2021.9.0](release-notes-2021-9-0.md)
    + [Versionsinformation för 2021.8.0](release-notes-2021-8-0.md)

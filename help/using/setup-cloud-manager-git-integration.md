@@ -1,21 +1,20 @@
 ---
 title: Git-integrering med Adobe Cloud Manager
 description: En videoserie som går igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
-seo-title: Git-integrering med Adobe Cloud Manager
-seo-description: En videoserie som går igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
+seo-title: Git Integration with Adobe Cloud Manager
+seo-description: A video series that walks through the set up and integration of a customer-managed (on-premise) git repository with Adobe Cloud Manager.
 feature: Git Repositories
-translation-type: tm+mt
-source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
+exl-id: e517f8a4-23f0-4486-8278-91396dba76ec
+source-git-commit: 0bc3e775ef2432cdb8d3bd5470953c07c6628148
 workflow-type: tm+mt
-source-wordcount: '405'
-ht-degree: 5%
+source-wordcount: '370'
+ht-degree: 1%
 
 ---
 
-
 # Git-integrering med Adobe Cloud Manager
 
-Adobe Cloud Manager levereras med en enda Git-databas som används för att distribuera kod med Cloud Managers CI/CD-pipelines. Kunderna kan använda Cloud Managers Git-databas direkt. Kunderna kan också integrera en lokal eller **kundhanterad** Git-databas med Cloud Manager.
+Adobe Cloud Manager levereras med en enda Git-databas som används för att distribuera kod med Cloud Managers CI/CD-pipelines. Kunderna kan använda Cloud Managers Git-databas direkt. Kunderna kan också välja att integrera en lokal lösning eller **kundhanterad** Git-databas med Cloud Manager.
 
 ## Git-integrering - översikt
 
@@ -29,7 +28,7 @@ I den här videoserien utforskas flera användningsexempel när det gäller att 
 * [Produktionsdistribution](#production-deployment)
 * [Synkroniserar versionstaggar](#sync-tags)
 
-En fullständig översikt finns i [användarhandboken för Cloud Manager](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html). Videoserien bygger på grundläggande kunskaper i Git och källkodshantering. Se [ytterligare resurser nedan](#additional-resources) för mer information om Git.
+En fullständig översikt finns i [Användarhandbok för Cloud Manager.](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html) Videoserien bygger på grundläggande kunskaper i Git och källkodshantering. Se [ytterligare resurser nedan](#additional-resources) för mer information om Git.
 
 >[!NOTE]
 >
@@ -43,11 +42,11 @@ Första steget för synkronisering av en kundhanterad Git-databas med Cloud Mana
 
 ## Grundläggande förgreningsstrategi {#branching-strategy}
 
-Konfigurera en grundläggande förgreningsstrategi för att kunna utnyttja Cloud Managers [produktionsledningar och icke-produktionsrörledningar](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html).
+Konfigurera en grundläggande förgreningsstrategi för att dra nytta av Cloud Managers [rörledningar för produktion och icke-produktion.](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html)
 
 >[!VIDEO](https://video.tv.adobe.com/v/28712/?quality=12)
 
-## Funktionsavsnittsutveckling {#feature-development}
+## Funktionsutveckling {#feature-development}
 
 Använd en funktionsgren för att isolera kodändringar i en kundhanterad Git-databas och synkronisera med Cloud Managers Git-databas för att använda en icke-produktionsprocess för kodkvalitets- och valideringstestning.
 
@@ -61,13 +60,13 @@ Förbered kod för en produktionsrelease i en kundhanterad Git-databas och synkr
 
 ## Synkroniserar versionstaggar {#sync-tags}
 
-Synkronisera versionstaggar från en Cloud Manager Git-databas i en kundhanterad Git-databas för att ge dig en bild av vilken kod som har distribuerats till scen- och produktionsmiljöer.
+Synkronisera versionstaggar från en Cloud Manager Git-databas till en kundhanterad Git-databas för att ge dig en bild av vilken kod som har distribuerats till scen- och produktionsmiljöer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/28725/?quality=12)
 
 ## Ytterligare resurser {#additional-resources}
 
-* [Dokumentation om Cloud Manager](https://docs.adobe.com/content/help/en/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html)
+* [Dokumentation om Cloud Manager](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/introduction-to-cloud-manager.html)
 * [GitHub-resurser](https://try.github.io)
 * [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
 * [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)

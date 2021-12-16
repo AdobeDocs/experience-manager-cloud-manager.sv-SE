@@ -1,57 +1,36 @@
 ---
-title: Versionsinformation för 2021.11.0
-description: Följ den här sidan för att få information om Cloud Manager version 2021.11.0
+title: Versionsinformation för 2021.12.0
+description: Detta är versionsinformationen för Cloud Manager version 2021.12.0.
 feature: Release Information
-exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 096468d28d70b84286841dd9818c7aab54662b2b
+source-git-commit: 910def6d82c09e0220a50a3cb34a61f2c7284cb9
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation för 2021.11.0 {#release-notes-for}
+# Versionsinformation för Cloud Manager version 2021.12.0 {#release-notes}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] Version 2021.11.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.12.0.
 
 >[!NOTE]
->Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) om du vill visa den senaste versionsinformationen för Cloud Manager på AEM as a Cloud Service.
+>
+>Information om den senaste utgåvan av Cloud Manager på AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/release-notes-cloud-manager/release-notes-cm-current.html)
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] Version 2021.11.0 är 4 november 2021.
-Nästa version är planerad till den 16 december 2021.
+Releasedatum för [!UICONTROL Cloud Manager] version 2021.12.0 är 16 december 2021. Nästa version är planerad till januari 2022.
 
 ## Nyheter {#whats-new}
 
-* Git-implementerings-ID visas nu i körningsinformationen för pipeline, vilket gör det enklare att spåra koden som skapades.
-
-* The `x-request-id` svarshuvudet är nu synligt i API-uppspelningen på [www.adobe.io](https://www.adobe.io/). Det här huvudet är användbart när du skickar in kundvårdsproblem för felsökning.
-
-* Som användare ser jag att Pipeline-kortet med noll rörledningar ger mig lämplig vägledning.
-
-* Det finns nu en ny aktivitetssida där aktiviteter som pipeline och kodkörningar kan visas tillsammans med tillhörande information. Med tiden kommer de aktiviteter som listas på den här sidan att utvidgas tillsammans med de angivna detaljerna.
-
-* Nu finns det en ny sida med Pipelines (Pipelines) med en statuspekare som du kan använda när du hovrar för att enkelt visa sammanfattningen av detaljer. Pipeline-körningar kan visas tillsammans med tillhörande information.
-
-* API:t för redigering av pipeline har nu stöd för inställning av invaliderings- och tömningsbanor för dispatcher.
-
-* API:t Redigera pipeline har nu stöd för att ändra miljön som används i distributionsfaserna.
-
-* En optimering i OakPal-skanningsprocessen har införts för stora paket.
-
-* CSV-filen för kvalitetsutgåva kommer nu att innehålla tidsstämpeln för varje kvalitetsproblem.
-
-* Knappen Hantera på sidan Miljöer visas inte längre i användargränssnittet.
+* Den implementerade hashen, som redan är synlig i användargränssnittet, finns nu även i API:t.
+* På sidan Activity (Aktivitet) finns nu ett popup-fönster för rörledningar som ger en översikt över pipelineinformationen.
+* Uppdateringar för att inkludera ytterligare information som presenteras på aktivitetssidan lades till.
+* Fliken Lär dig i Cloud Manager innehåller nu snabb åtkomst till API-guider och associerade resurser.
+* En användare med rollen Distributionshanterare kan nu initiera guiden Skapa projekt/gren för en databas utan grenar från åtgärdsmenyn på databassidan.
+* Distributionshanteraren, som är i arbetsflödet för att lägga till eller redigera pipeline, får nu information om hur du skapar en gren eller ett projekt om den valda databasen inte har några grenar.
+* I fönstret Redigera produktionspipeline finns en listruta tillgänglig för miljöval när det finns mer än en scenmiljö för produktion.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Vissa oortodoxa byggkonfigurationer resulterade i att onödiga filer sparades i Pipelins Maven-artefaktcache, vilket resulterade i överflödig nätverks-I/O när byggbehållaren startades och stoppades.
-
-* Pipeline PATCH API misslyckas om det inte finns någon distributionsfas.
-
-* The `ClientlibProxyResourceCheck` kvalitetsregeln genererade falskt positiva problem när det fanns klientbibliotek med gemensamma grundsökvägar.
-
-* Felmeddelandet när det maximala antalet databaser har uppnåtts specificerade inte orsaken till felet.
-
-* I sällsynta fall misslyckades rörledningar på grund av olämplig hantering av vissa svarskoder.
+* Kompletta produktionsledningar för stackproduktion förblir namngivna&quot;Production Pipeline&quot; även när användaren anger ett annat namn i namnfältet.

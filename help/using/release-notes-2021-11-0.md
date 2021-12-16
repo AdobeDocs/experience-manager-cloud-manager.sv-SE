@@ -1,0 +1,57 @@
+---
+title: Versionsinformation för 2021.11.0
+description: Följ den här sidan för att få information om Cloud Manager version 2021.11.0
+feature: Release Information
+exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
+source-git-commit: 6852df51d4b9b4947f1d5ce0b5a284bef94d0589
+workflow-type: tm+mt
+source-wordcount: '368'
+ht-degree: 0%
+
+---
+
+# Versionsinformation för 2021.11.0 {#release-notes-for}
+
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] Version 2021.11.0.
+
+>[!NOTE]
+>Se [Aktuell versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/onboarding/getting-access/release-notes-cloud-manager/release-notes-cm-current.html?lang=en#getting-access) om du vill visa den senaste versionsinformationen för Cloud Manager på AEM as a Cloud Service.
+
+## Releasedatum {#release-date}
+
+Releasedatum för [!UICONTROL Cloud Manager] Version 2021.11.0 är 4 november 2021.
+Nästa version är planerad till den 16 december 2021.
+
+## Nyheter {#whats-new}
+
+* Git-implementerings-ID visas nu i körningsinformationen för pipeline, vilket gör det enklare att spåra koden som skapades.
+
+* The `x-request-id` svarshuvudet är nu synligt i API-uppspelningen på [www.adobe.io](https://www.adobe.io/). Det här huvudet är användbart när du skickar in kundvårdsproblem för felsökning.
+
+* Som användare ser jag att Pipeline-kortet med noll rörledningar ger mig lämplig vägledning.
+
+* Det finns nu en ny aktivitetssida där aktiviteter som pipeline och kodkörningar kan visas tillsammans med tillhörande information. Med tiden kommer de aktiviteter som listas på den här sidan att utvidgas tillsammans med de angivna detaljerna.
+
+* Nu finns det en ny sida med Pipelines (Pipelines) med en statuspekare som du kan använda när du hovrar för att enkelt visa sammanfattningen av detaljer. Pipeline-körningar kan visas tillsammans med tillhörande information.
+
+* API:t för redigering av pipeline har nu stöd för inställning av invaliderings- och tömningsbanor för dispatcher.
+
+* API:t Redigera pipeline har nu stöd för att ändra miljön som används i distributionsfaserna.
+
+* En optimering i OakPal-skanningsprocessen har införts för stora paket.
+
+* CSV-filen för kvalitetsutgåva kommer nu att innehålla tidsstämpeln för varje kvalitetsproblem.
+
+* Knappen Hantera på sidan Miljöer visas inte längre i användargränssnittet.
+
+## Felkorrigeringar {#bug-fixes}
+
+* Vissa oortodoxa byggkonfigurationer resulterade i att onödiga filer sparades i Pipelins Maven-artefaktcache, vilket resulterade i överflödig nätverks-I/O när byggbehållaren startades och stoppades.
+
+* Pipeline PATCH API misslyckas om det inte finns någon distributionsfas.
+
+* The `ClientlibProxyResourceCheck` kvalitetsregeln genererade falskt positiva problem när det fanns klientbibliotek med gemensamma grundsökvägar.
+
+* Felmeddelandet när det maximala antalet databaser har uppnåtts specificerade inte orsaken till felet.
+
+* I sällsynta fall misslyckades rörledningar på grund av olämplig hantering av vissa svarskoder.
