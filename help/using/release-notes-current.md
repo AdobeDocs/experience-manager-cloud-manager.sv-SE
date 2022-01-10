@@ -2,9 +2,10 @@
 title: Versionsinformation för 2021.12.0
 description: Detta är versionsinformationen för Cloud Manager version 2021.12.0.
 feature: Release Information
-source-git-commit: 910def6d82c09e0220a50a3cb34a61f2c7284cb9
+exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
+source-git-commit: 61f2d1e0882b752d1a1d5e62f9c028aa71941efe
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '265'
 ht-degree: 0%
 
 ---
@@ -30,6 +31,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2021.12.0 är 16 december 2
 * En användare med rollen Distributionshanterare kan nu initiera guiden Skapa projekt/gren för en databas utan grenar från åtgärdsmenyn på databassidan.
 * Distributionshanteraren, som är i arbetsflödet för att lägga till eller redigera pipeline, får nu information om hur du skapar en gren eller ett projekt om den valda databasen inte har några grenar.
 * I fönstret Redigera produktionspipeline finns en listruta tillgänglig för miljöval när det finns mer än en scenmiljö för produktion.
+* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 32.
 
 ## Felkorrigeringar {#bug-fixes}
 
