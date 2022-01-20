@@ -1,38 +1,33 @@
 ---
-title: Versionsinformation för 2021.12.0
-description: Detta är versionsinformationen för Cloud Manager version 2021.12.0.
+title: Versionsinformation för 2022.01.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.01.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 61f2d1e0882b752d1a1d5e62f9c028aa71941efe
+source-git-commit: ebbbbdca2bfd834bc3dc0ff06ffb318df42713ee
 workflow-type: tm+mt
-source-wordcount: '265'
-ht-degree: 0%
+source-wordcount: '145'
+ht-degree: 1%
 
 ---
 
 # Versionsinformation för Cloud Manager version 2021.12.0 {#release-notes}
 
-I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2021.12.0.
+I följande avsnitt beskrivs den allmänna versionsinformationen för [!UICONTROL Cloud Manager] version 2022.01.0.
 
 >[!NOTE]
 >
->Information om den senaste utgåvan av Cloud Manager på AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service versionsinformation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/release-notes-cloud-manager/release-notes-cm-current.html)
+>Information om den senaste utgåvan av Cloud Manager på AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service versionsinformation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/release-notes-cloud-manager/release-notes-cm-current.html)
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2021.12.0 är 16 december 2021. Nästa version är planerad till januari 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.01.0 är den 20 januari 2022. Nästa version är planerad till den 10 februari 2022.
 
 ## Nyheter {#whats-new}
 
-* Den implementerade hashen, som redan är synlig i användargränssnittet, finns nu även i API:t.
-* På sidan Activity (Aktivitet) finns nu ett popup-fönster för rörledningar som ger en översikt över pipelineinformationen.
-* Uppdateringar för att inkludera ytterligare information som presenteras på aktivitetssidan lades till.
-* Fliken Lär dig i Cloud Manager innehåller nu snabb åtkomst till API-guider och associerade resurser.
-* En användare med rollen Distributionshanterare kan nu initiera guiden Skapa projekt/gren för en databas utan grenar från åtgärdsmenyn på databassidan.
-* Distributionshanteraren, som är i arbetsflödet för att lägga till eller redigera pipeline, får nu information om hur du skapar en gren eller ett projekt om den valda databasen inte har några grenar.
-* I fönstret Redigera produktionspipeline finns en listruta tillgänglig för miljöval när det finns mer än en scenmiljö för produktion.
-* Den version av AEM Project Archettype som används av Cloud Manager har uppdaterats till version 32.
+* Cloud Manager kommer att [undvika att återskapa kodbasen när den upptäcker att samma Git-implementering används](/help/using/setting-up-project.md#build-artifact-reuse) i flera körningar av rörledningar i en hel stack.
+* När du genererar ett Git-lösenord visas förfallodatumet.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Kompletta produktionsledningar för stackproduktion förblir namngivna&quot;Production Pipeline&quot; även när användaren anger ett annat namn i namnfältet.
+* Sällsynta fall av falska positiva pipeline-fel har åtgärdats.
+* För program med endast en databas visas databasens namn på körningsskärmen för pipeline.
