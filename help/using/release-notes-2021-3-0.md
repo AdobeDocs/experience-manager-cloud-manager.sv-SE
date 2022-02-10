@@ -2,9 +2,10 @@
 title: Versionsinformation för 2021.3.0
 description: Följ den här sidan för att få information om Cloud Manager version 2021.3.0
 feature: Release Information
-source-git-commit: 09dd8fe608d95cd9dbc95129cf86b9693c2839b5
+exl-id: e05b22fe-f071-4b69-9db1-e3d7ee4cfbcc
+source-git-commit: 71d44c7e3673ca62fcd2203ecc0bc4ed9fa22002
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -28,7 +29,7 @@ Nästa version är planerad till den 8 april 2021.
 
 * The **Version** etiketten har ändrats till **Git-tagg** i körningsfönstret för produktionspipeline.
 
-* Etiketterna som definierar beteendet när viktiga mätvärden inte uppfyller det definierade tröskelvärdet har märkts om för att återspegla deras verkliga beteende - **Avbryt omedelbart** och **Godkänn omedelbart**. Se [Konfigurera pipeline-inställningarna](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/configuring-pipeline.html?lang=en#configuring-the-pipeline-settings-from-cloud-manager) för mer information.
+* Etiketterna som definierar beteendet när viktiga mätvärden inte uppfyller det definierade tröskelvärdet har märkts om för att återspegla deras verkliga beteende - **Avbryt omedelbart** och **Godkänn omedelbart**. Se dokumentet [Konfigurera produktionsförlopp](configuring-production-pipelines.md) för mer information.
 
 * Listorna över klass- och metodborttagning har uppdaterats baserat på version `2021.3.4997.20210303T022849Z-210225` av AEM Cloud Service SDK.
 

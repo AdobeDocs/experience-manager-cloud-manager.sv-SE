@@ -11,9 +11,9 @@ discoiquuid: ebcc91a5-be9e-4684-8146-d88f4013d4d1
 feature: Getting Started
 level: Beginner
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: 08d831c560510d58062ed81fab809c12169810cb
+source-git-commit: 71d44c7e3673ca62fcd2203ecc0bc4ed9fa22002
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '812'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ Med Cloud Manager kan ditt utvecklingsteam utnyttja följande:
 
 * API Connectivity för att komplettera befintliga DevOps-processer.
 
-* Automatisk skalning upptäcker behovet av ökad kapacitet på ett smart sätt och lägger automatiskt till ytterligare Dispatcher-/Publish-segment online.
+* Automatisk skalning upptäcker behovet av ökad kapacitet på ett intelligent sätt och lägger automatiskt till ytterligare Dispatcher/Publish-segment online.
 
 Följande bild visar CI/CD-processflödet som används i [!UICONTROL Cloud Manager]:
 
@@ -65,7 +65,7 @@ En av de viktigaste funktionerna i [!UICONTROL Cloud Manager] är möjligheten a
 
 Via [!UICONTROL Cloud Manager] UI kan kunderna konfigurera och starta sin CI/CD-pipeline. Under denna pipeline utförs en grundlig kodgenomsökning för att säkerställa att endast högkvalitativa program skickas vidare till produktionsmiljön.
 
-Mer information om hur du konfigurerar pipeline från [!UICONTROL Cloud Manager]&#39;s UI, se [Konfigurera CI/CD-pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html).
+Mer information om hur du konfigurerar pipeline från [!UICONTROL Cloud Manager]Användargränssnitt, se dokumenten [Konfigurera produktionsförlopp](configuring-production-pipelines.md) och [Konfigurerar icke-produktionsförlopp.](configuring-non-production-pipelines.md)
 
 ### Flexibla driftsättningslägen {#flexible-deployment-modes}
 
@@ -79,7 +79,7 @@ Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Dist
 
 ### Automatisk skalning {#autoscaling}
 
-[!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet när produktionsmiljön är ovanligt hög och automatiskt lägger till ytterligare kapacitet online via funktionen för autoskalning.
+[!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet när produktionsmiljön utsätts för ovanligt hög belastning och automatiskt tillför ytterligare kapacitet online via funktionen för autoskalning.
 
 Under en autoskalningshändelse, [!UICONTROL Cloud Manager] aktiverar automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger in ytterligare kapacitet online inom några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/Publish-noder som körs.
 

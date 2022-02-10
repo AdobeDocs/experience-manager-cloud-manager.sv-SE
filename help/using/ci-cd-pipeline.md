@@ -1,20 +1,19 @@
 ---
 title: CI/CD-pipeline
-seo-title: CI/CD-pipeline
+seo-title: CI/CD Pipeline
 description: Översikt över CI/CD Pipeline, som hanterar distributioner till scener och produktion i Cloud Manager
-seo-description: Följ det här avsnittet för att lära dig mer om CI/CD-flödet, som hanterar distributioner till scenen och produktionen i Cloud Manager
+seo-description: Follow this section to learn about the CI/CD pipeline, which handles deployments to stage and production in Cloud Manager
 uuid: 763ddb24-05cd-463f-8d72-a2e69bbe6b7e
 topic-tags: introduction
 discoiquuid: 1cdb76eb-1a91-4689-8579-0fa9fccc0592
 feature: CI-CD Pipeline
-translation-type: tm+mt
-source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
+exl-id: 7130e5b7-6986-48c8-900c-90f3e4187f91
+source-git-commit: 4f0e1d163001fd18cfa838256c813152d65c3b4c
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '533'
 ht-degree: 0%
 
 ---
-
 
 # CI/CD-pipeline {#ci-cd-pipeline}
 
@@ -26,7 +25,7 @@ CI/CD-pipeline automatiserar också enhets- och prestandatestningsprocesser för
 
 ## Förloppsprocess {#pipeline-process}
 
-I följande diagram visas vad som händer när en release aktiveras i [!UICONTROL Cloud Manager]. I tabellen förklaras varje steg i arbetsflödet.
+Följande diagram visar vad som händer när en release aktiveras i [!UICONTROL Cloud Manager]. I tabellen förklaras varje steg i arbetsflödet.
 
 ![](assets/screen_shot_2018-05-30at82457pm.png)
 
@@ -41,13 +40,13 @@ Följande tabell visar vad som pågår under varje steg i processen:
 | 5. Versioniserade artefakter lagrade | Versionsartefakter lagras för senare användning i distributionsstegen. |
 | 6. Automatisk distribution av felaktigheter till AMS-AEM | Artefakten distribueras till scenmiljön. |
 | 7. Utlös automatiska tester | [!UICONTROL Cloud Manager] kör test av prestanda och säkerhet på artefakten. |
-| 8. Driftsättning av produktionstrigger | När de automatiska testerna är klara [!UICONTROL Cloud Manager] startar distributionen till produktionen. |
+| 8. Driftsättning av produktionstrigger | När automatiska tester har slutförts [!UICONTROL Cloud Manager] börjar distributionen till produktionen. |
 | 9. [!UICONTROL Cloud Manager] hämtar artefakter att distribuera | [!UICONTROL Cloud Manager] hämtar lagrade versionsartefakter. |
 | 10. Skicka artefakter till produktion | Versionsartefakterna distribueras till produktionsmiljön. |
 
 ### Konfigurera en CI/CD-pipeline {#how-to-setup-a-ci-cd-pipeline}
 
-Mer information om pipelinekonfigurationen finns i [konfigurera pipeline](configuring-pipeline.md).
+Mer information om pipelinekonfigurationen finns i dokumenten [Konfigurera produktionsförlopp](configuring-production-pipelines.md) och [Konfigurerar icke-produktionsförlopp.](configuring-non-production-pipelines.md)
 
 ## Kvalitetsportar {#quality-gates}
 
@@ -59,9 +58,9 @@ CI/CD-pipeline innehåller kvalitetsportar eller acceptanskriterier som måste u
 
 För var och en av dessa portar har tre olika problemnivåer identifierats:
 
-* **Kritiska**  problem som identifieras av porten och som orsakar ett omedelbart fel i rörledningen.
-* **Viktigt**  - fel som identifieras av porten som gör att pipelinen försätts i pausat läge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
-* **Information**  - frågor som identifieras av portalen och som endast tillhandahålls i informationssyfte och som inte har någon inverkan på ledningen.
+* **Kritisk** - frågor som identifieras av porten och som orsakar ett omedelbart fel i rörledningen.
+* **Viktigt** - problem som identifieras av porten och som gör att pipelinen försätts i pausat läge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
+* **Information** - frågor som identifieras av portalen och som endast tillhandahålls i informationssyfte och som inte har någon inverkan på ledningen.
 
 Följande är ett exempel på en kodsökning med problem som identifierats för koden:
 
@@ -69,4 +68,4 @@ Följande är ett exempel på en kodsökning med problem som identifierats för 
 
 ### Konfigurera portar {#how-to-setup-gates}
 
-Mer information om hur du konfigurerar kod, kvalitet och prestanda finns i **[Konfigurera portar](configuring-pipeline.md)**.
+Se dokumentet [Konfigurera produktionsförlopp](configuring-production-pipelines.md) om du vill ha mer information om hur du ställer in kod, kvalitet och prestanda.

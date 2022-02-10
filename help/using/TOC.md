@@ -8,10 +8,10 @@ user-guide-description: Lär dig använda Adobes hanterade tjänster för att sj
 feature-set: Experience Manager Cloud Manager, Experience Manager
 role: Admin
 level: Intermediate
-source-git-commit: e3f0759437707f73dfc6851608e06e30064c0f16
+source-git-commit: 4f0e1d163001fd18cfa838256c813152d65c3b4c
 workflow-type: tm+mt
-source-wordcount: '294'
-ht-degree: 11%
+source-wordcount: '303'
+ht-degree: 10%
 
 ---
 
@@ -42,7 +42,10 @@ ht-degree: 11%
    + [Konfigurera dina Release-grenar](configure-your-release-branches.md)
    + [Hantera dina Dispatcher-konfigurationer](dispatcher-configurations.md)
 + Användning {#how-to-use}
-   + [Konfigurera CI/CD-pipeline](configuring-pipeline.md)
+   + CI/CD-rör {#pipelines}
+      + [Konfigurera produktionsförlopp](configuring-production-pipelines.md)
+      + [Konfigurera icke-produktionsförlopp](configuring-non-production-pipelines.md)
+      + [Hantera pipeline](managing-pipelines.md)
    + [Distribuera koden](deploying-code.md)
    + [Förstå testresultat](understand-your-test-results.md)
    + [Hantera dina miljöer](manage-your-environment.md)
@@ -62,6 +65,7 @@ ht-degree: 11%
    + [Utvärdering](evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell versionsinformation](release-notes-current.md)
+   + [Versionsinformation för 2022.1.0](release-notes-2022-1-0.md)
    + [Versionsinformation för 2021.12.0](release-notes-2021-12-0.md)
    + [Versionsinformation för 2021.11.0](release-notes-2021-11-0.md)
    + [Versionsinformation för 2021.10.0](release-notes-2021-10-0.md)

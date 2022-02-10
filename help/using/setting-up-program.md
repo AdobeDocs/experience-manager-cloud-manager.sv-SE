@@ -1,14 +1,14 @@
 ---
 title: Konfigurera ditt program
-seo-title: Konfigurera ditt program
+seo-title: Set Up Your Program
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
-seo-description: 'Efter introduktionen måste företagsägaren göra en inledande konfiguration av Adobe AEM Cloud Manager. Detta innebär att ange programbeskrivningen och definiera de nyckeltal som ska användas för prestandatestning. '
-feature: Komma igång
+seo-description: After onboarding, the business owner will need to do some initial setup of Adobe AEM Cloud Manager. This involves setting the program description and defining the KPIs which will be used for performance testing.
+feature: Getting Started
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: 71a6f2709efb9c4c3831deaa1ce89d93e30b775c
+source-git-commit: 71d44c7e3673ca62fcd2203ecc0bc4ed9fa22002
 workflow-type: tm+mt
-source-wordcount: '727'
-ht-degree: 1%
+source-wordcount: '687'
+ht-degree: 0%
 
 ---
 
@@ -19,15 +19,15 @@ Efter introduktionen måste företagsägaren slutföra en inledande konfiguratio
 De KPI:er som definieras fungerar som en baslinje för prestandatestning som skickas varje gång pipeline körs.
 
 >[!NOTE]
->De definierade nyckeltal mäts i tester som körs på **scenen**-miljön. Vanligtvis skalas dessa KPI:er ned så att de passar scenmiljöns funktioner.
->En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktion **Miljö** och som har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut (förutsatt att scenmiljön bara består av ett enda dispatcher-/publiceringsserverpar).
->Dessutom har många användare ett CDN (Content Delivery Network), till exempel Akamai eller CloudFront, framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot scenmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga, cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
+>De nyckeltal som definieras mäts vid provningar som körs på **stage** miljö. Vanligtvis skalas dessa KPI:er ned så att de passar scenmiljöns funktioner.
+>En användare förväntar sig till exempel i genomsnitt 1 000 sidvisningar per minut i sin produktion **Miljö** och att ha fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut (om deras scenmiljö bara består av ett enda dispatcher-/publiceringsserverpar).
+>Dessutom har många användare ett CDN (Content Delivery Network), till exempel Akamai eller CloudFront, framför produktionsmiljön. Sedan [!UICONTROL Cloud Manager] testning direkt mot scenmiljön bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
 
-## Använda [!UICONTROL Cloud Manager] för att installera programmet {#using-cloud-manager-to-setup-your-program}
+## Använda [!UICONTROL Cloud Manager] för att installera ditt program {#using-cloud-manager-to-setup-your-program}
 
 Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
 
-1. Klicka på **Setup Program** för att starta installationsprocessen i [!UICONTROL Cloud Manager].
+1. Klicka **Installationsprogram** för att starta installationsprocessen i [!UICONTROL Cloud Manager].
 
    ![image1](assets/set-up-program/setup1.png)
 
@@ -37,15 +37,15 @@ Följ stegen nedan för att konfigurera programmet och definiera nyckeltal:
    ![image1](assets/set-up-program/setup2.png)
 
 
-1. Skärmen **Setup Program** visar Redigera programinformation.
+1. The **Installationsprogram** visas i fönstret Redigera programinformation.
 
-1. Du kan se tre alternativ som **Allmänt**, **KPI** och **Provisioning**.
+1. Du kommer att se tre alternativ som **Allmänt**, **KPI** och **Provisionering** -fliken.
 
-1. På fliken **Allmänt** överför du en miniatyrbild till programmet. Du kan också lägga till en beskrivning till programmet.
+1. I **Allmänt** överför en miniatyrbild till programmet. Du kan också lägga till en beskrivning till programmet.
 
    ![](assets/Setup_Program-General.png)
 
-1. Under **KPI** kan du definiera två KPI:er (förväntningarna för varje distribution). Separata KPI:er definieras för **AEM Sites** och **AEM Assets**. Du kan ange nyckeltal för de produkter som du har licensierat.
+1. Under **KPI** kan du definiera två nyckeltal (förväntningarna för varje distribution). Separata KPI:er definieras för **AEM Sites** och **AEM Assets**. Du kan ange nyckeltal för de produkter som du har licensierat.
 
    **AEM Sites**
 
@@ -66,44 +66,44 @@ Under programinstallationen anges resursspecifika nyckeltal:
 
    ![](assets/Setup_Program-KPIs.png)
 
-1. Under **Provisioning** kan du visa eller redigera provisioneringskonfigurationen för produktionsmiljöer och icke-produktionsmiljöer i ditt program. Du ser **Automatisk skalning är på** om autoskalning har aktiverats för programmet.
+1. Under **Provisionering** kan du visa eller redigera provisioneringskonfigurationen för produktions- och icke-produktionsmiljöer i programmet. Du kommer att se **Automatisk skalning är aktiverat**, om autoskalning har aktiverats för programmet.
 
    >[!NOTE]
    >Funktionen för autoskalning kan bara användas i produktionsmiljön och kanske inte är tillgänglig för alla kundprogram.
 
    ![](assets/Setup_Program-Provisioning.png)
 
-1. Klicka på **Spara** för att slutföra installationsguiden.
+1. Klicka **Spara** för att slutföra installationsguiden.
 
    >[!NOTE]
    >Du kan alltid redigera programmet när det initiala programmet redan har konfigurerats. Följ stegen nedan för mer information.
 
 ## Redigera ett program {#editing-program}
 
-1. Gå till programmet från startskärmen för **Cloud Manager**.
+1. Navigera till programmet från **Cloud Manager** hemskärmen.
 
-1. Klicka på **Redigera program** om du vill uppdatera eller ändra programmet från sidan **Översikt**, enligt bilden nedan.
+1. Klicka på **Redigera program** för att uppdatera eller ändra programmet från **Översikt** som i bilden nedan.
 
    ![](assets/set-up-program/edit-program1.png)
 
-1. Skärmen **Redigera program** som gör att du kan uppdatera eller ändra programmet visas.
+1. The **Redigera program** skärmar där du kan uppdatera eller ändra programmet.
 
-   Du kan uppdatera programbeskrivningen på fliken **Allmänt**.
+   Du kan uppdatera programbeskrivningen från **Allmänt** -fliken.
 
    ![](assets/set-up-program/edit-program-general.png)
 
-   Navigera till fliken **KPI** för att uppdatera information om AEM Sites och Assets.
+   Navigera till **KPI** för att uppdatera information om AEM Sites och Assets.
 
    ![](assets/set-up-program/edit-program-kpi.png)
 
-   Dessutom kan du navigera till fliken **Provisioning** för att redigera provisioneringskonfigurationen för produktionsmiljöer och icke-produktionsmiljöer i programmet.
+   Dessutom kan du navigera till **Provisionering** för att redigera provisioneringskonfigurationen för produktions- och icke-produktionsmiljöer i ditt program.
 
    ![](assets/set-up-program/edit-program-provision.png)
 
-1. Klicka på **Uppdatera** för att spara ändringarna.
+1. Klicka på **Uppdatera** för att spara redigeringarna.
 
 ## Nästa steg {#the-next-steps}
 
 Om du redan har konfigurerat pipeline kommer de uppdaterade inställningarna att beaktas vid nästa körning. Om du inte har konfigurerat pipeline än följer du stegen för att konfigurera din pipeline först.
 
-Se [Konfigurera CI/CD Pipeline](https://helpx.adobe.com/experience-manager/cloud-manager/using/configuring-pipeline.html) för att konfigurera pipeline.
+Se dokumenten [Konfigurera produktionsförlopp](configuring-production-pipelines.md) och [Konfigurera icke-produktionsförlopp](configuring-non-production-pipelines.md) för att ställa in rörledningen.

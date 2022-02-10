@@ -1,36 +1,35 @@
 ---
 title: Versionsinformation för 2018.8.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2018.8.0
+seo-title: AEM Cloud Manager Release Notes for 2018.8.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2018.8.0.
-seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2018.8.0.
+seo-description: Follow this page to get information for AEM Cloud Manager Release 2018.8.0.
 uuid: e8aaba32-89b4-4bc5-b295-09b753252612
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 9222ac3b-525e-47c1-b481-ac9d22e3d559
 feature: Release Information
-translation-type: tm+mt
-source-git-commit: fb10d775c930b5bb475b497aac2fd59b053a9a00
+exl-id: 20f87048-30f7-4869-aad0-13ca383a404b
+source-git-commit: 4f0e1d163001fd18cfa838256c813152d65c3b4c
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '312'
 ht-degree: 1%
 
 ---
 
-
 # Versionsinformation för 2018.8.0 {#release-notes-for}
 
-[!UICONTROL Cloud Manager] 2018.8.0-versionen har stöd för att automatiskt aktivera CI/CD-flödet när Git implementeras och en ny guide för att skapa programprojekt i Git baserat på AEM Project Archetype.
+The [!UICONTROL Cloud Manager] 2018.8.0-versionen har stöd för att automatiskt aktivera CI/CD-flödet när Git implementeras och en ny guide för att skapa programprojekt i Git baserat på AEM Project Archetype.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018.
+Releasedatum för [!UICONTROL Cloud Manager] Version 2018.8.0 är 4 oktober 2018.
 
 ## Nyheter {#what-s-new}
 
-* **Programinstallation**  - Ny guide för att skapa ett programprojekt i Git med hjälp av AEM Project Archetype
+* **Programinställningar** - Ny guide för att skapa ett applikationsprojekt i Git med hjälp av den AEM Project Archetype
 
-* **CI/CD Pipeline**  - Följande ändringar läggs till i CI/CD Pipeline. Mer information finns i [Konfigurera CI/CD-pipeline](configuring-pipeline.md).
+* **CI/CD-pipeline** - Följande ändringar läggs till i CI/CD-pipeline. Se dokumentet [Konfigurera produktionsförlopp](configuring-production-pipelines.md) om du vill veta mer.
 
    * Vid Git Changes-utlösaren, som startar CI/CD-pipeline när implementeringar har lagts till i den konfigurerade Git-grenen.
    * Kort på startskärmen har nu en djup länk till specifika avsnitt på sidan för att köra pipeline.
@@ -39,7 +38,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018
    * Sidan för körning av pipeline visar nu version-/taggnamnet som skapades för körningen.
    * Apache Maven version uppdaterad till 3.5.3.
 
-* **Navigering**  - Följande ändringar har lagts till i  [!UICONTROL Cloud Manager].
+* **Navigering** - Följande ändringar har lagts till i [!UICONTROL Cloud Manager].
 
    * Resurslänken i den globala navigeringen kommer att navigera till Runbook i Sharepoint.
    * Hjälpmenyn har ordnats om för att innehålla mer [!UICONTROL Cloud Manager]-specifikt innehåll.
@@ -55,5 +54,4 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2018.8.0 är 4 oktober 2018
 ## Kända fel {#known-issues}
 
 * Förgreningar som har skapats med programprojektguiden får inte innehålla streck.
-* Sidlisten för [!UICONTROL Experience Cloud]-meddelanden kan inte läsa in meddelanden konsekvent. Meddelanden visas emellertid i [!UICONTROL Experience Cloud] och, om de är konfigurerade, skickas de fortfarande via e-post.
-
+* The [!UICONTROL Experience Cloud] Sidlisten för meddelanden kan inte läsa in meddelanden på ett konsekvent sätt. Meddelanden visas dock i [!UICONTROL Experience Cloud] och, om den är konfigurerad, kommer ändå att skickas via e-post.

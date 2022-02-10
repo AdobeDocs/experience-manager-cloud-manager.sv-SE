@@ -1,37 +1,36 @@
 ---
 title: Versionsinformation för 2019.1.0
-seo-title: Versionsinformation om AEM Cloud Manager för 2019.1.0
+seo-title: AEM Cloud Manager Release Notes for 2019.1.0
 description: Följ den här sidan om du vill ha information om Cloud Manager version 2019.1.0.
-seo-description: Följ den här sidan om du vill ha information om AEM Cloud Manager version 2019.1.0.
+seo-description: Follow this page to get information for AEM Cloud Manager Release 2019.1.0.
 uuid: 3af5808f-828f-4846-bee4-1e62194b48ad
 contentOwner: jsyal
 products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
 topic-tags: release-notes
 discoiquuid: 85a1dcf3-2eef-4ba8-b4d1-09e4a88c7bd0
 feature: Release Information
-translation-type: tm+mt
-source-git-commit: c5d32d49782c899d013fcc60b9c4d2b67e9350ae
+exl-id: 383ca5a0-4b0b-48e9-aa48-1d1388875329
+source-git-commit: 4f0e1d163001fd18cfa838256c813152d65c3b4c
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '315'
 ht-degree: 1%
 
 ---
 
-
 # Versionsinformation för 2019.1.0 {#release-notes-for}
 
-[!UICONTROL Cloud Manager] 2018.9.0-utgåvan innehåller stöd för testning av AEM Assets-program samt ytterligare pipelinetyper som kör stegen för bygg- och kodkvalitet, och kan distribueras till en icke-produktionsmiljö.
+The [!UICONTROL Cloud Manager] 2018.9.0-utgåvan innehåller stöd för testning av AEM Assets-program samt ytterligare pipelinetyper som kör konstruktions- och kodkvalitetsstegen, som kan distribueras till en icke-produktionsmiljö.
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2019.1.0 är 17 januari 2019.
+Releasedatum för [!UICONTROL Cloud Manager] Version 2019.1.0 är 17 januari 2019.
 
 ## Nyheter {#whats-new}
 
-* Stöd för prestandatestning av AEM Assets har lagts till. Mer information finns i Konfigurera din [CI/CD-pipeline](configuring-pipeline.md).
-* Stöd för rörledningar som endast kör steg för bygg- och kodkvalitet samt rörledningar som driftsätts i icke-produktionsmiljöer. Mer information finns i avsnittet **Icke-produktion och Endast kodkvalitet i pipeline** i [Konfigurera CI/CD-pipeline](configuring-pipeline.md).
+* Stöd för prestandatestning av AEM Assets har lagts till. Se dokumentet [Konfigurera produktionsförlopp](configuring-production-pipelines.md) om du vill veta mer.
+* Stöd för rörledningar som endast kör steg för bygg- och kodkvalitet samt rörledningar som driftsätts i icke-produktionsmiljöer. Se dokumentet [Konfigurera icke-produktionsförlopp](configuring-non-production-pipelines.md) om du vill veta mer.
 * Stöd för anpassade miljövariabler i byggmiljön har lagts till.
-* För kunder med flera stadier eller produktionsmiljöer kan du välja vilken miljö som ska distribueras som en del av produktionsflödet på sidan [Konfigurera CI/CD Pipeline](configuring-pipeline.md).
+* För kunder med flera stadier eller produktionsmiljöer är det möjligt att välja vilken miljö som ska distribueras som en del av produktionsflödet. Se dokumentet [Konfigurera produktionsförlopp](configuring-production-pipelines.md) om du vill veta mer.
 * httxt2dbm har lagts till för att skapa behållare.
 * Alla hjälpmenyalternativ öppnar en ny flik.
 
@@ -49,4 +48,4 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2019.1.0 är 17 januari 201
 
 ## Kända fel {#known-issues}
 
-* När du öppnar ett program som har Sites, men inte Assets, KPI:er, visas ett anrop till åtgärdskortet med knappen **Setup Program**. Endast användare med rollen Affärsägare kan dock klicka på knappen **Setup Program**.
+* När du öppnar ett program som har Sites, men inte Assets, KPI:er, visas ett anrop till åtgärdskortet med en **Installationsprogram** -knappen. Endast användare med rollen Business Owner kan faktiskt klicka på **Installationsprogram** -knappen.
