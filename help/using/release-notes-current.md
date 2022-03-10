@@ -3,10 +3,10 @@ title: Versionsinformation för 2022.3.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.3.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 0d14adda454889eebbb0a875978ceeaa5ee4f7ea
+source-git-commit: 79b2729814af483844d095ed8d6db6cead2ceaf7
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 1%
+source-wordcount: '229'
+ht-degree: 0%
 
 ---
 
@@ -26,13 +26,14 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2022.3.0 är 10 mars 2022. 
 ## Nyheter {#what-is-new}
 
 * (Endast Cloud Service) Det går att komma åt AEM miljöloggen med hjälp av rollen Utvecklare.
-* The [`reliability_rating` kritiskt mått](understand-your-test-results.md) har inaktiverats.
+* (AMS): Utanför HTTP-begäranden från tillgångstester kommer nu från ett fast IP-intervall.
 
 
 ## Felkorrigeringar {#bug-fixes}
 
-* [The **Hoppa över ändringar i belastningsutjämnaren** option](configuring-production-pipelines.md#adding-production-pipeline) kan nu inaktiveras korrekt.
-* [The **Hoppa över ändringar i belastningsutjämnaren** option](configuring-production-pipelines.md#adding-production-pipeline) visas nu för arbetsflödet för redigering av distributionspipeline.
-* En delmängd av manuellt skapade Git-databaser hade felaktiga namnvärden som påverkades [återanvändningsfunktionen för build-felaktigheter.](setting-up-project.md#build-artifact-reuse) Namnen på dessa databaser har ändrats och användarna ser det korrigerade namnet i Cloud Manager API/UI.
-* [När du lägger till eller redigerar en pipeline för kodkvalitet](configuring-non-production-pipelines.md) alternativen för att hantera mätfel visas inte längre.
-* Oväntade rörliga variabelkonfigurationer orsakar inte längre fel i byggsteget.
+* (Endast AMS) **Hoppa över ändringar i belastningsutjämnaren** det gick inte att inaktivera alternativet.
+* (AMS) **Hoppa över ändringar i belastningsutjämnaren** alternativet visades inte på AMS Dev Deploy **Redigera pipeline-arbetsflöde**.
+* En delmängd av Git-databaser som skapats manuellt hade ett felaktigt namnvärde, vilket hindrade återanvändningsfunktionen för build-felaktigheter från att vara effektiv. Namnen på dessa databaser har ändrats och användarna ser det korrigerade namnet i Cloud Manager API/UI.
+* Artefakter från rörledningar som inte är avsedda för produktion återanvänds på ett olämpligt sätt i rörledningar för hela produktionen.
+* När du lägger till eller redigerar en pipeline för kodkvalitet visas inte längre alternativen för att hantera måttfel.
+* En del oväntade pipelinevariabelkonfigurationer kan orsaka i byggsteget.
