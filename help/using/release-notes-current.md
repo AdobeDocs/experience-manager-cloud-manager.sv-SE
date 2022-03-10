@@ -3,7 +3,7 @@ title: Versionsinformation för 2022.3.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.3.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 6e98f9d2fcd69799bad86d1e247212b26273bd0b
+source-git-commit: 0d14adda454889eebbb0a875978ceeaa5ee4f7ea
 workflow-type: tm+mt
 source-wordcount: '197'
 ht-degree: 1%
@@ -25,8 +25,9 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2022.3.0 är 10 mars 2022. 
 
 ## Nyheter {#what-is-new}
 
-* [The `reliability_rating` kritiskt mått](understand-your-test-results.md) har inaktiverats.
-* En användare kan nu sortera kolumnerna i **Pipelines** i Cloud Manager.
+* (Endast Cloud Service) Det går att komma åt AEM miljöloggen med hjälp av rollen Utvecklare.
+* The [`reliability_rating` kritiskt mått](understand-your-test-results.md) har inaktiverats.
+
 
 ## Felkorrigeringar {#bug-fixes}
 
