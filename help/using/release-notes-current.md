@@ -3,7 +3,7 @@ title: Versionsinformation för 2022.3.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.3.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 7611667d8c617d501f9b69cbc7c854c195a5ebbe
+source-git-commit: 4a5ddf3144ec50f1a7a4ac367b5c99bc9b486752
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2022.3.0 är 10 mars 2022. 
 ## Felkorrigeringar {#bug-fixes}
 
 * The **Hoppa över ändringar i belastningsutjämnaren** det gick inte att inaktivera alternativet.
-*De **Hoppa över ändringar i belastningsutjämnaren** alternativet visades inte på AMS Dev Deploy **Redigera pipeline-arbetsflöde**.
+* The **Hoppa över ändringar i belastningsutjämnaren** alternativet visades inte på AMS Dev Deploy **Redigera pipeline-arbetsflöde**.
 * En delmängd av Git-databaser som skapats manuellt hade ett felaktigt namnvärde, vilket hindrade återanvändningsfunktionen för build-felaktigheter från att vara effektiv. Namnen på dessa databaser har ändrats och användarna ser det korrigerade namnet i Cloud Manager API/UI.
 * Artefakter från rörledningar som inte är avsedda för produktion återanvänds på ett olämpligt sätt i rörledningar för hela produktionen.
 * När du lägger till eller redigerar en pipeline för kodkvalitet visas inte längre alternativen för att hantera måttfel.
