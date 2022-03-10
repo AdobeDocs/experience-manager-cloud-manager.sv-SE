@@ -1,13 +1,13 @@
 ---
 title: Konfigurera icke-produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar som inte är avsedda för produktion för att distribuera koden.
-source-git-commit: 205113735cc743e11e140b1161413002844f5b79
+exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
+source-git-commit: 154b95e1b43717097b9ae9076a15792517dd613d
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '627'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera icke-produktionsförlopp {#configuring-non-production-pipelines}
 
@@ -71,7 +71,7 @@ När du har konfigurerat programmet och har minst en miljö med användargränss
 
       * **Manuell** - Använd det här alternativet om du vill starta pipelinen manuellt.
       * **Vid Git-ändringar** - Det här alternativet startar pipelinen när implementeringar läggs till i den konfigurerade Git-grenen. Med det här alternativet kan du fortfarande starta pipelinen manuellt efter behov.
-   1. Under **Beteende vid viktiga måttfel** definierar du hur rörledningen fungerar när ett viktigt fel inträffar i någon av kvalitetsportarna.
+   1. För distribution av rörledningar, under **Beteende vid viktiga måttfel** definierar du hur rörledningen fungerar när ett viktigt fel inträffar i någon av kvalitetsportarna.
 
       * **Fråga varje gång** - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
       * **Misslyckas omedelbart** - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
