@@ -2,13 +2,13 @@
 title: Versionsinformation för 2022.2.0
 description: Detta är versionsinformationen för Cloud Manager version 202.2.0.
 feature: Release Information
-source-git-commit: 845724c9dec08c043aa305a5c9591d315995cbe7
+exl-id: c13ee200-197e-4855-a08c-99d36b471bb6
+source-git-commit: d074bc1af7e681377ec5b961db23f0bde5d1aaca
 workflow-type: tm+mt
-source-wordcount: '130'
+source-wordcount: '139'
 ht-degree: 1%
 
 ---
-
 
 # Versionsinformation för Cloud Manager version 2022.2.0 {#release-notes}
 
@@ -24,7 +24,10 @@ Releasedatum för [!UICONTROL Cloud Manager] version 202.2.0 är 10 februari 202
 
 ## Nyheter {#whats-new}
 
-* En uppdaterad Cloud Manager-landningssida ger förbättrad navigering, enkel växling mellan rutnät-/rutvyer och popup-fönster för snabb programsammanfattning.
+Nyheter i februari:
+
+* (Endast Cloud Service) Det går att komma åt AEM miljöloggen med hjälp av rollen Utvecklare.
+* Du kan nu inaktivera det kritiska mätvärdet för tillförlitlighet_klassificering.
 
 ## Felkorrigeringar {#bug-fixes}
 
