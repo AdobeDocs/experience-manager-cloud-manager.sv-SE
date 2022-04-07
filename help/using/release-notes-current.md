@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.3.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.3.0.
+title: Versionsinformation för 2022.4.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.4.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 4a5ddf3144ec50f1a7a4ac367b5c99bc9b486752
+source-git-commit: 3d4eea13c0f2e9c4030bbfd3b7c5c25336548498
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2022.3.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2022.4.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.3.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.4.0.
 
 >[!NOTE]
 >
@@ -21,18 +21,15 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.3.0 är 10 mars 2022. Nästa version är planerad till den 7 april 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.4.0 är 7 april 2022. Nästa version är planerad till den 5 maj 2022.
 
 ## Nyheter {#what-is-new}
 
-* Utanför HTTP-begäranden från tillgångstester kommer nu från ett fast IP-intervall.
-
-
-## Felkorrigeringar {#bug-fixes}
-
-* The **Hoppa över ändringar i belastningsutjämnaren** det gick inte att inaktivera alternativet.
-* The **Hoppa över ändringar i belastningsutjämnaren** alternativet visades inte på AMS Dev Deploy **Redigera pipeline-arbetsflöde**.
-* En delmängd av Git-databaser som skapats manuellt hade ett felaktigt namnvärde, vilket hindrade återanvändningsfunktionen för build-felaktigheter från att vara effektiv. Namnen på dessa databaser har ändrats och användarna ser det korrigerade namnet i Cloud Manager API/UI.
-* Artefakter från rörledningar som inte är avsedda för produktion återanvänds på ett olämpligt sätt i rörledningar för hela produktionen.
-* När du lägger till eller redigerar en pipeline för kodkvalitet visas inte längre alternativen för att hantera måttfel.
-* En del oväntade pipelinevariabelkonfigurationer kan orsaka i byggsteget.
+* Förbättringar av varaktigheten och framgångssiffran för stegen för att konstruera pipeline har implementerats och kommer att introduceras stegvis för alla kunder fram till april-månaden.
+* Nu kan du enkelt hitta en Git-gren genom att skriva de första tecknen i namnet i inmatningsfältet i guiden för att lägga till och redigera pipeline och välja bland föreslagna matchningar.
+* The **Pipelines** Sidan har nu en sidnumrering som förbättrar användbarheten för program med ett stort antal rörledningar.
+   * 50 rader per sida visas i tabellen.
+* Versionen av [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) som används av Cloud Manager har uppdaterats till version 36.
+* Oracle-JDK är nu standard-JDK för utveckling och drift av AEM program. Molnhanterarens byggprocess växlar automatiskt till att använda Oracle-JDK, även om ett alternativ uttryckligen har valts i Maven-verktygskedjan.
+   * Mer information om hur du byter till Oracle-JDK finns i [dokumentationen för byggmiljön.](/help/using/build-environment-details.md#using-java-support)
+   * Se [Java-supportpolicyn för Adobe Experience Manager - frågor och svar](https://experienceleague.adobe.com/docs/experience-manager-65/assets/Java_Policy_for_Adobe_Experience_Manager.pdf) om du vill ta upp vanliga frågor om den här ändringen.
