@@ -10,7 +10,7 @@ topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 feature: Code Deployment
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: 2fcefda1e30871d44e3a1353470a4728904d7598
+source-git-commit: 0ba7c49b3550666030249562219b2d0dc51f4ae1
 workflow-type: tm+mt
 source-wordcount: '1220'
 ht-degree: 0%
@@ -26,13 +26,13 @@ ht-degree: 0%
 
 När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) är du redo att distribuera koden.
 
-1. Klicka på **Distribuera** i Cloud Manager för att starta distributionsprocessen.
+1. Klicka **Distribuera** från Cloud Manager för att starta distributionsprocessen.
 
    ![](assets/Deploy1.png)
 
-1. Skärmen **Pipeline Execution** visas.
+1. The **Körning av pipeline** visas.
 
-   Klicka på **Skapa** för att starta processen.
+   Klicka **Bygge** för att starta processen.
 
    ![](assets/Deploy2.png)
 
@@ -51,46 +51,46 @@ När du har konfigurerat produktionspipelinen (databas, miljö och testmiljö) �
    Följande steg ingår i **mellanlagringsdistributionen**:
 
    * Validering: Detta steg säkerställer att pipeline är konfigurerad att använda de tillgängliga resurserna, till exempel att den konfigurerade grenen finns, och att miljöerna är tillgängliga.
-   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Mer information om byggmiljön finns i [Förstå byggmiljön](/help/using/build-environment-details.md).
-   * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
+   * Build &amp; Unit Testing: Det här steget kör en innesluten byggprocess. Se [Förstå byggmiljön](/help/using/build-environment-details.md) för mer information om byggmiljön.
+   * Kodsökning: I det här steget utvärderas kvaliteten på programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
    * Distribuera till scenen
 
    ![](assets/Stage_Deployment1.png)
 
-   I **Stage Testing** utförs följande steg:
+   The **Scentestning** omfattar följande steg:
 
-   * Säkerhetstestning: I det här steget utvärderas säkerhetseffekten av programkoden på AEM. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
-   * Prestandatestning: I det här steget utvärderas prestanda för programkoden. Mer information om testprocessen finns i [Förstå testresultaten](understand-your-test-results.md).
+   * Säkerhetstestning: I det här steget utvärderas säkerhetseffekten av programkoden på AEM. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
+   * Prestandatestning: I det här steget utvärderas prestanda för programkoden. Se [Förstå testresultaten](understand-your-test-results.md) för mer information om testprocessen.
 
    ![](assets/Stage_Testing1.png)
 
-   **Produktionsdistributionen** omfattar följande steg:
+   The **Produktionsdistribution** omfattar följande steg:
 
-   * **Ansökan om godkännande**  (om aktiverad)
-   * **Schemalägg produktionsdistribution**  (om aktiverat)
-   * **CSE-stöd**  (om aktiverat)
+   * **Ansökan om godkännande** (om aktiverat)
+   * **Schemalägg produktionsdistribution** (om aktiverat)
+   * **Stöd för CSE** (om aktiverat)
    * **Distribuera till produktion**
 
    ![](assets/Prod_Deployment1.png)
 
    >[!NOTE]
    >
-   >**Schemalägg produktionsdistribution** är aktiverat när pipeline konfigureras.
+   >The **Schemalägg produktionsdistribution** aktiveras när pipeline konfigureras.
    >
    >
-   >Med det här alternativet kan du antingen schemalägga din produktionsdistribution eller klicka på **Now** för att köra produktionsdistributionen direkt.
+   >Med det här alternativet kan du antingen schemalägga din produktionsdistribution eller klicka på **Nu** för att genomföra produktionsdistributionen omedelbart.
    >
    >
    >Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
    >
    >
-   >Klicka på **Bekräfta** för att verifiera dina inställningar.
+   >Klicka **Bekräfta** för att verifiera dina inställningar.
 
    ![](assets/Production_Deployment1.png)
 
    När du har bekräftat distributionsschemat slutförs koddistributionen.
 
-   Följande skärm visar när **Now**-alternativet är valt i ovanstående steg.
+   Följande skärm visas när **Nu** är markerat i ovanstående steg.
 
    ![](assets/Production_Deployment2.png)
 
@@ -100,12 +100,12 @@ Följande steg gör timeout om du väntar på användarfeedback:
 
 | Steg | Timeout |
 |--- |--- |
-| Testning av kodkvalitet | 7 dagar |
-| Säkerhetstestning | 7 dagar |
-| Prestandatestning | 7 dagar |
-| Ansökan om godkännande | 7 dagar |
-| Schemalägg produktionsdistribution | 7 dagar |
-| Stöd för CSE | 7 dagar |
+| Testning av kodkvalitet | 14 dagar |
+| Säkerhetstestning | 14 dagar |
+| Prestandatestning | 14 dagar |
+| Ansökan om godkännande | 14 dagar |
+| Schemalägg produktionsdistribution | 14 dagar |
+| Stöd för CSE | 14 dagar |
 
 ## Distributionsprocess {#deployment-process}
 
@@ -138,7 +138,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    1. Aktuella konfigurationer säkerhetskopieras och kopieras till en temporär plats
    1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i Hantera dina Dispatcher-konfigurationer. Detta rensar katalogerna för att säkerställa att inga överblivna filer lämnas kvar.
-   1. Artefakten extraheras till katalogen `httpd`.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
+   1. Artefakten extraheras till `httpd` katalog.  Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen.  Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
    1. Apache utför ett config-test. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
 
@@ -169,7 +169,7 @@ Den här processen fortsätter tills distributionen har nått alla utgivare och 
 
 I kritiska situationer kan Adobe Managed Services-kunder behöva driftsätta kodändringar i sina scen- och produktionsmiljöer utan att vänta på att en fullständig testcykel för Cloud Manager ska köras.
 
-För att åtgärda dessa situationer kan produktionsflödet i Cloud Manager köras i ett *nödläge*-läge. När detta läge används utförs inte säkerhets- och prestandatestningsstegen. alla andra steg, inklusive konfigurerade godkännandesteg, körs som i det normala körningsläget för pipeline.
+För att hantera dessa situationer kan produktionsflödet i Cloud Manager köras i en *nödsituation* läge. När detta läge används utförs inte säkerhets- och prestandatestningsstegen. alla andra steg, inklusive konfigurerade godkännandesteg, körs som i det normala körningsläget för pipeline.
 
 >[!NOTE]
 >Körningsläget för nödrörledningar aktiveras på programbasis av Customer Success Engineers.
@@ -192,4 +192,4 @@ $ aio cloudmanager:pipeline:create-execution PIPELINE_ID --emergency
 ```
 
 >[!IMPORTANT]
->Om du använder flaggan `--emergency` kan det krävas en uppdatering till den senaste versionen av `aio-cli-plugin-cloudmanager`.
+>Använda `--emergency` kan kräva uppdatering till den senaste `aio-cli-plugin-cloudmanager` version.
