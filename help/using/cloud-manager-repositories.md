@@ -2,9 +2,9 @@
 title: Cloud Manager-databaser
 description: Cloud Manager-databaser
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: 17f79fdc7278cae532485570a6e2b8700683ef0d
+source-git-commit: 280d760766cf445e609b865f827c01b4ab1db69c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Databaser som skapas och är tillgängliga i Cloud Manager kan visas och hantera
 
 Följ stegen nedan för att visa och hantera databaser i Cloud Manager:
 
-1. På sidan **Programöversikt** klickar du på fliken **Databaser** och går till sidan **Databaser**.
+1. Från **Programöversikt** sida, klicka på **Databaser** och navigera till **Databaser** sida.
 
 1. Klicka på **Lägg till databas** för att starta guiden.
 
@@ -38,7 +38,7 @@ Följ stegen nedan för att visa och hantera databaser i Cloud Manager:
    >[!NOTE]
    >Databaser som skapas i Cloud Manager är också tillgängliga så att du kan välja bland dem under stegen för att lägga till eller redigera pipeline.
 
-1. Du kan markera databasen och klicka på menyalternativen längst till höger i tabellen till **Kopiera databas-URL**, **Visa och uppdatera** eller **Ta bort** databasen, vilket visas i bilden nedan.
+1. Du kan markera databasen och klicka på menyalternativen längst till höger i tabellen för att **Kopiera databas-URL**, **Visa och uppdatera** eller **Ta bort** din databas, enligt bilden nedan.
 
    ![](assets/create-repo3.png)
 
@@ -46,13 +46,13 @@ Följ stegen nedan för att visa och hantera databaser i Cloud Manager:
 
 ## Stöd för Git-undermodul {#git-submodule-support}
 
-Git-undermoduler kan användas för att sammanfoga innehåll från flera grenar i Git-databaser vid byggtillfället. När Cloud Managers byggprocess körs, efter att databasen som konfigurerats för pipelinen har klonats och den konfigurerade grenen har checkats ut, körs kommandot om grenen innehåller en `.gitmodules`-fil i rotkatalogen.
+Git-undermoduler kan användas för att sammanfoga innehåll från flera grenar i Git-databaser vid byggtillfället. När Cloud Managers byggprocess körs, efter att databasen som konfigurerats för pipelinen klonats och den konfigurerade grenen checkas ut, om grenen innehåller en `.gitmodules` -filen i rotkatalogen körs kommandot.
 
 ```
 $ git submodule update --init
 ```
 
-Då checkas varje undermodul in i lämplig katalog. Den här tekniken är ett möjligt alternativ till [att arbeta med flera Git-källdatabaser](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/managing-code/working-with-multiple-source-git-repositories.html) för organisationer som är bekväma med att använda Git-undermoduler och som inte vill hantera en extern sammanfogningsprocess.
+Då checkas varje undermodul in i lämplig katalog. Den här tekniken är ett möjligt alternativ till [arbeta med Git-databaser med flera källor](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/managing-code/working-with-multiple-source-git-repos.html) för organisationer som känner sig bekväma med att använda Git-undermoduler och inte vill hantera en extern sammanfogningsprocess.
 
 Låt oss till exempel säga att det finns tre databaser, där var och en innehåller en gren med namnet main . I den&quot;primära&quot; databasen, d.v.s. den som konfigurerats i pipelines, har huvudgrenen en pom.xml-fil som deklarerar projekten i de två andra databaserna:
 
@@ -82,7 +82,7 @@ $ git submodule add -b main https://git.cloudmanager.adobe.com/ProgramName/proje
 $ git submodule add -b main https://git.cloudmanager.adobe.com/ProgramName/projectB/ project-b
 ```
 
-Detta resulterar i en `.gitmodules`-fil som ser ut så här:
+Detta resulterar i en `.gitmodules` fil som ser ut så här:
 
 ```
 [submodule "project-a"]
@@ -95,11 +95,11 @@ Detta resulterar i en `.gitmodules`-fil som ser ut så här:
     branch = main
 ```
 
-Mer information om Git-undermoduler finns i [referenshandboken för Git](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+Mer information om Git-undermoduler finns i [Handbok för Git-referens](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 Tänk på följande när du använder Git-undermoduler:
 
 * Git-URL:en måste vara exakt i den syntax som beskrivs ovan. Av säkerhetsskäl ska du inte bädda in autentiseringsuppgifter i dessa URL:er.
 * Det finns bara stöd för undermoduler i roten av förgreningen.
-* Git-undermoduler lagras som specifika Git-implementeringar. Detta innebär att när ändringar görs i undermodulens databas måste den implementering som refereras uppdateras, till exempel genom att använda `git submodule update --remote`.
-* Om inte annat är nödvändigt rekommenderas starkt att undermoduler av typen&quot;ytlig&quot; används. Det gör du genom att köra `git config -f .gitmodules submodule.<submodule path>.shallow true` för varje undermodul.
+* Git-undermoduler lagras som specifika Git-implementeringar. När ändringar görs i undermodulens databas måste den implementerade refererade informationen därför uppdateras, till exempel med hjälp av `git submodule update --remote`.
+* Om inte annat är nödvändigt rekommenderas starkt att undermoduler av typen&quot;ytlig&quot; används. Om du vill göra det kör du `git config -f .gitmodules submodule.<submodule path>.shallow true` för varje undermodul.
