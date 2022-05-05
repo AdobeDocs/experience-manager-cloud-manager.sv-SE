@@ -3,10 +3,10 @@ title: Versionsinformation för 2022.5.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.5.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 84cc4352488002ad40102ea2c507af652d9012a1
+source-git-commit: 59e57e33e52b2749865f8c92a8d947c9a04ffe79
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
+source-wordcount: '137'
+ht-degree: 1%
 
 ---
 
@@ -25,13 +25,11 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2022.5.0 är 5 maj 2022. N�
 
 ## Nyheter {#what-is-new}
 
-Utanför HTTP-begäranden från tillgångstester kommer nu från ett fast IP-intervall.
+* Miljösidan har en kolumn som visar AEM miljöversion.
+* Vid körning av pipeline visas nu fel på den översta nivån i användargränssnittet på körningsskärmen.
+* Standardkonfigurationen har uppdaterats för att inkludera paus i B/G-konfigurationen.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Det gick inte att inaktivera alternativet Hoppa över belastningsutjämnare.
-* Alternativet Hoppa över belastningsutjämningsändringar visades inte i redigeringsflödet för distribution av AMS-utvecklare.
-* En delmängd av GIT-databaser som skapats manuellt hade ett felaktigt namnvärde, vilket hindrade återanvändningsfunktionen för build-felaktigheter från att vara effektiv. Namnen på dessa databaser har ändrats och användarna ser det korrigerade namnet i Cloud Manager API/UI.
-* Artefakter från rörledningar som inte är avsedda för produktion återanvänds på ett olämpligt sätt i rörledningar för hela produktionen.
-* När du lägger till eller redigerar en pipeline för kodkvalitet visas inte längre alternativen för att hantera måttfel.
-* En del oväntade pipelinevariabelkonfigurationer kan orsaka fel i byggsteget.
+* Felaktigt prestandatestresultat med timeout-fel 504.
+* Vissa körningar fastnade i kontexten för att aktivera utlösare och avbryter godkännandesteget.
