@@ -10,9 +10,9 @@ topic-tags: using
 discoiquuid: 832a4647-9b83-4a9d-b373-30fe16092b15
 feature: Code Deployment
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: 0ba7c49b3550666030249562219b2d0dc51f4ae1
+source-git-commit: 9a9d7067a1369e80ccf9b2925369a466b3da2901
 workflow-type: tm+mt
-source-wordcount: '1220'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -184,7 +184,6 @@ På informationssidan om pipeline-körning för en körning i nödläge visas de
 
 ![](assets/execution-emergency2.png)
 
-
 Du kan även skapa en pipeline-körning i det här nödläget genom Cloud Manager API eller CLI. Om du vill starta en körning i nödläge skickar du en PUT-begäran till pipelinens körningsslutpunkt med frågeparametern `?pipelineExecutionMode=EMERGENCY` eller, när CLI används:
 
 ```
@@ -193,3 +192,73 @@ $ aio cloudmanager:pipeline:create-execution PIPELINE_ID --emergency
 
 >[!IMPORTANT]
 >Använda `--emergency` kan kräva uppdatering till den senaste `aio-cli-plugin-cloudmanager` version.
+
+## Kör en produktionsdistribution igen {#Reexecute-Deployment}
+
+Omkörning av produktionsdistributionssteget stöds för körningar där produktionsdistributionssteget har slutförts. Typen av slutförande är inte viktig - distributionen kan lyckas (endast för AMS-program), avbrytas eller misslyckas. Detta innebär att det primära användningsexemplet förväntas vara fall där produktionsdistributionssteget misslyckades av tillfälliga orsaker. Omkörning skapar en ny körning med samma pipeline. Den här nya körningen består av tre steg:
+
+1. Valideringssteget - det här är i stort sett samma validering som sker under en normal pipeline-körning.
+1. Byggsteget - i samband med en omkörning kopierar byggsteget artefakter, och utför inte någon ny byggprocess.
+1. Produktionsdistributionssteget - detta använder samma konfiguration och alternativ som produktionsdistributionssteget i en normal pipeline-körning.
+
+Byggsteget kan ha en något annorlunda etikett i användargränssnittet för att reflektera att det är kopieringsartefakter, inte återskapande.
+
+![](assets/Re-deploy.png)
+
+Begränsningar:
+
+* Det går bara att köra produktionsdistributionssteget igen vid den senaste körningen.
+* Omkörning är inte tillgängligt för återställningskörningar.
+* Om den senaste körningen är en återställningskörning går det inte att utföra om.
+* Om den senaste körningen är en push-uppdateringskörning går det inte att utföra om.
+* Om den senaste körningen misslyckades någon gång före produktionsdistributionssteget går det inte att utföra om.
+
+### Kör API igen {#Reexecute-API}
+
+### Identifiera en körning på nytt
+
+För att identifiera om en körning är en körning på nytt kan utlösarfältet undersökas. Dess värde kommer att *RE_EXECUTE*.
+
+### Utlösa en ny körning
+
+För att utlösa en omkörning måste en PUT-begäran göras till HAL Link &lt;()<http://ns.adobe.com/adobecloud/rel/pipeline/reExecute>)> i produktionsdistributionssteget. Om den här länken finns kan körningen startas om från det steget. Om den inte finns kan inte körningen startas om från det steget. I den första versionen finns den här länken aldrig kvar i produktionsdistributionssteget, men framtida versioner kan ha stöd för att starta pipeline från andra steg. Exempel:
+
+```Javascript
+ {
+  "_links": {
+    "http://ns.adobe.com/adobecloud/rel/pipeline/logs": {
+      "href": "/api/program/4/pipeline/1/execution/953671/phase/1575676/step/2983530/logs",
+      "templated": false
+    },
+    "http://ns.adobe.com/adobecloud/rel/pipeline/reExecute": {
+      "href": "/api/program/4/pipeline/1/execution?stepId=2983530",
+      "templated": false
+    },
+    "http://ns.adobe.com/adobecloud/rel/pipeline/metrics": {
+      "href": "/api/program/4/pipeline/1/execution/953671/phase/1575676/step/2983530/metrics",
+      "templated": false
+    },
+    "self": {
+      "href": "/api/program/4/pipeline/1/execution/953671/phase/1575676/step/2983530",
+      "templated": false
+    }
+  },
+  "id": "6187842",
+  "stepId": "2983530",
+  "phaseId": "1575676",
+  "action": "deploy",
+  "environment": "weretail-global-b75-prod",
+  "environmentType": "prod",
+  "environmentId": "59254",
+  "startedAt": "2022-01-20T14:47:41.247+0000",
+  "finishedAt": "2022-01-20T15:06:19.885+0000",
+  "updatedAt": "2022-01-20T15:06:20.803+0000",
+  "details": {
+  },
+  "status": "FINISHED"
+```
+
+
+Syntaxen för HAL-länkens *href*  värdet ovan är inte avsett att användas som referenspunkt. Det faktiska värdet ska alltid läsas från HAL-länken och inte genereras.
+
+Skicka ett *PUT* begäran till den här slutpunkten resulterar i *201* om svaret lyckas och svarsorganet är representationen av den nya exekveringen. Det liknar att starta en vanlig körning via API:t.
