@@ -3,10 +3,10 @@ title: Versionsinformation för 2022.5.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.5.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: f2b8670baa81e0ddb1ef374d42d6b3192299c1e9
+source-git-commit: dc28bbacfe86a68f416a525d386a2d8d1c1b0190
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '134'
+ht-degree: 1%
 
 ---
 
@@ -27,6 +27,7 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2022.5.0 är 5 maj 2022. N�
 
 * Vid körning av pipeline visas nu fel på den översta nivån i användargränssnittet på körningsskärmen.
 * Standardkonfigurationen har uppdaterats för att inkludera paus i B/G-konfigurationen.
+* Kör produktionsdistributionssteget igen via användargränssnittet i Cloud Manager.
 
 ## Felkorrigeringar {#bug-fixes}
 
