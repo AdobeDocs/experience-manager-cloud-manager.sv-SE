@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.5.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.5.0.
+title: Versionsinformation för 2022.6.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.6.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: dc28bbacfe86a68f416a525d386a2d8d1c1b0190
+source-git-commit: 844aa7c697c793af05766048ef4263a1bba87c94
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '132'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2022.5.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2022.6.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.5.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.6.0.
 
 >[!NOTE]
 >
@@ -21,15 +21,12 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.5.0 är 5 maj 2022. Nästa version är planerad till 9 juni 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.6.0 är 9 juni 2022. Nästa version är planerad till den 30 juni 2022.
 
 ## Nyheter {#what-is-new}
 
-* Vid körning av pipeline visas nu fel på den översta nivån i användargränssnittet på körningsskärmen.
-* Standardkonfigurationen har uppdaterats för att inkludera paus i B/G-konfigurationen.
-* Kör produktionsdistributionssteget igen via användargränssnittet i Cloud Manager.
+* Ett nytt välkomstkort på Cloud Managers landningssida ger användarna snabb tillgång till självstudiekurser och förloppsstatistik för klientorganisationen.
+   * Den här funktionen kommer att introduceras stegvis under veckan efter version 2022.06.0.
+* [Artefakter kan nu återanvändas](/help/using/setting-up-project.md#build-artifact-reuse) när Git-spegling används.
 
 ## Felkorrigeringar {#bug-fixes}
-
-* Felaktigt prestandatestresultat med timeout-fel 504.
-* Vissa körningar fastnade i kontexten för att aktivera utlösare och avbryter godkännandesteget.
