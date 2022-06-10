@@ -5,9 +5,9 @@ description: Se Vanliga frågor om Cloud Manager för att få felsökningstips
 seo-description: Follow this page to get answers on Cloud Manager FAQs
 feature: Getting Started
 exl-id: 52c1ca23-5b42-4eae-b63a-4b22ef1a5aee
-source-git-commit: 71d44c7e3673ca62fcd2203ecc0bc4ed9fa22002
+source-git-commit: 6dce1f48b66c6970c3ba025031f0adcbd01195dd
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,13 @@ Det går inte att skapa AEM Cloud Manager när du försöker byta från Java 8 t
 
 * För Cloud Manager-byggen misslyckas plugin-programmet för stavningskontroll med fel `"[main] [WARNING] Rule 1: org.apache.maven.plugins.enforcer.RequireJavaVersion"`. Det här är ett känt fel som beror på att Cloud Manager använder en annan version av Java för att köra maven-kommandot jämfört med att kompilera kod. Utelämna för tillfället `requireJavaVersion` från dina Maven-enforcement-plugin-konfigurationer.
 
-## Distributionen stoppas eftersom kodkvalitetskontrollen misslyckades. Finns det något sätt att kringgå den här kontrollen? {#deployment-stuck}
+## Driftsättningen stoppas eftersom kodkvalitetskontrollen misslyckades. Finns det något sätt att kringgå den här kontrollen? {#deployment-stuck}
 
-Alla fel i kodkvaliteten utom *Säkerhetsklassificering* är icke-kritiska mått, så de kan kringgås genom att objekten i resultatgränssnittet expanderas.
+Ja. Alla fel i kodkvaliteten utom *Säkerhetsklassificering* är icke-kritiska mätvärden, så de kan kringgås som en del av en distributionsprocess genom att objekten i resultatgränssnittet expanderas.
 
-En användare med [Distributionshanteraren, Project Manager eller Business Owner](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/requirements/setting-up-users-and-roles.html?lang=en#requirements) rollerna kan åsidosätta problemen. I så fall fortsätter pipelinen eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.  Se [Tre nivåportar under körning av en pipeline](https://experienceleague.adobe.com/docs/experience-manager-cloud-manager/using/how-to-use/understand-your-test-results.html?lang=en#how-to-use) för mer information.
+En användare med [Distributionshanteraren, Project Manager eller Business Owner](/help/using/setting-up-users-and-roles.md#role-definitions) rollerna kan åsidosätta problemen. I så fall fortsätter pipelinen eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel.
+
+Se dokumenten [Tre nivåportar under körning av en pipeline](/help/using/understand-your-test-results.md#three-tier-gates-while-running-a-pipeline) och [Konfigurera icke-produktionsförlopp](/help/using/configuring-non-production-pipelines.md#understanding-the-flow) för mer information.
 
 ## Cloud Manager-distributioner misslyckas vid prestandateststeget i Adobe Managed Services-miljöer. Hur felsöker vi detta för att skicka kritiska mätvärden? {#debug-critical-metrics}
 
