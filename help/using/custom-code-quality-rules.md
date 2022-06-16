@@ -7,9 +7,9 @@ topic-tags: using
 discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
 feature: Code Quality Rules
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 834508109e34eb1e052abac482e981735c72d43d
+source-git-commit: d4c92a36ca3af123730d68fedf1dbf7ee819c66b
 workflow-type: tm+mt
-source-wordcount: '3611'
+source-wordcount: '3609'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ Den här sidan beskriver de anpassade regler för kodkvalitet som körs av Cloud
 
 >[!NOTE]
 >
->Om du vill veta mer om anpassade regler för kodkvalitet för Cloud Manager på AEM as a Cloud Service kan du läsa [till den här dokumentationen.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/test-results/custom-code-quality-rules.html#using-cloud-manager).
+>Om du vill veta mer om anpassade regler för kodkvalitet för Cloud Manager på AEM as a Cloud Service kan du läsa [till den här dokumentationen](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/test-results/custom-code-quality-rules.html#using-cloud-manager).
 
 >[!NOTE]
 >
@@ -321,7 +321,7 @@ I allmänhet bör INFO-loggnivån användas för att avgränsa viktiga åtgärde
 
 >[!NOTE]
 >
->Detta gäller inte för access.log-type-loggning för varje begäran.
+>Detta gäller inte loggning av access.log-typ för varje begäran.
 
 #### Icke-kompatibel kod {#non-compliant-code-8}
 
@@ -651,7 +651,7 @@ AEM som har en klassisk användargränssnittsdialogruta ska alltid ha en motsvar
 * En komponent med en klassisk dialogruta för användargränssnittsdesign (dvs. en `design_dialog` nod) måste ha en motsvarande dialogruta för Touch UI-design (d.v.s. en `cq:design_dialog` underordnad nod).
 * En komponent med både en klassisk användargränssnittsdialogruta och en klassisk dialogruta för användargränssnittsdesign måste ha både en motsvarande dialogruta för användargränssnittet för touchredigering och en motsvarande designdialogruta för användargränssnittet för touchgränssnitt.
 
-Dokumentationen för AEM finns information och verktyg för hur du konverterar komponenter från det klassiska gränssnittet till Touch-gränssnittet. Se [Dokumentation för AEM Moderniseringsverktyg ](https://opensource.adobe.com/aem-modernize-tools/pages/tools.html) för mer information.
+Dokumentationen för AEM finns information och verktyg för hur du konverterar komponenter från det klassiska gränssnittet till Touch-gränssnittet. Se [Dokumentation för AEM Moderniseringsverktyg ](https://opensource.adobe.com/aem-modernize-tools/) för mer information.
 
 ### Paketen får inte innehålla blandbart och oföränderligt innehåll {#oakpal-packages-immutable}
 

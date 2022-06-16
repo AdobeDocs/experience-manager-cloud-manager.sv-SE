@@ -7,9 +7,9 @@ topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 feature: CI-CD Pipeline, Test Results
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 2179314120911cac8a0dd99a8b57974751959871
+source-git-commit: bfcb0fb5b9cf8317eb75e3b7b46455b14cd9d7b7
 workflow-type: tm+mt
-source-wordcount: '2897'
+source-wordcount: '2896'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Dessa rapporteras med hjälp av ett klassificeringssystem med tre nivåer som de
 
 >[!NOTE]
 >
->Om du vill veta mer om tester som stöds av Cloud Manager för AEM as a Cloud Service kan du läsa [AEM as a Cloud Service dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/test-results/overview-test-results.html).
+>Om du vill veta mer om tester som stöds av Cloud Manager för AEM as a Cloud Service kan du läsa [AEM as a Cloud Service dokumentation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/test-results/overview-test-results.html).
 
 
 ## Tre nivåindelade omdömen  {#three-tier-gates-while-running-a-pipeline}
@@ -76,7 +76,7 @@ Resultatet av kodkvalitetstestningen levereras som **omdömen**. I följande tab
 
 >[!NOTE]
 >
->Se [SonarQube måttdefinitioner](https://docs.sonarqube.org/display/SONAR/Metric+Definitions) för mer detaljerad information.
+>Se [SonarQube måttdefinitioner](https://docs.sonarqube.org/latest/user-guide/metric-definitions/) för mer detaljerad information.
 
 >[!NOTE]
 >
@@ -309,3 +309,4 @@ Ett specialfall kan inträffa när innehållspaketet &quot;all&quot; innehåller
 >
 >* Optimeringen påverkar inte de paket som distribueras till AEM.
 >* Eftersom matchningen mellan det inbäddade innehållspaketet och det överhoppade innehållspaketet baseras på filnamn, kan optimeringen inte utföras om flera överhoppade innehållspaket har exakt samma filnamn eller om filnamnet ändras vid inbäddning.
+

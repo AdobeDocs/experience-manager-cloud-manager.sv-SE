@@ -3,9 +3,9 @@ title: Förstå byggmiljön
 description: Följ den här sidan om du vill veta mer om miljöer
 feature: Environments
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 17f79fdc7278cae532485570a6e2b8700683ef0d
+source-git-commit: 9959f649e553d0ff6d41a70a468bec3e2e854d75
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '997'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 18.04.
 * Apache Maven 3.6.0 är installerad.
 * De Java-versioner som är installerade är Oraclena JDK 8u202, Azul Zulu 8u292, Oracle JDK 11.0.2 och Azul Zulu 11.0.11.
-* Miljövariabeln JAVA_HOME är som standard inställd på `/usr/lib/jvm/jdk1.8.0_202` som innehåller Oraclet JDK 8u202. Mer information finns i [Alternate Maven Execution JDK Version](#alternate-maven).
+* Miljövariabeln JAVA_HOME är som standard inställd på `/usr/lib/jvm/jdk1.8.0_202` som innehåller Oraclet JDK 8u202. Se [Alternate Maven Execution JDK Version](#alternate-maven) för mer information.
 * Det finns ytterligare systempaket installerade som är nödvändiga:
 
    * bzip2
@@ -34,11 +34,11 @@ Cloud Manager bygger och testar koden med en specialiserad byggmiljö. Den här 
    * `mvn --batch-mode org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean -Dmaven.clean.failOnError=false`
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
 
-* Maven konfigureras på systemnivå med filen settings.xml som automatiskt inkluderar databasen Adobe **Artifact** med en profil med namnet `adobe-public`.
-Mer information finns i [Adobe Public Maven Repository](https://repo.adobe.com/).
+* Maven är konfigurerad på systemnivå med filen settings.xml som automatiskt innehåller den publika Adobe **Artefakt** databas med en profil med namnet `adobe-public`.
+Se [Adobe Public Maven Repository](https://repo1.maven.org/) för mer information.
 
 >[!NOTE]
->Även om Cloud Manager inte definierar en specifik version av `jacoco-maven-plugin` måste den version som används vara minst `0.7.5.201505241946`.
+>Även om Cloud Manager inte definierar en specifik version av `jacoco-maven-plugin`måste den använda versionen vara minst `0.7.5.201505241946`.
 
 
 >[!NOTE]
@@ -54,7 +54,7 @@ Som standard byggs projekt av Cloud Managers byggprocess med Oracle 8 JDK. Kunde
 
 ### Maven Toolchains {#maven-toolchains}
 
-Med [Plugin-programmet Maven Toolchains](https://maven.apache.org/plugins/maven-toolchains-plugin/) kan projekt välja en viss JDK (eller *verktygskedja*) som ska användas i samband med verktygsfältsanpassade Maven-pluginer. Detta görs i projektets `pom.xml`-fil genom att ange en leverantör och ett versionsvärde. Ett exempelavsnitt i `pom.xml`-filen är:
+The [Maven Toolchains Plugin](https://maven.apache.org/plugins/maven-toolchains-plugin/) låter projekt välja en viss JDK (eller *verktygskedja*) som ska användas i samband med verktygskedjor-medvetna Maven-plugins. Detta görs i projektets `pom.xml` genom att ange en leverantör och ett versionsvärde. Ett exempelavsnitt i `pom.xml` filen är:
 
 ```xml
         <plugin>
@@ -81,7 +81,7 @@ Med [Plugin-programmet Maven Toolchains](https://maven.apache.org/plugins/maven-
 
 Detta gör att alla verktygskedjedåliga Maven-plugin-program använder Oraclet JDK, version 11.
 
-När du använder den här metoden körs Maven fortfarande med standardvariabeln JDK (Oracle 8) och miljövariabeln `JAVA_HOME` ändras inte. Kontroll eller genomförande av Java-versionen via plugin-program som [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar inte och sådana plugin-program får inte användas.
+När du använder den här metoden körs Maven fortfarande med JDK-standardinställningen (Oracle 8) och `JAVA_HOME` miljövariabeln har inte ändrats. Kontrollera eller tvinga fram Java-versionen med hjälp av plugin-program som [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar inte och sådana plugin-program får inte användas.
 
 De aktuella kombinationerna av leverantör/version är:
 
@@ -97,7 +97,7 @@ De aktuella kombinationerna av leverantör/version är:
 
 ### Alternate Maven Execution JDK Version {#alternate-maven}
 
-Det går också att välja Azul 8 eller Azul 11 som JDK för hela Maven-exekveringen. Till skillnad från alternativen för verktygskedjor ändras det JDK som används för alla plugin-program, såvida inte konfigurationen för verktygskedjor också anges. I så fall tillämpas fortfarande konfigurationen för verktygskedjor för Maven-plugin-program som är medvetna om verktygskedjor. Därför kommer kontroll och genomförande av Java-versionen med [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) att fungera.
+Det går också att välja Azul 8 eller Azul 11 som JDK för hela Maven-exekveringen. Till skillnad från alternativen för verktygskedjor ändras det JDK som används för alla plugin-program, såvida inte konfigurationen för verktygskedjor också anges. I så fall tillämpas fortfarande konfigurationen för verktygskedjor för Maven-plugin-program som är medvetna om verktygskedjor. Resultatet blir att du kontrollerar och använder Java-versionen med [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) kommer att fungera.
 
 Det gör du genom att skapa en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan ha antingen innehållet 11 eller 8. Alla andra värden ignoreras. Om 11 anges används Azul 11 och miljövariabeln JAVA_HOME ställs in på `/usr/lib/jvm/jdk-11.0.11`. Om 8 anges används Azul 8 och miljövariabeln JAVA_HOME ställs in på `/usr/lib/jvm/jdk-8.0.292`.
 
@@ -125,7 +125,7 @@ Som stöd för detta lägger Cloud Manager till dessa standardmiljövariabler i 
 
 I vissa fall kan en kunds byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen eller som behöver variera mellan olika pipeline-körningar som använder samma gren.
 
-Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variabler tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån `pom.xml`-filen eller andra byggskript.
+Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variablerna tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån `pom.xml` eller andra byggskript.
 
 Om du vill ange en variabel med hjälp av CLI kör du ett kommando som:
 
@@ -137,7 +137,7 @@ Aktuella variabler kan listas:
 
 Variabelnamn får endast innehålla alfanumeriska tecken och understreck (_). Namnen ska vara versaler. Det finns en gräns på 200 variabler per pipeline, där varje namn måste innehålla mindre än 100 tecken och varje värde måste vara mindre än 2 048 tecken för strängtypsvariabler och 500 tecken för värden av typen secretsString.
 
-När de används i en `Maven pom.xml`-fil är det vanligtvis praktiskt att mappa dessa variabler till Maven-egenskaper med en syntax som liknar den här:
+Vid användning i en `Maven pom.xml` fil är det praktiskt att mappa dessa variabler till Maven-egenskaper med en syntax som liknar den här:
 
 ```xml
         <profile>
@@ -209,7 +209,7 @@ Vissa byggen kräver att ytterligare systempaket installeras för att fungera he
         </profile>
 ```
 
-Samma teknik kan användas för att installera språkspecifika paket, t.ex. med `gem` för RubyGems eller `pip` för Python-paket.
+Samma teknik kan användas för att installera språkspecifika paket, dvs. med `gem` för RubyGems eller `pip` för Python Packages.
 
 >[!NOTE]
->Om du installerar ett systempaket på det här sättet installeras det **inte** i körningsmiljön som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM ska du kontakta Adobe.
+>Det går inte att installera ett systempaket på det här sättet **not** installera det i den körningsmiljö som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM ska du kontakta Adobe.

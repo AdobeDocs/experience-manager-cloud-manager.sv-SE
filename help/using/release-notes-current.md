@@ -3,10 +3,10 @@ title: Versionsinformation för 2022.6.0
 description: Detta är versionsinformationen för Cloud Manager version 2022.6.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 6dce1f48b66c6970c3ba025031f0adcbd01195dd
+source-git-commit: dab08a2499b521b7026ab2bd17b82cb241f26fb6
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '179'
+ht-degree: 1%
 
 ---
 
