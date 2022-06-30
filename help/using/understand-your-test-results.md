@@ -7,9 +7,9 @@ topic-tags: using
 discoiquuid: 83299ed8-4b7a-4b1c-bd56-1bfc7e7318d4
 feature: CI-CD Pipeline, Test Results
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: bfcb0fb5b9cf8317eb75e3b7b46455b14cd9d7b7
+source-git-commit: fefb267793e5e1dc6f604a753e89cce2bf2620dd
 workflow-type: tm+mt
-source-wordcount: '2896'
+source-wordcount: '2917'
 ht-degree: 1%
 
 ---
@@ -160,7 +160,12 @@ Antalet virtuella användare eller behållare som startas av Cloud Manager styrs
 
 #### Crawler {#crawler}
 
-Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellanlagringsmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Med utgångspunkt från dessa URL:er inspekteras HTML på varje sida och länkarna gås igenom på bredden först. Denna crawlningsprocess är begränsad till högst 5 000 sidor. Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
+Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellanlagringsmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Med utgångspunkt från dessa URL:er inspekteras HTML på varje sida och länkarna gås igenom på bredden först.
+
+* Denna crawlningsprocess är som standard begränsad till högst 5 000 sidor.
+* Det maximala antalet sidor som ska testas kan skrivas över genom att ställa in [miljövariabel](build-environment-details.md#environment-variables) `MAX_PAGES`.
+   * Tillåtna värden är `2000` - `7000`.
+* Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
 
 #### Siduppsättningar för testning {#page-sets}
 

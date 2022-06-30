@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.6.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.6.0.
+title: Versionsinformation för 2022.7.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.7.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: dab08a2499b521b7026ab2bd17b82cb241f26fb6
+source-git-commit: 1b5510af0cdb0ccb3267723836910f6c5711122e
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '140'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation om Cloud Manager version 2022.6.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2022.7.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.6.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.7.0.
 
 >[!NOTE]
 >
@@ -21,16 +21,13 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.6.0 är 9 juni 2022. Nästa version är planerad till den 30 juni 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.7.0 är den 30 juni 2022. Nästa version är planerad till den 11 augusti 2022.
 
 ## Nyheter {#what-is-new}
 
-* Ett nytt välkomstkort på Cloud Managers landningssida ger användarna snabb tillgång till självstudiekurser och förloppsstatistik för klientorganisationen.
-   * Den här funktionen kommer att introduceras stegvis under veckan efter version 2022.06.0.
-* [Artefakter kan nu återanvändas](/help/using/setting-up-project.md#build-artifact-reuse) när Git-spegling används.
+* Användare av Cloud Manager har nu tillgång till användbara videokurser från landningssidan **Välkommen** kortet när som helst.
+* Högsta antal sidor som ska testas [kan nu åsidosättas genom inställning av miljövariabeln MAX_PAGES.](understand-your-test-results.md#crawler)
 
-## API-ändringar {#api-changes}
+## Felkorrigeringar {#bug-fixes}
 
-* The [`List Programs`](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/getPrograms) API har tagits bort och [`List Programs for Tenant`](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/getProgramsForTenant) ska användas istället.
-   * `List Programs` fortsätter att fungera, men användningen genererar varningsmeddelanden i loggar.
-   * Det kommer inte längre att stödjas efter tre månader.
+* Ett problem har korrigerats där inga anrop gjordes för att köra distributionssteget efter godkännandet av en frontpipeline.
