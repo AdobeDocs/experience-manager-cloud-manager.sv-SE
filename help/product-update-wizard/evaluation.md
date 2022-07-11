@@ -1,0 +1,48 @@
+---
+title: Utvärderingsfas
+seo-title: Evaluation Phase
+description: Läs om hur utvärderingsfasen i Product Update Wizard bedömer uppgraderingskomplexiteten med mönsterdetektorn.
+exl-id: 1ffcbc21-dc36-435d-b83b-0209f81a15e7
+source-git-commit: ce2145da3b9e605e8a41bac28df520f14e255557
+workflow-type: tm+mt
+source-wordcount: '291'
+ht-degree: 0%
+
+---
+
+
+# Utvärderingsfas {#evaluation}
+
+Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]** som utvärderar uppgraderingens komplexitet med mönsterdetektorn direkt i guiden. Efter det här steget har du tillgång till en utvärderingsrapport.
+
+I den genererade rapporten kan du kontrollera om författarinstansen är berättigad till en uppgradering genom att identifiera mönster som:
+
+* Brott mot vissa regler om områden som kommer att påverkas eller skrivas över av uppgraderingen.
+
+* Använd en AEM 6.x-funktion eller ett API som inte är bakåtkompatibelt med den nya versionen av AEM och som kan brytas efter uppgraderingen.
+
+Rapporten är en bedömning av den utvecklingsinsats som ingår i uppgraderingen till Adobe Experience Manager (AEM) 6.5.
+
+>[!NOTE]
+>
+>Mer information om mönsterdetektorn finns i dokumentet [Utvärdera uppgraderingskomplexiteten med mönsteravkännaren.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/pattern-detector.html?lang=en)
+
+## Kör utvärderingen {#running}
+
+Mönsterdetektorn kan köras i alla miljöer. För att öka avkänningshastigheten och undvika flaskhalsar i affärskritiska instanser körs den i den staging-miljö som författarinstansen använder.
+
+Följ de här stegen för att generera utvärderingsrapporten.
+
+1. Starta guiden enligt beskrivningen i dokumentet [Produktuppdateringsguiden.](/help/product-update-wizard/overview.md)
+
+1. Klicka på **[!UICONTROL Run Evaluation]**.
+
+   ![Kör utvärdering](/help/assets/Run-Evaluation.png)
+
+1. Guiden informerar dig om åtgärdens status. Du kommer att märka **Pågår** eller **slutförd** i förekommande fall när utvärderingsrapporten tas fram.
+
+1. När rapporten har skapats kan du klicka på **[!UICONTROL Download report]** för att spara en kopia.
+
+   ![Rapporten har skapats](/help/assets/Evaluation-1.png)
+
+Den aktuella versionen av guiden för produktuppdatering i Cloud Manager har stöd för **Utvärdering** endast fas. De andra fyra faserna, nämligen **Reparation**, **Körning**, **Validering** och **Slutförande** kommer snart.

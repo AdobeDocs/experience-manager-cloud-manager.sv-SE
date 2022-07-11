@@ -1,10 +1,10 @@
 ---
 title: Hantera pipeline
 description: Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
-index: true
-source-git-commit: 099a4490e3a8578b9f3485fd1514d1e97db977ab
+exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
+source-git-commit: 99325c28c379103db2ba4c19bb6d206849c6e126
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, k�
 
 The **Pipelines** på **Programöversikt** i Cloud Manager ger dig en översikt över alla dina pipelines och deras aktuella status.
 
-![Förloppskort i Cloud Manager](/help/using/assets/configure-pipelines/pipelines-card.png)
+![Förloppskort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
 
 Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följande åtgärder.
 
@@ -29,8 +29,8 @@ Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följan
 
 Längst ned i listan med rörledningar finns allmänna alternativ.
 
-* **Lägg till** - Till [lägg till en ny produktionspipeline](configuring-production-pipelines.md) eller [lägga till ny icke-produktionspipeline](configuring-non-production-pipelines.md)
-* **Visa alla** - Tar användaren till **Pipelines** om du vill visa alla rörledningar i en mer detaljerad tabell.
+* **Lägg till** - Till [lägg till en ny produktionspipeline](/help/using/production-pipelines.md) eller [lägga till ny icke-produktionspipeline](/help/using/non-production-pipelines.md)
+* **Visa alla** - Tar användaren till **Pipelines** för att visa alla rörledningar i en mer detaljerad tabell
 * **Åtkomst till svarsinformation** - Visar den information som krävs för att komma åt Cloud Managers Git-databas
 * **Läs mer** - Navigerar till CI/CD pipeline-dokumentationsresurser.
 
@@ -55,8 +55,8 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 1. The **Redigera produktionspipeline** eller **Redigera icke-produktionsförlopp** visas så att du kan redigera samma information som du angav när du skapade pipelinen.
 
    * På följande sidor finns mer information om alla fält och konfigurationsalternativ som är tillgängliga för pipelines.
-      * [Konfigurera produktionsförlopp](configuring-production-pipelines.md)
-      * [Konfigurera icke-produktionsförlopp](configuring-non-production-pipelines.md)
+      * [Konfigurera produktionsförlopp](/help/using/production-pipelines.md)
+      * [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md)
 
 1. Klicka på **Uppdatera** när du är klar med redigeringen.
 
@@ -82,9 +82,9 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 
 1. Du dirigeras till informationssidan för den aktuella pipelinen.
 
-![Information om pipeline](/help/using/assets/configure-pipelines/pipeline-running-details.png)
+![Information om pipeline](/help/assets/configure-pipelines/pipeline-running-details.png)
 
-Här kan du se status för de olika stegen i pipeline och hämta byggloggar för diagnostik. Se dokumentet [Distribuera koden](deploying-code.md) för mer information.
+Här kan du se status för de olika stegen i pipeline och hämta byggloggar för diagnostik. Se dokumentet [Koddistribution](/help/using/code-deployment.md) för mer information.
 
 >[!NOTE]
 >

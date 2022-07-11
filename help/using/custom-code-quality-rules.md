@@ -1,15 +1,10 @@
 ---
 title: Anpassade regler för kodkvalitet
-description: Den här sidan beskriver de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet. De bygger på god praxis från AEM Engineering.
-uuid: a7feb465-1982-46be-9e57-e67b59849579
-products: SG_EXPERIENCEMANAGER/CLOUDMANAGER
-topic-tags: using
-discoiquuid: d2338c74-3278-49e6-a186-6ef62362509f
-feature: Code Quality Rules
+description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet, baserat på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: d4c92a36ca3af123730d68fedf1dbf7ee819c66b
+source-git-commit: 5fe0d20d9020e6b90353ef5a54e49c93be5c00be
 workflow-type: tm+mt
-source-wordcount: '3609'
+source-wordcount: '3575'
 ht-degree: 3%
 
 ---
@@ -17,11 +12,7 @@ ht-degree: 3%
 
 # Anpassade regler för kodkvalitet {#custom-code-quality-rules}
 
-Den här sidan beskriver de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av [kodkvalitetstestning.](understand-your-test-results.md) De bygger på god praxis från AEM Engineering.
-
->[!NOTE]
->
->Om du vill veta mer om anpassade regler för kodkvalitet för Cloud Manager på AEM as a Cloud Service kan du läsa [till den här dokumentationen](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/using-cloud-manager/test-results/custom-code-quality-rules.html#using-cloud-manager).
+Läs mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av [kodkvalitetstestning,](/help/using/code-quality-testing.md) baserat på bästa praxis från AEM.
 
 >[!NOTE]
 >
