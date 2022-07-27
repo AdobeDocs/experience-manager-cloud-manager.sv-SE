@@ -2,9 +2,9 @@
 title: Introduktion till Cloud Manager för AMS
 description: Börja här för att lära känna Cloud Manager för Adobe Managed Services (AMS) och hur den gör det möjligt för organisationer att självhantera Adobe Experience Manager i molnet.
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: b0dbb602253939464ff034941ffbad84b7df77df
+source-git-commit: 22d40a1f07f56ee7a7dddb4897e4079f1e346674
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '1292'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ Börja här för att lära känna Cloud Manager för Adobe Manage Services (AMS)
 >
 >I den här dokumentationen beskrivs funktionerna och funktionerna i Cloud Manager för Adobe Managed Services (AMS).
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/home.html)
+>Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/home.html)
 
 Med Cloud Manager får ditt utvecklingsteam tillgång till följande funktioner:
 
@@ -39,7 +39,7 @@ Med Cloud Manager får ditt utvecklingsteam tillgång till följande funktioner:
 
 * API-anslutning som komplement till befintliga DevOps-processer
 
-* Automatisk skalning som på ett intelligent sätt upptäcker behovet av ökad kapacitet och automatiskt ger tillgång till ytterligare webb-/publiceringssegment
+* Automatisk skalning som intelligent upptäcker behovet av ökad kapacitet och automatiskt tar med ytterligare Dispatcher-/publiceringssegment online
 
 Den här bilden visar CI/CD-processflödet som används i [!UICONTROL Cloud Manager]:
 
@@ -75,14 +75,59 @@ Oberoende av distributionsutlösaren utförs kvalitetskontroller alltid som en d
 
 Mer information om hur du distribuerar kod och kvalitetskontroller finns i dokumentet [Distribuerar kod.](/help/using/code-deployment.md)
 
+## Valfria funktioner i Cloud Manager {#optional-features-in-cloud-manager}
+
+Cloud Manager har ytterligare, avancerade funktioner som kan vara till nytta för ditt projekt beroende på din specifika miljökonfiguration och dina behov. Om dessa funktioner är av intresse för dig kan du kontakta en Customer Success Engineer (CSE) eller Adobe för att diskutera mer.
+
 ### Automatisk skalning {#autoscaling}
 
-när produktionsmiljön utsätts för ovanligt hög belastning, [!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet och tillför automatiskt ytterligare kapacitet online med funktionen för autoskalning.
+När produktionsmiljön utsätts för ovanligt hög belastning, [!UICONTROL Cloud Manager] upptäcker behovet av extra kapacitet och tillför automatiskt ytterligare kapacitet online med funktionen för autoskalning.
 
-I sådana fall [!UICONTROL Cloud Manager] aktiverar automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger till ytterligare kapacitet online inom några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de körda dispatcher-/publiceringsnoderna.
+I sådana fall [!UICONTROL Cloud Manager] aktiverar automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskaleringshändelsen och lägger till ytterligare kapacitet online inom några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma region(er) och matchar samma systemspecifikationer som de Dispatcher-/publiceringsnoder som körs.
 
-Funktionen för autoskalning gäller bara för dispatcher/publiceringsskiktet och körs med en vågrät skalförändringsmetod, med minst ytterligare ett segment i ett dispatcher-/publiceringspar på högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer).
+Funktionen för autoskalning gäller bara Dispatcher/publishing-skiktet och körs med en vågrät skalförändringsmetod, med minst ytterligare ett segment i Dispatcher/publishing-paret upp till högst tio segment. Eventuell ytterligare kapacitet som tillhandahålls kommer att skalas in manuellt inom tio arbetsdagar enligt CSE (Customer Success Engineer).
 
 >[!NOTE]
 >
->Kunder som vill ta reda på om autoskalning är lämpligt för respektive program bör kontakta sin CSE- eller Adobe-representant.
+>Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kan du kontakta din CSE- eller Adobe-representant.
+
+### Blå/gröna distributioner {#blue-green}
+
+Blå/grön driftsättning är en teknik som minskar driftavbrott och risker genom att köra två identiska produktionsmiljöer som kallas blå och grön.
+
+När som helst är det bara en av miljöerna som är aktiv, där den aktiva miljön betjänar all produktionstrafik. I allmänhet är blått den aktiva miljön och grönt är inaktivt.
+
+* Blue/green deployment is an add-on to Cloud Manager CI/CD pipelines in which a second set of publish and Dispatcher instances (green) is created and used for deployments. De gröna instanserna kopplas sedan till produktionsbelastningsutjämnaren och de gamla instanserna (blå) tas bort och avslutas.
+* Den här implementeringen av blått/grönt behandlar instanser som övergångar och varje upprepning av en blå/grön pipeline skapar en ny uppsättning publicerings- och Dispatcher-servrar.
+* En grön belastningsutjämnare skapas som en del av konfigurationen. Den här belastningsutjämnaren ändras aldrig och det är den som du ska peka på den gröna URL:en eller &quot;test&quot;-URL:en på.
+* Under en blå/grön distribution skapas en exakt replik av de befintliga publicerings-/Dispatcher-nivåerna (enligt läsning från TDL).
+
+#### Blått/grönt distributionsflöde {#flow}
+
+När blå/grön distribution är aktiverat skiljer sig distributionsflödet från standardflödet för distribution av Cloud Service.
+
+| Steg | Blå/grön driftsättning | Standarddistribution |
+|---|---|---|
+| 1 | Distribution till författare | Distribution till författare |
+| 2 | Pausa för testning | - |
+| 3 | Grön infrastruktur skapas | - |
+| 4 | Distribuera till gröna publicerings-/utskicksnivåer | Distribution till utgivare |
+| 5 | Paus för testning (upp till 24 timmar) | - |
+| 6 | Grön infrastruktur läggs till i produktionsbelastningsutjämnaren | - |
+| 7 | Blå infrastruktur tas bort från produktionsbelastningsutjämnaren - |
+| 8 | Blå infrastruktur avslutas automatiskt | - |
+
+#### Implementera blått/grönt {#implementing}
+
+Alla AMS-användare som använder Cloud Manager för produktionsdistributioner är berättigade att använda blå/grön distribution. Användningen av blå/grön driftsättning kräver dock ytterligare validering av dina miljöer och konfiguration av Adobe CSE.
+
+Om du är intresserad av blå/grön driftsättning bör du tänka på följande krav och begränsningar och kontakta din CSE.
+
+#### Krav och begränsningar {#limitations}
+
+* Blå/grön är bara tillgängligt för publicerings-/utskickspar.
+* Preview Dispatcher/publish-par är inte en del av blue/green-distributioner.
+* Alla Dispatcher/publish-par är identiska med alla Dispatcher/publish-par.
+* Blå/grön finns endast i produktionsmiljön.
+* Blå/grön finns i både AWS och Azure.
+* Blå/grön är inte tillgängligt för Assets-kunder.
