@@ -2,9 +2,9 @@
 title: Introduktion till Cloud Manager för AMS
 description: Börja här för att lära känna Cloud Manager för Adobe Managed Services (AMS) och hur den gör det möjligt för organisationer att självhantera Adobe Experience Manager i molnet.
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: 22d40a1f07f56ee7a7dddb4897e4079f1e346674
+source-git-commit: 14e35882765783b234ca35da14257279af5130a0
 workflow-type: tm+mt
-source-wordcount: '1292'
+source-wordcount: '1287'
 ht-degree: 3%
 
 ---
@@ -100,7 +100,7 @@ När som helst är det bara en av miljöerna som är aktiv, där den aktiva milj
 * Blue/green deployment is an add-on to Cloud Manager CI/CD pipelines in which a second set of publish and Dispatcher instances (green) is created and used for deployments. De gröna instanserna kopplas sedan till produktionsbelastningsutjämnaren och de gamla instanserna (blå) tas bort och avslutas.
 * Den här implementeringen av blått/grönt behandlar instanser som övergångar och varje upprepning av en blå/grön pipeline skapar en ny uppsättning publicerings- och Dispatcher-servrar.
 * En grön belastningsutjämnare skapas som en del av konfigurationen. Den här belastningsutjämnaren ändras aldrig och det är den som du ska peka på den gröna URL:en eller &quot;test&quot;-URL:en på.
-* Under en blå/grön distribution skapas en exakt replik av de befintliga publicerings-/Dispatcher-nivåerna (enligt läsning från TDL).
+* Under en blå/grön distribution skapas en exakt kopia av de befintliga publicerings-/Dispatcher-lagren.
 
 #### Blått/grönt distributionsflöde {#flow}
 
@@ -111,7 +111,7 @@ När blå/grön distribution är aktiverat skiljer sig distributionsflödet frå
 | 1 | Distribution till författare | Distribution till författare |
 | 2 | Pausa för testning | - |
 | 3 | Grön infrastruktur skapas | - |
-| 4 | Distribuera till gröna publicerings-/utskicksnivåer | Distribution till utgivare |
+| 4 | Distribution till gröna publicerings-/dispatchernivåer | Distribution till utgivare |
 | 5 | Paus för testning (upp till 24 timmar) | - |
 | 6 | Grön infrastruktur läggs till i produktionsbelastningsutjämnaren | - |
 | 7 | Blå infrastruktur tas bort från produktionsbelastningsutjämnaren - |
