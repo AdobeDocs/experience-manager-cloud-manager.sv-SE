@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.7.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.7.0.
+title: Versionsinformation för 2022.8.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.8.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 1c4fe7407dc059773cfd0c1779a11c1ba1acad22
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '150'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation om Cloud Manager version 2022.7.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2022.8.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.7.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.8.0.
 
 >[!NOTE]
 >
@@ -21,13 +21,14 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.7.0 är den 30 juni 2022. Nästa version är planerad till den 11 augusti 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.8.0 är 11 augusti 2022. Nästa version är planerad till den 9 september 2022.
 
 ## Nyheter {#what-is-new}
 
-* Användare av Cloud Manager har nu tillgång till användbara videokurser från landningssidan **Välkommen** kortet när som helst.
-* Högsta antal sidor som ska testas [kan nu åsidosättas genom att ställa in `MAX_PAGES` miljövariabel.](/help/using/code-quality-testing.md#crawler)
+* I vissa scenarier kan en tyst återförsöksmekanism hjälpa till att säkerställa att distributionsflödet inte leder till ett feltillstånd.
+* [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) som ingår i Cloud Manager uppdaterades till version 37.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Ett problem har korrigerats där inga anrop gjordes för att köra distributionssteget efter godkännandet av en frontpipeline.
+* Vissa fall av ovanliga fel vid skapande av databaser har gjorts mer flexibla.
+* Sällsynta förekomster av fel vid konfiguration av VSTS-organisation har minskat på grund av nya försök.
