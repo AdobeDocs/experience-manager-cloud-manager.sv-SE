@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.8.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.8.0.
+title: Versionsinformation för 2022.9.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.9.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 1c4fe7407dc059773cfd0c1779a11c1ba1acad22
+source-git-commit: e74d386d0b2d50a7e276bb7ead7594ef448742ae
 workflow-type: tm+mt
-source-wordcount: '150'
+source-wordcount: '196'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation om Cloud Manager version 2022.8.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2022.9.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.8.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.9.0.
 
 >[!NOTE]
 >
@@ -21,14 +21,16 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.8.0 är 11 augusti 2022. Nästa version är planerad till den 9 september 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.9.0 är 8 september 2022. Nästa version är planerad till den 6 oktober 2022.
 
 ## Nyheter {#what-is-new}
 
-* I vissa scenarier kan en tyst återförsöksmekanism hjälpa till att säkerställa att distributionsflödet inte leder till ett feltillstånd.
-* [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) som ingår i Cloud Manager uppdaterades till version 37.
+* Molnhanteraren har stöd för horisontell automatisk skalning av flera regioner.
+* Nytt välkomstsidkort anpassat för användare som bara har en användarroll i Cloud Manager som vägleder dem när det gäller navigering till AEM och begränsad programåtkomst.
+* Kunder som inte har någon Cloud Manager-roll kommer inte att kunna komma åt programinformation. De kan dock navigera till Author end points från CM-landningssidan.
+* Eliminera misslyckanden i pipeline som beror på misslyckade försök genom att skapa större flexibilitet.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Vissa fall av ovanliga fel vid skapande av databaser har gjorts mer flexibla.
-* Sällsynta förekomster av fel vid konfiguration av VSTS-organisation har minskat på grund av nya försök.
+* Förbättrad feedback från kunder AEM appbygge när många stöter på anslutningsproblem med privata rapporter.
+* I sällsynta fall, när hälsokontrollssystemet inte kan hämta ett giltigt hälsopoäng, utlöses ingen autoskalningshändelse.
