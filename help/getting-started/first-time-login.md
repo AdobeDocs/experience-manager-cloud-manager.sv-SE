@@ -2,9 +2,9 @@
 title: Inloggning för första gången
 description: Följ den här sidan om du har konfigurerat dina allmänna konfigurationer och vill använda Cloud Manager för första gången.
 exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
-source-git-commit: 43d05eed9c2e7c4cf6c3becdbc3e4522428722b7
+source-git-commit: d8f16deacfe52c76ff6b0aee0344d50bfe2b9c74
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
@@ -39,3 +39,7 @@ Fortsätt till dokumentet [Programinställningar](/help/getting-started/program-
 ## Cloud Manager-aktivitet {#activity}
 
 Cloud Manager ger en samlad vy över ett programs aktivitet och listar alla CI/CD-pipeline-körningar, både produktion och icke-produktion, vilket ger insyn i den tidigare och nuvarande aktiviteten.
+
+>[!NOTE]
+>
+>Som standard har en användare med åtkomst till en AEM även användarroll för Cloud Manager. Den här rollen i och för sig själv är inte tillräcklig för att ge användaren åtkomst till vyn för programinformation. En sådan användare med endast användarrollen Cloud Manager kan navigera via programmenyalternativen till URL:en för AEM (om det finns miljöer). Dessa användare måste kontakta sin administratör om de vill ha åtkomst på programnivå.
