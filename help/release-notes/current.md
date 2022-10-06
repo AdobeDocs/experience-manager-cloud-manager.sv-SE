@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.9.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.9.0.
+title: Versionsinformation för 2022.10.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.10.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: e74d386d0b2d50a7e276bb7ead7594ef448742ae
+source-git-commit: 69c1c8a1136c037a5eea635a75f2d4d187f2ac4d
 workflow-type: tm+mt
-source-wordcount: '196'
+source-wordcount: '120'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation om Cloud Manager version 2022.9.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2022.10.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.9.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.10.0.
 
 >[!NOTE]
 >
@@ -21,16 +21,12 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.9.0 är 8 september 2022. Nästa version är planerad till den 6 oktober 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.10.0 är 6 oktober 2022. Nästa version är planerad till den 3 november 2022.
 
 ## Nyheter {#what-is-new}
 
-* Molnhanteraren har stöd för horisontell automatisk skalning av flera regioner.
-* Nytt välkomstsidkort anpassat för användare som bara har en användarroll i Cloud Manager som vägleder dem när det gäller navigering till AEM och begränsad programåtkomst.
-* Kunder som inte har någon Cloud Manager-roll kommer inte att kunna komma åt programinformation. De kan dock navigera till Author end points från CM-landningssidan.
-* Eliminera misslyckanden i pipeline som beror på misslyckade försök genom att skapa större flexibilitet.
+* Versionen av [AEM projekttyp](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) som används av Cloud Manager har uppdaterats till version 39.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Förbättrad feedback från kunder AEM appbygge när många stöter på anslutningsproblem med privata rapporter.
-* I sällsynta fall, när hälsokontrollssystemet inte kan hämta ett giltigt hälsopoäng, utlöses ingen autoskalningshändelse.
+* Tillförlitligheten i Assets-prestandatestningen har förbättrats genom att nya försök lagts till under vissa förhållanden.
