@@ -2,10 +2,10 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: b0dbb602253939464ff034941ffbad84b7df77df
+source-git-commit: dd96d773ea3e6b9c45886fe41b28d3dd70cb8a61
 workflow-type: tm+mt
-source-wordcount: '536'
-ht-degree: 15%
+source-wordcount: '735'
+ht-degree: 7%
 
 ---
 
@@ -48,10 +48,6 @@ I den här tabellen sammanfattas rollerna.
 
 Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i dokumentationen för [Admin Console.](https://helpx.adobe.com/enterprise/using/admin-console.html)
 
->[!NOTE]
->
->Gå till Admin Console och konfigurera ditt team (användare och roller) på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
-
 För att kunna tillhandahålla lämpliga rollbaserade behörigheter till [!UICONTROL Cloud Manager] -användare måste en administratör i kundens organisation skapa nya produktprofiler under [!UICONTROL AEM Managed Services] produktsammanhang som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] roller:
 
 * Företagsägare
@@ -61,31 +57,62 @@ För att kunna tillhandahålla lämpliga rollbaserade behörigheter till [!UICON
 
 Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Admin Console.
 
-1. Logga in på Admin Console och klicka **Ny profil** för att lägga till en ny profil.
+1. Logga in på Admin Console vid [`https://adminconsole.adobe.com`.](https://adminconsole.adobe.com)
 
-   ![Ny profil](/help/assets/admin_console_roles-1.png)
+1. Klicka på **Översikt** klickar du på den produkt du vill ändra på **Produkter och tjänster** kort. Om det inte finns med i listan använder du **Produkter** för att hitta produkten och klicka på den.
+
+   ![Översiktsflik i Admin Console](/help/assets/admin-console-overview.png)
+
+1. På **Produkter** klickar du på den miljö där du vill lägga till användare/grupper i produktprofiler.
+
+   ![Fliken Produkter i Admin Console](/help/assets/admin-console-product.png)
+
+1. På **Produktprofil** -fliken för produkten klickar du på **Ny profil** för att lägga till en ny profil.
+
+   ![Ny profil](/help/assets/admin-console-product-profiles.png)
 
 1. Ange informationen för att konfigurera en ny roll för [!UICONTROL Cloud Manager].
 
-   * **Profilnamn**
-   * **Visningsnamn**
-   * **Behörighetsgrupp**
+   * **Profilnamn** - **Profilnamn** kan vara vad som helst, men för att undvika förvirring bör du använda värdena i **Rekommenderat profilnamn** kolumn.
+   * **Visningsnamn** - **Visningsnamn** måste vara det tekniska värde som definieras av [!UICONTROL Cloud Manager] (se följande tabell).
+   * **Behörighetsgrupp** - Du kan välja en behörighetsgrupp för profilen (inte alltid tillgänglig).
 
-1. Klicka **Klar** för att slutföra skapandet av profilen.
+   ![Skapa en ny profil](/help/assets/screen_shot_2018-05-04at171819.png)
 
-När du skapar produktprofiler **Visningsnamn** måste vara det tekniska värde som definieras av [!UICONTROL Cloud Manager] (se följande tabell). The **Profilnamn** kan vara vad som helst, men för att undvika förvirring bör du använda värdena i **Rekommenderat profilnamn** kolumn. När du skapar produktprofilen avmarkerar du **Samma som profilnamn** och anger motsvarande värde som **visningsnamn**.
+   | Roll | Visningsnamn (obligatoriskt) | Rekommenderat profilnamn |
+   |---|---|---|
+   | Företagsägare | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
+   | Distributionshanteraren | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
+   | Utvecklare | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
+   | Programhanteraren | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Programhanterarroll |
 
-| **Roll** | **Visningsnamn (obligatoriskt)** | **Rekommenderat profilnamn** |
-|---|---|---|
-| Företagsägare | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
-| Distributionshanteraren | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
-| Utvecklare | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
-| Programhanteraren | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Programhanterarroll |
 
-![Skapa en ny profil](/help/assets/screen_shot_2018-05-04at171819.png)
+1. Klicka **Klar** för att spara den nya profilen.
 
-När du har skapat en produktprofil kan du lägga till användare (eller grupper) i dessa produktprofiler.
+## Tilldela profiler till användare eller användargrupper {#assign-profiles}
 
-![Redigera användare](/help/assets/image2018-4-9_15-19-26.png)
+När du har skapat produktprofiler kan du tilldela användare eller användargrupper till dem.
 
-![Användargrupper](/help/assets/image2018-4-9_15-16-47.png)
+1. Logga in på Admin Console vid [`https://adminconsole.adobe.com`.](https://adminconsole.adobe.com)
+
+1. I Admin Console väljer du **Användare** -fliken.
+
+   ![Fliken Användare](/help/assets/admin-console-users.png)
+
+1. Klicka på **Användare** i den vänstra navigeringspanelen och klicka sedan på en användare för att ändra den.
+
+1. Klicka på ellipsknappen i dialogrutan **Produkter** avsnitt och markera **Redigera**.
+
+   ![Redigera användare](/help/assets/admin-console-edit-user.png)
+
+1. I **Redigera produkter och användargrupper** klickar du på plusknappen och väljer de profiler som ska tilldelas användaren.
+
+   * Om användaren redan är tilldelad rollerna är plusknappen en redigeringsknapp (en penna), men fungerar på samma sätt.
+
+   ![Redigera produkter och användargrupper](/help/assets/admin-console-edit-products-and-user-groups.png)
+
+1. Klicka **Spara** för att spara profilerna för användaren.
+
+Upprepa samma steg för att tilldela profiler till användargrupper, men välj **Användargrupper** från den vänstra navigeringspanelen på **Användare** -fliken. Klicka på en användargrupp och välj **Tilldelade produktprofiler** och klicka **Tilldela produktprofil** för att tilldela profiler.
+
+![Tilldela profiler till grupp](/help/assets/admin-console-edit-user-groups.png)
