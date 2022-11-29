@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.11.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.11.0.
+title: Versionsinformation för 2022.12.0
+description: Detta är versionsinformationen för Cloud Manager version 2022.12.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 2defbdbee0221540f66f7d824ccf1bd33179c9d9
+source-git-commit: 83a404c1f54bc6a791a4c13a22b7a78f83755869
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '116'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2022.11.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2022.12.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.11.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.12.0.
 
 >[!NOTE]
 >
@@ -21,12 +21,13 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.11.0 är den 3 november 2022. Nästa version är planerad till den 29 november 2022.
+Releasedatum för [!UICONTROL Cloud Manager] version 2022.12.0 är 29 november 2022. Nästa version är planerad till den 19 januari 2023.
 
 ## Nyheter {#what-is-new}
 
-* När en miljö som är associerad med en pipeline har en status som inte tillåter att pipeline körs, inaktiveras körningsåtgärden med ett förklarande verktygstips.
+* Automatisk skalning för flera regioner är nu tillgängligt. Vissa begränsningar kan gälla.
+* Förbättringar av tillgänglighet och tillförlitlighet för [Molnhanterarens pipelines](/help/overview/ci-cd-pipelines.md) var gjorda.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Feedback under redigeringsprocessen har förbättrats för att fånga upp enstaka förekomster av en eller flera miljöer som saknas.
+* En ändring gjordes för att förhindra `PATCH /program//environment//variables` för miljöer med `FAILED` status.

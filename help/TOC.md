@@ -6,9 +6,9 @@ breadcrumb-title: Cloud Manager-dokumentation för AEM 6.x
 user-guide-description: Lär dig hur du använder Cloud Manager för att självhantera Adobe Experience Manager för AMS i molnet.
 feature-set: Experience Manager Cloud Manager, Experience Manager
 role: Admin
-source-git-commit: fcc39abd5c33b3839ea5d6010200bddf17fec03e
+source-git-commit: ed18eb354e8489d206dd61ab8298439d68142b54
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '315'
 ht-degree: 9%
 
 ---
@@ -63,6 +63,7 @@ ht-degree: 9%
 + Versionsinformation {#release-notes}
    + [Aktuell versionsinformation](release-notes/current.md)
    + 2022 {#2022}
+      + [Versionsinformation för 2022.11.0](release-notes/2022/2022-11-0.md)
       + [Versionsinformation för 2022.10.0](release-notes/2022/2022-10-0.md)
       + [Versionsinformation för 2022.9.0](release-notes/2022/2022-9-0.md)
       + [Versionsinformation för 2022.8.0](release-notes/2022/2022-8-0.md)
