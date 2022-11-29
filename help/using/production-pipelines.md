@@ -2,7 +2,7 @@
 title: Konfigurera produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsflöden för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 99325c28c379103db2ba4c19bb6d206849c6e126
+source-git-commit: 39b38da17ed1cadf4f2e9633a9e76b537325316f
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 0%
@@ -93,8 +93,9 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
 
             1. Under **BANA** innehåller en innehållssökväg.
             1. Under **TYP** markerar du den åtgärd som ska utföras på den banan.
-            * **Töm** - Utför en cacheogiltigförklaring, ungefär som när innehåll aktiveras från en redigeringsinstans till en publiceringsinstans.
-            * **Ogiltigförklara** - Utför en cacheborttagning.
+
+               * **Töm** - Utför en cacheborttagning.
+               * **Ogiltigförklara** - Utför en cacheogiltigförklaring, ungefär som när innehåll aktiveras från en redigeringsinstans till en publiceringsinstans.
             1. Klicka **Lägg till bana** för att lägga till den angivna sökvägen. Du kan lägga till upp till 100 sökvägar per miljö.
 
          ![Dispatcher-konfiguration](/help/assets/configure-pipelines/dispatcher-stage.png)
@@ -125,7 +126,6 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
             ![Alternativ för produktionsdistribution](/help/assets/configure-pipelines/prod-deploymentoptions.png)
 
          * **Dispatcher-konfiguration** - Definiera dispatcherkonfigurationen för produktionsmiljön. Alternativen är desamma som för mellanlagringsmiljön.
-
 
 
 
