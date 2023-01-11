@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 4c051cd1696f8a00d0278131c9521ad4dcb956a3
+source-git-commit: 60a6fd062a3878230dafdc34d9ce289ade361120
 workflow-type: tm+mt
-source-wordcount: '1044'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -127,6 +127,28 @@ Som stöd för detta lägger Cloud Manager till standardmiljövariabler i byggbe
 | `CM_PROGRAM_ID` | Den numeriska programidentifieraren |
 | `CM_PROGRAM_NAME` | Programnamnet |
 | `ARTIFACTS_VERSION` | Den syntetiska versionen som genererats av Cloud Manager för en staging- eller produktionspipeline |
+
+### Variabel tillgänglighet för standardmiljö {#availability}
+
+Standardmiljövariabler kan användas på flera ställen.
+
+#### Skapa, förhandsgranska och publicera {#author-preview-publish}
+
+Både vanliga miljövariabler och hemligheter kan användas i redigerings-, förhandsgransknings- och publiceringsmiljöer.
+
+#### Dispatcher {#dispatcher}
+
+Endast reguljära miljövariabler kan användas i dispatchern. Hemligheter kan inte användas.
+
+Miljövariabler kan dock inte användas i `IfDefine` direktiv.
+
+>[!TIP]
+>
+>Du bör validera din användning av miljövariabler med [avsändare lokalt](https://experienceleague.adobe.com/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools.html) före distribution.
+
+#### OSGi-konfigurationer {#osgi}
+
+Både vanliga miljövariabler och hemligheter kan användas i OSGi-konfigurationer.
 
 ### Rörledningsvariabler {#pipeline-variables}
 
