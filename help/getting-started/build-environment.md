@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 60a6fd062a3878230dafdc34d9ce289ade361120
+source-git-commit: 42cafc03a607ace183d58adbe1c397c1a6c5c22f
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas i dispatchern. Hemligheter kan inte användas.
+Endast vanliga miljövariabler kan användas med [avsändaren.](https://experienceleague.adobe.com/docs/experience-manager-dispatcher/using/dispatcher.html) Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine` direktiv.
 
@@ -148,7 +148,7 @@ Miljövariabler kan dock inte användas i `IfDefine` direktiv.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i OSGi-konfigurationer.
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/configuring/configuring-osgi.html)
 
 ### Rörledningsvariabler {#pipeline-variables}
 
