@@ -3,9 +3,9 @@ title: Versionsinformation för 2023.1.0
 description: Detta är versionsinformationen för Cloud Manager version 2023.1.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 3e4937fc262016cef5c5c692c06244f411b28c0f
+source-git-commit: dc534e6339f910014a3edbd684f7b1535079f039
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '160'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,9 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2023.1.0 är 19 januari 202
 
 ## Nyheter {#what-is-new}
 
-* Användbarhetsförbättringarna var att uppdatera markörstilar som skiljer mellan var användarna kan vidta åtgärder och standardpekaren.
+* Stöd för [självbetjäning innehållskopia](/help/using/content-copy.md) kommer att göras tillgängligt via en utfasad utrullning efter den här versionen. Vissa begränsningar kan gälla.
+* I listor över miljöer och pipeline-körningar kan du nu komma åt information genom att klicka på den enskilda raden.
+* Användbarhetsförbättringarna gjordes genom att markörstilarna uppdaterades som skiljer mellan var användarna kan vidta åtgärder och standardpekaren.
 
 ## Felkorrigeringar {#bug-fixes}
 
