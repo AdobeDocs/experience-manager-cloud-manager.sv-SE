@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2022.12.0
-description: Detta är versionsinformationen för Cloud Manager version 2022.12.0.
+title: Versionsinformation för 2023.1.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.1.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 1fe5fb860da07105ac7e8ce21fce683b238637c1
+source-git-commit: 3e4937fc262016cef5c5c692c06244f411b28c0f
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '121'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2022.12.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2023.1.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2022.12.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.1.0.
 
 >[!NOTE]
 >
@@ -21,10 +21,12 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2022.12.0 är 29 november 2022. Nästa version är planerad till den 19 januari 2023.
+Releasedatum för [!UICONTROL Cloud Manager] version 2023.1.0 är 19 januari 2023. Nästa version är planerad till den 16 februari 2023.
 
 ## Nyheter {#what-is-new}
 
-* Automatisk skalning för flera regioner är nu tillgängligt. Vissa begränsningar kan gälla.
-   * Denna ändring kommer att införas stegvis under de fyra till sex veckorna efter version 2022.12.0.
-* Förbättringar av tillgänglighet och tillförlitlighet för [Molnhanterarens pipelines](/help/overview/ci-cd-pipelines.md) var gjorda.
+* Användbarhetsförbättringarna var att uppdatera markörstilar som skiljer mellan var användarna kan vidta åtgärder och standardpekaren.
+
+## Felkorrigeringar {#bug-fixes}
+
+* Cloud Manager förhindrar att två pipelinekörningar startar samtidigt (eller nästan samtidigt), vilket undviker pipeline-fel.
