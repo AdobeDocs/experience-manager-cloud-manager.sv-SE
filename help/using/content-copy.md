@@ -1,9 +1,9 @@
 ---
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
-source-git-commit: e32e51f7d10e753b7ecb2a63adb36d1b6c90fcc1
+source-git-commit: 360cbf7e3a21e530a4e43f13f6d414dae4afa104
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -33,12 +33,7 @@ När du kopierar innehåll är källmiljön en källa till sanning.
 
 ## Behörigheter {#permissions}
 
-För att du ska kunna använda verktyget för innehållskopiering krävs vissa behörigheter i både käll- och målmiljöer.
-
-| Innehållskopia | I AEM Administratörsgrupp? | I rollen Distributionshanterare? |
-|---|---|---|
-| Skapa och ändra [innehållsuppsättningar](#create-content-set) | Ja | Nej |
-| Starta eller avbryta [innehållskopia](#copy-content) | Ja | Ja |
+Användaren måste tilldelas till verktyget Innehållskopia för att kunna använda verktyget **Distributionshanteraren** roll i käll- och målmiljöer.
 
 ## Skapa en innehållsuppsättning {#create-content-set}
 
