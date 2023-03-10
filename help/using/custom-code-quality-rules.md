@@ -2,10 +2,10 @@
 title: Anpassade regler för kodkvalitet
 description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet, baserat på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 5fe0d20d9020e6b90353ef5a54e49c93be5c00be
+source-git-commit: 611cd8f874e8e0d21a475365f4aceb6ae2565644
 workflow-type: tm+mt
-source-wordcount: '3575'
-ht-degree: 3%
+source-wordcount: '3537'
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,7 @@ Läs mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som 
 
 >[!NOTE]
 >
->Kodexemplen här är endast avsedda som illustrationer. Se [SonarQube&#39;s Concepts-dokumentation](https://docs.sonarqube.org/7.4/user-guide/concepts/) för att lära sig mer om dess koncept och kvalitetsregler.
+>Kodexemplen här är endast avsedda som illustrationer. Se [SonarQube&#39;s Concepts-dokumentation](https://docs.sonarqube.org/latest/) för att lära sig mer om dess koncept och kvalitetsregler.
 
 ## SonarQube-regler {#sonarqube-rules}
 
@@ -29,7 +29,7 @@ Följande avsnitt innehåller information om SonarQube-regler som körs av Cloud
 * **Allvarlighetsgrad**: Viktigt
 * **Sedan**: Version 2018.4.0
 
-Metoderna `Thread.stop()` och `Thread.interrupt()` kan ge upphov till problem som är svåra att reproducera och, i vissa fall, säkerhetsluckor. Deras användning bör övervakas noggrant och valideras. I allmänhet är meddelandeöverföring ett säkrare sätt att uppnå samma sak.
+Metoderna `Thread.stop()` och `Thread.interrupt()` kan ge upphov till problem som inte går att reproducera och ibland även säkerhetsluckor. Deras användning bör övervakas noggrant och valideras. I allmänhet är meddelandeöverföring ett säkrare sätt att uppnå samma sak.
 
 #### Icke-kompatibel kod {#non-compliant-code}
 
@@ -104,7 +104,7 @@ protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse 
 * **Allvarlighetsgrad**: Kritisk
 * **Sedan**: Version 2018.6.0
 
-När du kör HTTP-begäranden inifrån ett AEM-program är det viktigt att se till att rätt tidsgränser är konfigurerade för att undvika onödig trådförbrukning. Tyvärr är standardbeteendet för båda Java:s standard-HTTP-klient, `java.net.HttpUrlConnection`och den vanligaste Apache HTTP Components-klienten är att aldrig timeout, så timeout måste anges explicit. Det bästa sättet är att dessa tidsgränser inte överskrider 60 sekunder.
+När du kör HTTP-begäranden inifrån ett AEM-program är det viktigt att se till att rätt tidsgränser är konfigurerade för att undvika onödig trådförbrukning. Tyvärr är standardbeteendet för båda Java™:s standard-HTTP-klient, `java.net.HttpUrlConnection`och den vanligaste Apache HTTP Components-klienten är att aldrig timeout, så timeout måste anges explicit. Det bästa sättet är att dessa tidsgränser inte överskrider 60 sekunder.
 
 #### Icke-kompatibel kod {#non-compliant-code-2}
 
@@ -181,7 +181,7 @@ public void orDoThis() {
 
 `ResourceResolver` objekt som hämtats från `ResourceResolverFactory` förbruka systemresurser. Även om det finns åtgärder för att återkräva dessa resurser när en `ResourceResolver` används inte längre, det är mer effektivt att uttryckligen stänga alla öppna `ResourceResolver` objekt genom att anropa `close()` -metod.
 
-En relativt vanlig missuppfattning är att `ResourceResolver` objekt som skapats med en befintlig JCR-session ska inte stängas explicit, eller så stängs den underliggande JCR-sessionen. Detta är inte fallet. Oavsett hur `ResourceResolver` öppnas, ska den stängas när den inte längre används. Sedan `ResourceResolver` implementerar `Closeable` -gränssnittet kan du också använda `try-with-resources` syntax i stället för explicit anrop `close()`.
+En vanlig missuppfattning är att `ResourceResolver` objekt som skapats med en befintlig JCR-session ska inte stängas explicit eller så stängs den underliggande JCR-sessionen. Detta är inte fallet. Oavsett hur `ResourceResolver` öppnas, ska den stängas när den inte längre används. Sedan `ResourceResolver` implementerar `Closeable` -gränssnittet kan du också använda `try-with-resources` syntax i stället för explicit anrop `close()`.
 
 #### Icke-kompatibel kod {#non-compliant-code-4}
 
@@ -221,7 +221,7 @@ public void orDoThis(Session session) throws Exception {
 * **Allvarlighetsgrad**: Viktigt
 * **Sedan**: Version 2018.4.0
 
-Enligt beskrivningen i [Sling-dokumentation](http://sling.apache.org/documentation/the-sling-engine/servlets.html), rekommenderas inte bindningsservrar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
+Enligt beskrivningen i [Sling-dokumentation](https://sling.apache.org/documentation/the-sling-engine/servlets.html), rekommenderas inte bindningsservrar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
 
 #### Icke-kompatibel kod {#non-compliant-code-5}
 
@@ -337,7 +337,7 @@ public void doGet() throws Exception {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Som en god praxis bör loggmeddelanden innehålla sammanhangsberoende information om var i programmet ett undantag har inträffat. Även om kontexten kan avgöras genom att stackspårningar används, kommer loggmeddelandet i allmänhet att vara lättare att läsa och förstå. När du loggar ett undantag är det därför en dålig vana att använda undantagets meddelande som loggmeddelande. Undantagsmeddelandet innehåller det som gick fel, medan loggmeddelandet bör användas för att tala om för en loggläsare vad programmet gjorde när undantaget inträffade. Undantagsmeddelandet kommer fortfarande att loggas. Genom att ange ett eget meddelande blir loggarna enklare att förstå.
+Som en god praxis bör loggmeddelanden innehålla sammanhangsberoende information om var i programmet ett undantag har inträffat. Kontexten kan också bestämmas med stackspår, men i allmänhet blir loggmeddelandet lättare att läsa och förstå. När du loggar ett undantag är det därför en dålig vana att använda undantagets meddelande som loggmeddelande. Undantagsmeddelandet innehåller det som gick fel medan loggmeddelandet bör användas för att tala om för en loggläsare vad programmet gjorde när undantaget inträffade. Undantagsmeddelandet är fortfarande loggat. Genom att ange ett eget meddelande blir loggarna lättare att förstå.
 
 #### Icke-kompatibel kod {#non-compliant-code-9}
 
@@ -370,7 +370,7 @@ public void doThis() {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Som namnet antyder bör Java-undantag alltid användas i undantagsfall. Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp: VARNING eller FEL. Detta garanterar att meddelandena visas korrekt i loggarna.
+Som namnet antyder bör Java™-undantag alltid användas i undantagsfall. Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp: VARNING eller FEL. Detta garanterar att meddelandena visas korrekt i loggarna.
 
 #### Icke-kompatibel kod {#non-compliant-code-10}
 
@@ -403,7 +403,7 @@ public void doThis() {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Kontext är viktig när du ska förstå loggmeddelanden. Använda `Exception.printStackTrace()` gör att endast stackspårningen matas ut till standardfelströmmen och därmed förlorar all kontext. I ett program med flera trådar, som AEM om flera undantag skrivs ut med den här metoden parallellt, kan stackspårningarna överlappa vilket kan skapa en betydande förvirring. Undantag bör endast loggas via loggningsramverket.
+Kontext är viktig när du ska förstå loggmeddelanden. Använda `Exception.printStackTrace()` gör att endast stackspårningen matas ut till standardfelströmmen och förlorar all kontext. I ett program med flera trådar, som AEM om flera undantag skrivs ut med den här metoden parallellt, kan stackspårningarna överlappa vilket kan skapa en betydande förvirring. Undantag bör endast loggas via loggningsramverket.
 
 #### Icke-kompatibel kod {#non-compliant-code-11}
 
@@ -436,7 +436,7 @@ public void doThis() {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Loggning AEM alltid ske via loggningsramverket SLF4J. Om du matar ut direkt till standardutdata eller standardfelströmmar förlorar du den strukturella och kontextuella information som tillhandahålls av loggningsramverket och kan i vissa fall orsaka prestandaproblem.
+Loggning AEM alltid ske via loggningsramverket SLF4J. Om du matar ut direkt till standardutdata eller standardfelströmmar förlorar du den strukturella och kontextuella information som tillhandahålls av loggningsramverket och kan ibland orsaka prestandaproblem.
 
 #### Icke-kompatibel kod {#non-compliant-code-12}
 
@@ -494,7 +494,7 @@ public void doThis(Resource resource) {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-Sling Scheduler får inte användas för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
+Använd inte Sling Scheduler för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
 
 Se [Dokumentation för Apache Sling Eventing och Job Handling](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) om du vill veta mer om hur Sling Jobs hanteras i klustrade miljöer.
 
@@ -507,9 +507,9 @@ Se [Dokumentation för Apache Sling Eventing och Job Handling](https://sling.apa
 
 AEM API-yta är under ständig revision för att identifiera API:er som inte används och därför betraktas som inaktuella.
 
-I många fall är dessa API:er föråldrade med standard-Java *@Undertryckt* anteckning och, som sådan, identifierad av `squid:CallToDeprecatedMethod`.
+Dessa API:er är ofta föråldrade med Java™-standarden *@Undertryckt* anteckning och, som sådan, identifierad av `squid:CallToDeprecatedMethod`.
 
-Det finns dock fall där ett API är inaktuellt i AEM men inte i andra sammanhang. Den här regeln identifierar den andra klassen.
+Det finns dock fall där en API är föråldrad i AEM men inte i andra sammanhang. Den här regeln identifierar den andra klassen.
 
 ## OakPAL-innehållsregler {#oakpal-rules}
 
@@ -526,11 +526,11 @@ Följande avsnitt innehåller information om de OakPAL-kontroller som körs av C
 * **Allvarlighetsgrad**: Kritisk
 * **Sedan**: Version 2018.7.0
 
-API:t för AEM innehåller Java-gränssnitt och -klasser som bara är avsedda att användas, inte implementeras, av anpassad kod. Gränssnittet `com.day.cq.wcm.api.Page` är till exempel utformat att implementeras av enbart AEM.
+AEM-API:t innehåller Java™-gränssnitt och -klasser som endast är avsedda att användas, men inte implementeras, av anpassad kod. Gränssnittet `com.day.cq.wcm.api.Page` implementeras endast av AEM.
 
 När nya metoder läggs till i dessa gränssnitt påverkar inte dessa ytterligare metoder befintlig kod som använder dessa gränssnitt, och därför anses tillägg av nya metoder i dessa gränssnitt vara bakåtkompatibelt. Men om anpassad kod implementerar ett av dessa gränssnitt har den anpassade koden skapat en risk vad gäller bakåtkompatibilitet för kunden.
 
-Gränssnitt och klasser som endast är avsedda att implementeras av AEM kommenteras med `org.osgi.annotation.versioning.ProviderType` eller, i vissa fall, en liknande äldre anteckning `aQute.bnd.annotation.ProviderType`. Den här regeln identifierar de fall där ett sådant gränssnitt implementeras eller en klass utökas av anpassad kod.
+Gränssnitt och klasser som endast är avsedda att implementeras av AEM kommenteras med `org.osgi.annotation.versioning.ProviderType` eller ibland en liknande äldre anteckning `aQute.bnd.annotation.ProviderType`. Den här regeln identifierar de fall där ett sådant gränssnitt implementeras eller en klass utökas av anpassad kod.
 
 #### Icke-kompatibel kod {#non-compliant-code-3}
 
@@ -549,7 +549,7 @@ public class DontDoThis implements Page {
 * **Allvarlighetsgrad**: Blockera
 * **Sedan**: Version 2019.6.0
 
-Det har länge varit en god praxis att `/libs` innehållsträdet i AEM innehållsarkiv ska betraktas som skrivskyddat av kunderna. Ändra noder och egenskaper under `/libs` innebär en betydande risk för större och mindre uppdateringar. Ändringar av `/libs` bör endast göras av Adobe via officiella kanaler.
+Det har länge varit en god praxis att `/libs` innehållsträdet i AEM innehållsarkiv ska betraktas som skrivskyddat av kunderna. Ändra noder och egenskaper under `/libs` innebär en betydande risk för större och mindre uppdateringar. Ändringar av `/libs` tillverkas endast av Adobe via officiella kanaler.
 
 ### Paket får inte innehålla dubbletter av OSGi-konfigurationer {#oakpal-package-osgi}
 
@@ -590,7 +590,7 @@ Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-kompon
 
 Av säkerhetsskäl innehåller sökvägar `/config/` och `/install/` kan endast läsas av administrativa användare i AEM och bör endast användas för OSGi-konfigurationer och OSGi-paket. Om du placerar andra typer av innehåll under banor som innehåller dessa segment, kommer programbeteendet att variera oavsiktligt mellan administrativa och icke-administrativa användare.
 
-Ett vanligt problem är att använda namngivna noder `config` i komponentdialogrutor eller när du anger RTF-redigeringskonfigurationen för infogad redigering. För att lösa detta bör den felande noden byta namn till ett kompatibelt namn. För textredigerarkonfigurationen använder du `configPath` på `cq:inplaceEditing` för att ange den nya platsen.
+Ett vanligt problem är att använda namngivna noder `config` i komponentdialogrutor eller när du anger RTF-redigeringskonfigurationen för infogad redigering. För att lösa detta bör namnet på den felande noden ändras till ett kompatibelt namn. För RTF-redigerarkonfigurationen använder du `configPath` på `cq:inplaceEditing` för att ange den nya platsen.
 
 #### Icke-kompatibel kod {#non-compliant-code-config-install}
 
@@ -627,7 +627,7 @@ Liknar [Paket får inte innehålla en dubblettregel för OSGi-konfigurationer,](
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. För [det klassiska användargränssnittet har tagits bort sedan AEM 6.4,](https://experienceleague.adobe.com/docs/experience-manager-64/release-notes/deprecated-removed-features.html) Ett problem kommer nu att uppstå när standardredigeringsläget är konfigurerat till Classic UI.
+OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. För [det klassiska användargränssnittet har tagits bort sedan AEM 6.4,](https://experienceleague.adobe.com/docs/experience-manager-64/release-notes/deprecated-removed-features.html) ett problem uppstår nu när standardredigeringsläget är konfigurerat till Classic UI.
 
 ### Komponenter med dialogrutor bör ha gränssnittsdialogrutor med pekskärmar {#oakpal-components-dialogs}
 
@@ -651,7 +651,7 @@ Dokumentationen för AEM finns information och verktyg för hur du konverterar k
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-För att vara kompatibel med databasens distributionsmodell måste enskilda innehållspaket innehålla antingen innehåll för databasens oföränderliga områden (dvs. `/apps` och `/libs`) eller det muterbara området (det vill säga allt som inte finns i `/apps` eller `/libs`), men inte båda. Ett paket som innehåller både `/apps/myco/components/text and /etc/clientlibs/myco` är inte kompatibelt med Cloud Service och kommer att orsaka ett problem som rapporteras.
+För att vara kompatibel med databasens distributionsmodell måste enskilda innehållspaket innehålla antingen innehåll för databasens oföränderliga områden (dvs. `/apps` och `/libs`) eller det muterbara området (det vill säga allt som inte finns i `/apps` eller `/libs`), men inte båda. Ett paket som innehåller både `/apps/myco/components/text and /etc/clientlibs/myco` är inte kompatibelt med Cloud Service och orsakar att ett problem rapporteras.
 
 Se [AEM projektstrukturdokumentation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/developing/aem-project-content-package-structure.html) för mer information.
 
@@ -719,7 +719,7 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databas](https://git
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Det har tidigare varit mycket vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - Redigerbar dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-65/developing/platform/templates/page-templates-editable.html)
+Det har tidigare varit vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - Redigerbar dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-65/developing/platform/templates/page-templates-editable.html)
 
 Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM moderniseringsverktyg.](https://opensource.adobe.com/aem-modernize-tools/)
 
@@ -734,14 +734,14 @@ De äldre Foundation Components (dvs. komponenter under `/libs/foundation`) har 
 
 Den här konverteringen kan underlättas av [AEM moderniseringsverktyg.](https://opensource.adobe.com/aem-modernize-tools/)
 
-### Endast körlägesnamn och -ordning som stöds ska användas {#oakpal-supported-runmodes}
+### Endast namn och ordning för körningsläge som stöds ska användas {#oakpal-supported-runmodes}
 
 * **Nyckel**: SupportedRunmode
 * **Typ**: Code Smell
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service tillämpar en strikt namngivningsprincip för runmode-namn och en strikt ordning för dessa runmodes. Listan över körlägen som stöds finns i [Distribuera till AEM as a Cloud Service dokumentation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/deploying/overview.html#runmodes) och eventuella avvikelser från detta identifieras som en fråga.
+AEM Cloud Service tillämpar en strikt namngivningsprincip för namn på körningsläge och en strikt ordning för dessa körningslägen. Listan över körningslägen som stöds finns i [Distribuera till AEM as a Cloud Service dokumentation](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/deploying/overview.html#runmodes) och alla avvikelser från detta identifieras som en fråga.
 
 ### Definitionsnoder för anpassade sökindex måste vara direkt underordnade /oak:index {#oakpal-custom-search}
 
@@ -847,10 +847,10 @@ I följande avsnitt visas de DOT-kontroller (Dispatcher Optimization Tool) som k
 
 * [Varje Dispatcher-grupp ska ha ett unikt namn](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---each-dispatcher-farm-should-have-a-unique-name)
 
-* [Dispatcher-publiceringsservergruppens cache bör ha sina ignoreUrlParams-regler konfigurerade på tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
+* [Dispatcher-publiceringsservergruppens cache bör ha sina ignoreUrlParams-regler konfigurerade på ett tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
 
-* [Filtren för publiceringsgrupper för Dispatcher bör ange tillåtna Sling-väljare på tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
+* [Filtren för publiceringsgruppen Dispatcher ska ange tillåtna Sling-väljare på ett tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
 
-* [Filtren för publiceringsgrupper för Dispatcher bör ange tillåtna Sling-suffixmönster på ett tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-suffix-patterns-in-an-allow-list-manner)
+* [Filtren för publiceringsgruppen Dispatcher ska ange tillåtna Sling-suffixmönster på ett tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-suffix-patterns-in-an-allow-list-manner)
 
-* [Direktivet Kräv alla beviljade ska inte användas i ett VirtualHost-katalogavsnitt med en rotkatalogsökväg](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-require-all-granted-directive-should-not-be-used-in-a-virtualhost-directory-section-with-a-root-directory-path)
+* [Använd inte direktivet Kräv alla beviljade i ett VirtualHost-katalogavsnitt med en rotkatalogsökväg](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-require-all-granted-directive-should-not-be-used-in-a-virtualhost-directory-section-with-a-root-directory-path)
