@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2023.2.0
-description: Detta är versionsinformationen för Cloud Manager version 2023.2.0.
+title: Versionsinformation för 2023.3.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.3.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: ab1747e14be783004544681f9aefefaa0587302e
+source-git-commit: 6ff44d7a7ccccc64f937df4dca854788c973bfd0
 workflow-type: tm+mt
-source-wordcount: '78'
+source-wordcount: '98'
 ht-degree: 0%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2023.2.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2023.3.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.2.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.3.0.
 
 >[!NOTE]
 >
@@ -21,4 +21,8 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2023.1.0 är 16 februari 2023. Nästa version är planerad till den 16 mars 2023.
+Releasedatum för [!UICONTROL Cloud Manager] version 2023.3.0 är 16 mars 2023. Nästa version är planerad till den 13 april 2023.
+
+## Felkorrigeringar {#bug-fixes}
+
+* Handelsplattan på **Lär dig** navigerar nu användaren till rätt sida.
