@@ -1,9 +1,9 @@
 ---
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
-source-git-commit: 360cbf7e3a21e530a4e43f13f6d414dae4afa104
+source-git-commit: 7ab5bdea2b388f3e9e199a6d32a1a80977eba35b
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1074'
 ht-degree: 0%
 
 ---
@@ -81,6 +81,11 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
 Innehållsuppsättningen kan nu användas för att kopiera innehåll mellan miljöer.
 
+>[!NOTE]
+>
+>Du kan lägga till upp till 50 banor i en innehållsuppsättning.
+>Det finns ingen begränsning för uteslutna banor.
+
 ## Redigera en innehållsuppsättning {#edit-content-set}
 
 Följ liknande steg som när du skapar ett innehållssteg. Istället för att trycka eller klicka **Lägg till innehållsuppsättning** väljer du en befintlig uppsättning från konsolen och väljer **Redigera** på ellipsmenyn.
@@ -112,6 +117,8 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
 
 
 1. I **Kopiera innehåll** anger du källa och mål för kopieringsåtgärden.
+
+1. Du kan välja att ta bort eller behålla de uteslutna sökvägarna i målmiljön. Markera kryssruta `Do not delete exclude paths from destination` om du vill behålla de uteslutna sökvägar som anges i innehållsuppsättningen. Om kryssrutan inte är markerad tas uteslutna sökvägar bort i målmiljön.
 
    ![Kopierar innehåll](/help/assets/copying-content.png)
 
@@ -150,7 +157,7 @@ Verktyget för innehållskopiering har följande begränsningar.
 * Det går inte att kopiera innehåll mellan program.
 * Det går inte att köra samtidiga kopieringsåtgärder för innehåll i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs på mål- eller källmiljön, t.ex. en CI/CD-pipeline.
-* Upp till tio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
+* Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
 * Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte kan spåra flyttat eller borttaget innehåll i källan.
 * Verktyget för innehållskopiering har ingen versionshantering och kan inte automatiskt identifiera ändrat innehåll eller nyligen skapat innehåll i källmiljön i en innehållsuppsättning sedan den senaste kopieringsåtgärden.
    * Om du bara vill uppdatera målmiljön med innehållsändringar sedan den senaste kopieringsåtgärden måste du skapa en innehållsuppsättning. I den uppsättningen anger du sökvägarna i källinstansen där ändringar har gjorts sedan den senaste kopieringsåtgärden.
