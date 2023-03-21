@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet, baserat på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 611cd8f874e8e0d21a475365f4aceb6ae2565644
+source-git-commit: ef87e13eb81faf5605cdd16c6fd46d5f7b3233a9
 workflow-type: tm+mt
-source-wordcount: '3537'
+source-wordcount: '3531'
 ht-degree: 2%
 
 ---
@@ -627,7 +627,7 @@ Liknar [Paket får inte innehålla en dubblettregel för OSGi-konfigurationer,](
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. För [det klassiska användargränssnittet har tagits bort sedan AEM 6.4,](https://experienceleague.adobe.com/docs/experience-manager-64/release-notes/deprecated-removed-features.html) ett problem uppstår nu när standardredigeringsläget är konfigurerat till Classic UI.
+OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. Eftersom det klassiska användargränssnittet har tagits bort sedan AEM 6.4 uppstår nu ett problem när standardredigeringsläget är konfigurerat till Classic UI.
 
 ### Komponenter med dialogrutor bör ha gränssnittsdialogrutor med pekskärmar {#oakpal-components-dialogs}
 
