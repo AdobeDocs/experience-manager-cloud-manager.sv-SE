@@ -2,9 +2,9 @@
 title: Cloud Manager-databaser
 description: Lär dig hur du får tillgång till, skapar och redigerar databaser för dina Cloud Manager-program.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 63cbcf8724a840efa67b8fafc4c321e04a5d70d9
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -81,9 +81,19 @@ Så här redigerar och visar du databaser i Cloud Manager:
 
 1. Från **Programöversikt** sida, klicka på **Databaser** och navigera till **Databaser** sida. Här kan du visa information om dina befintliga databaser.
 
-1. Markera databasen och klicka på ellipsknappen längst till höger i tabellen för att **Kopiera databas-URL**, **Visa och uppdatera** eller **Ta bort** din databas.
+1. Markera databasen och klicka på ellipsknappen längst till höger i tabellen för att **Kopiera databas-URL** eller **Visa och uppdatera** din databas.
 
 ![Redigera svar](/help/assets/create-repo3.png)
+
+## Tar bort databaser {#delete-repos}
+
+Så här tar du bort en databas [för att visa och redigera databaser](#edit-repos) men på **Databaser** sidmarkering **Ta bort** från ellipsknappen i den databas som ska tas bort.
+
+Observera att när en databas tas bort i Cloud Manager markeras den som borttagen och är inte längre tillgänglig för användaren, men den bevaras i systemet i återställningssyfte.
+
+Om du försöker skapa en ny databas efter att ha tagit bort en databas med samma namn visas felmeddelandet&quot;Ett fel uppstod när databasen skulle skapas. Kontakta CSE eller Adobe Support.&quot;
+
+Om du får det här felmeddelandet kontaktar du Adobe Support så att de kan hjälpa dig att byta namn på den borttagna databasen eller välja ett annat namn för den nya databasen.
 
 ## Stöd för Git-undermodul {#git-submodule-support}
 
