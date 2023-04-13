@@ -1,13 +1,13 @@
 ---
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
-source-git-commit: 5b10ac5e47052cabd7478050651a4ca04287a8f0
+exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
+source-git-commit: 7ef29a244688de82537da0b879fbf397900427c0
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
-
 
 # Verktyget Innehållskopia {#content-copy}
 
