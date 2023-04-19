@@ -2,9 +2,9 @@
 title: Inloggning för första gången
 description: Följ den här sidan om du har konfigurerat dina allmänna konfigurationer och vill använda Cloud Manager för första gången.
 exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
-source-git-commit: d8f16deacfe52c76ff6b0aee0344d50bfe2b9c74
+source-git-commit: 413edd167b5eda51c207113aaa00a92c808fb09f
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '257'
 ht-degree: 0%
 
 ---
@@ -20,13 +20,13 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 
 ## Logga in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in i Adobe [!UICONTROL Experience Cloud] och du ser en lista över programmen.
+1. Logga in i Cloud Manager på [`my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com/) och du ser en lista över programmen.
 
-1. Välj program.
+   ![Cloud Manager-konsol](/help/assets/cloud-manager-console.png)
 
-1. Välj ellipsknappen på programmets kort och klicka sedan på **Cloud Manager** för att gå till Cloud Managers **Översikt** sida.
+1. Välj ellipsknappen på programmets kort och klicka sedan på **Programöversikt** för att gå till Cloud Managers **Översikt** sida.
 
-   ![Cloud Manager-alternativ](/help/assets/navigate-cm1.png)
+   ![Cloud Manager-alternativ](/help/assets/program-overview-option.png)
 
 1. Cloud Manager öppnas för **Översikt** sida.
 
