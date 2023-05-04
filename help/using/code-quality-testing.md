@@ -2,10 +2,10 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 8c3b59ab9e00d6ee3b90b9255d025d9e19b3b89a
 workflow-type: tm+mt
-source-wordcount: '2863'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -57,11 +57,11 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 | Säkerhetsklassificering | A = Inga sårbarheter<br/>B = Minst 1 mindre sårbarhet<br/>C = Minst 1 allvarlig säkerhetslucka<br/>D = Minst 1 allvarlig säkerhetslucka<br/>E = Minst en blockerarsårbarhet | Kritisk | &lt; B |
 | Tillförlitlighetsklassificering | A = Inga buggar<br/>B = Minst ett mindre fel <br/>C = Minst ett större fel<br/>D = Minst ett kritiskt fel<br/>E = Minst 1 fel i blockering | Viktigt | &lt; C |
 | Underhållbarhetsklassificering | Definieras av den utestående reparationskostnaden för koden och luktar som en procentandel av tiden som redan har gått in i programmet<br/><ul><li>A = &lt;=5%</li><li>B = 6-10 %</li><li>C = 11-20 %</li><li>D = 21-50 %</li><li>E = >50 %</li></ul> | Viktigt | &lt; A |
-| Täckning | Definieras av en blandning av radens täckning och villkorstäckning med hjälp av formeln: <br/>`Coverage = (CT + CF + LC) / (2 * B + EL)`  <ul><li>`CT` = Villkor som har utvärderats som `true` minst en gång under pågående enhetstester</li><li>`CF` = Villkor som har utvärderats som `false` minst en gång under pågående enhetstester</li><li>`LC` = Täckta rader = lines_to_cover - uncover_lines</li><li>`B` = totalt antal villkor</li><li>`EL` = totalt antal körbara rader (lines_to_cover)</li></ul> | Viktigt | &lt; 50 % |
-| Överhoppade enhetstester | Antal överhoppade enhetstester | Information | > 1 |
-| Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Information | > 0 |
-| Duplicerade rader | Definieras som antalet rader som ingår i duplicerade block. Ett kodblock anses duplicerat under följande villkor.<br>Icke-Java-projekt:<ul><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa variabler bör spridas över åtminstone </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li></ul>Java-projekt:<ul></li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Information | > 1% |
-| Cloud Service-kompatibilitet | Antal identifierade kompatibilitetsproblem för Cloud Service | Information | > 0 |
+| Täckning | Definieras av en blandning av radens täckning och villkorstäckning med hjälp av formeln: <br/>`Coverage = (CT + CF + LC) / (2 * B + EL)`  <ul><li>`CT` = Villkor som har utvärderats som `true` minst en gång under pågående enhetstester</li><li>`CF` = Villkor som har utvärderats som `false` minst en gång under pågående enhetstester</li><li>`LC` = Täckta rader = lines_to_cover - uncover_lines</li><li>`B` = totalt antal villkor</li><li>`EL` = totalt antal körbara rader (lines_to_cover)</li></ul> | Viktigt | &lt; 50% |
+| Överhoppade enhetstester | Antal överhoppade enhetstester | Info | > 1 |
+| Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Info | > 0 |
+| Duplicerade rader | Definieras som antalet rader som ingår i duplicerade block. Ett kodblock anses duplicerat under följande villkor.<br>Icke-Java-projekt:<ul><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa variabler bör spridas över åtminstone </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li></ul>Java-projekt:<ul></li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Info | > 1% |
+| Cloud Service-kompatibilitet | Antal identifierade kompatibilitetsproblem för Cloud Service | Info | > 0 |
 
 >[!NOTE]
 >
@@ -135,7 +135,7 @@ I följande tabell visas hälsokontrollerna.
 | Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/configuring/osgi-configuration-settings.html#configuring) | Viktigt |
 | Sling WebDAV-paket och -servlet är korrekt konfigurerade. | WebDAV-hälsokontroll | Viktigt |
 | Webbservern är konfigurerad för att förhindra clickjacking. | Konfiguration av webbserver | Viktigt |
-| Replikeringen använder inte `admin` användare. | Replikerings- och transportanvändare | Information |
+| Replikeringen använder inte `admin` användare. | Replikerings- och transportanvändare | Info |
 
 ## Prestandatestning {#performance-testing}
 
@@ -152,7 +152,7 @@ Antalet virtuella användare eller behållare som startas av Cloud Manager styrs
 Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellanlagringsmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Med utgångspunkt från dessa URL:er inspekteras HTML på varje sida och länkarna gås igenom på bredden först.
 
 * Denna crawlningsprocess är som standard begränsad till högst 5 000 sidor.
-* Det maximala antalet sidor som ska testas kan skrivas över genom att ställa in [miljövariabel](/help/getting-started/build-environment.md#environment-variables) `MAX_PAGES`.
+* Det maximala antalet sidor som ska testas kan skrivas över genom att ställa in [miljövariabel](/help/getting-started/build-environment.md#environment-variables) `CM_PERF_TEST_CRAWLER_MAX_PAGES`.
    * Tillåtna värden är `2000` - `7000`.
 * Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
 
@@ -191,14 +191,14 @@ I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett gating-s
 | Mått | Kategori | Feltröskel |
 |---|---|---|
 | Felfrekvens för sidbegäran | Kritisk | >= 2% |
-| CPU-utnyttjandegrad | Kritisk | >= 80 % |
-| Väntetid för disk-I/O | Kritisk | >= 50 % |
+| CPU-utnyttjandegrad | Kritisk | >= 80% |
+| Väntetid för disk-I/O | Kritisk | >= 50% |
 | 95:e procentig svarstid | Viktigt | >= KPI på programnivå |
 | Tid för högsta svar | Viktigt | >= 18 sekunder |
 | Sidvyer per minut | Viktigt | &lt; KPI på programnivå |
-| Användning av diskbandbredd | Viktigt | >= 90 % |
-| Utnyttjande av nätverksbandbredd | Viktigt | >= 90 % |
-| Begäranden per minut | Information | >= 6000 |
+| Användning av diskbandbredd | Viktigt | >= 90% |
+| Utnyttjande av nätverksbandbredd | Viktigt | >= 90% |
+| Begäranden per minut | Info | >= 6000 |
 
 Se avsnittet [Autentiserad prestandatestning](#authenticated-performance-testing) om du vill ha mer information om hur du använder grundläggande autentisering för prestandatestning för platser och resurser.
 
