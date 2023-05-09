@@ -2,9 +2,9 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 8c3b59ab9e00d6ee3b90b9255d025d9e19b3b89a
+source-git-commit: 38cf86a5effa201afdc8e00d8f33582fc06214d7
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2863'
 ht-degree: 0%
 
 ---
@@ -152,7 +152,7 @@ Antalet virtuella användare eller behållare som startas av Cloud Manager styrs
 Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellanlagringsmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Med utgångspunkt från dessa URL:er inspekteras HTML på varje sida och länkarna gås igenom på bredden först.
 
 * Denna crawlningsprocess är som standard begränsad till högst 5 000 sidor.
-* Det maximala antalet sidor som ska testas kan skrivas över genom att ställa in [miljövariabel](/help/getting-started/build-environment.md#environment-variables) `CM_PERF_TEST_CRAWLER_MAX_PAGES`.
+* Det maximala antalet sidor som ska testas kan skrivas över genom att ställa in [pipeline-variabel](/help/getting-started/build-environment.md#pipeline-variables) `CM_PERF_TEST_CRAWLER_MAX_PAGES`.
    * Tillåtna värden är `2000` - `7000`.
 * Begäranden från crawlern har en fast tidsgräns på 10 sekunder.
 
