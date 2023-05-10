@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet, baserat på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: ef87e13eb81faf5605cdd16c6fd46d5f7b3233a9
+source-git-commit: 1ba4ed6c311eeaff9c71313d265531f427ef2736
 workflow-type: tm+mt
-source-wordcount: '3531'
+source-wordcount: '3566'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,10 @@ Läs mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som 
 >[!NOTE]
 >
 >Kodexemplen här är endast avsedda som illustrationer. Se [SonarQube&#39;s Concepts-dokumentation](https://docs.sonarqube.org/latest/) för att lära sig mer om dess koncept och kvalitetsregler.
+
+>[!NOTE]
+>
+>Fullständiga SonarQube-regler kan inte laddas ned på grund av Adobe egna information. Du kan hämta den fullständiga listan med regler [med den här länken.](/help/assets/CodeQuality-rules-latest-AMS.xlsx) Fortsätt läsa det här dokumentet för beskrivningar och exempel på reglerna.
 
 ## SonarQube-regler {#sonarqube-rules}
 
