@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 7ef29a244688de82537da0b879fbf397900427c0
+source-git-commit: 65cca64cb230686617af7f797fa86b754658e46d
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1123'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ När du kopierar innehåll är källmiljön en källa till sanning.
 * Om innehållet har ändrats i målmiljön skrivs det över av innehållet i källan, om sökvägarna är desamma.
 * Om banorna inte är samma kommer innehåll från källan att sammanfogas med innehållet i målet.
 
-   >[!NOTE]
-   >
-   >Endast fildatalagerbaserade topologier stöds.
+>[!NOTE]
+>
+>Kontakta din Customer Success Engineer (CSE) för att aktivera den här funktionen.
 
 ## Behörigheter {#permissions}
 
@@ -158,7 +158,8 @@ Verktyget för innehållskopiering har följande begränsningar.
 
 * En innehållskopia kan inte utföras från en lägre miljö till en högre miljö.
 * Innehållskopia kan bara utföras inom samma nivå (dvs. författare eller publicera).
-* Det går inte att kopiera innehåll mellan program.
+* Det går inte att kopiera innehåll mellan program och regioner.
+* Innehållskopia för molndatalagringsbaserad topologi kan bara utföras när käll- och målmiljön finns på samma molnleverantör.
 * Det går inte att köra samtidiga kopieringsåtgärder för innehåll i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs på mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
@@ -166,3 +167,4 @@ Verktyget för innehållskopiering har följande begränsningar.
 * Verktyget för innehållskopiering har ingen versionshantering och kan inte automatiskt identifiera ändrat innehåll eller nyligen skapat innehåll i källmiljön i en innehållsuppsättning sedan den senaste kopieringsåtgärden.
    * Om du bara vill uppdatera målmiljön med innehållsändringar sedan den senaste kopieringsåtgärden måste du skapa en innehållsuppsättning. I den uppsättningen anger du sökvägarna i källinstansen där ändringar har gjorts sedan den senaste kopieringsåtgärden.
 * Versionsinformation ingår inte i en innehållskopia.
+* En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.

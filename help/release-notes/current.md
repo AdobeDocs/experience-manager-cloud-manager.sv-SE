@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2023.4.0
-description: Detta är versionsinformationen för Cloud Manager version 2023.4.0.
+title: Versionsinformation för 2023.5.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.5.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 0ea63c0c8a4fa216ac3d70db1fb12add7f036495
+source-git-commit: 5a92ceb98de68025ca917c9b9cb358d54282b235
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '107'
 ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2023.4.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2023.5.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.4.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.5.0.
 
 >[!NOTE]
 >
@@ -21,12 +21,8 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2023.4.0 är 13 april 2023. Nästa version är planerad till den 11 maj 2023.
+Releasedatum för [!UICONTROL Cloud Manager] version 2023.5.0 är 11 maj 2023. Nästa version är planerad till den 8 juni 2023.
 
 ## Nyheter {#what-is-new}
 
-* [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) har uppdaterats till version 41.
-
-## Felkorrigeringar {#bug-fixes}
-
-* Blå avsändare kopplas inte längre till grön ELB om [blå/grön driftsättning](/help/introduction.md#blue-green) misslyckas.
+* [Självbetjäningskopia](/help/using/content-copy.md) är nu tillgängligt från en högre miljö till en lägre miljö via användargränssnittet i Cloud Manager. Kontakta din Customer Success Engineer för mer information.
