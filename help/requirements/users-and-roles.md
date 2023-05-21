@@ -31,10 +31,10 @@ I den här tabellen sammanfattas rollerna.
 
 | [!UICONTROL Cloud Manager] Roll | Beskrivning |
 |--- |--- |
-| Företagsägare | Den här användaren ansvarar för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-nivåfel vid behov. |
-| Programhanteraren | Den här användaren använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och godkänna viktiga 3-nivåfel vid behov. |
-| Distributionshanteraren | Den här användaren hanterar distributionsåtgärder och använder [!UICONTROL Cloud Manager] för att utföra mellanlagrings-/produktionsdistributioner, redigera CI/CD-pipelines, godkänna viktiga 3-skiktsfel vid behov och få tillgång till Git-databasen. |
-| Utvecklare | Den här användaren utvecklar och testar anpassad programkod och använder främst [!UICONTROL Cloud Manager] om du vill visa distributionsstatus och har åtkomst till Git-databasen för kodimplementeringar. |
+| Business Owner | Den här användaren ansvarar för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-nivåfel vid behov. |
+| Program Manager | Den här användaren använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och godkänna viktiga 3-nivåfel vid behov. |
+| Deployment Manager | Den här användaren hanterar distributionsåtgärder och använder [!UICONTROL Cloud Manager] för att utföra mellanlagrings-/produktionsdistributioner, redigera CI/CD-pipelines, godkänna viktiga 3-skiktsfel vid behov och få tillgång till Git-databasen. |
+| Developer | Den här användaren utvecklar och testar anpassad programkod och använder främst [!UICONTROL Cloud Manager] om du vill visa distributionsstatus och har åtkomst till Git-databasen för kodimplementeringar. |
 | Customer Success Engineer | Den här användaren stöder i allmänhet kundframgångar för AMS-kunder och interagerar med [!UICONTROL Cloud Manager] för att genomföra driftsättningar som kräver CSE-tillsyn. |
 | Innehållsförfattare | Användaren interagerar vanligtvis inte med [!UICONTROL Cloud Manager] men kan använda [!UICONTROL Cloud Manager] programväljaren för att få åtkomst till AEM. |
 
@@ -50,10 +50,10 @@ Admin Console är en central plats för hantering av Adobe i hela organisationen
 
 För att kunna tillhandahålla lämpliga rollbaserade behörigheter till [!UICONTROL Cloud Manager] -användare måste en administratör i kundens organisation skapa nya produktprofiler under [!UICONTROL AEM Managed Services] produktsammanhang som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] roller:
 
-* Företagsägare
-* Distributionshanteraren
-* Utvecklare
-* Programhanteraren
+* Business Owner
+* Deployment Manager
+* Developer
+* Program Manager
 
 Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Admin Console.
 
@@ -81,10 +81,10 @@ Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Ad
 
    | Roll | Visningsnamn (obligatoriskt) | Rekommenderat profilnamn |
    |---|---|---|
-   | Företagsägare | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
-   | Distributionshanteraren | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
-   | Utvecklare | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
-   | Programhanteraren | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Programhanterarroll |
+   | Business Owner | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
+   | Deployment Manager | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
+   | Developer | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
+   | Program Manager | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Programhanterarroll |
 
 
 1. Klicka **Klar** för att spara den nya profilen.

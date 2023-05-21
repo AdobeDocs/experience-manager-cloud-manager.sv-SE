@@ -5,7 +5,7 @@ exl-id: b66533fb-db93-40e8-919d-581261fdbf24
 source-git-commit: 522e5fbc650a8159602eb1aeaf42d64f4e23e8b4
 workflow-type: tm+mt
 source-wordcount: '539'
-ht-degree: 14%
+ht-degree: 4%
 
 ---
 
@@ -36,7 +36,7 @@ I den här tabellen visas de roller du kan tilldela i Admin Console.
 Var och en av rollerna har särskilda associerade förkonfigurerade behörigheter. Den här tabellen visar vilka behörigheter som är tillgängliga och vilka roller som kan utföra dem.
 
 
-| Behörighet | Beskrivning | Företagsägare | Distributionshanteraren | Programhanteraren | Utvecklare | ÄRENDE |
+| Behörighet | Beskrivning | Business Owner | Deployment Manager | Program Manager | Developer | ÄRENDE |
 |--- |--- |--- |--- |--- |--- |--- |
 | Läsprogram | Läs programmets KPI:er | x | x | x | x | x |
 | Skriv program | Programinstallation eller redigering | x |  |  |  |  |
