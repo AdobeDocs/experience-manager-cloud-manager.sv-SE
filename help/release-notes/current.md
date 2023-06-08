@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2023.5.0
-description: Detta är versionsinformationen för Cloud Manager version 2023.5.0.
+title: Versionsinformation för 2023.6.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.6.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 5a92ceb98de68025ca917c9b9cb358d54282b235
+source-git-commit: 1bbdc88a2c7a86e258d5fd56fab504aa7232e9fc
 workflow-type: tm+mt
-source-wordcount: '107'
-ht-degree: 1%
+source-wordcount: '95'
+ht-degree: 2%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2023.5.0 {#release-notes}
+# Versionsinformation om Cloud Manager version 2023.6.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.5.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.6.0.
 
 >[!NOTE]
 >
@@ -21,8 +21,8 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2023.5.0 är 11 maj 2023. Nästa version är planerad till den 8 juni 2023.
+Releasedatum för [!UICONTROL Cloud Manager] version 2023.6.0 är 8 juni 2023. Nästa version är planerad till den 6 juli 2023.
 
 ## Nyheter {#what-is-new}
 
-* [Självbetjäningskopia](/help/using/content-copy.md) är nu tillgängligt från en högre miljö till en lägre miljö via användargränssnittet i Cloud Manager. Kontakta din Customer Success Engineer för mer information.
+* När en [Produktionspipeline.](/help/using/production-pipelines.md) En bekräftelsedialogruta visas nu i steget Godkänn.
