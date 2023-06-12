@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 65cca64cb230686617af7f797fa86b754658e46d
+source-git-commit: 435efe2e6cecae738a62869c55034113c09f70e7
 workflow-type: tm+mt
-source-wordcount: '1123'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
@@ -119,7 +119,6 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
    >* Användaren har inte rätt behörighet.
    >* Miljön har en pågående pipeline eller en åtgärd för att kopiera innehåll.
 
-
 1. I **Kopiera innehåll** anger du källa och mål för kopieringsåtgärden.
 
 1. Du kan välja att ta bort eller behålla de uteslutna sökvägarna i målmiljön. Markera kryssruta `Do not delete exclude paths from destination` om du vill behålla de uteslutna sökvägar som anges i innehållsuppsättningen. Om kryssrutan inte är markerad tas uteslutna sökvägar bort i målmiljön.
@@ -164,7 +163,6 @@ Verktyget för innehållskopiering har följande begränsningar.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs på mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
 * Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte kan spåra flyttat eller borttaget innehåll i källan.
-* Verktyget för innehållskopiering har ingen versionshantering och kan inte automatiskt identifiera ändrat innehåll eller nyligen skapat innehåll i källmiljön i en innehållsuppsättning sedan den senaste kopieringsåtgärden.
-   * Om du bara vill uppdatera målmiljön med innehållsändringar sedan den senaste kopieringsåtgärden måste du skapa en innehållsuppsättning. I den uppsättningen anger du sökvägarna i källinstansen där ändringar har gjorts sedan den senaste kopieringsåtgärden.
-* Versionsinformation ingår inte i en innehållskopia.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
+* Verktyget för innehållskopiering kopierar resurser tillsammans med dynamiska medierelaterade metadata från den högre miljön till den valda nedre miljön.
+   * Kopierade resurser måste sedan bearbetas på nytt med [Arbetsflöde för resurser i DAM-process](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/assets-workflow.html) i den nedre miljön för att kunna använda respektive dynamiska mediekonfiguration.
