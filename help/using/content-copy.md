@@ -1,21 +1,22 @@
 ---
 title: Verktyget Innehållskopia
-description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
+description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testningsändamål.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 435efe2e6cecae738a62869c55034113c09f70e7
+source-git-commit: 223b547d6bc94137dfbb7d92862a508fa67799d2
 workflow-type: tm+mt
-source-wordcount: '1090'
+source-wordcount: '1096'
 ht-degree: 0%
 
 ---
 
+
 # Verktyget Innehållskopia {#content-copy}
 
-Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AEM produktionsmiljöer till lägre miljöer för testningsändamål.
+Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testningsändamål.
 
 ## Introduktion {#introduction}
 
-Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med innehållskopieringsverktyget kan du kopiera innehåll från AEM till en staging- eller utvecklingsmiljö för sådan testning.
+Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med verktyget för innehållskopiering kan du kopiera innehåll från din AMS-AEM 6.x-produktionsmiljö till en staging- eller utvecklingsmiljö för sådan testning.
 
 Innehållet som ska kopieras definieras av en innehållsuppsättning. En innehållsuppsättning består av en lista med JCR-sökvägar som innehåller det muterbara innehåll som ska kopieras från en källmiljö till en målmiljö inom samma Cloud Manager-program. Följande sökvägar tillåts i en innehållsuppsättning.
 
