@@ -3,9 +3,9 @@ title: Versionsinformation för 2023.7.0
 description: Detta är versionsinformationen för Cloud Manager version 2023.7.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 950fef5781c53f9bccf4c33c8b9d958edd5a0327
+source-git-commit: 9ecefd72cb9701026798ba47a743d99375f657c1
 workflow-type: tm+mt
-source-wordcount: '119'
+source-wordcount: '102'
 ht-degree: 0%
 
 ---
@@ -25,5 +25,4 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2023.7.0 är den 29 juni 20
 
 ## Felkorrigeringar {#bug-fixes}
 
-* Kort på landningssidan för Cloud Manager anger nu om [förbättrad säkerhet](/help/getting-started/program-setup.md) är aktiverat för sina program.
 * När [redigera en produktionsprocess,](/help/using/managing-pipelines.md#editing-pipelines) om användaren försöker ta bort en resurs från **Scentestning** visas ett fel.
