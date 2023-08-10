@@ -1,19 +1,19 @@
 ---
-title: Versionsinformation för 2023.7.0
-description: Detta är versionsinformationen för Cloud Manager version 2023.7.0.
+title: Versionsinformation för 2023.8.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.8.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 9ecefd72cb9701026798ba47a743d99375f657c1
+source-git-commit: f930f12b5f50dd96a1677ff7a56cf0e92a400556
 workflow-type: tm+mt
-source-wordcount: '102'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2023.7.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2023.8.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.7.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.8.0.
 
 >[!NOTE]
 >
@@ -21,8 +21,18 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2023.7.0 är den 29 juni 2023. Nästa version är planerad till den 10 augusti 2023.
+Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.8.0 är 10 augusti 2023. Nästa version är planerad till den 7 september 2023.
+
+## Nyheter {#what-is-new}
+
+* Förbättringar har gjorts för att förbättra förståelsen och visningen av felmeddelanden i användargränssnittet i Cloud Manager.
 
 ## Felkorrigeringar {#bug-fixes}
 
-* När [redigera en produktionsprocess,](/help/using/managing-pipelines.md#editing-pipelines) om användaren försöker ta bort en resurs från **Scentestning** visas ett fel.
+* Sällsynta fall [innehållskopia](/help/using/content-copy.md) processer som fastnar har åtgärdats.
+* Ett tillfälligt testproblem har lösts för kunder som inte använder New Relic One.
+* [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md) `SupportedRunmode` och `ImmutableMutableMixedPackage` har tagits bort från SonarQube eftersom de endast är tillämpliga på AEM as a Cloud Service.
+* Användare kommer inte längre att stöta på fasta rörledningar som verkar vara i körläge.
+* The **Miljö** menyn stängs nu när **[Kopiera innehåll](/help/using/content-copy.md)** modal.
+* [En omkörning av en pipeline](/help/using/code-deployment.md#reexecute-deployment) tillåts inte längre om föregående körning inte har en `commitId` anges för byggfastillståndet.
+* Ett mer begripligt meddelande visas nu för sällsynta fel när en användare klickar på en pipeline i **Aktivitet** eller **Pipeline** skärmar.

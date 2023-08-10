@@ -2,9 +2,9 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: b85bd1bdf38360885bf2777d75bf7aa97c6da7ee
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ När du har konfigurerat produktionsflödet, inklusive de nödvändiga databaser
 Byggprocessen startar koddistributionsprocessen med följande steg:
 
 * Scendistribution
-* Scentestning
+* Stage testing
 * Produktionsdistribution
 
 Du kan granska stegen från olika distributionsprocesser genom att visa loggar eller granska resultaten för att se testvillkoren.
@@ -44,19 +44,19 @@ The **Scendistribution** omfattar följande åtgärder:
 
 * **Validering**: Detta steg säkerställer att pipeline är konfigurerad att använda de tillgängliga resurserna, t.ex. att den konfigurerade grenen finns och att miljöerna är tillgängliga.
 * **Build &amp; Unit Testing**: Det här steget kör en innesluten byggprocess. Se dokumentet [Byggmiljön](/help/getting-started/build-environment.md) för mer information.
-* **Kodskanning**: I det här steget utvärderas kvaliteten på programkoden. Se dokumentet [Förstå testresultat](/help/using/code-quality-testing.md) för mer information om testprocessen.
+* **Kodskanning**: Det här steget utvärderar kvaliteten på programkoden. Se dokumentet [Förstå testresultat](/help/using/code-quality-testing.md) om du vill ha mer information om testprocessen.
 * **Distribuera till scenen**
 
 ![Scendistribution](/help/assets/Stage_Deployment1.png)
 
 ### Steg för testning {#stage-testing}
 
-The **Scentestning** omfattar följande åtgärder:
+The **Stage testing** omfattar följande åtgärder:
 
-* **Säkerhetstestning**: I det här steget utvärderas hur säkerhetseffekten av koden påverkar AEM. Se dokumentet [Förstå testresultat](/help/using/code-quality-testing.md) för mer information om testprocessen.
-   * **Prestandatestning**: I det här steget utvärderas hur koden fungerar. Se [Förstå testresultat](/help/using/code-quality-testing.md) för mer information om testprocessen.
+* **Säkerhetstestning**: Det här steget utvärderar hur koden påverkar säkerheten i AEM. Se dokumentet [Förstå testresultat](/help/using/code-quality-testing.md) om du vill ha mer information om testprocessen.
+   * **Prestandatestning**: Det här steget utvärderar hur koden fungerar. Se [Förstå testresultat](/help/using/code-quality-testing.md) om du vill ha mer information om testprocessen.
 
-   ![Scentestning](/help/assets/Stage_Testing1.png)
+  ![Stage testing](/help/assets/Stage_Testing1.png)
 
 ### Produktionsdistributionssteg {#production-deployment}
 
@@ -68,7 +68,7 @@ The **Produktionsdistribution** omfattar följande åtgärder:
 * **Schemalägg produktionsdistribution**
    * Det här alternativet aktiveras när pipeline konfigureras.
    * Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
-      ![Schemalägg distribution](/help/assets/Production_Deployment1.png)
+     ![Schemalägg distribution](/help/assets/Production_Deployment1.png)
 * **Stöd för CSE** (om aktiverat)
 * **Distribuera till produktion**
 
@@ -93,7 +93,7 @@ Följande steg gör timeout om du väntar på användarfeedback:
 
 ## Information om distributionsprocess {#deployment-process}
 
-Cloud Manager överför alla mål-/*.zip-filer som skapas i byggprocessen till en lagringsplats. Artefakterna hämtas från den här platsen under pipelinens distributionsfaser.
+Cloud Manager överför alla mål-/*.zip-filer som skapas i byggprocessen till en lagringsplats. Dessa artefakter hämtas från den här platsen under pipelinens distributionsfaser.
 
 När Cloud Manager distribuerar till icke-produktionstopologier är målet att slutföra distributionen så snabbt som möjligt och artefakterna distribueras därför till alla noder samtidigt enligt följande:
 
@@ -111,6 +111,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 1. Varje AEM-artefakt distribueras till varje AEM-instans via API:er för Package Manager, där paketberoenden avgör distributionsordningen.
 
    * Mer information om hur du kan använda paket för att installera nya funktioner, överföra innehåll mellan instanser och säkerhetskopiera databasinnehåll finns i dokumentet [Pakethanteraren.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/developer-tools/package-manager.html)
+
    >[!NOTE]
    >
    >Alla AEM artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM för ett visst ändamål kan du läsa [Avsnittet Körningslägen i dokumentet Distribuera till AEM as a Cloud Service.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/deploying/overview.html#runmodes)
@@ -125,7 +126,7 @@ När Cloud Manager distribuerar till icke-produktionstopologier är målet att s
 
    >[!NOTE]
    >
-   >Dispatcher-artefakten förväntas innehålla hela filuppsättningen. Alla konfigurationsfiler för dispatcher måste finnas i Git-databasen. Om filer eller mappar saknas kommer distributionen att misslyckas.
+   >Dispatcher-artefakten förväntas innehålla den fullständiga filuppsättningen. Alla konfigurationsfiler för dispatcher måste finnas i Git-databasen. Om filer eller mappar saknas kommer distributionen att misslyckas.
 
 1. Efter den lyckade distributionen av alla AEM- och dispatcherpaket till alla noder läggs avsändarna tillbaka till belastningsutjämnaren och distributionen är klar.
 
@@ -165,7 +166,7 @@ När du startar en körning av en produktionspipeline kan du starta körningen i
 
 ![Köra pipelinealternativ](/help/assets/execution-emergency1.png)
 
-När du visar informationssidan om pipelinekörning för en körning i nödläge visar de synliga kolumnerna högst upp på skärmen en indikation på att pipeline körs i nödläge.
+När du visar informationssidan om pipelinekörning för en körning i nödläge visar de synliga kolumnerna högst upp på skärmen en indikation på att pipelinen körs i nödläge.
 
 ![Felsökningslägen](/help/assets/execution-emergency2.png)
 
@@ -175,17 +176,21 @@ Du kan även köra en pipeline i nödläge via Cloud Manager API eller CLI. Om d
 $ aio cloudmanager:pipeline:create-execution PIPELINE_ID --emergency
 ```
 
-## Kör en produktionsdistribution igen {#re-execute-deployment}
+## Köra om en produktionsdistribution {#reexecute-deployment}
 
-Omkörning av produktionsdistributionssteget är tillgängligt för körningar där produktionsdistributionssteget har slutförts. Typen av komplettering är inte viktig. Distributionen kan lyckas (endast för AMS-program), avbrytas eller misslyckas. Det primära användningsexemplet är var produktionsdistributionssteget misslyckades av tillfälliga orsaker. Omkörning skapar en ny körning med samma pipeline. Den här nya körningen består av tre steg:
+I sällsynta fall kan produktionsdistributionsstegen misslyckas av tillfälliga orsaker. I sådana fall stöds omkörning av produktionsdistributionssteget så länge produktionsdistributionssteget har slutförts, oavsett typ av slutförande (t.ex. slutfört, avbrutet eller misslyckat). Omkörning skapar en ny körning med samma pipeline som består av tre steg.
 
 1. **Valideringssteget** - Detta är i stort sett samma validering som sker under en normal pipeline-körning.
 1. **Byggsteget** - I samband med en omkörning kopierar byggsteget artefakter och utför inte någon ny byggprocess.
 1. **Produktionsdistributionssteget** - Detta använder samma konfiguration och alternativ som produktionsdistributionssteget i en normal pipeline-körning.
 
-Byggsteget kan ha en annan etikett i användargränssnittet för att reflektera att det kopierar artefakter, inte återskapar.
+I sådana fall där ett återgenomförande är möjligt visas statussidan för produktionsflödet på sidan med **Kör igen** alternativ bredvid det vanliga **Hämta bygglogg** alternativ.
 
-![Kör igen](/help/assets/Re-deploy.png)
+![Alternativet Kör igen i översiktsfönstret för pipeline](/help/assets/re-execute.png)
+
+>[!NOTE]
+>
+>I en omkörning markeras byggsteget i användargränssnittet för att reflektera att det är kopieringsartefakter och inte återskapande.
 
 ### Begränsningar {#limitations}
 
@@ -193,15 +198,21 @@ Byggsteget kan ha en annan etikett i användargränssnittet för att reflektera 
 * Omkörning är inte tillgängligt för återställningskörningar eller push-uppdateringskörningar.
 * Om den senaste körningen misslyckades någon gång före produktionsdistributionssteget går det inte att utföra om.
 
-### Identifiera en körning {#identifying}
 
-Identifiera om en körning är en körning på nytt genom att `trigger` kan undersökas. Dess värde kommer att `RE_EXECUTE`.
+### Kör API igen {#reexecute-api}
 
-### Utlösa en omkörning {#triggering}
+Förutom att vara tillgänglig i användargränssnittet kan du använda [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#tag/Pipeline-Execution) för att utlösa omkörningar samt identifiera körningar som utlöstes som omkörningar.
 
-Om du vill utlösa en omkörning `PUT` begäran måste göras till HAL Link `http://ns.adobe.com/adobecloud/rel/pipeline/reExecute` i produktionsdistributionssteget. Om den här länken finns kan körningen startas om från det steget. Om den inte finns kan körningen inte startas om från det steget. Den här länken visas aldrig på produktionsdistributionssteget
+#### Utlösa en omkörning {#triggering}
 
-```Javascript
+Om du vill utlösa en omkörning `PUT` begäran måste göras till HAL Link `http://ns.adobe.com/adobecloud/rel/pipeline/reExecute` i produktionsdistributionssteget.
+
+* Om den här länken finns kan körningen startas om från det steget.
+* Om den inte finns kan körningen inte startas om från det steget.
+
+Länken är bara tillgänglig för produktionsdistributionssteget.
+
+```javascript
  {
   "_links": {
     "http://ns.adobe.com/adobecloud/rel/pipeline/logs": {
@@ -236,6 +247,10 @@ Om du vill utlösa en omkörning `PUT` begäran måste göras till HAL Link `htt
   "status": "FINISHED"
 ```
 
-Syntaxen för HAL-länkens `href` är inte avsett att användas som referenspunkt. Det faktiska värdet ska alltid läsas från HAL-länken och inte genereras.
+Syntaxen för HAL-länkens `href` värdet är bara ett exempel och det faktiska värdet ska alltid läsas från HAL-länken och inte genereras.
 
 Skicka ett `PUT` begäran till den här slutpunkten resulterar i `201` om svaret lyckas och svarsorganet är representationen av den nya exekveringen. Det liknar att starta en vanlig körning via API:t.
+
+#### Identifiera en körning {#identifying}
+
+Körda körningar kan identifieras av värdet `RE_EXECUTE` i `trigger` fält.
