@@ -3,10 +3,10 @@ title: Versionsinformation för 2023.9.0
 description: Detta är versionsinformationen för Cloud Manager version 2023.9.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 326e47e769c4f183fa3ee7d26952cb0f58e5067a
+source-git-commit: 74381d5d154f7c61135a990d2806fa9e39be7690
 workflow-type: tm+mt
-source-wordcount: '82'
-ht-degree: 2%
+source-wordcount: '155'
+ht-degree: 1%
 
 ---
 
@@ -25,4 +25,10 @@ Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.9.0 är 7 september
 
 ## Nyheter {#what-is-new}
 
+Den här versionen innehåller felkorrigeringar.
+
 ## Felkorrigeringar {#bug-fixes}
+
+* När ett program tas bort tas även associerade, pågående pipeline bort, vilket säkerställer att pipelinen inte felaktigt har angetts som misslyckad status.
+* När alla steg i en pipeline-körning är&quot;slutförda&quot; betraktas status för pipelinen som&quot;igång&quot;, vilket gör att den verkar vara i ett fast läge. Den ses nu som&quot;fullständig&quot;.
+* För databasförgreningar som genereras med kodgeneratorns arketyp misslyckas CI/CD-pipeline.
