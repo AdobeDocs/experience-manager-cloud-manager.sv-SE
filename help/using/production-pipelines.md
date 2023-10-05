@@ -2,7 +2,7 @@
 title: Konfigurera produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsflöden för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 39b38da17ed1cadf4f2e9633a9e76b537325316f
+source-git-commit: 33ccb0f2139162845cc1b72505b6a5bfc7cf43e7
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Använda **Inställningar för pipeline** sida vid sida [!UICONTROL Cloud Manage
 
 Det här dokumentet fokuserar på produktionsrörledningar. Mer information om hur du konfigurerar icke-produktionsrörledningar finns i dokumentet [Konfigurerar icke-produktionsförlopp.](/help/using/non-production-pipelines.md)
 
-The **Distributionshanteraren** rollen är ansvarig för att ställa in pipeline. Pipeline-konfigurationen består av:
+The **Distributionshanteraren** rollen är ansvarig för att ställa in pipelinen. Pipeline-konfigurationen består av:
 
 1. Definierar den utlösare som ska starta pipelinen.
 1. Definiera parametrarna som styr produktionsdistributionen.
@@ -32,12 +32,6 @@ The **Distributionshanteraren** rollen är ansvarig för att ställa in pipeline
 >[!NOTE]
 >
 >En pipeline kan inte konfigureras förrän dess associerade Git-databas har minst en gren och [programinställningar](/help/getting-started/program-setup.md) är klar.
-
-## Videosjälvstudiekurs {#video-tutorial-one}
-
-Den här videon ger en översikt över processen att skapa pipeline, som beskrivs i det här dokumentet.
-
->[!VIDEO](https://video.tv.adobe.com/v/26314/)
 
 ## Lägga till en ny produktionspipeline {#adding-production-pipeline}
 
@@ -56,6 +50,7 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
    1. Under **Källkod** -avsnittet definierar du var pipelinen hämtar koden som ska bearbetas.
 
       * **Databas** - Det här alternativet definierar från vilken Git-repo pipelinen ska hämta koden.
+
       >[!TIP]
       >
       >Se dokumentet [Programinställningar](/help/getting-started/program-setup.md) om du vill lära dig hur du lägger till och hanterar databaser i Cloud Manager.
@@ -73,6 +68,7 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
 
             * **Manuell** - Använd det här alternativet om du vill starta pipelinen manuellt med hjälp av användargränssnittet i Cloud Manager.
             * **Vid Git-ändringar** - Detta alternativ startar CI/CD-flödet när implementeringar läggs till i den konfigurerade Git-grenen. Med det här alternativet kan du fortfarande starta pipelinen manuellt efter behov.
+
          * **Beteende vid viktiga måttfel** - Under pipeline-konfigurationen eller redigeringen kan Deployment Manager definiera pipeline-beteendet när ett viktigt fel påträffas i någon av kvalitetsportarna. De tillgängliga alternativen är:
 
             * **Fråga varje gång** - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
@@ -89,13 +85,14 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
 
          ![Distributionsalternativ för mellanlagring](/help/assets/configure-pipelines/add-prod4.png)
 
-         * **Dispatcher-konfiguration** - **Distributionshanteraren** kan konfigurera en uppsättning innehållssökvägar som antingen blir ogiltiga eller tömda från AEM Dispatcher-cachen när en pipeline körs. Dessa cacheåtgärder kommer att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM som standard. Så här konfigurerar du:
+         * **Dispatcher-konfiguration** - **Distributionshanteraren** kan konfigurera en uppsättning innehållssökvägar som antingen blir ogiltiga eller tömda från AEM Dispatcher-cachen när en pipeline körs. Dessa cacheåtgärder kommer att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM som standard. Konfigurera:
 
             1. Under **BANA** innehåller en innehållssökväg.
             1. Under **TYP** markerar du den åtgärd som ska utföras på den banan.
 
                * **Töm** - Utför en cacheborttagning.
                * **Ogiltigförklara** - Utför en cacheogiltigförklaring, ungefär som när innehåll aktiveras från en redigeringsinstans till en publiceringsinstans.
+
             1. Klicka **Lägg till bana** för att lägga till den angivna sökvägen. Du kan lägga till upp till 100 sökvägar per miljö.
 
          ![Dispatcher-konfiguration](/help/assets/configure-pipelines/dispatcher-stage.png)
@@ -114,27 +111,18 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
                * **Datum** - Med det här alternativet kan användaren schemalägga en tid när distributionen ska slutföras.
                * **Stoppa körning** - Det här alternativet avbryter distribution till produktion.
 
-            >[!TIP]
-            >
-            >Se dokumentet [Koddistribution,](/help/using/code-deployment.md) om du vill veta hur du ställer in distributionsschemat eller kör pipelinen direkt.
+           >[!TIP]
+           >
+           >Se dokumentet [Koddistribution,](/help/using/code-deployment.md) om du vill veta hur du ställer in distributionsschemat eller kör pipelinen direkt.
 
-            * **Använd CSE-översikt** - Om det här alternativet är markerat är en CSE engagerad för att starta distributionen. När du skapar eller redigerar en pipeline när det här alternativet är aktiverat visas **Distributionshanteraren** rollen har följande alternativ.
+            * **Använd CSE-översikt** - Om det här alternativet är markerat är en CSE engagerad för att starta distributionen. När du skapar eller redigerar en pipeline när det här alternativet är aktiverat visas **Distributionshanteraren** rollerna har följande alternativ.
 
                * **Alla ärenden** - Med det här alternativet kan alla tillgängliga CSE-instanser starta distributionen.
                * **Mitt ärende** - Det här alternativet tillåter endast den specifika CSE som kunden har tilldelats för att starta distributionen. Detta gäller även för den angivna säkerhetskopian av CSE om den tilldelade CSE inte är tillgänglig.
 
-            ![Alternativ för produktionsdistribution](/help/assets/configure-pipelines/prod-deploymentoptions.png)
+           ![Produktionsdistributionsalternativ](/help/assets/configure-pipelines/prod-deploymentoptions.png)
 
          * **Dispatcher-konfiguration** - Definiera dispatcherkonfigurationen för produktionsmiljön. Alternativen är desamma som för mellanlagringsmiljön.
-
-
-
-
-
-
-
-
-
 
 1. Klicka på **Fortsätt** för att gå vidare till **Scentestning** där du kan konfigurera AEM Sites och AEM Assets Performance Testing, beroende på vilka produkter du har licensierat.
 
@@ -163,10 +151,14 @@ När du har använt [!UICONTROL Cloud Manager] Gränssnittet för att konfigurer
 
       ![Distribution av resurstestning](/help/assets/configure-pipelines/add-prod6.png)
 
-
-
 1. Klicka **Spara** för att lägga till produktionsflödet.
 
 ## Nästa steg {#the-next-steps}
 
 När du har konfigurerat pipeline måste du distribuera koden. Se dokumentet [Koddistribution](/help/using/code-deployment.md) för mer information.
+
+## Videosjälvstudie {#video-tutorial-one}
+
+Den här videon ger en översikt över processen att skapa pipeline, som beskrivs i det här dokumentet.
+
+>[!VIDEO](https://video.tv.adobe.com/v/26314/)

@@ -1,18 +1,19 @@
 ---
-title: Versionsinformation för 2023.9.0
-description: Detta är versionsinformationen för Cloud Manager version 2023.9.0.
+title: Versionsinformation för 2023.10.0
+description: Detta är versionsinformationen för Cloud Manager version 2023.10.0.
 feature: Release Information
-source-git-commit: f15a4b739150ee40b6dc48de0fbc20859093c79c
+exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
+source-git-commit: a5a304541409bc1775090eef2a669e1e0bcf005e
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 0%
+source-wordcount: '185'
+ht-degree: 1%
 
 ---
 
 
-# Versionsinformation för Cloud Manager version 2023.9.0 {#release-notes}
+# Versionsinformation för Cloud Manager version 2023.10.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.9.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] version 2023.10.0.
 
 >[!NOTE]
 >
@@ -20,10 +21,13 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.9.0 är 14 september 2023. Nästa version är planerad till den 5 oktober 2023.
+Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.10.0 är 5 oktober 2023. Nästa version planeras till den 2 november 2023.
 
-## Felkorrigeringar {#bug-fixes}
+## Nyheter {#what-is-new}
 
-* När ett program tas bort tas även associerade, pågående pipeline bort.
-* Ett tillfälligt fel har korrigerats där alla steg i en pipeline-körning markerades som slutförda, men statusen för pipelinen fortfarande kördes, vilket gav intryck av att ha fastnat.
-* Ett fel korrigerades när CI/CD-pipelines misslyckades för databasgrenar som genererade arkivtypen.
+* The **Distributionshanteraren** roll kan [konfigurera en uppsättning innehållssökvägar som antingen blir ogiltiga eller tömda från AEM Dispatcher-cachen när en icke-produktionsprocess körs.](/help/using/non-production-pipelines.md)
+   * Dessa cacheåtgärder kommer att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats.
+   * De här inställningarna använder AEM som standard.
+* I oktober 2023-versionen av Cloud Manager uppdateras Java-versionerna med en stegvis utrullning.
+   * Java-versionerna uppdateras till Oraclet JDK 8u371 och Oraclet JDK 11.0.20.
+   * [Se OpenJDK-råden](https://openjdk.org/groups/vulnerability/advisories/) om du vill ha information om säkerhet och felkorrigeringar i dessa JDK-uppdateringar.
