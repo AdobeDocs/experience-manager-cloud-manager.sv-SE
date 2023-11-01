@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testningsändamål.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 223b547d6bc94137dfbb7d92862a508fa67799d2
+source-git-commit: fe5de4e1ab5cd0d0e317cd399b8e44758a6312c4
 workflow-type: tm+mt
-source-wordcount: '1096'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -42,11 +42,11 @@ Användaren måste tilldelas till verktyget Innehållskopia för att kunna anvä
 
 ## Skapa en innehållsuppsättning {#create-content-set}
 
-Innan något innehåll kan kopieras måste en innehållsuppsättning definieras. När innehållet har definierats kan det återanvändas för att kopiera innehållet. Följ de här stegen för att skapa en innehållsuppsättning.
+Innan något innehåll kan kopieras måste en innehållsuppsättning definieras. När du har definierat innehållet kan du återanvända det för att kopiera innehållet. Följ de här stegen för att skapa en innehållsuppsättning.
 
 1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
-1. Navigera till **Miljö** från **Översikt** sida.
+1. Navigera till **Miljö** från **Ökning** sida.
 
 1. Navigera till **Innehållsuppsättningar** sidan från **Miljö** skärm.
 
@@ -54,7 +54,7 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
    ![Innehållsuppsättningar](/help/assets/content-sets.png)
 
-1. På **Detaljer** Ange ett namn och en beskrivning för innehållsuppsättningen och tryck eller klicka på **Fortsätt**.
+1. På **Information** Ange ett namn och en beskrivning för innehållsuppsättningen och tryck eller klicka på **Fortsätt**.
 
    ![Information om innehållsuppsättning](/help/assets/add-content-set-details.png)
 
@@ -105,7 +105,7 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
 
 1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
-1. Navigera till **Miljö** från **Översikt** sida.
+1. Navigera till **Miljö** från **Ökning** sida.
 
 1. Navigera till **Innehållsuppsättningar** sidan från **Miljö** skärm.
 
@@ -124,23 +124,25 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
 
 1. Du kan välja att ta bort eller behålla de uteslutna sökvägarna i målmiljön. Markera kryssruta `Do not delete exclude paths from destination` om du vill behålla de uteslutna sökvägar som anges i innehållsuppsättningen. Om kryssrutan inte är markerad tas uteslutna sökvägar bort i målmiljön.
 
+1. Du kan välja att kopiera versionshistorik för sökvägarna som kopieras från käll- till målmiljön. Markera kryssruta `Copy Versions` om du vill kopiera all versionshistorik.
+
    ![Kopierar innehåll](/help/assets/copying-content.png)
 
 1. Tryck eller klicka **Kopiera**.
 
 Kopieringsprocessen startar. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 
-## Innehållskopia - aktivitet {#copy-activity}
+## Innehållskopia aktivitet {#copy-activity}
 
 Du kan övervaka statusen för dina kopieringsprocesser i **Kopiera innehållsaktivitet** sida.
 
 1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
-1. Navigera till **Miljö** från **Översikt** sida.
+1. Navigera till **Miljö** från **Ökning** sida.
 
 1. Navigera till **Kopiera innehållsaktivitet** sidan från **Miljö** skärm.
 
-![Innehållskopia - aktivitet](/help/assets/copy-content-activity.png)
+![Innehållskopia aktivitet](/help/assets/copy-content-activity.png)
 
 ### Status för innehållskopia {#statuses}
 
@@ -159,7 +161,7 @@ Verktyget för innehållskopiering har följande begränsningar.
 * En innehållskopia kan inte utföras från en lägre miljö till en högre miljö.
 * Innehållskopia kan bara utföras inom samma nivå (dvs. författare eller publicera).
 * Det går inte att kopiera innehåll mellan program och regioner.
-* Innehållskopia för molndatalagringsbaserad topologi kan bara utföras när käll- och målmiljön finns på samma molnleverantör.
+* Innehållskopia för molndatalagringsbaserad topologi kan bara utföras när käll- och målmiljön finns på samma molnleverantör och samma region.
 * Det går inte att köra samtidiga kopieringsåtgärder för innehåll i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs på mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
@@ -167,3 +169,4 @@ Verktyget för innehållskopiering har följande begränsningar.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
 * Verktyget för innehållskopiering kopierar resurser tillsammans med dynamiska medierelaterade metadata från den högre miljön till den valda nedre miljön.
    * Kopierade resurser måste sedan bearbetas på nytt med [Arbetsflöde för resurser i DAM-process](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/assets-workflow.html) i den nedre miljön för att kunna använda respektive dynamiska mediekonfiguration.
+* Processen för innehållskopiering går mycket snabbare när versionshistoriken inte kopieras.
