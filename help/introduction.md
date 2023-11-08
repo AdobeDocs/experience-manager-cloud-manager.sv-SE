@@ -53,7 +53,7 @@ Här följer en djupdykning i de viktigaste funktionerna i Cloud Manager.
 
 Användargränssnittet (UI) för [!UICONTROL Cloud Manager] gör att du enkelt kan komma åt och hantera molnmiljön och CI/CD-flödet för dina Adobe Experience Manager-program.
 
-Du definierar programspecifika nyckeltal (KPI) (t.ex. toppsidor per minut och förväntad svarstid för en sidinläsning) som utgör grunden för mätning av en lyckad distribution. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Med självbetjäningsgränssnittet får du kontroll, men det ger även länkar till resurser för god praxis och tillgång till experter i Adobe som kan ge den vägledning du behöver.
+Du definierar programspecifika nyckeltal (KPI) (t.ex. toppsidor per minut och förväntad svarstid för en sidinläsning) som utgör grunden för att mäta en lyckad distribution. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Med självbetjäningsgränssnittet får du kontroll, men det ger även länkar till resurser för god praxis och tillgång till experter i Adobe som kan ge den vägledning du behöver.
 
 Utforska och komma igång med [!UICONTROL Cloud Manager]Användargränssnitt, se dokumentet [Första gången du loggar in.](/help/getting-started/first-time-login.md)
 
