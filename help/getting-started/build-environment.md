@@ -2,7 +2,7 @@
 title: Byggmiljön
 description: Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 42cafc03a607ace183d58adbe1c397c1a6c5c22f
+source-git-commit: 7f9866976667b485124cef60453ec3908ba41ec8
 workflow-type: tm+mt
 source-wordcount: '1152'
 ht-degree: 0%
@@ -19,9 +19,11 @@ Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder 
 Cloud Managers byggmiljöer har följande attribut.
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 18.04.
-* Apache Maven 3.6.0 är installerad.
-* De Java-versioner som är installerade är Oracle JDK 8u202 och Oracle JDK 11.0.2.
-* Som standard är `JAVA_HOME`  Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_202` som innehåller Oraclet JDK 8u202. Se avsnittet [Alternate Maven Execution JDK Version](#alternate-maven) för mer information.
+* Apache Maven 3.8.8 är installerad.
+* Java-versionerna är Oracle JDK 8u371 och Oracle JDK 11.0.20.
+   * `/usr/lib/jvm/jdk1.8.0_371`
+   * `/usr/lib/jvm/jdk-11.0.20`
+* Som standard är `JAVA_HOME`  Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_371` som innehåller Oraclet JDK 8u371. Se avsnittet [Alternate Maven Execution JDK Version](#alternate-maven) för mer information.
 * Det finns ytterligare systempaket installerade som är nödvändiga.
    * `bzip2`
    * `unzip`
@@ -48,7 +50,6 @@ Cloud Managers byggmiljöer har följande attribut.
 >* [Skapa en API-integrering](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/)
 >* [API-behörigheter](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/permissions/)
 
-
 ## Använda en specifik Java-version {#using-java-version}
 
 Som standard byggs projekt av Cloud Managers byggprocess med Oracle 8 JDK. Kunder som vill använda en alternativ JDK har två alternativ.
@@ -58,7 +59,7 @@ Som standard byggs projekt av Cloud Managers byggprocess med Oracle 8 JDK. Kunde
 
 ### Maven Toolchains {#maven-toolchains}
 
-The [Maven Toolchains plugin](https://maven.apache.org/plugins/maven-toolchains-plugin/) gör det möjligt för projekt att välja en viss JDK (eller verktygskedja) som ska användas i samband med verktygsfältsmedvetna Maven-plugin-program. Detta görs i projektets `pom.xml` genom att ange en leverantör och ett versionsvärde. Ett exempelavsnitt i `pom.xml` filen är:
+The [Maven Toolchains plugin](https://maven.apache.org/plugins/maven-toolchains-plugin/) gör det möjligt för projekt att välja en viss JDK (eller verktygskedja) som ska användas i samband med verktygsfältsmedvetna Maven-plugin-program. Detta görs i projektets `pom.xml` genom att ange leverantör och versionsvärde. Ett exempelavsnitt i `pom.xml` filen är:
 
 ```xml
         <plugin>
@@ -85,7 +86,7 @@ The [Maven Toolchains plugin](https://maven.apache.org/plugins/maven-toolchains-
 
 Detta gör att alla verktygskedjedåliga Maven-plugin-program använder Oraclet JDK, version 11.
 
-När du använder den här metoden körs Maven fortfarande med JDK-standardinställningen (Oracle 8) och `JAVA_HOME` miljövariabeln har inte ändrats. Kontrollera eller tvinga fram Java-versionen med hjälp av plugin-program som [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar inte och sådana plugin-program får inte användas.
+När du använder den här metoden körs Maven fortfarande med JDK-standardinställningen (Oracle 8) och `JAVA_HOME` miljövariabeln har inte ändrats. Kontrollera eller tvinga fram Java-versionen med plugins som [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar inte och sådana plugin-program får inte användas.
 
 De aktuella kombinationerna av leverantör/version är:
 
@@ -138,7 +139,7 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast vanliga miljövariabler kan användas med [avsändaren.](https://experienceleague.adobe.com/docs/experience-manager-dispatcher/using/dispatcher.html) Hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [avsändaren.](https://experienceleague.adobe.com/docs/experience-manager-dispatcher/using/dispatcher.html) Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine` direktiv.
 
@@ -154,7 +155,7 @@ Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfiguratio
 
 I vissa fall kan din byggprocess vara beroende av specifika konfigurationsvariabler som skulle vara olämpliga att placera i Git-databasen eller som behöver variera mellan olika pipeline-körningar som använder samma gren.
 
-Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen ren text eller krypteras i vila. I båda fallen görs variablerna tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån `pom.xml` eller andra byggskript.
+Med Cloud Manager kan dessa variabler konfigureras via Cloud Manager API eller Cloud Manager CLI per pipeline. Variabler kan lagras som antingen oformaterad text eller krypteras i vila. I båda fallen görs variablerna tillgängliga i byggmiljön som en miljövariabel som sedan kan refereras inifrån `pom.xml` eller andra byggskript.
 
 Om du vill ange en variabel med hjälp av CLI kör du ett kommando som liknar följande.
 
@@ -248,7 +249,7 @@ För att vissa byggen ska fungera fullt ut krävs att ytterligare systempaket in
         </profile>
 ```
 
-Samma teknik kan användas för att installera språkspecifika paket, dvs. med `gem` för RubyGems eller `pip` för Python Packages.
+Samma teknik kan användas för att installera språkspecifika paket, t.ex. med `gem` för RubyGems eller `pip` för Python Packages.
 
 >[!NOTE]
 >
