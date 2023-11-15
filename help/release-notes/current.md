@@ -3,9 +3,9 @@ title: Versionsinformation för 2023.11.0
 description: Detta är versionsinformationen för Cloud Manager version 2023.11.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: c7803c75bcfcc967877808214704c5746015481d
+source-git-commit: 264c7ffcbc9e10903880a511a4ca605be666f7e8
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -28,8 +28,10 @@ Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.11.0 är 14 novembe
 * [Informationssidan för pipeline-körning](/help/using/managing-pipelines.md#view-details) visar nu alla steg i en pipeline-körning med de som ännu inte har börjat nedtonade.
 * På båda **[Aktivitet](/help/using/managing-pipelines.md#activity)** och **[Pipelines](/help/using/managing-pipelines.md#pipelines)** på sidor är en sammanfattning av pipeline-körningen nu tillgänglig när du klickar på en pipeline med en körningsstatus.
 * En ny **Varaktighet** -avsnittet har lagts till i [informationssida för pipeline](/help/using/managing-pipelines.md#view-details) som omfattar den genomsnittliga tiden för rörledningssteget baserat på den historiska trenden för det programmet.
-* På sidan för pipeline-körning visas nu varaktigheten för de slutförda stegen
+* På [sidan för pipeline-körning,](/help/using/managing-pipelines.md#activity-window) de slutförda stegen visar nu varaktighet
 * Cloud Manager [innehållskopia, verktyg](/help/using/content-copy.md) tillåter användare att kopiera muterbart innehåll on demand från sina AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testningsändamål.
+* Körningar som [återanvänd build-artefakter](/help/getting-started/project-setup.md#build-artifact-reuse) kommer nu att visa länken till den körning som ursprungligen skapade dessa artefakter.
+* Alternativet som ska väljas **Viktiga måttfel** kan nu konfigureras för [pipelines för kodkvalitet](/help/using/non-production-pipelines.md) också.
 
 ## Tidig användning {#early-adoption}
 
