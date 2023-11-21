@@ -1,9 +1,9 @@
 ---
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
-source-git-commit: e1a3814041a8a7842e39ab09289c83e9c935b4ab
+source-git-commit: 769538ec21b21e612619b0c96718f27982574f6c
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1489'
 ht-degree: 1%
 
 ---
@@ -129,6 +129,11 @@ Följande behörigheter är tillgängliga för att skapa anpassade profiler.
 | Åsidosätt/avvisa viktiga måttfel | Tillåt användare att åsidosätta/ignorera viktiga mätfel |
 | Produktionsdistributionsschema | Tillåt användare att schemalägga ett produktionsdistributionssteg |
 | Datainformationsåtkomst | Tillåt användare att komma åt databasinformation och generera lösenord för åtkomst |
+| Skapa databas | Tillåt användare att skapa nya Git-databaser |
+| Radera databas | Tillåt användare att ta bort Git-databaser |
+| Databasredigering | Tillåt användare att redigera Git-databaser |
+| Generera databaskod | Tillåt användare att generera projekt från arkityp |
+| Hantera innehållskopia | Tillåt användare att hantera kopieringsåtgärder för innehåll |
 
 ### Behörigheter på organisationsnivå {#organization-level}
 
