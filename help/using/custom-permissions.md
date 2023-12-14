@@ -1,21 +1,17 @@
 ---
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
-source-git-commit: 769538ec21b21e612619b0c96718f27982574f6c
+exl-id: a81eda9f-aa89-40ea-8e4c-52367a0a6aba
+source-git-commit: 16eef51d86647ae4f2515f3f3c4cb2d15e948854
 workflow-type: tm+mt
-source-wordcount: '1489'
+source-wordcount: '1474'
 ht-degree: 1%
 
 ---
 
-
 # Anpassade behörigheter {#custom-permissions}
 
 Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
-
->[!NOTE]
->
->Den här funktionen är bara tillgänglig för [det tidiga adopteringsprogrammet.](/help/release-notes/current.md#early-adoption)
 
 ## Introduktion {#introduction}
 
