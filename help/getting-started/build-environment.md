@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 7f9866976667b485124cef60453ec3908ba41ec8
+source-git-commit: 2ac254508e4015fea21c4fcd087703ac5fbeeec6
 workflow-type: tm+mt
-source-wordcount: '1152'
+source-wordcount: '1283'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,9 @@ Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder 
 
 Cloud Managers byggmiljöer har följande attribut.
 
-* Byggmiljön är Linux-baserad och kommer från Ubuntu 18.04.
+* Byggmiljön är Linux-baserad och kommer från Ubuntu 2.04.
 * Apache Maven 3.8.8 är installerad.
+   * Adobe rekommenderar användare [uppdatera sina Maven-databaser så att HTTPS används i stället för HTTP.](#https-maven)
 * Java-versionerna är Oracle JDK 8u371 och Oracle JDK 11.0.20.
    * `/usr/lib/jvm/jdk1.8.0_371`
    * `/usr/lib/jvm/jdk-11.0.20`
@@ -38,6 +39,7 @@ Cloud Managers byggmiljöer har följande attribut.
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
 * Maven konfigureras på systemnivå med en `settings.xml` fil som automatiskt inkluderar databasen för publika Adobe-artefakter med en profil med namnet `adobe-public`.
    * Se [Adobe publika Maven-arkivet](https://repo1.maven.org/) för mer information.
+* Node.js 18 finns för [rörledningar för framände och högstackar.](/help/overview/ci-cd-pipelines.md)
 
 >[!NOTE]
 >
@@ -49,6 +51,14 @@ Cloud Managers byggmiljöer har följande attribut.
 >* [aio-cli-plugin-cloud-manager](https://github.com/adobe/aio-cli-plugin-cloudmanager)
 >* [Skapa en API-integrering](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/)
 >* [API-behörigheter](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/permissions/)
+
+## HTTPS Maven-databaser {#https-maven}
+
+Cloud Manager [version 2023.10.0](/help/release-notes/2023/2023-10-0.md) påbörjade en rullande uppdatering av byggmiljön (som kompletterades med version 2023.12.0), som innehöll en uppdatering till Maven 3.8.8. En betydande förändring som introducerades i Maven 3.8.1 var en säkerhetsförbättring som syftar till att minska potentiella sårbarheter. Maven inaktiverar nu allt osäkert `http://*` speglar som standard, enligt konturerna i [Maven release notes.](http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291)
+
+Som ett resultat av den här säkerhetsförbättringen kan vissa användare råka ut för problem under byggfasen, särskilt när artefakter hämtas från Maven-databaser som använder osäkra HTTP-anslutningar.
+
+För att få en smidig upplevelse med den uppdaterade versionen rekommenderar Adobe att användare uppdaterar sina Maven-databaser till att använda HTTPS i stället för HTTP. Denna justering är anpassad efter branschens växande övergång till säkra kommunikationsprotokoll och hjälper till att upprätthålla en säker och tillförlitlig byggprocess.
 
 ## Använda en specifik Java-version {#using-java-version}
 
@@ -92,11 +102,11 @@ De aktuella kombinationerna av leverantör/version är:
 
 | Leverantör | Version |
 |---|---|
-| oracle | 1.8 |
-| oracle | 1.11 |
+| oracle | 1,8 |
+| oracle | 1,11 |
 | oracle | 11 |
-| sol | 1.8 |
-| sol | 1.11 |
+| sol | 1,8 |
+| sol | 1,11 |
 | sol | 11 |
 
 >[!NOTE]

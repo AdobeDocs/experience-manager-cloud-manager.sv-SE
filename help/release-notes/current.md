@@ -3,9 +3,9 @@ title: Versionsinformation för 2023.12.0
 description: Detta är versionsinformationen för Cloud Manager version 2023.12.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 16eef51d86647ae4f2515f3f3c4cb2d15e948854
+source-git-commit: 2ac254508e4015fea21c4fcd087703ac5fbeeec6
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '301'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,14 @@ Utgivningsdatum för [!UICONTROL Cloud Manager] version 2023.12.0 är 14 decembe
 ## Nyheter {#what-is-new}
 
 * [Anpassade behörigheter för Cloud Manager](/help/using/custom-permissions.md) Med kan du skapa nya anpassade behörighetsprofiler med konfigurerbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Manager.
+* Uppdateringar av [byggmiljö](/help/getting-started/build-environment.md) som [lanserades och startades i oktober-versionen av Cloud Manager](/help/release-notes/2023/2023-10-0.md) har slutförts.
+   * Stöd för nod 18 lades till för [rörledningar för framände och högstackar.](/help/overview/ci-cd-pipelines.md)
+   * Java 8 minor version har uppdaterats till `jdk1.8.0_371`.
+   * Java 11 minor version har uppdaterats till `jdk-11.0.20`.
+   * Maven uppdaterades till version 3.8.8
+      * Maven inaktiverar nu alla osäkra `http://*` speglar som standard.
+      * [Adobe rekommenderar](/help/getting-started/build-environment.md#https-maven) -användare uppdaterar sina Maven-databaser så att de använder HTTPS i stället för HTTP.
+* Bas-bilden för byggbehållaren uppdaterades till Ubuntu 22.04.
 
 ## Tidig användning {#early-adoption}
 
