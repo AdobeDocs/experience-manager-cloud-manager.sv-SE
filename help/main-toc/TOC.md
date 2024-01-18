@@ -7,10 +7,10 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 76a3dc6df41032488a3cfe11d0c72769562b96df
+source-git-commit: b901c7bf9d821f6e84fc513e5e6cba5eab8ea894
 workflow-type: tm+mt
-source-wordcount: '359'
-ht-degree: 14%
+source-wordcount: '482'
+ht-degree: 7%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 14%
    + [Vanliga frågor om Cloud Manager](/help/overview/faqs.md)
 + Detta behövs {#requirements}
    + [Åtkomsträttigheter](/help/requirements/access-rights.md)
-   + [Databas för källkod](/help/requirements/source-code-repository.md)
+   + [Källkodslagringsplats](/help/requirements/source-code-repository.md)
    + [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md)
    + [Konfigurera användare och roller](/help/requirements/users-and-roles.md)
    + [Anpassade behörigheter](/help/using/custom-permissions.md)
@@ -62,11 +62,13 @@ ht-degree: 14%
    + [Arbeta med flera Git-databaser](/help/managing-code/multiple-git-repos.md)
    + [Arbeta med dina egna GitHub-databaser](/help/managing-code/byo-github.md)
 + Produktuppdateringsguide {#product-update-wizard}
-   + [Översikt](/help/product-update-wizard/overview.md)
+   + [Ökning](/help/product-update-wizard/overview.md)
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell versionsinformation](/help/release-notes/current.md)
    + 2023 {#2023}
+      + [Versionsinformation för 2023.12.0](/help/release-notes/2023/2023-12-0.md)
+      + [Versionsinformation för 2023.11.0](/help/release-notes/2023/2023-11-0.md)
       + [Versionsinformation för 2023.10.0](/help/release-notes/2023/2023-10-0.md)
       + [Versionsinformation för 2023.9.0](/help/release-notes/2023/2023-9-0.md)
       + [Versionsinformation för 2023.8.0](/help/release-notes/2023/2023-8-0.md)
