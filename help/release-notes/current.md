@@ -3,9 +3,9 @@ title: Versionsinformation för 2024.1.0
 description: Detta är versionsinformationen för Cloud Manager version 2024.1.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: b901c7bf9d821f6e84fc513e5e6cba5eab8ea894
+source-git-commit: b235e398b42e9da3dd2efacdc0ef38b6803bd213
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.1.0 är 17 januari 2024.
+Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.1.0 är 17 januari 2024. Nästa version är planerad till den 16 februari 2024.
 
 ## Tidig användning {#early-adoption}
 
@@ -32,3 +32,8 @@ Bli en del av vårt program för tidig användning och få möjlighet att testa 
 Om du använder GitHub för att hantera dina databaser, [du kan nu validera kod direkt i dina GitHub-databaser via Cloud Manager.](/help/managing-code/byo-github.md) Integreringen eliminerar behovet av att konsekvent synkronisera kod med Adobe-databasen och gör att du kan verifiera pull-begäranden innan du sammanfogar dem i huvudgrenarna.
 
 Om du vill testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till `Grp-CloudManager_BYOG@adobe.com` från den e-postadress som är kopplad till din Adobe ID.
+
+## Felkorrigeringar {#bug-fixes}
+
+* Ett fel korrigerades för vissa hörnfall där hämtningen misslyckades på grund av hur testprogrammet tolkar data, vilket medförde att den totala felprocenten inte klarade testet.
+* När ett byggsteg avslutas med status `FAILED` på grund av `BUILD_MAVEN_TRANSFER_ARTIFACT_ERROR`, beskrivs det nu korrekt som ett fel på grund av sammanslagningskonflikter med målgrenen.
