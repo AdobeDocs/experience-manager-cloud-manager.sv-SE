@@ -2,9 +2,9 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: b85bd1bdf38360885bf2777d75bf7aa97c6da7ee
+source-git-commit: 70e68f8af17b0acf644176c2ed3afaf8fc219063
 workflow-type: tm+mt
-source-wordcount: '1655'
+source-wordcount: '1650'
 ht-degree: 0%
 
 ---
@@ -84,12 +84,13 @@ Följande steg gör timeout om du väntar på användarfeedback:
 
 | Steg | Timeout |
 |--- |--- |
-| Testning av kodkvalitet | 14 dagar |
-| Säkerhetstestning | 14 dagar |
-| Prestandatestning | 14 dagar |
-| Ansökan om godkännande | 14 dagar |
+| Testning av kodkvalitet | 7 dagar |
+| Säkerhetstestning | 7 dagar |
+| Prestandatestning | 7 dagar |
+| Ansökan om godkännande (steg) | 7 dagar |
+| Ansökan om godkännande (produktion) | 14 dagar |
 | Schemalägg produktionsdistribution | 14 dagar |
-| Stöd för CSE | 14 dagar |
+| Hanterad produktionsdistribution | 14 dagar |
 
 ## Information om distributionsprocess {#deployment-process}
 
