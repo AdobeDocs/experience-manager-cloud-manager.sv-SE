@@ -3,9 +3,9 @@ title: Arbeta med dina egna GitHub-databaser i Cloud Manager
 description: Lär dig hur du konfigurerar Cloud Manager så att det fungerar med dina egna GitHub-databaser.
 feature: Release Information
 exl-id: e0d103c9-c147-4040-bf53-835e93d78a0b
-source-git-commit: 3bb59686a3c25e47e5c747bb8d5f626055e54a06
+source-git-commit: b5907179d3de329e8b86546bb8aa99608a5b351a
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ Genom att konfigurera Cloud Manager så att det fungerar med dina egna GitHub-da
 >[!NOTE]
 >
 >Den här funktionen är bara tillgänglig för [det tidiga adopteringsprogrammet.](/help/release-notes/current.md#early-adoption)
+
+>[!NOTE]
+>
+>Den här funktionen är exklusiv för public GitHub. Det finns inget stöd för GitHub som är självvärd.
 
 ## Konfiguration {#configuration}
 
