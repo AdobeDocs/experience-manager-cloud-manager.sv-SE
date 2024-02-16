@@ -3,7 +3,7 @@ title: Versionsinformation för 2024.2.0
 description: Detta är versionsinformationen för Cloud Manager version 2024.2.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 524471a87217c15dae96c3e6aee57426b43dcccb
+source-git-commit: cc87246503ab63d6dd60c691f15fc4759fcf6939
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.2.0 är 16 februari 2024. Nästa version är planerad till den 16 mars 2024.
+Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.2.0 är 15 februari 2024. Nästa version är planerad till den 16 mars 2024.
 
 ## Nyheter {#what-is-new}
 
@@ -41,3 +41,4 @@ Om du vill testa den här nya funktionen och dela med dig av dina synpunkter ski
 ## Felkorrigeringar {#bug-fixes}
 
 * JDK:n för byggbehållarna har uppdaterats till en version som löser problemet [JDK-8313765.](https://bugs.openjdk.org/browse/JDK-8313765)
+§
