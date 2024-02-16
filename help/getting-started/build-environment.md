@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 2ac254508e4015fea21c4fcd087703ac5fbeeec6
+source-git-commit: dc0b83fa045208fcd333af10f90f9590c2aa96b8
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,12 @@ Lär dig mer om den speciella byggmiljö som Cloud Manager-användare använder 
 Cloud Managers byggmiljöer har följande attribut.
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 2.04.
-* Apache Maven 3.8.8 är installerad.
+* Apache Maven 3.9.4 är installerad.
    * Adobe rekommenderar användare [uppdatera sina Maven-databaser så att HTTPS används i stället för HTTP.](#https-maven)
-* Java-versionerna är Oracle JDK 8u371 och Oracle JDK 11.0.20.
-   * `/usr/lib/jvm/jdk1.8.0_371`
-   * `/usr/lib/jvm/jdk-11.0.20`
-* Som standard är `JAVA_HOME`  Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_371` som innehåller Oraclet JDK 8u371. Se avsnittet [Alternate Maven Execution JDK Version](#alternate-maven) för mer information.
+* Java-versionerna är Oracle JDK 8u401 och Oracle JDK 11.0.22.
+   * `/usr/lib/jvm/jdk1.8.0_401`
+   * `/usr/lib/jvm/jdk-11.0.22`
+* Som standard är `JAVA_HOME`  Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_401` som innehåller Oraclet JDK 8u401. Se avsnittet [Alternate Maven Execution JDK Version](#alternate-maven) för mer information.
 * Det finns ytterligare systempaket installerade som är nödvändiga.
    * `bzip2`
    * `unzip`
@@ -39,7 +39,7 @@ Cloud Managers byggmiljöer har följande attribut.
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
 * Maven konfigureras på systemnivå med en `settings.xml` fil som automatiskt inkluderar databasen för publika Adobe-artefakter med en profil med namnet `adobe-public`.
    * Se [Adobe publika Maven-arkivet](https://repo1.maven.org/) för mer information.
-* Node.js 18 finns för [rörledningar för framände och högstackar.](/help/overview/ci-cd-pipelines.md)
+* Node.js 18 finns för [rörledningar.](/help/overview/ci-cd-pipelines.md)
 
 >[!NOTE]
 >
@@ -117,7 +117,7 @@ De aktuella kombinationerna av leverantör/version är:
 
 Du kan också välja Oracle 8 eller Oracle 11 som JDK för hela Maven-exekveringen. Till skillnad från alternativen för verktygskedjor ändras det JDK som används för alla plugin-program, såvida inte konfigurationen för verktygskedjor också anges. I så fall tillämpas fortfarande konfigurationen för verktygskedjor för Maven-plugin-program som är medvetna om verktygskedjor. Resultatet blir att du kontrollerar och använder Java-versionen med [Apache Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin/) kommer att fungera.
 
-Det gör du genom att skapa en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan innehålla antingen `11` eller `8`. Alla andra värden ignoreras. If `11` anges används Oracle 11 och `JAVA_HOME` Miljövariabeln är inställd på `/usr/lib/jvm/jdk-11.0.2`. If `8` anges används Oracle 8 och `JAVA_HOME` Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_202`.
+Det gör du genom att skapa en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan innehålla antingen `11` eller `8`. Alla andra värden ignoreras. If `11` anges används Oracle 11 och `JAVA_HOME` Miljövariabeln är inställd på `/usr/lib/jvm/jdk-11.0.22`. If `8` anges används Oracle 8 och `JAVA_HOME` Miljövariabeln är inställd på `/usr/lib/jvm/jdk1.8.0_401`.
 
 ## Miljövariabler {#environment-variables}
 
