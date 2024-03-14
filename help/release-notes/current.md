@@ -3,9 +3,9 @@ title: Versionsinformation för 2024.3.0
 description: Detta är versionsinformationen för Cloud Manager version 2024.3.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 95a7a7be3ba20e05311ff90b91bd0773f6e77a07
+source-git-commit: 22730ba281f7c1c4720158a3a813c56b815a0af1
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '264'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,7 @@ Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.3.0 är 14 mars 202
 
 ## Nyheter {#what-is-new}
 
-* Nu kan du validera serverns hälsa, granskningsloggar med mera på de instanser som skapas under blåa/gröna distributioner.
-   * Information om IP-/DNS-information (FQDN) för de gröna servrarna visas nu i gränssnittet i Cloud Manager.
+* Information om IP-/DNS-information (FQDN) om gröna servrar visas nu i användargränssnittet för Cloud Manager.
 
 ## Tidig användning {#early-adoption}
 
