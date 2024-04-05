@@ -2,7 +2,7 @@
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
 exl-id: a81eda9f-aa89-40ea-8e4c-52367a0a6aba
-source-git-commit: 16eef51d86647ae4f2515f3f3c4cb2d15e948854
+source-git-commit: 4a784f1594be4831be1c1c4aecb41b4f1b3b8be2
 workflow-type: tm+mt
 source-wordcount: '1474'
 ht-degree: 1%
@@ -121,7 +121,7 @@ Följande behörigheter är tillgängliga för att skapa anpassade profiler.
 | Redigera pipeline | Tillåt användare att redigera rörledningar |
 | Godkänn/avvisa produktionsdistributioner | Tillåt användare att godkänna eller avvisa ett produktionsdistributionssteg |
 | Avbryt körning av pipeline | Tillåt användare att avbryta pipeline-körningar |
-| Körningsstart för pipeline | Tillåt användare att starta en ny pipeline-körning |
+| Körningsstart för pipeline | Tillåt användare att starta nya pipeline-körningar |
 | Åsidosätt/avvisa viktiga måttfel | Tillåt användare att åsidosätta/ignorera viktiga mätfel |
 | Produktionsdistributionsschema | Tillåt användare att schemalägga ett produktionsdistributionssteg |
 | Datainformationsåtkomst | Tillåt användare att komma åt databasinformation och generera lösenord för åtkomst |
