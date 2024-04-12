@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med innehållskopieringsverktyget i Cloud Manager kan användare kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testningsändamål.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: c7803c75bcfcc967877808214704c5746015481d
+source-git-commit: 655111cdf7327e92e03ac7eedd9eedd87cd4b2f1
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1120'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,7 @@ Innehållet som ska kopieras definieras av en innehållsuppsättning. En innehå
 /conf/**
 /etc/**
 /var/workflow/models/**
+/var/commerce/**
 ```
 
 När du kopierar innehåll är källmiljön en källa till sanning.
