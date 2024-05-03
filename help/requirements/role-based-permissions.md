@@ -2,9 +2,9 @@
 title: Rollbaserade behörigheter
 description: Lär dig mer om Cloud Managers förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
-source-git-commit: 10297789ac8f905f242ac52bdc6fc4812b989e8a
+source-git-commit: 1c0c3a751ba2023fc2c2dd5d0d54f914373ad95b
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '594'
 ht-degree: 2%
 
 ---
@@ -66,3 +66,7 @@ Var och en av rollerna har särskilda associerade förkonfigurerade behörighete
 | Generera token för personlig åtkomst | Åtkomstgit |  | x |  | x |  |
 
 Mer information om hur du konfigurerar användarna finns i dokumentet [Konfigurera användare och roller.](/help/requirements/users-and-roles.md)
+
+>[!TIP]
+>
+>Anpassade behörighetsprofiler med konfigurerbara behörigheter är också tillgängliga. Se dokumentet [Anpassade behörigheter](/help/using/custom-permissions.md) för mer information.
