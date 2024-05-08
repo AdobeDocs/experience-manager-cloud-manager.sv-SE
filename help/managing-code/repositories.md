@@ -2,9 +2,9 @@
 title: Cloud Manager-databaser
 description: Lär dig hur du får tillgång till, skapar och redigerar databaser för dina Cloud Manager-program.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: 63cbcf8724a840efa67b8fafc4c321e04a5d70d9
+source-git-commit: 1d4ab9704fdb743b097e24be335fbf069d1e78bd
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -22,17 +22,13 @@ Använd **Åtkomst till svarsinformation** som finns i Cloud Manager, mest framt
 
 1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välja lämplig organisation och lämpligt program.
 
-1. Navigera till **Pipelines** från **Programöversikt** så ser du **Åtkomst till svarsinformation** möjlighet att komma åt och hantera din Git-databas [har konfigurerats med denna pipeline.](/help/using/production-pipelines.md)
+1. Navigera till **Pipelines** från **Programöversikt** visas **Åtkomst till svarsinformation** möjlighet att komma åt och hantera din Git-databas [har konfigurerats med denna pipeline.](/help/using/production-pipelines.md)
 
    ![Knapp för att få åtkomst till information om svar](/help/assets/access-repo1.png)
 
-1. Om du växlar till **Icke-produktion** pipeline-fliken, **Åtkomst till svarsinformation** finns även där som [konfigurerad för pipeline.](/help/using/non-production-pipelines.md)
+1. Tryck eller klicka på **Åtkomst till svarsinformation** för att öppna en dialogruta som visar:
 
-   ![Icke-produktionsrörledningar](/help/assets/access-repo-nonprod.png)
-
-1. Klicka på **Åtkomst till svarsinformation** för att öppna en dialogruta som visar:
-
-   * URL:en till Git-databasen
+   * URL till Git-databasen
    * Användarnamn
    * Lösenord
    * Git-kommando som ska köras för att klona databasen lokalt
@@ -69,8 +65,6 @@ Så här lägger du till databaser i Cloud Manager:
 
 Din nyskapade rapport visas.
 
-![Ny rapport har skapats](/help/assets/create-repo3.png)
-
 Databaser som skapas i Cloud Manager är tillgängliga att välja när du [skapa dina rörledningar.](/help/overview/ci-cd-pipelines.md)
 
 ## Visa och redigera databaser {#edit-repos}
@@ -105,9 +99,9 @@ När Cloud Managers byggprocess körs, efter att databasen som konfigurerats fö
 $ git submodule update --init
 ```
 
-Då checkas varje undermodul in i lämplig katalog. Den här tekniken är ett möjligt alternativ till [arbeta med Git-databaser med flera källor](/help/managing-code/multiple-git-repos.md) för organisationer som känner sig bekväma med att använda Git-undermoduler och inte vill hantera en extern sammanfogningsprocess.
+Då checkas varje undermodul in i lämplig katalog. Detta är ett möjligt alternativ till [arbeta med Git-databaser med flera källor](/help/managing-code/multiple-git-repos.md) för organisationer som känner sig bekväma med att använda Git-undermoduler och inte vill hantera en extern sammanfogningsprocess.
 
-Låt oss till exempel säga att det finns tre databaser, där var och en innehåller en gren med namnet `main`. I den&quot;primära&quot; databasen, dvs. den som är konfigurerad i pipelines, `main` grenen har en `pom.xml` fil som deklarerar projekten i de två andra databaserna:
+Låt oss till exempel säga att det finns tre databaser, där var och en innehåller en gren med namnet `main`. I den&quot;primära&quot; databasen, dvs. den som konfigurerats i pipelines, `main` grenen har en `pom.xml` fil som deklarerar projekten i de två andra databaserna:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

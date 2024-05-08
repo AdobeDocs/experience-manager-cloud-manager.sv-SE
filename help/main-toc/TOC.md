@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 664f43f8ec92da01af16721d9c847e0b03eb4e96
+source-git-commit: fbbc8b7aee04d1c153aeac87cc086883c0c6b980
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '499'
 ht-degree: 6%
 
 ---
@@ -34,6 +34,7 @@ ht-degree: 6%
    + [Miljöprovisionering](/help/requirements/environment-provisioning.md)
 + Komma igång {#getting-started}
    + [Inloggning för första gången](/help/getting-started/first-time-login.md)
+   + [Navigering](/help/getting-started/navigation.md)
    + [Programinställningar](/help/getting-started/program-setup.md)
    + Skapa AEM projekt {#project-creation}
       + [Använda guiden](/help/getting-started/using-the-wizard.md)

@@ -2,10 +2,10 @@
 title: Hantera miljöer
 description: Lär dig hur du använder Cloud Manager för att hantera dina miljöer.
 exl-id: 700b0b4c-1e1a-4993-b366-426b14a98f8e
-source-git-commit: 80f8707e00357f5a08dd835b846c9ee610f3e573
+source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
 workflow-type: tm+mt
-source-wordcount: '263'
-ht-degree: 2%
+source-wordcount: '264'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ Lär dig hur du använder Cloud Manager för att hantera dina miljöer.
 
 ## Översikt {#overview-page}
 
-The **Översikt** sidan med Cloud Manager innehåller **Miljö** panel som visar alla hanterade AEM.
+The **Ökning** sidan med Cloud Manager innehåller **Miljö** panel som visar alla hanterade AEM.
 
 Var och en av miljöerna i listan visar sin associerade status.
 
@@ -37,9 +37,9 @@ Status är det sammanslagna energiläget över noderna i miljön i följande pri
 
 ## Hantera miljöer {#managing-environments-with-cloud-manager}
 
-På **Miljö** platta, klicka **Hantera** för att visa **Miljö** skärm.
+På **Miljö** visas när du trycker eller klickar på raden i en miljö. **Miljö** skärm.
 
-The **Miljö** visas ett kort för varje produktions- och testmiljöer (beroende på vad som är tillämpligt) i programmet. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
+The **Miljö** visas för varje produktions- och testmiljöer i programmet. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
 
 >[!NOTE]
 >
@@ -56,7 +56,7 @@ The **Miljö** visas ett kort för varje produktions- och testmiljöer (beroende
 >
 >Om du behöver dina miljöloggar kan de begäras via din Customer Success Engineer.
 
-## Videosjälvstudiekurs {#video-tutorial}
+## Videosjälvstudie {#video-tutorial}
 
 Den här videon ger en översikt till Cloud Manager-miljöer som består av AEM för redigering, publicering och Dispatcher.
 

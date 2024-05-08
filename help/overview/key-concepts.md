@@ -2,9 +2,9 @@
 title: Viktiga begrepp
 description: Som med alla kraftfulla verktyg omfattar Cloud Manager många koncept och termer. I det här dokumentet sammanfattas några av de viktigaste för dig när du börjar använda Cloud Manager.
 exl-id: 86dfc976-f3da-479a-9faa-08f40ca909e0
-source-git-commit: 73e322cf93dc7709b7581860974079c8d94034ba
+source-git-commit: 67621fb2dbb0c32371b2ffc16ec45f47daf04e05
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Som med alla kraftfulla verktyg omfattar Cloud Manager många koncept och termer
 
 ## Program {#application}
 
-Och applikationen är en uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande [lösning](#solution) (t.ex. AEM Sites eller AEM Assets) för deras specifika användningsområden och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter.](#artifact)
+Ett program är en uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa det underliggande [lösning](#solution) (t.ex. AEM Sites eller AEM Assets) för deras specifika användningsområden och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter.](#artifact)
 
 Ett exempelprogram är den fiktiva [WKND livsstilstillämpning.](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)
 
@@ -30,7 +30,7 @@ En artefaktdatabas är en lagringsplats där kundspecifika [artefakter](#artifac
 
 ## Miljö {#environment}
 
-En miljö består av ett enda kluster av virtuella datorer i en [program.](#program) För AEM består detta av en redigeringsinstans (eventuellt med en extra utvecklingsinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera dispatcher-instanser och en belastningsutjämnare.
+En miljö består av ett enda kluster av virtuella datorer i en [program.](#program) För AEM består detta av en redigeringsinstans (eventuellt med en extra redigeringsinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera dispatcherinstanser och en belastningsutjämnare.
 
 ## git-databas {#git-repository}
 

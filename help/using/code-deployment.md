@@ -2,9 +2,9 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: 70e68f8af17b0acf644176c2ed3afaf8fc219063
+source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
 workflow-type: tm+mt
-source-wordcount: '1650'
+source-wordcount: '1648'
 ht-degree: 0%
 
 ---
@@ -55,8 +55,6 @@ The **Stage testing** omfattar följande åtgärder:
 
 * **Säkerhetstestning**: Det här steget utvärderar hur koden påverkar säkerheten i AEM. Se dokumentet [Förstå testresultat](/help/using/code-quality-testing.md) om du vill ha mer information om testprocessen.
    * **Prestandatestning**: Det här steget utvärderar hur koden fungerar. Se [Förstå testresultat](/help/using/code-quality-testing.md) om du vill ha mer information om testprocessen.
-
-  ![Stage testing](/help/assets/Stage_Testing1.png)
 
 ### Produktionsdistributionssteg {#production-deployment}
 
