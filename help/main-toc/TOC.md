@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: fbbc8b7aee04d1c153aeac87cc086883c0c6b980
+source-git-commit: 9d0f4dd29e2d05ab3f6900ee23c536b91c849e65
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '509'
 ht-degree: 6%
 
 ---
@@ -46,6 +46,7 @@ ht-degree: 6%
    + CI/CD-rör {#pipelines}
       + [Konfigurera produktionsförlopp](/help/using/production-pipelines.md)
       + [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md)
+      + [Stage och Prod Only Pipelines](/help/using/stage-prod-only.md)
       + [Hantera pipelines](/help/using/managing-pipelines.md)
    + [Koddistribution](/help/using/code-deployment.md)
    + [Testning av kodkvalitet](/help/using/code-quality-testing.md)
@@ -68,6 +69,7 @@ ht-degree: 6%
 + Versionsinformation {#release-notes}
    + [Aktuell versionsinformation](/help/release-notes/current.md)
    + 2024 {#2024}
+      + [Versionsinformation för 2024.4.0](/help/release-notes/2024/2024-4-0.md)
       + [Versionsinformation för 2024.3.0](/help/release-notes/2024/2024-3-0.md)
       + [Versionsinformation för 2024.2.0](/help/release-notes/2024/2024-2-0.md)
       + [Versionsinformation för 2024.1.0](/help/release-notes/2024/2024-1-0.md)

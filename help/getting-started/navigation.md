@@ -1,13 +1,13 @@
 ---
 title: Navigera i användargränssnittet för Cloud Manager
 description: Lär dig hur användargränssnittet i Cloud Manager är organiserat och hur du navigerar för att hantera program och miljöer.
-source-git-commit: 95736be8c38488c3f16164784247e160a967ecb7
+exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
+source-git-commit: 9d0f4dd29e2d05ab3f6900ee23c536b91c849e65
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1292'
 ht-degree: 0%
 
 ---
-
 
 # Navigera i gränssnittet för molnhanteraren {#navigation}
 
@@ -101,7 +101,6 @@ Varje program representeras av ett kort (eller en rad i en tabell) som ger en ö
 * Programavbildning (om den är konfigurerad)
 * Programnamn
 * Tjänsttyp: **Experience Manager Cloud** for [AEM as a Cloud Service program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home) eller **Experience Manager** för AMS-program
-* [Programtyp](/help/getting-started/program-setup.md): Sandbox eller produktion
 * Status
 * Konfigurerade lösningar
 * Skapad den
