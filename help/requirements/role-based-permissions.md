@@ -2,9 +2,9 @@
 title: Rollbaserade behörigheter
 description: Lär dig mer om Cloud Managers förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
-source-git-commit: 1c0c3a751ba2023fc2c2dd5d0d54f914373ad95b
+source-git-commit: fc1bc626dc18d25ce8c5bbae71396b234b5676db
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '600'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ I den här tabellen visas de roller du kan tilldela i Admin Console.
 | Deployment Manager | Den här användaren hanterar distributionsåtgärderna med [!UICONTROL Cloud Manager] för att utföra fas- och produktionsdistributioner, kan godkänna viktiga 3-nivåfel vid behov och har tillgång till Git-databasen. |
 | Developer | Den här användaren utvecklar och testar anpassad programkod, som huvudsakligen använder [!UICONTROL Cloud Manager] för att visa distributionsstatus och har åtkomst till Git-databasen. |
 | Customer Success Engineer | Den här användaren stöder i allmänhet kundframgångar för AMS-kunder och interagerar med [!UICONTROL Cloud Manager] för att kunna genomföra distributioner som kräver tillsyn av kundframgångsingenjör (CSE). |
-| Innehållsförfattare | Den här användaren interagerar vanligtvis inte med [!UICONTROL Cloud Manager], men kan använda [!UICONTROL Cloud Manager] programväxlare (efter att ha navigerat från [!UICONTROL Experience Cloud]) för att få tillgång till Adobe Experience Manager (AEM). |
+| Innehållsförfattare | Den här användaren interagerar vanligtvis inte med Cloud Manager, men kan använda Cloud Manager-programväxlaren (när du har navigerat från Experience Cloud) för att få åtkomst till Adobe Experience Manager (AEM). |
 
 ## Användarbehörigheter {#user-permissions}
 
