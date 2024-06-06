@@ -2,10 +2,10 @@
 title: Anpassade regler för kodkvalitet
 description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av testningen av kodkvalitet, baserat på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: f930f12b5f50dd96a1677ff7a56cf0e92a400556
+source-git-commit: 48ae41cb23f6a94fbaf31423f9c5cea3bfd45020
 workflow-type: tm+mt
-source-wordcount: '3377'
-ht-degree: 2%
+source-wordcount: '3513'
+ht-degree: 1%
 
 ---
 
@@ -513,7 +513,7 @@ AEM API-yta är under ständig revision för att identifiera API:er som inte anv
 
 Dessa API:er är ofta föråldrade med Java™-standarden *@Undertryckt* anteckning och, som sådan, identifierad av `squid:CallToDeprecatedMethod`.
 
-Det finns dock fall där en API är föråldrad i AEM men inte i andra sammanhang. Den här regeln identifierar den andra klassen.
+Det finns dock fall där en API är föråldrad i sammanhanget för AEM men inte i andra sammanhang. Den här regeln identifierar den andra klassen.
 
 ## OakPAL-innehållsregler {#oakpal-rules}
 
@@ -532,7 +532,7 @@ Följande avsnitt innehåller information om de OakPAL-kontroller som körs av C
 
 AEM-API:t innehåller Java™-gränssnitt och -klasser som endast är avsedda att användas, men inte implementeras, av anpassad kod. Gränssnittet `com.day.cq.wcm.api.Page` implementeras endast av AEM.
 
-När nya metoder läggs till i dessa gränssnitt påverkar inte dessa ytterligare metoder befintlig kod som använder dessa gränssnitt, och därför anses tillägg av nya metoder i dessa gränssnitt vara bakåtkompatibelt. Men om anpassad kod implementerar ett av dessa gränssnitt har den anpassade koden skapat en risk vad gäller bakåtkompatibilitet för kunden.
+När nya metoder läggs till i dessa gränssnitt påverkar inte dessa ytterligare metoder befintlig kod som använder dessa gränssnitt, och därför anses tillägg av nya metoder i dessa gränssnitt vara bakåtkompatibelt. Men om anpassad kod implementerar ett av dessa gränssnitt har den anpassade koden introducerat en bakåtkompatibilitetsrisk för kunden.
 
 Gränssnitt och klasser som endast är avsedda att implementeras av AEM kommenteras med `org.osgi.annotation.versioning.ProviderType` eller ibland en liknande äldre anteckning `aQute.bnd.annotation.ProviderType`. Den här regeln identifierar de fall där ett sådant gränssnitt implementeras eller en klass utökas av anpassad kod.
 
@@ -794,6 +794,74 @@ AEM Cloud Service tillåter inte anpassade sökindexdefinitioner (d.v.s. noder a
 * **Sedan**: Version 2021.2.0
 
 AEM Cloud Service tillåter inte anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) som innehåller en egenskap med namnet `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud Service. Se [Dokumentation för innehållssökning och indexering](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html#how-to-use) för mer information.
+
+### Indexdefinitionsnoder får inte distribueras i UI-innehållspaket {#oakpal-ui-content-package}
+
+* **Nyckel**: IndexNotUnderUIContent
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.6.0
+
+AEM Cloud Service tillåter inte anpassade sökindexdefinitioner (noder av typen `oak:QueryIndexDefinition`) från att distribueras i gränssnittets innehållspaket.
+
+>[!WARNING]
+>
+>Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att rörledningar inte fungerar från [Cloud Manager, augusti 2024-utgåvan.](/help/release-notes/current.md)
+
+### Anpassad heltextindexdefinition av typen damAssetLucene måste ha rätt prefix med damAssetLucene {#oakpal-dam-asset-lucene}
+
+* **Nyckel**: CustomFulltextIndexesOfTheDamAssetCheck
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.6.0
+
+AEM Cloud Service tillåter inte anpassade fulltextindexdefinitioner av typen `damAssetLucene` från att vara prefix med något annat än `damAssetLucene`.
+
+>[!WARNING]
+>
+>Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att rörledningar inte fungerar från [Cloud Manager, augusti 2024-utgåvan.](/help/release-notes/current.md)
+
+### Indexdefinitionsnoder får inte innehålla egenskaper med samma namn {#oakpal-index-property-name}
+
+* **Nyckel**: DuplicateNameProperty
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.6.0
+
+AEM Cloud Service tillåter inte anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) som innehåller egenskaper med samma namn
+
+>[!WARNING]
+>
+>Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att rörledningar inte fungerar från [Cloud Manager, augusti 2024-utgåvan.](/help/release-notes/current.md)
+
+### Det är förbjudet att anpassa vissa OOTB-indexdefinitioner {#oakpal-customizing-ootb-index}
+
+* **Nyckel**: RestrictIndexCustomization
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.6.0
+
+AEM Cloud Service tillåter inte obehöriga ändringar av följande OOTB-index:
+
+* `nodetypeLucene`
+* `slingResourceResolver`
+* `socialLucene`
+* `appsLibsLucene`
+* `authorizables`
+* `pathReference`
+
+>[!WARNING]
+>
+>Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att rörledningar inte fungerar från [Cloud Manager, augusti 2024-utgåvan.](/help/release-notes/current.md)
+
+### Konfigurationen av tokenisererna i analysatorerna ska skapas med namnet tokenizer {#oakpal-tokenizer}
+
+* **Nyckel**: AnalyzerTokenizerConfigCheck
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.6.0
+
+AEM Cloud Service tillåter inte att tokeniserare med felaktiga namn skapas i analysatorer. Tokenizers bör alltid definieras som `tokenizer`.
 
 ## Dispatcher Optimization Tool {#dispatcher-optimization-tool-rules}
 

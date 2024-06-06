@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
+source-git-commit: 4ab4bd416658c55d72228b701c57a1845d2d0f41
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -96,6 +96,10 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 >
 >Du kan inte redigera en pågående pipeline.
 
+>[!NOTE]
+>
+>Rörledningar för webbnivå och konfiguration stöds inte i privata databaser. Se dokumentet [Lägga till privata databaser i Cloud Manager](/help/managing-code/private-repositories.md) om du vill ha mer information och en fullständig lista över begränsningar.
+
 ## Tar bort pipelines {#deleting-pipelines}
 
 1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
@@ -127,6 +131,15 @@ När ett pipeline-steg är klart visas en sammanfattning.
 Tryck eller klicka på **Visa detaljer** länk för att visa **Varaktighet** -avsnitt. Detta inbegriper den genomsnittliga rörledningens varaktighet på grundval av den historiska trenden för det programmet.
 
 ![Varaktighet](/help/assets/configure-pipelines/duration.png)
+
+Om din pipeline innehöll en **Kodskanning** som gav upphov till problem kan du trycka eller klicka på **Ladda ned information** om du vill visa en lista med [kodkvalitetstester](/help/using/code-quality-testing.md) som inte gick igenom.
+
+![Problem med kodkvalitet](assets/managing-pipelines-code-quality-issues.png)
+
+A **Plats för projektfil** -kolumnen är tillgänglig i CSV-filen för att ange platsen för den felaktiga koden. Den här kolumnen är den projektrelativa sökvägen, medan **Filplats** kolumnen är Maven-genererad.
+
+![Information om problem med genomsökning av projektkod](assets/managing-pipelines-code-quality-details.png)
+
 
 >[!NOTE]
 >

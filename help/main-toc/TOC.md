@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 9d0f4dd29e2d05ab3f6900ee23c536b91c849e65
+source-git-commit: 3beee350dda077c16975ea628bd4c7b80d7d9160
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '530'
 ht-degree: 6%
 
 ---
@@ -58,17 +58,23 @@ ht-degree: 6%
    + [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md)
    + [Innehållskopia](/help/using/content-copy.md)
 + Hantera kod {#managing-code}
+   + [Hantera databaser i Cloud Manager](/help/managing-code/managing-repositories.md)
+   + [Information om databasåtkomst](/help/managing-code/accessing-repositories.md)
+   + [Lägga till Adobe-databaser](/help/managing-code/adobe-repositories.md)
+   + [Lägga till privata databaser](/help/managing-code/private-repositories.md)
+   + [Stöd för Git-undermodul](/help/managing-code/git-submodules.md)
+   + [GitHub Check Configuration](/help/managing-code/github-check-config.md)
+   + [GitHub-kontrollanteckningar](/help/managing-code/github-annotations.md)
    + [Versionshantering för Maven Project](/help/managing-code/maven-project-version.md)
-   + [Databaser](/help/managing-code/repositories.md)
    + [Integrera med Git](/help/managing-code/git-integration.md)
    + [Arbeta med flera Git-databaser](/help/managing-code/multiple-git-repos.md)
-   + [Arbeta med dina egna GitHub-databaser](/help/managing-code/byo-github.md)
 + Produktuppdateringsguide {#product-update-wizard}
    + [Ökning](/help/product-update-wizard/overview.md)
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell versionsinformation](/help/release-notes/current.md)
    + 2024 {#2024}
+      + [Versionsinformation för 2024.5.0](/help/release-notes/2024/2024-5-0.md)
       + [Versionsinformation för 2024.4.0](/help/release-notes/2024/2024-4-0.md)
       + [Versionsinformation för 2024.3.0](/help/release-notes/2024/2024-3-0.md)
       + [Versionsinformation för 2024.2.0](/help/release-notes/2024/2024-2-0.md)

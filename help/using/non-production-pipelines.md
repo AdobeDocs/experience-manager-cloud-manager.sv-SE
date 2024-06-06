@@ -2,7 +2,7 @@
 title: Konfigurera icke-produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar som inte är avsedda för produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: 33ccb0f2139162845cc1b72505b6a5bfc7cf43e7
+source-git-commit: 85c1e22609dc5646d3de0ccc71e9423d4243e13a
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar som inte är avsedda för produktion för att distribuera koden. Om du först vill ha en mer begreppsmässig översikt över hur rörledningar fungerar i Cloud Manager kan du läsa dokumentet [CI/CD-ledningar.](/help/overview/ci-cd-pipelines.md)
 
-## Översikt {#overview}
+## Ökning {#overview}
 
 Använda **Pipelines** sida vid sida [!UICONTROL Cloud Manager], **Distributionshanteraren** kan skapa två olika typer av rörledningar.
 
@@ -29,7 +29,7 @@ Det finns två typer av icke-produktionsrörledningar:
 
 >[!NOTE]
 >
->En pipeline kan inte konfigureras förrän dess associerade Git-databas har minst en gren och [programinställningar](/help/getting-started/program-setup.md) är klar. Se dokumentet [Cloud Manager-databaser](/help/managing-code/repositories.md) om du vill lära dig hur du lägger till och hanterar databaser i Cloud Manager.
+>En pipeline kan inte konfigureras förrän dess associerade Git-databas har minst en gren och [programinställningar](/help/getting-started/program-setup.md) är klar. Se dokumentet [Cloud Manager-databaser](/help/managing-code/managing-repositories.md) om du vill lära dig hur du lägger till och hanterar databaser i Cloud Manager.
 
 ## Lägga till en icke-produktionspipeline {#add-non-production-pipeline}
 

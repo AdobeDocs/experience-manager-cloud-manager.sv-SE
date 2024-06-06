@@ -2,7 +2,7 @@
 title: Navigera i användargränssnittet för Cloud Manager
 description: Lär dig hur användargränssnittet i Cloud Manager är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: 9d0f4dd29e2d05ab3f6900ee23c536b91c849e65
+source-git-commit: 85c1e22609dc5646d3de0ccc71e9423d4243e13a
 workflow-type: tm+mt
 source-wordcount: '1292'
 ht-degree: 0%
@@ -168,7 +168,7 @@ Varje program har många alternativ och data kopplade till sig. Dessa data samla
 * Översikt - Programöversikt enligt beskrivningen i det aktuella dokumentet
 * [Aktivitet](/help/using/managing-pipelines.md#activity) - Historiken över programmets rörliga körningar
 * [Pipelines](/help/using/managing-pipelines.md#pipelines) - Alla rörledningar som konfigurerats för programmet
-* [Databaser](/help/managing-code/repositories.md) - Alla databaser har konfigurerats för programmet
+* [Databaser](/help/managing-code/managing-repositories.md) - Alla databaser har konfigurerats för programmet
 * [Rapporter](/help/using/monitoring-environments.md#system-monitoring-overview) - Mätvärden, t.ex. SLA-data
 * [Miljö](/help/using/managing-environments.md) - Alla miljöer som konfigurerats för programmet
 * [Innehållsuppsättningar](/help/using/content-copy.md) - Innehållsuppsättningar som skapats för kopieringsändamål
