@@ -2,9 +2,9 @@
 title: Hantera databaser i Cloud Manager
 description: Lär dig hur du skapar, visar och redigerar Git-databaser i Cloud Manager.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: b15ef71ae24f51811798d2d25c8f75320e21c01f
+source-git-commit: 73add7bee892769d1b3864e3238aff26bf96162d
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ The **Databaser** -fönstret innehåller information om databaserna:
 
 * Typ av databas
    * **Adobe** anger databaser som hanteras av Adobe
-   * **Privat** anger GitHub-databaser som du hanterar
+   * **GitHub** anger privata GitHub-databaser som du hanterar
 * När den skapades
 * Pipelines som är associerade med databasen
 
@@ -76,6 +76,13 @@ När du visar dina databaser i **Databaser** kan du visa information om hur du k
 The **Databasinformation** öppnas med information. Mer information om åtkomst till databasinformation finns i dokumentet [Åtkomst till databasinformation.](accessing-repositories.md)
 
 ## Kontrollera grenar {#check-branches}
+
+The **Kontrollera grenar/skapa projekt** -åtgärden utför två funktioner beroende på databasens tillstånd.
+
+* Om databasen är nyskapad skapar åtgärden ett exempelprojekt baserat på [AEM projekttyp.](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview)
+* Om exempelprojektet redan har skapats i databasen kontrolleras statusen för databasen och dess grenar, och sedan rapporteras om exempelprojektet redan finns.
+
+![Kontrollera grenar](assets/check-branches.png)
 
 ## Kopiera databas-URL {#copy-url}
 

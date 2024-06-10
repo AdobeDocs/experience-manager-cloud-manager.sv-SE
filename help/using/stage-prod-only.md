@@ -1,13 +1,13 @@
 ---
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
-source-git-commit: c09fbf30270523018a36b128d43cbf10e65daf54
+exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
+source-git-commit: c238caa22fdd71ae6aefd098331b626b9b951a0f
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '891'
 ht-degree: 0%
 
 ---
-
 
 # Pipeline med endast scener och endast produktion {#stage-prod-only}
 
@@ -32,7 +32,7 @@ Enkla rörledningar för scener och enbart för produkter erbjuder lösningar f�
 * **Distributionsförlopp endast för produkter** distribuera endast till en produktionsmiljö med möjlighet att välja en körning som har slutförts och validerats på scenen och distribuera dess artefakter på produkten.
    * Med rörledningar som endast är avsedda för produktion återanvänds artefakterna från scendistributionerna, och byggnadsfasen hoppas över.
 
-Vare sig rörledningar som bara är i stadiet eller endast i drift kommer att utföras medan en produktionsprocess med en hel hög körs och vice versa.
+Vare sig rörledningar som bara är i stadiet eller endast i drift kommer att utföras medan en produktionsprocess med en hel hög körs och vice versa. Om både produktionsflödet för enbart stadiet och hela stacken har **Vid Git-ändringar** utlösaren är konfigurerad och pekar på samma gren och databas, men endast den pipeline som bara är för scenen startas automatiskt. Rörledningar som endast är avsedda för produktion har inte startats **Vid Git-ändringar** eftersom de inte är direkt länkade till en databas.
 
 De här dedikerade rörledningarna ger större flexibilitet, men notera följande detaljer om drift och rekommendationer.
 
