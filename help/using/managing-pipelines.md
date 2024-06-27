@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 4ab4bd416658c55d72228b701c57a1845d2d0f41
+source-git-commit: 15e733117b4458cc53dec309dad5bde8cb17029f
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '872'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, k�
 
 ## Pipeline-kort {#pipeline-card}
 
-The **Pipelines** på **Programöversikt** i Cloud Manager ger dig en översikt över alla dina pipelines och deras aktuella status.
+The **Pipelines** på **Programöversikt** i Cloud Manager ger dig en översikt över alla dina rörledningar och deras aktuella status.
 
-![Förloppskort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
+![Pipeline-kort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
 
 Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följande åtgärder.
 
@@ -31,14 +31,14 @@ Längst ned i listan med rörledningar finns allmänna alternativ.
 
 * **Lägg till** - Till [lägg till en ny produktionspipeline](/help/using/production-pipelines.md) eller [lägga till ny icke-produktionspipeline](/help/using/non-production-pipelines.md)
 * **Visa alla** - Tar användaren till **Pipelines** för att visa alla rörledningar i en mer detaljerad tabell
-* **Åtkomst till svarsinformation** - Visar den information som krävs för att komma åt Cloud Managers Git-databas
+* **Åtkomst till svarsinformation** - Visar den information som krävs för att få åtkomst till Cloud Manager Git-databasen
 * **Läs mer** - Navigerar till CI/CD pipeline-dokumentationsresurser.
 
 ## Fönstret Pipelines {#pipelines}
 
 The **Pipelines** visas en fullständig lista över alla pipelines för det valda programmet. Detta är användbart eftersom det ger mer omfattande information än vad som finns i [Pipelinekort.](#pipeline-card)
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Från **Programöversikt** sida, tryck eller klicka på **Pipelines** för att växla till **Pipelines** -fönstret.
 
@@ -54,7 +54,7 @@ Tryck eller klicka **Visa detaljer** tar dig till [information om pipelinekörni
 
 The **Verksamhet** visas en fullständig lista över alla pipelines-körningar för det valda programmet.
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Från **Programöversikt** sida, tryck eller klicka på **Aktivitet** för att växla till **Aktivitet** -fönstret.
 
@@ -68,7 +68,7 @@ Tryck eller klicka **Visa detaljer** tar dig till [information om pipelinekörni
 
 ## Löpande rörledningar {#running-pipelines}
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Kör** på menyn.
 
@@ -80,7 +80,7 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 
 ## Redigera rörledningar {#editing-pipelines}
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du vill redigera och välj sedan **Redigera** på menyn.
 
@@ -96,13 +96,9 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 >
 >Du kan inte redigera en pågående pipeline.
 
->[!NOTE]
->
->Rörledningar för webbnivå och konfiguration stöds inte i privata databaser. Se dokumentet [Lägga till privata databaser i Cloud Manager](/help/managing-code/private-repositories.md) om du vill ha mer information och en fullständig lista över begränsningar.
-
 ## Tar bort pipelines {#deleting-pipelines}
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Ta bort** på menyn.
 
@@ -112,7 +108,7 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 
 ## Visa detaljer {#view-details}
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
 
 1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Visa detaljer** på menyn.
 
