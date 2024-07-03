@@ -1,10 +1,10 @@
 ---
 title: Hantera miljöer
-description: Lär dig hur du använder Cloud Manager för att hantera dina miljöer.
+description: Lär dig hur du använder Cloud Manager för att hantera miljöer.
 exl-id: 700b0b4c-1e1a-4993-b366-426b14a98f8e
-source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
+source-git-commit: 116a930eea08b2bb9d288ec153519699754e0374
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Hantera miljöer {#managing-environments}
 
-Lär dig hur du använder Cloud Manager för att hantera dina miljöer.
+Lär dig hur du använder Cloud Manager för att hantera miljöer.
 
 ## Översikt {#overview-page}
 
-The **Ökning** sidan med Cloud Manager innehåller **Miljö** panel som visar alla hanterade AEM.
+The **Ökning** Cloud Manager innehåller **Miljö** panel som visar alla hanterade AEM.
 
 Var och en av miljöerna i listan visar sin associerade status.
 
@@ -54,10 +54,14 @@ The **Miljö** visas för varje produktions- och testmiljöer i programmet. Milj
 
 >[!NOTE]
 >
+>Miljöinformation som namn kan inte ändras när de har etablerats.
+
+>[!NOTE]
+>
 >Om du behöver dina miljöloggar kan de begäras via din Customer Success Engineer.
 
 ## Videosjälvstudie {#video-tutorial}
 
-Den här videon ger en översikt till Cloud Manager-miljöer som består av AEM för redigering, publicering och Dispatcher.
+I den här videon får du en översikt över Cloud Manager-miljöer som består av AEM, publicering och Dispatcher-instanser.
 
 >[!VIDEO](https://video.tv.adobe.com/v/26318/)
