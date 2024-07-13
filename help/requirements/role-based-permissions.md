@@ -1,6 +1,6 @@
 ---
 title: Rollbaserade behörigheter
-description: Lär dig mer om Cloud Managers förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
+description: Lär dig mer om Cloud Manager förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
 source-git-commit: fc1bc626dc18d25ce8c5bbae71396b234b5676db
 workflow-type: tm+mt
@@ -18,24 +18,24 @@ ht-degree: 2%
 >
 >I den här dokumentationen beskrivs rollbaserade behörigheter för Cloud Manager för Adobe Managed Services (AMS).
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i dokumentet [Introduktion till Cloud Manager](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/onboarding/concepts/cloud-manager-introduction.html#role-based-permissions) i den AEM as a Cloud Service dokumentationen.
+>Motsvarande dokumentation för AEM as a Cloud Service finns i dokumentet [Introduktion till Cloud Manager](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/onboarding/concepts/cloud-manager-introduction.html#role-based-permissions) i dokumentationen för AEM as a Cloud Service.
 
 ## Användarroller {#user-roles}
 
-Rollhantering för [!UICONTROL Cloud Manager] är klar med [Admin Console.](https://helpx.adobe.com/enterprise/using/admin-console.html) Alla användare av [!UICONTROL Cloud Manager] måste vara medlem i kundens IMS-organisation och ha Adobe Managed Services produktkontext. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager] produktprofil i Admin Console.
+Rollhantering för [!UICONTROL Cloud Manager] har slutförts med Admin Console [.](https://helpx.adobe.com/enterprise/using/admin-console.html) Alla användare av [!UICONTROL Cloud Manager] måste vara medlemmar i kundens IMS-organisation och ha produktkontexten Adobe Managed Services. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
 
 Mer information om hur du konfigurerar dina roller finns i dokumentet [Konfigurera användare och roller.](/help/requirements/users-and-roles.md)
 
 I den här tabellen visas de roller du kan tilldela i Admin Console.
 
-| [!UICONTROL Cloud Manager] Roll | Beskrivning |
+| Roll för [!UICONTROL Cloud Manager] | Beskrivning |
 |---|---|
-| Business Owner | Detta är den primära användaren som slutför den inledande [!UICONTROL Cloud Manager] installation och ansvarar för att definiera nyckeltal, godkänna produktionsdistributioner och åsidosätta viktiga 3-skiktsfel vid behov. |
-| Program Manager | Den här användaren använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och godkänna viktiga 3-nivåfel vid behov. |
-| Deployment Manager | Den här användaren hanterar distributionsåtgärderna med [!UICONTROL Cloud Manager] för att utföra fas- och produktionsdistributioner, kan godkänna viktiga 3-nivåfel vid behov och har tillgång till Git-databasen. |
-| Developer | Den här användaren utvecklar och testar anpassad programkod, som huvudsakligen använder [!UICONTROL Cloud Manager] för att visa distributionsstatus och har åtkomst till Git-databasen. |
-| Customer Success Engineer | Den här användaren stöder i allmänhet kundframgångar för AMS-kunder och interagerar med [!UICONTROL Cloud Manager] för att kunna genomföra distributioner som kräver tillsyn av kundframgångsingenjör (CSE). |
-| Innehållsförfattare | Den här användaren interagerar vanligtvis inte med Cloud Manager, men kan använda Cloud Manager-programväxlaren (när du har navigerat från Experience Cloud) för att få åtkomst till Adobe Experience Manager (AEM). |
+| Business Owner | Detta är den primära användaren som slutför den inledande [!UICONTROL Cloud Manager]-konfigurationen och ansvarar för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-nivåfel vid behov. |
+| Program Manager | Den här användaren använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och kan godkänna viktiga 3-skiktsfel vid behov. |
+| Deployment Manager | Den här användaren hanterar distributionsåtgärderna med [!UICONTROL Cloud Manager] för att köra fas- och produktionsdistributioner, kan godkänna viktiga 3-skiktsfel vid behov och har åtkomst till Git-databasen. |
+| Developer | Den här användaren utvecklar och testar anpassad programkod, använder i första hand [!UICONTROL Cloud Manager] för att visa distributionsstatus och har åtkomst till Git-databasen. |
+| Customer Success Engineer | Den här användaren stöder vanligtvis kundframgångar för AMS-kunder och interagerar med [!UICONTROL Cloud Manager] i syfte att köra distributioner som kräver CSE-övervakning (Customer Success Engineer). |
+| Innehållsförfattare | Den här användaren interagerar vanligtvis inte med Cloud Manager, men kan använda Cloud Manager programväljare (som har navigerat från Experience Cloud) för att få åtkomst till Adobe Experience Manager (AEM). |
 
 ## Användarbehörigheter {#user-permissions}
 
@@ -69,4 +69,4 @@ Mer information om hur du konfigurerar användarna finns i dokumentet [Konfigure
 
 >[!TIP]
 >
->Anpassade behörighetsprofiler med konfigurerbara behörigheter är också tillgängliga. Se dokumentet [Anpassade behörigheter](/help/using/custom-permissions.md) för mer information.
+>Anpassade behörighetsprofiler med konfigurerbara behörigheter är också tillgängliga. Mer information finns i dokumentet [Anpassade behörigheter](/help/using/custom-permissions.md).

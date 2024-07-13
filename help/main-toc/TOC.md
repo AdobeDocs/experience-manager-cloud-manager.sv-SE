@@ -17,7 +17,7 @@ ht-degree: 6%
 
 # Dokumentation om Cloud Manager {#content}
 
-+ [Cloud Manager för AMS](/help/introduction.md)
++ [Cloud Manager for AMS](/help/introduction.md)
 + Översikt {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
@@ -27,7 +27,7 @@ ht-degree: 6%
    + [Vanliga frågor om Cloud Manager](/help/overview/faqs.md)
 + Detta behövs {#requirements}
    + [Åtkomsträttigheter](/help/requirements/access-rights.md)
-   + [Källkodslagringsplats](/help/requirements/source-code-repository.md)
+   + [Source Code Repository](/help/requirements/source-code-repository.md)
    + [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md)
    + [Konfigurera användare och roller](/help/requirements/users-and-roles.md)
    + [Anpassade behörigheter](/help/using/custom-permissions.md)
@@ -36,14 +36,14 @@ ht-degree: 6%
    + [Inloggning för första gången](/help/getting-started/first-time-login.md)
    + [Navigering](/help/getting-started/navigation.md)
    + [Programinställningar](/help/getting-started/program-setup.md)
-   + Skapa AEM projekt {#project-creation}
+   + Skapa AEM {#project-creation}
       + [Använda guiden](/help/getting-started/using-the-wizard.md)
       + [Projektinställningar](/help/getting-started/project-setup.md)
       + [Byggmiljön](/help/getting-started/build-environment.md)
    + [Konfigurera grenar](/help/getting-started/configuring-branches.md)
    + [Dispatcher Configurations](/help/getting-started/dispatcher-configurations.md)
-+ Använda {#using}
-   + CI/CD-rör {#pipelines}
++ Använder {#using}
+   + CI/CD-pipeline {#pipelines}
       + [Konfigurera produktionsförlopp](/help/using/production-pipelines.md)
       + [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md)
       + [Stage och Prod Only Pipelines](/help/using/stage-prod-only.md)
@@ -52,7 +52,7 @@ ht-degree: 6%
    + [Testning av kodkvalitet](/help/using/code-quality-testing.md)
    + [Hantera miljöer](/help/using/managing-environments.md)
    + [Övervakningsmiljöer](/help/using/monitoring-environments.md)
-   + [API för Cloud Manager](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/)
+   + [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/)
    + [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/main/README.md)
    + [Meddelanden](/help/using/notifications.md)
    + [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md)
@@ -68,7 +68,7 @@ ht-degree: 6%
    + [Versionshantering för Maven Project](/help/managing-code/maven-project-version.md)
    + [Integrera med Git](/help/managing-code/git-integration.md)
    + [Arbeta med flera Git-databaser](/help/managing-code/multiple-git-repos.md)
-+ Produktuppdateringsguide {#product-update-wizard}
++ Produktuppdateringsguiden {#product-update-wizard}
    + [Ökning](/help/product-update-wizard/overview.md)
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}

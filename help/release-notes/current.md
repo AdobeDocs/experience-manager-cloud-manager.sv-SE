@@ -17,17 +17,17 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 >[!NOTE]
 >
->Den senaste versionsinformationen för Cloud Manager i AEM as a Cloud Service finns på [Cloud Manager i AEM as a Cloud Service versionsinformation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/release-notes-cloud-manager/release-notes-cm-current.html)
+>Den senaste versionsinformationen för Cloud Manager i AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service versionsinformation.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/release-notes-cloud-manager/release-notes-cm-current.html)
 
 ## Releasedatum {#release-date}
 
-Utgivningsdatum för [!UICONTROL Cloud Manager] version 2024.6.0 är 6 juni 2024. Nästa version planeras till den 18 juli 2024.
+Releasedatum för [!UICONTROL Cloud Manager] version 2024.6.0 är 6 juni 2024. Nästa version planeras till den 18 juli 2024.
 
 ## Nyheter {#what-is-new}
 
-* Nu kan du [använda dina egna GitHub-databaser](/help/managing-code/private-repositories.md) som källor för rörledningar med full stapel.
-   * Dessutom kan du utnyttja GitHub-databaser med [Git-undermoduler,](/help/managing-code/git-submodules.md) ger dig bättre kontroll över de automatiskt genererade rörledningarna som används för pull-begärandevalidering och som gör det möjligt att definiera beteenden för viktiga mätvärden under kodsökningsfasen.
-   * [Du kan också välja](/help/managing-code/github-check-config.md) om du vill bevara rapporthistoriken på GitHub, namnge pipelinen och ange pipelinevariabler som passar dina behov.
+* Du kan nu [använda dina egna GitHub-databaser](/help/managing-code/private-repositories.md) som källor för rörledningar i full hög.
+   * Dessutom kan du dra nytta av GitHub-databaser med [git-undermoduler](/help/managing-code/git-submodules.md) som ger dig bättre kontroll över de automatiskt genererade pipelines som används för pull-begärandevalidering och som gör att du kan definiera beteenden för viktiga mått under kodsökningsfasen.
+   * [Du kan också välja ](/help/managing-code/github-check-config.md) om du vill bevara rapporthistoriken på GitHub, namnge pipelinen och ange pipeline-variabler som passar dina behov.
 * Nya OakPal-regler har lagts till i [Cloud Manager Code Quality scan.](/help/using/custom-code-quality-rules.md#oakpal-ui-content-package)
    * Alla nya regler som läggs till från och med juni 2024 är en oföränderlig förändring.
    * Du uppmanas att åtgärda detta så snart som möjligt eftersom dessa nya regler kommer att få rörledningar att misslyckas från och med Cloud Manager augusti 2024.
@@ -38,6 +38,6 @@ Bli en del av vårt program för tidig användning och få möjlighet att testa 
 
 ### endast mellanlagring och endast produktion {#staging-production-only-pipelines}
 
-Stöd för [endast rörledningar för staging och enbart produktion](/help/using/stage-prod-only.md) har introducerats, vilket gör att du kan dela upp rörledningar för driftsättning i full skala i mindre, specialiserade driftsättningar.
+Stöd för [endast mellanlagrings- och endast produktionspipelines](/help/using/stage-prod-only.md) har introducerats, vilket gör att du kan dela upp distributionspipelines för fullständig produktion i mindre, specialiserade distributioner.
 
-Om du vill testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till  `Grp-cloudmanager_splitpipelines@adobe.com` från den e-postadress som är kopplad till din Adobe ID.
+Om du är intresserad av att testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till `Grp-cloudmanager_splitpipelines@adobe.com` från den e-postadress som är kopplad till din Adobe ID.

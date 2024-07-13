@@ -5,7 +5,7 @@ description: Läs om hur utvärderingsfasen i Product Update Wizard bedömer upp
 exl-id: 1ffcbc21-dc36-435d-b83b-0209f81a15e7
 source-git-commit: ce2145da3b9e605e8a41bac28df520f14e255557
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '284'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Utvärderingsfas {#evaluation}
 
-Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]** som utvärderar uppgraderingens komplexitet med mönsterdetektorn direkt i guiden. Efter det här steget har du tillgång till en utvärderingsrapport.
+Den första fasen i produktuppdateringsguiden är **[!UICONTROL Evaluation]**-fasen, som utvärderar uppgraderingskomplexiteten med mönsterdetektorn direkt i guiden. Efter det här steget har du tillgång till en utvärderingsrapport.
 
 I den genererade rapporten kan du kontrollera om författarinstansen är berättigad till en uppgradering genom att identifiera mönster som:
 
@@ -25,11 +25,11 @@ Rapporten är en bedömning av den utvecklingsinsats som ingår i uppgraderingen
 
 >[!NOTE]
 >
->Mer information om mönsterdetektorn finns i dokumentet [Utvärdera uppgraderingskomplexiteten med mönsteravkännaren.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/pattern-detector.html?lang=en)
+>Mer information om mönsteravkännare finns i dokumentet [Utvärderar uppgraderingskomplexiteten med mönsteravkännaren.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/pattern-detector.html?lang=en)
 
 ## Kör utvärderingen {#running}
 
-Mönsterdetektorn kan köras i alla miljöer. För att öka avkänningshastigheten och undvika flaskhalsar i affärskritiska instanser körs den i den staging-miljö som författarinstansen använder.
+Mönsterdetektorn kan köras i alla miljöer. För att öka avkänningsfrekvensen och undvika flaskhalsar i affärskritiska instanser kommer Cloud Manager att köra programmet i utvecklingsmiljön för den som skapat instansen.
 
 Följ de här stegen för att generera utvärderingsrapporten.
 
@@ -39,10 +39,10 @@ Följ de här stegen för att generera utvärderingsrapporten.
 
    ![Kör utvärdering](/help/assets/Run-Evaluation.png)
 
-1. Guiden informerar dig om åtgärdens status. Du kommer att märka **Pågår** eller **slutförd** i förekommande fall när utvärderingsrapporten tas fram.
+1. Guiden informerar dig om åtgärdens status. Du kommer att observera **Pågår** eller **slutförd** när utvärderingsrapporten genereras.
 
 1. När rapporten har skapats kan du klicka på **[!UICONTROL Download report]** för att spara en kopia.
 
-   ![Rapporten har skapats](/help/assets/Evaluation-1.png)
+   ![Rapporten skapades](/help/assets/Evaluation-1.png)
 
-Den aktuella versionen av guiden för produktuppdatering i Cloud Manager har stöd för **Utvärdering** endast fas. De andra fyra faserna, nämligen **Reparation**, **Körning**, **Validering** och **Slutförande** kommer snart.
+Den aktuella versionen av produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen**. De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande**, kommer snart.

@@ -16,9 +16,9 @@ Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, k�
 
 ## Pipeline-kort {#pipeline-card}
 
-The **Pipelines** på **Programöversikt** i Cloud Manager ger dig en översikt över alla dina rörledningar och deras aktuella status.
+Kortet **Pipelines** på sidan **Programöversikt** i Cloud Manager ger dig en översikt över alla dina pipelines och deras aktuella status.
 
-![Pipeline-kort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
+![Förloppskort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
 
 Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följande åtgärder.
 
@@ -29,68 +29,68 @@ Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följan
 
 Längst ned i listan med rörledningar finns allmänna alternativ.
 
-* **Lägg till** - Till [lägg till en ny produktionspipeline](/help/using/production-pipelines.md) eller [lägga till ny icke-produktionspipeline](/help/using/non-production-pipelines.md)
-* **Visa alla** - Tar användaren till **Pipelines** för att visa alla rörledningar i en mer detaljerad tabell
-* **Åtkomst till svarsinformation** - Visar den information som krävs för att få åtkomst till Cloud Manager Git-databasen
-* **Läs mer** - Navigerar till CI/CD pipeline-dokumentationsresurser.
+* **Lägg till** - Om du vill [lägga till en ny produktionspipeline](/help/using/production-pipelines.md) eller [lägga till ny icke-produktionspipeline](/help/using/non-production-pipelines.md)
+* **Visa alla** - Tar användaren till skärmen **Pipelines** för att visa alla pipelines i en mer detaljerad tabell
+* **Åtkomst till repo-information** - Visar den information som krävs för åtkomst till Cloud Manager Git-databasen
+* **Läs mer** - Navigerar till resurser för pipeline-dokumentation för CI/CD.
 
 ## Fönstret Pipelines {#pipelines}
 
-The **Pipelines** visas en fullständig lista över alla pipelines för det valda programmet. Detta är användbart eftersom det ger mer omfattande information än vad som finns i [Pipelinekort.](#pipeline-card)
+I fönstret **Pipelines** visas en fullständig lista över alla pipelines för det valda programmet. Detta är användbart eftersom det ger mer omfattande information än vad som finns tillgängligt i [pipeline-kortet.](#pipeline-card)
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Från **Programöversikt** sida, tryck eller klicka på **Pipelines** för att växla till **Pipelines** -fönstret.
+1. Gå till sidan **Programöversikt**, tryck eller klicka på fliken **Pipelines** för att växla till fönstret **Pipelines**.
 
-1. Här visas en lista över alla rörledningar för programmet samt start och stopp för pipelinekörning på samma sätt som i **Förloppskort**.
+1. Här visas en lista över alla pipelines för programmet samt start- och stoppkörning av pipeline på samma sätt som i **pipelines-kortet**.
 
-Tryck eller klicka på `i` visas information om den senaste eller aktuella körningen av pipeline.
+Om du trycker eller klickar på ikonen `i` visas information om den senaste eller aktuella körningen av pipelinen.
 
 ![Information om pipeline-körning](/help/assets/configure-pipelines/pipeline-status.png)
 
-Tryck eller klicka **Visa detaljer** tar dig till [information om pipelinekörningen.](#view-details)
+Om du trycker eller klickar på **Visa information** visas [information om pipelinekörningen.](#view-details)
 
 ## Aktivitetsfönster {#activity}
 
-The **Verksamhet** visas en fullständig lista över alla pipelines-körningar för det valda programmet.
+Fönstret **Aktiviteter** visar en fullständig lista över alla pipelines-körningar för det valda programmet.
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Från **Programöversikt** sida, tryck eller klicka på **Aktivitet** för att växla till **Aktivitet** -fönstret.
+1. Gå till sidan **Programöversikt**, tryck eller klicka på fliken **Aktivitet** för att växla till fönstret **Aktivitet**.
 
 1. Här visas en lista över alla pipeline-körningar för programmet, inklusive aktuella och historiska körningar.
 
-Tryck eller klicka på `i` visas information om körningen av den valda pipeline-körningen.
+Om du trycker eller klickar på ikonen `i` visas information om körningen av den valda pipeline-körningen.
 
 ![Information om pipeline-körning](/help/assets/configure-pipelines/pipeline-activity.png)
 
-Tryck eller klicka **Visa detaljer** tar dig till [information om pipelinekörningen.](#view-details)
+Om du trycker eller klickar på **Visa information** visas [information om pipelinekörningen.](#view-details)
 
 ## Löpande rörledningar {#running-pipelines}
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Kör** på menyn.
+1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör. Välj **Kör** på menyn.
 
-1. Pipeline-körningen börjar och anges av **Status** kolumn.
+1. Pipeline-körningen börjar och anges av kolumnen **Status**.
 
-Du kan se information om körningen genom att klicka på ellipsknappen igen och välja **[Visa information.](#view-details)**
+Du kan visa information om körningen genom att klicka på ellipsknappen igen och välja **[Visa information.](#view-details)**
 
 Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att klicka på ellipsknappen igen och välja **Avbryt**.
 
 ## Redigera rörledningar {#editing-pipelines}
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du vill redigera och välj sedan **Redigera** på menyn.
+1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du vill redigera och välj sedan **Redigera** på menyn.
 
-1. The **Redigera produktionspipeline** eller **Redigera icke-produktionsförlopp** visas så att du kan redigera samma information som du angav när du skapade pipelinen.
+1. Dialogrutan **Redigera produktionspipeline** eller **Redigera icke-produktionspipeline** visas. Du kan redigera samma information som du angav när du skapade pipelinen.
 
    * På följande sidor finns mer information om alla fält och konfigurationsalternativ som är tillgängliga för pipelines.
       * [Konfigurera produktionsförlopp](/help/using/production-pipelines.md)
       * [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md)
 
-1. Klicka på **Uppdatera** när du är klar med redigeringen.
+1. Klicka på **Uppdatera** när du är klar med redigeringen av pipeline.
 
 >[!NOTE]
 >
@@ -98,9 +98,9 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 
 ## Tar bort pipelines {#deleting-pipelines}
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Ta bort** på menyn.
+1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör. Välj **Ta bort** på menyn.
 
 >[!NOTE]
 >
@@ -108,15 +108,15 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 
 ## Visa detaljer {#view-details}
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till **Pipelines** från **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör, välj **Visa detaljer** på menyn.
+1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid pipelinen som du kör. Välj **Visa information** på menyn.
 
 1. Du dirigeras till informationssidan för den aktuella pipelinen.
 
 ![Information om pipeline](/help/assets/configure-pipelines/pipeline-running-details.png)
 
-Här kan du se status för de olika stegen i pipeline och hämta byggloggar för diagnostik. Se dokumentet [Koddistribution](/help/using/code-deployment.md) för mer information.
+Här kan du se status för de olika stegen i pipeline och hämta byggloggar för diagnostik. Mer information finns i dokumentet [Koddistribution](/help/using/code-deployment.md).
 
 Alla steg i en pipeline-körning visas med de som ännu inte har startats nedtonade. De färdiga stegen visar varaktigheten.
 
@@ -124,15 +124,15 @@ När ett pipeline-steg är klart visas en sammanfattning.
 
 ![Stegsammanfattning](/help/assets/configure-pipelines/pipeline-step.png)
 
-Tryck eller klicka på **Visa detaljer** länk för att visa **Varaktighet** -avsnitt. Detta inbegriper den genomsnittliga rörledningens varaktighet på grundval av den historiska trenden för det programmet.
+Tryck eller klicka på länken **Visa information** för att visa avsnittet **Varaktighet**. Detta inbegriper den genomsnittliga rörledningens varaktighet på grundval av den historiska trenden för det programmet.
 
 ![Varaktighet](/help/assets/configure-pipelines/duration.png)
 
-Om din pipeline innehöll en **Kodskanning** som gav upphov till problem kan du trycka eller klicka på **Ladda ned information** om du vill visa en lista med [kodkvalitetstester](/help/using/code-quality-testing.md) som inte gick igenom.
+Om din pipeline innehöll ett **kodskanningssteg**, vilket orsakade problem, kan du trycka eller klicka på knappen **Hämta information** för att visa en lista med [kodkvalitetstester](/help/using/code-quality-testing.md) som inte godkänts.
 
-![Problem med kodkvalitet](assets/managing-pipelines-code-quality-issues.png)
+![Kodkvalitetsproblem](assets/managing-pipelines-code-quality-issues.png)
 
-A **Plats för projektfil** -kolumnen är tillgänglig i CSV-filen för att ange platsen för den felaktiga koden. Den här kolumnen är den projektrelativa sökvägen, medan **Filplats** kolumnen är Maven-genererad.
+Det finns en **projektfilsplats**-kolumn i CSV-filen som anger platsen för den felaktiga koden. Den här kolumnen är den projektrelativa sökvägen, medan kolumnen **Filplats** är Maven-genererad.
 
 ![Information om problem med genomsökning av projektkod](assets/managing-pipelines-code-quality-details.png)
 

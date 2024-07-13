@@ -16,7 +16,7 @@ Lär dig hur du använder Cloud Manager för att hantera miljöer.
 
 ## Översikt {#overview-page}
 
-The **Ökning** Cloud Manager innehåller **Miljö** panel som visar alla hanterade AEM.
+Sidan **Översikt** i Cloud Manager innehåller rutan **Miljö** med en lista över alla hanterade AEM.
 
 Var och en av miljöerna i listan visar sin associerade status.
 
@@ -24,7 +24,7 @@ Var och en av miljöerna i listan visar sin associerade status.
 
 ## Miljöpanel {#environments-tile}
 
-The **Miljö** visas de produktions- och staging-miljöer som ingår i programmet tillsammans med status.
+Platsen **Miljöer** visar produktions- och mellanlagringsmiljöerna som har etablerats i programmet tillsammans med statusen.
 
 Status är det sammanslagna energiläget över noderna i miljön i följande prioriteringsordning.
 
@@ -33,17 +33,17 @@ Status är det sammanslagna energiläget över noderna i miljön i följande pri
 * Blå - en eller flera noder närmar sig.
 * Gul - En eller flera noder har ett energisparläge som inte är tillgängligt.
 
-![Miljöer](/help/assets/Environments-card-new.png)
+![Miljöpanel](/help/assets/Environments-card-new.png)
 
 ## Hantera miljöer {#managing-environments-with-cloud-manager}
 
-På **Miljö** visas när du trycker eller klickar på raden i en miljö. **Miljö** skärm.
+Tryck eller klicka på raden i en miljö för att visa skärmen **Miljöer** på panelen **Miljöer**.
 
-The **Miljö** visas för varje produktions- och testmiljöer i programmet. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
+Skärmen **Miljö** visar alla produktions- och mellanlagringsmiljöer i programmet. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
 
 >[!NOTE]
 >
->The **STATUS** av noden representerar den virtuella datorns energiläge och återspeglar inte statusen för AEM på servern. Status kan vara:
+>**STATUS** för noden representerar den virtuella datorns energiläge och återspeglar inte statusen för AEM på servern. Status kan vara:
 
 * Grön - löpande
 * Röd - stoppad

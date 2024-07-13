@@ -16,25 +16,25 @@ Lär dig övervaka dina miljöer i Cloud Manager.
 
 ## Måtttrösklar {#thresholds}
 
-Systemövervakning i [!UICONTROL Cloud Manager] gör du genom att observera de enskilda instanserna i en miljö och spåra en mängd olika mätvärden för varje instans. Varje mätvärde har två definierade tröskelvärden: ett tröskelvärde för varning och ett kritiskt tröskelvärde.
+Systemövervakning i [!UICONTROL Cloud Manager] görs genom att observera de enskilda instanserna i en miljö och spåra en mängd mätvärden för varje instans. Varje mätvärde har två definierade tröskelvärden: ett tröskelvärde för varning och ett kritiskt tröskelvärde.
 
-Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd. Om ett mätvärde överskrider varningströskeln (men under det kritiska tröskelvärdet) anses det vara i ett varningstillstånd. Tröskelvärdena fastställs av Adobe Managed Services och kan visualiseras i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services kommer att ändra tröskelvärdena för att matcha specifika kundkrav. Frågor om tröskelvärdena ska ställas till din Customer Success Engineer (CSE).
+Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd. Om ett mätvärde överskrider varningströskeln (men under det kritiska tröskelvärdet) anses det vara i ett varningstillstånd. Tröskelvärdena anges av Adobe Managed Services och kan visas i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services kommer att ändra tröskelvärdena för att matcha specifika kundkrav. Frågor om tröskelvärdena ska ställas till din Customer Success Engineer (CSE).
 
 ## Åtkomst till systemövervakning {#accessing-system-monitoring}
 
 Följ de här stegen för att få åtkomst till systemövervakning.
 
-1. Logga in i Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välja lämplig organisation och lämpligt program.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
-1. Tryck eller klicka på ellipsknappen för det program du vill övervaka och välj **Visa övervakning** alternativ.
+1. Tryck eller klicka på ellipsknappen för programmet som du vill övervaka och välj alternativet **Visa övervakning**.
 
    ![Inställningar](/help/assets/first-timea1.png)
 
-The **Rapporter** öppnas för att visa information om systemövervakning.
+Sidan **Rapporter** öppnas och visar information om systemövervakning.
 
 ## Systemövervakning - översikt {#system-monitoring-overview}
 
-The **Systemövervakning** i **Rapporter** På sidan visas de övervakade miljöerna i programmet och rapporter om deras hälsa på hög nivå i fyra olika kategorier:
+Avsnittet **Systemövervakning** på sidan **Rapporter** visar de övervakade miljöerna i programmet och rapporterar om deras hälsa på hög nivå i fyra olika kategorier:
 
 * Värd
 * Lagring
@@ -70,11 +70,11 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 #### Värd {#host}
 
-* **Belastning per kärna**: Antalet processer som körs av CPU:n eller som befinner sig i vänteläge är i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
+* **Inläsning per kärna**: Det genomsnittliga antalet processer som körs av processorn eller befinner sig i vänteläge under en (load1), fem (load5) och femton (load15) minutersperiod.
 * **Antal processer**: Antal öppna processer
-* **Antal användare**: Antal användare med en aktiv gränssnittssession
-* **Minnesanvändning**: Procentandel av systemminnet som är allokerat
-* **JVM-minne**: Storleken (i megabyte) på det allokerade Java-heap
+* **Antal användare**: Antalet användare med en aktiv gränssnittssession
+* **Minnesanvändning**: Procentandel av systemminnet som för närvarande är allokerat
+* **JVM-minne**: Storleken (i megabyte) på den allokerade Java-heap
 * **Gammalt generationsutrymme**: Procentandel av JVM-gammalt genereringsminne som för närvarande allokeras
 
 #### Nätverk {#network}
@@ -84,17 +84,17 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 #### Lagring {#storage}
 
-* **Diskutrymme**: Använt diskutrymme (i megabyte) för varje monteringspunkt på värden
+* **Diskutrymme**: Använt diskutrymme (i MB) för varje monteringspunkt på värden
    * Det finns olika mätvärden för varje monteringspunkt.
-   * Det finns åtminstone mått för `/` och `/mnt`, men ytterligare monteringspunktsmått kan vara tillgängliga beroende på den specifika instanskonfigurationen.
+   * Det finns åtminstone mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
 * **Mappstorlek**
-* **AEM segmentlager**: Använt diskutrymme (i gigabyte) för AEM segmentarkiv
+* **AEM Segmentarkiv**: Använt diskutrymme (i gigabyte) för AEM segmentarkiv
 
 #### Program {#application}
 
 * **Replikeringsagent**: Tiden (i sekunder) för en testreplikeringshändelse
    * Det finns olika mått för varje replikeringsagent.
-* **Dispatcher Flush**: Antalet objekt som för närvarande finns i kön för rensning av dispatcher
+* **Dispatcher Flush**: Antalet objekt som för närvarande finns i tömningskön för dispatcher
 
 ## SLA-rapportering {#sla-reporting}
 
@@ -106,23 +106,23 @@ I följande diagram visas månatlig SLA-uppnående för 2019.
 
 Precis som med diagram för systemövervakning visar en rullande datapunkt de specifika värdena för den månaden.
 
-![Datapunktens överrullning](/help/assets/SLA-Reports-two.png)
+![Datapunktsöverrullning](/help/assets/SLA-Reports-two.png)
 
-The **Händelseanalys** i det här diagrammet visar den uppsättning incidenter som har inträffat för programmet under det valda året. Varje incident har ett tidsintervall, en orsak och en uppsättning kommentarer.
+Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incidenter som har inträffat för programmet under det valda året. Varje incident har ett tidsintervall, en orsak och en uppsättning kommentarer.
 
 ![Händelseanalys](/help/assets/sla-reporting3.png)
 
 ## SLA-mått {#sla-metrics}
 
-* **Författarkontrakt**: Detta är det SLA som definieras i ditt avtal med Adobe Managed Services för författarnivån.
-* **AMS Author SLA**: Detta är den uppmätta drifttiden för produktionsförfattarens nivåfactoringincidenter som orsakas av Adobe eller våra leverantörer.
-* **Författar-SLA**: Detta är den uppmätta drifttiden för författarskiktet och ignorerar schemalagda driftavbrott, t.ex. underhållsperioder.
-* **Slutanvändarkontrakt**: Detta är det SLA som definieras i ditt avtal med Adobe Managed Services för publiceringsnivån.
-* **AMS-slutanvändaravtal**: Detta är den uppmätta drifttiden för produktionsnivåfaktoriseringsincidenter som orsakas av Adobe eller våra leverantörer.
-* **SLA för slutanvändare**: Det här är den uppmätta drifttiden för publiceringsskiktet som ignorerar schemalagda driftavbrott, t.ex. underhållsperioder.
+* **Författarkontrakt**: Detta är det SLA som definieras i ditt kontrakt med Adobe Managed Services för författarnivån.
+* **AMS Author SLA**: Detta är den uppmätta drifttiden för de factoringincidenter som orsakas av Adobe eller våra leverantörer i produktionsförfattarnivån.
+* **Författar-SLA**: Detta är den uppmätta drifttiden för författarnivån och ignorerar schemalagd drifttid, till exempel underhållsfönster.
+* **Slutanvändaravtal**: Detta är det SLA som definieras i ditt avtal med Adobe Managed Services för publiceringsnivån.
+* **Slutanvändar-SLA för AMS**: Detta är den uppmätta drifttiden för de factoringincidenter i produktionsskiktet som orsakas av Adobe eller våra leverantörer.
+* **SLA för slutanvändare**: Det här är den uppmätta drifttiden för publiceringsskiktet som ignorerar schemalagda driftstopp, till exempel underhållsfönster.
 
 ## Videosjälvstudie {#video-tutorial}
 
-I den här videon får du en översikt över hur du använder diagram från Cloud Manager-rapporter för att visa dem i dina programmiljöer.
+I den här videon får du en översikt över hur du använder diagram från Cloud Manager Reports för en genomgång av dina programmiljöer.
 
 >[!VIDEO](https://video.tv.adobe.com/v/26315/)

@@ -12,36 +12,36 @@ ht-degree: 0%
 
 # Inloggning för första gången {#first-time-login}
 
-När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Manager]är du redo att använda den.
+När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Manager] kan du använda den.
 
 >[!NOTE]
 >
->Beroende på vilka roller som har tilldelats i [!UICONTROL Cloud Manager] och programmets status kan skärmarna som visas variera från illustrationerna.
+>Beroende på rollerna som tilldelats i [!UICONTROL Cloud Manager] och programmets status kan skärmarna som visas variera från illustrationerna.
 
 ## Logga in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in i Cloud Manager på [`my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com/) och du ser en lista över programmen.
+1. Logga in på Cloud Manager på [`my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com/) så ser du en lista över programmen.
 
    ![Cloud Manager-konsol](/help/assets/cloud-manager-console.png)
 
-1. Tryck eller klicka på ditt programkort för att navigera till Cloud Managers **Ökning** sida.
+1. Tryck eller klicka på programmets kort för att navigera till Cloud Manager **Översikt** -sida.
 
-1. Cloud Manager öppnas för **Ökning** sida.
+1. Cloud Manager öppnas på sidan **Översikt**.
 
-   ![Översiktssida för Cloud Manager](/help/assets/program-overview-page.png)
+   ![Cloud Manager - översikt](/help/assets/program-overview-page.png)
 
-1. Om ditt program inte har konfigurerats ännu trycker du på eller klickar på **Installationsprogram** i [uppmaning](/help/getting-started/navigation.md#cta) för att ställa in programbeskrivningen och definiera nyckeltal (KPI). Om ditt program redan är konfigurerat kan CTA erbjuda ytterligare steg.
+1. Om ditt program inte har konfigurerats ännu trycker eller klickar du på **Setup Program** i [call-to-action](/help/getting-started/navigation.md#cta) för att ställa in programbeskrivningen och definiera KPI:er (Key Performance Indicator). Om ditt program redan är konfigurerat kan CTA erbjuda ytterligare steg.
 
 Fortsätt till dokumentet [Programinställningar](/help/getting-started/program-setup.md) för nästa steg i konfigurationen av programmet.
 
-## Cloud Manager-aktivitet {#activity}
+## Cloud Manager Activity {#activity}
 
-Cloud Manager ger en samlad vy över ett programs aktivitet och listar alla CI/CD-pipeline-körningar, både produktion och icke-produktion, vilket ger insyn i den tidigare och nuvarande aktiviteten.
+Cloud Manager ger en samlad bild av ett programs aktivitet och listar alla CI/CD-pipeline-körningar, både i produktion och icke-produktion, vilket ger insyn i både tidigare och nuvarande verksamhet.
 
 >[!TIP]
 >
->Mer information om hur du använder användargränssnittet i Cloud Manager finns i dokumentet [Navigera i användargränssnittet för Cloud Manager.](/help/getting-started/navigation.md)
+>Mer information om hur du använder användargränssnittet i Cloud Manager finns i dokumentet [Navigera i användargränssnittet i Cloud Manager.](/help/getting-started/navigation.md)
 
 >[!NOTE]
 >
->Som standard har en användare med åtkomst till en AEM även användarroll för Cloud Manager. Den här rollen i och för sig själv är inte tillräcklig för att ge användaren åtkomst till vyn för programinformation. En sådan användare med endast användarrollen Cloud Manager kan navigera via programmenyalternativen till URL:en för AEM (om det finns miljöer). Dessa användare måste kontakta sin administratör om de vill ha åtkomst på programnivå.
+>Som standard har en användare som har åtkomst till en AEM även Cloud Manager användarroll. Den här rollen i och för sig själv är inte tillräcklig för att ge användaren åtkomst till vyn för programinformation. En sådan användare med endast Cloud Manager användarroll kan navigera via programmenyalternativen till URL:en för AEM (om det finns miljöer). Dessa användare måste kontakta sin administratör om de vill ha åtkomst på programnivå.

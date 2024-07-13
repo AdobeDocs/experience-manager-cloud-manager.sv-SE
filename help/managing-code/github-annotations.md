@@ -20,7 +20,7 @@ Om du använder [privata databaser](private-repositories.md) för ditt Cloud Man
 
 ![Exempel på GitHub-kontrollanteckningar](assets/github-check-annotations.png)
 
-[Kodkvalitet](/help/using/code-quality-testing.md) problem upptäckta av [SonarQube](/help/using/custom-code-quality-rules.md) är tydligt angivna.
+[Problem med kodkvalitet](/help/using/code-quality-testing.md) som upptäckts av [SonarQube](/help/using/custom-code-quality-rules.md) visas tydligt.
 
 ![Exempel på kommentar om kodproblem](assets/github-check-annotations-example.png)
 
@@ -28,16 +28,16 @@ Den exakta kodraden med problemet anges och du kan klicka på den för att visa 
 
 ![Exempel på kommentar om kodproblem](assets/github-check-annotations-example-code.png)
 
-Alla kommenterade rader sammanställs på **Ändrade filer** -fliken i GitHub pull-begäran. Anteckningar för filer som inte har ändrats i pull-begäran visas i sina egna avsnitt.
+Alla kommenterade rader samlas på fliken **Filer ändrade** i GitHub-pull-begäran. Anteckningar för filer som inte har ändrats i pull-begäran visas i sina egna avsnitt.
 
-![Exempel på anteckningar i filer har ändrats](assets/github-check-annotations-files-changed.png)
+![Exempel på anteckningar i filer har ändrats på fliken ](assets/github-check-annotations-files-changed.png)
 
 ## Kodkvalitetsförlopp {#code-quality-pipelines}
 
-The [kodkvalitet](/help/using/code-quality-testing.md) resultaten visas också i pipeline, som automatiskt aktiveras av Cloud Manager längst ned i **Kontroller** -fliken. Den kan också nås via **Information** av kontrollen av pull-begäran.
+Resultat av [kodkvalitet](/help/using/code-quality-testing.md) visas också i pipeline som automatiskt aktiveras av Cloud Manager längst ned på fliken **Checks**. Den är också tillgänglig från **Information** vid kontrollen av pull-begäran.
 
 ![Exempel på anteckningar](assets/github-check-annotations-code-quality.png)
 
 ![Exempel på anteckningar](assets/github-check-annotations-code-quality-2.png)
 
-Du kan även visualisera problemen i form av en CSV-fil. Detta kan hämtas av [visa information om pipeline-körningen i Cloud Manager.](/help/using/managing-pipelines.md)
+Du kan även visualisera problemen i form av en CSV-fil. Detta kan hämtas av [visa information om pipelinekörningen i Cloud Manager.](/help/using/managing-pipelines.md)
