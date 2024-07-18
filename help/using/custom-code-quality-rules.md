@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av kodkvalitetstestningen, baserat på bästa praxis från AEM.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 48ae41cb23f6a94fbaf31423f9c5cea3bfd45020
+source-git-commit: 8f0f5e819cf312ef25beac815beca92d4e3ac255
 workflow-type: tm+mt
-source-wordcount: '3513'
+source-wordcount: '3544'
 ht-degree: 1%
 
 ---
@@ -862,6 +862,15 @@ AEM Cloud Service tillåter inte obehöriga ändringar av följande OOTB-index:
 * **Sedan**: Version 2024.6.0
 
 AEM Cloud Service tillåter inte att tokeniserare med felaktiga namn skapas i analysatorer. Tokenizers ska alltid definieras som `tokenizer`.
+
+### Konfiguration av indexeringsdefinitioner får inte innehålla blanksteg {#oakpal-indexing-definitions-spaces}
+
+* **Nyckel**: PathSpacesCheck
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.7.0
+
+AEM Cloud Service tillåter inte att indexdefinitioner som innehåller egenskaper med blanksteg skapas.
 
 ## Dispatcher Optimization Tool {#dispatcher-optimization-tool-rules}
 
