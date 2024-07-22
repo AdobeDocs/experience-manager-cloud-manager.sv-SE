@@ -3,9 +3,9 @@ title: Versionsinformation för 2024.7.0
 description: Detta är versionsinformationen för Cloud Manager version 2024.7.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: d536cd96d135e48039f94fd01142a63305b6eeae
+source-git-commit: 87c603a89b99f6984828280cba2041da8c72e839
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '234'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,8 @@ Releasedatum för [!UICONTROL Cloud Manager] version 2024.7.0 är 18 juli 2024. 
 * Produktionspipeline ](/help/using/production-pipelines.md#adding-production-pipeline) och [icke-produktionspipeline](/help/using/non-production-pipelines.md#adding-non-production-pipeline) utlöser **Vid Git-ändringar** för att starta pipelinen vid en implementering är nu tillgängliga för [privata databaser.](/help/managing-code/private-repositories.md)[
 * En förproduktionspipeline kan bara aktiveras manuellt och kan inte konfigureras som **Vid Git-ändringar**.
 * För rörledningar som endast är avsedda för produktion omfattar listan över befordrbara exekveringar de som har en artefaktversion som är större än artefaktversionen som är distribuerad i produktionsmiljön.
+* [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html) har uppdaterats till [version 49.](https://github.com/adobe/aem-project-archetype/tree/aem-project-archetype-49)
+
 
 ## Tidig användning {#early-adoption}
 
