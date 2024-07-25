@@ -2,12 +2,13 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: 85c1e22609dc5646d3de0ccc71e9423d4243e13a
+source-git-commit: d4d9a9f38c5a969f276140dca98731c670547a3d
 workflow-type: tm+mt
-source-wordcount: '1292'
+source-wordcount: '1439'
 ht-degree: 0%
 
 ---
+
 
 # Navigera i gränssnittet för molnhanteraren {#navigation}
 
@@ -15,10 +16,10 @@ Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navige
 
 Användargränssnittet för molnhantering består huvudsakligen av två grafiska gränssnitt:
 
-* [Konsolen Mina program](#my-programs) där du kan visa och hantera alla program.
+* [Konsolen Mina program](#my-programs-console) där du kan visa och hantera alla program.
 * [Fönstret Programöversikt](#program-overview) där du kan se information om och hantera ett enskilt program.
 
-## My Programs Console {#my-programs}
+## My Programs Console {#my-programs-console}
 
 När du loggar in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och väljer lämplig organisation, kommer du till konsolen **Mina program**.
 
@@ -27,8 +28,13 @@ När du loggar in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.c
 Konsolen Mina program ger en översikt över alla program som du har tillgång till i den valda organisationen. Den består av flera delar.
 
 1. [Verktygsfält](#toolbars-my-programs-toolbars) för organisationsval, aviseringar och kontoinställningar
-1. [Statistik och uppmaning](#statistics) för en översikt över din senaste aktivitet
-1. [Program och licens](#programs-license) för att förstå din aktuella licensstatus och hantera dina program
+1. Flikar som gör att du kan växla den aktuella vyn av dina program.
+   * Vyn **Hem** (standard) som väljer vyn **Mina program** med en översikt över alla program
+   * **Licens** som har åtkomst till License Dashboard. Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
+      * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
+   * Observera att flikarna som standard är stängda och kan visas med hjälp av hamburgermenyn i [Cloud Manager-huvudet.](#cloud-manager-header)
+1. [Call-to-Actions och Statistics](#cta-statistics) för en översikt över din senaste aktivitet
+1. [**Mina program** avsnitt](#my-programs-section) med en översikt över alla dina program
 1. [Snabblänkar](#quick-links) för enkel åtkomst till relaterade resurser
 
 >[!TIP]
@@ -45,6 +51,9 @@ Det första är Cloud Manager-rubriken som är beständig när du navigerar i Cl
 
 ![Experience Cloud-huvudet](assets/experience-cloud-header.png)
 
+1. Hamburger-menyn som ger åtkomst till flikar som kan ta dig till specifika delar av ett enskilt program eller växla mellan License Dashboard och **[My Programs](#my-programs-console)** -konsolen beroende på sammanhanget.
+   * Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
+   * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
 1. Med Cloud Manager-knappen kommer du tillbaka till My Programs-konsolen i Cloud Manager oavsett var du befinner dig i Cloud Manager.
 1. Tryck eller klicka på knappen Feedback för att ge Adobe feedback om Cloud Manager.
 1. Organisationsväljaren visar den organisation du är inloggad på (i det här exemplet Foundation Internal). Tryck eller klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
@@ -64,9 +73,9 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
    * Observera att introduktionsresan är utformad för AEM as a Cloud Service och inte för Cloud Service för AMS, men många koncept är desamma.
 1. Åtgärdsknappen innehåller sammanhangsberoende åtgärder som att skapa ett nytt program.
 
-### Statistik {#statistics}
+### Samtal-till-åtgärder och statistik {#cta-statistics}
 
-Statistikavsnittet innehåller sammanställda data för din organisation, t.ex. om du har konfigurerat dina program kan statistik över dina aktiviteter under de senaste 90 dagarna visa, inklusive:
+Avsnittet om uppmaning till handling och statistik innehåller aggregerade data för din organisation, t.ex. om du har konfigurerat dina program, kan statistik över dina aktiviteter under de senaste 90 dagarna visa, inklusive:
 
 * Antal [distributioner](/help/using/code-deployment.md)
 * Antal [kodkvalitetsproblem](/help/using/code-quality-testing.md) som identifierats
@@ -74,13 +83,13 @@ Statistikavsnittet innehåller sammanställda data för din organisation, t.ex. 
 
 Eller om du just har börjat konfigurera organisationen kan det finnas tips om nästa steg eller dokumentationsresurser.
 
-### Program och licenser {#programs-license}
+### Avsnittet Mina program {#my-programs-section}
 
-Huvudinnehållet i My Programs-konsolen är listan över program och licensens status.
+Huvudinnehållet i My Programs-konsolen är avsnittet **Mina program** som listar dina program som enskilda kort. Tryck eller klicka på ett kort för att komma åt sidan **Programöversikt** i programmet för mer information om programmet.
 
-#### Fliken Program {#programs}
-
-På fliken **Program** visas kort som representerar de program du har åtkomst till. Tryck eller klicka på ett kort för att komma åt sidan **Programöversikt** i programmet för mer information om programmet.
+>[!NOTE]
+>
+>Beroende på vilka behörigheter du har kanske du inte kan välja vissa program.
 
 Använd sorteringsalternativen för att bättre hitta det program du behöver.
 
@@ -94,13 +103,17 @@ Använd sorteringsalternativen för att bättre hitta det program du behöver.
 * Stödrastervisning (standard)
 * Listvy
 
+#### Programkort {#program-cards}
+
 Varje program representeras av ett kort (eller en rad i en tabell) som ger en översikt över programmet och snabblänkar för att vidta åtgärder.
 
 ![Programkort](assets/program-card.png)
 
 * Programavbildning (om den är konfigurerad)
 * Programnamn
-* Tjänsttyp: **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home) eller **Experience Manager** för AMS-program
+* Tjänsttyp:
+   * **Experience Manager** för AMS-program
+   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home)
 * Status
 * Konfigurerade lösningar
 * Skapad den
@@ -118,17 +131,13 @@ Ellipsikonen ger dig tillgång till ytterligare åtgärder som du kan vidta i pr
 * [Redigera programmet](/help/getting-started/program-setup.md)
 * Visa övervakning
 
-#### Fliken Licens {#license-tab}
-
-Fliken **Licens** ger dig snabb åtkomst till kontrollpanelen för licenser.
-
 ### Snabblänkar {#quick-links}
 
 I avsnittet med snabblänkar får du tillgång till resurser som du använder ofta.
 
 ## Programöversiktsfönster {#program-overview}
 
-När du har valt ett program i konsolen Mina program visas programöversikten.
+När du har valt ett program i konsolen [**Mina program** ](#my-programs-console) visas programöversikten.
 
 ![Programöversikt](assets/program-overview.png)
 
