@@ -1,17 +1,16 @@
 ---
-source-git-commit: db9e8c7fe003f2199b4bc529f6f1768681c35654
+source-git-commit: 2a25b0482800d4c5428a5595c9699dceed327043
 workflow-type: tm+mt
-translation-type: tm+mt
-source-wordcount: '75'
+source-wordcount: '74'
 ht-degree: 0%
 
 ---
-# Dokumentation för Adobe Experience Manager Cloud Manager
+# Adobe Experience Manager Cloud Manager Documentation
 
-Det här är databasen för Adobe Experience Manager Cloud Manager-dokumentation.
+Här hittar du Adobe Experience Manager Cloud Manager-dokumentation.
 
 Dina bidrag till dokumentationen är välkomna. Se följande resurser:
 
-* [contribute.](contributing.md) mdEn översikt över hur du kan bidra till dokumentationen.
-* [guidelines.](guidelines.md) mdEn översikt över vad som förväntas i bidragen och hur du komponerar dokumentationsbidragen.
-* [code-of-behavior.](code-of-conduct.md) mdFör en översikt över de beteendestandarder vi förväntar oss när du bidrar till detta dokumentationsprojekt.
+* [contribute.md](contributing.md) En översikt över hur du kan bidra till dokumentationen.
+* [guidelines.md](guidelines.md) En översikt över vad som förväntas i bidragen och hur du komponerar dokumentationsbidragen.
+* [code-of-behavior.md](code-of-conduct.md) En översikt över beteendestandarder som Adobe förväntar sig när du bidrar till det här dokumentationsprojektet.

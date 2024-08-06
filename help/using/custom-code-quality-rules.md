@@ -1,11 +1,11 @@
 ---
 title: Anpassade regler för kodkvalitet
-description: Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av kodkvalitetstestningen, baserat på bästa praxis från AEM.
+description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 8f0f5e819cf312ef25beac815beca92d4e3ac255
+source-git-commit: 2a25b0482800d4c5428a5595c9699dceed327043
 workflow-type: tm+mt
-source-wordcount: '3544'
-ht-degree: 1%
+source-wordcount: '3483'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager 
 
 >[!NOTE]
 >
->Kodexemplen här är endast avsedda som illustrationer. Mer information om koncept och kvalitetsregler finns i [SonarQube&#39;s Concepts-dokumentationen](https://docs.sonarqube.org/latest/).
+>Kodexemplen här är endast avsedda som illustrationer. Mer information om koncept och kvalitetsregler finns i [SonarQube&#39;s Concepts-dokumentationen](https://docs.sonarsource.com/sonarqube/latest/).
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ Följande avsnitt innehåller information om SonarQube-regler som körs av Cloud
 
 Metoderna `Thread.stop()` och `Thread.interrupt()` kan skapa problem som är svåra att återge och ibland säkerhetsproblem. Deras användning bör övervakas noggrant och valideras. I allmänhet är meddelandeöverföring ett säkrare sätt att uppnå samma sak.
 
-#### Icke-kompatibel kod {#non-compliant-code}
+#### Kod som inte uppfyller kraven {#non-compliant-code}
 
 ```java
 public class DontDoThis implements Runnable {
@@ -82,7 +82,7 @@ public class DoThis implements Runnable {
 }
 ```
 
-### Använd inte formatsträngar som kan vara externt styrda {#do-not-use-format-strings-which-may-be-externally-controlled}
+### Använd inte formatsträngar som kan vara externt kontrollerade {#do-not-use-format-strings-which-may-be-externally-controlled}
 
 * **Nyckel**: CQRules:CWE-134
 * **Typ**: Sårbarhet
@@ -91,7 +91,7 @@ public class DoThis implements Runnable {
 
 Om du använder en formatsträng från en extern källa (till exempel en begärandeparameter eller användargenererat innehåll) kan programmet utsättas för denial of service-attacker. Det finns tillfällen då en formatsträng kan styras externt, men bara tillåts från betrodda källor.
 
-#### Icke-kompatibel kod {#non-compliant-code-1}
+#### Kod som inte uppfyller kraven {#non-compliant-code-1}
 
 ```java
 protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) {
@@ -108,9 +108,9 @@ protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse 
 * **Allvarlighetsgrad**: Kritisk
 * **Sedan**: Version 2018.6.0
 
-När du kör HTTP-begäranden inifrån ett AEM-program är det viktigt att se till att rätt tidsgränser är konfigurerade för att undvika onödig trådförbrukning. Tyvärr är standardbeteendet för både Java™ standardklient för HTTP, `java.net.HttpUrlConnection`, och den vanligaste Apache HTTP Components-klienten att aldrig timeout, så timeout måste anges explicit. Det bästa sättet är att dessa tidsgränser inte överskrider 60 sekunder.
+När HTTP-begäranden körs inifrån ett AEM-program är det viktigt att rätt tidsgränser är konfigurerade för att undvika onödig trådförbrukning. Tyvärr har varken Java™ standardklient för HTTP, `java.net.HttpUrlConnection` eller den vanliga Apache HTTP Components-klienten någon standardtimeout. Därför måste timeout konfigureras explicit. Det bästa sättet är att dessa tidsgränser inte överskrider 60 sekunder.
 
-#### Icke-kompatibel kod {#non-compliant-code-2}
+#### Kod som inte uppfyller kraven {#non-compliant-code-2}
 
 ```java
 @Reference
@@ -176,18 +176,18 @@ public void orDoThis() {
 }
 ```
 
-### ResourceResolver-objekt ska alltid stängas {#resourceresolver-objects-should-always-be-closed}
+### Objekten `ResourceResolver` ska alltid stängas {#resourceresolver-objects-should-always-be-closed}
 
 * **Nyckel**: CQRules:CQBP-72
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2018.4.0
 
-`ResourceResolver` objekt som hämtats från `ResourceResolverFactory` förbrukar systemresurser. Även om det finns åtgärder för att återta dessa resurser när `ResourceResolver` inte längre används, är det mer effektivt att uttryckligen stänga alla öppna `ResourceResolver`-objekt genom att anropa metoden `close()`.
+`ResourceResolver` objekt som hämtats från `ResourceResolverFactory` använder systemresurser. Även om det finns åtgärder för att återta dessa resurser när `ResourceResolver` inte längre används, är det mer effektivt att stänga öppna `ResourceResolver`-objekt explicit genom att anropa metoden `close()`.
 
-En vanlig missuppfattning är att `ResourceResolver` objekt som har skapats med en befintlig JCR-session inte får stängas explicit eller att detta stänger den underliggande JCR-sessionen. Detta är inte fallet. Oavsett hur en `ResourceResolver` öppnas bör den stängas när den inte längre används. Eftersom `ResourceResolver` implementerar gränssnittet `Closeable` går det också att använda syntaxen `try-with-resources` i stället för att anropa `close()` explicit.
+En vanlig missuppfattning är att `ResourceResolver` objekt som skapats med en befintlig JCR-session inte ska stängas explicit. En annan missuppfattning är att när du stänger dessa objekt stängs den underliggande JCR-sessionen. Så är inte fallet. Oavsett hur en `ResourceResolver` öppnas bör den stängas när den inte längre används. Eftersom `ResourceResolver` implementerar gränssnittet `Closeable` går det också att använda syntaxen `try-with-resources` i stället för att anropa `close()` explicit.
 
-#### Icke-kompatibel kod {#non-compliant-code-4}
+#### Kod som inte uppfyller kraven {#non-compliant-code-4}
 
 ```java
 public void dontDoThis(Session session) throws Exception {
@@ -218,16 +218,16 @@ public void orDoThis(Session session) throws Exception {
 }
 ```
 
-### Använd inte SSLING-serversökvägar för att registrera servrar {#do-not-use-sling-servlet-paths-to-register-servlets}
+### Använd inte slingserversökvägar för att registrera servrar {#do-not-use-sling-servlet-paths-to-register-servlets}
 
 * **Nyckel**: CQRules:CQBP-75
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2018.4.0
 
-Så som beskrivs i [Sling-dokumentationen](https://sling.apache.org/documentation/the-sling-engine/servlets.html) rekommenderas inte bindningar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
+Så som beskrivs i [Sling-dokumentationen](https://sling.apache.org/documentation/the-sling-engine/servlets.html) rekommenderas inte bindningsservrar av sökvägar. Sökvägsbundna servrar kan inte använda vanliga JCR-åtkomstkontroller och därför krävs ytterligare säkerhetsproblem. I stället för att använda sökvägsbundna servrar rekommenderar vi att du skapar noder i databasen och registrerar servlets efter resurstyp.
 
-#### Icke-kompatibel kod {#non-compliant-code-5}
+#### Kod som inte uppfyller kraven {#non-compliant-code-5}
 
 ```java
 @Component(property = {
@@ -238,16 +238,16 @@ public class DontDoThis extends SlingAllMethodsServlet {
 }
 ```
 
-### Infångade undantag ska vara antingen loggade eller utlösta, inte båda {#caught-exceptions-should-be-logged-or-thrown-but-not-both}
+### Undantag som fångas upp ska loggas eller kastas, inte båda {#caught-exceptions-should-be-logged-or-thrown-but-not-both}
 
 * **Nyckel**: CQRules:CQBP-44—CatchAndeitherLogOrThrow
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-I allmänhet bör ett undantag loggas exakt en gång. Om du loggar undantag flera gånger kan det leda till missförstånd eftersom det är oklart hur många gånger ett undantag inträffade. Det vanligaste mönstret som leder till detta är loggning och generering av ett fångat undantag.
+I allmänhet bör ett undantag loggas exakt en gång. Loggningsundantag kan orsaka förvirring eftersom det är oklart hur många gånger ett undantag inträffade. Det vanligaste mönstret som leder till det här problemet är loggning och generering av ett fångat undantag.
 
-#### Icke-kompatibel kod {#non-compliant-code-6}
+#### Kod som inte uppfyller kraven {#non-compliant-code-6}
 
 ```java
 public void dontDoThis() throws Exception {
@@ -280,16 +280,16 @@ public void orDoThis() throws MyCustomException {
 }
 ```
 
-### Undvik loggsatser som följs av Throw-satser {#avoid-having-a-log-statement-immediately-followed-by-a-throw-statement}
+### Undvik loggsatser som följs av throw-satser {#avoid-having-a-log-statement-immediately-followed-by-a-throw-statement}
 
 * **Nyckel**: CQRules:CQBP-44 - ConsecutiousLogAndThrow
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Ett annat vanligt sätt att undvika är att logga ett meddelande och sedan omedelbart generera ett undantag. Detta innebär vanligtvis att undantagsmeddelandet kommer att dupliceras i loggfiler.
+Ett annat vanligt sätt att undvika är att logga ett meddelande och sedan omedelbart generera ett undantag. Det här problemet tyder vanligtvis på att undantagsmeddelandet kommer att dupliceras i loggfiler.
 
-#### Icke-kompatibel kod {#non-compliant-code-7}
+#### Kod som inte uppfyller kraven {#non-compliant-code-7}
 
 ```java
 public void dontDoThis() throws Exception {
@@ -306,19 +306,19 @@ public void doThis() throws Exception {
 }
 ```
 
-### Undvik inloggning vid INFO vid hantering av GET- eller HEAD-förfrågningar {#avoid-logging-at-info-when-handling-get-or-head-requests}
+### Undvik att logga på INFO när du hanterar GET- eller HEAD-förfrågningar {#avoid-logging-at-info-when-handling-get-or-head-requests}
 
 * **Nyckel**: CQRules:CQBP-44—LogInfoInGetOrHeadRequests
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 
-I allmänhet bör INFO-loggnivån användas för att avgränsa viktiga åtgärder och AEM är som standard konfigurerad för att logga på INFO-nivå eller högre. Metoderna GET och HEAD bör aldrig vara skrivskyddade och därför inte utgöra några viktiga åtgärder. Loggning på INFO-nivå som svar på GET- eller HEAD-förfrågningar skapar troligen avsevärt loggbrus, vilket gör det svårare att identifiera användbar information i loggfiler. Loggning vid hantering av GET- eller HEAD-begäranden bör finnas antingen på WARN- eller FEL-nivå när något har gått fel eller på DEBUG- eller TRACE-nivå om mer detaljerad felsökningsinformation skulle vara till hjälp.
+I allmänhet bör INFO-loggnivån användas för att avgränsa viktiga åtgärder och AEM är som standard konfigurerad för att logga på INFO-nivå eller högre. Metoderna GET och HEAD bör aldrig vara skrivskyddade och därför inte utgöra några viktiga åtgärder. Loggning på INFO-nivå som svar på GET- eller HEAD-förfrågningar skapar troligen avsevärt loggbrus, vilket gör det svårare att identifiera användbar information i loggfiler. Vid hantering av GET- eller HEAD-begäranden ska loggningen vara på WARN- eller ERROR-nivå om något har gått fel. Mer detaljerad felsökningsinformation finns i loggningen på nivån DEBUG eller TRACE.
 
 >[!NOTE]
 >
->Detta gäller inte loggning av access.log-typ för varje begäran.
+>Det här arbetsflödet gäller inte loggning av access.log-typ för varje begäran.
 
-#### Icke-kompatibel kod {#non-compliant-code-8}
+#### Kod som inte uppfyller kraven {#non-compliant-code-8}
 
 ```java
 public void doGet() throws Exception {
@@ -334,16 +334,16 @@ public void doGet() throws Exception {
 }
 ```
 
-### Använd inte Exception.getMessage() som första parameter i en loggningssats {#do-not-use-exception-getmessage-as-the-first-parameter-of-a-logging-statement}
+### Använd inte `Exception.getMessage()` som den första parametern i en loggningssats {#do-not-use-exception-getmessage-as-the-first-parameter-of-a-logging-statement}
 
 * **Nyckel**: CQRules:CQBP-44—ExceptionGetMessageIsFirstLogParam
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Som en god praxis bör loggmeddelanden innehålla sammanhangsberoende information om var i programmet ett undantag har inträffat. Kontexten kan också bestämmas med stackspår, men i allmänhet blir loggmeddelandet lättare att läsa och förstå. När du loggar ett undantag är det därför en dålig vana att använda undantagets meddelande som loggmeddelande. Undantagsmeddelandet innehåller det som gick fel medan loggmeddelandet bör användas för att tala om för en loggläsare vad programmet gjorde när undantaget inträffade. Undantagsmeddelandet är fortfarande loggat. Genom att ange ett eget meddelande blir loggarna lättare att förstå.
+Som en god praxis bör loggmeddelanden innehålla sammanhangsberoende information om var i programmet ett undantag har inträffat. Kontexten kan också bestämmas med stackspår, men i allmänhet blir loggmeddelandet lättare att läsa och förstå. När du loggar ett undantag är det därför en dålig vana att använda undantagets meddelande som loggmeddelande. Undantagsmeddelandet ska innehålla detaljerad information om vad som gick fel. Loggmeddelandet bör däremot informera läsaren om vad programmet gjorde när undantaget inträffade. Undantagsmeddelandet är fortfarande loggat. Genom att ange ett eget meddelande blir loggarna lättare att förstå.
 
-#### Icke-kompatibel kod {#non-compliant-code-9}
+#### Kod som inte uppfyller kraven {#non-compliant-code-9}
 
 ```java
 public void dontDoThis() {
@@ -367,16 +367,16 @@ public void doThis() {
 }
 ```
 
-### Loggning in Catch Blocks Should at the WARN or ERROR Level {#logging-in-catch-blocks-should-be-at-the-warn-or-error-level}
+### Inloggning av catch-block ska ske på WARN- eller ERROR-nivå {#logging-in-catch-blocks-should-be-at-the-warn-or-error-level}
 
 * **Nyckel**: CQRules:CQBP-44—WrongLogLevelInCatchBlock
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Som namnet antyder bör Java™-undantag alltid användas i undantagsfall. Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp: antingen WARN eller ERROR. Detta garanterar att meddelandena visas korrekt i loggarna.
+Som namnet antyder bör Java™-undantag alltid användas i undantagsfall. Därför är det viktigt att loggmeddelanden loggas på lämplig nivå när ett undantag fångas upp: antingen WARN eller ERROR. På så sätt ser du till att meddelandena visas korrekt i loggarna.
 
-#### Icke-kompatibel kod {#non-compliant-code-10}
+#### Kod som inte uppfyller kraven {#non-compliant-code-10}
 
 ```java
 public void dontDoThis() {
@@ -407,9 +407,9 @@ public void doThis() {
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Kontext är viktig när du ska förstå loggmeddelanden. Om `Exception.printStackTrace()` används kommer endast stackspårningen att skickas till standardfelströmmen, vilket innebär att all kontext förloras. I ett program med flera trådar, som AEM om flera undantag skrivs ut med den här metoden parallellt, kan stackspårningarna överlappa vilket kan skapa en betydande förvirring. Undantag bör endast loggas via loggningsramverket.
+Kontext är viktig när du ska förstå loggmeddelanden. Om `Exception.printStackTrace()` används kommer endast stackspårningen att skickas till standardfelströmmen, vilket innebär att all kontext förloras. Om flera undantag skrivs ut med den här metoden parallellt i ett program med flera trådar, som AEM, kan stackspårningarna överlappa, vilket kan skapa stor förvirring. Undantag bör endast loggas via loggningsramverket.
 
-#### Icke-kompatibel kod {#non-compliant-code-11}
+#### Kod som inte uppfyller kraven {#non-compliant-code-11}
 
 ```java
 public void dontDoThis() {
@@ -433,7 +433,7 @@ public void doThis() {
 }
 ```
 
-### Utdata inte till standardutdata eller standardfel {#do-not-output-to-standard-output-or-standard-error}
+### Exportera inte till standardutdata eller standardfel {#do-not-output-to-standard-output-or-standard-error}
 
 * **Nyckel**: CQRules:CQBP-44—LogLevelConsolePrinters
 * **Typ**: kodmeddelande
@@ -442,7 +442,7 @@ public void doThis() {
 
 Loggning AEM alltid ske via loggningsramverket SLF4J. Om du matar ut direkt till standardutdata eller standardfelströmmar förlorar du den strukturella och kontextuella information som tillhandahålls av loggningsramverket och kan ibland orsaka prestandaproblem.
 
-#### Icke-kompatibel kod {#non-compliant-code-12}
+#### Kod som inte uppfyller kraven {#non-compliant-code-12}
 
 ```java
 public void dontDoThis() {
@@ -466,16 +466,16 @@ public void doThis() {
 }
 ```
 
-### Undvik hårdkodade/program- och /libs-sökvägar {#avoid-hardcoded-apps-and-libs-paths}
+### Undvik hårdkodade `/apps`- och `/libs`-sökvägar {#avoid-hardcoded-apps-and-libs-paths}
 
 * **Nyckel**: CQRules:CQBP-71
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
-Vanligtvis ska sökvägar som börjar med `/libs` och `/apps` inte vara hårdkodade eftersom de sökvägar de refererar till oftast lagras som sökvägar i förhållande till sökvägen för Sling (som är inställd på `/libs,/apps` som standard). Om du använder den absoluta sökvägen kan det orsaka subtila defekter som bara skulle visas senare i projektets livscykel.
+Banor som börjar med `/libs` och `/apps` bör vanligtvis inte hårdkodas. Dessa sökvägar lagras vanligtvis i förhållande till sökvägen till Sling, som har standardvärdet `/libs,/apps`. Om du använder den absoluta sökvägen kan det orsaka subtila defekter som bara skulle visas senare i projektets livscykel.
 
-#### Icke-kompatibel kod {#non-compliant-code-13}
+#### Kod som inte uppfyller kraven {#non-compliant-code-13}
 
 ```java
 public boolean dontDoThis(Resource resource) {
@@ -494,7 +494,7 @@ public void doThis(Resource resource) {
 ### Sling Scheduler ska inte användas {#sonarqube-sling-scheduler}
 
 * **Nyckel**: CQRules:AMSCORE-554
-* **Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
+* **Typ**: Kompatibilitet med kod/Cloud Service
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -505,7 +505,7 @@ Läs [dokumentationen för Apache Sling-händelser och jobbhantering](https://sl
 ### AEM inaktuella API:er ska inte användas {#sonarqube-aem-deprecated}
 
 * **Nyckel**: AMSCORE-553
-* **Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
+* **Typ**: Kompatibilitet med kod/Cloud Service
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -521,22 +521,22 @@ I följande avsnitt beskrivs de OakPAL-kontroller som utförs av Cloud Manager.
 
 >[!NOTE]
 >
->OakPAL är ett ramverk som validerar innehållspaket med en fristående Oak-databas. Den utvecklades av en AEM partner och vinnare av 2019 AEM Rockstar North America-priset.
+>OakPAL är ett ramverk som validerar innehållspaket med en fristående Oak-databas. En AEM partner och en vinnare av 2019 AEM Rock Star North America-utmärkelsen utvecklade den.
 
-### Produkt-API:er som antecknas med @ProviderType ska inte implementeras eller utökas av kunder {#product-apis-annotated-with-providertype-should-not-be-implemented-or-extended-by-customers}
+### Kunder bör inte implementera eller utöka produkt-API:er som kommenteras med @ProviderType {#product-apis-annotated-with-providertype-should-not-be-implemented-or-extended-by-customers}
 
 * **Nyckel**: CQBP-84
 * **Typ**: Fel
 * **Allvarlighetsgrad**: Kritisk
 * **Sedan**: Version 2018.7.0
 
-AEM-API:t innehåller Java™-gränssnitt och -klasser som endast är avsedda att användas, men inte implementeras, av anpassad kod. Gränssnittet `com.day.cq.wcm.api.Page` implementeras till exempel endast av AEM.
+AEM-API:t innehåller Java™-gränssnitt och -klasser som endast är avsedda att användas, men inte implementeras, av anpassad kod. Endast AEM implementerar gränssnittet `com.day.cq.wcm.api.Page`.
 
-När nya metoder läggs till i dessa gränssnitt påverkar inte dessa ytterligare metoder befintlig kod som använder dessa gränssnitt, och därför anses tillägg av nya metoder i dessa gränssnitt vara bakåtkompatibelt. Men om anpassad kod implementerar ett av dessa gränssnitt har den anpassade koden introducerat en bakåtkompatibilitetsrisk för kunden.
+Om du lägger till nya metoder i dessa gränssnitt påverkas inte befintlig kod, vilket gör att nya metoder kan läggas till baklänges. Men om anpassad kod implementerar ett av dessa gränssnitt har den anpassade koden introducerat en bakåtkompatibilitetsrisk för kunden.
 
-Gränssnitt och klasser som bara är avsedda att implementeras av AEM kommenteras med `org.osgi.annotation.versioning.ProviderType` eller ibland en liknande äldre anteckning `aQute.bnd.annotation.ProviderType`. Den här regeln identifierar de fall där ett sådant gränssnitt implementeras eller en klass utökas av anpassad kod.
+AEM kommenterar gränssnitt och klasser som endast är avsedda för implementering med `org.osgi.annotation.versioning.ProviderType` eller, ibland, den gamla anteckningen `aQute.bnd.annotation.ProviderType`. Den här regeln identifierar instanser där anpassad kod implementerar ett sådant gränssnitt eller utökar en klass.
 
-#### Icke-kompatibel kod {#non-compliant-code-3}
+#### Kod som inte uppfyller kraven {#non-compliant-code-3}
 
 ```java
 import com.day.cq.wcm.api.Page;
@@ -546,25 +546,25 @@ public class DontDoThis implements Page {
 }
 ```
 
-### Kundpaket får inte skapa eller ändra noder under /libs {#oakpal-customer-package}
+### Kundpaket ska inte skapa eller redigera noder under `/libs` {#oakpal-customer-package}
 
 * **Nyckel**: BannedPath
 * **Typ**: Fel
 * **Allvarlighetsgrad**: Blockerare
 * **Sedan**: Version 2019.6.0
 
-Det har varit en god praxis sedan länge att innehållsträdet `/libs` i AEM innehållsdatabas ska betraktas som skrivskyddat av kunder. Att ändra noder och egenskaper under `/libs` innebär en betydande risk för större och mindre uppdateringar. Ändringar av `/libs` görs endast av Adobe via officiella kanaler.
+Det har varit en god praxis sedan länge att innehållsträdet `/libs` i AEM innehållsdatabas ska betraktas som skrivskyddat av kunder. Att ändra noder och egenskaper under `/libs` innebär en betydande risk för större och mindre uppdateringar. Ändringar i `/libs` görs endast av Adobe via officiella kanaler.
 
-### Paket får inte innehålla dubbletter av OSGi-konfigurationer {#oakpal-package-osgi}
+### Paket får inte innehålla dubbla OSGi-konfigurationer {#oakpal-package-osgi}
 
 * **Nyckel**: DuplicateOsgiConfigurations
 * **Typ**: Fel
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2019.6.0
 
-Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-komponent konfigureras flera gånger. Detta skapar en tvetydighet om vilken konfiguration som kan användas. Den här regeln är&quot;körningsmedveten&quot; eftersom den bara identifierar problem där samma komponent har konfigurerats flera gånger i samma körningsläge eller en kombination av körningslägen.
+Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-komponent konfigureras flera gånger. Det här problemet skapar en tvetydighet om vilken konfiguration som kan användas. Den här regeln är&quot;körningsmedveten&quot; eftersom den bara identifierar problem där samma komponent har konfigurerats flera gånger i samma körningsläge eller en kombination av körningslägen.
 
-#### Icke-kompatibel kod {#non-compliant-code-osgi}
+#### Kod som inte uppfyller kraven {#non-compliant-code-osgi}
 
 ```text
 + apps
@@ -592,11 +592,11 @@ Ett vanligt problem som inträffar i komplexa projekt är när samma OSGi-kompon
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2019.6.0
 
-Av säkerhetsskäl kan sökvägar som innehåller `/config/` och `/install/` bara läsas av administrativa användare i AEM och bör endast användas för OSGi-konfigurationer och OSGi-paket. Om du placerar andra typer av innehåll under banor som innehåller dessa segment, kommer programbeteendet att variera oavsiktligt mellan administrativa och icke-administrativa användare.
+Av säkerhetsskäl kan sökvägar som innehåller `/config/` och `/install/` bara läsas av administrativa användare i AEM och bör endast användas för OSGi-konfigurationer och OSGi-paket. Om du placerar andra typer av innehåll under banor som innehåller de här segmenten, kommer programbeteendet att variera oavsiktligt mellan administrativa och icke-administrativa användare.
 
-Ett vanligt problem är att använda noder med namnet `config` i komponentdialogrutor eller när du anger RTF-redigerarkonfigurationen för intern redigering. För att lösa detta bör den felaktiga noden namnändras till ett kompatibelt namn. Använd egenskapen `configPath` på noden `cq:inplaceEditing` för att ange den nya platsen för RTF-redigerarkonfigurationen.
+Ett vanligt problem är att använda noder med namnet `config` i komponentdialogrutor eller när du anger RTF-redigerarkonfigurationen för intern redigering. För att lösa det här problemet bör namnet på den felande noden ändras till ett kompatibelt namn. Använd egenskapen `configPath` på noden `cq:inplaceEditing` för att ange den nya platsen för RTF-redigerarkonfigurationen.
 
-#### Icke-kompatibel kod {#non-compliant-code-config-install}
+#### Kod som inte uppfyller kraven {#non-compliant-code-config-install}
 
 ```text
 + cq:editConfig [cq:EditConfig]
@@ -622,28 +622,28 @@ Ett vanligt problem är att använda noder med namnet `config` i komponentdialog
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2019.6.0
 
-På samma sätt som [Paket får inte innehålla en dubblett av OSGi-konfigurationsregeln ](#oakpal-package-osgi) är detta ett vanligt problem i komplexa projekt där samma nodsökväg skrivs till av flera separata innehållspaket. Även om beroenden för innehållspaket kan användas för att säkerställa ett konsekvent resultat är det bättre att undvika överlappningar helt och hållet.
+Ungefär som [Paket får inte innehålla regeln för duplicerade OSGi-konfigurationer](#oakpal-package-osgi) är det här problemet ett vanligt problem i komplexa projekt där samma nodsökväg skrivs av flera separata innehållspaket. Även om beroenden för innehållspaket kan användas för att säkerställa ett konsekvent resultat är det bättre att undvika överlappningar helt och hållet.
 
-### Standardredigeringsläget får inte vara ett klassiskt användargränssnitt {#oakpal-default-authoring}
+### Standardredigeringsläget får inte vara Classic UI {#oakpal-default-authoring}
 
 * **Nyckel**: ClassicUIAuthoringMode
-* **Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
+* **Typ**: Kompatibilitet med kodmeddelande/Cloud Service
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
 OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` definierar standardredigeringsläget i AEM. Eftersom det klassiska användargränssnittet har tagits bort sedan AEM 6.4, uppstår nu ett problem när standardredigeringsläget är konfigurerat till Classic UI.
 
-### Komponenter med dialogrutor bör ha gränssnittsdialogrutor med pekskärmar {#oakpal-components-dialogs}
+### Komponenter med dialogrutor bör ha dialogrutor för användargränssnitt med pekfunktioner {#oakpal-components-dialogs}
 
 * **Nyckel**: ComponentWithOnlyClassicUIDialog
-* **Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
+* **Typ**: Kompatibilitet med kod/Cloud Service
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-AEM som har en klassisk användargränssnittsdialogruta ska alltid ha en motsvarande användargränssnittsdialogruta för att både tillhandahålla en optimal redigeringsupplevelse och vara kompatibel med distributionsmodellen för Cloud Servicen, där det klassiska användargränssnittet inte stöds. Den här regeln verifierar följande scenarier:
+AEM komponenter med en klassisk gränssnittsdialogruta bör också ha en Touch-dialogruta för optimal redigering och kompatibilitet med Cloud Servicens distributionsmodell, som inte har stöd för Classic UI. Den här regeln verifierar följande scenarier:
 
 * En komponent med en klassisk gränssnittsdialogruta (d.v.s. en underordnad `dialog`-nod) måste ha en motsvarande Touch UI-dialogruta (d.v.s. en underordnad `cq:dialog`-nod).
-* En komponent med en klassisk dialogruta för användargränssnittsdesign (dvs. en `design_dialog`-nod) måste ha en motsvarande designdialogruta för användargränssnittet (d.v.s. en underordnad `cq:design_dialog`-nod).
+* En komponent med en klassisk dialogruta för användargränssnittsdesign (d.v.s. en `design_dialog`-nod) måste ha en motsvarande designdialogruta för användargränssnittet (d.v.s. en underordnad `cq:design_dialog`-nod).
 * En komponent med både en klassisk användargränssnittsdialogruta och en klassisk dialogruta för användargränssnittsdesign måste ha både en motsvarande dialogruta för användargränssnittet för touchredigering och en motsvarande designdialogruta för användargränssnittet för touchgränssnitt.
 
 Dokumentationen för AEM finns information och verktyg för hur du konverterar komponenter från det klassiska gränssnittet till Touch-gränssnittet. Mer information finns i [Dokumentationen för AEM modernischverktyg](https://opensource.adobe.com/aem-modernize-tools/).
@@ -651,24 +651,24 @@ Dokumentationen för AEM finns information och verktyg för hur du konverterar k
 ### Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
 
 * **Nyckel**: ReverseReplication
-* **Typ**: Kompatibilitet med kodmeddelanden/Cloud Service
+* **Typ**: Kompatibilitet med kod/Cloud Service
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes.html#replication-agents)
+Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents)
 
 Kunder som använder omvänd replikering bör kontakta Adobe för att få alternativa lösningar.
 
-### Resurser i proxyaktiverade klientbibliotek bör finnas i en mapp med namngivna resurser {#oakpal-resources-proxy}
+### Resurser i proxyaktiverade klientbibliotek bör finnas i en mapp med namnet resources {#oakpal-resources-proxy}
 
 * **Nyckel**: ClientlibProxyResource
 * **Typ**: Fel
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/docs/experience-manager-65/developing/introduction/clientlibs.html#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
+AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/introduction/clientlibs#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
 
-#### Icke-kompatibel kod {#non-compliant-proxy-enabled}
+#### Kod som inte uppfyller kraven {#non-compliant-proxy-enabled}
 
 ```text
 + apps
@@ -690,14 +690,14 @@ AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt.
         + myimage.jpg
 ```
 
-### Användning av Cloud Service som inte är kompatibla arbetsflödesprocesser {#oakpal-usage-cloud-service}
+### Användning av arbetsflödesprocesser som inte är kompatibla med Cloud Service {#oakpal-usage-cloud-service}
 
 * **Nyckel**: CloudServiceIncompatibleWorkflowProcess
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Blockerare
 * **Sedan**: Version 2021.2.0
 
-I och med övergången till tillgångsmikrotjänster för bearbetning av tillgångar på AEM Cloud Service har flera arbetsflödesprocesser som användes i anläggningsversioner och AMS-versioner av AEM blivit antingen ostödda eller onödiga.
+I och med övergången till tillgångsmikrotjänster för bearbetning av tillgångar på AEM Cloud Service har flera arbetsflödesprocesser som användes i lokala versioner och AMS-versioner av AEM blivit antingen ostödda eller onödiga.
 
 Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://github.com/adobe/aem-cloud-migration) kan användas för att uppdatera arbetsflödesmodeller under migrering till AEM as a Cloud Service.
 
@@ -708,29 +708,29 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://g
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Det har tidigare varit vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation.](https://experienceleague.adobe.com/docs/experience-manager-65/developing/platform/templates/page-templates-editable.html)
+Det har tidigare varit vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation.](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable)
 
 Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM modereringsverktyg.](https://opensource.adobe.com/aem-modernize-tools/)
 
-### Användning av äldre Foundation-komponenter rekommenderas inte {#oakpal-usage-legacy}
+### Användning av äldre baskomponenter rekommenderas inte {#oakpal-usage-legacy}
 
 * **Nyckel**: LegacyFoundationComponentUsage
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-De äldre Foundation-komponenterna (d.v.s. komponenter under `/libs/foundation`) har ersatts för flera AEM versioner till förmån för [Core-komponenterna.](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/introduction.html) Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
+De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM versioner till förmån för [Core-komponenterna.](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/introduction) Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
 
-Den här konverteringen kan underlättas med [AEM moderniseringsverktyg.](https://opensource.adobe.com/aem-modernize-tools/)
+[AEM Moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/) kan underlätta den här konverteringen.
 
-### Definitionsnoder för anpassade sökindex måste vara direkt underordnade /oak:index {#oakpal-custom-search}
+### Definitionsnoder för anpassade sökindex måste vara direkt underordnade `/oak:index` {#oakpal-custom-search}
 
 * **Nyckel**: OakIndexLocation
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkta underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud Service. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html)
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkta underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud Service. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing)
 
 ### Definitionsnoder för anpassade sökindex måste ha en compatVersion av 2 {#oakpal-custom-search-compatVersion}
 
@@ -739,61 +739,61 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. Alla andra värden stöds inte av AEM Cloud Service. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html)
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud Service stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing)
 
-### Underordnade noder för anpassade sökindexdefinitionsnoder måste vara av typen nt:ostrukturerad {#oakpal-descendent-nodes}
+### Underordnade noder för anpassade sökindexdefinitionsnoder måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
 
 * **Nyckel**: IndexDescendantNodeType
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Problem som är svåra att felsöka kan uppstå när en anpassad sökindexdefinitionsnod har oordnade underordnade noder. För att undvika dessa bör alla underordnade noder för en `oak:QueryIndexDefinition`-nod vara av typen `nt:unstructured`.
+Problem som är svåra att felsöka kan uppstå när en anpassad sökindexdefinitionsnod har oordnade underordnade noder. För att undvika sådana noder rekommenderar Adobe att alla underordnade noder för en `oak:QueryIndexDefinition`-nod är av typen `nt:unstructured`.
 
-### Definitionsnoder för anpassade sökindex måste innehålla en underordnad nod med namnet indexRules som har underordnade noder {#oakpal-custom-search-index}
+### Definitionsnoder för anpassade sökindex måste innehålla en underordnad nod med namnet `indexRules` som har underordnade noder {#oakpal-custom-search-index}
 
 * **Nyckel**: IndexRulesNode
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-En korrekt definierad definitionsnod för anpassat sökindex måste innehålla en underordnad nod med namnet `indexRules` som i sin tur måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen.](https://jackrabbit.apache.org/oak/docs/query/lucene.html)
+En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en underordnad nod med namnet `indexRules` och den här noden måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen.](https://jackrabbit.apache.org/oak/docs/query/lucene.html)
 
-### Definitionsnoder för anpassade sökindex måste följa namngivningskonventioner {#oakpal-custom-search-definitions}
+### Definitionsnoder för anpassade sökindex måste följa namnkonventioner {#oakpal-custom-search-definitions}
 
 * **Nyckel**: IndexName
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html#how-to-use)
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) ska namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
-### Indexdefinitionsnoder för anpassade sökningar måste använda indextypsklugin  {#oakpal-index-type-lucene}
+### Definitionsnoder för anpassade sökindex måste använda indextypen lucen {#oakpal-index-type-lucene}
 
 * **Nyckel**: IndexType
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type`-egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html#how-to-use).
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type`-egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
-### Definitionsnoder för anpassade sökindex får inte innehålla en egenskap med namnet seed {#oakpal-property-name-seed}
+### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `seed` {#oakpal-property-name-seed}
 
 * **Nyckel**: IndexSeedProperty
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller egenskapen `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html#how-to-use).
+AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller egenskapen `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
-### Definitionsnoder för anpassade sökindex får inte innehålla en egenskap med namnet reindex {#oakpal-reindex-property}
+### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `reindex` {#oakpal-reindex-property}
 
 * **Nyckel**: IndexReindexProperty
 * **Typ**: kodmeddelande
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller egenskapen `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/operations/indexing.html#how-to-use).
+AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller egenskapen `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud Service. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Indexdefinitionsnoder får inte distribueras i UI-innehållspaket {#oakpal-ui-content-package}
 
@@ -806,9 +806,9 @@ AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (noder av t
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att pipelines misslyckas med början i [Cloud Manager August 2024.](/help/release-notes/current.md)
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
-### Anpassad heltextindexdefinition av typen damAssetLucene måste ha rätt prefix med damAssetLucene {#oakpal-dam-asset-lucene}
+### Anpassad heltextindexdefinition av typen `damAssetLucene` måste ha rätt prefix med `damAssetLucene` {#oakpal-dam-asset-lucene}
 
 * **Nyckel**: CustomFulltextIndexesOfTheDamAssetCheck
 * **Typ**: Förbättring
@@ -819,7 +819,7 @@ AEM Cloud Service tillåter inte att anpassade fulltextindexdefinitioner av type
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att pipelines misslyckas med början i [Cloud Manager August 2024.](/help/release-notes/current.md)
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
 ### Indexdefinitionsnoder får inte innehålla egenskaper med samma namn {#oakpal-index-property-name}
 
@@ -832,9 +832,9 @@ AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. nod
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att pipelines misslyckas med början i [Cloud Manager August 2024.](/help/release-notes/current.md)
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
-### Det är förbjudet att anpassa vissa OOTB-indexdefinitioner {#oakpal-customizing-ootb-index}
+### Det är inte tillåtet att anpassa vissa färdiga indexdefinitioner {#oakpal-customizing-ootb-index}
 
 * **Nyckel**: RestrictIndexCustomization
 * **Typ**: Förbättring
@@ -852,9 +852,9 @@ AEM Cloud Service tillåter inte obehöriga ändringar av följande OOTB-index:
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda detta så snart som möjligt eftersom det kommer att leda till att pipelines misslyckas med början i [Cloud Manager August 2024.](/help/release-notes/current.md)
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
-### Konfigurationen av tokenisererna i analysatorerna ska skapas med namnet tokenizer {#oakpal-tokenizer}
+### Konfigurationen av tokeniserare i analysatorer ska skapas med namnet `tokenizer` {#oakpal-tokenizer}
 
 * **Nyckel**: AnalyzerTokenizerConfigCheck
 * **Typ**: Förbättring
@@ -870,41 +870,41 @@ AEM Cloud Service tillåter inte att tokeniserare med felaktiga namn skapas i an
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2024.7.0
 
-AEM Cloud Service tillåter inte att indexdefinitioner som innehåller egenskaper med blanksteg skapas.
+Det går inte att skapa indexdefinitioner som innehåller egenskaper med mellanslag.
 
-## Dispatcher Optimization Tool {#dispatcher-optimization-tool-rules}
+## Dispatcher optimeringsverktyg {#dispatcher-optimization-tool-rules}
 
 I följande avsnitt visas de DOT-kontroller (Dispatcher Optimization Tool) som utförs av Cloud Manager. Följ länkarna för varje kontroll för dess GitHub-definition och information.
 
 * [Oväntade token för Dispatcher-konfiguration](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-unexpected-tokens)
 
-* [Omatchad Dispatcher-konfiguration, citat](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-unmatched-quote)
+* [Omatchat citattecken för Dispatcher-konfiguration](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-unmatched-quote)
 
 * [Dispatcher-konfiguration saknar parentes](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-missing-brace)
 
 * [Extra parentes för Dispatcher-konfiguration](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-extra-brace)
 
-* [Dispatcher-konfiguration saknar obligatorisk egenskap](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-missing-mandatory-property)
+* [Dispatcher-konfigurationen saknar obligatorisk egenskap](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-missing-mandatory-property)
 
-* [Egenskapen för inaktuell Dispatcher-konfiguration](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-deprecated-property)
+* [Egenskapen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-deprecated-property) har tagits bort för Dispatcher-konfigurationen
 
 * [Det gick inte att hitta Dispatcher-konfigurationen](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-not-found)
 
-* [Det gick inte att hitta Httpd-konfigurationsfilen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---httpd-configuration-include-file-not-found)
+* [Det gick inte att hitta filen i HTTP-konfigurationen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---httpd-configuration-include-file-not-found)
 
-* [Allmän konfiguration för Dispatcher](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-general)
+* [Dispatcher-konfiguration allmän](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-general)
 
-* [Dispatcher publiceringsgruppscache bör ha serverStaleOnError aktiverat](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-servestaleonerror-enabled)
+* [Dispatcher publiceringsgruppscache bör ha `serveStaleOnError` aktiverat](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-servestaleonerror-enabled)
 
 * [Dispatcher-filtren för publiceringsgrupper bör innehålla standardreglerna för att neka i 6.x.x-versionen av den AEM typen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-contain-the-default-deny-rules-from-the-6xx-version-of-the-aem-archetype)
 
-* [Statusnivåegenskapen för Dispatcher-publiceringsservergruppens cache bör vara >= 2](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-statfileslevel-property-should-be--2)
+* [Dispatcher-publiceringsservergruppens cache `statfileslevel` -egenskap bör vara >= 2](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-statfileslevel-property-should-be--2)
 
-* [Dispatcher-publiceringsservergruppens GracePeriod-egenskap bör vara >= 2](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-graceperiod-property-should-be--2)
+* [Dispatcher-publiceringsservergruppens `gracePeriod`-egenskap bör vara >= 2](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-graceperiod-property-should-be--2)
 
 * [Varje Dispatcher-servergrupp måste ha ett unikt namn](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---each-dispatcher-farm-should-have-a-unique-name)
 
-* [Dispatcher-publiceringsservergruppens cache bör ha sina ignoreUrlParams-regler konfigurerade på tillåtelselista-sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
+* [Dispatcher-publiceringsservergruppens cache bör ha sina `ignoreUrlParams`-regler konfigurerade på ett tillåtelselista sätt ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
 
 * [Dispatcher-filtren för publiceringsgrupper bör ange tillåtna Sling-väljare på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
 
