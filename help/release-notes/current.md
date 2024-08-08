@@ -3,7 +3,7 @@ title: Versionsinformation för 2024.7.0
 description: Detta är versionsinformationen för Cloud Manager version 2024.7.0.
 feature: Release Information
 exl-id: 2d38abb1-cfc7-44a9-b303-b555e2827eea
-source-git-commit: 87c603a89b99f6984828280cba2041da8c72e839
+source-git-commit: d7c4c87bbc3c66ca9517c4d0c97e25a2302e1e8a
 workflow-type: tm+mt
 source-wordcount: '234'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager
 
 ## Releasedatum {#release-date}
 
-Releasedatum för [!UICONTROL Cloud Manager] version 2024.7.0 är 18 juli 2024. Nästa version är planerad till den 8 augusti 2024.
+Releasedatum för [!UICONTROL Cloud Manager] version 2024.7.0 är 18 juli 2024. Nästa version är planerad till den 12 augusti 2024.
 
 ## Nyheter {#what-is-new}
 
