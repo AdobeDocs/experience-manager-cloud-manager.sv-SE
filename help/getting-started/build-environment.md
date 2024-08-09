@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Läs om den speciella byggmiljö som Cloud Manager-användare kan använda för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: dc0b83fa045208fcd333af10f90f9590c2aa96b8
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1275'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Cloud Manager byggmiljöer har följande attribut.
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 2.04.
 * Apache Maven 3.9.4 är installerad.
-   * Adobe rekommenderar att användare [uppdaterar sina Maven-databaser så att HTTPS används i stället för HTTP.](#https-maven)
+   * Adobe rekommenderar att användare [uppdaterar sina Maven-databaser så att HTTPS används i stället för HTTP](#https-maven).
 * Java-versionerna är Oracle JDK 8u401 och Oracle JDK 11.0.22.
    * `/usr/lib/jvm/jdk1.8.0_401`
    * `/usr/lib/jvm/jdk-11.0.22`
@@ -31,7 +31,7 @@ Cloud Manager byggmiljöer har följande attribut.
    * `libpng`
    * `imagemagick`
    * `graphicsmagick`
-* Andra paket kan installeras vid byggtillfället enligt beskrivningen i avsnittet [Installera ytterligare systempaket.](#installing-additional-system-packages)
+* Andra paket kan installeras vid byggtillfället enligt beskrivningen i avsnittet [Installera ytterligare systempaket](#installing-additional-system-packages).
 * Varje bygge görs i en riktig miljö. Byggbehållaren behåller inte något läge mellan körningar.
 * Maven körs alltid med dessa tre kommandon:
    * `mvn --batch-mode org.apache.maven.plugins:maven-dependency-plugin:3.1.2:resolve-plugins`
@@ -39,7 +39,7 @@ Cloud Manager byggmiljöer har följande attribut.
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
 * Maven har konfigurerats på systemnivå med en `settings.xml`-fil som automatiskt inkluderar databasen för publika Adobe-artefakter med en profil med namnet `adobe-public`.
    * Mer information finns i [Adobe publika Maven-databasen](https://repo1.maven.org/).
-* Node.js 18 är tillgängligt för [frontendpipelines.](/help/overview/ci-cd-pipelines.md)
+* Node.js 18 är tillgängligt för [frontendpipelines](/help/overview/ci-cd-pipelines.md).
 
 >[!NOTE]
 >
@@ -47,14 +47,15 @@ Cloud Manager byggmiljöer har följande attribut.
 
 >[!TIP]
 >
->Mer information om hur du använder Cloud Manager API:er finns i följande resurser:
+>Se följande ytterligare resurser för att lära dig hur du använder Cloud Manager API:er:
+>
 >* [aio-cli-plugin-cloudManager](https://github.com/adobe/aio-cli-plugin-cloudmanager)
 >* [Skapar en API-integrering](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/)
 >* [API-behörigheter](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/permissions/)
 
 ## HTTPS Maven-databaser {#https-maven}
 
-Cloud Manager [release 2023.10.0](/help/release-notes/2023/2023-10-0.md) påbörjade en rullande uppdatering av byggmiljön (som i version 2023.12.0) som innehöll en uppdatering till Maven 3.8.8. En betydande förändring som introducerades i Maven 3.8.1 var en säkerhetsförbättring som syftar till att minska potentiella sårbarheter. Maven inaktiverar nu alla osäkra `http://*`-speglar som standard, vilket beskrivs i [versionsinformationen för Maven.](http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291)
+Cloud Manager [2023.10.0](/help/release-notes/2023/2023-10-0.md) påbörjade en rullande uppdatering av byggmiljön (som slutfördes med version 2023.12.0), som innehöll en uppdatering till Maven 3.8.8. En betydande förändring som introducerades i Maven 3.8.1 var en säkerhetsförbättring som syftar till att minska potentiella sårbarheter. Maven inaktiverar nu alla osäkra `http://*`-speglar som standard, vilket beskrivs i [versionsinformationen för Maven](http://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291).
 
 Som ett resultat av den här säkerhetsförbättringen kan vissa användare råka ut för problem under byggfasen, särskilt när artefakter hämtas från Maven-databaser som använder osäkra HTTP-anslutningar.
 
@@ -111,7 +112,7 @@ De aktuella kombinationerna av leverantör/version är:
 
 >[!NOTE]
 >
->Från och med april 2022 kommer Oracle-JDK att vara standard-JDK för utveckling och drift av AEM program. Cloud Manager byggprocess kommer automatiskt att växla till att använda Oracle-JDK, även om ett annat alternativ uttryckligen väljs i verktygskedjan Maven. Mer information finns i [versionsinformationen för april](/help/release-notes/2022/2022-4-0.md).
+>Från och med april 2022 kommer Oracle-JDK att vara standard-JDK för utveckling och drift av AEM program. Cloud Manager byggprocess kommer automatiskt att växla till att använda Oracle-JDK, även om ett annat alternativ uttryckligen väljs i verktygskedjan Maven. Mer information finns i versionsinformationen för [april](/help/release-notes/2022/2022-4-0.md).
 
 ### Alternate Maven Execution JDK Version {#alternate-maven}
 
@@ -149,7 +150,7 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas med [dispatchern.](https://experienceleague.adobe.com/docs/experience-manager-dispatcher/using/dispatcher.html) hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [dispatchern](https://experienceleague.adobe.com/docs/experience-manager-dispatcher/using/dispatcher.html). Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
@@ -159,7 +160,7 @@ Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/configuring/configuring-osgi.html)
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/configuring/configuring-osgi.html).
 
 ### Rörledningsvariabler {#pipeline-variables}
 

@@ -2,9 +2,9 @@
 title: GitHub-kontrollanteckningar
 description: Lär dig hur GitHub kontrollerar annonser för dina privata databaser för att ge dig användbar feedback.
 exl-id: 15178de8-8a8a-4300-8510-88875ad0fc8c
-source-git-commit: 210d40a5e12b40fd84efc461c6a1c48559120837
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
@@ -40,4 +40,4 @@ Resultat av [kodkvalitet](/help/using/code-quality-testing.md) visas också i pi
 
 ![Exempel på anteckningar](assets/github-check-annotations-code-quality-2.png)
 
-Du kan även visualisera problemen i form av en CSV-fil. Detta kan hämtas av [visa information om pipelinekörningen i Cloud Manager.](/help/using/managing-pipelines.md)
+Du kan även visualisera problemen i form av en CSV-fil. Detta kan hämtas genom att [visa information om pipelinekörningen i Cloud Manager](/help/using/managing-pipelines.md).

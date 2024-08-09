@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x till lägre miljöer för testning.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 655111cdf7327e92e03ac7eedd9eedd87cd4b2f1
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1120'
+source-wordcount: '1096'
 ht-degree: 0%
 
 ---
@@ -47,39 +47,39 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
 1. Navigera till sidan **Innehållsuppsättningar** från skärmen **Miljö**.
 
-1. Tryck eller klicka på knappen **Lägg till innehållsuppsättning** längst upp till höger på skärmen.
+1. Klicka på knappen **Lägg till innehållsuppsättning** längst upp till höger på skärmen.
 
    ![Innehållsuppsättningar](/help/assets/content-sets.png)
 
-1. Ange ett namn och en beskrivning för innehållsuppsättningen på fliken **Detaljer** i guiden och tryck eller klicka på **Fortsätt**.
+1. Ange ett namn och en beskrivning för innehållsuppsättningen på fliken **Detaljer** i guiden och klicka på **Fortsätt**.
 
    ![Information om innehållsuppsättning](/help/assets/add-content-set-details.png)
 
 1. På fliken **Innehållssökvägar** i guiden anger du sökvägarna till det ändringsbara innehåll som ska inkluderas i innehållsuppsättningen.
 
    1. Ange sökvägen i fältet **Lägg till inkluderingssökväg**.
-   1. Tryck eller klicka på knappen **Lägg till bana** för att lägga till sökvägen i innehållsuppsättningen.
-   1. Tryck eller klicka på knappen **Lägg till bana** igen om det behövs.
+   1. Klicka på knappen **Lägg till bana** för att lägga till sökvägen till innehållsuppsättningen.
+   1. Klicka på knappen **Lägg till bana** igen om det behövs.
 
    ![Lägg till sökvägar i innehållsuppsättningen](/help/assets/add-content-set-paths.png)
 
 1. Om du behöver förfina eller begränsa din innehållsuppsättning kan undersökvägar uteslutas.
 
-   1. I listan med inkluderade sökvägar: tryck eller klicka på ikonen **Lägg till exkludera delsökvägar** bredvid sökvägen som du vill begränsa.
+   1. I listan med inkluderade sökvägar klickar du på ikonen **Lägg till exkludera delsökvägar** intill den sökväg som du vill begränsa.
    1. Ange den delbana som ska uteslutas under den valda banan.
-   1. Tryck eller klicka på **Uteslut sökväg**.
-   1. Tryck eller klicka på **Lägg till exkludera delsökvägar** igen om du vill lägga till ytterligare sökvägar som ska exkluderas efter behov.
+   1. Klicka på **Uteslut sökväg**.
+   1. Klicka på **Lägg till exkludera delsökvägar** igen om du vill lägga till ytterligare sökvägar som ska exkluderas efter behov.
 
    ![Exkluderar banor](/help/assets/add-content-set-paths-excluded.png)
 
 1. Du kan ändra de angivna sökvägarna om det behövs.
 
-   1. Tryck eller klicka på X bredvid de uteslutna delbanorna för att ta bort dem.
-   1. Tryck eller klicka på ellipsknappen bredvid sökvägarna för att visa alternativen **Redigera** och **Ta bort**.
+   1. Klicka på X bredvid de uteslutna delbanorna för att ta bort dem.
+   1. Klicka på ellipsknappen bredvid sökvägarna för att visa alternativen **Redigera** och **Ta bort**.
 
    ![Redigerar sökvägslista](/help/assets/add-content-set-excluded-paths.png)
 
-1. Tryck eller klicka på **Skapa** för att skapa innehållsuppsättningen.
+1. Klicka på **Skapa** för att skapa innehållsuppsättningen.
 
 Innehållsuppsättningen kan nu användas för att kopiera innehåll mellan miljöer.
 
@@ -90,7 +90,7 @@ Innehållsuppsättningen kan nu användas för att kopiera innehåll mellan milj
 
 ## Redigera en innehållsuppsättning {#edit-content-set}
 
-Följ liknande steg som när du skapar ett innehållssteg. I stället för att trycka eller klicka på **Lägg till innehållsuppsättning** markerar du en befintlig uppsättning i konsolen och väljer **Redigera** på ellipsmenyn.
+Följ liknande steg som när du skapar ett innehållssteg. I stället för att klicka på **Lägg till innehållsuppsättning** markerar du en befintlig uppsättning i konsolen och väljer **Redigera** på ellipsmenyn.
 
 ![Redigera innehållsuppsättning](/help/assets/edit-content-set.png)
 
@@ -125,7 +125,7 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
 
    ![Kopierar innehåll](/help/assets/copying-content.png)
 
-1. Tryck eller klicka på **Kopiera**.
+1. Klicka på **Kopiera**.
 
 Kopieringsprocessen startar. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 

@@ -2,9 +2,9 @@
 title: Inloggning för första gången
 description: Följ den här sidan om du har konfigurerat dina allmänna konfigurationer och vill använda Cloud Manager för första gången.
 exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
-source-git-commit: 1417d3bfa5a844641e0942d1fe1bd7bf84e41997
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '289'
 ht-degree: 0%
 
 ---
@@ -24,15 +24,15 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 
    ![Cloud Manager-konsol](/help/assets/cloud-manager-console.png)
 
-1. Tryck eller klicka på programmets kort för att navigera till Cloud Manager **Översikt** -sida.
+1. Klicka på programmets kort för att gå till Cloud Manager **Översikt** -sida.
 
 1. Cloud Manager öppnas på sidan **Översikt**.
 
    ![Cloud Manager - översikt](/help/assets/program-overview-page.png)
 
-1. Om ditt program inte har konfigurerats ännu trycker eller klickar du på **Setup Program** i [call-to-action](/help/getting-started/navigation.md#cta) för att ställa in programbeskrivningen och definiera KPI:er (Key Performance Indicator). Om ditt program redan är konfigurerat kan CTA erbjuda ytterligare steg.
+1. Om ditt program inte har konfigurerats ännu klickar du på **Konfigurera program** i [uppmaning till åtgärd](/help/getting-started/navigation.md#cta) för att konfigurera programbeskrivningen och definiera nyckeltal (KPI). Om ditt program redan är konfigurerat kan CTA erbjuda ytterligare steg.
 
-Fortsätt till dokumentet [Programinställningar](/help/getting-started/program-setup.md) för nästa steg i konfigurationen av programmet.
+Du kan fortsätta till dokumentet [Programinställningar](/help/getting-started/program-setup.md) för nästa steg i konfigurationen av programmet.
 
 ## Cloud Manager Activity {#activity}
 
@@ -40,7 +40,7 @@ Cloud Manager ger en samlad bild av ett programs aktivitet och listar alla CI/CD
 
 >[!TIP]
 >
->Mer information om hur du använder användargränssnittet i Cloud Manager finns i dokumentet [Navigera i användargränssnittet i Cloud Manager.](/help/getting-started/navigation.md)
+>Mer information om hur du använder användargränssnittet i Cloud Manager finns i dokumentet [Navigera i användargränssnittet för Cloud Manager](/help/getting-started/navigation.md).
 
 >[!NOTE]
 >

@@ -2,9 +2,9 @@
 title: Information om databasåtkomst
 description: Lär dig hur du får åtkomst till och hanterar dina Adobe-hanterade Git-databaser med hjälp av Git-kontohantering från Cloud Manager.
 exl-id: 1cc88c82-67c7-4553-a1b8-d2ab22be466c
-source-git-commit: e93285f7c7495ec9d2f11d289adaf6aaba7e58ea
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '394'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Med Cloud Manager är det enkelt att hämta databasåtkomstinformation för data
 
    ![Knappen Åtkomst till information om upprepning på miljökortet](assets/pipelines-card.png)
 
-1. Tryck eller klicka på knappen **Åtkomst till replikinformation** för att öppna dialogrutan **Databasinformation** och visa:
+1. Klicka på knappen **Åtkomst till replikinformation** för att öppna dialogrutan **Databasinformation** och visa:
 
    * Git-användarnamn.
    * Git-lösenordet.
@@ -32,9 +32,9 @@ Med Cloud Manager är det enkelt att hämta databasåtkomstinformation för data
 
    ![Fönstret Databasinformation](assets/access-repo-info.png)
 
-1. Ett nytt lösenord måste skapas för att du ska kunna få åtkomst till lösenordet. Det gör du genom att trycka eller klicka på knappen **Generera lösenord** .
+1. Ett nytt lösenord måste skapas för att du ska kunna få åtkomst till lösenordet. Klicka på knappen **Skapa lösenord** om du vill göra det.
 
-1. Bekräfta generering av lösenord i dialogrutan **Är du säker..** genom att trycka eller klicka på **Skapa lösenord**.
+1. Bekräfta generering av lösenord i dialogrutan **Är du säker..** genom att klicka på **Generera lösenord**.
 
    ![Bekräfta generering av lösenord](assets/confirm-password-generation.png)
 
@@ -55,10 +55,10 @@ Med hjälp av dessa uppgifter kan du klona en lokal kopia av databasen, göra ä
 
 ## Åtkomst till databasinformation från fönstret Databaser {#repositories-window}
 
-En **Access Repo Info**-knapp är också tillgänglig i verktygsfältet i fönstret [**Databaser**.](managing-repositories.md) visar samma information om åtkomst till databaser som hanteras av Adobe.
+En **Access Repo Info** -knapp är också tillgänglig i verktygsfältet i [**databasfönstret**](managing-repositories.md). Den visar samma information om åtkomst till databaser som hanteras av Adobe.
 
 ## Återkalla ett åtkomstlösenord {#revoke-password}
 
-Du kan återkalla ett lösenord när som helst. Om du vill göra det [skapar du en supportanmälan för den här förfrågan.](https://experienceleague.adobe.com/?support-solution=Experience+Manager&amp;support-tab=home#support)
+Du kan återkalla ett lösenord när som helst. Om du vill göra det [skapar du en supportbiljett för den här begäran](https://experienceleague.adobe.com/?support-solution=Experience+Manager&amp;support-tab=home#support).
 
 Biljetten kommer att behandlas med hög prioritet och bör återkallas inom en dag.

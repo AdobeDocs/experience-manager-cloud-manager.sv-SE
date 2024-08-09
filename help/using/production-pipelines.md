@@ -2,9 +2,9 @@
 title: Konfigurera produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 33ccb0f2139162845cc1b72505b6a5bfc7cf43e7
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1280'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Konfigurera produktionsförlopp {#configuring-production-pipelines}
 
-Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa dokumentet [CI/CD-pipeline.](/help/overview/ci-cd-pipelines.md)
+Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-förgreningar](/help/overview/ci-cd-pipelines.md).
 
 ## Ökning {#overview}
 
@@ -21,7 +21,7 @@ Med panelen **Inställningar för pipeline** i [!UICONTROL Cloud Manager] kan du
 * **Produktionspipelines** - En produktionspipeline är en specialbyggd pipeline som består av en serie samordnade steg för att ta källkod från din Git-databas hela vägen in i produktionen.
 * **Icke-produktionsförlopp** - En icke-produktionsförlopp används främst för att köra kodkvalitetsgenomsökningar eller för att distribuera källkod till en utvecklingsmiljö.
 
-Det här dokumentet fokuserar på produktionsrörledningar. Mer information om hur du konfigurerar icke-produktionsrörledningar finns i dokumentet [Konfigurera icke-produktionsförlopp.](/help/using/non-production-pipelines.md)
+Det här dokumentet fokuserar på produktionsrörledningar. Mer information om hur du konfigurerar icke-produktionspipelines finns i dokumentet [Konfigurera icke-produktionspipelines](/help/using/non-production-pipelines.md).
 
 Rollen **Distributionshanteraren** ansvarar för att ställa in pipeline. Pipeline-konfigurationen består av:
 
@@ -39,7 +39,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på **+Lägg till** och välj **Lägg till produktionspipeline**.
+1. Navigera till kortet **Pipelines** på sidan **Programöversikt**, klicka sedan på **+Lägg till** och välj **Lägg till produktionspipeline**.
 
    ![Lägg till en produktionspipeline](/help/assets/configure-pipelines/add-prod1.png)
 
@@ -113,7 +113,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
            >[!TIP]
            >
-           >Läs dokumentet [Code Deployment,](/help/using/code-deployment.md) om du vill veta hur du ställer in distributionsschemat eller kör pipeline direkt.
+           >Se [Koddistribution](/help/using/code-deployment.md) om du vill veta hur du ställer in distributionsschemat eller kör pipeline direkt.
 
             * **Använd CSE Oversight** - Om det här alternativet är markerat engageras en CSE för att starta distributionen. När du skapar eller redigerar en pipeline när det här alternativet är aktiverat har rollen **Distributionshanterare** följande alternativ.
 
@@ -128,7 +128,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
    >[!TIP]
    >
-   >Mer information om tillgängliga alternativ finns i dokumentet [Kodkvalitetstestning](/help/using/code-quality-testing.md#performance-testing) på fliken **Scentestning**.
+   >Se [Testning av kodkvalitet](/help/using/code-quality-testing.md#performance-testing) för mer information om de alternativ som finns på fliken **Testning av scenen**.
 
    1. Under avsnittet **Platsinnehållsleverans/Distribuerad lastvikt** definierar du hur platsens prestandatestning konfigureras baserat på vikten av sidförfrågningar mellan de tre siduppsättningarna, som kan aktiveras eller inaktiveras.
 
@@ -138,7 +138,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
       ![Platsens lastvikt](/help/assets/configure-pipelines/add-prod5.png)
 
-   1. Under avsnittet **Assets Performance Testing Distribution** definierar du testdistributionen av bilder och PDF samt definierar dina egna testresurser.
+   1. Under avsnittet **Assets Performance Testing Distribution** definierar du testdistributionen av bilder och PDF och definierar dina egna testresurser.
 
       * **Bilder** - Justera skjutreglaget för att justera testdelningen mellan bilder och PDF.
       * **PDF** - Justera skjutreglaget för att justera testdelningen mellan bilder och PDF.
@@ -155,7 +155,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
 ## Nästa steg {#the-next-steps}
 
-När du har konfigurerat pipeline måste du distribuera koden. Mer information finns i dokumentet [Koddistribution](/help/using/code-deployment.md).
+När du har konfigurerat pipeline måste du distribuera koden. Mer information finns i [Koddistribution](/help/using/code-deployment.md).
 
 ## Videosjälvstudie {#video-tutorial-one}
 

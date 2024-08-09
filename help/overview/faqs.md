@@ -2,9 +2,9 @@
 title: Vanliga frågor om Cloud Manager
 description: Det här dokumentet ger svar på de vanligaste frågorna om Cloud Manager för AMS-kunder.
 exl-id: 52c1ca23-5b42-4eae-b63a-4b22ef1a5aee
-source-git-commit: 6be659e02df0657ec7d3dbce8c18c44a327a36f4
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '746'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,8 @@ Det här dokumentet ger svar på de vanligaste frågorna om Cloud Manager för A
 
 Ja. Du måste lägga till `maven-toolchains-plugin` med rätt inställningar för Java 11.
 
-* Den här processen dokumenteras [här.](/help/getting-started/using-the-wizard.md)
-* Se till exempel [wk-exempelprojektkoden.](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75)
+* Den här processen dokumenteras [här](/help/getting-started/using-the-wizard.md).
+* Se till exempel [wk-exempelprojektkoden](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75).
 
 ## Mitt bygge misslyckas med ett fel om maven-scr-plugin efter byte från Java 8 till Java 11. Vad kan jag göra? {#maven-src-plugin}
 
@@ -29,7 +29,7 @@ Ditt AEM Cloud Manager-bygge kan misslyckas när du försöker byta från Java 8
 [main] [ERROR] Failed to execute goal org.apache.felix:maven-scr-plugin:1.26.4:scr (generate-scr-scrdescriptor) on project helloworld.core: /build_root/build/testsite/src/main/java/com/adobe/HelloWorldServiceImpl.java : Unable to load compiled class: com.adobe.HelloWorldServiceImpl: com/adobe/HelloWorldServiceImpl has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0 -> [Help 1]
 ```
 
-Instruktioner om hur du tar bort det här plugin-programmet [finns här.](https://cqdump.wordpress.com/2019/01/03/from-scr-annotations-to-osgi-annotations/)
+Instruktioner om hur du tar bort det här plugin-programmet [finns här](https://cqdump.wordpress.com/2019/01/03/from-scr-annotations-to-osgi-annotations/).
 
 ## Min version misslyckas med ett fel om RequireJavaVersion efter växling från Java 8 till Java 11. Vad kan jag göra? {#requirejavaversion}
 
@@ -60,7 +60,7 @@ Det finns inget svar på den här frågan. Men det här är några viktiga punkt
    * Sidinläsningar som överstiger `20` sekunder markeras som `504` fel.
 * Om din webbplats kräver användarautentisering läser du dokumentet [Förstå testresultaten](/help/using/code-quality-testing.md#authenticated-performance-testing) för att konfigurera testet för autentisering till din plats.
 
-Mer information om kvalitetskontroller finns i dokumentet [Förstå testresultat](/help/using/code-quality-testing.md).
+Mer information om kvalitetskontroller finns i [Förstå testresultat](/help/using/code-quality-testing.md).
 
 ## Kan jag använda SNAPSHOT för versionen av Maven-projektet? {#snapshot}
 
@@ -70,11 +70,11 @@ Detta gör att efterföljande distribution fortfarande kan installeras när vers
 
 Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
-Mer information om versionshantering [finns här.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling.html)
+Mer information om versionshantering [finns här](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling.html).
 
 ## Hur fungerar paket- och paketversionshantering för driftsättning och produktion? {#staging-production}
 
-I mellanlagrings- och produktionsdistributioner genereras en automatisk version [som beskrivs här.](/help/managing-code/maven-project-version.md)
+I mellanlagrings- och produktionsdistributioner genereras en automatisk version [som beskrivs här](/help/managing-code/maven-project-version.md).
 
 För anpassad versionshantering i scen- och produktionsdistributioner anger du en korrekt 3-delsversion som `1.0.0`. Öka versionen varje gång du distribuerar till produktionen.
 

@@ -2,16 +2,16 @@
 title: Konfigurera icke-produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: 85c1e22609dc5646d3de0ccc71e9423d4243e13a
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
 
 # Konfigurera icke-produktionsförlopp {#configuring-non-production-pipelines}
 
-Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa dokumentet [CI/CD Pipelines.](/help/overview/ci-cd-pipelines.md)
+Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-pipelines](/help/overview/ci-cd-pipelines.md).
 
 ## Ökning {#overview}
 
@@ -20,7 +20,7 @@ Med **pipelines** i [!UICONTROL Cloud Manager] kan **Distributionshanteraren** s
 * **Produktionspipelines** - En produktionspipeline är en specialbyggd pipeline som består av en serie samordnade steg för att ta källkod hela vägen in i produktionen.
 * **Icke-produktionsförlopp** - En icke-produktionsförlopp används främst för att köra kodkvalitetsgenomsökningar eller för att distribuera källkod till en utvecklingsmiljö.
 
-Detta dokument fokuserar på icke-produktionsrörledningar. Mer information om hur du konfigurerar produktionspipelines finns i dokumentet [Konfigurera produktionspipelines.](/help/using/production-pipelines.md)
+Detta dokument fokuserar på icke-produktionsrörledningar. Mer information om hur du konfigurerar produktionspipelines finns i dokumentet [Konfigurera produktionspipelines](/help/using/production-pipelines.md).
 
 Det finns två typer av icke-produktionsrörledningar:
 
@@ -80,7 +80,7 @@ När du har konfigurerat programmet och har minst en miljö med Cloud Manager UI
 
 ## Nästa steg {#the-next-steps}
 
-När du har konfigurerat pipeline måste du distribuera koden. Mer information finns i dokumentet [Koddistribution](/help/using/code-deployment.md).
+När du har konfigurerat pipeline måste du distribuera koden. Mer information finns i [Koddistribution](/help/using/code-deployment.md).
 
 ## Videosjälvstudie {#video-tutorial}
 

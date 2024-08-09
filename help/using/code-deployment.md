@@ -2,9 +2,9 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1648'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -109,16 +109,16 @@ När Cloud Manager använder icke-produktionstopologier är målet att slutföra
 
 1. Varje AEM-artefakt distribueras till varje AEM-instans via API:er för Package Manager, där paketberoenden avgör distributionsordningen.
 
-   * Mer information om hur du kan använda paket för att installera nya funktioner, överföra innehåll mellan instanser och säkerhetskopiera databasinnehåll finns i dokumentet [Package Manager.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/developer-tools/package-manager.html)
+   * Mer information om hur du kan använda paket för att installera nya funktioner, överföra innehåll mellan instanser och säkerhetskopiera databasinnehåll finns i [Pakethanteraren](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/developer-tools/package-manager.html).
 
    >[!NOTE]
    >
-   >Alla AEM artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM för ett visst ändamål kan du läsa avsnittet [Körningslägen i dokumentet Distribuera till AEM as a Cloud Service.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/deploying/overview.html#runmodes)
+   >Alla AEM artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM för ett visst ändamål kan du läsa avsnittet [Körningslägen i dokumentet Distribuera till AEM as a Cloud Service](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/deploying/overview.html#runmodes).
 
 1. Dispatchartefakten distribueras till varje dispatcher enligt följande:
 
    1. Aktuella konfigurationer säkerhetskopieras och kopieras till en tillfällig plats.
-   1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i dokumentet [Dispatcher Configurations](/help/getting-started/dispatcher-configurations.md). Detta rensar katalogerna för att säkerställa att inga överblivna filer lämnas kvar.
+   1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i [Dispatcher Configurations](/help/getting-started/dispatcher-configurations.md). Detta rensar katalogerna för att säkerställa att inga överblivna filer lämnas kvar.
    1. Artefakten extraheras till katalogen `httpd`. Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen. Dessa filer är viktiga för AMS-dispatcherramverket och kan inte ändras.
    1. Apache utför ett konfigurationstest. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Varje sökväg som anges i pipeline-konfigurationen görs ogiltig eller töms från dispatchercachen.
@@ -200,7 +200,7 @@ I sådana fall där en omkörning är möjlig visas statussidan för produktions
 
 ### Kör API igen {#reexecute-api}
 
-Förutom att vara tillgänglig i användargränssnittet kan du använda [Cloud Manager-API:t](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#tag/Pipeline-Execution) för att utlösa omkörningar samt identifiera körningar som utlösts som omkörningar.
+Förutom att vara tillgänglig i användargränssnittet kan du använda [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#tag/Pipeline-Execution) för att utlösa omkörningar och identifiera körningar som utlösts som omkörningar.
 
 #### Utlösa en omkörning {#triggering}
 

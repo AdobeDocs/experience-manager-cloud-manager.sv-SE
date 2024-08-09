@@ -2,7 +2,7 @@
 title: CI/CD-rör
 description: Lär dig mer om CI/CD-pipelines och hur de hanterar distributioner till miljöer för staging och produktion i Cloud Manager.
 exl-id: 7130e5b7-6986-48c8-900c-90f3e4187f91
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 0%
@@ -41,7 +41,7 @@ I det här diagrammet visas vad som händer när en release aktiveras i [!UICONT
 
 ### Konfigurera en CI/CD-pipeline {#how-to-setup-a-ci-cd-pipeline}
 
-Mer information om pipelinekonfigurationen finns i dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp.](/help/using/non-production-pipelines.md)
+Mer information om pipelinekonfigurationen finns i dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
 ## Kvalitetsportar {#quality-gates}
 

@@ -2,9 +2,9 @@
 title: Meddelanden
 description: Läs om hur Cloud Manager meddelar dig om viktiga händelser.
 exl-id: cfd5655f-2d2c-4304-b25c-6cdffe7ff64c
-source-git-commit: e767d9ff5e3df0047d2cf47d7b0842854101a01a
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '561'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Läs om hur Cloud Manager meddelar dig om viktiga händelser.
 
 ## Meddelanden i Cloud Manager {#cloud-manager-notifications}
 
-[!UICONTROL Cloud Manager] skickar meddelanden till dig när en produktionspipeline startar och slutförs (utan fel eller slutförs) i början av en produktionsdistribution, samt när stegen **Go-Live Approval** och **Scheduled** nås. Dessa meddelanden skickas via meddelandesystemet [!UICONTROL Experience Cloud].
+[!UICONTROL Cloud Manager] skickar meddelanden till dig när en produktionspipeline startar och slutförs (utan fel eller slutförs), i början av en produktionsdistribution och när stegen **Go-Live Approval** och **Scheduled** nås. Dessa meddelanden skickas via meddelandesystemet [!UICONTROL Experience Cloud].
 
 >[!NOTE]
 >

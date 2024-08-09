@@ -2,9 +2,9 @@
 title: Hantera miljöer
 description: Lär dig hur du använder Cloud Manager för att hantera miljöer.
 exl-id: 700b0b4c-1e1a-4993-b366-426b14a98f8e
-source-git-commit: 116a930eea08b2bb9d288ec153519699754e0374
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Status är det sammanslagna energiläget över noderna i miljön i följande pri
 
 ## Hantera miljöer {#managing-environments-with-cloud-manager}
 
-Tryck eller klicka på raden i en miljö för att visa skärmen **Miljöer** på panelen **Miljöer**.
+Klicka på raden för en miljö i rutan **Miljö** för att visa skärmen **Miljö**.
 
 Skärmen **Miljö** visar alla produktions- och mellanlagringsmiljöer i programmet. Miljönamnet visas ovanför varje kort. Kortet innehåller en tabell med noder i miljön tillsammans med t-shirtstorleken för processorn, lagringsutrymmet, regionen och statusen.
 

@@ -2,9 +2,9 @@
 title: Introduktion till Cloud Manager för AMS
 description: Börja här för att lära känna Cloud Manager för Adobe Managed Services (AMS) och hur det gör det möjligt för organisationer att självhantera Adobe Experience Manager i molnet.
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: a2cea28061304d109a3c9a48650d01255579443c
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1276'
+source-wordcount: '1271'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ Börja här för att lära känna Cloud Manager för Adobe Manage Services (AMS)
 >
 >I denna dokumentation beskrivs Cloud Manager för Adobe Managed Services (AMS) funktioner.
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen.](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/home.html)
+>Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/content/implementing/home.html).
 
 Med Cloud Manager får ditt utvecklingsteam följande funktioner:
 
@@ -55,7 +55,7 @@ Med användargränssnittet för [!UICONTROL Cloud Manager] kan du enkelt komma �
 
 Du definierar programspecifika nyckeltal (KPI) (t.ex. toppsidor per minut och förväntad svarstid för en sidinläsning) som utgör grunden för att mäta en lyckad distribution. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Med självbetjäningsgränssnittet får du kontroll, men det ger även länkar till resurser för god praxis och tillgång till experter i Adobe som kan ge den vägledning du behöver.
 
-Information om hur du utforskar och kommer igång med användargränssnittet för [!UICONTROL Cloud Manager] finns i dokumentet [Första gången du loggar in.](/help/getting-started/first-time-login.md)
+Information om hur du utforskar och kommer igång med användargränssnittet för [!UICONTROL Cloud Manager] finns i dokumentet [Första gången du loggar in](/help/getting-started/first-time-login.md).
 
 ### CI/CD-pipeline {#ci-cd-pipeline}
 
@@ -73,7 +73,7 @@ Med ett automatiskt utlösarläge distribueras kod automatiskt till en miljö ba
 
 Oberoende av distributionsutlösaren utförs kvalitetskontroller alltid som en del av CI/CD-pipelinekörningen varje gång en distribution aktiveras. Kvalitetskontrollerna omfattar bland annat kodkontroll, säkerhetstestning och prestandatestning, som alla levereras utan att du eller dina partners behöver göra något.
 
-Mer information om hur du distribuerar kod och kvalitetskontroller finns i dokumentet [Distribuera kod.](/help/using/code-deployment.md)
+Mer information om hur du distribuerar kod och kvalitetskontroller finns i dokumentet [Distribuera kod](/help/using/code-deployment.md).
 
 ## Valfria funktioner i Cloud Manager {#optional-features-in-cloud-manager}
 
@@ -89,7 +89,7 @@ Funktionen för autoskalning gäller endast Dispatcher/publiceringsskiktet och k
 
 >[!NOTE]
 >
->Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kan du kontakta din CSE- eller Adobe-representant.
+>Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kontaktar du CSE- eller Adobe-representanten.
 
 ### Blå/gröna distributioner {#blue-green}
 
@@ -131,5 +131,5 @@ Om du är intresserad av blå/grön driftsättning bör du tänka på följande 
 * Preview Dispatcher/publish pairs ingår inte i blue/green-distributioner.
 * Alla Dispatcher-/publiceringspar är identiska med alla andra Dispatcher-/publiceringspar.
 * Blå/grön finns endast i produktionsmiljön.
-* Blå/grön finns i både AWS och Azure.
+* Blå/grön finns i AWS och Azure.
 * Blå/grön är inte tillgängligt för Assets-kunder.

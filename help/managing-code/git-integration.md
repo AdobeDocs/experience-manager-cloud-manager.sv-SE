@@ -2,9 +2,9 @@
 title: Git-integrering med Adobe Cloud Manager
 description: I den här videoserien går vi igenom hur en kundhanterad (lokal) Git-databas installeras och integreras med Adobe Cloud Manager.
 exl-id: e517f8a4-23f0-4486-8278-91396dba76ec
-source-git-commit: 91e909273bf2b21d7f6413731923011915079e45
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '337'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ I den här videoserien förutsätts grundläggande kunskaper i Git och hantering
 
 Stegen och namnkonventioner som beskrivs i den här videoserien är några av de bästa sätten att arbeta med en kundhanterad Git-databas och Cloud Manager. Konventioner och arbetsflöden som skildras förväntas anpassas för enskilda utvecklingsteam.
 
-En fullständig översikt över Cloud Manager finns i dokumentet [Introduktion till Cloud Manager.](/help/introduction.md)
+En fullständig översikt över Cloud Manager finns i [Introduktion till Cloud Manager](/help/introduction.md).
 
 ## Inledande synkronisering {#initial-sync}
 
@@ -40,7 +40,7 @@ Första steget för att synkronisera en kundhanterad Git-databas med Cloud Manag
 
 ## Grundläggande förgreningsstrategi {#branching-strategy}
 
-Konfigurera en grundläggande förgreningsstrategi för att dra nytta av Cloud Manager [produktions](/help/using/production-pipelines.md)- och [icke-produktionspipelines.](/help/using/non-production-pipelines.md)
+Konfigurera en grundläggande förgreningsstrategi för att kunna dra nytta av Cloud Manager [produktions](/help/using/production-pipelines.md)- och [icke-produktionspipelines](/help/using/non-production-pipelines.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/28712/?quality=12)
 

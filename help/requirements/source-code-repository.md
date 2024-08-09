@@ -2,9 +2,9 @@
 title: Source Code Repository
 description: Lär dig mer om Git-databasen som är avsedd för alla program du har i Cloud Manager.
 exl-id: af551e33-3623-4fcd-8d25-4362d8871411
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '258'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ Din [!UICONTROL AEM Managed Services]-prenumeration innehåller en källkodsdata
 
 Som en god praxis bör du alltid använda Cloud Manager Git-databas, som är tom utan några förgreningar som konfigurerats eller exempelprojekt. Om du vill använda Cloud Manager Git-databas får du en privat åtkomsttoken som gör att du kan använda vilken Git-klient som helst för att skapa grenar, lagra och hämta koden, lista implementeringshistoriken osv.
 
-Mer information om hur du konfigurerar grenar i Git finns i [Konfigurera grenar.](/help/getting-started/configuring-branches.md)
+Mer information om hur du konfigurerar grenar i Git finns i [Konfigurera grenar ](/help/getting-started/configuring-branches.md).
 
-Mer information om hur du använder Cloud Manager Git-databasen med CI/CD-pipeline finns i dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
+Mer information om hur du använder Cloud Manager Git-databasen med CI/CD-pipeline finns i [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
 ## Lokal databas {#on-premise-repository}
 

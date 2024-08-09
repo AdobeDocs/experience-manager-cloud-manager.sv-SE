@@ -2,10 +2,10 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: dd96d773ea3e6b9c45886fe41b28d3dd70cb8a61
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '729'
-ht-degree: 4%
+source-wordcount: '724'
+ht-degree: 6%
 
 ---
 
@@ -46,7 +46,7 @@ I tabellen sammanfattas rollerna.
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i dokumentationen för [Admin Console.](https://helpx.adobe.com/enterprise/using/admin-console.html)
+Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i dokumentationen för [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 För att kunna ge rätt rollbaserade behörigheter till [!UICONTROL Cloud Manager] användare måste en administratör i kundens organisation skapa nya produktprofiler under produktkontexten för [!UICONTROL AEM Managed Services] som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna:
 
@@ -57,7 +57,7 @@ För att kunna ge rätt rollbaserade behörigheter till [!UICONTROL Cloud Manage
 
 Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Admin Console.
 
-1. Logga in på Admin Console på [`https://adminconsole.adobe.com`.](https://adminconsole.adobe.com)
+1. Logga in på Admin Console på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
 
 1. Klicka på fliken **Översikt** och klicka på den produkt du vill ändra på kortet **Produkter och tjänster**. Om den inte finns med i listan använder du fliken **Produkter** för att leta reda på produkten och klicka på den.
 
@@ -93,7 +93,7 @@ Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Ad
 
 När du har skapat produktprofiler kan du tilldela användare eller användargrupper till dem.
 
-1. Logga in på Admin Console på [`https://adminconsole.adobe.com`.](https://adminconsole.adobe.com)
+1. Logga in på Admin Console på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
 
 1. Gå till Admin Console och välj fliken **Användare**.
 
@@ -105,7 +105,7 @@ När du har skapat produktprofiler kan du tilldela användare eller användargru
 
    ![Redigera användare](/help/assets/admin-console-edit-user.png)
 
-1. I dialogrutan **Redigera produkter och användargrupper** klickar du på plusknappen och väljer de profiler som ska tilldelas användaren.
+1. Klicka på plusknappen i dialogrutan **Redigera produkter och användargrupper** och välj de profiler som ska tilldelas till användaren.
 
    * Om användaren redan är tilldelad rollerna är plusknappen en redigeringsknapp (en penna), men fungerar på samma sätt.
 

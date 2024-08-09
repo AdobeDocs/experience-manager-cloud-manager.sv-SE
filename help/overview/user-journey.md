@@ -2,7 +2,7 @@
 title: Användarresa
 description: I det här dokumentet beskrivs de olika introduktionsscenarierna och hur du kommer igång med Cloud Manager.
 exl-id: deb3429c-dfcf-4e52-9aba-d9368aa240e6
-source-git-commit: b0dbb602253939464ff034941ffbad84b7df77df
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -46,7 +46,7 @@ När du utför uppgraderingen kommer du att vara registrerad på Cloud Manager o
 
 Ditt befintliga AEM måste också följa de rekommenderade bästa metoderna eftersom du börjar använda [!UICONTROL Cloud Manager] för att distribuera nya kodändringar i dina AEM.
 
-Mer information om fördelarna med att uppgradera till AEM 6.5 finns i dokumentet [Uppgradera till AEM 6.5.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/upgrade.html)
+Mer information om fördelarna med att uppgradera till AEM 6.5 finns i dokumentet [Uppgradera till AEM 6.5](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/upgrade.html).
 
 ## Åtkomst till [!UICONTROL Cloud Manager] {#accessing-cloud-manager}
 
@@ -56,7 +56,7 @@ När du har loggat in på [!UICONTROL Cloud Manager] för första gången får d
 
 Information om hur du kommer igång med [!UICONTROL Cloud Manager] finns i dokumentet [Första gången du loggar in](/help/getting-started/first-time-login.md).
 
-Mer information om AEM finns i dokumentet [Distribuera och underhålla.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/deploying/deploy.html)
+Mer information om AEM finns i dokumentet [Distribuera och underhålla](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/deploying/deploy.html).
 
 ## Komma igång med [!UICONTROL Cloud Manager] {#getting-started-with-cloud-manager}
 

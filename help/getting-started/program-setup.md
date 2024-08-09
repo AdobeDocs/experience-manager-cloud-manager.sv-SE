@@ -2,9 +2,9 @@
 title: Programinställningar
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '580'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Du kan redigera program när de har konfigurerats. Följ de här stegen för att
 
 Observera att ändringarna sparas direkt i Cloud Manager, men att de inte kommer att återspeglas i dina miljöer förrän nästa pipeline körs.
 
-Om du ännu inte har skapat en pipeline läser du dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp.](/help/using/non-production-pipelines.md)
+Om du ännu inte har skapat en pipeline läser du dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
 ## Växla mellan program {#swithing-programs}
 
@@ -86,7 +86,7 @@ Platsens KPI:er mäts i tester som körs i mellanlagringsmiljön. Vanligtvis ska
 
 En användare som till exempel förväntar sig ett genomsnitt på 1 000 sidvisningar per minut i sin produktionsmiljö och har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut. Detta förutsätter att deras mellanlagringsmiljö endast består av ett enda dispatcher-/publiceringsserverpar.
 
-Assets prestandatestning görs genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs samt olika mätvärden på systemnivå.
+Assets prestandatestning görs genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs och olika mätvärden på systemnivå.
 
 Du kan ha ett leveransnätverk (CDN) som Akamai eller CloudFront framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot mellanlagringsmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga, cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
 

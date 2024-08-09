@@ -3,9 +3,9 @@ title: Utvärderingsfas
 seo-title: Evaluation Phase
 description: Läs om hur utvärderingsfasen i Product Update Wizard bedömer uppgraderingskomplexiteten med mönsterdetektorn.
 exl-id: 1ffcbc21-dc36-435d-b83b-0209f81a15e7
-source-git-commit: ce2145da3b9e605e8a41bac28df520f14e255557
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '280'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Rapporten är en bedömning av den utvecklingsinsats som ingår i uppgraderingen
 
 >[!NOTE]
 >
->Mer information om mönsteravkännare finns i dokumentet [Utvärderar uppgraderingskomplexiteten med mönsteravkännaren.](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/pattern-detector.html?lang=en)
+>Mer information om mönsteridentifierare finns i [Utvärdera uppgraderingskomplexiteten med mönsterdetektorn](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/upgrading/pattern-detector.html?lang=en).
 
 ## Kör utvärderingen {#running}
 
@@ -33,7 +33,7 @@ Mönsterdetektorn kan köras i alla miljöer. För att öka avkänningsfrekvense
 
 Följ de här stegen för att generera utvärderingsrapporten.
 
-1. Starta guiden enligt beskrivningen i dokumentet [Produktuppdateringsguiden.](/help/product-update-wizard/overview.md)
+1. Starta guiden enligt beskrivningen i dokumentet [Produktuppdateringsguiden](/help/product-update-wizard/overview.md).
 
 1. Klicka på **[!UICONTROL Run Evaluation]**.
 

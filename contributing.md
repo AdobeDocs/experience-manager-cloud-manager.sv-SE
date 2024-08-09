@@ -1,7 +1,7 @@
 ---
-source-git-commit: 2a25b0482800d4c5428a5595c9699dceed327043
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 Tack för att du väljer att delta i Adobe Experience Manager Screens-dokumentationen! Adobe välkomnar bidrag från hela läsarcommunityn och från medarbetare i Adobe.
 
-I den här filen beskrivs hur du kan bidra samt vilka riktlinjer du ska följa när du gör dina bidrag.
+I den här filen beskrivs hur du kan bidra och de riktlinjer som ska följas när du gör dina bidrag visas.
 
 ## Adobe Öppna Source uppförandekod
 
@@ -30,7 +30,7 @@ Vilken metod du väljer beror på hur bekväm du själv redigerar dokumentatione
 
 >[!NOTE]
 >
->Bidrag som du skickar omfattas av [Adobe användarvillkoren.](https://www.adobe.com/legal/terms.html)
+>Bidrag som du skickar in omfattas av [Adobe användarvillkoren](https://www.adobe.com/legal/terms.html).
 
 ### Skapa ett problem {#create-an-issue}
 

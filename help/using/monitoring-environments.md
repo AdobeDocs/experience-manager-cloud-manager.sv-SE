@@ -2,9 +2,9 @@
 title: Övervakningsmiljöer
 description: Lär dig övervaka dina miljöer i Cloud Manager.
 exl-id: 32886133-d6c0-4aed-8bb0-81b84f63e825
-source-git-commit: ab527beb706ab73a14cc933a3414873dee6b7a9e
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '918'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Följ de här stegen för att få åtkomst till systemövervakning.
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
-1. Tryck eller klicka på ellipsknappen för programmet som du vill övervaka och välj alternativet **Visa övervakning**.
+1. Klicka på ellipsknappen för programmet som du vill övervaka och välj alternativet **Visa övervakning**.
 
    ![Inställningar](/help/assets/first-timea1.png)
 
@@ -51,7 +51,7 @@ Statusen i varje kategori är en sammanfattning av enskilda mätvärden. Om någ
 
 ## Information om systemövervakning {#system-monitoring-detail}
 
-Om du vill visa information om specifika mått trycker eller klickar du på en av kategorikolumnerna för en viss instans eller kategorititeln i den vänstra navigeringen. På varje detaljsida visas en serie diagram för måtten i den kategorin. Du kan antingen visa mätvärden för alla instanser i en miljö eller för en viss instans. Du kan växla mellan miljö och instanser med listrutorna i det övre högra hörnet.
+Om du vill visa information om specifika mått klickar du på en av kategorikolumnerna för en viss instans eller på kategorititeln i den vänstra navigeringen. På varje detaljsida visas en serie diagram för måtten i den kategorin. Du kan antingen visa mätvärden för alla instanser i en miljö eller för en viss instans. Du kan växla mellan miljö och instanser med listrutorna i det övre högra hörnet.
 
 ![Välj miljö](/help/assets/System_Monitoring1.png)
 
@@ -98,9 +98,9 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 ## SLA-rapportering {#sla-reporting}
 
-Du kan se hur väl AEM presterar i förhållande till det serviceavtal du har tecknat.
+Du kan se hur väl din AEM presterar i förhållande till ditt avtalade servicenivåavtal (SLA).
 
-I följande diagram visas månatlig SLA-uppnående för 2019.
+I följande diagram visas SLA månatliga resultat för 2019.
 
 ![SLA 2018-diagram](/help/assets/SLA-Reports-one.png)
 
@@ -112,14 +112,14 @@ Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incid
 
 ![Händelseanalys](/help/assets/sla-reporting3.png)
 
-## SLA-mått {#sla-metrics}
+## SLA Metrics {#sla-metrics}
 
-* **Författarkontrakt**: Detta är det SLA som definieras i ditt kontrakt med Adobe Managed Services för författarnivån.
-* **AMS Author SLA**: Detta är den uppmätta drifttiden för de factoringincidenter som orsakas av Adobe eller våra leverantörer i produktionsförfattarnivån.
-* **Författar-SLA**: Detta är den uppmätta drifttiden för författarnivån och ignorerar schemalagd drifttid, till exempel underhållsfönster.
-* **Slutanvändaravtal**: Detta är det SLA som definieras i ditt avtal med Adobe Managed Services för publiceringsnivån.
-* **Slutanvändar-SLA för AMS**: Detta är den uppmätta drifttiden för de factoringincidenter i produktionsskiktet som orsakas av Adobe eller våra leverantörer.
-* **SLA för slutanvändare**: Det här är den uppmätta drifttiden för publiceringsskiktet som ignorerar schemalagda driftstopp, till exempel underhållsfönster.
+* **Författarkontrakt**: Detta är den SLA som definieras i ditt avtal med Adobe Managed Services för författarnivån.
+* **AMS Author SLA**: Detta är den uppmätta drifttiden för produktionsförfattarens factoring-incidenter som orsakas av Adobe eller våra leverantörer.
+* **Författare av SLA**: Detta är den uppmätta drifttiden för författarnivån som ignorerar schemalagda driftavbrott, t.ex. underhållsperioder.
+* **Slutanvändaravtal**: Detta är den SLA som definieras i ditt avtal med Adobe Managed Services för publiceringsnivån.
+* **AMS-slutanvändare SLA**: Detta är den uppmätta drifttiden för de factoringincidenter i produktionsskiktet som orsakas av Adobe eller våra leverantörer.
+* **Slutanvändare SLA**: Det här är den uppmätta drifttiden för publiceringsskiktet som ignorerar schemalagda driftstopp, till exempel underhållsfönster.
 
 ## Videosjälvstudie {#video-tutorial}
 

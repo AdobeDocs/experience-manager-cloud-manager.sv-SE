@@ -2,9 +2,9 @@
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
 exl-id: a81eda9f-aa89-40ea-8e4c-52367a0a6aba
-source-git-commit: 4a784f1594be4831be1c1c4aecb41b4f1b3b8be2
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1435'
 ht-degree: 1%
 
 ---
@@ -26,17 +26,17 @@ Med anpassade behörigheter kan användare skapa nya anpassade behörighetsprofi
 
 >[!TIP]
 >
->Mer information om fördefinierade roller finns i dokumentet [Rollbaserade behörigheter.](/help/requirements/role-based-permissions.md)
+>Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md).
 
 ## Använda anpassade behörigheter {#using}
 
 För att skapa och använda egna behörigheter krävs tre steg:
 
-1. [Skapa en ny produktprofil.](#create)
-1. [Tilldela anpassade behörigheter till den nya produktprofilen.](#assign-permissions)
-1. [Tilldela användare till den nya produktprofilen.](#assign-users)
+1. [Skapa en ny produktprofil](#create).
+1. [Tilldela anpassade behörigheter till den nya produktprofilen](#assign-permissions).
+1. [Tilldela användare till den nya produktprofilen](#assign-users).
 
-I det här avsnittet beskrivs de här stegen. Det kan vara praktiskt att referera till avsnitten [Villkor](#terms) och [Konfigurerbara behörigheter](#configurable-permissions) när du skapar egna anpassade behörigheter.
+I det här avsnittet beskrivs de här stegen. Det kan vara praktiskt att se avsnitten [Villkor](#terms) och [Konfigurerbara behörigheter](#configurable-permissions) när du skapar egna anpassade behörigheter.
 
 >[!NOTE]
 >
@@ -50,9 +50,9 @@ Du måste först skapa en ny produktprofil innan du kan tilldela anpassade behö
 
 1. Välj produkten **AEM Managed Services**.
 
-1. Sök efter en instans med ett namn som matchar mönstret `*-cloud-manager` och tryck eller klicka för att hantera användare och behörigheter.
+1. Sök efter en instans med ett namn som matchar mönstret `*-cloud-manager` och klicka för att hantera användare och behörigheter.
 
-1. Du omdirigeras till fliken **Produkter** på Admin Console, där du kan hantera användare och behörigheter för molnhanteraren. Tryck eller klicka på knappen **Ny profil** på Admin Console.
+1. Du omdirigeras till fliken **Produkter** på Admin Console, där du kan hantera användare och behörigheter för molnhanteraren. Klicka på knappen **Ny profil** i Admin Console.
 
 ![Knappen Ny profil](/help/assets/admin-console-new-profile.png)
 
@@ -63,7 +63,7 @@ Du måste först skapa en ny produktprofil innan du kan tilldela anpassade behö
    * **Beskrivning** - En informativ beskrivning av profilen som förklarar dess syfte (valfritt)
    * **Meddela användare via e-post** - När du väljer det här alternativet meddelas användarna via e-post när de läggs till eller tas bort från profilen.
 
-1. Tryck eller klicka på **Spara** när du är klar.
+1. Klicka på **Spara** när du är klar.
 
 Den nya produktprofilen sparas och visas i listan över produktprofiler på Admin Console.
 
@@ -71,13 +71,13 @@ Den nya produktprofilen sparas och visas i listan över produktprofiler på Admi
 
 Nu när du har en ny produktprofil kan du tilldela den anpassade behörigheter.
 
-1. I Admin Console trycker eller klickar du på namnet på den [nya produktprofilen som du nyss skapade.](#create)
+1. Klicka på namnet på den [nya produktprofilen som du nyss skapade](#create) i Admin Console.
 
 1. I det fönster som öppnas väljer du fliken **Behörigheter** för att visa en lista med redigerbara behörigheter.
 
    ![Redigerbara behörigheter](/help/assets/permissions-tab.png)
 
-1. Tryck eller klicka på länken **Redigera** för en behörighet för att redigera den.
+1. Klicka på länken **Redigera** för att redigera en behörighet.
 
 1. Fönstret **Redigera behörigheter** öppnas.
    * Den behörighet du valde i föregående steg är markerad i den vänstra kolumnen.
@@ -86,13 +86,13 @@ Nu när du har en ny produktprofil kan du tilldela den anpassade behörigheter.
 
    ![Redigera behörighetsobjekt](/help/assets/edit-permission-items.png)
 
-1. Tryck eller klicka på plusikonen (`+`) bredvid behörighetsobjektet för att lägga till det i kolumnen **Inkluderade behörighetsobjekt**.
+1. Klicka på plusikonen (`+`) bredvid behörighetsobjektet för att lägga till det i kolumnen **Inkluderade behörighetsobjekt**.
 
-   * Tryck eller klicka på ikonen `i` bredvid ett behörighetsobjekt om du vill veta mer om det.
+   * Klicka på ikonen `i` bredvid ett behörighetsobjekt om du vill veta mer om det.
 
-1. Tryck eller klicka på knappen **Lägg till alla** längst upp i kolumnen **Tillgängliga behörigheter** för att lägga till alla behörigheter. Tryck eller klicka på **Ta bort alla** om du vill ta bort alla behörigheter som du tidigare valt.
+1. Klicka på knappen **Lägg till alla** längst upp i kolumnen **Tillgängliga behörigheter** för att lägga till alla behörigheter. Klicka på **Ta bort alla** om du vill ta bort alla tidigare markerade behörigheter.
 
-1. Tryck eller klicka på **Spara** när du är klar med att definiera behörighetsobjekten för den nya produktprofilen.
+1. Klicka på **Spara** när du är klar med att definiera behörighetsobjekten för den nya produktprofilen.
 
 Din nya produktprofil sparas nu med anpassade behörigheter.
 
@@ -100,11 +100,11 @@ Din nya produktprofil sparas nu med anpassade behörigheter.
 
 Nu kan du tilldela användare till den nya produktprofilen som du skapade med anpassade behörigheter.
 
-1. Tryck eller klicka på namnet på den [nya produktprofilen som du just har tilldelat anpassade behörigheter till i Admin Console.](#assign-permissions)
+1. Klicka på namnet på den [nya produktprofilen som du just har tilldelat anpassade behörigheter till i Admin Console ](#assign-permissions).
 
 1. I det fönster som öppnas väljer du fliken **Användare**.
 
-1. Tryck eller klicka på knappen **Lägg till användare** och tilldela användare till den nya produktprofilen med anpassade behörigheter.
+1. Klicka på knappen **Lägg till användare** och tilldela användare till din nya produktprofil med anpassade behörigheter.
 
 Mer information om hur du använder Admin Console finns i avsnittet **Lägg till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
 
@@ -139,7 +139,7 @@ Följande behörigheter är behörigheter på organisationsnivå:
 
 * **Åtkomst till databasinformation** Med den här innehavar-/organisationsnivån kan användare generera användarnamn, lösenord och databas-URL för åtkomst och bidra till kundprojekt.
    * Användarnamn och lösenord för databasåtkomst är gemensamma för alla rapporter i organisationen, men databasens URL är unik för varje program.
-   * Mer information finns i dokumentet [Source Code Repository](/help/requirements/source-code-repository.md).
+   * Mer information finns i [Source koddatabas](/help/requirements/source-code-repository.md).
 
 ## Villkor {#terms}
 
@@ -147,7 +147,7 @@ Följande termer används för att skapa och hantera anpassade behörigheter och
 
 | Term | Beskrivning |
 |---|---|
-| Fördefinierade behörigheter | Fördefinierade roller som **Business Owner**, **Deployment Manager** osv. för att styra olika funktioner i Cloud Manager. Mer information om fördefinierade roller finns i dokumentet [Rollbaserade behörigheter.](/help/requirements/role-based-permissions.md) |
+| Fördefinierade behörigheter | Fördefinierade roller som **Business Owner**, **Deployment Manager** osv. för att styra olika funktioner i Cloud Manager. Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md). |
 | Anpassade behörigheter | Cloud Manager-funktioner som gör att användare kan skapa behörighetsprofiler för att definiera roller som styr funktioner som stöds i Cloud Manager |
 | Behörighetsprofil | Skapat i Admin Console för att hantera konfigurerbara behörigheter som gäller för användare som ingår i behörighetsprofilen |
 | Konfigurerbar behörighet | Cloud Manager-behörigheter som kan konfigureras i behörighetsprofilen |
@@ -164,7 +164,7 @@ Behörighetsobjekt avser det område där behörigheten ska tillämpas. Vanligtv
 
 ## Begränsningar {#limitations}
 
-Tänk på följande begränsningar när du använder anpassade behörigheter.
+Tänk på följande begränsningar när du använder anpassade behörigheter:
 
 * En [begränsad uppsättning behörigheter är tillgängliga](#configurable-permissions) för att skapa anpassade profiler.
 * Resurser som program, miljö, pipeline osv. som skapats i Cloud Manager kan ta upp till två minuter att visa i Admin Console för behörighetskonfiguration.
@@ -179,7 +179,7 @@ Tänk på följande begränsningar när du använder anpassade behörigheter.
 * Deployment Manager
 * Developer
 
-Mer information om fördefinierade roller finns i dokumentet [Rollbaserade behörigheter.](/help/requirements/role-based-permissions.md)
+Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md).
 
 ### Vad händer med fördefinierade behörighetsprofiler med introduktion till anpassade profiler?
 

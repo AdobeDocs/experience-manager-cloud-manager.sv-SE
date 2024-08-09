@@ -2,9 +2,9 @@
 title: Rollbaserade behörigheter
 description: Lär dig mer om Cloud Manager förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
-source-git-commit: fc1bc626dc18d25ce8c5bbae71396b234b5676db
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '597'
 ht-degree: 2%
 
 ---
@@ -22,9 +22,9 @@ ht-degree: 2%
 
 ## Användarroller {#user-roles}
 
-Rollhantering för [!UICONTROL Cloud Manager] har slutförts med Admin Console [.](https://helpx.adobe.com/enterprise/using/admin-console.html) Alla användare av [!UICONTROL Cloud Manager] måste vara medlemmar i kundens IMS-organisation och ha produktkontexten Adobe Managed Services. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
+Rollhanteringen för [!UICONTROL Cloud Manager] har slutförts med [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html). Alla användare av [!UICONTROL Cloud Manager] måste vara medlemmar i kundens IMS-organisation och ha produktkontexten Adobe Managed Services. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
 
-Mer information om hur du konfigurerar dina roller finns i dokumentet [Konfigurera användare och roller.](/help/requirements/users-and-roles.md)
+Mer information om hur du konfigurerar dina roller finns i dokumentet [Konfigurera användare och roller](/help/requirements/users-and-roles.md).
 
 I den här tabellen visas de roller du kan tilldela i Admin Console.
 
@@ -65,8 +65,8 @@ Var och en av rollerna har särskilda associerade förkonfigurerade behörighete
 | Läs steg | Se resultaten av mätvärdena för stegkvalitet | x | x | x | x | x |
 | Generera token för personlig åtkomst | Åtkomstgit |  | x |  | x |  |
 
-Mer information om hur du konfigurerar användarna finns i dokumentet [Konfigurera användare och roller.](/help/requirements/users-and-roles.md)
+Mer information om hur du konfigurerar användarna finns i dokumentet [Konfigurera användare och roller](/help/requirements/users-and-roles.md).
 
 >[!TIP]
 >
->Anpassade behörighetsprofiler med konfigurerbara behörigheter är också tillgängliga. Mer information finns i dokumentet [Anpassade behörigheter](/help/using/custom-permissions.md).
+>Anpassade behörighetsprofiler med konfigurerbara behörigheter är också tillgängliga. Mer information finns i [Anpassade behörigheter](/help/using/custom-permissions.md).

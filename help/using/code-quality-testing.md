@@ -2,9 +2,9 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: fadcf560f08bf16d0d18172c620a450d0cb06225
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '2774'
+source-wordcount: '2759'
 ht-degree: 0%
 
 ---
@@ -46,11 +46,11 @@ Kodkvalitetstestning söker igenom källkoden för att säkerställa att den upp
 
 Programmet implementerar det med en kombination av SonarQube-analys, innehållspaketgranskning med OakPAL och Dispatcher-validering med Dispatcher Optimization Tool.
 
-Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet.](/help/using/custom-code-quality-rules.md)
+Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
 >[!TIP]
 >
->Du kan hämta den fullständiga listan med regler [med den här länken.](/help/assets/CodeQuality-rules-latest-AMS.xlsx)
+>Du kan hämta den fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
 
 Resultaten av kodkvalitetstestningen levereras som en klassificering enligt sammanfattningen i denna tabell.
 
@@ -71,7 +71,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 
 >[!NOTE]
 >
->Mer information om de anpassade regler för kodkvalitet som körs av [!UICONTROL Cloud Manager] finns i dokumentet [Anpassade regler för kodkvalitet.](custom-code-quality-rules.md)
+>Mer information om anpassade regler för kodkvalitet som körs av [!UICONTROL Cloud Manager] finns i [Anpassade regler för kodkvalitet](custom-code-quality-rules.md).
 
 ### Hantera med falskt positiva {#dealing-with-false-positives}
 
@@ -172,7 +172,7 @@ Tre siduppsättningar markerar sidorna. Cloud Manager använder åtkomstloggarna
 
 ##### Distribution av trafik mellan valda siduppsättningar {#distribution-of-traffic}
 
-Du kan välja var som helst från en till alla tre uppsättningar på fliken **Testing** i din [pipeline-konfiguration.](/help/using/production-pipelines.md) Trafikfördelningen baseras på antalet valda uppsättningar. Det innebär att om alla tre är markerade placeras 33 % av det totala antalet sidvisningar i varje uppsättning. Om två är markerade går 50 % till varje uppsättning. Om du väljer en sådan går 100 % av trafiken till den uppsättningen.
+Du kan välja var som helst från en till alla tre uppsättningar på fliken **Testing** i din [pipeline-konfiguration](/help/using/production-pipelines.md). Trafikfördelningen baseras på antalet valda uppsättningar. Det innebär att om alla tre är markerade placeras 33 % av det totala antalet sidvisningar i varje uppsättning. Om två är markerade går 50 % till varje uppsättning. Om du väljer en sådan går 100 % av trafiken till den uppsättningen.
 
 Låt oss titta på det här exemplet.
 
@@ -188,7 +188,7 @@ Under 30 minuters testperiod:
 
 #### Testning och rapportering {#testing-reporting}
 
-Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida samt olika värden på systemnivå (processor, minne, nätverksdata) för alla instanser.
+Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida och olika värden på systemnivå (processor, minne, nätverksdata) för alla instanser.
 
 I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett gating-system med tre skikt.
 
@@ -204,7 +204,7 @@ I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett gating-s
 | Utnyttjande av nätverksbandbredd | Viktigt | >= 90 % |
 | Begäranden per minut | Info | >= 6000 |
 
-Mer information om hur du använder grundläggande autentisering för prestandatestning för platser och Assets finns i avsnittet [Autentiserad prestandatestning](#authenticated-performance-testing).
+Mer information om hur du använder grundläggande autentisering för prestandatestning för platser och Assets finns i [Autentiserad prestandatestning](#authenticated-performance-testing).
 
 >[!NOTE]
 >
@@ -250,7 +250,7 @@ Om exempelvis en delning på 70/30 används och det finns 10 resurser överförd
 
 #### Testning och rapportering {#testing-and-reporting}
 
-Cloud Manager skapar en mapp på författarinstansen med det användarnamn och lösenord som CSE-installationen använder. Assets överförs sedan till mappen med ett bibliotek med öppen källkod. Testerna som körs av Assets teststeg har skrivits med ett [bibliotek med öppen källkod.](https://github.com/adobe/toughday2) Både bearbetningstiden för varje resurs och olika mätvärden på systemnivå mäts över testperiodens 30 minuter. Den här funktionen kan överföra både bilder och PDF-dokument.
+Cloud Manager skapar en mapp på författarinstansen med det användarnamn och lösenord som CSE-installationen använder. Assets överförs sedan till mappen med ett bibliotek med öppen källkod. Testen som körs av Assets teststeg har skrivits med ett [bibliotek med öppen källkod](https://github.com/adobe/toughday2). Både bearbetningstiden för varje resurs och olika mätvärden på systemnivå mäts under testperioden på 30 minuter. Den här funktionen kan överföra både bilder och PDF-dokument.
 
 >[!TIP]
 >
@@ -298,7 +298,7 @@ Om de enda objekten i `myco-all-1.0.0-SNAPSHOT.zip` är de två överhoppade inn
 
 För projekt som producerar dussintals inbäddade paket har den här optimeringen visat sig spara upp till 10 minuter per pipeline-körning.
 
-Ett specialfall kan inträffa när innehållspaketet &quot;all&quot; innehåller en kombination av överhoppade innehållspaket och OSGi-paket. Om `myco-all-1.0.0-SNAPSHOT.zip` till exempel innehåller de två inbäddade paketen som tidigare nämnts samt ett eller flera OSGi-paket, skapas ett nytt, minimalt innehållspaket med endast OSGi-paketen. Det här paketet har alltid namnet `cloudmanager-synthetic-jar-package` och de inkluderade paketen placeras i `/apps/cloudmanager-synthetic-installer/install`.
+Ett specialfall kan inträffa när innehållspaketet &quot;all&quot; innehåller en kombination av överhoppade innehållspaket och OSGi-paket. Om `myco-all-1.0.0-SNAPSHOT.zip` till exempel innehåller de två inbäddade paketen som nämndes tidigare och ett eller flera OSGi-paket, skapas ett nytt, minimalt innehållspaket med endast OSGi-paketen. Det här paketet har alltid namnet `cloudmanager-synthetic-jar-package` och de inkluderade paketen placeras i `/apps/cloudmanager-synthetic-installer/install`.
 
 >[!NOTE]
 >

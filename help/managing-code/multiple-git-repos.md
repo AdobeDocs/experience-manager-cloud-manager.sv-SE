@@ -2,9 +2,9 @@
 title: Arbeta med flera Git-databaser
 description: I stället för att arbeta direkt med Cloud Manager Git-databas kan du lära dig hur du kan arbeta med din egen Git-databas eller med flera Git-databaser.
 exl-id: 53bf78bb-489a-4a83-8459-c361f532d54a
-source-git-commit: da9dff997a277c207e2c48207217cb30325f3c0d
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '752'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ jobs:
           git -C main push
 ```
 
-Så som visas ovan är det mycket flexibelt att använda en GitHub-åtgärd. Alla mappningar mellan grenar i Git-databaserna kan utföras liksom all mappning av de separata Git-projekten till huvudprojektets kataloglayout.
+Så som visas ovan är det mycket flexibelt att använda en GitHub-åtgärd. Alla mappningar mellan grenar i Git-databaserna kan utföras och alla mappningar av de separata Git-projekten till huvudprojektets kataloglayout.
 
 >[!NOTE]
 >
@@ -181,7 +181,7 @@ git commit -F ../commit.txt
 git push
 ```
 
-Så som visas ovan är användningen av ett Jenkins-jobb mycket flexibel. Alla mappningar mellan grenar i Git-databaserna kan utföras liksom all mappning av de separata Git-projekten till huvudprojektets kataloglayout.
+Så som visas ovan är användningen av ett Jenkins-jobb mycket flexibel. Alla mappningar mellan grenar i Git-databaserna kan utföras och alla mappningar av de separata Git-projekten till huvudprojektets kataloglayout.
 
 >[!NOTE]
 >

@@ -2,7 +2,7 @@
 title: Lägga till Adobe-databaser i Cloud Manager
 description: Lär dig hur du skapar databaser som hanteras med Adobe i Cloud Manager.
 exl-id: 24c6ca97-ea70-41b8-b4c7-b8b0f406a57d
-source-git-commit: e93285f7c7495ec9d2f11d289adaf6aaba7e58ea
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
 source-wordcount: '145'
 ht-degree: 0%
@@ -29,8 +29,8 @@ Fönstret **Databaser** gör det enkelt att lägga till fler Adobe-hanterade dat
 
    ![Dialogrutan Lägg till databas](assets/add-repository-wizard.png)
 
-När guiden stängs visas din nya databas i tabellen i fönstret **Databaser**. Nu kan du associera en [CI/CD-pipeline](/help/overview/ci-cd-pipelines.md) med den eller hantera den i fönstret [**Databaser**.](managing-repositories.md)
+När guiden stängs visas din nya databas i tabellen i fönstret **Databaser**. Du kan nu associera en [CI/CD-pipeline](/help/overview/ci-cd-pipelines.md) med den eller hantera den i fönstret [**Databaser**](managing-repositories.md).
 
 >[!TIP]
 >
->Du kan också lägga till GitHub-databaser som du hanterar själv som [privata databaser.](private-repositories.md)
+>Du kan också lägga till GitHub-databaser som du hanterar själv som [privata databaser](private-repositories.md).

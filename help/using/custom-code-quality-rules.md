@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 2a25b0482800d4c5428a5595c9699dceed327043
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '3483'
+source-wordcount: '3482'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Anpassade regler för kodkvalitet {#custom-code-quality-rules}
 
-Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av [kodkvalitetstestningen](/help/using/code-quality-testing.md) baserat på bästa praxis från AEM.
+Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager som en del av [kodkvalitetstestningen](/help/using/code-quality-testing.md), baserat på bästa praxis från AEM.
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager 
 
 >[!NOTE]
 >
->Fullständiga SonarQube-regler kan inte laddas ned på grund av Adobe egna information. Du kan hämta den fullständiga listan med regler [med den här länken.](/help/assets/CodeQuality-rules-latest-AMS.xlsx) Fortsätt läsa det här dokumentet för beskrivningar och exempel på reglerna.
+>Fullständiga SonarQube-regler kan inte laddas ned på grund av Adobe egna information. Du kan hämta den fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx). Fortsätt läsa det här dokumentet för beskrivningar och exempel på reglerna.
 
 ## SonarQube-regler {#sonarqube-rules}
 
@@ -500,7 +500,7 @@ public void doThis(Resource resource) {
 
 Använd inte Sling Scheduler för aktiviteter som kräver en garanterad körning. Sling Scheduled Jobs garanterar körning och passar bättre för både klustrade och icke-klustrade miljöer.
 
-Läs [dokumentationen för Apache Sling-händelser och jobbhantering](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) om du vill veta mer om hur Sling-jobb hanteras i klustrade miljöer.
+Läs [dokumentationen om Apache Sling-händelser och jobbhantering](https://sling.apache.org/documentation/bundles/apache-sling-eventing-and-job-handling.html) om du vill veta mer om hur Sling-jobb hanteras i klustrade miljöer.
 
 ### AEM inaktuella API:er ska inte användas {#sonarqube-aem-deprecated}
 
@@ -655,7 +655,7 @@ Dokumentationen för AEM finns information och verktyg för hur du konverterar k
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents)
+Stöd för omvänd replikering är inte tillgängligt i distributioner av Cloud Service, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents).
 
 Kunder som använder omvänd replikering bör kontakta Adobe för att få alternativa lösningar.
 
@@ -708,9 +708,9 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://g
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Det har tidigare varit vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation.](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable)
+Det har tidigare varit vanligt att använda statiska mallar i AEM projekt, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöder ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable).
 
-Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM modereringsverktyg.](https://opensource.adobe.com/aem-modernize-tools/)
+Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM modereringsverktyg](https://opensource.adobe.com/aem-modernize-tools/).
 
 ### Användning av äldre baskomponenter rekommenderas inte {#oakpal-usage-legacy}
 
@@ -719,7 +719,7 @@ Migrering från statiska till redigerbara mallar kan till stor del automatiseras
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM versioner till förmån för [Core-komponenterna.](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/introduction) Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
+De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM versioner till förmån för [Core Components](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/introduction). Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
 
 [AEM Moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/) kan underlätta den här konverteringen.
 
@@ -730,7 +730,7 @@ De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkta underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud Service. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing)
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkta underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud Service. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
 
 ### Definitionsnoder för anpassade sökindex måste ha en compatVersion av 2 {#oakpal-custom-search-compatVersion}
 
@@ -739,7 +739,7 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud Service stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering.](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing)
+AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud Service stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
 
 ### Underordnade noder för anpassade sökindexdefinitionsnoder måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
 
@@ -757,7 +757,7 @@ Problem som är svåra att felsöka kan uppstå när en anpassad sökindexdefini
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en underordnad nod med namnet `indexRules` och den här noden måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen.](https://jackrabbit.apache.org/oak/docs/query/lucene.html)
+En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en underordnad nod med namnet `indexRules` och den här noden måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen](https://jackrabbit.apache.org/oak/docs/query/lucene.html).
 
 ### Definitionsnoder för anpassade sökindex måste följa namnkonventioner {#oakpal-custom-search-definitions}
 

@@ -3,9 +3,9 @@ title: Lägga till privata databaser i Cloud Manager
 description: Lär dig hur du konfigurerar Cloud Manager så att det fungerar med dina egna privata GitHub-databaser.
 feature: Release Information
 exl-id: e0d103c9-c147-4040-bf53-835e93d78a0b
-source-git-commit: 15e733117b4458cc53dec309dad5bde8cb17029f
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '836'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Konfigurationen består av två huvudsteg:
 
 ### Lägg till databas {#add-repo}
 
-1. Gå till sidan **Programöversikt** i Cloud Manager, tryck eller klicka på fliken **Databaser** för att växla till sidan **Databaser** och klicka på **Lägg till databas**.
+1. Gå till sidan **Programöversikt** i Cloud Manager och klicka på fliken **Databaser** för att växla till sidan **Databaser** och sedan på **Lägg till databas**.
 
 1. I dialogrutan **Lägg till databas** väljer du **Privat databas** som databastyp.
 
@@ -44,11 +44,11 @@ Konfigurationen består av två huvudsteg:
 
    ![Lägg till egen databas](/help/assets/repositories/add-own-github.png)
 
-1. Tryck eller klicka på **Spara**.
+1. Klicka på **Spara**.
 
 >[!TIP]
 >
->Mer information om hur du hanterar databaser i Cloud Manager finns i dokumentet [Cloud Manager-databaser.](/help/managing-code/managing-repositories.md)
+>Mer information om hur du hanterar databaser i Cloud Manager finns i dokumentet [Cloud Manager-databaser](/help/managing-code/managing-repositories.md).
 
 ### Validering av privat databasägande {#validate-ownership}
 
@@ -62,9 +62,9 @@ Cloud Manager känner nu till din GitHub-databas, men den behöver fortfarande �
    * En ägare till din GitHub-organisation måste installera appen som finns på `https://github.com/apps/cloud-manager-for-aem` och bevilja åtkomst till databasen.
    * Mer information om hur du gör detta finns i dokumentationen för GitHub.
 
-1. För att förbättra säkerheten måste du skapa en hemlig fil i databasens standardgren. Tryck eller klicka på **Generera**.
+1. För att förbättra säkerheten måste du skapa en hemlig fil i databasens standardgren. Klicka på **Generera**.
 
-1. Bekräfta genereringen av den hemliga filen genom att trycka eller klicka på **Bekräfta**.
+1. Bekräfta genereringen av den hemliga filen genom att klicka på **Bekräfta**.
 
    ![Bekräfta hemlig generering](/help/assets/repositories/confirm-generation.png)
 
@@ -76,7 +76,7 @@ Cloud Manager känner nu till din GitHub-databas, men den behöver fortfarande �
 
 1. Skapa en ny fil i standardgrenen för GitHub-repon med namnet `.well-known/adobe/cloud-manager-challenge` och klistra in det hemliga filinnehållet i den filen och spara.
 
-1. När appen är installerad och den hemliga filen finns i databasen kan du trycka eller klicka på **Validera** i dialogrutan **Validering av privat databasägande**.
+1. När appen har installerats och den hemliga filen finns i databasen kan du klicka på **Validera** i dialogrutan **Validering av privat databasägande**.
 
 Programmet kan installeras och en hemlig fil kan skapas i vilken ordning som helst. Båda stegen måste dock slutföras innan du kan validera.
 
@@ -86,7 +86,7 @@ Till valideringen visas databasen med en röd ikon, som anger att den ännu inte
 
 Observera att kolumnen **Type** enkelt identifierar databaser som tillhandahålls av Adobe (**Adobe**) och dina egna GitHub-databaser (**GitHub**).
 
-Om du behöver gå tillbaka till databasen vid ett senare datum för att slutföra valideringen trycker du på eller klickar på ellipsknappen på sidan **Databaser** på raden som representerar GitHub-databasen som du just lade till och väljer **Ägarvalidering** i listrutan.
+Om du behöver gå tillbaka till databasen vid ett senare datum för att slutföra valideringen klickar du på ellipsknappen på sidan **Databaser** i den rad som representerar GitHub-databasen som du just lade till och väljer **Ägarvalidering** i listrutan.
 
 ## Använda privata databaser med Cloud Manager {#using}
 
@@ -110,11 +110,11 @@ När pull-begäran stängs eller sammanfogas, tas hela stackkodens kvalitetsflö
 
 >[!TIP]
 >
->Du kan styra de rörledningar som skapas automatiskt för att validera varje pull-begäran till en privat databas. Mer information finns i dokumentet [GitHub Check Configuration for Private Repositories](github-check-config.md).
+>Du kan styra de rörledningar som skapas automatiskt för att validera varje pull-begäran till en privat databas. Mer information finns i [GitHub-kontrollkonfigurationen för privata databaser](github-check-config.md).
 
 ## Associera privata databaser med pipelines {#pipelines}
 
-Validerade privata databaser kan associeras med [rörledningar i full hög.](/help/overview/ci-cd-pipelines.md)
+Validerade privata databaser kan associeras med [rörledningar i full hög](/help/overview/ci-cd-pipelines.md).
 
 ## Begränsningar {#limitations}
 

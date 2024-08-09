@@ -2,9 +2,9 @@
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: c238caa22fdd71ae6aefd098331b626b9b951a0f
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '878'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Lär dig hur du kan dela upp driftsättningar för staging och produktion med de
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet.](/help/release-notes/current.md#early-adoption)
+>Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md#early-adoption).
 
 ## Ökning {#overview}
 
@@ -34,7 +34,7 @@ Enkla rörledningar för scener och enbart för produkter erbjuder lösningar f�
 
 Vare sig rörledningar som bara är i stadiet eller endast i drift kommer att utföras medan en produktionsprocess med en hel hög körs och vice versa. Om utlösaren **On Git Changes** är konfigurerad för både produktionsflödet för enbart scenen och hela stacken och pekar på samma gren och databas, startas endast den enbart för scenen automatiskt. Rörledningar som endast är avsedda för produktion startas inte **vid Git-ändringar** eftersom de inte är direkt länkade till en databas.
 
-De här dedikerade rörledningarna ger större flexibilitet, men notera följande detaljer om drift och rekommendationer.
+De här dedikerade rörledningarna ger större flexibilitet, men du bör notera följande detaljer om drift och rekommendationer.
 
 >[!NOTE]
 >
@@ -46,9 +46,9 @@ De här dedikerade rörledningarna ger större flexibilitet, men notera följand
 
 ## Skapa pipeline {#pipeline-creation}
 
-Rörledningar som endast är avsedda för produktion och endast för scenen skapas på ungefär samma sätt som standardanslutna [produktionspipelines](/help/using/production-pipelines.md) och [icke-produktionsledningar.](/help/using/non-production-pipelines.md) Se dessa dokument för mer information.
+Rörledningar som endast är avsedda för produktion och endast för scenen skapas på ungefär samma sätt som standardanslutna [produktionspipelines](/help/using/production-pipelines.md) och [icke-produktionspipelines](/help/using/non-production-pipelines.md). Mer information finns i de dokumenten.
 
-1. Tryck eller klicka på **Lägg till pipeline** i fönstret **Pipelines**.
+1. Klicka på **Lägg till pipeline** i fönstret **Pipelines**.
 
    * Välj **Lägg till icke-produktionsförlopp** om du vill skapa en pipeline som bara är avsedd för scenen.
    * Välj **Lägg till endast produktion i pipeline** om du vill skapa en pipeline som endast är avsedd för produktion.
@@ -66,24 +66,24 @@ Rörledningar som endast är avsedda för produktion och endast för scenen skap
 ### Enbart Stage-förlopp {#stage-only}
 
 1. När du har valt alternativet **Lägg till icke-produktionsförlopp** öppnas dialogrutan **Lägg till icke-produktionsförlopp** .
-1. Om du vill skapa en pipeline som bara är för ett stadium väljer du scenmiljön i fältet **Godtagbara distributionsmiljöer** för din pipeline. Fyll i återstående fält och tryck eller klicka på **Fortsätt**.
+1. Om du vill skapa en pipeline som bara är för ett stadium väljer du scenmiljön i fältet **Godtagbara distributionsmiljöer** för din pipeline. Fyll i återstående fält och klicka på **Fortsätt**.
 
    ![Skapar en pipeline enbart för scenen](/help/assets/configure-pipelines/stage-only.png)
 
-1. På fliken **Scentestning** kan du definiera testning som ska utföras i mellanlagringsmiljön. Tryck eller klicka på **Spara** för att spara din nya pipeline.
+1. På fliken **Scentestning** kan du definiera testning som ska utföras i mellanlagringsmiljön. Klicka på **Spara** för att spara din nya pipeline.
 
    ![Testparametrar för en pipeline som bara är för scenen](/help/assets/configure-pipelines/stage-only-test.png)
 
 ### Prod-Only Pipelines {#prod-only}
 
 1. När du har valt alternativet **Lägg till endast produktion i pipeline** öppnas dialogrutan **Lägg till endast produktion i pipeline**.
-1. Ange ett **pipelinenamn**. De återstående alternativen och funktionerna i dialogrutan fungerar på samma sätt som i den vanliga dialogrutan för att skapa kopplad pipeline. Tryck eller klicka på **Spara** för att spara pipeline.
+1. Ange ett **pipelinenamn**. De återstående alternativen och funktionerna i dialogrutan fungerar på samma sätt som i den vanliga dialogrutan för att skapa kopplad pipeline. Klicka på **Spara** för att spara pipeline.
 
    ![Skapar en pipeline som endast är avsedd för produktion](/help/assets/configure-pipelines/prod-only-pipeline.png)
 
 ## Köra endast prod- och Stage-pipelines {#running}
 
-Rörledningar med endast prod och scenen körs på samma sätt som [alla andra pipelines körs.](/help/using/managing-pipelines.md#running-pipelines) Mer information finns i den dokumentationen.
+Rörledningar med endast prod och scenen körs på samma sätt som [alla andra pipelines körs](/help/using/managing-pipelines.md#running-pipelines). Mer information finns i den dokumentationen.
 
 Dessutom kan en pipelinekörning som bara är avsedd för produktion aktiveras direkt från körningsinformationen för en pipeline som bara är avsedd för en viss fas.
 
@@ -93,7 +93,7 @@ En rörledning som bara fungerar på en scen fungerar på nästan samma sätt so
 
 ![En pipeline som endast är för scenen körs](/help/assets/configure-pipelines/stage-only-pipeline-run.png)
 
-Knappen **Befordra bygge** visas bara om du är på den senaste pipelinekörningen som bara fungerar på scenen. När du har tryckt eller klickat uppmanas du att bekräfta körningen av den produktspecifika pipelinen eller att skapa en produktbaserad pipeline om det inte redan finns en.
+Knappen **Befordra bygge** visas bara om du är på den senaste pipelinekörningen som bara fungerar på scenen. När du klickat uppmanas du att bekräfta körningen av den produktspecifika pipelinen eller att skapa en produktbaserad pipeline om det inte redan finns en.
 
 ### Prod-Only Pipelines {#prod-only-run}
 

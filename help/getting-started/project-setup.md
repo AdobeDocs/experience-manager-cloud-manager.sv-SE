@@ -2,9 +2,9 @@
 title: Konfigurera projektet
 description: Lär dig hur du konfigurerar ditt projekt så att du kan hantera och driftsätta det med Cloud Manager.
 exl-id: ed994daf-0195-485a-a8b1-87796bc013fa
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1428'
+source-wordcount: '1426'
 ht-degree: 1%
 
 ---
@@ -110,7 +110,7 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
 
 ## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
 
-Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras med den här mekanismen inte går igenom alla kvalitetsregler som implementeras i Cloud Manager kvalitetsgater. Du bör också distribuera Java-källorna samt hela projektets källkod tillsammans med binärfilen.
+Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras med den här mekanismen inte går igenom alla kvalitetsregler som implementeras i Cloud Manager kvalitetsgater. Du bör också distribuera Java-källorna och hela projektets källkod tillsammans med binärfilen.
 
 >[!TIP]
 >
@@ -343,4 +343,4 @@ Om du vill kan återanvändningsbeteendet inaktiveras för specifika pipelines g
 
 ## Utveckla din kod baserat på bästa praxis {#develop-your-code-based-on-best-practices}
 
-Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med metodtips för AEM utvecklare.](https://experienceleague.adobe.com/docs/experience-manager-65/developing/bestpractices/best-practices.html)
+Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med bästa praxis för AEM utvecklare](https://experienceleague.adobe.com/docs/experience-manager-65/developing/bestpractices/best-practices.html).

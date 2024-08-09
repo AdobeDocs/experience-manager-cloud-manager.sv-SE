@@ -2,9 +2,9 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: d4d9a9f38c5a969f276140dca98731c670547a3d
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '1439'
+source-wordcount: '1410'
 ht-degree: 0%
 
 ---
@@ -32,14 +32,14 @@ Konsolen Mina program ger en översikt över alla program som du har tillgång t
    * Vyn **Hem** (standard) som väljer vyn **Mina program** med en översikt över alla program
    * **Licens** som har åtkomst till License Dashboard. Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
       * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
-   * Observera att flikarna som standard är stängda och kan visas med hjälp av hamburgermenyn i [Cloud Manager-huvudet.](#cloud-manager-header)
+   * Observera att flikarna som standard är stängda och att de kan visas med hjälp av hamburgermenyn i [Cloud Manager-huvudet](#cloud-manager-header).
 1. [Call-to-Actions och Statistics](#cta-statistics) för en översikt över din senaste aktivitet
 1. [**Mina program** avsnitt](#my-programs-section) med en översikt över alla dina program
 1. [Snabblänkar](#quick-links) för enkel åtkomst till relaterade resurser
 
 >[!TIP]
 >
->Mer information om program finns i dokumentet [Program och programtyper](/help/getting-started/program-setup.md).
+>Mer information om program finns i [Program och programtyper](/help/getting-started/program-setup.md).
 
 ### Verktygsfält {#my-programs-toolbars}
 
@@ -55,11 +55,11 @@ Det första är Cloud Manager-rubriken som är beständig när du navigerar i Cl
    * Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
    * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
 1. Med Cloud Manager-knappen kommer du tillbaka till My Programs-konsolen i Cloud Manager oavsett var du befinner dig i Cloud Manager.
-1. Tryck eller klicka på knappen Feedback för att ge Adobe feedback om Cloud Manager.
-1. Organisationsväljaren visar den organisation du är inloggad på (i det här exemplet Foundation Internal). Tryck eller klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
-1. Om du trycker eller klickar på lösningens väljare kan du snabbt gå över till andra Experience Cloud-lösningar.
+1. Klicka på knappen Feedback för att ge Adobe feedback om Cloud Manager.
+1. Organisationsväljaren visar den organisation du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
+1. Genom att klicka på lösningens väljare kan du snabbt gå över till andra Experience Cloud-lösningar.
 1. Hjälpikonen ger snabb åtkomst till utbildningsresurser och supportresurser.
-1. Aviseringsikonen är märkt med antalet för närvarande tilldelade ofullständiga [meddelanden.](/help/using/notifications.md)
+1. Aviseringsikonen är märkt med antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md)
 1. Välj den ikon som representerar användaren för att få åtkomst till dina användarinställningar. Om du inte har konfigurerat någon användarbild tilldelas ikonen slumpmässigt.
 
 #### Verktygsfältet Program {#program-toolbar}
@@ -85,7 +85,7 @@ Eller om du just har börjat konfigurera organisationen kan det finnas tips om n
 
 ### Avsnittet Mina program {#my-programs-section}
 
-Huvudinnehållet i My Programs-konsolen är avsnittet **Mina program** som listar dina program som enskilda kort. Tryck eller klicka på ett kort för att komma åt sidan **Programöversikt** i programmet för mer information om programmet.
+Huvudinnehållet i My Programs-konsolen är avsnittet **Mina program** som listar dina program som enskilda kort. Klicka på ett kort för att komma åt sidan **Programöversikt** för mer information om programmet.
 
 >[!NOTE]
 >
@@ -137,13 +137,13 @@ I avsnittet med snabblänkar får du tillgång till resurser som du använder of
 
 ## Programöversiktsfönster {#program-overview}
 
-När du har valt ett program i konsolen [**Mina program** ](#my-programs-console) visas programöversikten.
+När du har valt ett program i konsolen [**Mina program**](#my-programs-console) visas programöversikten.
 
 ![Programöversikt](assets/program-overview.png)
 
 Programöversikten ger dig tillgång till alla detaljer i ett Cloud Manager-program. Precis som My Programs-konsolen består den av flera delar.
 
-1. [Verktygsfält](#program-overview-toolbar) om du snabbt vill gå tillbaka till Mina program-konsolen och navigera i programmet
+1. [Verktygsfält](#program-overview-toolbar) om du snabbt vill gå tillbaka till konsolen Mina program och navigera i programmet
 1. [Tabbar](#program-tabs) för att växla mellan olika aspekter av programmet
 1. En [uppmaning till åtgärd](#cta) baserad på de senaste åtgärderna i programmet
 1. En [översikt över programmets miljöer](#environments)
@@ -152,7 +152,7 @@ Programöversikten ger dig tillgång till alla detaljer i ett Cloud Manager-prog
 
 ### Verktygsfält {#program-overview-toolbar}
 
-Verktygsfälten för programöversikten liknar de i [Min programkonsol.](#my-programs-toolbars) Endast skillnaderna illustreras här.
+Verktygsfälten för programöversikten liknar de i [Min programkonsol](#my-programs-toolbars). Här illustreras bara skillnaderna.
 
 #### Cloud Manager Header {#cloud-manager-header-2}
 
@@ -160,7 +160,7 @@ Cloud Manager header har en hamburger-meny som automatiskt öppnas och visar de 
 
 ![Cloud Manager hamburger-meny](assets/cloud-manager-hamburger.png)
 
-Tryck eller klicka på menyikonen för hamburgaren för att dölja flikarna.
+Klicka på menyikonen för hamburgaren för att dölja flikarna.
 
 #### Verktygsfältet Program {#program-toolbar-2}
 
@@ -190,7 +190,7 @@ Använd hamburger-menyn i [Cloud Manager-huvudet](#cloud-manager-header-2) för 
 
 ### Call-to-Action {#cta}
 
-I avsnittet om uppmaning att ringa in får du användbar information beroende på programmets status. För ett nytt program kan du se nästa steg som erbjuds och en påminnelse om ett publiceringsdatum, [som anges när programmet skapas.](/help/getting-started/program-setup.md)
+I avsnittet om uppmaning att ringa in får du användbar information beroende på programmets status. För ett nytt program kan du se nästa steg som erbjuds och en påminnelse om ett publiceringsdatum, [som anges när programmet skapas](/help/getting-started/program-setup.md).
 
 För ett live-program, status för den senaste distributionen med länkar för information och start av en ny distribution.
 
@@ -198,19 +198,19 @@ För ett live-program, status för den senaste distributionen med länkar för i
 
 ### Miljökort {#environments}
 
-Kortet **Environment** ger dig en översikt över dina miljöer samt länkar till snabba åtgärder.
+Kortet **Environment** ger dig en översikt över dina miljöer och länkar för snabba åtgärder.
 
 Kortet **Environment** innehåller endast tre miljöer. Klicka på **Visa alla** om du vill visa alla miljöer i programmet.
 
-Mer information om hur du hanterar dina miljöer finns i dokumentet [Hantera miljöer](/help/using/managing-environments.md).
+Mer information om hur du hanterar miljöer finns i [Hantera miljöer](/help/using/managing-environments.md).
 
 ### Förloppskort {#pipelines}
 
-Kortet **Pipelines** ger dig en översikt över dina pipelines samt länkar för snabbåtgärder.
+Kortet **Pipelines** ger dig en översikt över dina pipelines och länkar för snabba åtgärder.
 
 Kortet **Pipelines** innehåller endast tre pipelines. Klicka på **Visa alla** om du vill visa alla rörledningar för programmet.
 
-Se dokumentet [Hantera pipelines](/help/using/managing-pipelines.md) för mer information om hur du hanterar dina pipelines.
+Mer information om hur du hanterar dina pipelines finns i [Hantera pipelines](/help/using/managing-pipelines.md).
 
 ### Användbara resurser {#useful-resources}
 

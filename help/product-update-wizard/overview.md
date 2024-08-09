@@ -2,7 +2,7 @@
 title: Produktuppdateringsguide
 description: Läs om hur uppdateringsguiden effektiviserar hela AEM i Cloud Manager.
 exl-id: 8134e956-bfcf-41b8-a408-fa4375058c6a
-source-git-commit: bbee49987e2f80825f5f7f5caf29c841e2b00dfb
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
 source-wordcount: '200'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Produktuppdateringsguide {#product-update-wizard}
 
-Produktuppdateringsguiden är en guidad, stegvis uppgradering till den senaste versionen av Adobe Experience Manager 6.5 med Cloud Manager. Det effektiviserar hela processen och säkerställer att ni följer AEM bästa praxis med hjälp av Cloud Manager CI/CD-ramverk och inbyggda automatiska tester.
+Produktuppdateringsguiden är en guidad, stegvis uppgradering till den senaste versionen av Adobe Experience Manager 6.5 med Cloud Manager. Det effektiviserar hela processen och säkerställer att ni följer AEM bästa praxis med hjälp av Cloud Manager CI/CD-ramverk och inbyggd automatiserad testning.
 
 Guiden innehåller fem faser som guidar dig under en AEM produktuppdatering:
 
@@ -36,4 +36,5 @@ Kunder som har anslutit till Cloud Manager och som har rätt att uppgradera till
 
 1. Guiden visar den första fasen av processen **[!UICONTROL AEM 6.5 Update]**.
 
-Mer information om den första fasen i guiden finns i dokumentet [Utvärderingsfas.](/help/product-update-wizard/evaluation.md)
+Mer information om den första fasen i guiden finns i dokumentet [Utvärderingsfas](/help/product-update-wizard/evaluation.md).
+

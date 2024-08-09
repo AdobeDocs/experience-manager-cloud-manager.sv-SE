@@ -2,9 +2,9 @@
 title: Använda guiden Nytt projekt
 description: Följ den här sidan för att lära dig hur du använder guiden för att skapa ett AEM
 exl-id: 9d7c6f4c-9379-471c-8dad-772a7099da54
-source-git-commit: cb791a4f148ba394687b5e824b75fe1386d83c18
+source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Följ de här stegen för att skapa ett AEM projekt med guiden.
 
 1. Logga in på Cloud Manager på [`https://my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com) och välj lämplig organisation.
 
-1. Om du inte redan har det [skapar du programmet.](program-setup.md) När programmet har skapats känner Cloud Manager igen att databaserna ännu inte har konfigurerats och ett särskilt åtgärdskort visas på skärmen **Översikt**.
+1. Om du inte redan har det [skapar du ditt program](program-setup.md). När programmet har skapats känner Cloud Manager igen att databaserna inte har konfigurerats ännu och ett särskilt åtgärdskort visas på skärmen **Översikt**.
 
    ![Skapa projekt-CTA](/help/assets/image2018-10-3_14-29-44.png)
 
