@@ -2,9 +2,9 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 38cf86a5effa201afdc8e00d8f33582fc06214d7
+source-git-commit: fadcf560f08bf16d0d18172c620a450d0cb06225
 workflow-type: tm+mt
-source-wordcount: '2844'
+source-wordcount: '2774'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan för
 
 ## Introduktion {#introduction}
 
-Under rörledningen hämtas ett antal mätvärden in och jämförs med nyckeltal (KPI) som definieras av företagsägaren eller med standarder som fastställs av Adobe Managed Services.
+Under pipeline-körningen hämtar programvaran ett antal mätvärden. Dessa mått jämförs sedan med nyckeltal (KPI) som definieras av företagsägaren. Eller så jämförs de med de standarder som Adobe Managed Services har fastställt.
 
-Dessa rapporteras med hjälp av ett klassificeringssystem med tre nivåer.
+Dessa resultat rapporteras med ett klassificeringssystem med tre nivåer.
 
 ## Tre nivåindelade omdömen {#three-tiered-ratings}
 
@@ -30,9 +30,9 @@ Det finns tre portar i pipeline:
 
 För var och en av dessa portar finns det en struktur på tre nivåer för problem som identifieras av porten.
 
-* **Kritisk** - Detta är problem som orsakar ett omedelbart fel i pipeline.
-* **Viktigt** - Detta är problem som gör att pipeline försätts i pausläge. Distributionshanteraren, projektledaren eller företagsägaren kan antingen åsidosätta problemen, i vilket fall pipeline fortsätter, eller så kan de acceptera problemen. I så fall upphör pipeline med ett fel. Åsidosättning av viktiga fel har en [timeout.](/help/using/code-deployment.md#timeouts)
-* **Info** - Det här är problem som tillhandahålls endast i informationssyfte och som inte påverkar pipeline-körningen.
+* **Kritisk** - Problem som orsakar ett omedelbart fel i pipeline.
+* **Viktigt** - Problem som gör att pipeline försätts i pausat läge. Distributionshanteraren, projektledaren eller företagsägaren kan åsidosätta problemen. Om de gör det fortsätter rörledningen som avsett. Alternativt kan de acceptera problemen, vilket gör att pipelinen avbryts om ett fel uppstår. Åsidosättning av viktiga fel sker enligt en [timeout](/help/using/code-deployment.md#timeouts).
+* **Info** - Problem som tillhandahålls endast i informationssyfte och som inte påverkar pipeline-körningen.
 
 >[!NOTE]
 >
@@ -40,11 +40,13 @@ För var och en av dessa portar finns det en struktur på tre nivåer för probl
 
 ## Testning av kodkvalitet {#code-quality-testing-step}
 
-I det här steget utvärderas kvaliteten på programkoden, som är huvudsyftet med en pipeline för enbart kodkvalitet, och utförs omedelbart efter byggsteget i alla icke-produktions- och produktionspipelinjer. Mer information finns i dokumentet [Configuring Non-Production Pipelines](/help/using/non-production-pipelines.md).
+I det här teststeget utvärderas kvaliteten på programkoden, som är huvudsyftet med en pipeline som enbart innehåller kod. Den utförs omedelbart efter byggsteget i alla icke-produktions- och produktionspipelinor. Om du vill ha mer information går du till [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
-Kodkvalitetstestning söker igenom källkoden för att säkerställa att den uppfyller vissa kvalitetskriterier. Detta implementeras genom en kombination av SonarQube-analys, innehållspaketgranskning med OakPAL och dispatchervalidering med Dispatcher Optimization Tool.
+Kodkvalitetstestning söker igenom källkoden för att säkerställa att den uppfyller vissa kvalitetskriterier.
 
-Det finns över 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet.](/help/using/custom-code-quality-rules.md)
+Programmet implementerar det med en kombination av SonarQube-analys, innehållspaketgranskning med OakPAL och Dispatcher-validering med Dispatcher Optimization Tool.
+
+Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet.](/help/using/custom-code-quality-rules.md)
 
 >[!TIP]
 >
@@ -65,7 +67,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 
 >[!NOTE]
 >
->Mer information finns i [SonarQube metric-definitioner](https://docs.sonarqube.org/latest/user-guide/metric-definitions/).
+>Mer detaljerad information finns i [SonarQube måttdefinitioner](https://docs.sonarsource.com/sonarqube/latest/user-guide/code-metrics/metrics-definition/).
 
 >[!NOTE]
 >
@@ -73,7 +75,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 
 ### Hantera med falskt positiva {#dealing-with-false-positives}
 
-Kvalitetsskanningsprocessen är inte perfekt och kan ibland felaktigt identifiera problem som inte är problematiska. Detta kallas falskt positivt.
+Kvalitetsskanningsprocessen är inte perfekt och identifierar ibland felaktigt problem som inte är problematiska. Detta scenario kallas för falskt positivt.
 
 I dessa fall kan källkoden antecknas med Java `@SuppressWarnings`-standardanteckningen som anger regel-ID som anteckningsattribut. En vanlig positiv sak är att SonarQube-regeln för att identifiera hårdkodade lösenord kan vara aggressiv om hur ett hårdkodat lösenord identifieras.
 
@@ -84,7 +86,7 @@ Följande kod är ganska vanlig i ett AEM projekt, som har kod för att ansluta 
 private static final String PROP_SERVICE_PASSWORD = "password";
 ```
 
-SonarQube utlöser då en sårbarhet som kan leda till blockering. Men när du har granskat koden inser du att detta inte är någon sårbarhet och kan kommentera koden med rätt regel-ID.
+SonarQube utlöser sedan en sårbarhet som kan leda till blockering. Men när du har granskat koden inser du att det här problemet inte är någon sårbarhet och kan kommentera koden med rätt regel-ID.
 
 ```java
 @SuppressWarnings("squid:S2068")
@@ -103,7 +105,7 @@ Den rätta lösningen är sedan att ta bort det hårdkodade lösenordet.
 
 >[!NOTE]
 >
->Även om det är en god vana att göra `@SuppressWarnings`-anteckningen så specifik som möjligt (d.v.s. bara anteckna den specifika programsats eller det block som orsakar problemet), är det möjligt att anteckna på en klassnivå.
+>Det är bäst att göra `@SuppressWarnings`-anteckningen så specifik som möjligt. Anteckna bara den specifika programsats eller det block som orsakar problemet. Det går dock att göra anteckningar på klassnivå. Om du gör det kan du undertrycka varningarna i större utsträckning.
 
 ## Säkerhetstestning {#security-testing}
 
@@ -111,28 +113,28 @@ Den rätta lösningen är sedan att ta bort det hårdkodade lösenordet.
 
 Samma hälsokontroller kan utföras när som helst via webbkonsolen eller kontrollpanelen för åtgärder.
 
-Om någon av instanserna rapporterar ett fel för en viss hälsokontroll misslyckas hälsokontrollen i hela miljön. Precis som för kodkvalitets- och prestandatestning är dessa hälsokontroller ordnade i kategorier och rapporterade med hjälp av ett system med tre nivåer. Den enda skillnaden är att det inte finns något tröskelvärde när det gäller säkerhetstestning. Alla hälsokontroller godkänns eller misslyckas.
+Om någon av instanserna rapporterar ett fel för en viss hälsokontroll misslyckas hälsokontrollen i hela miljön. Precis som för kodkvalitets- och prestandatestning är dessa hälsokontroller ordnade i kategorier och rapporterade med hjälp av ett system med tre nivåer. Den enda skillnaden är att det inte finns något tröskelvärde om det finns säkerhetstester. Alla hälsokontroller godkänns eller misslyckas.
 
 I följande tabell visas hälsokontrollerna.
 
 | Namn | Implementering av hälsokontroll | Kategori |
 |---|---|---|
-| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/mitigating-serialization-issues.html#security) | Kritisk |
-| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/mitigating-serialization-issues.html#security) | Kritisk |
-| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/mitigating-serialization-issues.html#security) | Kritisk |
-| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/security-checklist.html#security) | Kritisk |
-| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/security.html#users-and-groups-in-aem) | Kritisk |
+| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Kritisk |
+| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security#users-and-groups-in-aem) | Kritisk |
 | Sling standardserver för GET är skyddad från DOS-attacker. | Sling Get Servlet | Kritisk |
-| Hanteraren för Sling Java Script är korrekt konfigurerad. | Sling Java Script Handler | Kritisk |
+| Hanteraren för Sling JavaScript är korrekt konfigurerad. | Sling JavaScript Handler | Kritisk |
 | Hanteraren för Sling JSP-skript är korrekt konfigurerad. | Sling JSP Script Handler | Kritisk |
 | SSL är korrekt konfigurerat. | SSL-konfiguration | Kritisk |
 | Inga uppenbart osäkra profiler för användarprofiler hittades. | Standardåtkomst för användarprofil | Kritisk |
-| Filtret Sling Reference är konfigurerat för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/security-checklist.html#security) | Viktigt |
+| Filtret Sling Reference är konfigurerat för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Viktigt |
 | Bibliotekshanteraren för Adobe Granite HTML har konfigurerats korrekt. | CQ HTML Library Manager Config | Viktigt |
 | Supportpaketet för CRXDE är inaktiverat. | Stöd för CRXDE | Viktigt |
 | Sling DavEx-paket och -servlet är inaktiverade. | DavEx-hälsokontroll | Viktigt |
 | Exempelinnehåll är inte installerat. | Exempel på innehållspaket | Viktigt |
-| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/docs/experience-manager-65/deploying/configuring/osgi-configuration-settings.html#configuring) | Viktigt |
+| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/osgi-configuration-settings#configuring) | Viktigt |
 | Sling WebDAV-paket och -servlet är korrekt konfigurerade. | WebDAV-hälsokontroll | Viktigt |
 | Webbservern är konfigurerad för att förhindra clickjacking. | Konfiguration av webbserver | Viktigt |
 | Replikeringen använder inte användaren `admin`. | Replikerings- och transportanvändare | Info |
@@ -145,11 +147,13 @@ Cloud Manager kör prestandatestning för AEM Sites-program. Prestandatestet kö
 
 #### Virtuella användare {#virtual-users}
 
-Antalet virtuella användare eller behållare som rensas upp av Cloud Manager styrs av nyckeltal (svarstid och sidvisningar/min) som definieras av användaren med rollen **Affärsägare** när programmet [skapas eller redigeras.](/help/getting-started/program-setup.md) Baserat på definierade KPI:er kommer upp till 10 behållare som simulerar faktiska användare att rensas. De sidor som väljs för testning delas upp och tilldelas varje virtuell användare.
+Cloud Manager snurrar upp virtuella användare eller behållare baserat på nyckeltal (svarstid och sidvisningar/min) som angetts av rollen **Affärsägare**. Dessa KPI:er anges när [skapar eller redigerar programmet](/help/getting-started/program-setup.md).
+
+Utifrån definierade KPI:er rensas upp till tio behållare som simulerar verkliga användare. De sidor som väljs för testning delas upp och tilldelas varje virtuell användare.
 
 #### Crawler {#crawler}
 
-Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellanlagringsmiljön med en uppsättning av en eller flera URL:er som konfigurerats av Customer Success Engineer. Från dessa URL:er granskas HTML på varje sida och länkar gås igenom på bredden först.
+Innan testperioden på 30 minuter inleds crawlar Cloud Manager testmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Från dessa URL:er granskas HTML på varje sida och länkar gås igenom på bredden först.
 
 * Denna crawlningsprocess är som standard begränsad till högst 5 000 sidor.
 * Det maximala antalet sidor som ska testas kan skrivas över genom att ange [pipeline-variabeln](/help/getting-started/build-environment.md#pipeline-variables) `CM_PERF_TEST_CRAWLER_MAX_PAGES`.
@@ -158,33 +162,33 @@ Innan testperioden på 30 minuter börjar kommer Cloud Manager att crawla mellan
 
 #### Siduppsättningar för testning {#page-sets}
 
-Sidorna markeras med tre siduppsättningar. Cloud Manager använder åtkomstloggarna från de AEM instanserna i olika produktions- och stagingmiljöer för att fastställa följande bukområden.
+Tre siduppsättningar markerar sidorna. Cloud Manager använder åtkomstloggarna från de AEM instanserna i olika produktions- och stagingmiljöer för att fastställa följande bukområden.
 
-* **Populära Live-sidor** - Det här alternativet är markerat för att säkerställa att de populäraste sidorna som besöks av live-kunder testas. Cloud Manager läser åtkomstloggen och fastställer de 25 mest använda sidorna för live-kunder för att generera en lista över de `Popular Live Pages` översta. Skärningspunkten mellan dessa som också finns i mellanlagringsmiljön crawlas sedan i mellanlagringsmiljön.
+* **Populära Live-sidor** - Ser till att de populäraste sidorna som besökarna kommer åt testas. Cloud Manager läser åtkomstloggen och fastställer de 25 mest använda sidorna för live-kunder för att generera en lista över de `Popular Live Pages` översta. Skärningspunkten mellan dessa sidor, som också finns i mellanlagringsmiljön, crawlas sedan i mellanlagringsmiljön.
 
-* **Andra Live-sidor** - Det här alternativet är markerat för att kontrollera att de sidor som ligger utanför de 25 populära live-sidorna som kanske inte är populära men som är viktiga att testa testas. Ungefär som populära livesidor extraheras de från åtkomstloggen och måste också finnas i mellanlagringsmiljön.
+* **Andra Live-sidor** - Säkerställer att de sidor som ligger utanför de 25 populära live-sidorna som kanske inte är populära, men som är viktiga att testa, testas. Ungefär som populära aktiva sidor extraheras de från åtkomstloggen och måste också finnas i mellanlagringsmiljön.
 
-* **Nya sidor** - Det här alternativet har valts för att testa nya sidor som bara har distribuerats till mellanlagringen och ännu inte har distribuerats till produktionen, men som måste testas.
+* **Nya sidor** - Testar nya sidor som bara har distribuerats till mellanlagringen och som ännu inte har distribuerats till produktionen, men som måste testas.
 
 ##### Distribution av trafik mellan valda siduppsättningar {#distribution-of-traffic}
 
-Du kan välja var som helst från en till alla tre uppsättningar på fliken **Testing** i din [pipeline-konfiguration.](/help/using/production-pipelines.md) Trafikfördelningen baseras på antalet valda uppsättningar. Det vill säga, om alla tre är markerade placeras 33 % av det totala antalet sidvisningar mot varje uppsättning. Om två är markerade går 50 % till varje uppsättning. Om du väljer en sådan går 100 % av trafiken till den uppsättningen.
+Du kan välja var som helst från en till alla tre uppsättningar på fliken **Testing** i din [pipeline-konfiguration.](/help/using/production-pipelines.md) Trafikfördelningen baseras på antalet valda uppsättningar. Det innebär att om alla tre är markerade placeras 33 % av det totala antalet sidvisningar i varje uppsättning. Om två är markerade går 50 % till varje uppsättning. Om du väljer en sådan går 100 % av trafiken till den uppsättningen.
 
 Låt oss titta på det här exemplet.
 
 * Det är 50/50 som delas mellan populära aktiva sidor och nya siduppsättningar.
 * Andra live-sidor används inte.
 * Den nya siduppsättningen innehåller 3 000 sidor.
-* Sidvyerna per minut är inställda på 200.
+* KPI:n *för sidvisningar per minut* är inställd på 200.
 
 Under 30 minuters testperiod:
 
-* Var och en av de 25 sidorna i den populära aktiva siduppsättningen kommer att nås 120 gånger: `((200 * 0.5) / 25) * 30 = 120`
-* Var och en av de 3 000 sidorna i den nya siduppsättningen kommer att tryckas en gång: `((200 * 0.5) / 3000) * 30 = 1`
+* Var och en av de 25 sidorna i den populära aktiva siduppsättningen nås 120 gånger: `((200 * 0.5) / 25) * 30 = 120`
+* Var och en av de 3 000 sidorna i den nya siduppsättningen kommer en gång: `((200 * 0.5) / 3000) * 30 = 1`
 
 #### Testning och rapportering {#testing-reporting}
 
-Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut osv.) för varje sida och olika systemnivåmått (CPU, minne, nätverksdata) för alla instanser.
+Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida samt olika värden på systemnivå (processor, minne, nätverksdata) för alla instanser.
 
 I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett gating-system med tre skikt.
 
@@ -204,15 +208,15 @@ Mer information om hur du använder grundläggande autentisering för prestandat
 
 >[!NOTE]
 >
->Både författare och publiceringsinstanser övervakas under testperioden. Om något mått för en instans inte hämtas rapporteras det måttet som okänt och motsvarande steg misslyckas.
+>Både författare och publiceringsinstanser övervakas under testet. Om något mått för en instans inte hämtas rapporteras det måttet som okänt och motsvarande steg misslyckas.
 
 #### Autentiserad prestandatestning {#authenticated-performance-testing}
 
-Om det behövs kan AMS-kunder med autentiserade webbplatser ange ett användarnamn och lösenord som Cloud Manager ska använda för att få tillgång till webbplatsen under webbplatstestningen.
+Om det behövs kan AMS-kunder med autentiserade webbplatser ange ett användarnamn och lösenord som Cloud Manager använder för att få tillgång till webbplatsen under webbplatstestningen.
 
 Användarnamnet och lösenordet anges som pipeline-variabler med namnen `CM_PERF_TEST_BASIC_USERNAME` och `CM_PERF_TEST_BASIC_PASSWORD`.
 
-Användarnamnet ska lagras i en `string`-variabel och lösenordet ska lagras i en `secretString`-variabel. Om båda anges kommer alla begäranden från crawlningen av prestandatestet och de virtuella testanvändarna att innehålla dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
+Användarnamnet lagras i en `string`-variabel och lösenordet lagras i en `secretString`-variabel. Om båda dessa variabler anges innehåller varje begäran från crawlern för prestandatestning och de virtuella testanvändarna dessa autentiseringsuppgifter som grundläggande HTTP-autentisering.
 
 Om du vill ställa in dessa variabler med Cloud Manager CLI kör du:
 
@@ -220,19 +224,21 @@ Om du vill ställa in dessa variabler med Cloud Manager CLI kör du:
 $ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>
 ```
 
-Läs API-dokumentationen för [Patch User Pipeline Variables](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/patchPipelineVariables) om du vill veta hur du använder API:t.
+Se [Patch User Pipeline Variables](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/patchPipelineVariables) API-dokumentation om hur du använder API:t.
 
 ### AEM Assets {#aem-assets}
 
-Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger under en 30-minuters testperiod.
+Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger i 30 minuter.
 
 #### Krav för introduktion {#onboarding-requirement}
 
-För prestandatestning i Assets kommer din Customer Success Engineer att skapa en `cloudmanager`-användare och ett lösenord när författaren kommer till mellanlagringsmiljön. Prestandateststegen kräver en användare med namnet `cloudmanager` och det associerade lösenordet som har konfigurerats av din CSE. Detta bör varken tas bort från författarinstansen eller dess behörigheter ändras. Om du gör det kommer Assets prestandatestning troligtvis att misslyckas.
+För prestandatestning i Assets skapar din Customer Success Engineer en `cloudmanager`-användare och ett lösenord när författaren kommer till mellanlagringsmiljön. Prestandateststegen kräver en användare med namnet `cloudmanager` och det associerade lösenordet som har konfigurerats av din CSE.
+
+Den här metoden ska vara kvar i författarinstansen med sina behörigheter oförändrade. Om du ändrar eller tar bort den kan Assets prestandatestning misslyckas.
 
 #### Bilder och Assets för testning {#assets-for-testing}
 
-Kunderna kan överföra egna resurser för testning. Detta kan du göra på skärmen **Inställningar för pipeline** eller **Redigera**. Vanliga bildformat som JPEG, PNG, GIF och BMP stöds tillsammans med Photoshop-, Illustrator- och Postscript-filer.
+Kunderna kan överföra egna resurser för testning. Den här processen kan utföras från skärmen **Inställningar för pipeline** eller **Redigera**. Vanliga bildformat som JPEG, PNG, GIF och BMP stöds tillsammans med Photoshop-, Illustrator- och Postscript-filer.
 
 Om inga bilder överförs använder Cloud Manager en standardbild och PDF-dokument för testning.
 
@@ -240,15 +246,15 @@ Om inga bilder överförs använder Cloud Manager en standardbild och PDF-dokume
 
 Distributionen av hur många resurser av varje typ som överförs per minut anges på skärmen **Inställningar för pipeline** eller **Redigera**.
 
-Om t.ex. en delning på 70/30 används och det finns 10 resurser överförda per minut, överförs 7 bilder och 3 dokument per minut.
+Om exempelvis en delning på 70/30 används och det finns 10 resurser överförda per minut, överförs 7 bilder och 3 dokument per minut.
 
 #### Testning och rapportering {#testing-and-reporting}
 
-Cloud Manager skapar en mapp på författarinstansen med hjälp av användarnamnet och lösenordet som anges av CSE. Assets överförs sedan till mappen med ett bibliotek med öppen källkod. Testerna som körs av Assets teststeg har skrivits med ett [bibliotek med öppen källkod.](https://github.com/adobe/toughday2) Både bearbetningstiden för varje resurs och olika mätvärden på systemnivå mäts över testperiodens 30 minuter. Den här funktionen kan överföra både bilder och PDF-dokument.
+Cloud Manager skapar en mapp på författarinstansen med det användarnamn och lösenord som CSE-installationen använder. Assets överförs sedan till mappen med ett bibliotek med öppen källkod. Testerna som körs av Assets teststeg har skrivits med ett [bibliotek med öppen källkod.](https://github.com/adobe/toughday2) Både bearbetningstiden för varje resurs och olika mätvärden på systemnivå mäts över testperiodens 30 minuter. Den här funktionen kan överföra både bilder och PDF-dokument.
 
 >[!TIP]
 >
->Mer information finns i dokumentet [Konfigurera produktionsförlopp](/help/using/production-pipelines.md). Läs dokumentet [Programinställningar](/help/getting-started/program-setup.md) om du vill veta hur du konfigurerar programmet och definierar dina KPI:er.
+>Mer information finns i [Konfigurera produktionspipeliner](/help/using/production-pipelines.md). Mer information om hur du konfigurerar programmet och definierar nyckeltal finns i [Programinställningar](/help/getting-started/program-setup.md).
 
 ### Resultatdiagram för prestandatestning {#performance-testing-results-graphs}
 
@@ -280,7 +286,9 @@ Den här funktionen är tillgänglig för följande mätvärden.
 
 ## Optimering av skanning av innehållspaket {#content-package-scanning-optimization}
 
-Som en del av kvalitetsanalysprocessen gör Cloud Manager en analys av de innehållspaket som skapats av Maven-bygget. Cloud Manager erbjuder optimeringar som snabbar upp denna process, som är effektiva när vissa paketeringsbegränsningar iakttas. Det viktigaste är optimeringen som utförs för projekt som genererar ett enstaka innehållspaket, som vanligtvis kallas&quot;all&quot;-paket, som innehåller ett antal andra innehållspaket som skapats av bygget och som markeras som överhoppade. När Cloud Manager identifierar detta scenario, i stället för att packa upp&quot;all&quot;-paketet, skannas de enskilda innehållspaketen direkt och sorteras baserat på beroenden. Ta till exempel följande byggutdata.
+Som en del av kvalitetsanalysprocessen gör Cloud Manager en analys av de innehållspaket som skapats av Maven-bygget. Cloud Manager erbjuder optimeringar som snabbar upp denna process, som är effektiv när vissa paketeringsbegränsningar iakttas.
+
+Nyckeloptimeringen är för projekt som genererar ett enda&quot;all&quot;-paket som innehåller andra innehållspaket som skapats av bygget, som markeras som överhoppade. När Cloud Manager identifierar detta scenario, i stället för att packa upp&quot;all&quot;-paketet, skannas de enskilda innehållspaketen direkt och sorteras baserat på beroenden. Ta till exempel följande byggutdata.
 
 * `all/myco-all-1.0.0-SNAPSHOT.zip` (innehållspaket)
 * `ui.apps/myco-ui.apps-1.0.0-SNAPSHOT.zip` (överhoppat innehållspaket)
@@ -294,5 +302,5 @@ Ett specialfall kan inträffa när innehållspaketet &quot;all&quot; innehåller
 
 >[!NOTE]
 >
->* Optimeringen påverkar inte de paket som distribueras till AEM.
->* Eftersom matchningen mellan det inbäddade innehållspaketet och det överhoppade innehållspaketet baseras på filnamn, kan optimeringen inte utföras om flera överhoppade innehållspaket har exakt samma filnamn eller om filnamnet ändras vid inbäddning.
+>* Optimeringen påverkar inte paket som distribueras till AEM.
+>* Matchning mellan inbäddade och överhoppade innehållspaket baseras på filnamn. Optimeringen misslyckas om flera överhoppade innehållspaket delar samma filnamn eller om filnamnet ändras under inbäddningen.
