@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med Cloud Manager innehållskopia kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testning.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 2563c58431e58d2fc5917a2ad88835bbdd4224f2
 workflow-type: tm+mt
-source-wordcount: '1076'
+source-wordcount: '1150'
 ht-degree: 0%
 
 ---
@@ -119,7 +119,8 @@ När en innehållsuppsättning har skapats kan du använda den för att kopiera 
    >* Användaren har inte rätt behörighet.
    >* Miljön har en pågående pipeline eller en åtgärd för att kopiera innehåll.
 
-1. I dialogrutan **Kopiera innehåll** anger du källan och målet för kopieringsåtgärden.
+1. I dialogrutan **Kopiera innehåll** anger du käll- och målmiljöerna för kopieringsåtgärden.
+   * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
 
 1. Du kan välja att ta bort eller behålla de uteslutna sökvägarna i målmiljön. Markera kryssrutan `Do not delete exclude paths from destination` om du vill behålla `exclude paths` som anges i innehållsuppsättningen. Om kryssrutan inte är markerad tas uteslutna sökvägar bort i målmiljön.
 
@@ -164,8 +165,15 @@ Verktyget för innehållskopiering har följande begränsningar.
 * Det går inte att köra samtidiga innehållskopieringsåtgärder i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs i mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
-* Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
-* Du kan inte pausa eller avbryta en innehållskopia efter att den har initierats.
-* Verktyget för innehållskopiering överför resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
-
+* Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte kan spåra flyttat eller borttaget innehåll i källan.
+* En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
+* Verktyget för innehållskopiering kopierar resurser tillsammans med dynamiska medierelaterade metadata från den högre miljön till den valda nedre miljön.
+   * Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/assets-workflow.html) i den nedre miljön för att kunna använda respektive dynamiska mediekonfiguration.
+* Processen för innehållskopiering går mycket snabbare när versionshistoriken inte kopieras.
+* [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
 * När versionshistorik inte kopieras går kopieringen betydligt snabbare.
+* Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
+
+## Kända fel {#known-issues}
+
+{{content-copy-known-issues}}

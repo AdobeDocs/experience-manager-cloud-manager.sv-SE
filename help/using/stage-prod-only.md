@@ -2,9 +2,9 @@
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 70b7994435f7f0f587c134fab1fb66c6576386d9
+source-git-commit: 77eb1c824ba766e43dfd8e2b0f6f6edc71f043e5
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -83,9 +83,19 @@ Rörledningar som endast är avsedda för produktion och endast för scenen skap
 
 ## Köra prod- och stage-only-pipelines {#running}
 
-Rörledningar med endast prod och scenen körs på samma sätt som [alla andra pipelines körs](/help/using/managing-pipelines.md#running-pipelines). Mer information finns i den dokumentationen.
+Rörledningar med endast prod och scenläge körs i stort på samma sätt som [alla andra rörledningar körs.](/help/using/managing-pipelines.md#running-pipelines) Mer information finns i den dokumentationen. Det finns dock två nya funktioner i dessa rörledningar.
 
-Dessutom kan en pipelinekörning som bara är avsedd för produktion aktiveras direkt från körningsinformationen för en pipeline som bara är avsedd för en viss fas.
+* Rörledningar som bara är för scenen och endast för prod har ett nytt [nödläge](#emergency-mode) som tillåter att testning hoppas över.
+* En pipelinekörning som endast är avsedd för produktion kan utlösas direkt från körningsinformationen för en pipeline som bara är avsedd för [scenen.](#stage-only-run)
+
+### Nödläge {#emergency-mode}
+
+När du påbörjar produktions- och staging-online-pipelines uppmanas du att bekräfta starten och hur den kommer att börja.
+
+* **Normalt läge** är en standardkörning och innehåller steg för testning på scenen.
+* **Nödläge** hoppar över steg i testningen.
+
+![Nödläge](/help/assets/configure-pipelines/emergency-mode.png)
 
 ### Enbart Stage-rörledningar {#stage-only-run}
 
@@ -93,7 +103,9 @@ En rörledning som bara fungerar på en scen fungerar på nästan samma sätt so
 
 ![En pipeline som endast är för scenen körs](/help/assets/configure-pipelines/stage-only-pipeline-run.png)
 
-Knappen **Befordra bygge** visas bara om du är på den senaste pipelinekörningen som bara fungerar på scenen. När du klickat uppmanas du att bekräfta körningen av den produktspecifika pipelinen eller att skapa en produktbaserad pipeline om det inte redan finns en.
+Om du klickar på **Befordra bygge** uppmanas du att bekräfta körningen av den relaterade pipeline som bara är för scenen, antingen normalt eller i [nödläge.](#emergency-mode)
+
+Om det inte finns någon pipeline som endast är avsedd för produktion uppmanas du att skapa en.
 
 ### Rörledningar som endast är avsedda för produktion {#prod-only-run}
 
