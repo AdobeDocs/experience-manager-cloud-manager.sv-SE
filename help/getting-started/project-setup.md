@@ -1,22 +1,22 @@
 ---
-title: Konfigurera projektet
+title: Konfigurera ditt projekt
 description: Lär dig hur du konfigurerar ditt projekt så att du kan hantera och driftsätta det med Cloud Manager.
 exl-id: ed994daf-0195-485a-a8b1-87796bc013fa
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '1426'
-ht-degree: 1%
+source-wordcount: '1395'
+ht-degree: 0%
 
 ---
 
 
-# Projektinställningar {#setting-up-your-project}
+# Konfigurera ditt projekt {#setting-up-your-project}
 
 Lär dig hur du konfigurerar ditt projekt så att du kan hantera och driftsätta det med Cloud Manager.
 
-## Ändra befintliga projekt {#modifying-project-setup-details}
+## Redigera befintliga projekt {#modifying-project-setup-details}
 
-Befintliga AEM måste följa vissa grundläggande regler för att kunna byggas och driftsättas med Cloud Manager.
+Befintliga AEM måste följa vissa grundläggande regler så att de kan byggas och driftsättas med Cloud Manager.
 
 * Projekt måste byggas med Apache Maven.
 * Det måste finnas en `pom.xml`-fil i Git-databasens rot.
@@ -34,9 +34,9 @@ Befintliga AEM måste följa vissa grundläggande regler för att kunna byggas o
 
 I vissa begränsade fall kan du behöva ändra din byggprocess något när den körs i Cloud Manager jämfört med när den körs på arbetsstationer för utvecklare. I dessa fall kan [Maven Profiles](https://maven.apache.org/guides/introduction/introduction-to-profiles.html) användas för att definiera hur bygget ska vara olika i olika miljöer, inklusive Cloud Manager.
 
-Aktivering av en Maven-profil i Cloud Manager-byggmiljö bör göras genom att söka efter miljövariabeln `CM_BUILD` [environment variable](/help/getting-started/build-environment.md#environment-variables) . Omvänt bör en profil som endast är avsedd att användas utanför Cloud Manager byggmiljö göras genom att man söker efter denna variabel som saknas.
+Aktivering av en Maven-profil i Cloud Manager-byggmiljön bör göras genom att söka efter `CM_BUILD` [miljövariabel](/help/getting-started/build-environment.md#environment-variables). Omvänt bör en profil som endast är avsedd att användas utanför Cloud Manager byggmiljö göras genom att man söker efter denna variabel som saknas.
 
-Om du till exempel bara vill visa ett enkelt meddelande när bygget körs i Cloud Manager gör du så här:
+Om du till exempel bara vill visa ett enkelt meddelande när bygget körs i Cloud Manager gör du följande:
 
 ```xml
         <profile>
@@ -74,7 +74,7 @@ Om du till exempel bara vill visa ett enkelt meddelande när bygget körs i Clou
 >
 >Om du vill testa den här profilen på en arbetsstation för utvecklare kan du antingen aktivera den på kommandoraden (med `-PcmBuild`) eller i den integrerade utvecklingsmiljön (IDE).
 
-Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Manager gör du det här:
+Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Manager gör du följande:
 
 ```xml
         <profile>
@@ -108,21 +108,21 @@ Om du bara vill få ut ett enkelt meddelande när bygget körs utanför Cloud Ma
         </profile>
 ```
 
-## Lösenordsskyddat databasstöd för Maven {#password-protected-maven-repositories}
+## Stöd för lösenordsskyddade Maven-arkiv {#password-protected-maven-repositories}
 
-Artefakter från en lösenordsskyddad Maven-databas bör endast användas mycket försiktigt eftersom kod som distribueras med den här mekanismen inte går igenom alla kvalitetsregler som implementeras i Cloud Manager kvalitetsgater. Du bör också distribuera Java-källorna och hela projektets källkod tillsammans med binärfilen.
+Artefakter från lösenordsskyddade Maven-databaser bör användas med försiktighet eftersom kod som distribueras på det här sättet inte är helt underkastad de kvalitetskontroller som Cloud Manager kvalitetsportar kräver. Adobe rekommenderar även att du distribuerar Java-källorna och hela projektets källkod tillsammans med binärfilen.
 
 >[!TIP]
 >
 >Artefakter från lösenordsskyddade Maven-databaser bör endast användas i sällsynta fall och för kod som inte är knuten till AEM.
 
-Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](/help/getting-started/build-environment.md#pipeline-variables) och refererar sedan till den hemligheten inuti en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Den här filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat.
+Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](/help/getting-started/build-environment.md#pipeline-variables) och refererar sedan till den hemligheten i en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Den här filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat.
 
-När byggprocessen för Cloud Manager startar sammanfogas elementet `<servers>` i den här filen med standardfilen `settings.xml` från Cloud Manager. Server-ID:n som börjar med `adobe` och `cloud-manager` betraktas som reserverade och bör inte användas av anpassade servrar. Server-ID:n som inte matchar något av dessa prefix eller standard-ID:t `central` speglas aldrig av Cloud Manager.
+När Cloud Manager-byggprocessen startar sammanfogas elementet `<servers>` i den här filen med standardfilen `settings.xml` från Cloud Manager. Anpassade servrar ska inte använda server-ID:n som börjar med `adobe` och `cloud-manager`. Sådana ID:n betraktas som reserverade. Cloud Manager speglar endast de server-ID:n som matchar ett av de angivna prefixen eller standard-ID:t `central`.
 
 När den här filen är på plats refereras server-ID:t inifrån ett `<repository>`- och/eller `<pluginRepository>` -element i `pom.xml`-filen. I allmänhet finns dessa `<repository>`- och/eller `<pluginRepository>`-element i en [Cloud Manager-specifik profil](#activating-maven-profiles-in-cloud-manager), även om det inte är absolut nödvändigt.
 
-Låt oss till exempel säga att databasen är på `https://repository.myco.com/maven2`, att användarnamnet som Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
+Anta till exempel att databasen är på `https://repository.myco.com/maven2`, att användarnamnet som Cloud Manager ska använda är `cloudmanager` och att lösenordet är `secretword`.
 
 Först anger du lösenordet som en hemlighet i pipeline:
 
@@ -130,7 +130,7 @@ Först anger du lösenordet som en hemlighet i pipeline:
 $ aio cloudmanager:set-pipeline-variables PIPELINEID --secret CUSTOM_MYCO_REPOSITORY_PASSWORD secretword
 ```
 
-Referera sedan detta från filen `.cloudmanager/maven/settings.xml`:
+Referera sedan till följande från filen `.cloudmanager/maven/settings.xml`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -212,7 +212,7 @@ Konfigurera `maven-source-plugin` i ditt projekt:
 
 ### Distribuera projektkällor {#deploying-project-sources}
 
-Det är en god vana att driftsätta hela projektkällan tillsammans med binärfilen i en Maven-databas. Detta gör att den exakta artefakten kan återskapas.
+Det är god praxis att driftsätta hela projektkällan tillsammans med binärfilen till en Maven-databas. Om du gör det kan du återskapa den exakta artefakten.
 
 Konfigurera `maven-assembly-plugin` i ditt projekt:
 
@@ -237,11 +237,11 @@ Konfigurera `maven-assembly-plugin` i ditt projekt:
         </plugin>
 ```
 
-## Hoppar över innehållspaket {#skipping-content-packages}
+## Hoppa över innehållspaket {#skipping-content-packages}
 
-I Cloud Manager kan byggen producera valfritt antal innehållspaket. Det kan av olika skäl vara önskvärt att skapa ett innehållspaket men inte distribuera det. Detta kan till exempel vara användbart när du skapar innehållspaket som bara används för testning eller som paketeras om med ett annat steg i byggprocessen, det vill säga som ett underpaket till ett annat paket.
+I Cloud Manager kan byggen producera valfritt antal innehållspaket. Det kan av olika skäl vara önskvärt att skapa ett innehållspaket men inte distribuera det. Den här metoden kan till exempel vara användbar när du skapar innehållspaket enbart för testning eller när ett annat steg i byggprocessen paketerar om dem. Det vill säga som ett underpaket till ett annat paket.
 
-För att passa dessa scenarier kommer Cloud Manager att söka efter egenskapen `cloudManagerTarget` i egenskaperna för det inbyggda innehållspaketet. Om den här egenskapen är inställd på `none` hoppas paketet över och distribueras inte. Mekanismen för hur den här egenskapen anges beror på hur innehållspaketet skapas. Med till exempel `filevault-maven-plugin` konfigurerar du plugin-programmet så här:
+Cloud Manager letar efter egenskapen `cloudManagerTarget` i egenskaperna för det inbyggda innehållspaketet för att hantera de här scenarierna. Om den här egenskapen är inställd på `none` hoppas paketet över och distribueras inte. Mekanismen för att ange den här egenskapen beror på hur innehållspaketet skapas. Med `filevault-maven-plugin` skulle du till exempel konfigurera plugin-programmet så här:
 
 ```xml
         <plugin>
@@ -275,7 +275,7 @@ Med `content-package-maven-plugin` är den liknande:
 
 ## Bygg återanvändning av felaktigheter {#build-artifact-reuse}
 
-I många fall distribueras samma kod till flera AEM miljöer. När det är möjligt kommer Cloud Manager att undvika att återskapa kodbasen när det upptäcker att samma Git-implementering används i flera fullständiga pipeline-körningar.
+I många fall distribueras samma kod till flera AEM miljöer. När det är möjligt undviker Cloud Manager att återskapa kodbasen när det upptäcker att samma Git-implementering används i flera fullständiga pipeline-körningar.
 
 När en körning startas extraheras den aktuella HEAD-implementeringen för förgreningsflödet. Hash för implementeringen visas i användargränssnittet och via API:t. När byggsteget har slutförts lagras de resulterande artefakterna baserat på den implementeringshashen och kan återanvändas i efterföljande pipeline-körningar.
 
@@ -304,15 +304,12 @@ Tänk på att ditt program har två utvecklingspipelines:
 
 Båda grenarna har samma implementerings-ID.
 
-1. Om du kör pipeline 1 först byggs paketen normalt.
-1. Om du sedan kör pipeline 2 återanvänds paket som skapats med pipeline 1.
+1. När du kör pipeline 1 skapas paketen normalt.
+1. När du sedan kör pipeline 2 återanvänds paket som skapats med pipeline 1.
 
 #### Exempel 2 {#example-2}
 
-Programmet har två grenar:
-
-* Gren `foo`
-* Gren `bar`
+Tänk på att ditt program har två grenar: Förgrening `foo` och Förgrening `bar`.
 
 Båda grenarna har samma implementerings-ID.
 
@@ -321,9 +318,9 @@ Båda grenarna har samma implementerings-ID.
 
 I det här fallet återanvänds artefakten från `foo` för produktionsflödet eftersom samma implementeringshash identifierades.
 
-### Avmarkera {#opting-out}
+### Avanmäl dig {#opting-out}
 
-Om du vill kan återanvändningsbeteendet inaktiveras för specifika pipelines genom att pipeline-variabeln `CM_DISABLE_BUILD_REUSE` anges till `true`. Om den här variabeln är inställd extraheras fortfarande implementeringshashen och de resulterande artefakterna lagras för senare användning, men eventuella tidigare lagrade artefakter återanvänds inte. Tänk på följande scenario om du vill förstå det här beteendet.
+Om du vill kan återanvändningsbeteendet inaktiveras för specifika pipelines genom att pipeline-variabeln `CM_DISABLE_BUILD_REUSE` anges till `true`. Om variabeln är inställd extraheras fortfarande implementeringshash-värdet. De resulterande artefakterna lagras för senare bruk, men tidigare lagrade artefakter återanvänds inte. Tänk på följande scenario om du vill förstå detta:
 
 1. En ny pipeline skapas.
 1. Pipelinen körs (körning nr 1) och den aktuella HEAD-implementeringen är `becdddb`. Körningen är klar och de resulterande artefakterna sparas.
@@ -337,10 +334,10 @@ Om du vill kan återanvändningsbeteendet inaktiveras för specifika pipelines g
 
 * Skapa artefakter återanvänds inte i olika program, oavsett om implementeringshashen är identisk.
 * Artefakter återanvänds i samma program även om grenen och/eller pipeline är annorlunda.
-* [Versionshantering för Maven](/help/managing-code/maven-project-version.md) ersätter endast projektversionen i produktionspipelines. Om samma implementering används både för en körning av en utvecklingsdistribution och en körning av en produktionspipeline och utvecklingsdistributionen körs först, distribueras versionerna till fas och produktion utan att ändras. I det här fallet kommer dock en tagg fortfarande att skapas.
-* Om hämtningen av de lagrade artefakterna inte lyckas kommer byggsteget att utföras som om inga artefakter hade lagrats.
+* [Versionshantering för Maven](/help/managing-code/maven-project-version.md) ersätter endast projektversionen i produktionspipelines. Om samma implementering används för både utvecklings- och produktionspipeline och utvecklingspipelines körs först, distribueras versionerna till scenen och produktionen oförändrad. I det här fallet skapas dock fortfarande en tagg.
+* Om hämtningen av de lagrade artefakterna inte lyckas, körs byggsteget som om inga artefakter lagrades.
 * Andra förloppsvariabler än `CM_DISABLE_BUILD_REUSE` beaktas inte när Cloud Manager beslutar att återanvända tidigare skapade byggartefakter.
 
 ## Utveckla din kod baserat på bästa praxis {#develop-your-code-based-on-best-practices}
 
-Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med bästa praxis för AEM utvecklare](https://experienceleague.adobe.com/docs/experience-manager-65/developing/bestpractices/best-practices.html).
+Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med bästa praxis för AEM utvecklare](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/bestpractices/best-practices).

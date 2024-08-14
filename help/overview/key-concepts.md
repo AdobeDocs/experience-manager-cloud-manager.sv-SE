@@ -2,9 +2,9 @@
 title: Viktiga begrepp
 description: Precis som alla kraftfulla verktyg omfattar Cloud Manager många koncept och termer. I det här dokumentet sammanfattas några av de viktigaste för dig när du börjar använda Cloud Manager.
 exl-id: 86dfc976-f3da-479a-9faa-08f40ca909e0
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '412'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ Precis som alla kraftfulla verktyg omfattar Cloud Manager många koncept och ter
 
 ## Program {#application}
 
-Ett program är den uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande [lösningen](#solution) (till exempel AEM Sites eller AEM Assets) efter deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter](#artifact).
+Ett program är den uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande [lösningen](#solution) (till exempel AEM Sites eller AEM Assets) för deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter](#artifact).
 
-Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html).
+Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/en/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview).
 
 ## Artefakt {#artifact}
 
-En artefakt är en driftsättningsbar enhet och är resultatet av en byggprocess som omvandlar källkoden till en enda enhet. Till exempel en ZIP-fil som innehåller källkoden.
+En artefakt är en driftsättningsbar enhet och är resultatet av en byggprocess som omvandlar källkoden till en enda enhet. En ZIP-fil som innehåller källkoden.
 
 ## Artefaktarkiv {#artifact-repository}
 
@@ -30,9 +30,9 @@ En artefaktdatabas är en lagringsplats där kundspecifika [artefakter](#artifac
 
 ## Miljö {#environment}
 
-En miljö är ett enda kluster med virtuella datorer i ett [program](#program). För AEM består detta av en redigeringsinstans (eventuellt med en extra redigeringsinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera dispatcherinstanser och en belastningsutjämnare.
+En miljö är ett enda kluster med virtuella datorer i ett [program](#program). För AEM består den här miljön av en redigeringsinstans (eventuellt med en extra redigeringsinstans i kallt läge), noll eller flera publiceringsinstanser, en eller flera Dispatcher-instanser och en belastningsutjämnare.
 
-## git-databas {#git-repository}
+## Git-databas {#git-repository}
 
 En Git-databas är en plats där kundspecifik källkod lagras och är tillgänglig [med Git](https://git-scm.com).
 
@@ -46,7 +46,7 @@ En organisation är en Adobe-konstruktion som representerar en företagskund. Et
 
 ## Pipeline {#pipeline}
 
-En pipeline är en uppsättning distributionssteg som körs i sekvens.
+En pipeline är en uppsättning distributionssteg som körs eller körs i följd.
 
 ## Produkt {#product}
 

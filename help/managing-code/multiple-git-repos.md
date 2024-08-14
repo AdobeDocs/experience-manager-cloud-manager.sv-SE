@@ -1,27 +1,27 @@
 ---
 title: Arbeta med flera Git-databaser
-description: I stället för att arbeta direkt med Cloud Manager Git-databas kan du lära dig hur du kan arbeta med din egen Git-databas eller med flera Git-databaser.
+description: Lär dig hur du kan arbeta med din egen Git-databas eller flera Git-databaser i stället för att arbeta direkt med Cloud Manager Git-databas.
 exl-id: 53bf78bb-489a-4a83-8459-c361f532d54a
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
 
-# Arbeta med flera Source Git-databaser {#working-with-multiple-source-git-repos}
+# Arbeta med Git-databaser med flera källor {#working-with-multiple-source-git-repos}
 
-I stället för att arbeta direkt med Cloud Manager Git-databas kan du lära dig hur du kan arbeta med din egen Git-databas eller med flera Git-databaser.
+Lär dig hur du kan arbeta med din egen Git-databas eller flera Git-databaser i stället för att arbeta direkt med Cloud Manager Git-databas.
 
-## Synkroniserar kundhanterade Git-databaser {#syncing-customer-managed-git-repositories}
+## Synkronisera kundhanterade Git-databaser {#syncing-customer-managed-git-repositories}
 
-Om du vill arbeta med din egen databas eller databaser bör en automatisk synkroniseringsprocess skapas så att Cloud Manager Git-databas alltid är uppdaterad.
+Om du vill att Cloud Manager Git-databas ska vara uppdaterad, skapar du en automatisk synkroniseringsprocess om du använder din egen databas eller databaser.
 
-Beroende på var din Git-databas ligger kan en GitHub-åtgärd eller en kontinuerlig integreringslösning som Jenkins användas för att konfigurera automatiseringen. Med en automatisering kan varje överföring till din egen databas automatiskt vidarebefordras till Cloud Manager Git-databas.
+Beroende på var din Git-databas ligger kan en GitHub-åtgärd eller en kontinuerlig integreringslösning som Jenkins användas för att konfigurera automatiseringen. Med en automatisering på plats kan varje överföring till din egen databas automatiskt vidarebefordras till Cloud Manager Git-databas.
 
-En sådan automatisering för en enskild kundägd Git-databas är enkel, men om du konfigurerar den för flera databaser krävs en mer komplicerad inledande konfiguration. Innehållet från flera Git-databaser måste mappas till olika kataloger i en och samma Cloud Manager Git-databas. Cloud Manager Git-databas måste etableras med en rotmask `pom.xml` som listar de olika delprojekten i modulavsnittet
+En sådan automatisering för en enskild kundägd Git-databas är enkel, men att konfigurera den för flera databaser kräver en mer komplicerad inledande konfiguration. Innehållet från flera Git-databaser måste mappas till olika kataloger i en och samma Cloud Manager Git-databas. Cloud Manager Git-databas måste etableras med en rotmask `pom.xml`, som listar de olika delprojekten i modulavsnittet
 
-Nedan visas ett exempel på `pom.xml` för två kundägda Git-databaser. Det första projektet placeras i katalogen `project-a`, det andra projektet placeras i katalogen `project-b`.
+Nedan visas ett exempel på `pom.xml` för två kundägda Git-databaser. Det första projektet placeras i katalogen `project-a` och det andra projektet placeras i katalogen `project-b`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -44,21 +44,21 @@ Nedan visas ett exempel på `pom.xml` för två kundägda Git-databaser. Det fö
 
 En sådan rot `pom.xml` skickas till en gren i Cloud Manager Git-databasen. Därefter måste de två projekten konfigureras så att ändringarna automatiskt vidarebefordras till Cloud Manager Git-databasen.
 
-En GitHub-åtgärd kan till exempel utlösas av en push till en gren i projekt A. Åtgärden checkar ut projekt A och Cloud Manager Git-databasen och kopierar allt innehåll från projekt A till katalogen `project-a` i Cloud Manager Git-databas och utför sedan ändringen.
+En överföring till en gren i projekt A kan till exempel utlösa en GitHub-åtgärd. Åtgärden checkar ut projekt A och Cloud Manager Git-databasen. Det kopierar allt innehåll från projekt A till katalogen `project-a` i Cloud Manager Git-databasen. Sedan implementeras och push-ändras ändringen.
 
-En ändring av grenen `main` i projekt A skickas till exempel automatiskt till grenen `main` i Cloud Manager Git-databas. Det kan förstås finnas en mappning mellan grenar, som en push-överföring till en gren med namnet `dev` i projekt A skickas till en gren med namnet `development` i Cloud Manager Git-databas. Liknande steg krävs för projekt B.
+En ändring av grenen `main` i projekt A skickas till exempel automatiskt till grenen `main` i Cloud Manager Git-databasen. Det kan förstås finnas en mappning mellan grenar, som en push-överföring till en gren med namnet `dev` i projekt A, som skickas till en gren med namnet `development` i Cloud Manager Git-databasen. Liknande steg krävs för projekt B.
 
-Beroende på förgreningsstrategin och arbetsflödena kan synkroniseringen konfigureras för olika grenar. Om den använda Git-databasen inte tillhandahåller ett koncept som liknar GitHub-åtgärder, är en integrering via Jenkins (eller liknande) också möjlig. I det här fallet utlöser en webkrok ett Jenkins-jobb som utför arbetet.
+Beroende på förgreningsstrategin och arbetsflödena kan synkroniseringen konfigureras för olika grenar. Om den använda Git-databasen inte tillhandahåller ett koncept som liknar GitHub-åtgärder, kan en integrering med Jenkins (eller liknande) också göras. I det här fallet utlöser en webkrok ett Jenkins-jobb som utför arbetet.
 
-Följ stegen nedan för att lägga till en ny (tredje) källa eller databas:
+Gör följande för att lägga till en ny (tredje) källa eller databas:
 
 1. Lägg till en ny GitHub-åtgärd i den nya databasen som överför ändringar från den databasen till Cloud Manager Git-databasen.
 1. Utför den åtgärden minst en gång för att se till att projektkoden finns i Cloud Manager Git-databasen.
-1. Lägg till en referens till den nya katalogen i rotkatalogen Maven `pom.xml` i Cloud Manager Git-databasen.
+1. Lägg till en referens till den nya katalogen i rotkatalogen `pom.xml` i Cloud Manager Git-databasen.
 
 ## Exempel på GitHub-åtgärd {#sample-github-action}
 
-Detta är ett exempel på GitHub-åtgärd som utlöses av en push-åtgärd till `main`-grenen och sedan övergår till en underkatalog till Cloud Manager Git-databas. GitHub-åtgärderna måste ha två hemligheter, `MAIN_USER` och `MAIN_PASSWORD`, för att kunna ansluta och skicka till Cloud Manager Git-databas.
+En push-överföring till `main`-grenen utlöser den här GitHub-åtgärden som sedan skickas till en underkatalog till Cloud Manager Git-databasen. GitHub-åtgärderna måste ha två hemligheter, `MAIN_USER` och `MAIN_PASSWORD`, för att kunna ansluta och skicka till Cloud Manager Git-databas.
 
 ```java
 name: SYNC
@@ -115,15 +115,15 @@ jobs:
           git -C main push
 ```
 
-Så som visas ovan är det mycket flexibelt att använda en GitHub-åtgärd. Alla mappningar mellan grenar i Git-databaserna kan utföras och alla mappningar av de separata Git-projekten till huvudprojektets kataloglayout.
+Så som visas ovan är det flexibelt att använda en GitHub-åtgärd. Alla mappningar mellan grenar i Git-databaserna kan utföras och alla mappningar av de separata Git-projekten till huvudprojektets kataloglayout.
 
 >[!NOTE]
 >
->Skriptet ovan använder `git add` för att uppdatera databasen som förutsätter att borttagningar inkluderas. Beroende på standardkonfigurationen för Git kan detta behöva ersättas med `git add --all`.
+>Skriptet ovan använder `git add` för att uppdatera databasen, vilket förutsätter att borttagningar inkluderas. Beroende på standardkonfigurationen för Git kan detta krav behöva ersättas med `git add --all`.
 
 ## Exempel på Jenkins-jobb {#sample-jenkins-job}
 
-Det här är ett exempelskript som kan användas i ett Jenkins-jobb eller liknande. Den aktiveras av en ändring i en Git-databas. Jenkins-jobbet checkar ut det senaste läget för projektet eller grenen och utlöser sedan det här skriptet.
+Skriptet är ett exempel som kan användas i ett Jenkins-jobb eller liknande. En ändring i en Git-databas utlöser den. Jenkins-jobbet checkar ut det senaste läget för projektet eller grenen och utlöser sedan det här skriptet.
 
 Skriptet checkar i sin tur ut Cloud Manager Git-databas och implementerar projektkoden i en underkatalog.
 
@@ -185,4 +185,4 @@ Så som visas ovan är användningen av ett Jenkins-jobb mycket flexibel. Alla m
 
 >[!NOTE]
 >
->Skriptet ovan använder `git add` för att uppdatera databasen som förutsätter att borttagningar inkluderas.Beroende på standardkonfigurationen för Git kan detta behöva ersättas med `git add --all`.
+>Skriptet ovan använder `git add` för att uppdatera databasen, vilket förutsätter att borttagningar inkluderas. Beroende på standardkonfigurationen för Git kan `git add` behöva ersättas med `git add --all`.

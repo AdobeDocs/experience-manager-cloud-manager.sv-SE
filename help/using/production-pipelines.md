@@ -2,15 +2,15 @@
 title: Konfigurera produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
 
 
-# Konfigurera produktionsförlopp {#configuring-production-pipelines}
+# Konfigurera produktionspipelinjer {#configuring-production-pipelines}
 
 Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-förgreningar](/help/overview/ci-cd-pipelines.md).
 
@@ -33,7 +33,7 @@ Rollen **Distributionshanteraren** ansvarar för att ställa in pipeline. Pipeli
 >
 >Det går inte att konfigurera en pipeline förrän dess associerade Git-databas har minst en gren och [programkonfigurationen](/help/getting-started/program-setup.md) har slutförts.
 
-## Lägga till en ny produktionspipeline {#adding-production-pipeline}
+## Lägg till en ny produktionspipeline {#adding-production-pipeline}
 
 När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för att konfigurera programmet och har minst en miljö är du redo att lägga till en produktionspipeline.
 
@@ -124,7 +124,7 @@ När du har använt användargränssnittet för [!UICONTROL Cloud Manager] för 
 
          * **Dispatcher-konfiguration** - Definiera dispatcherkonfigurationen för produktionsmiljön. Alternativen är desamma som för mellanlagringsmiljön.
 
-1. Klicka på **Fortsätt** för att gå vidare till fliken **Stage Testing** där du kan konfigurera AEM Sites och AEM Assets Performance Testing, beroende på vilka produkter du har licensierat.
+1. Klicka på **Fortsätt** om du vill gå vidare till fliken **Stage Testing** där du kan konfigurera AEM Sites och AEM Assets Performance Testing, beroende på vilka produkter du har licensierat.
 
    >[!TIP]
    >

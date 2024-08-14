@@ -2,14 +2,14 @@
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 0%
 
 ---
 
-# Pipeline med endast scener och endast produktion {#stage-prod-only}
+# Rörledningar endast för scener och produktion {#stage-prod-only}
 
 Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 
@@ -22,7 +22,7 @@ Lär dig hur du kan dela upp driftsättningar för staging och produktion med de
 Mellanlagrings- och produktionsmiljöer är nära kopplade. Som standard är distributioner till dem länkade till en enda pipeline. Det är en driftsättningspipeline som distribueras till både testnings- och produktionsmiljöerna i det programmet. Även om denna koppling normalt är lämplig, finns det vissa användningsområden där det finns nackdelar:
 
 * Om du vill distribuera till enbart scenen kan du bara göra detta genom att avvisa steget **Befordra till produktion** i pipeline. Körningen markeras dock som avbruten.
-* Om du vill distribuera den senaste koden i en staging-miljö till produktion måste du distribuera om hela pipelinen, inklusive staging-distributionen, även om ingen kod har ändrats där.
+* Om du vill distribuera den senaste koden i en staging-miljö till produktion måste du distribuera om hela pipelinen inklusive staging-distributionen även om ingen kod har ändrats där.
 * Eftersom miljöer inte kan uppdateras under distributioner och du vill pausa och testa i staging-miljön i flera dagar innan du marknadsför till produktion, kan produktionsmiljön inte uppdateras. Detta gör icke-beroende aktiviteter som att uppdatera [miljövariabler](/help/getting-started/build-environment.md#environment-variables) omöjliga.
 
 Enkla rörledningar för scener och enbart för produkter erbjuder lösningar för dessa användningsområden genom att tillhandahålla dedikerade driftsättningsalternativ.
@@ -63,7 +63,7 @@ Rörledningar som endast är avsedda för produktion och endast för scenen skap
 >* **Lägg till produktionspipeline** är inte tillgängligt om det redan finns en kopplad standardpipeline.
 >* Endast en prod- och endast en fasledning tillåts per program.
 
-### Enbart Stage-förlopp {#stage-only}
+### Enbart Stage-rörledningar {#stage-only}
 
 1. När du har valt alternativet **Lägg till icke-produktionsförlopp** öppnas dialogrutan **Lägg till icke-produktionsförlopp** .
 1. Om du vill skapa en pipeline som bara är för ett stadium väljer du scenmiljön i fältet **Godtagbara distributionsmiljöer** för din pipeline. Fyll i återstående fält och klicka på **Fortsätt**.
@@ -74,20 +74,20 @@ Rörledningar som endast är avsedda för produktion och endast för scenen skap
 
    ![Testparametrar för en pipeline som bara är för scenen](/help/assets/configure-pipelines/stage-only-test.png)
 
-### Prod-Only Pipelines {#prod-only}
+### Rörledningar som endast är avsedda för produktion {#prod-only}
 
 1. När du har valt alternativet **Lägg till endast produktion i pipeline** öppnas dialogrutan **Lägg till endast produktion i pipeline**.
 1. Ange ett **pipelinenamn**. De återstående alternativen och funktionerna i dialogrutan fungerar på samma sätt som i den vanliga dialogrutan för att skapa kopplad pipeline. Klicka på **Spara** för att spara pipeline.
 
    ![Skapar en pipeline som endast är avsedd för produktion](/help/assets/configure-pipelines/prod-only-pipeline.png)
 
-## Köra endast prod- och Stage-pipelines {#running}
+## Köra prod- och stage-only-pipelines {#running}
 
 Rörledningar med endast prod och scenen körs på samma sätt som [alla andra pipelines körs](/help/using/managing-pipelines.md#running-pipelines). Mer information finns i den dokumentationen.
 
 Dessutom kan en pipelinekörning som bara är avsedd för produktion aktiveras direkt från körningsinformationen för en pipeline som bara är avsedd för en viss fas.
 
-### Enbart Stage-förlopp {#stage-only-run}
+### Enbart Stage-rörledningar {#stage-only-run}
 
 En rörledning som bara fungerar på en scen fungerar på nästan samma sätt som vanliga kopplade rörledningar. Efter testningsstegen kan du emellertid med en **Promote Build**-knapp i slutet av körningen starta en produktspecifik pipeline-körning som använder artefakter som distribuerats på scenen av den här körningen och distribuerar dem i produktionen.
 
@@ -95,7 +95,7 @@ En rörledning som bara fungerar på en scen fungerar på nästan samma sätt so
 
 Knappen **Befordra bygge** visas bara om du är på den senaste pipelinekörningen som bara fungerar på scenen. När du klickat uppmanas du att bekräfta körningen av den produktspecifika pipelinen eller att skapa en produktbaserad pipeline om det inte redan finns en.
 
-### Prod-Only Pipelines {#prod-only-run}
+### Rörledningar som endast är avsedda för produktion {#prod-only-run}
 
 För rörledningar som endast är avsedda för produktion är det viktigt att identifiera de källartefakter som ska distribueras till produktionen. Den här informationen finns i steget **Förberedelse av felaktigheter**. Du kan navigera till dessa körningar för mer information och loggar.
 

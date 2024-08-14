@@ -2,14 +2,14 @@
 title: Konfigurera icke-produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '707'
 ht-degree: 0%
 
 ---
 
-# Konfigurera icke-produktionsförlopp {#configuring-non-production-pipelines}
+# Konfigurera icke-produktionsrörledningar {#configuring-non-production-pipelines}
 
 Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-pipelines](/help/overview/ci-cd-pipelines.md).
 
@@ -31,13 +31,13 @@ Det finns två typer av icke-produktionsrörledningar:
 >
 >Det går inte att konfigurera en pipeline förrän dess associerade Git-databas har minst en gren och [programkonfigurationen](/help/getting-started/program-setup.md) har slutförts. Läs dokumentet [Cloud Manager-databaser](/help/managing-code/managing-repositories.md) om du vill veta mer om hur du lägger till och hanterar databaser i Cloud Manager.
 
-## Lägga till en icke-produktionspipeline {#add-non-production-pipeline}
+## Lägg till en icke-produktionspipeline {#add-non-production-pipeline}
 
 När du har konfigurerat programmet och har minst en miljö med Cloud Manager UI är du redo att lägga till en icke-produktionsprocess genom att följa de här stegen.
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
-1. Gå till Pipelines-kortet från Cloud Manager hemskärm. Klicka på **Lägg till** och välj **Lägg till icke-produktionsförlopp**.
+1. Gå till Pipelines-kortet från Cloud Manager hemskärm. Klicka på **Lägg till** och välj sedan **Lägg till icke-produktionsförlopp**.
 
    ![Lägg till icke-produktionsflöde](/help/assets/configure-pipelines/nonprod-pipeline-add1.png)
 

@@ -2,9 +2,9 @@
 title: Programinställningar
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Efter introduktionen slutför företagsägaren den första konfigurationen av programmet, inklusive inställning av programbeskrivningen och definition av nyckeltal (KPI) som används för prestandatestning.
 
-## Programinställningar med [!UICONTROL Cloud Manager] {#program-setup-cloud-manager}
+## Programkonfiguration med [!UICONTROL Cloud Manager] {#program-setup-cloud-manager}
 
 Följ de här stegen för att konfigurera programmet och definiera KPI:er.
 
@@ -58,7 +58,7 @@ Du kan redigera program när de har konfigurerats. Följ de här stegen för att
 
 1. Gå till programmet från Cloud Manager hemskärm.
 
-1. Klicka på **Redigera program** för att uppdatera eller ändra programmet från sidan **Översikt**.
+1. Klicka på **Redigera program** om du vill uppdatera eller ändra programmet från sidan **Översikt**.
 
    ![Redigera programalternativ](/help/assets/set-up-program/edit-program1.png)
 
@@ -66,7 +66,7 @@ Du kan redigera program när de har konfigurerats. Följ de här stegen för att
 
    ![Dialogrutan Redigera program](/help/assets/set-up-program/edit-program-general.png)
 
-1. Klicka på **Uppdatera** för att spara ändringarna.
+1. Klicka på **Uppdatera** om du vill spara ändringarna.
 
 Observera att ändringarna sparas direkt i Cloud Manager, men att de inte kommer att återspeglas i dina miljöer förrän nästa pipeline körs.
 

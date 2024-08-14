@@ -2,7 +2,7 @@
 title: Dispatcher Configurations
 description: Lär dig hur du distribuerar dispatcherkonfigurationsfiler med Cloud Manager.
 exl-id: ffc2b60e-bde7-48ca-b268-dea0f8fd4e30
-source-git-commit: 6572c16aea2c5d2d1032ca5b0f5d75ade65c3a19
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
 source-wordcount: '586'
 ht-degree: 0%
@@ -10,11 +10,11 @@ ht-degree: 0%
 ---
 
 
-# Dispatcher Configurations {#manage-your-dispatcher-configurations}
+# Dispatcher-konfigurationer {#manage-your-dispatcher-configurations}
 
 Lär dig hur du distribuerar dispatcherkonfigurationsfiler med Cloud Manager
 
-## Distribuera Dispatcher Configurations med Cloud Manager {#deploying-dispatcher-configurations}
+## Distribuera Dispatcher-konfigurationer med Cloud Manager {#deploying-dispatcher-configurations}
 
 Cloud Manager kan distribuera webbservrar och Dispatcher konfigurationsfiler förutsatt att de lagras i Git-databasen tillsammans med vanliga AEM.
 

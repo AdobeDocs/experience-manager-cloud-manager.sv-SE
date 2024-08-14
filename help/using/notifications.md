@@ -2,9 +2,9 @@
 title: Meddelanden
 description: Läs om hur Cloud Manager meddelar dig om viktiga händelser.
 exl-id: cfd5655f-2d2c-4304-b25c-6cdffe7ff64c
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---

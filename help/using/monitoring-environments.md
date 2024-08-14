@@ -1,16 +1,16 @@
 ---
-title: Övervakningsmiljöer
+title: Övervaka miljöer
 description: Lär dig övervaka dina miljöer i Cloud Manager.
 exl-id: 32886133-d6c0-4aed-8bb0-81b84f63e825
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '899'
 ht-degree: 0%
 
 ---
 
 
-# Övervakningsmiljöer {#monitoring-environments}
+# Bildskärmsmiljöer {#monitoring-environments}
 
 Lär dig övervaka dina miljöer i Cloud Manager.
 
@@ -20,9 +20,7 @@ Systemövervakning i [!UICONTROL Cloud Manager] görs genom att observera de ens
 
 Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd. Om ett mätvärde överskrider varningströskeln (men under det kritiska tröskelvärdet) anses det vara i ett varningstillstånd. Tröskelvärdena anges av Adobe Managed Services och kan visas i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services kommer att ändra tröskelvärdena för att matcha specifika kundkrav. Frågor om tröskelvärdena ska ställas till din Customer Success Engineer (CSE).
 
-## Åtkomst till systemövervakning {#accessing-system-monitoring}
-
-Följ de här stegen för att få åtkomst till systemövervakning.
+## Övervakning av åtkomstsystem {#accessing-system-monitoring}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
@@ -49,7 +47,7 @@ Statusen i varje kategori är en sammanfattning av enskilda mätvärden. Om någ
 >
 >Som standard visas instanser av produktionsmiljön när du navigerar till den här sidan, men även andra miljöer kan visas.
 
-## Information om systemövervakning {#system-monitoring-detail}
+## Systemövervakningsinformation {#system-monitoring-detail}
 
 Om du vill visa information om specifika mått klickar du på en av kategorikolumnerna för en viss instans eller på kategorititeln i den vänstra navigeringen. På varje detaljsida visas en serie diagram för måtten i den kategorin. Du kan antingen visa mätvärden för alla instanser i en miljö eller för en viss instans. Du kan växla mellan miljö och instanser med listrutorna i det övre högra hörnet.
 
@@ -112,14 +110,14 @@ Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incid
 
 ![Händelseanalys](/help/assets/sla-reporting3.png)
 
-## SLA Metrics {#sla-metrics}
+## SLA metrics {#sla-metrics}
 
-* **Författarkontrakt**: Detta är den SLA som definieras i ditt avtal med Adobe Managed Services för författarnivån.
-* **AMS Author SLA**: Detta är den uppmätta drifttiden för produktionsförfattarens factoring-incidenter som orsakas av Adobe eller våra leverantörer.
-* **Författare av SLA**: Detta är den uppmätta drifttiden för författarnivån som ignorerar schemalagda driftavbrott, t.ex. underhållsperioder.
-* **Slutanvändaravtal**: Detta är den SLA som definieras i ditt avtal med Adobe Managed Services för publiceringsnivån.
-* **AMS-slutanvändare SLA**: Detta är den uppmätta drifttiden för de factoringincidenter i produktionsskiktet som orsakas av Adobe eller våra leverantörer.
-* **Slutanvändare SLA**: Det här är den uppmätta drifttiden för publiceringsskiktet som ignorerar schemalagda driftstopp, till exempel underhållsfönster.
+* **Författarkontrakt**: Den SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
+* **AMS Author SLA**: Uppmätt drifttid för produktionsförfattarens nivåfactoringincidenter som orsakas av Adobe eller våra leverantörer.
+* **Författare av SLA**: Den uppmätta drifttiden för författarnivån ignorerar schemalagd drifttid, till exempel underhållsfönster.
+* **Slutanvändaravtal**: SLA som definierats i ditt avtal med Adobe Managed Services för publiceringsnivån.
+* **AMS-slutanvändare SLA**: Den uppmätta drifttiden för produktionsskiktets factoringincidenter som orsakas av Adobe eller våra leverantörer.
+* **Slutanvändare SLA**: Den uppmätta drifttiden för publiceringsskiktet ignorerar schemalagd drifttid, till exempel underhållsfönster.
 
 ## Videosjälvstudie {#video-tutorial}
 

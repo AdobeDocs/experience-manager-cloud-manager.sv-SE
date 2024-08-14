@@ -2,19 +2,19 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '847'
 ht-degree: 0%
 
 ---
 
 
-# Hantera pipelines {#managing-pipelines}
+# Hantera rörledningar {#managing-pipelines}
 
 Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
 
-## Pipeline-kort {#pipeline-card}
+## Förloppskort {#pipeline-card}
 
 Kortet **Pipelines** på sidan **Programöversikt** i Cloud Manager ger dig en översikt över alla dina pipelines och deras aktuella status.
 
@@ -66,7 +66,7 @@ Om du klickar på ikonen `i` visas information om körningen av den valda pipeli
 
 Om du klickar på **Visa information** visas [information om pipelinekörningen](#view-details).
 
-## Löpande rörledningar {#running-pipelines}
+## Rörledningar {#running-pipelines}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
@@ -96,7 +96,7 @@ Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att kl
 >
 >Du kan inte redigera en pågående pipeline.
 
-## Tar bort pipelines {#deleting-pipelines}
+## Ta bort rörledningar {#deleting-pipelines}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 

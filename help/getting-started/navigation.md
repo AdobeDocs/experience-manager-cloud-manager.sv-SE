@@ -2,9 +2,9 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '1410'
+source-wordcount: '1435'
 ht-degree: 0%
 
 ---
@@ -16,10 +16,10 @@ Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navige
 
 Användargränssnittet för molnhantering består huvudsakligen av två grafiska gränssnitt:
 
-* [Konsolen Mina program](#my-programs-console) där du kan visa och hantera alla program.
-* [Fönstret Programöversikt](#program-overview) där du kan se information om och hantera ett enskilt program.
+* [På konsolen Mina program](#my-programs-console) kan du visa och hantera alla program.
+* [I fönstret Programöversikt](#program-overview) kan du se information om och hantera ett enskilt program.
 
-## My Programs Console {#my-programs-console}
+## My Programs console {#my-programs-console}
 
 När du loggar in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och väljer lämplig organisation, kommer du till konsolen **Mina program**.
 
@@ -27,15 +27,16 @@ När du loggar in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.c
 
 Konsolen Mina program ger en översikt över alla program som du har tillgång till i den valda organisationen. Den består av flera delar.
 
-1. [Verktygsfält](#toolbars-my-programs-toolbars) för organisationsval, aviseringar och kontoinställningar
+1. [Verktygsfält](#toolbars-my-programs-toolbars) för organisationsval, aviseringar och kontoinställningar.
 1. Flikar som gör att du kan växla den aktuella vyn av dina program.
-   * Vyn **Hem** (standard) som väljer vyn **Mina program** med en översikt över alla program
-   * **Licens** som har åtkomst till License Dashboard. Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
-      * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
-   * Observera att flikarna som standard är stängda och att de kan visas med hjälp av hamburgermenyn i [Cloud Manager-huvudet](#cloud-manager-header).
+
+   * Vyn **Hem** (standard) som väljer vyn **Mina program** med en översikt över alla program.
+   * **Licens** som har åtkomst till License Dashboard. License Dashboard gäller endast *AEM as a Cloud Service-program* (AEMaaCS), inte AMS-program. Information om vilken typ av tjänst ditt program har (AEMaaCS eller AMS) finns i avsnittet [Programkort](#program-cards) i den här artikeln.
+   * Flikarna stängs som standard och kan visas med hjälp av den nedrullningsbara menyn för hamburgikonen, som finns till vänster om [Cloud Manager-rubriken](#cloud-manager-header).
+
 1. [Call-to-Actions och Statistics](#cta-statistics) för en översikt över din senaste aktivitet
 1. [**Mina program** avsnitt](#my-programs-section) med en översikt över alla dina program
-1. [Snabblänkar](#quick-links) för enkel åtkomst till relaterade resurser
+1. [Snabblänkar](#quick-links) gör det enkelt att komma åt relaterade resurser
 
 >[!TIP]
 >
@@ -45,22 +46,22 @@ Konsolen Mina program ger en översikt över alla program som du har tillgång t
 
 Det finns två verktygsfält ovanpå varandra.
 
-#### Cloud Manager Header {#cloud-manager-header}
+#### Cloud Manager header {#cloud-manager-header}
 
-Det första är Cloud Manager-rubriken som är beständig när du navigerar i Cloud Manager. Det är en ankarpunkt som ger dig tillgång till inställningar och information som gäller för alla Cloud Manager-program.
+Den första är Cloud Manager header. Sidhuvudet är beständigt när du navigerar i Cloud Manager. Det är en ankarpunkt som ger dig tillgång till inställningar och information som gäller för alla Cloud Manager-program.
 
 ![Experience Cloud-huvudet](assets/experience-cloud-header.png)
 
-1. Hamburger-menyn som ger åtkomst till flikar som kan ta dig till specifika delar av ett enskilt program eller växla mellan License Dashboard och **[My Programs](#my-programs-console)** -konsolen beroende på sammanhanget.
-   * Kontrollpanelen för licenser gäller endast AEM as a Cloud Service-program, inte AMS-program.
+1. Hamburgerikonen till vänster om huvudet är en listruta som ger åtkomst till flikar för specifika delar av ett enskilt program. Beroende på sammanhanget kan du även växla mellan licensinstrumentpanelen och konsolen **[Mina program](#my-programs-console)** .
+   * License Dashboard gäller endast AEM as a Cloud Service-program, inte AMS-program.
    * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
 1. Med Cloud Manager-knappen kommer du tillbaka till My Programs-konsolen i Cloud Manager oavsett var du befinner dig i Cloud Manager.
 1. Klicka på knappen Feedback för att ge Adobe feedback om Cloud Manager.
-1. Organisationsväljaren visar den organisation du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
+1. Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
 1. Genom att klicka på lösningens väljare kan du snabbt gå över till andra Experience Cloud-lösningar.
-1. Hjälpikonen ger snabb åtkomst till utbildningsresurser och supportresurser.
+1. Ikonen Hjälp ger snabb åtkomst till utbildningsresurser och supportresurser.
 1. Aviseringsikonen är märkt med antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md)
-1. Välj den ikon som representerar användaren för att få åtkomst till dina användarinställningar. Om du inte har konfigurerat någon användarbild tilldelas ikonen slumpmässigt.
+1. Välj den ikon som representerar användaren för att få åtkomst till dina användarinställningar. Om du inte väljer någon användarbild tilldelas ikonen slumpmässigt.
 
 #### Verktygsfältet Program {#program-toolbar}
 
@@ -70,10 +71,10 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
 
 1. Programväljaren öppnas i en listruta där du snabbt kan välja andra program eller vidta sammanhangsberoende åtgärder som att skapa ett nytt program
 1. Länken Komma igång ger dig tillgång till [dokumentationsresan för introduktion](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kan komma igång med Cloud Manager.
-   * Observera att introduktionsresan är utformad för AEM as a Cloud Service och inte för Cloud Service för AMS, men många koncept är desamma.
+Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma.
 1. Åtgärdsknappen innehåller sammanhangsberoende åtgärder som att skapa ett nytt program.
 
-### Samtal-till-åtgärder och statistik {#cta-statistics}
+### Samtal och statistik {#cta-statistics}
 
 Avsnittet om uppmaning till handling och statistik innehåller aggregerade data för din organisation, t.ex. om du har konfigurerat dina program, kan statistik över dina aktiviteter under de senaste 90 dagarna visa, inklusive:
 
@@ -83,7 +84,7 @@ Avsnittet om uppmaning till handling och statistik innehåller aggregerade data 
 
 Eller om du just har börjat konfigurera organisationen kan det finnas tips om nästa steg eller dokumentationsresurser.
 
-### Avsnittet Mina program {#my-programs-section}
+### Mina program {#my-programs-section}
 
 Huvudinnehållet i My Programs-konsolen är avsnittet **Mina program** som listar dina program som enskilda kort. Klicka på ett kort för att komma åt sidan **Programöversikt** för mer information om programmet.
 
@@ -91,7 +92,7 @@ Huvudinnehållet i My Programs-konsolen är avsnittet **Mina program** som lista
 >
 >Beroende på vilka behörigheter du har kanske du inte kan välja vissa program.
 
-Använd sorteringsalternativen för att bättre hitta det program du behöver.
+Använd följande sorteringsalternativ så att du bättre kan hitta det program du behöver:
 
 ![Sorteringsalternativ](assets/my-programs-sorting.png)
 
@@ -105,7 +106,7 @@ Använd sorteringsalternativen för att bättre hitta det program du behöver.
 
 #### Programkort {#program-cards}
 
-Varje program representeras av ett kort (eller en rad i en tabell) som ger en översikt över programmet och snabblänkar för att vidta åtgärder.
+Ett kort eller en rad i en tabell representerar alla program och ger en översikt över programmet och snabblänkar för att vidta åtgärder.
 
 ![Programkort](assets/program-card.png)
 
@@ -122,7 +123,7 @@ Informationsikonen ger dig även snabb åtkomst till ytterligare information om 
 
 ![Information](assets/information-view.png)
 
-Ellipsikonen ger dig tillgång till ytterligare åtgärder som du kan vidta i programmet.
+Med ellipsikonen får du tillgång till ytterligare åtgärder som du kan vidta i programmet.
 
 ![Ellipsknappen för program](assets/program-ellipsis.png)
 
@@ -133,46 +134,46 @@ Ellipsikonen ger dig tillgång till ytterligare åtgärder som du kan vidta i pr
 
 ### Snabblänkar {#quick-links}
 
-I avsnittet med snabblänkar får du tillgång till resurser som du använder ofta.
+I avsnittet med snabblänkar får du tillgång till användbara, relaterade resurser.
 
-## Programöversiktsfönster {#program-overview}
+## Fönstret Programöversikt {#program-overview}
 
-När du har valt ett program i konsolen [**Mina program**](#my-programs-console) visas programöversikten.
+Om du väljer ett program i konsolen [**Mina program**](#my-programs-console) kommer du till sidan **Programöversikt** .
 
 ![Programöversikt](assets/program-overview.png)
 
 Programöversikten ger dig tillgång till alla detaljer i ett Cloud Manager-program. Precis som My Programs-konsolen består den av flera delar.
 
-1. [Verktygsfält](#program-overview-toolbar) om du snabbt vill gå tillbaka till konsolen Mina program och navigera i programmet
-1. [Tabbar](#program-tabs) för att växla mellan olika aspekter av programmet
-1. En [uppmaning till åtgärd](#cta) baserad på de senaste åtgärderna i programmet
-1. En [översikt över programmets miljöer](#environments)
-1. En [översikt över programmets pipelines](#pipelines)
-1. Länkar till [användbara resurser](#useful-resources)
+1. [Verktygsfält](#program-overview-toolbar) om du snabbt vill gå tillbaka till konsolen **Mina program** och navigera i programmet.
+1. [Tabbar](#program-tabs) om du vill växla mellan olika aspekter av programmet.
+1. Ett [anrop till åtgärd](#cta) baserat på de senaste åtgärderna i programmet.
+1. En [översikt över programmets miljöer](#environments).
+1. En [översikt över programmets pipelines](#pipelines).
+1. Länkar till [användbara resurser](#useful-resources).
 
 ### Verktygsfält {#program-overview-toolbar}
 
-Verktygsfälten för programöversikten liknar de i [Min programkonsol](#my-programs-toolbars). Här illustreras bara skillnaderna.
+Verktygsfälten för programöversikten liknar verktygsfälten i [Min programkonsol](#my-programs-toolbars). Här illustreras bara skillnaderna.
 
-#### Cloud Manager Header {#cloud-manager-header-2}
+#### Cloud Manager header {#cloud-manager-header-2}
 
-Cloud Manager header har en hamburger-meny som automatiskt öppnas och visar de navigerbara flikarna i programöversikten.
+Cloud Manager-sidhuvudet har en rullgardinsmeny med en hamburgare-ikon som automatiskt öppnas och visar de navigeringsbara flikarna i programöversikten.
 
-![Cloud Manager hamburger-meny](assets/cloud-manager-hamburger.png)
+![Cloud Manager hamburger, listruta](assets/cloud-manager-hamburger.png)
 
-Klicka på menyikonen för hamburgaren för att dölja flikarna.
+Klicka på hamburgikonen för att dölja flikarna.
 
 #### Verktygsfältet Program {#program-toolbar-2}
 
-Verktygsfältet för program ger dig fortfarande möjlighet att snabbt växla till andra program, men ger även tillgång till sammanhangsberoende åtgärder som att lägga till och redigera programmet.
+Verktygsfältet för program ger dig fortfarande möjlighet att snabbt växla till andra program, men ger dessutom tillgång till sammanhangsberoende åtgärder som att lägga till och redigera programmet.
 
 ![Verktygsfältet Program](assets/cloud-manager-program-toolbar.png)
 
-Verktygsfältet innehåller dessutom alltid den flik som du är på om du har valt att dölja flikarna med hjälp av hamburgmenyn.
+Om du dessutom döljer flikarna med hjälp av hamburgikonen, kan verktygsfältet fortfarande visa den flik som du för tillfället är på.
 
 ### Programflikar {#program-tabs}
 
-Varje program har många alternativ och data kopplade till sig. Dessa data samlas in på flikar för att underlätta navigeringen i programmet. Flikarna ger dig tillgång till:
+Varje program har flera alternativ och data kopplade till sig. Dessa data samlas in på flikar för att underlätta navigeringen i programmet. Flikarna ger dig tillgång till:
 
 * Översikt - Programöversikt enligt beskrivningen i det aktuella dokumentet
 * [Aktivitet](/help/using/managing-pipelines.md#activity) - Historiken för programmets pipeline-körningar
@@ -186,11 +187,11 @@ Varje program har många alternativ och data kopplade till sig. Dessa data samla
 
 Som standard visas fliken **Översikt** när du öppnar ett program. Den aktuella fliken markeras. Välj en annan flik om du vill visa information om den.
 
-Använd hamburger-menyn i [Cloud Manager-huvudet](#cloud-manager-header-2) för att dölja flikarna.
+Använd hamburgikonen i [Cloud Manager-huvudet](#cloud-manager-header-2) för att dölja flikarna.
 
-### Call-to-Action {#cta}
+### Call-to-action {#cta}
 
-I avsnittet om uppmaning att ringa in får du användbar information beroende på programmets status. För ett nytt program kan du se nästa steg som erbjuds och en påminnelse om ett publiceringsdatum, [som anges när programmet skapas](/help/getting-started/program-setup.md).
+Avsnittet&quot;call-to-action&quot; ger användbar information beroende på programmets status. För ett nytt program kan du se nästa steg som erbjuds och en påminnelse om ett publiceringsdatum, [som anges när programmet skapas](/help/getting-started/program-setup.md).
 
 För ett live-program, status för den senaste distributionen med länkar för information och start av en ny distribution.
 

@@ -2,15 +2,15 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '723'
 ht-degree: 6%
 
 ---
 
 
-# Lägg till användare och roller {#add-users-and-roles}
+# Lägga till användare och roller {#add-users-and-roles}
 
 Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter för att kunna använda. Exempelvis kan bara vissa användare ange nyckeltal (KPI) för ett program. Dessa behörigheter är logiskt grupperade i roller.
 
