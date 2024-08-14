@@ -2,9 +2,9 @@
 title: Verktyget Innehållskopia
 description: Med Cloud Manager innehållskopia kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testning.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 2563c58431e58d2fc5917a2ad88835bbdd4224f2
+source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -165,11 +165,10 @@ Verktyget för innehållskopiering har följande begränsningar.
 * Det går inte att köra samtidiga innehållskopieringsåtgärder i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs i mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
-* Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte kan spåra flyttat eller borttaget innehåll i källan.
+* Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
-* Verktyget för innehållskopiering kopierar resurser tillsammans med dynamiska medierelaterade metadata från den högre miljön till den valda nedre miljön.
-   * Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/assets-workflow.html) i den nedre miljön för att kunna använda respektive dynamiska mediekonfiguration.
-* Processen för innehållskopiering går mycket snabbare när versionshistoriken inte kopieras.
+* Verktyget för innehållskopiering kopierar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
+* Processen för innehållskopiering är avsevärt snabbare när versionshistorik inte kopieras.
 * [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
 * När versionshistorik inte kopieras går kopieringen betydligt snabbare.
 * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
