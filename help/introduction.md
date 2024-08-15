@@ -2,9 +2,9 @@
 title: Introduktion till Cloud Manager för AMS
 description: Börja här för att lära känna Cloud Manager för Adobe Managed Services (AMS) och hur det gör det möjligt för organisationer att självhantera Adobe Experience Manager i molnet.
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
+source-git-commit: 4c4a2688cab8e5c81efa4b7b5e26f3c7b5dc30d6
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1232'
 ht-degree: 3%
 
 ---
@@ -33,19 +33,17 @@ Börja här för att lära känna Cloud Manager för AMS (Adobe Managed Services
 
 Med Cloud Manager får ditt utvecklingsteam följande funktioner:
 
-* Kontinuerlig integrering/kontinuerlig leverans (CI/CD) av kod för att minska time to market från månader/veckor till dagar/timmar
+* Kontinuerlig integrering/kontinuerlig leverans (CI/CD) av kod för att minska time to market från månader/veckor till dagar/timmar.
 
-* Kodinspektion, prestandatestning och säkerhetsvalidering baserade på bästa praxis innan produktionen påbörjas för att minimera produktionsstörningar
+* Kodinspektion, prestandatestning och säkerhetsvalidering baserade på bästa praxis innan produktionen påbörjas för att minimera produktionsstörningar.
 
-* API-anslutning som komplement till befintliga DevOps-processer
+* API-anslutning som komplement till befintliga DevOps-processer.
 
-* Automatisk skalning som intelligent upptäcker behovet av ökad kapacitet och automatiskt tar med ytterligare Dispatcher/publiceringssegment online
+* Automatisk skalning som intelligent upptäcker behovet av ökad kapacitet och automatiskt ger tillgång till ytterligare Dispatcher/publiceringssegment online.
 
-Den här bilden visar CI/CD-processflödet som används i [!UICONTROL Cloud Manager]:
+![CI/CD-flöde](/help/assets/screen_shot_2018-05-12at73843pm.png)CI/CD-processflödet som används i [!UICONTROL Cloud Manager].
 
-![CI/CD-flöde](/help/assets/screen_shot_2018-05-12at73843pm.png)
-
-## Nyckelfunktioner i [!UICONTROL Cloud Manager] {#key-features-in-cloud-manager}
+## Viktiga funktioner i [!UICONTROL Cloud Manager] {#key-features-in-cloud-manager}
 
 Här följer en djupdykning i några av de viktigaste funktionerna i Cloud Manager.
 
@@ -57,7 +55,7 @@ Du definierar programspecifika nyckeltal (KPI) som toppar sidvisningar per minut
 
 Information om hur du utforskar och kommer igång med användargränssnittet för [!UICONTROL Cloud Manager] finns i [Första gången du loggar in](/help/getting-started/first-time-login.md).
 
-### CI/CD-pipeline {#ci-cd-pipeline}
+### Rörledning för CI/CD {#ci-cd-pipeline}
 
 En av nyckelfunktionerna i [!UICONTROL Cloud Manager] är möjligheten att använda en optimerad CI/CD-pipeline för att snabba upp leveransen av anpassad kod eller uppdateringar, som att lägga till nya komponenter på webbplatsen.
 
@@ -75,7 +73,7 @@ Oberoende av distributionsutlösaren utförs kvalitetskontroller alltid som en d
 
 Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Distribuera kod](/help/using/code-deployment.md).
 
-## Valfria funktioner i Cloud Manager {#optional-features-in-cloud-manager}
+## Ytterligare funktioner i Cloud Manager {#optional-features-in-cloud-manager}
 
 Cloud Manager har ytterligare, avancerade funktioner som kan vara till nytta för ditt projekt beroende på din specifika miljö och dina behov. Om dessa funktioner är av intresse för dig kan du kontakta en Customer Success Engineer (CSE) eller Adobe för att diskutera mer.
 
@@ -91,7 +89,7 @@ Funktionen för autoskalning gäller Dispatcher/publiceringsskiktet, där vågr�
 >
 >Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kontaktar du CSE- eller Adobe-representanten.
 
-### Blå/gröna distributioner {#blue-green}
+### Blågrön/grön distribution {#blue-green}
 
 Blå/grön driftsättning är en teknik som minskar driftavbrott och risker genom att köra två identiska produktionsmiljöer som kallas blå och grön.
 
@@ -119,7 +117,7 @@ När blå/grön distribution är aktiverat skiljer sig distributionsflödet frå
 | 9 | Blå infrastruktur avslutas automatiskt | - |
 | 10 | Pipelinen har slutförts | - |
 
-#### Implementerande blå/grön {#implementing}
+#### Implementera blå/grön {#implementing}
 
 Alla AMS-användare som använder Cloud Manager för produktionsdistributioner är berättigade att använda den blå/gröna driftsättningen. Användningen av blå/grön driftsättning kräver dock ytterligare validering av dina miljöer och konfiguration av en Adobe CSE.
 

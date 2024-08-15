@@ -2,9 +2,9 @@
 title: Övervaka miljöer
 description: Lär dig övervaka dina miljöer i Cloud Manager.
 exl-id: 32886133-d6c0-4aed-8bb0-81b84f63e825
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 4c4a2688cab8e5c81efa4b7b5e26f3c7b5dc30d6
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -16,23 +16,28 @@ Lär dig övervaka dina miljöer i Cloud Manager.
 
 ## Måtttrösklar {#thresholds}
 
-Systemövervakning i [!UICONTROL Cloud Manager] görs genom att observera de enskilda instanserna i en miljö och spåra en mängd mätvärden för varje instans. Varje mätvärde har två definierade tröskelvärden: ett tröskelvärde för varning och ett kritiskt tröskelvärde.
+Systemövervakning i [!UICONTROL Cloud Manager] görs genom att observera de enskilda instanserna i en miljö och spåra en mängd mätvärden för varje instans. Varje mätvärde har två definierade tröskelvärden: ett *varningströskelvärde* och ett *kritiskt* tröskelvärde.
 
-Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd. Om ett mätvärde överskrider varningströskeln (men under det kritiska tröskelvärdet) anses det vara i ett varningstillstånd. Tröskelvärdena anges av Adobe Managed Services och kan visas i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services kommer att ändra tröskelvärdena för att matcha specifika kundkrav. Frågor om tröskelvärdena ska ställas till din Customer Success Engineer (CSE).
+Om ett mätvärde överskrider varningströskeln (men under det kritiska tröskelvärdet) anses det vara i ett varningstillstånd.
+
+Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd.
+
+Adobe Managed Services anger tröskelvärden som du kan visa i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services redigerar tröskelvärdena för att matcha specifika kundkrav. Skicka eventuella frågor om tröskelvärdena till er Customer Success Engineer (CSE).
 
 ## Övervakning av åtkomstsystem {#accessing-system-monitoring}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
-1. Klicka på ellipsknappen för programmet som du vill övervaka och välj alternativet **Visa övervakning**.
+1. Klicka på ellipsknappen för det program som du vill övervaka.
+1. Klicka på **Visa övervakning** under rubriken **Hantera** på menyn för att öppna sidan **Rapporter** som visar information om systemövervakning.
 
    ![Inställningar](/help/assets/first-timea1.png)
 
-Sidan **Rapporter** öppnas och visar information om systemövervakning.
+.
 
 ## Systemövervakning - översikt {#system-monitoring-overview}
 
-Avsnittet **Systemövervakning** på sidan **Rapporter** visar de övervakade miljöerna i programmet och rapporterar om deras hälsa på hög nivå i fyra olika kategorier:
+Avsnittet **Systemövervakning** på sidan **Rapporter** visar de övervakade miljöerna i programmet. Den rapporterar om sin hälsa på hög nivå inom följande fyra separata kategorier:
 
 * Värd
 * Lagring
@@ -55,7 +60,7 @@ Om du vill visa information om specifika mått klickar du på en av kategorikolu
 
 Navigeringen till vänster visar tillgängliga mätvärden i den valda kategorin som det finns data för den valda miljön och instanser för.
 
-Ett enskilt diagram visar status och ett diagram över data över tiden tillsammans med tröskelvärdena. Om flera instanser visas kommer varje instans data att finnas i en separat serie.
+Ett enskilt diagram visar status och ett diagram över data över tiden tillsammans med tröskelvärdena. Om flera instanser visas finns varje instans data i en separat serie.
 
 ![Mätdiagram](/help/assets/Monitoring_Graphs1.png)
 
@@ -68,31 +73,28 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 #### Värd {#host}
 
-* **Inläsning per kärna**: Det genomsnittliga antalet processer som körs av processorn eller befinner sig i vänteläge under en (load1), fem (load5) och femton (load15) minutersperiod.
-* **Antal processer**: Antal öppna processer
-* **Antal användare**: Antalet användare med en aktiv gränssnittssession
-* **Minnesanvändning**: Procentandel av systemminnet som för närvarande är allokerat
-* **JVM-minne**: Storleken (i megabyte) på den allokerade Java-heap
-* **Gammalt generationsutrymme**: Procentandel av JVM-gammalt genereringsminne som för närvarande allokeras
+* **Läs in per kärna**: Antalet processer som processorn kör. Eller så är antalet processer i kö som befinner sig i vänteläge i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
+* **Antal processer**: Antalet processer som är öppna.
+* **Antal användare**: Antalet användare med en aktiv gränssnittssession.
+* **Minnesanvändning**: Procentandel av systemminnet som är allokerat för tillfället.
+* **JVM-minne**: Den allokerade Java-heapens storlek (i MB).
+* **Gammalt genereringsutrymme**: Procentandel av JVM-gammalt genereringsminne som för närvarande allokeras.
 
 #### Nätverk {#network}
 
-* **CQ-portkontroll**: Svarstiden i sekunder för åtkomst till AEM- eller Dispatcher-porten
-   * Det finns olika mätvärden för författare, publicering och skickare.
+* **CQ-portkontroll**: Svarstiden i sekunder för åtkomst till AEM- eller Dispatcher-porten. Det finns olika mätvärden för författare, publicering och Dispatcher.
 
 #### Lagring {#storage}
 
-* **Diskutrymme**: Använt diskutrymme (i MB) för varje monteringspunkt på värden
-   * Det finns olika mätvärden för varje monteringspunkt.
-   * Det finns åtminstone mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
+* **Diskutrymme**: Det använda diskutrymmet (i MB) för varje monteringspunkt på värden. Det finns olika mätvärden för varje monteringspunkt. Det finns minst mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
 * **Mappstorlek**
-* **AEM Segmentarkiv**: Använt diskutrymme (i gigabyte) för AEM segmentarkiv
+* **AEM Segmentarkiv**: Använt diskutrymme (i gigabyte) för AEM.
 
 #### Program {#application}
 
 * **Replikeringsagent**: Tiden (i sekunder) för en testreplikeringshändelse
    * Det finns olika mått för varje replikeringsagent.
-* **Dispatcher Flush**: Antalet objekt som för närvarande finns i tömningskön för dispatcher
+* **Dispatcher Flush**: Antalet objekt i Dispatcher tömningskön
 
 ## SLA-rapportering {#sla-reporting}
 
@@ -113,10 +115,10 @@ Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incid
 ## SLA metrics {#sla-metrics}
 
 * **Författarkontrakt**: Den SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
-* **AMS Author SLA**: Uppmätt drifttid för produktionsförfattarens nivåfactoringincidenter som orsakas av Adobe eller våra leverantörer.
+* **AMS Author SLA**: Uppmätt drifttid för produktionsförfattarnivån, factoringincidenter orsakade av leverantörer eller Adobe.
 * **Författare av SLA**: Den uppmätta drifttiden för författarnivån ignorerar schemalagd drifttid, till exempel underhållsfönster.
 * **Slutanvändaravtal**: SLA som definierats i ditt avtal med Adobe Managed Services för publiceringsnivån.
-* **AMS-slutanvändare SLA**: Den uppmätta drifttiden för produktionsskiktets factoringincidenter som orsakas av Adobe eller våra leverantörer.
+* **AMS-slutanvändare SLA**: De uppmätta upptiderna för produktionens publiceringsnivå, factoringincidenter som orsakas av leverantörer eller av Adobe.
 * **Slutanvändare SLA**: Den uppmätta drifttiden för publiceringsskiktet ignorerar schemalagd drifttid, till exempel underhållsfönster.
 
 ## Videosjälvstudie {#video-tutorial}
