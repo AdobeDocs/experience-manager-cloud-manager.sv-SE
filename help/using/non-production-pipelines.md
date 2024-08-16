@@ -2,9 +2,9 @@
 title: Konfigurera icke-produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: ba08da1b25a1f9ba8bc954b2fbd27b60d4ddf1a0
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
@@ -24,12 +24,12 @@ Detta dokument fokuserar på icke-produktionsrörledningar. Mer information om h
 
 Det finns två typer av icke-produktionsrörledningar:
 
-* **Kodkvalitetsförgreningar** - Dessa kör kodkvaliteten genom att skanna koden i en Git-förgrening och kör stegen för bygg- och kodkvalitet.
-* **Distributionspipelines** - Förutom att utföra steg för bygg- och kodkvalitet, som till exempel pipelines för kodkvalitet, distribuerar dessa pipelines koden till en icke-produktionsmiljö.
+* **Kodkvalitetsförgreningar** - Dessa kör kodkvalitet genom att skanna koden i en Git-gren och kör stegen för bygg- och kodkvalitet.
+* **Distributionspipeliner** - Förutom att utföra steg för bygg- och kodkvalitet, som till exempel pipelines för kodkvalitet, distribuerar dessa pipelines även koden till en icke-produktionsmiljö.
 
 >[!NOTE]
 >
->Det går inte att konfigurera en pipeline förrän dess associerade Git-databas har minst en gren och [programkonfigurationen](/help/getting-started/program-setup.md) har slutförts. Läs dokumentet [Cloud Manager-databaser](/help/managing-code/managing-repositories.md) om du vill veta mer om hur du lägger till och hanterar databaser i Cloud Manager.
+>Det går inte att konfigurera en pipeline förrän dess associerade Git-databas har minst en gren och [programkonfigurationen](/help/getting-started/program-setup.md) är klar. Mer information om hur du lägger till och hanterar databaser i Cloud Manager finns i [Cloud Manager-databaser](/help/managing-code/managing-repositories.md).
 
 ## Lägg till en icke-produktionspipeline {#add-non-production-pipeline}
 
@@ -51,36 +51,37 @@ När du har konfigurerat programmet och har minst en miljö med Cloud Manager UI
 
 1. Ange den databas där pipeline ska hämta koden.
 
-   * **Databas** - Det här alternativet definierar från vilken Git-repo pipelinen ska hämta koden.
-   * **Git Branch** - Det här alternativet definierar från vilken gren i den valda pipeline som ska hämta koden.
+   * **Databas** - Definierar från vilken Git-repo som pipelinen ska hämta koden.
+   * **Git-grenen** - Definierar från vilken gren i Git som den valda pipelinen ska hämta koden.
 
 1. Definiera distributionsalternativen.
 
    1. Under **Distributionutlösare** definierar du vilken händelse som aktiverar pipelinen.
 
-      * **Manuell** - Använd det här alternativet om du vill starta pipelinen manuellt.
-      * **Vid Git-ändringar** - Detta alternativ startar pipelinen när implementeringar läggs till i den konfigurerade Git-grenen. Med det här alternativet kan du fortfarande starta pipelinen manuellt efter behov.
+      * **Manuell** - Du kan starta pipelinen manuellt.
+      * **Vid Git-ändringar** - Startar pipelinen när implementeringar läggs till i den konfigurerade Git-grenen. Med det här alternativet kan du fortfarande starta pipelinen manuellt efter behov.
 
    1. För distributionspipelines definierar du, under **Beteende för viktiga mätfel**, beteendet för pipelinen när ett viktigt fel påträffas i någon av kvalitetsportarna.
 
-      * **Fråga varje gång** - Det här är standardinställningen och kräver manuell åtgärd vid viktiga fel.
-      * **Misslyckades omedelbart** - Om du väljer det här alternativet avbryts pipelinen när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt avvisar varje fel.
-      * **Fortsätt omedelbart** - Om du väljer det här alternativet fortsätter pipeline automatiskt när ett viktigt fel inträffar. Detta emulerar i princip en användare som manuellt godkänner varje fel.
+      * **Fråga varje gång** - Standardinställningen och kräver manuell åtgärd vid viktiga fel.
+      * **Misslyckades omedelbart** - pipelinen avbryts när ett viktigt fel inträffar. Det emulerar i princip en användare som manuellt avvisar varje fel.
+      * **Fortsätt omedelbart** - pipelinen fortsätter automatiskt när ett viktigt fel inträffar. Det emulerar i princip en användare som manuellt godkänner varje fel.
 
-   1. **Dispatcher-konfiguration** - Rollen **Distributionshanteraren** kan konfigurera en uppsättning innehållssökvägar som antingen blir ogiltiga eller tömda från AEM Dispatcher-cache när en pipeline körs. Dessa cacheåtgärder kommer att utföras som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM Dispatcher standardbeteende. Konfigurera:
+   1. **Dispatcher-konfiguration** - Rollen **Distributionshanteraren** kan konfigurera en uppsättning innehållssökvägar som antingen är ogiltiga eller tömda från AEM Dispatcher-cache när en pipeline körs. Dessa cacheåtgärder utförs som en del av distributionssteget, precis efter att innehållspaket har distribuerats. De här inställningarna använder AEM Dispatcher standardbeteende. Konfigurera:
 
       1. Under **PATH** anger du en innehållssökväg.
       1. Under **TYP** väljer du vilken åtgärd som ska utföras på sökvägen.
 
          * **Rensa** - Utför en cacheborttagning.
          * **Invalidera** - Utför en cacheogiltigförklaring, ungefär som när innehåll aktiveras från en redigeringsinstans till en publiceringsinstans.
+
       1. Klicka på **Lägg till sökväg** för att lägga till den angivna sökvägen. Du kan lägga till upp till 100 sökvägar per miljö.
 
-1. Klicka på **Spara** för att spara din pipeline.
+1. Klicka på **Spara**.
 
 ## Nästa steg {#the-next-steps}
 
-När du har konfigurerat pipeline måste du distribuera koden. Mer information finns i [Koddistribution](/help/using/code-deployment.md).
+När du har konfigurerat pipeline kan du distribuera koden. Mer information finns i [Koddistribution](/help/using/code-deployment.md).
 
 ## Videosjälvstudie {#video-tutorial}
 

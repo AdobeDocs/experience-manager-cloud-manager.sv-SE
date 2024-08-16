@@ -1,10 +1,10 @@
 ---
 title: Dispatcher Configurations
-description: Lär dig hur du distribuerar dispatcherkonfigurationsfiler med Cloud Manager.
+description: Lär dig hur du distribuerar Dispatcher konfigurationsfiler med Cloud Manager.
 exl-id: ffc2b60e-bde7-48ca-b268-dea0f8fd4e30
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: ba08da1b25a1f9ba8bc954b2fbd27b60d4ddf1a0
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '575'
 ht-degree: 0%
 
 ---
@@ -12,17 +12,17 @@ ht-degree: 0%
 
 # Dispatcher-konfigurationer {#manage-your-dispatcher-configurations}
 
-Lär dig hur du distribuerar dispatcherkonfigurationsfiler med Cloud Manager
+Lär dig hur du distribuerar Dispatcher konfigurationsfiler med Cloud Manager
 
 ## Distribuera Dispatcher-konfigurationer med Cloud Manager {#deploying-dispatcher-configurations}
 
-Cloud Manager kan distribuera webbservrar och Dispatcher konfigurationsfiler förutsatt att de lagras i Git-databasen tillsammans med vanliga AEM.
+Cloud Manager kan distribuera webbservrar och Dispatcher konfigurationsfiler under förutsättning att de lagras i Git-databasen tillsammans med vanliga AEM.
 
 För att kunna utnyttja den här funktionen bör Maven-bygget skapa en ZIP-fil som innehåller minst två kataloger: `conf` och `conf.d`. Den här ZIP-filen kan skapas med `maven-assembly-plugin`.
 
-Projekt som genererats av Cloud Manager med den inbyggda [projektguiden](/help/getting-started/using-the-wizard.md) har rätt projektstruktur i Maven som skapas automatiskt. Detta är den rekommenderade sökvägen om du inte är i Adobe Managed Services (AMS).
+Projekt som genererats av Cloud Manager med den inbyggda [projektguiden](/help/getting-started/using-the-wizard.md) har rätt projektstruktur i Maven som skapas automatiskt. Den här sökvägen rekommenderas om du inte tidigare använder Adobe Managed Services (AMS).
 
-När innehållet i dessa kataloger på Dispatcher-instansen distribueras till en dispatcher-instans skrivs det över av dem i Git-databasen. Eftersom webbservern och Dispatcher konfigurationsfiler ofta kräver miljöspecifik information för att den här funktionen ska kunna användas på rätt sätt, måste du först arbeta med dina Customer Success Engineers (CSE) för att ange dessa miljövariabler i `/etc/sysconfig/httpd`.
+När du distribuerar till en Dispatcher-instans ersätts katalogerna på instansen med dessa kataloger från din Git-databas. Eftersom webbservrar och Dispatcher konfigurationsfiler ofta kräver miljöspecifik information måste du samarbeta med dina Customer Success Engineers (CSE) för att ställa in lämpliga miljövariabler i `/etc/sysconfig/httpd` innan du använder den här funktionen på rätt sätt.
 
 ## Dispatcher-konfiguration för befintliga hanterade tjänstkunder {#steps-for-configuring-dispatcher}
 
@@ -33,12 +33,12 @@ Följ de här stegen nedan för att slutföra den första Dispatcher-konfigurati
 1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att CSE lägger till dem i `/etc/sysconfig/httpd` för varje instans.
 1. Testa de uppdaterade konfigurationerna i testmiljön.
 1. Begär att CSE distribuerar till produktionen när det har testats.
-1. Spara filerna i Git-databasen.
+1. Spara filerna i din Git-databas.
 1. Driftsätt via Cloud Manager.
 
 >[!NOTE]
 >
->Du kan migrera Dispatcher- och webbserverkonfigurationer till din Git-databas under Cloud Manager-introduktionen, men detta kan även göras vid en senare tidpunkt.
+>Du kan migrera Dispatcher- och webbserverkonfigurationer till Git-databasen under Cloud Manager-introduktionen, men detta kan även göras vid en senare tidpunkt.
 
 ### Exempel {#example}
 
@@ -48,7 +48,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
 
    Du kan använda vilket namn som helst här, men katalognamnet som skapas i det här steget måste vara samma som namnet som används i steg 6.
 
-1. Den här underkatalogen innehåller en Maven-modul som bygger Dispatcher ZIP-filen med Maven Assembly-pluginen. Börja med att skapa en `pom.xml`-fil med det här innehållet i katalogen `dispatcher` och ändra `parent` -referensen, `artifactId` och `name` efter behov.
+1. Den här underkatalogen innehåller en Maven-modul som bygger Dispatcher ZIP-filen med Maven Assembly plug-in. Skapa en `pom.xml`-fil med det här innehållet i katalogen `dispatcher` och ändra `parent` -referensen, `artifactId` och `name` efter behov.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -113,7 +113,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    </assembly>
    ```
 
-1. Skapa en underkatalog med namnet `src` (som det refereras till i sammansättningsbeskrivningen ovan på rad 11) inuti dispatcher-underkatalogen för att lagra de faktiska Apache- och Dispatcher-konfigurationerna. Skapa kataloger med namnen `conf`, `conf.d`, `conf.dispatcher.d` och `conf.modules.d` i den här `src`-katalogen.
+1. Skapa en underkatalog med namnet `src` (som det hänvisas till i sammansättningsbeskrivningen ovan på rad 11) i Dispatcher-underkatalog för att lagra de faktiska Apache- och Dispatcher-konfigurationerna. Skapa kataloger med namnen `conf`, `conf.d`, `conf.dispatcher.d` och `conf.modules.d` i den här `src`-katalogen.
 
 1. Fyll i katalogerna `conf`, `conf.d`, `conf.dispatcher.d` och `conf.modules.d` med konfigurationsfilerna. Standardkonfigurationen består till exempel av dessa filer och symboliska länkar.
 
@@ -190,9 +190,9 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
            └── 02-dispatcher.conf
    ```
 
-1. Till sist lägger du till ett `<module>`-element i `pom.xml`-filen i projektets rot för att inkludera dispatchermodulen.
+1. I filen `pom.xml` i projektets rot lägger du till ett `<module>`-element som ska innehålla Dispatcher-modulen.
 
-   Om din befintliga modullista till exempel är
+   Om din befintliga modullista till exempel är följande:
 
    ```xml
        <modules>
@@ -202,7 +202,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
        </modules>
    ```
 
-   Du bör ändra den till
+   Ändra den till följande:
 
    ```xml
        <modules>
