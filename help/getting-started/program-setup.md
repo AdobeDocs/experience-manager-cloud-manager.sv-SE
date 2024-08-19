@@ -2,9 +2,9 @@
 title: Programinställningar
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Programinställningar {#program-setup}
 
-Efter introduktionen slutför företagsägaren den första konfigurationen av programmet, inklusive inställning av programbeskrivningen och definition av nyckeltal (KPI) som används för prestandatestning.
+Efter introduktionen upprättar affärsägaren programmet genom att lägga till en beskrivning och definiera nyckeltal (KPI). Dessa nyckeltal används sedan för prestandatestning.
 
 ## Programkonfiguration med [!UICONTROL Cloud Manager] {#program-setup-cloud-manager}
 
@@ -34,21 +34,21 @@ Följ de här stegen för att konfigurera programmet och definiera KPI:er.
 
    ![Fliken Allmänt](/help/assets/Setup_Program-General.png)
 
-1. Definiera dina KPI:er på fliken **KPI**. I det här exemplet definieras separata KPI:er för **AEM Sites** och **AEM Assets**. Du kan ange nyckeltal för de produkter som du har licensierat.
+1. Definiera dina KPI:er på fliken **KPI**. I det här exemplet definieras separata KPI:er för **AEM Sites** och **AEM Assets**. Ange nyckeltal för de produkter som du har licensierat.
 
-   * Mer information om hur KPI:er mäts i Cloud Manager finns i avsnittet [KPI:er](#kpis).
+   Mer information om hur KPI:er mäts i Cloud Manager finns i avsnittet [KPI:er](#kpis).
 
    ![Definierar KPI:er](/help/assets/Setup_Program-KPIs.png)
 
 1. På fliken **Provisioning** kan du definiera skalningsalternativ på begäran för dina miljöer om autoskalning är aktiverat för ditt program.
 
-   * Automatisk skalning gäller endast för produktionsmiljön och kanske inte är tillgängligt för alla kundprogram.
+   Automatisk skalning gäller endast produktionsmiljön och kanske inte är tillgängligt för alla kundprogram.
 
    ![Etableringsalternativ](/help/assets/Setup_Program-Provisioning.png)
 
-1. Klicka på **Spara** för att slutföra installationsguiden.
+1. Klicka på **Spara**.
 
-Ditt program kommer att skapas. Det kan ta flera minuter innan resurser etableras innan programmet är klart att användas.
+Ditt program skapas. Det kan ta flera minuter innan resurser etableras innan programmet är klart att användas.
 
 ## Redigera ett program {#editing-program}
 
@@ -70,7 +70,7 @@ Du kan redigera program när de har konfigurerats. Följ de här stegen för att
 
 Observera att ändringarna sparas direkt i Cloud Manager, men att de inte kommer att återspeglas i dina miljöer förrän nästa pipeline körs.
 
-Om du ännu inte har skapat en pipeline läser du dokumenten [Konfigurera produktionsförlopp](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
+Om du ännu inte har skapat en pipeline läser du [Konfigurera produktionspipeliner](/help/using/production-pipelines.md) och [Konfigurera icke-produktionspipeliner](/help/using/non-production-pipelines.md).
 
 ## Växla mellan program {#swithing-programs}
 
@@ -84,11 +84,11 @@ Använd åtgärdsfältet för att växla till ett annat program, redigera det ak
 
 Platsens KPI:er mäts i tester som körs i mellanlagringsmiljön. Vanligtvis skalas dessa KPI:er ned för att passa funktionerna i mellanlagringsmiljön.
 
-En användare som till exempel förväntar sig ett genomsnitt på 1 000 sidvisningar per minut i sin produktionsmiljö och har fyra dispatcher-/publiceringsservrar i produktion bör skala detta till 250 sidvisningar per minut. Detta förutsätter att deras mellanlagringsmiljö endast består av ett enda dispatcher-/publiceringsserverpar.
+En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktionsmiljö och har fyra Dispatcher/publiceringsservrar i produktion bör skala detta scenario till 250 sidvisningar per minut. I det här scenariot förutsätts att deras mellanlagringsmiljö endast består av ett enda dispatcher/publiceringsserverpar.
 
-Assets prestandatestning görs genom att överföra resurser upprepade gånger under en 30-minuters testperiod och mäta bearbetningstiden för varje resurs och olika mätvärden på systemnivå.
+Assets prestandatestning innebär att överföra resurser upprepade gånger under en 30-minutersperiod. Bearbetningstiden för varje tillgång och olika mätvärden på systemnivå mäts under hela testet.
 
-Du kan ha ett leveransnätverk (CDN) som Akamai eller CloudFront framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot mellanlagringsmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN, det vill säga, cacheminnet missar. Vanligtvis är detta en relativt liten del av den totala produktionstrafiken.
+Du kan ha ett leveransnätverk (CDN) som Akamai eller CloudFront framför produktionsmiljön. Eftersom [!UICONTROL Cloud Manager] testar mot mellanlagringsmiljön direkt bör KPI endast återspegla den trafik som förväntas passera genom CDN. Det vill säga, cacheminnet missar. Vanligtvis är denna upplevelse en relativt liten del av den totala produktionstrafiken.
 
 ## Videoöversikt {#video}
 

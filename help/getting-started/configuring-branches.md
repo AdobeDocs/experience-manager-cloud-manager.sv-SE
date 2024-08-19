@@ -2,9 +2,9 @@
 title: Konfigurera grenar
 description: Lär dig hur du konfigurerar din första gren i Git och hur den används av CI/CD-flödet för att distribuera programkoden.
 exl-id: ff2ae28f-902e-4fb2-aeb1-3636cb5cd9bb
-source-git-commit: 4c051cd1696f8a00d0278131c9521ad4dcb956a3
+source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
 workflow-type: tm+mt
-source-wordcount: '319'
+source-wordcount: '318'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ Lär dig hur du konfigurerar din första gren i Git och hur den används av CI/C
 
 ## Konfigurera din första gren i Git {#setting-up-your-first-branch-in-git}
 
-En enskild, till att börja med tom, Git-databas [etableras](/help/requirements/environment-provisioning.md) för varje program som introduceras i Cloud Manager. Den här databasen kan innehålla så många grenar som utvecklingsprocessen kräver, men det måste finnas minst en gren som används av CI/CD-pipeline för att distribuera programkod till scenen och produktionen. Det bästa sättet är att använda `main` som namn på den här grenen. Detta är bekvämt standardbeteendet för Git-klienter när nya projekt konfigureras.
+En enskild, till att börja med tom, Git-databas [etableras](/help/requirements/environment-provisioning.md) för varje program som introduceras i Cloud Manager. Den här databasen kan innehålla så många grenar som utvecklingsprocessen kräver, men det måste finnas minst en gren som används av CI/CD-pipeline för att distribuera programkod till scenen och produktionen. Det bästa sättet är att använda `main` som namn på den här grenen. Detta är bekvämt standardbeteendet för Git-klienter när nya projekt skapas.
 
-När du skapar ett nytt projekt kommer du att köra en uppsättning kommandon som liknar följande.
+När du till exempel skapar ett nytt projekt kör du en uppsättning kommandon som liknar följande.
 
 ```shell
 $ git init
@@ -50,9 +50,9 @@ $ git commit -m "initial commit"
 
 >[!NOTE]
 >
->Det är inte ett krav att använda kommandoradsklienten. Det finns en mängd olika grafiska Git-klienter som kan användas antingen som fristående program eller som en del av en integrerad utvecklingsmiljö, som Eclipse eller IntelliJ. Så länge klientprogrammet har stöd för Git med HTTPS bör det vara kompatibelt med [!UICONTROL Cloud Manager].
+>Det är inte ett krav att använda kommandoradsklienten. Det finns en mängd grafiska Git-klienter som kan användas antingen som fristående program eller som en del av en integrerad utvecklingsmiljö, till exempel Eclipse eller IntelliJ. Så länge klientprogrammet har stöd för Git med HTTPS bör det vara kompatibelt med [!UICONTROL Cloud Manager].
 
-## Knuffa din första gren {#pushing-your-first-branch}
+## Tryck din första gren {#pushing-your-first-branch}
 
 När du har implementerat minst en revision kan du lägga till databasen [!UICONTROL Cloud Manager] som en fjärrdatabas och sedan skicka dina implementeringar till den.
 
@@ -70,12 +70,12 @@ To <url>
 
 >[!NOTE]
 >
->Den specifika URL:en, tillsammans med dina autentiseringsuppgifter, tillhandahålls av din Customer Success Engineering under [!UICONTROL Cloud Manager]-introduktionen.
+>Den specifika URL:en, tillsammans med dina autentiseringsuppgifter, tillhandahålls av din Adobe CSE (Customer Success Engineer) under introduktionen av [!UICONTROL Cloud Manager].
 
 ## Ytterligare grenar {#additional-branches}
 
-En enskild `main`-gren kan räcka för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som heter `develop` och där utvecklargrenen slås samman i `main`-grenen när det är dags för en distribution.
+En enskild `main`-gren kan räcka för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som kallas `develop`. Utvecklingsgrenen sammanfogas sedan i grenen `main` när det är dags för en distribution.
 
 >[!TIP]
 >
->Mer information om vanliga Git-kommandon finns i [Git-värmebladet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet).
+>Mer information om vanliga Git-kommandon finns i [Git-värmebladet](https://training.github.com/downloads/github-git-cheat-sheet).
