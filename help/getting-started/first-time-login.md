@@ -2,7 +2,7 @@
 title: Inloggning för första gången
 description: Följ den här sidan om du har konfigurerat dina allmänna konfigurationer och vill använda Cloud Manager för första gången.
 exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '289'
 ht-degree: 0%
@@ -18,7 +18,7 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 >
 >Beroende på rollerna som tilldelats i [!UICONTROL Cloud Manager] och programmets status kan skärmarna som visas variera från illustrationerna.
 
-## Inloggning för första gången {#logging-in-for-the-first-time}
+## Logga in för första gången {#logging-in-for-the-first-time}
 
 1. Logga in på Cloud Manager på [`my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com/) så ser du en lista över programmen.
 
@@ -36,12 +36,12 @@ Du kan fortsätta till dokumentet [Programinställningar](/help/getting-started/
 
 ## Cloud Manager-aktivitet {#activity}
 
-Cloud Manager ger en samlad bild av ett programs aktivitet och listar alla CI/CD-pipeline-körningar, både i produktion och icke-produktion, vilket ger insyn i både tidigare och nuvarande verksamhet.
+Cloud Manager ger en samlad bild av ett programs aktivitet. Här listas alla CI/CD-pipeline-körningar, både produktion och icke-produktion. Denna funktionalitet ger er insyn i tidigare och nuvarande aktiviteter.
 
 >[!TIP]
 >
->Mer information om hur du använder användargränssnittet i Cloud Manager finns i dokumentet [Navigera i användargränssnittet för Cloud Manager](/help/getting-started/navigation.md).
+>Mer information om hur du använder användargränssnittet i Cloud Manager finns i [Navigera i användargränssnittet i Cloud Manager](/help/getting-started/navigation.md).
 
 >[!NOTE]
 >
->Som standard har en användare som har åtkomst till en AEM även Cloud Manager användarroll. Den här rollen i och för sig själv är inte tillräcklig för att ge användaren åtkomst till vyn för programinformation. En sådan användare med endast Cloud Manager användarroll kan navigera via programmenyalternativen till URL:en för AEM (om det finns miljöer). Dessa användare måste kontakta sin administratör om de vill få åtkomst på programnivå.
+>Som standard har en användare som har åtkomst till en AEM även Cloud Manager användarroll. Den här rollen är inte tillräcklig för att ge användaren åtkomst till vyn för programinformation. En sådan användare med endast användarrollen Cloud Manager kan navigera via programmenyalternativen till URL:en för AEM (om det finns miljöer). Dessa användare måste kontakta sin administratör om de vill få åtkomst på programnivå.

@@ -2,7 +2,7 @@
 title: Konfigurera ditt projekt
 description: Lär dig hur du konfigurerar ditt projekt så att du kan hantera och driftsätta det med Cloud Manager.
 exl-id: ed994daf-0195-485a-a8b1-87796bc013fa
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '1395'
 ht-degree: 0%
@@ -116,7 +116,7 @@ Artefakter från lösenordsskyddade Maven-databaser bör användas med försikti
 >
 >Artefakter från lösenordsskyddade Maven-databaser bör endast användas i sällsynta fall och för kod som inte är knuten till AEM.
 
-Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [Pipeline-variabel](/help/getting-started/build-environment.md#pipeline-variables) och refererar sedan till den hemligheten i en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Den här filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat.
+Om du vill använda en lösenordsskyddad Maven-databas från Cloud Manager anger du lösenordet (och eventuellt användarnamnet) som en hemlig [förloppsvariabel](/help/getting-started/build-environment.md#pipeline-variables) och refererar sedan till hemligheten i en fil med namnet `.cloudmanager/maven/settings.xml` i Git-databasen. Den här filen följer [Maven Settings File](https://maven.apache.org/settings.html) -schemat.
 
 När Cloud Manager-byggprocessen startar sammanfogas elementet `<servers>` i den här filen med standardfilen `settings.xml` från Cloud Manager. Anpassade servrar ska inte använda server-ID:n som börjar med `adobe` och `cloud-manager`. Sådana ID:n betraktas som reserverade. Cloud Manager speglar endast de server-ID:n som matchar ett av de angivna prefixen eller standard-ID:t `central`.
 

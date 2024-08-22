@@ -2,9 +2,9 @@
 title: Meddelanden
 description: Läs om hur Cloud Manager meddelar dig om viktiga händelser.
 exl-id: cfd5655f-2d2c-4304-b25c-6cdffe7ff64c
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Läs om hur Cloud Manager meddelar dig om viktiga händelser.
 
 ## Meddelanden i Cloud Manager {#cloud-manager-notifications}
 
-[!UICONTROL Cloud Manager] skickar meddelanden till dig när en produktionspipeline startar och slutförs (utan fel eller slutförs), i början av en produktionsdistribution och när stegen **Go-Live Approval** och **Scheduled** nås. Dessa meddelanden skickas via meddelandesystemet [!UICONTROL Experience Cloud].
+[!UICONTROL Cloud Manager] skickar meddelanden till dig när en produktionspipeline startar och slutförs (utan fel eller slutförs) i början av en produktionsdistribution. Och när stegen **Go-Live Approval** och **Scheduled** har nåtts. Dessa meddelanden skickas via meddelandesystemet [!UICONTROL Experience Cloud].
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ Klicka på kugghjulsikonen högst upp i sidofältet för meddelanden.
 
 ![Ikon för meddelandeinställningar](/help/assets/notifications-configuration.png)
 
-Detta öppnar fönstret **Experience Cloud-inställningar** där du kan definiera dina meddelandeprenumerationer och hur du får dina meddelanden.
+Fönstret **Experience Cloud-inställningar** öppnas där du kan definiera dina meddelandeprenumerationer och hur du får dina meddelanden.
 
 ### Prenumerationer {#subscriptions}
 
@@ -64,11 +64,11 @@ Som standard får du alla meddelanden för alla produkter. Klicka på **Anpassa*
 
 ### Prioritet {#priority}
 
-Prioritetsvarningar markeras med en **HIGH** -tagg och kan konfigureras så att de endast tas emot som aviseringar. I avsnittet **Prioritet** kan du definiera vilka kategorier som kvalificerar som prioritetsmeddelanden.
+Prioritetsvarningar har markerats med en **HIGH** -tagg. Du kan konfigurera så att de tas emot exklusivt som aviseringar. I avsnittet **Prioritet** kan du definiera vilka kategorier som kvalificerar som prioritetsmeddelanden.
 
 ![Aviseringsprioritet](/help/assets/notifications-priority.png)
 
-Använd listrutan för att lägga till i listan över kategorier som kvalificerar sig som prioritet. Klicka på X bredvid kategorinamnen för att ta bort dem.
+Använd listrutan för att lägga till i listan över kategorier som kvalificerar sig som prioritet. Klicka på `X` bredvid kategorinamnen för att ta bort dem.
 
 ### Varningar {#alerts}
 

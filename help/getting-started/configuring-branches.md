@@ -2,7 +2,7 @@
 title: Konfigurera grenar
 description: Lär dig hur du konfigurerar din första gren i Git och hur den används av CI/CD-flödet för att distribuera programkoden.
 exl-id: ff2ae28f-902e-4fb2-aeb1-3636cb5cd9bb
-source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
@@ -50,7 +50,7 @@ $ git commit -m "initial commit"
 
 >[!NOTE]
 >
->Det är inte ett krav att använda kommandoradsklienten. Det finns en mängd grafiska Git-klienter som kan användas antingen som fristående program eller som en del av en integrerad utvecklingsmiljö, till exempel Eclipse eller IntelliJ. Så länge klientprogrammet har stöd för Git med HTTPS bör det vara kompatibelt med [!UICONTROL Cloud Manager].
+>Det är inte ett krav att använda kommandoradsklienten. Det finns en mängd grafiska Git-klienter som kan användas antingen som fristående program eller som en del av en integrerad utvecklingsmiljö, till exempel Eclipse eller IntelliJ. Så länge klientprogrammet stöder Git med HTTPS bör det vara kompatibelt med [!UICONTROL Cloud Manager].
 
 ## Tryck din första gren {#pushing-your-first-branch}
 

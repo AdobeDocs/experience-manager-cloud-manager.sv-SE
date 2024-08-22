@@ -1,8 +1,8 @@
 ---
 title: Information om databasåtkomst
-description: Lär dig hur du får åtkomst till och hanterar dina Adobe-hanterade Git-databaser med hjälp av Git-kontohantering från Cloud Manager.
+description: Lär dig hur du får åtkomst till och hanterar dina Adobe-hanterade Git-databaser med hjälp av Git-kontohantering via självbetjäning från Cloud Manager.
 exl-id: 1cc88c82-67c7-4553-a1b8-d2ab22be466c
-source-git-commit: 4c4a2688cab8e5c81efa4b7b5e26f3c7b5dc30d6
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Lär dig hur du får åtkomst till och hanterar dina Adobe-hanterade Git-databas
    * Git-användarnamn.
    * Git-lösenordet.
    * URL:en till Cloud Manager Git-databasen.
-   * Färdiga Git-kommandon för att snabbt lägga till en fjärranslutning i Git-rapporten och skicka push-kod.
+   * Färdiga Git-kommandon för att snabbt lägga till en fjärranslutning i Git-repo och push-kod.
 
    ![Fönstret Databasinformation](assets/access-repo-info.png)
 

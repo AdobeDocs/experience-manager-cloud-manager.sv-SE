@@ -1,8 +1,8 @@
 ---
 title: Source Code Repository
-description: Lär dig mer om Git-databasen som är avsedd för alla program du har i Cloud Manager.
+description: Läs mer om Git-databasen som är avsedd för alla program du har i Cloud Manager.
 exl-id: af551e33-3623-4fcd-8d25-4362d8871411
-source-git-commit: 4c977cdfbef438fdabd90ee104d98887f2467b49
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Source kodarkiv {#source-code-repository}
 
-Lär dig mer om Git-databasen som är avsedd för alla program du har i Cloud Manager.
+Läs mer om Git-databasen som är avsedd för alla program du har i Cloud Manager.
 
 ## Cloud Manager-databas {#cloud-manager-repository}
 

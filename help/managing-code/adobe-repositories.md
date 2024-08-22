@@ -2,7 +2,7 @@
 title: Lägga till Adobe-databaser i Cloud Manager
 description: Lär dig hur du skapar databaser som hanteras med Adobe i Cloud Manager.
 exl-id: 24c6ca97-ea70-41b8-b4c7-b8b0f406a57d
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '145'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Lär dig hur du skapar databaser som hanteras med Adobe i Cloud Manager.
 
-## Lägga till en Adobe-hanterad databas {#add-adobe-repository}
+## Lägga till en databas som hanteras med Adobe {#add-adobe-repository}
 
 Fönstret **Databaser** gör det enkelt att lägga till fler Adobe-hanterade databaser för ditt program.
 

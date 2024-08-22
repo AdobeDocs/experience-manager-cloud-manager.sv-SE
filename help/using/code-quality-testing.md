@@ -2,15 +2,15 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '2759'
+source-wordcount: '2760'
 ht-degree: 0%
 
 ---
 
 
-# Testning av kodkvalitet {#code-quality-testing}
+# Kodkvalitetstestning {#code-quality-testing}
 
 Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 
@@ -20,7 +20,7 @@ Under pipeline-körningen hämtar programvaran ett antal mätvärden. Dessa måt
 
 Dessa resultat rapporteras med ett klassificeringssystem med tre nivåer.
 
-## Tre nivåindelade omdömen {#three-tiered-ratings}
+## Betyg med tre nivåer {#three-tiered-ratings}
 
 Det finns tre portar i pipeline:
 
@@ -38,7 +38,7 @@ För var och en av dessa portar finns det en struktur på tre nivåer för probl
 >
 >I en pipeline med enbart kodkvalitet kan viktiga fel i kodkvalitetsgaten inte åsidosättas eftersom teststeget för kodkvalitet är det sista steget i pipeline.
 
-## Testning av kodkvalitet {#code-quality-testing-step}
+## Kodkvalitetstestning {#code-quality-testing-step}
 
 I det här teststeget utvärderas kvaliteten på programkoden, som är huvudsyftet med en pipeline som enbart innehåller kod. Den utförs omedelbart efter byggsteget i alla icke-produktions- och produktionspipelinor. Om du vill ha mer information går du till [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
@@ -73,7 +73,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 >
 >Mer information om anpassade regler för kodkvalitet som körs av [!UICONTROL Cloud Manager] finns i [Anpassade regler för kodkvalitet](custom-code-quality-rules.md).
 
-### Hantera med falskt positiva {#dealing-with-false-positives}
+### Hantera falskt positiva {#dealing-with-false-positives}
 
 Kvalitetsskanningsprocessen är inte perfekt och identifierar ibland felaktigt problem som inte är problematiska. Detta scenario kallas för falskt positivt.
 
@@ -186,7 +186,7 @@ Under 30 minuters testperiod:
 * Var och en av de 25 sidorna i den populära aktiva siduppsättningen nås 120 gånger: `((200 * 0.5) / 25) * 30 = 120`
 * Var och en av de 3 000 sidorna i den nya siduppsättningen kommer en gång: `((200 * 0.5) / 3000) * 30 = 1`
 
-#### Testning och rapportering {#testing-reporting}
+#### Testa och rapportera {#testing-reporting}
 
 Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida och olika värden på systemnivå (processor, minne, nätverksdata) för alla instanser.
 
@@ -224,13 +224,13 @@ Om du vill ställa in dessa variabler med Cloud Manager CLI kör du:
 $ aio cloudmanager:set-pipeline-variables <pipeline id> --variable CM_PERF_TEST_BASIC_USERNAME <username> --secret CM_PERF_TEST_BASIC_PASSWORD <password>
 ```
 
-Se [Patch User Pipeline Variables](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/patchPipelineVariables) API-dokumentation om hur du använder API:t.
+Se [Laga användarens pipeline-variabler](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#operation/patchPipelineVariables) API-dokumentation för att lära dig hur du använder API:t.
 
 ### AEM Assets {#aem-assets}
 
 Cloud Manager kör prestandatestning för AEM Assets-program genom att överföra resurser upprepade gånger i 30 minuter.
 
-#### Krav för introduktion {#onboarding-requirement}
+#### Krav på registrering {#onboarding-requirement}
 
 För prestandatestning i Assets skapar din Customer Success Engineer en `cloudmanager`-användare och ett lösenord när författaren kommer till mellanlagringsmiljön. Prestandateststegen kräver en användare med namnet `cloudmanager` och det associerade lösenordet som har konfigurerats av din CSE.
 
@@ -242,23 +242,23 @@ Kunderna kan överföra egna resurser för testning. Den här processen kan utf�
 
 Om inga bilder överförs använder Cloud Manager en standardbild och PDF-dokument för testning.
 
-#### Distribution av Assets for Testing {#distribution-of-assets}
+#### Distribution av Assets för testning {#distribution-of-assets}
 
 Distributionen av hur många resurser av varje typ som överförs per minut anges på skärmen **Inställningar för pipeline** eller **Redigera**.
 
 Om exempelvis en delning på 70/30 används och det finns 10 resurser överförda per minut, överförs 7 bilder och 3 dokument per minut.
 
-#### Testning och rapportering {#testing-and-reporting}
+#### Testa och rapportera {#testing-and-reporting}
 
 Cloud Manager skapar en mapp på författarinstansen med det användarnamn och lösenord som CSE-installationen använder. Assets överförs sedan till mappen med ett bibliotek med öppen källkod. Testen som körs av Assets teststeg har skrivits med ett [bibliotek med öppen källkod](https://github.com/adobe/toughday2). Både bearbetningstiden för varje resurs och olika mätvärden på systemnivå mäts under testperioden på 30 minuter. Den här funktionen kan överföra både bilder och PDF-dokument.
 
 >[!TIP]
 >
->Mer information finns i [Konfigurera produktionspipeliner](/help/using/production-pipelines.md). Mer information om hur du konfigurerar programmet och definierar nyckeltal finns i [Programinställningar](/help/getting-started/program-setup.md).
+>Mer information finns i [Konfigurera produktionspipelines](/help/using/production-pipelines.md). Mer information om hur du konfigurerar programmet och definierar nyckeltal finns i [Programinställningar](/help/getting-started/program-setup.md).
 
 ### Resultatdiagram för prestandatestning {#performance-testing-results-graphs}
 
-Ett antal mätvärden är tillgängliga i dialogrutan **Prestandatest**
+Ett antal mätvärden är tillgängliga i dialogrutan **Prestandatest**.
 
 ![Lista med mätvärden](/help/assets/understand_test-results-screen1.png)
 

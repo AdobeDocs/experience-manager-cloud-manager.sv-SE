@@ -2,9 +2,9 @@
 title: Hantera databaser i Cloud Manager
 description: Lär dig hur du skapar, visar och redigerar Git-databaser i Cloud Manager.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---
@@ -18,13 +18,13 @@ Lär dig hur du skapar, visar och redigerar Git-databaser i Cloud Manager.
 
 Databaser används för att lagra och hantera projektkoden med Git. Alla program du skapar i Cloud Manager har en databas som hanteras av Adobe.
 
-Du kan välja att skapa ytterligare databaser som hanterar Adobe och även lägga till egna privata databaser. Alla databaser som är associerade med ditt program kan visas i fönstret **Databaser**.
+Du kan välja att skapa ytterligare Adobe-hanterade databaser och även lägga till egna privata databaser. Alla databaser som är associerade med ditt program kan visas i fönstret **Databaser**.
 
-Databaser som skapas i Cloud Manager är också tillgängliga när du lägger till eller redigerar pipelines. Mer information finns i [CI-CD Pipelines](/help/overview/ci-cd-pipelines.md).
+Databaser som har skapats i Cloud Manager är också tillgängliga när du lägger till eller redigerar pipelines. Mer information finns i [CI-CD Pipelines](/help/overview/ci-cd-pipelines.md).
 
 Det finns en enda primär databas eller en gren för en given pipeline. Med stöd för [Git-undermodul](git-submodules.md) kan många sekundära grenar tas med vid byggtiden.
 
-## Fönstret Databaser {#repositories-window}
+## Databasfönster {#repositories-window}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
@@ -36,7 +36,7 @@ Det finns en enda primär databas eller en gren för en given pipeline. Med stö
 
 Fönstret **Databaser** innehåller information om databaserna:
 
-* Typ av databas
+* Typ av databas.
    * **Adobe** anger databaser som hanteras av Adobe
    * **GitHub** anger privata GitHub-databaser som du hanterar
 * När den skapades
@@ -51,23 +51,24 @@ Du kan markera databasen i fönstret och klicka på ellipsknappen för att vidta
 
 ![Databasåtgärder](assets/repository-actions.png)
 
-## Lägga till databaser {#adding-repositories}
+## Lägg till databaser {#adding-repositories}
 
 Klicka på knappen **Lägg till databas** i fönstret **Databaser** för att starta guiden **Lägg till databas**.
 
 ![Guiden Lägg till databas](assets/add-repository-wizard.png)
 
-Cloud Manager har stöd för båda databaser som hanteras av Adobe (**Adobe-databas**) och dina egna självhanterade databaser (**Privat databas**). De obligatoriska fälten varierar beroende på vilken typ av databas du väljer att lägga till. Mer information finns i följande dokument.
+Cloud Manager har stöd för båda databaser som hanteras av Adobe (**Adobe-databas**) och dina egna självhanterade databaser (**Privat databas**). De obligatoriska fälten varierar beroende på vilken typ av databas du väljer att lägga till.
 
-* [Lägga till Adobe-databaser i Cloud Manager](adobe-repositories.md)
-* [Lägga till privata databaser i Cloud Manager](private-repositories.md)
+Se [Lägga till Adobe-databaser i Cloud Manager](adobe-repositories.md).
+Se [Lägga till privata databaser i Cloud Manager](private-repositories.md).
 
 >[!NOTE]
 >
->* En användare måste ha rollen **Distributionshanteraren** eller **Affärsägare** för att kunna lägga till en databas.
->* Det finns en gräns på 300 databaser i alla program i ett visst företag eller i en IMS-organisation.
+>En användare måste ha rollen **Distributionshanteraren** eller **Affärsägare** för att kunna lägga till en databas.
+>
+>Det finns en gräns på 300 databaser i alla program i ett visst företag eller i en IMS-organisation.
 
-## Åtkomst till svarsinformation {#repo-info}
+## Åtkomst till säljinformation {#repo-info}
 
 När du visar dina databaser i fönstret **Databaser** kan du visa information om hur du kommer åt databaser som hanteras med Adobe genom att klicka på knappen **Åtkomstrepo-information** i verktygsfältet.
 
@@ -79,8 +80,9 @@ Fönstret **Databasinformation** öppnas med information. Mer information om hur
 
 Åtgärden **Kontrollera grenar/Skapa projekt** utför två funktioner beroende på databasens tillstånd.
 
-* Om databasen är nyskapad skapar åtgärden ett exempelprojekt baserat på [den AEM projektarkitypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
-* Om exempelprojektet redan har skapats i databasen kontrolleras statusen för databasen och dess grenar, och sedan rapporteras om exempelprojektet redan finns.
+Om databasen är nyskapad skapar åtgärden ett exempelprojekt baserat på [den AEM projektarkitypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
+
+Om exempelprojektet redan har skapats i databasen kontrolleras statusen för databasen och dess grenar, och sedan rapporteras om exempelprojektet redan finns.
 
 ![Åtgärden Kontrollera grenar](assets/check-branches.png)
 
@@ -96,11 +98,11 @@ Fönstret **Databasinformation** öppnas med information. Mer information om hur
 
 ## Ta bort {#delete}
 
-Åtgärden **Ta bort** tar bort databasen från ditt projekt. En databas kan inte tas bort om den är associerad med en pipeline.
+Åtgärden **Ta bort** tar bort databasen från ditt projekt. Det går inte att ta bort en databas om den är associerad med en pipeline.
 
 ![Ta bort](assets/delete.png)
 
-Observera att när en databas tas bort i Cloud Manager markeras den som borttagen och är inte längre tillgänglig för användaren, men den bevaras i systemet i återställningssyfte.
+När en databas tas bort i Cloud Manager markeras den som borttagen. Den är inte längre tillgänglig för användaren. Den bibehålls dock i systemet för att återskapas.
 
 Om du försöker skapa en ny databas efter att ha tagit bort en databas med samma namn får du felmeddelandet `An error has occurred while trying to create repository. Contact your CSE or Adobe Support.`
 

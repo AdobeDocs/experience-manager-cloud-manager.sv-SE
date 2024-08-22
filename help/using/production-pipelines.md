@@ -2,9 +2,9 @@
 title: Konfigurera produktionsförlopp
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '1242'
+source-wordcount: '1241'
 ht-degree: 0%
 
 ---

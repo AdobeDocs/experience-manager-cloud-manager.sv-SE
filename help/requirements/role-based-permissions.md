@@ -2,7 +2,7 @@
 title: Rollbaserade behörigheter
 description: Lär dig mer om Cloud Manager förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
-source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 2%
@@ -62,7 +62,7 @@ Var och en av rollerna har specifika, associerade förkonfigurerade behörighete
 | Ändra hanterad distribution i pipeline | Tillåter redigering av CSE-tillsynsalternativet | | x | | | |
 | Ta bort pipeline | Tillåter att pipeline tas bort | | x | | | |
 | Läs steg | Se resultaten av mätvärdena för stegkvalitet | x | x | x | x | x |
-| Generera token för personlig åtkomst | Åtkomstgit | | x | | x | |
+| Generera token för personlig åtkomst | Access Git | | x | | x | |
 
 Mer information om hur du konfigurerar användare finns i [Konfigurera användare och roller](/help/requirements/users-and-roles.md).
 

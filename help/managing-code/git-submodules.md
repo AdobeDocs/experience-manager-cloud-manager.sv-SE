@@ -2,7 +2,7 @@
 title: Stöd för Git-undermodul
 description: Lär dig hur du kan använda Git-undermoduler för att sammanfoga innehåll från flera grenar i Git-databaser vid byggtillfället.
 exl-id: f946d7e7-114a-4e33-bb82-2625d37bba2f
-source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 0%

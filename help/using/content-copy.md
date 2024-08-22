@@ -2,7 +2,7 @@
 title: Verktyget Innehållskopia
 description: Med Cloud Manager innehållskopia kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testning.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '1144'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Följ liknande steg som när du skapar ett innehållssteg. I stället för att k
 
 När du redigerar din innehållsuppsättning kan du behöva utöka de konfigurerade sökvägarna för att visa de uteslutna delsökvägarna.
 
-## Kopierar innehåll {#copy-content}
+## Kopiera innehåll {#copy-content}
 
 När en innehållsuppsättning har skapats kan du använda den för att kopiera innehåll. Följ de här stegen för att kopiera innehåll.
 

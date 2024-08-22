@@ -2,7 +2,7 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '1435'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 
-Användargränssnittet för molnhantering består huvudsakligen av två grafiska gränssnitt:
+Cloud Manager gränssnitt består huvudsakligen av två grafiska gränssnitt:
 
 * [På konsolen Mina program](#my-programs-console) kan du visa och hantera alla program.
 * [I fönstret Programöversikt](#program-overview) kan du se information om och hantera ett enskilt program.

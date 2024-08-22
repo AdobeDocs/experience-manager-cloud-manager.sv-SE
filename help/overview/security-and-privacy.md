@@ -2,7 +2,7 @@
 title: Säkerhet och integritet
 description: Läs mer om säkerhet och sekretess för kod och artefakter i Cloud Manager.
 exl-id: 67df1987-8db7-40bd-9717-1bf194e957f7
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 0%
@@ -28,10 +28,10 @@ Mer information om vilka roller du kan tilldela i Admin Console och användarrol
 
 Koden i [!UICONTROL Cloud Manager] krypteras under överföring. Binärfiler som Cloud Manager bygger krypteras också när de skickas och krypteras när de lagras.
 
-Varje kund får sin egen Git-databas och koden är säker och inte delad med andra organisationer.
+Varje kund får sin egen Git-databas och koden skyddas och delas inte med andra organisationer.
 
 ## Dataintegritet {#data-privacy}
 
 [!UICONTROL Cloud Manager] följer de integritetsprinciper som definieras av Adobe. Utvecklare kan överföra kod säkert till Git-databaser via HTTPS.
 
-Användargränssnittet för [!UICONTROL Cloud Manager] är byggt på tjänster som följer ett gemensamt kontrollramverk för Adobe som uppfyller kraven. Användargränssnittet för [!UICONTROL Cloud Manager] använder säkra tjänster från flera molnleverantörer.
+Användargränssnittet för [!UICONTROL Cloud Manager] är byggt på tjänster som följer ett gemensamt kontrollramverk för Adobe. Användargränssnittet för [!UICONTROL Cloud Manager] använder säkra tjänster från flera molnleverantörer.

@@ -2,9 +2,9 @@
 title: GitHub-kontrollkonfiguration för privata databaser
 description: Lär dig hur du styr de rörledningar som skapas automatiskt för att validera varje pull-begäran till en privat databas.
 exl-id: 29c9e487-e196-411a-8cda-6751b0a56066
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -32,10 +32,10 @@ pipelines:
 ```
 
 | Parameter | Möjliga värden | Standard | Beskrivning |
-|---|---|---|---|
-| `shouldDeletePreviousComment` | `true` eller `false` | `false` | Om bara den sista kommentaren med kodskanningen ska behållas i denna GitHub-pull-begäran eller om alla ska behållas |
-| `type` | `CI_CD` | n/a | Definierar beteendet för en CI/CD-pipeline |
-| `template.programID` | Heltal | Inga pipeline-variabler återanvänds | Kan användas för att återanvända de [pipeline-variabler](/help/getting-started/build-environment.md#pipeline-variables) som anges på en av de befintliga pipelines som skapas automatiskt av varje PR. |
-| `template.pipelineID` | Heltal | Inga pipeline-variabler återanvänds | Kan användas för att återanvända de [pipeline-variabler](/help/getting-started/build-environment.md#pipeline-variables) som anges på en av de befintliga pipelines som skapas automatiskt av varje PR. |
-| `namePrefix` | Sträng | `Full Stack Code Quality Pipeline for PR` | Används för att ange namnet på den pipeline som skapas automatiskt |
-| `importantMetricsFailureBehavior` | `CONTINUE` eller `FAIL` eller `PAUSE` | `CONTINUE` | Anger det viktiga måttbeteendet för pipelinen <br>`CONTINUE` = Om ett viktigt mätresultat misslyckas, flyttas pipelinen automatiskt framåt <br>`FAIL` = pipelinen avslutas med en FAILED-status om ett viktigt mätresultat misslyckas<br>`PAUSE` = Kodsökningssteget får en VÄNTNINGSstatus när ett viktigt mätresultat misslyckas och måste återupptas manuellt |
+| --- | --- | --- | --- |
+| `shouldDeletePreviousComment` | `true` eller `false` | `false` | Om bara den sista kommentaren med kodskanningen ska behållas i den här GitHub-pull-begäran eller om alla ska behållas. |
+| `type` | `CI_CD` | n/a | Definierar beteendet för en CI/CD-pipeline. |
+| `template.programID` | Heltal | Inga pipeline-variabler återanvänds | Du kan återanvända de [pipeline-variabler](/help/getting-started/build-environment.md#pipeline-variables) som angetts för en befintlig pipeline, som varje PR automatiskt skapar. |
+| `template.pipelineID` | Heltal | Inga pipeline-variabler återanvänds | Du kan återanvända de [pipeline-variabler](/help/getting-started/build-environment.md#pipeline-variables) som angetts för en befintlig pipeline, som varje PR automatiskt skapar. |
+| `namePrefix` | Sträng | `Full Stack Code Quality Pipeline for PR` | Används för att ange namnet på den pipeline som skapas automatiskt. |
+| `importantMetricsFailureBehavior` | `CONTINUE` eller `FAIL` eller `PAUSE` | `CONTINUE` | Anger det viktiga måttbeteendet för pipelinen <br>`CONTINUE` = Om ett viktigt mätresultat misslyckas, flyttas pipelinen automatiskt framåt <br>`FAIL` = pipelinen avslutas med en FAILED-status om ett viktigt mätvärde misslyckas<br>`PAUSE` = Kodsökningssteget får en VÄNTNINGSstatus när ett viktigt mätvärde misslyckas och måste återupptas manuellt. |

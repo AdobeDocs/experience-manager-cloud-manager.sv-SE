@@ -2,9 +2,9 @@
 title: Programinställningar
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Du kan redigera program när de har konfigurerats. Följ de här stegen för att
 
 1. Klicka på **Uppdatera** om du vill spara ändringarna.
 
-Observera att ändringarna sparas direkt i Cloud Manager, men att de inte kommer att återspeglas i dina miljöer förrän nästa pipeline körs.
+Ändringarna sparas direkt i Cloud Manager, men återspeglas inte i dina miljöer förrän nästa pipeline-körning.
 
 Om du ännu inte har skapat en pipeline läser du [Konfigurera produktionspipeliner](/help/using/production-pipelines.md) och [Konfigurera icke-produktionspipeliner](/help/using/non-production-pipelines.md).
 

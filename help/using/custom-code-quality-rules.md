@@ -2,7 +2,7 @@
 title: Anpassade regler för kodkvalitet
 description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 200366e5db92b7ffc79b7a47ce8e7825b29b7969
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '3482'
 ht-degree: 0%

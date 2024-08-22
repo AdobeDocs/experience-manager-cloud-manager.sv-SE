@@ -2,7 +2,7 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: a7dc30ed31e87ab486f0b279b70c850a33a903eb
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Steg **Scendistribution** innehåller följande åtgärder:
 * **Säkerhetstestning**: I det här steget utvärderas hur säkerhetseffekten av koden påverkar AEM. Mer information om testprocessen finns i dokumentet [Förstå testresultat](/help/using/code-quality-testing.md).
    * **Prestandatestning**: I det här steget utvärderas kodens prestanda. Mer information om testprocessen finns i [Förstå testresultat](/help/using/code-quality-testing.md).
 
-### Produktionsdistributionssteg {#production-deployment}
+### Distributionssteg för produktion {#production-deployment}
 
 Steget **Produktionsdistribution** innehåller följande åtgärder:
 
@@ -159,7 +159,7 @@ För att åtgärda dessa situationer kan Cloud Manager produktionsflöde genomf�
 >
 >Funktionen för driftsättning av nödpipeline aktiveras program för program. Aktiveringen görs av Customer Success Engineers.
 
-### Använda körningsläge för nödpipeline {#using-emergency-pipeline}
+### Använd körningsläge för nödsituationer {#using-emergency-pipeline}
 
 När du startar en körning av en produktionspipeline kan du välja mellan normalt läge eller nödläge i en dialogruta. Det här alternativet är tillgängligt om funktionen för körning av nödpipeline är aktiverad för programmet. Det här alternativet är tillgängligt när funktionen är aktiverad.
 
@@ -198,7 +198,7 @@ I sådana fall där en omkörning är möjlig visas statussidan för produktions
 * Om den senaste körningen misslyckades någon gång före produktionsdistributionssteget går det inte att utföra om.
 
 
-### Kör API igen {#reexecute-api}
+### Kör om API {#reexecute-api}
 
 Förutom att vara tillgänglig i användargränssnittet kan du använda [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/#tag/Pipeline-Execution) för att utlösa omkörningar och identifiera körningar som utlösts som omkörningar.
 
@@ -250,6 +250,6 @@ Syntaxen för HAL-länkens `href`-värde är bara ett exempel och det faktiska v
 
 Om en `PUT`-begäran skickas till den här slutpunkten returneras ett `201`-svar om det lyckas. Svarstexten är representationen av den nya körningen. Den här funktionaliteten liknar att starta en vanlig körning via API:t.
 
-#### Identifiera en körning {#identifying}
+#### Identifiera en körd exekvering {#identifying}
 
 Systemet identifierar körningar som gjorts om av värdet `RE_EXECUTE` i utlösarfältet.

@@ -2,10 +2,10 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
-source-wordcount: '723'
-ht-degree: 6%
+source-wordcount: '713'
+ht-degree: 4%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter för att kunna använda. Exempelvis kan bara vissa användare ange nyckeltal (KPI) för ett program. Dessa behörigheter är logiskt grupperade i roller.
 
-[!UICONTROL Cloud Manager] definierar för närvarande fyra roller för användare som styr tillgängligheten av specifika funktioner:
+[!UICONTROL Cloud Manager] definierar för närvarande fyra roller för användare, som styr tillgängligheten av specifika funktioner:
 
 * Business Owner
 * Program Manager
@@ -27,16 +27,16 @@ Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter f
 
 ## Rolldefinitioner {#role-definitions}
 
-I tabellen sammanfattas rollerna.
+I följande tabell sammanfattas rollerna i Cloud Manager.
 
-| Roll för [!UICONTROL Cloud Manager] | Beskrivning |
-|--- |--- |
-| Business Owner | Den här användaren ansvarar för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-nivåfel vid behov. |
-| Program Manager | Den här användaren använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och kan godkänna viktiga 3-nivåfel vid behov. |
-| Deployment Manager | Den här användaren hanterar distributionsåtgärder och använder [!UICONTROL Cloud Manager] för att utföra mellanlagrings-/produktionsdistributioner, redigera CI/CD-pipelines, godkänna viktiga 3-skiktsfel vid behov och har åtkomst till Git-databasen. |
-| Developer | Den här användaren utvecklar och testar anpassad programkod och använder främst [!UICONTROL Cloud Manager] för att visa distributionsstatus och få åtkomst till Git-databasen för kodimplementeringar. |
-| Customer Success Engineer | Den här användaren stöder vanligtvis kundframgångar för AMS-kunder och interagerar med [!UICONTROL Cloud Manager] i syfte att köra distributioner som kräver CSE-övervakning. |
-| Innehållsförfattare | Den här användaren interagerar vanligtvis inte med [!UICONTROL Cloud Manager], men kan använda programväljaren [!UICONTROL Cloud Manager] för att komma åt AEM. |
+| Rollen [!UICONTROL Cloud Manager] | Beskrivning |
+| --- | --- |
+| Business Owner | Ansvarig för att definiera KPI:er, godkänna produktionsdistributioner och åsidosätta viktiga 3-nivåfel vid behov. |
+| Program Manager | De använder [!UICONTROL Cloud Manager] för att utföra gruppkonfiguration, granska status, visa KPI:er och kan godkänna viktiga 3-nivåfel vid behov. |
+| Deployment Manager | Hanterar distributionsåtgärder och använder [!UICONTROL Cloud Manager] för att utföra mellanlagrings- och produktionsdistributioner, redigera CI/CD-pipelines och godkänna kritiska 3-nivåfel vid behov. De har även tillgång till Git-databasen. |
+| Developer | Utvecklar och testar anpassad programkod och använder främst [!UICONTROL Cloud Manager] för att visa distributionsstatus och få åtkomst till Git-databasen för kodimplementeringar. |
+| Customer Success Engineer | CSE stöder vanligtvis kundframgångar för AMS-kunder. De interagerar med [!UICONTROL Cloud Manager] i syfte att köra distributioner som kräver CSE-övervakning. |
+| Innehållsförfattare | De interagerar vanligtvis inte med [!UICONTROL Cloud Manager], men de kan använda programväljaren [!UICONTROL Cloud Manager] för att komma åt AEM. |
 
 >[!NOTE]
 >
@@ -46,20 +46,20 @@ I tabellen sammanfattas rollerna.
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i dokumentationen för [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
-För att kunna ge rätt rollbaserade behörigheter till [!UICONTROL Cloud Manager] användare måste en administratör i kundens organisation skapa nya produktprofiler under produktkontexten för [!UICONTROL AEM Managed Services] som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna:
+En administratör måste skapa nya produktprofiler under produktkontexten [!UICONTROL AEM Managed Services] för att tilldela rollbaserade behörigheter för [!UICONTROL Cloud Manager] -användare, som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna.
 
 * Business Owner
 * Deployment Manager
 * Developer
 * Program Manager
 
-Du kan skapa eller lägga till användare/grupper i dessa produktprofiler med Admin Console.
+Du kan skapa eller lägga till användare eller grupper i dessa produktprofiler med Admin Console.
 
 1. Logga in på Admin Console på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
 
-1. Klicka på fliken **Översikt** och klicka på den produkt du vill ändra på kortet **Produkter och tjänster**. Om den inte finns med i listan använder du fliken **Produkter** för att leta reda på produkten och klicka på den.
+1. Klicka på fliken **Översikt** och klicka sedan på den produkt du vill redigera på kortet **Produkter och tjänster**. Om den inte finns med i listan använder du fliken **Produkter** för att leta reda på produkten och klicka på den.
 
    ![Översikt över Admin Console ](/help/assets/admin-console-overview.png)
 

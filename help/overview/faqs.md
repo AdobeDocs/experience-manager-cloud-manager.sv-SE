@@ -2,7 +2,7 @@
 title: Vanliga frågor om Cloud Manager
 description: Läs mer om svar på de vanligaste frågorna om Cloud Manager för AMS-kunder.
 exl-id: 52c1ca23-5b42-4eae-b63a-4b22ef1a5aee
-source-git-commit: 4c4a2688cab8e5c81efa4b7b5e26f3c7b5dc30d6
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '748'
 ht-degree: 0%
@@ -66,7 +66,7 @@ Ja. För utvecklardistributioner måste Git-grenen `pom.xml`-filerna innehålla 
 
 Om du gör det kan efterföljande distributioner fortfarande installeras när versionen inte ändras. I utvecklingsmiljöer läggs ingen automatisk version till eller genereras för maven-bygget.
 
-Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg i Git. Om det behövs kan du hänvisa till den här taggen senare.
+Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
 Mer information om versionshantering [finns här](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
 
@@ -80,7 +80,7 @@ Cloud Manager lägger automatiskt till sin version i scen- och produktionsbyggen
 
 ## Min maven-konstruktion misslyckas för Cloud Manager-distributioner men den byggs lokalt utan fel. Vad är det för fel? {#maven-build-fail}
 
-Mer information finns i den här [Git-resursen](https://github.com/cqsupport/cloud-manager/blob/main/cm-build-step-fails.md).
+Mer information finns i [Git-resursen](https://github.com/cqsupport/cloud-manager/blob/main/cm-build-step-fails.md).
 
 ## Jag kan inte ange en variabel med ett aio-kommando. Vad kan jag göra? {#set-variable}
 

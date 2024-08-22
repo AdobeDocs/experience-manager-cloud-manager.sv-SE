@@ -2,7 +2,7 @@
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
+source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
 workflow-type: tm+mt
 source-wordcount: '932'
 ht-degree: 0%
