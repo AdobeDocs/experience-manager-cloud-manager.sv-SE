@@ -2,9 +2,9 @@
 title: Hantera miljöer
 description: Lär dig hur du använder Cloud Manager för att hantera miljöer.
 exl-id: 700b0b4c-1e1a-4993-b366-426b14a98f8e
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 6f5d51ef59aef831574bd55cee6b12a29e3d70d2
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Skärmen **Miljö** visar alla produktions- och mellanlagringsmiljöer i program
 
 >[!NOTE]
 >
->Om du behöver dina miljöloggar kan de begäras av din Customer Success Engineer.
+>Begär miljöloggar via din Customer Success Engineer.
 
 ## Videosjälvstudie {#video-tutorial}
 
