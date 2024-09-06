@@ -2,7 +2,7 @@
 title: Pipeline med endast scener och endast prod
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 03f7429fd2c4a6dd4c8ae3228eff9c8cdab1ded8
 workflow-type: tm+mt
 source-wordcount: '932'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Mellanlagrings- och produktionsmiljöer är nära kopplade. Som standard är dis
 Enkla rörledningar för scener och enbart för produkter erbjuder lösningar för dessa användningsområden genom att tillhandahålla dedikerade driftsättningsalternativ.
 
 * **Distributionsförlopp endast för scenen:** Distribuerar bara till en staging-miljö där körningen är klar när distributionen och testerna är klara. En pipeline som bara är i ett steg fungerar på samma sätt som den standardkopplade kompletta stackproduktionskanalen, men utan stegen för produktionsdistribution (godkännande, schema, driftsättning).
-* **Distributionsförlopp endast för produktion:** Distribuerar endast till produktion genom att välja en lyckad scenkörning. Distribuera sedan dess artefakter till produktionen. Med rörledningar som endast är avsedda för produktion återanvänds scenens distributionsartefakter, utan att byggfasen slutförs.
+* **Distributionsförlopp endast för produktion:** Distribuerar endast till produktion genom att välja den senaste lyckade scenkörningen. Distribuera sedan dess artefakter till produktionen. Med rörledningar som endast är avsedda för produktion återanvänds scenens distributionsartefakter, utan att byggfasen slutförs.
 
 Rörledningar med endast scener och endast produkter utförs inte medan en produktionspipeline med fullständig stackproduktion pågår, och vice versa. Om utlösaren **On Git Changes** är konfigurerad för både produktionsflödet för enbart scenen och hela stacken och pekar på samma gren och databas, startas endast den enbart för scenen automatiskt. Skrivskyddade pipelines startar inte **`On Git Changes`** eftersom de inte är direkt länkade till en databas.
 
