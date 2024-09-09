@@ -2,7 +2,7 @@
 title: Git-integrering med Adobe Cloud Manager
 description: I den här videoserien går vi igenom hur en kundhanterad (lokal) Git-databas installeras och integreras med Adobe Cloud Manager.
 exl-id: e517f8a4-23f0-4486-8278-91396dba76ec
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 3671772a1369273d89fde101ba084a6e2f8ce8dc
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Förbered kod för en produktionsrelease i en kundhanterad Git-databas och synkr
 
 >[!VIDEO](https://video.tv.adobe.com/v/28724/?quality=12) (6 minuter, 6 sekunder)
 
-## Synkroniserar versionstaggar {#sync-tags}
+## Synkronisera versionstaggar {#sync-tags}
 
 Du kan synkronisera versionstaggar från en Cloud Manager Git-databas till en kundhanterad Git-databas. Den här funktionen ger synlighet i vilken kod som har distribuerats till både staging- och produktionsmiljöer.
 

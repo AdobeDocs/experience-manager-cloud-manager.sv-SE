@@ -1,8 +1,8 @@
 ---
 title: Använda guiden Nytt projekt
-description: Följ den här sidan för att lära dig hur du använder guiden för att skapa ett AEM
+description: Följ den här sidan om du vill lära dig hur du använder guiden för att skapa ett AEM Application Project.
 exl-id: 9d7c6f4c-9379-471c-8dad-772a7099da54
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 7bc874a8dd14544c22201ef2c470faab84d31f8b
 workflow-type: tm+mt
 source-wordcount: '321'
 ht-degree: 0%

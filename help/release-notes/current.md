@@ -1,34 +1,37 @@
 ---
-title: Versionsinformation för Cloud Manager 2024.8.0
-description: Läs mer om versionsinformationen för Cloud Manager 2024.8.0.
+title: Versionsinformation för Cloud Manager 2024.9.0
+description: Läs mer om versionsinformationen för Cloud Manager 2024.9.0.
 feature: Release Information
-source-git-commit: 5ced643fabe0a670e456cbea72f9da8196ac774a
+source-git-commit: 3671772a1369273d89fde101ba084a6e2f8ce8dc
 workflow-type: tm+mt
-source-wordcount: '262'
-ht-degree: 1%
+source-wordcount: '182'
+ht-degree: 0%
 
 ---
 
+# Versionsinformation om Cloud Manager 2024.9.0 {#release-notes}
 
-# Versionsinformation om Cloud Manager 2024.8.0 {#release-notes}
-
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] 2024.8.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] 2024.9.0.
 
 >[!NOTE]
 >
->Den senaste versionsinformationen för Cloud Manager i AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service versionsinformation](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/cloud-manager/current).
+>Den senaste versionsinformationen för Cloud Manager i AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service aktuella versionsinformation](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/cloud-manager/current).
 
 ## Releasedatum {#release-date}
 
-Lanseringsdatumet för [!UICONTROL Cloud Manager] 2024.8.0 är 14 augusti 2024. Nästa version är planerad till den 14 september 2024.
+Inga märkbara fel eller funktioner i september-utgåvan av Cloud Manager.
+
+Nästa version är planerad till 3 oktober 2024.
+
 
 ## Nyheter {#what-is-new}
 
-* För rörledningar som bara är för scenen och endast för produktion (som är tillgängliga som en del av det [tidiga adopterprogrammet](#staging-production-only-pipelines)) kan du nu köra dem i [nödläge,](/help/using/stage-prod-only.md#emergency-mode) hoppas över i scentestningen.
+* För rörledningar som bara är för scenen och endast för produktion (som är tillgängliga som en del av det [tidiga adopterprogrammet](#staging-production-only-pipelines)) kan du nu köra dem i [nödläge](/help/using/stage-prod-only.md#emergency-mode) och hoppa över scentestning.
 
 ## Program för tidigt antagande {#early-adoption}
 
 Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa några kommande funktioner.
+
 
 ### Rörledningar som endast är avsedda för mellanlagring och enbart för produktion {#staging-production-only-pipelines}
 
@@ -36,13 +39,10 @@ Adobe är glada över att kunna meddela att stöd för [endast mellanlagrings- o
 
 Om du vill testa den här funktionen och ge feedback skickar du e-post `Grp-cloudmanager_splitpipelines@adobe.com` med den e-postadress som är kopplad till din Adobe ID.
 
-## Felkorrigeringar
+<!-- ## Bug fixes
 
-* Ett sällsynt problem har korrigerats där rörledningssteg påträffades köras efter att rörledningen tagits bort.
-* Nu fungerar det att köra pipelinen igen vid det första försöket, vilket åtgärdar ett sällsynt fel där en körning måste startas flera gånger.
-* Schemalagda distributionssteg för rörledningar i helhög respekterar nu det valda schemalagda datumet och återställs inte till **Now**.
-* Statusen för misslyckade innehållsåtgärder för kopiering visas nu korrekt och inte längre felaktigt visar statusen `In Progress` i sällsynta fall.
+* text
 
-## Kända fel {#known-issues}
+## Known Issues {#known-issues}
 
-{{content-copy-known-issues}}
+{{content-copy-known-issues}} LEAVE IN??? -->
