@@ -1,109 +1,105 @@
 ---
 title: Hantera databaser i Cloud Manager
-description: Lär dig hur du skapar, visar och redigerar Git-databaser i Cloud Manager.
+description: Lär dig hur du visar, lägger till och tar bort Git-databaser i Cloud Manager.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: ee84c682b6bd2b9144b3f75d544dea33a5ad944b
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
 
 
-# Cloud Manager-databaser {#cloud-manager-repos}
+# Hantera databaser i Cloud Manager {#cloud-manager-repos}
 
-Lär dig hur du skapar, visar och redigerar Git-databaser i Cloud Manager.
+Lär dig hur du visar, lägger till och tar bort en Git-databas i Cloud Manager.
 
 ## Ökning {#overview}
 
-Databaser används för att lagra och hantera projektkoden med Git. Alla program du skapar i Cloud Manager har en databas som hanteras av Adobe.
+Databaser i Cloud Manager används för att lagra och hantera projektkoden med Git. För varje *program* som du lägger till skapas en databas som hanteras av Adobe automatiskt.
 
-Du kan välja att skapa ytterligare Adobe-hanterade databaser och även lägga till egna privata databaser. Alla databaser som är associerade med ditt program kan visas i fönstret **Databaser**.
+Dessutom kan du skapa fler Adobe-hanterade databaser eller lägga till egna privata databaser. Alla databaser som är länkade till ditt program kan visas på sidan **Databaser**.
 
-Databaser som har skapats i Cloud Manager är också tillgängliga när du lägger till eller redigerar pipelines. Mer information finns i [CI-CD Pipelines](/help/overview/ci-cd-pipelines.md).
+Databaser som skapas i Cloud Manager kan också väljas när du lägger till eller redigerar pipelines. Mer information om hur du konfigurerar pipelines finns i [CI-CD-pipelines](/help/overview/ci-cd-pipelines.md).
 
-Det finns en enda primär databas eller en gren för en given pipeline. Med stöd för [Git-undermodul](git-submodules.md) kan många sekundära grenar tas med vid byggtiden.
+Varje pipeline är länkad till en primär databas eller gren. Med stöd för [Git-undermodul](/help/managing-code/git-submodules.md) kan flera sekundära grenar inkluderas under byggprocessen.
 
-## Databasfönster {#repositories-window}
+## Visa sidan Databaser {#repositories-window}
+
+På sidan **Databaser** kan du visa information om den valda databasen. Denna information omfattar vilken typ av databas som används. Om databasen är markerad som **Adobe** anger den att den är en Adobe-hanterad databas. Om den är märkt som **GitHub** refererar den till en privat GitHub-databas som du hanterar. Dessutom innehåller sidan information om t.ex. när databasen skapades och om de rörledningar som är kopplade till den.
+
+Om du vill vidta åtgärder för en vald databas kan du klicka på databasen och använda ikonen ![Mer](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) för att öppna en nedrullningsbar meny. För databaser som hanteras med Adobe kan du **[kontrollera grenar/skapa projekt](#check-branches)**.
+
+![Databasåtgärder](assets/repository-actions.png)
+*Nedrullningsbar meny på sidan Databaser.*
+
+Andra tillgängliga åtgärder på den nedrullningsbara menyn är bland annat **[Kopiera databas-URL](#copy-url)**, **[Visa och uppdatera](#view-update)** och **[Ta bort](#delete)** databasen.
+
+**Så här visar du sidan Databaser:**
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. På sidan **Programöversikt** väljer du fliken **Databaser** för att växla till sidan **Databaser**.
+1. På sidan **Programöversikt** klickar du på ![Mappikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Folder_18_N.svg) **Databaser** på sidomenyn.
 
-1. Fönstret **Databaser** visar alla databaser som är associerade med ditt program.
+1. På sidan **Databaser** visas alla databaser som är associerade med det valda programmet.
 
-   ![Databasfönstret](assets/repositories.png)
+   ![Databassida](assets/repositories.png)
+   *Sidan Databaser i Cloud Manager.*
 
-Fönstret **Databaser** innehåller information om databaserna:
 
-* Typ av databas.
-   * **Adobe** anger databaser som hanteras av Adobe
-   * **GitHub** anger privata GitHub-databaser som du hanterar
-* När den skapades
-* Pipelines som är associerade med databasen
+## Lägga till en databas {#adding-repositories}
 
-Du kan markera databasen i fönstret och klicka på ellipsknappen för att vidta åtgärder för den valda databasen.
+En användare måste ha rollen **Distributionshanteraren** eller **Affärsägare** för att kunna lägga till en databas.
 
-* **[Kontrollera grenar/Skapa projekt](#check-branches)** (endast tillgängligt för Adobe-databaser)
-* **[Kopiera databas-URL](#copy-url)**
-* **[Visa och uppdatera](#view-update)**
-* **[Ta bort](#delete)**
+Klicka på **Lägg till databas** på sidan **Databaser** i det övre högra hörnet.
 
-![Databasåtgärder](assets/repository-actions.png)
+![Dialogrutan Lägg till databas.](assets/repository-add.png)
+*Dialogrutan Lägg till databas.*
 
-## Lägg till databaser {#adding-repositories}
+Cloud Manager har stöd för två typer av databaser: databaser som hanteras med Adobe (**Adobe-databas**) och självhanterade databaser (**Privat databas**). De obligatoriska fälten för konfiguration varierar beroende på vilken typ av databas du väljer att lägga till. Mer information finns i följande:
 
-Klicka på knappen **Lägg till databas** i fönstret **Databaser** för att starta guiden **Lägg till databas**.
+* [Lägga till Adobe-databaser i Cloud Manager](/help/managing-code/adobe-repositories.md)
+* [Lägga till privata databaser i Cloud Manager](/help/managing-code/private-repositories.md)
 
-![Guiden Lägg till databas](assets/add-repository-wizard.png)
+Det finns en gräns på 300 databaser i alla program i ett visst företag eller i en IMS-organisation.
 
-Cloud Manager har stöd för båda databaser som hanteras av Adobe (**Adobe-databas**) och dina egna självhanterade databaser (**Privat databas**). De obligatoriska fälten varierar beroende på vilken typ av databas du väljer att lägga till.
-
-Se [Lägga till Adobe-databaser i Cloud Manager](adobe-repositories.md).
-Se [Lägga till privata databaser i Cloud Manager](private-repositories.md).
-
->[!NOTE]
->
->En användare måste ha rollen **Distributionshanteraren** eller **Affärsägare** för att kunna lägga till en databas.
->
->Det finns en gräns på 300 databaser i alla program i ett visst företag eller i en IMS-organisation.
-
-## Åtkomst till säljinformation {#repo-info}
+## Åtkomst till databasinformation {#repo-info}
 
 När du visar dina databaser i fönstret **Databaser** kan du visa information om hur du kommer åt databaser som hanteras med Adobe genom att klicka på knappen **Åtkomstrepo-information** i verktygsfältet.
 
-![Databasinformation](assets/access-repo-info.png)
+![Databasinformation](assets/repository-access-repo-info2.png)
 
-Fönstret **Databasinformation** öppnas med information. Mer information om hur du får åtkomst till databasinformation finns i [Åtkomst till databasinformation](accessing-repositories.md).
+Fönstret **Databasinformation** öppnas med information. Mer information om hur du får åtkomst till databasinformation finns i [Åtkomst till databasinformation](/help/managing-code/accessing-repositories.md).
 
-## Kontrollera grenar {#check-branches}
+## Kontrollera grenar/Skapa projekt {#check-branches}
 
-Åtgärden **Kontrollera grenar/Skapa projekt** utför två funktioner beroende på databasens tillstånd.
+I **AEM Cloud Manager** har åtgärden **Kontrollera grenar/Skapa projekt** två syften, beroende på databasens aktuella tillstånd.
 
-Om databasen är nyskapad skapar åtgärden ett exempelprojekt baserat på [den AEM projektarkitypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
+* Om databasen är nyskapad genererar den här åtgärden ett exempelprojekt med hjälp av [den AEM projekttypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
+* Om exempelprojektet redan har skapats i databasen kontrollerar åtgärden databasens och dess grenars status och ger information om huruvida exempelprojektet redan finns.
 
-Om exempelprojektet redan har skapats i databasen kontrolleras statusen för databasen och dess grenar, och sedan rapporteras om exempelprojektet redan finns.
-
-![Åtgärden Kontrollera grenar](assets/check-branches.png)
+  ![Åtgärden Kontrollera grenar](assets/check-branches.png)
 
 ## Kopiera databas-URL {#copy-url}
 
-Åtgärden **Kopiera databas-URL** kopierar URL:en för den databas som är markerad i fönstret **Databaser** till Urklipp så att den kan användas någon annanstans.
+Åtgärden **Kopiera databas-URL** kopierar URL:en för den databas som är markerad på sidan **Databaser** till Urklipp så att den kan användas någon annanstans.
 
-## Visa och uppdatera {#view-update}
+## Visa och uppdatera en databas {#view-update}
 
-Åtgärden **Visa och uppdatera** öppnar dialogrutan **Uppdatera databas**. Med hjälp av den kan du visa förhandsgranskningen av **Namn** och **databas-URL** och uppdatera **Beskrivning** för databasen.
+Åtgärden **Visa och uppdatera** öppnar dialogrutan **Uppdatera databas**, där du kan visa databasens **namn** och **databas-URL-förhandsgranskning**. Dessutom kan du uppdatera **Beskrivning** för databasen.
 
-![Visa och uppdatera databasinformation](assets/update-repository.png)
+![Visa och uppdatera databasinformation](assets/repository-view-update.png)
 
-## Ta bort {#delete}
+## Ta bort en databas {#delete}
 
 Åtgärden **Ta bort** tar bort databasen från ditt projekt. Det går inte att ta bort en databas om den är associerad med en pipeline.
 
-![Ta bort](assets/delete.png)
+![Tar bort en databas](assets/delete.png)
 
 När en databas tas bort i Cloud Manager markeras den som borttagen. Den är inte längre tillgänglig för användaren. Den bibehålls dock i systemet för att återskapas.
 
-Om du försöker skapa en ny databas efter att ha tagit bort en databas med samma namn får du felmeddelandet `An error has occurred while trying to create repository. Contact your CSE or Adobe Support.`
+Om du försöker skapa en ny databas efter att ha tagit bort en databas med samma namn visas följande felmeddelande:
 
-Om du får det här felmeddelandet kontaktar du Adobe Support så att de kan hjälpa dig att byta namn på den borttagna databasen eller välja ett annat namn för den nya databasen.
+`An error has occurred while trying to create repository. Contact your CSE or Adobe Support.`
+
+Om du får det här felmeddelandet kontaktar du Adobe Support. De kan hjälpa dig att byta namn på den borttagna databasen eller välja ett annat namn för den nya databasen.
