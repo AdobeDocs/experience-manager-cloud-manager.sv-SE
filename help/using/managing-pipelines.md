@@ -1,8 +1,8 @@
 ---
 title: Hantera pipelines
-description: Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
+description: Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 8e2c57d2594691e7fb18d8a538caa9b54a26b6bb
+source-git-commit: 9d910e1b1a4aad000a8389ddc22ce380bbccd4ef
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Hantera rörledningar {#managing-pipelines}
 
-Lär dig hur du hanterar dina befintliga rörledningar, inklusive redigering, körning och borttagning av dem.
+Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 
 ## Förloppskort {#pipeline-card}
 
@@ -34,13 +34,13 @@ Längst ned i listan med rörledningar finns följande allmänna alternativ.
 * **Åtkomst till replikinformation** - Visar den information som krävs för åtkomst till Cloud Manager Git-databasen.
 * **Läs mer** - Navigerar till resurser för pipeline-dokumentation för CI/CD.
 
-## Fönstret Pipelines {#pipelines}
+## Sidan Pipelines {#pipelines}
 
-I fönstret **Pipelines** visas en fullständig lista över alla pipelines för det valda programmet. Den här listan är användbar eftersom den innehåller mer omfattande information än vad som är tillgängligt på [pipelines-kortet](#pipeline-card).
+Sidan **Pipelines** visar en fullständig lista över alla pipelines för det valda programmet. Den här listan är användbar eftersom den innehåller mer omfattande information än vad som är tillgängligt på [pipelines-kortet](#pipeline-card).
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. På sidan **Programöversikt** klickar du på fliken **Pipelines** för att växla till fönstret **Pipelines**.
+1. På sidan **Programöversikt** klickar du på fliken **Pipelines** för att växla till sidan **Pipelines** .
 
 1. Här visas en lista med alla pipelines för programmet och du kan starta och stoppa pipelinekörning på samma sätt som i **pipelines-kortet**.
 
@@ -50,13 +50,13 @@ Om du klickar på ikonen `i` visas information om den senaste eller aktuella kö
 
 Om du klickar på **Visa information** visas [information om pipelinekörningen](#view-details).
 
-## Aktivitetsfönster {#activity}
+## Aktivitetssida {#activity}
 
-Fönstret **Aktiviteter** visar en fullständig lista över alla pipelines-körningar för det valda programmet.
+På sidan **Aktiviteter** visas en fullständig lista över alla pipelines-körningar för det valda programmet.
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. På sidan **Programöversikt** klickar du på fliken **Aktivitet** för att växla till fönstret **Aktivitet** .
+1. På sidan **Programöversikt** klickar du på fliken **Aktivitet** för att växla till sidan **Aktivitet** .
 
 1. Här visas en lista över alla pipeline-körningar för programmet, inklusive aktuella och historiska körningar.
 

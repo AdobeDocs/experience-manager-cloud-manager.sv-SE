@@ -1,16 +1,16 @@
 ---
-title: Konfigurera produktionsförlopp
+title: Lägg till en produktionspipeline
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod.
 exl-id: d489fa3c-df1e-480b-82d0-ac8cce78a710
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 1209faf71edbd74cd87acfe24ec438b98ddd4a3a
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1243'
 ht-degree: 0%
 
 ---
 
 
-# Konfigurera produktionspipelinjer {#configuring-production-pipelines}
+# Lägg till en produktionspipeline {#configuring-production-pipelines}
 
 Lär dig hur du använder Cloud Manager för att skapa och konfigurera produktionsledningar för att distribuera din kod. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-pipelines](/help/overview/ci-cd-pipelines.md).
 

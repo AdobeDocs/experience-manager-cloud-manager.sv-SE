@@ -1,48 +1,72 @@
 ---
-title: Versionsinformation för Cloud Manager 2024.9.0
-description: Läs mer om versionsinformationen för Cloud Manager 2024.9.0.
+title: Versionsinformation för Cloud Manager 2024.10.0
+description: Läs mer om versionsinformationen för Cloud Manager 2024.10.0.
 feature: Release Information
-source-git-commit: 3671772a1369273d89fde101ba084a6e2f8ce8dc
+source-git-commit: 94d5f3487408f9d8908bb15221c48ef768390527
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation om Cloud Manager 2024.9.0 {#release-notes}
+# Versionsinformation om Cloud Manager 2024.10.0 {#release-notes}
 
-Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] 2024.9.0.
+Den här sidan dokumenterar versionsinformationen för [!UICONTROL Cloud Manager] 2024.10.0.
 
 >[!NOTE]
 >
 >Den senaste versionsinformationen för Cloud Manager i AEM as a Cloud Service finns i [Cloud Manager i AEM as a Cloud Service aktuella versionsinformation](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/cloud-manager/current).
 
+
+
 ## Releasedatum {#release-date}
 
-Inga märkbara fel eller funktioner i september-utgåvan av Cloud Manager.
+<!-- SAVE FOR FUTURE POSSIBLE USE No notable bugs or features for the September release of Cloud Manager. -->
 
-Nästa version är planerad till 3 oktober 2024.
+Lanseringsdatumet för [!UICONTROL Cloud Manager] 2024.10.0 är 3 oktober 2024.
+
+Nästa version är planerad till 14 november 2024.
+
 
 
 ## Nyheter {#what-is-new}
 
-* För rörledningar som bara är för scenen och endast för produktion (som är tillgängliga som en del av det [tidiga adopterprogrammet](#staging-production-only-pipelines)) kan du nu köra dem i [nödläge](/help/using/stage-prod-only.md#emergency-mode) och hoppa över scentestning.
+* <!-- BOTH CS & AMS --> Den AEM Archetype-versionen som används i Cloud Manager har nu uppdaterats till version 26. Se [https://github.com/adobe/aem-project-archetype/releases](https://github.com/adobe/aem-project-archetype/releases)
+<!-- (CMGR-59817) -->
+
+
 
 ## Program för tidigt antagande {#early-adoption}
 
-Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa några kommande funktioner.
+Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa kommande funktioner.
 
+### Använd din egen Git - nu med stöd för GitLab och Bitbucket {#gitlab-bitbucket}
+
+<!-- BOTH CS & AMS -->
+
+Funktionen **Hämta egen Git** har utökats med stöd för externa databaser som GitLab och Bitbucket. Det nya stödet är utöver det stöd som redan finns för privata och företags GitHub-databaser. När du lägger till dessa nya rapporter kan du även länka dem direkt till dina rörledningar. Du kan lagra dessa databaser på publika molnplattformar eller i ditt privata moln eller din privata infrastruktur. Den här integreringen eliminerar också behovet av konstant kodsynkronisering med databasen Adobe och ger möjlighet att validera pull-begäranden innan de slås samman till en huvudgren.
+
+Se [Lägg till externa databaser i Cloud Manager](/help/managing-code/external-repositories.md).
+
+![Dialogrutan Lägg till databas](/help/release-notes/assets/repositories-add-release-notes.png)
+
+>[!NOTE]
+>
+>För närvarande gäller kvalitetskontrollerna av koden för pull-begäran som är klar endast för GitHub-värdbaserade databaser, men en uppdatering som utökar den här funktionen till andra Git-leverantörer finns i arbetsflödet.
+
+Om du är intresserad av att testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till [Grp-CloudManager_BYOG@adobe.com](mailto:Grp-CloudManager_BYOG@adobe.com) från den e-postadress som är kopplad till din Adobe ID. Ta med vilken Git-plattform du vill använda och om du har en privat/offentlig eller företagsdatabasstruktur.
 
 ### Rörledningar som endast är avsedda för mellanlagring och enbart för produktion {#staging-production-only-pipelines}
 
-Adobe är glada över att kunna meddela att stöd för [endast mellanlagrings- och endast produktionspipelines](/help/using/stage-prod-only.md) har introducerats. Med den här nya funktionen kan du dela upp rörledningar för driftsättning i högklassig produktion i mindre, mer specialiserade driftsättningar.
+Adobe presenterar stöd för [endast mellanlagrings- och endast produktionspipelines](/help/using/stage-prod-only.md). Med den här nya funktionen kan du dela upp rörledningar för driftsättning i högklassig produktion i mindre, mer specialiserade driftsättningar.
 
-Om du vill testa den här funktionen och ge feedback skickar du e-post `Grp-cloudmanager_splitpipelines@adobe.com` med den e-postadress som är kopplad till din Adobe ID.
+Om du vill testa den här funktionen och lämna feedback skickar du ett e-postmeddelande till [Grp-cloudmanager_splitpipelines@adobe.com](mailto:Grp-cloudmanager_splitpipelines@adobe.com) från den e-postadress som är kopplad till din Adobe ID.
 
 <!-- ## Bug fixes
 
 * text
+-->
 
-## Known Issues {#known-issues}
+## Kända fel {#known-issues}
 
-{{content-copy-known-issues}} LEAVE IN??? -->
+{{content-copy-known-issues}}

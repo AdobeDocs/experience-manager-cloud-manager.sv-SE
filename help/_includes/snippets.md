@@ -1,7 +1,7 @@
 ---
-source-git-commit: 4ff440250b4ed0770c34a7042ec7d22c79ffe05e
+source-git-commit: 9d910e1b1a4aad000a8389ddc22ce380bbccd4ef
 workflow-type: tm+mt
-source-wordcount: '64'
+source-wordcount: '57'
 ht-degree: 0%
 
 ---
@@ -9,7 +9,6 @@ ht-degree: 0%
 
 ## Kända fel i innehållskopia {#content-copy-known-issues}
 
-Tänk på följande kända fel när du använder funktionen för att kopiera innehåll i [en.](/help/using/content-copy.md)
+Om en resurs i källmiljön byter namn när funktionen [innehållskopiering](/help/using/content-copy.md) används kan det leda till att innehållskopieringen misslyckas på grund av att UUID i målmiljön är i konflikt.
 
-* Om en resurs i källmiljön byter namn kan det leda till att innehållskopieringsåtgärden misslyckas på grund av att UUID:n i målmiljön är i konflikt.
-   * För att undvika det här felet bör du först ta bort resurserna och sedan återskapa dem med det nya resursnamnet, i stället för att byta namn.
+För att undvika det här felet bör du först ta bort resurserna och sedan återskapa dem med det nya resursnamnet, i stället för att byta namn.

@@ -2,7 +2,7 @@
 title: Information om databasåtkomst
 description: Lär dig hur du får åtkomst till och hanterar dina Adobe-hanterade Git-databaser med hjälp av Git-kontohantering via självbetjäning från Cloud Manager.
 exl-id: 1cc88c82-67c7-4553-a1b8-d2ab22be466c
-source-git-commit: b66eb29ab86b2a6acf3a1d92c217154d07b9cc1e
+source-git-commit: 04fbc4a3fdba8b108055d66a4fdb1a31994cb18e
 workflow-type: tm+mt
 source-wordcount: '381'
 ht-degree: 0%
@@ -24,7 +24,7 @@ I dialogrutan **Databasinformation** kan du visa följande åtkomstinformation f
 * URL:en till Cloud Manager Git-databasen.
 * Färdiga Git-kommandon för att snabbt lägga till en fjärranslutning i Git-repo och push-kod.
 
-![Fönstret Databasinformation](assets/repository-info.png)
+  ![Fönstret Databasinformation](assets/repository-info.png)
 
 Åtkomstinformation om [privata databaser](/help/managing-code/private-repositories.md) är inte tillgänglig i Cloud Manager.
 

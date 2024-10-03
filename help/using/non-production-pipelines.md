@@ -1,15 +1,15 @@
 ---
-title: Konfigurera icke-produktionsförlopp
+title: Lägg till en icke-produktionspipeline
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 1209faf71edbd74cd87acfe24ec438b98ddd4a3a
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
 
-# Konfigurera icke-produktionsrörledningar {#configuring-non-production-pipelines}
+# Lägg till en icke-produktionspipeline {#configuring-non-production-pipelines}
 
 Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden. Om du först vill ha en mer konceptuell översikt över hur rörledningar fungerar i Cloud Manager kan du läsa [CI/CD-pipelines](/help/overview/ci-cd-pipelines.md).
 
@@ -31,7 +31,7 @@ Det finns två typer av icke-produktionsrörledningar:
 >
 >Det går inte att konfigurera en pipeline förrän dess associerade Git-databas har minst en gren och [programkonfigurationen](/help/getting-started/program-setup.md) är klar. Mer information om hur du lägger till och hanterar databaser i Cloud Manager finns i [Cloud Manager-databaser](/help/managing-code/managing-repositories.md).
 
-## Lägg till en icke-produktionspipeline {#add-non-production-pipeline}
+## Lägg till en ny icke-produktionspipeline {#add-non-production-pipeline}
 
 När du har konfigurerat programmet och har minst en miljö med Cloud Manager UI är du redo att lägga till en icke-produktionsprocess genom att följa de här stegen.
 
