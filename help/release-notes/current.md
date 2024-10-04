@@ -2,9 +2,9 @@
 title: Versionsinformation för Cloud Manager 2024.10.0
 description: Läs mer om versionsinformationen för Cloud Manager 2024.10.0.
 feature: Release Information
-source-git-commit: 94d5f3487408f9d8908bb15221c48ef768390527
+source-git-commit: 74e8f7c0f3896e0e33a02b62c003db322c0d50d8
 workflow-type: tm+mt
-source-wordcount: '367'
+source-wordcount: '365'
 ht-degree: 0%
 
 ---
@@ -67,6 +67,6 @@ Om du vill testa den här funktionen och lämna feedback skickar du ett e-postme
 * text
 -->
 
-## Kända fel {#known-issues}
+<!-- Known Issues {#known-issues}
 
-{{content-copy-known-issues}}
+ -->
