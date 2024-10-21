@@ -2,7 +2,7 @@
 title: Rollbaserade behörigheter
 description: Lär dig mer om Cloud Manager förkonfigurerade rollbaserade behörigheter för att hantera åtkomst till dina molnresurser.
 exl-id: b66533fb-db93-40e8-919d-581261fdbf24
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 682b142f35bc233bad82b0ddfa69bc0f2d5b5fdb
 workflow-type: tm+mt
 source-wordcount: '596'
 ht-degree: 2%
@@ -45,24 +45,26 @@ Var och en av rollerna har specifika, associerade förkonfigurerade behörighete
 | --- | --- | --- | --- | --- | --- | --- |
 | Läs programmet | Läs programmets KPI:er | x | x | x | x | x |
 | Skriv program | Konfigurera eller redigera program | x | | | | |
-| Lägg till program | Lägg till nytt program | x | | | | |
+| Lägg till program | Lägg till nytt program | x |  |  |  |  |
 | Läs miljö | Se miljöinformation | x | x | x | x | x |
 | Skapa körning | Starta pipeline | x | x | x | | |
 | Läskörning | Se körningsstatus | x | x | x | x | x |
 | Återuppta körning | Möjlighet att återuppta körningen när den pausats | x | x | x | | x |
 | Godkänn distribution av körning till produktion | Godkänn direkt | x | x | x | | |
 | Distribuera körningsschema till produktion | Schemalägg produktionsdistribution | x | x | x | | x |
-| Körningsdistribution till produktion | Distribuera program till produktion när de pausas för CSE-övervakning | | | | | x |
-| Avbryt körning | Avbryt aktuell körning | | | x | | |
-| Fel vid kvalitetshastighet för körning | Godkänn viktiga fel i kvalitetsgrinden | x | x | x | | |
-| Skapa pipeline | Ställ in/redigera pipeline | | x | | | |
+| Körningsdistribution till produktion | Distribuera program till produktion när de pausas för CSE-övervakning |  |  |  |  | x |
+| Avbryt körning | Avbryt aktuell körning |  |  | x |  |  |
+| Fel vid kvalitetshastighet för körning | Godkänn viktiga fel i kvalitetsgrinden | x | x | x |  |  |
+| Skapa pipeline | Ställ in/redigera pipeline |  | x |  |  |  |
 | Pipeline-läsning | Se pipeline-information | x | x | x | x | x |
-| Pipeline Write | Ställ in/redigera pipeline | | x | | | |
-| Ändra godkännande av pipeline | Tillåter redigering av alternativet Affärsägare | | x | | | |
-| Ändra hanterad distribution i pipeline | Tillåter redigering av CSE-tillsynsalternativet | | x | | | |
-| Ta bort pipeline | Tillåter att pipeline tas bort | | x | | | |
+| Pipeline Write | Ställ in/redigera pipeline |  | x |  |  |  |
+| Ändra godkännande av pipeline | Tillåter redigering av alternativet Affärsägare |  | x |  |  |  |
+| Ändra hanterad distribution i pipeline | Tillåter redigering av CSE-tillsynsalternativet |  | x |  |  |  |
+| Ta bort pipeline | Tillåter att pipeline tas bort |  | x |  |  |  |
 | Läs steg | Se resultaten av mätvärdena för stegkvalitet | x | x | x | x | x |
-| Generera token för personlig åtkomst | Access Git | | x | | x | |
+| Generera token för personlig åtkomst | Access Git |  | x |  | x |  |
+
+<!-- CQDOC-22080 | Download log files  |  |  | x |  | x |  | -->
 
 Mer information om hur du konfigurerar användare finns i [Konfigurera användare och roller](/help/requirements/users-and-roles.md).
 
