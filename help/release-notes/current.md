@@ -2,9 +2,10 @@
 title: Versionsinformation för Cloud Manager 2024.12.0
 description: Läs om Cloud Manager 2024.12.0 på Adobe Managed Services.
 feature: Release Information
-source-git-commit: ee79124a012106e53ffaaf9462202712f7078809
+exl-id: 811567af-66c9-4c1f-ae9e-60603b70ef80
+source-git-commit: e266a4192e2a897f142a6c83ae5766483946320d
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '308'
 ht-degree: 0%
 
 ---
@@ -27,9 +28,9 @@ Versionsdatumet för [!UICONTROL Cloud Manager] 2024.12.0 är 5 december 2024.
 
 Nästa planerade version är 23 januari 2025.
 
-## Nyheter {#what-is-new}
+<!-- ## What's new {#what-is-new} -->
 
-* AEM Code Quality-steget använder nu SonarQube 9.9 Server som ersätter den tidigare 7.4-versionen. Uppgraderingen ger ytterligare kontroll av säkerhet, prestanda och kodkvalitet, vilket ger en mer omfattande analys och täckning för dina projekt. <!-- CMGR-45683 -->
+<!-- * The AEM Code Quality step now uses SonarQube 9.9 Server, replacing the older 7.4 version. This upgrade brings additional security, performance, and code quality checks, offering more comprehensive analysis and coverage for your projects. --> <!-- CMGR-45683 -->
 
 ## Program för tidigt antagande {#early-adoption}
 
