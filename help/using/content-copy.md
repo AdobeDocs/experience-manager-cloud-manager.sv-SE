@@ -1,20 +1,20 @@
 ---
-title: Verktyget Innehållskopia
+title: Konsekvens för innehållskopia för miljö
 description: Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: de9cfaa07dc9ff4a6d1cb200d14c5e776d27767d
+source-git-commit: 2c96feb62a4db2424430c9c410563a7f61320fd2
 workflow-type: tm+mt
-source-wordcount: '1363'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 
-# Verktyget Innehållskopia {#content-copy}
+# Innehållskopia för enhetlig miljö {#content-copy}
 
 Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
 
-## Om verktyget Innehållskopia{#introduction}
+## Om Innehållskopia {#introduction}
 
 Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med innehållskopieringsverktyget kan du kopiera innehåll från din AMS-AEM 6.x-produktionsmiljö till testnings- eller utvecklingsmiljöer. Det här arbetsflödet stöder olika testscenarier.
 
