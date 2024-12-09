@@ -2,9 +2,9 @@
 title: Konsekvens för innehållskopia för miljö
 description: Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: e47047c85f9d428e268d147b2e24354026dda0f8
+source-git-commit: 228006b424504306e916014bbe8543dc41ba43b5
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
@@ -85,9 +85,7 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
    ![Redigerar sökvägslista](/help/assets/add-content-set-excluded-paths.png)
 
-1. Klicka på **Skapa**.
-
-Nu kan du använda innehållsuppsättningen för att kopiera innehåll mellan miljöer.
+1. Klicka på **Skapa**. Nu kan du använda innehållsuppsättningen för att kopiera innehåll mellan miljöer.
 
 ## Redigera eller ta bort en innehållsuppsättning {#edit-content-set}
 
@@ -132,21 +130,23 @@ En miljö kan vara otillgänglig för markering om något av följande villkor g
    * Områden i en målmiljö måste vara en delmängd av regioner i en källmiljö.
    * Kompatibilitetsproblem kontrolleras innan en innehållskopia körs. När du väljer miljön **Mål** valideras käll- och målmiljöerna automatiskt. Om valideringen misslyckas avbryts processen och ett felmeddelande visas i dialogrutan som förklarar orsaken till felet.
 
+     ![Kopierar innehåll](/help/assets/copying-content.png)
+
 1. (Valfritt) Gör något av följande:
 
    1. Markera **`Do not delete exclude paths from destination`** om du vill *behålla* de uteslutna sökvägarna i målmiljön. Den här inställningen bevarar de uteslutna sökvägarna som anges i innehållsuppsättningen intakta.
    1. Om du vill *ta bort* de uteslutna sökvägarna i målmiljön avmarkerar du **`Do not delete exclude paths from destination`**. Den här inställningen tar bort de uteslutna sökvägarna som anges i innehållsuppsättningen.
-   1. Om du vill kopiera versionshistoriken för sökvägar från källmiljön till målmiljön ska du kontrollera **Kopiera versioner**.
+   1. Om du vill kopiera versionshistoriken för sökvägar från källmiljön till målmiljön ska du kontrollera **Kopiera versioner**. Processen för innehållskopiering är avsevärt snabbare när versionshistoriken *inte* kopieras.
 
-      ![Kopierar innehåll](/help/assets/copying-content.png)
+
 
 1. Klicka på **Kopiera**. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 
-## Övervaka status för kopieringsaktivitet av innehåll {#copy-activity}
+## Övervaka innehållskopia, status {#copy-activity}
 
 Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera innehållsaktivitet**.
 
-**Så här övervakar du status för kopieringsaktivitet för innehåll:**
+**Så här övervakar du innehållskopieringsstatus:**
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
@@ -156,7 +156,7 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 
    ![Aktivitet för innehållskopia](/help/assets/copy-content-activity.png)
 
-   En innehållsprocess för kopiering kan ha någon av följande statusvärden:
+   En innehållskopia-process kan ha någon av följande statusar:
 
    | Status | Beskrivning |
    | --- | --- |
@@ -165,9 +165,7 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
    | Misslyckades | Åtgärden Kopiera innehåll misslyckades. |
 
 
-## Begränsningar {#limitations}
-
-Innehållskopia har följande begränsningar:
+## Begränsningar för innehållskopia {#limitations}
 
 * En innehållskopia kan inte utföras från en lägre miljö till en högre miljö.
 * Innehållskopiering kan bara utföras inom samma nivå. Det vill säga författare/författare eller publicera/publicera.
@@ -175,13 +173,10 @@ Innehållskopia har följande begränsningar:
 * Innehållskopia för molndatalagringsbaserad topologi kan bara utföras när käll- och målmiljön finns på samma molnleverantör och i samma region.
 * Det går inte att köra samtidiga innehållskopieringsåtgärder i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs i mål- eller källmiljön, t.ex. en CI/CD-pipeline.
-* Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
-* Innehållskopia ska inte användas som klonings- eller speglingsverktyg eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
+* Innehållskopia ska inte användas som kloning eller speglingsverktyg eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
-* Content Copy kopierar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
-* Processen för innehållskopiering är avsevärt snabbare när versionshistorik inte kopieras.
+* Innehållskopia duplicerar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
 * [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
-* När versionshistorik inte kopieras går kopieringen betydligt snabbare.
 * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
 
 ## Kända fel {#known-issues}
