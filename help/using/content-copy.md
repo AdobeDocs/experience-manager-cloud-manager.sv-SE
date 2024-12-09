@@ -1,22 +1,22 @@
 ---
 title: Konsekvens för innehållskopia för miljö
-description: Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
+description: Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 2c96feb62a4db2424430c9c410563a7f61320fd2
+source-git-commit: e47047c85f9d428e268d147b2e24354026dda0f8
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1351'
 ht-degree: 0%
 
 ---
 
 
-# Innehållskopia för enhetlig miljö {#content-copy}
+# Content Copy for environment consistent {#content-copy}
 
-Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
+Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 
 ## Om Innehållskopia {#introduction}
 
-Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med innehållskopieringsverktyget kan du kopiera innehåll från din AMS-AEM 6.x-produktionsmiljö till testnings- eller utvecklingsmiljöer. Det här arbetsflödet stöder olika testscenarier.
+Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med Content Copy kan du kopiera innehåll från din AMS-AEM 6.x-produktionsmiljö till testnings- eller utvecklingsmiljöer. Det här arbetsflödet stöder olika testscenarier.
 
 En innehållsuppsättning definierar innehållet som ska kopieras. En innehållsuppsättning innehåller en lista med JCR-sökvägar med det ändringsbara innehåll som ska kopieras. Innehållet flyttas från en källmiljö till en målmiljö. Allt görs i samma Cloud Manager-program.
 
@@ -37,7 +37,7 @@ När du kopierar innehåll är källmiljön en källa till sanning.
 
 ## Behörigheter {#permissions}
 
-Användaren måste tilldelas rollen **Distributionshanterare** i käll- och målmiljöerna för att kunna använda verktyget för innehållskopiering.
+Användaren måste tilldelas rollen **Distributionshanterare** i käll- och målmiljöerna för att kunna använda funktionen för innehållskopiering.
 
 ## Skapa en innehållsuppsättning {#create-content-set}
 
@@ -55,7 +55,7 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
    ![Innehållsuppsättningar](/help/assets/content-sets.png)
 
-1. I dialogrutan **Lägg till innehållsuppsättning** skriver du ett namn och en valfri beskrivning för innehållsuppsättningen på fliken **Detaljer** i fälten **Namn** och **Beskrivning** och klickar sedan på **Fortsätt**.
+1. I dialogrutan **`Add Content Set`**, på fliken **Detaljer**, i fälten **Namn** och **Beskrivning**, skriver du ett namn och en valfri beskrivning för innehållsuppsättningen och klickar sedan på **Fortsätt**.
 
    ![Information om innehållsuppsättning](/help/assets/add-content-set-details.png)
 
@@ -167,7 +167,7 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 
 ## Begränsningar {#limitations}
 
-Verktyget för innehållskopiering har följande begränsningar:
+Innehållskopia har följande begränsningar:
 
 * En innehållskopia kan inte utföras från en lägre miljö till en högre miljö.
 * Innehållskopiering kan bara utföras inom samma nivå. Det vill säga författare/författare eller publicera/publicera.
@@ -176,9 +176,9 @@ Verktyget för innehållskopiering har följande begränsningar:
 * Det går inte att köra samtidiga innehållskopieringsåtgärder i samma miljö.
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs i mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Upp till femtio sökvägar kan anges per innehållsuppsättning. Det finns ingen begränsning för uteslutna banor.
-* Verktyget för innehållskopia bör inte användas som kloning eller spegling eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
+* Innehållskopia ska inte användas som klonings- eller speglingsverktyg eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
-* Verktyget för innehållskopiering kopierar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
+* Content Copy kopierar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
 * Processen för innehållskopiering är avsevärt snabbare när versionshistorik inte kopieras.
 * [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
 * När versionshistorik inte kopieras går kopieringen betydligt snabbare.
