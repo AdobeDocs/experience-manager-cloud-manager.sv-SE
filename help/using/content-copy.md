@@ -1,10 +1,10 @@
 ---
 title: Verktyget Innehållskopia
-description: Med Cloud Manager innehållskopia kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testning.
+description: Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: de9cfaa07dc9ff4a6d1cb200d14c5e776d27767d
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1363'
 ht-degree: 0%
 
 ---
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Verktyget Innehållskopia {#content-copy}
 
-Med Cloud Manager innehållskopia kan man kopiera muterbart innehåll on demand från AMS-AEM 6.x-produktionsmiljöer till lägre miljöer för testning.
+Med Cloud Manager Content Copy Tool kan man kopiera muterbart innehåll On-demand från Adobe Managed Services-baserade Adobe Experience Manager 6.x-produktionsmiljöer till lägre testmiljöer.
 
-## Introduktion {#introduction}
+## Om verktyget Innehållskopia{#introduction}
 
 Aktuella, riktiga data är värdefulla för testning, validering och för att ge användaren erkännande. Med innehållskopieringsverktyget kan du kopiera innehåll från din AMS-AEM 6.x-produktionsmiljö till testnings- eller utvecklingsmiljöer. Det här arbetsflödet stöder olika testscenarier.
 
@@ -43,120 +43,131 @@ Användaren måste tilldelas rollen **Distributionshanterare** i käll- och mål
 
 Innan något innehåll kan kopieras måste en innehållsuppsättning definieras. När du har definierat innehållet kan du återanvända det för att kopiera innehållet. Följ de här stegen för att skapa en innehållsuppsättning.
 
+**Så här skapar du en innehållsuppsättning:**
+
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera från sidan **Översikt** till skärmen **Miljö**.
+1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Gå till sidan **Innehållsuppsättningar** på skärmen **Miljö**.
+1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn på sidan **Tjänster**.
 
-1. Klicka på **Lägg till innehållsuppsättning** i skärmens övre högra hörn.
+1. Klicka på **Lägg till innehållsuppsättning** i sidans övre högra hörn.
 
    ![Innehållsuppsättningar](/help/assets/content-sets.png)
 
-1. Ange ett namn och en beskrivning för innehållsuppsättningen på fliken **Detaljer** i guiden och klicka på **Fortsätt**.
+1. I dialogrutan **Lägg till innehållsuppsättning** skriver du ett namn och en valfri beskrivning för innehållsuppsättningen på fliken **Detaljer** i fälten **Namn** och **Beskrivning** och klickar sedan på **Fortsätt**.
 
    ![Information om innehållsuppsättning](/help/assets/add-content-set-details.png)
 
-1. På fliken **Innehållssökvägar** i guiden anger du sökvägarna till det ändringsbara innehåll som ska inkluderas i innehållsuppsättningen.
+1. På fliken **Innehållssökvägar** anger du en sökväg till det innehåll som kan ändras och som ska inkluderas i innehållsuppsättningen i textfältet **Sökväg**.
 
-   1. Ange sökvägen i fältet **Lägg till inkluderingssökväg**.
-   1. Klicka på **Lägg till sökväg** för att lägga till sökvägen till innehållsuppsättningen.
-   1. Klicka på **Lägg till sökväg** igen om det behövs.
+   Endast sökvägar som börjar med `/content`, `/conf`, `/etc`, `/var/workflow/models` eller `/var/commerce` kan tas med.
+
+1. Klicka på ikonen **![Lägg till mapp](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderAdd_18_N.svg) Lägg till sökväg** om du vill lägga till (eller ta med) sökvägen till innehållsuppsättningen.
+
+1. (Valfritt) Om det behövs lägger du till tilläggsbanor (upp till 50) genom att upprepa de två föregående stegen. I annat fall fortsätter du till nästa steg.
 
    ![Lägg till sökvägar i innehållsuppsättningen](/help/assets/add-content-set-paths.png)
 
-1. Om du behöver förfina eller begränsa din innehållsuppsättning kan undersökvägar uteslutas.
+1. (Valfritt) Om du vill begränsa innehållsuppsättningen kan du även ange underbanor i en inkluderad innehållssökväg som ska uteslutas.
 
-   1. I listan med inkluderade sökvägar klickar du på ikonen **Lägg till exkludera delsökvägar** intill den sökväg som du vill begränsa.
-   1. Ange den undersökväg som ska uteslutas från den valda sökvägen.
-   1. Klicka på **Uteslut sökväg**.
-   1. Klicka igen på **Lägg till exkludera delsökvägar** om du vill lägga till ytterligare sökvägar som ska exkluderas efter behov.
+   1. Klicka på ikonen ![Ta bort mapp](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderDelete_18_N.svg) till höger om den inkluderade innehållssökvägen som du vill begränsa.
+   1. I textfältet anger du en relativ sökväg till rotsökvägen som visas i dialogrutan.
+   1. Klicka på ikonen ![Ta bort mapp](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderDelete_18_N.svg) **Uteslut sökväg**.
+   1. Om det behövs upprepar du stegen i. till iii. ovan om du vill lägga till fler uteslutna banor. Det finns ingen begränsning. I annat fall fortsätter du till nästa steg.
 
    ![Exkluderar banor](/help/assets/add-content-set-paths-excluded.png)
 
-1. Du kan ändra de angivna sökvägarna om det behövs.
+1. (Valfritt) Gör något av följande:
 
-   1. Klicka på `X` bredvid de uteslutna delsökvägarna för att ta bort dem.
-   1. Klicka på ellipsknappen bredvid sökvägarna för att visa alternativen **Redigera** och **Ta bort**.
+   1. Klicka på ikonen ![Korsstorlek 500](https://spectrum.adobe.com/static/icons/ui_18/CrossSize500.svg) till höger om en exkluderad underbana om du vill ta bort den.
+   1. Klicka på ikonen ![Mer](https://spectrum.adobe.com/static/icons/ui_18/More.svg) till höger om en inkluderad innehållssökväg och klicka sedan på **Redigera** eller **Ta bort**.
 
    ![Redigerar sökvägslista](/help/assets/add-content-set-excluded-paths.png)
 
-1. Klicka på **Skapa** för att skapa innehållsuppsättningen.
+1. Klicka på **Skapa**.
 
-Innehållsuppsättningen kan nu användas för att kopiera innehåll mellan miljöer.
+Nu kan du använda innehållsuppsättningen för att kopiera innehåll mellan miljöer.
 
->[!NOTE]
->
->Du kan lägga till upp till 50 banor i en innehållsuppsättning.
->Det finns ingen begränsning för uteslutna banor.
+## Redigera eller ta bort en innehållsuppsättning {#edit-content-set}
 
-## Redigera en innehållsuppsättning {#edit-content-set}
+När du redigerar en innehållsuppsättning kan du behöva utöka de konfigurerade sökvägarna för att visa de uteslutna delsökvägarna.
 
-Följ liknande steg som när du skapar ett innehållssteg. I stället för att klicka på **Lägg till innehållsuppsättning** markerar du en befintlig uppsättning i konsolen och väljer **Redigera** på ellipsmenyn.
-
-![Redigera innehållsuppsättning](/help/assets/edit-content-set.png)
-
-När du redigerar din innehållsuppsättning kan du behöva utöka de konfigurerade sökvägarna för att visa de uteslutna delsökvägarna.
-
-## Kopiera innehåll {#copy-content}
-
-När en innehållsuppsättning har skapats kan du använda den för att kopiera innehåll. Följ de här stegen för att kopiera innehåll.
+**Så här redigerar eller tar du bort en innehållsuppsättning:**
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera från sidan **Översikt** till skärmen **Miljö**.
+1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Gå till sidan **Innehållsuppsättningar** på skärmen **Miljö**.
+1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
 
-1. Välj en innehållsuppsättning från konsolen och välj **Kopiera innehåll** på ellipsmenyn.
+1. I tabellen på sidan **Innehållsuppsättningar** klickar du på ikonen ![Mer](https://spectrum.adobe.com/static/icons/ui_18/More.svg) till höger om en inkluderad innehållssökväg och sedan på **Redigera** eller **Ta bort** .
+
+![Redigera innehållsuppsättning](/help/assets/edit-content-set.png)
+
+
+## Kopiera innehåll {#copy-content}
+
+När en innehållsuppsättning har skapats kan du använda den för att kopiera innehåll.
+
+En miljö kan vara otillgänglig för markering om något av följande villkor gäller:
+
+* Användaren saknar de behörigheter som krävs.
+* En pipeline- eller innehållskopieringsåtgärd körs för närvarande i miljön.
+
+**Så här kopierar du innehåll:**
+
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
+
+1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
+
+1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
+
+1. I tabellen på sidan **Innehållsuppsättningar**, till höger om den innehållssökväg som du vill kopiera, klickar du på ![Mer ikon](https://spectrum.adobe.com/static/icons/ui_18/More.svg) och sedan på **Kopiera innehåll**.
 
    ![Innehållskopia](/help/assets/copy-content.png)
 
-   >[!NOTE]
-   >
-   >En miljö kan inte markeras om:
-   >
-   >* Användaren har inte rätt behörighet.
-   >* Miljön har en pågående pipeline eller en åtgärd för att kopiera innehåll.
+1. I dialogrutan **Kopiera innehåll** väljer du **Source** -miljön och **målmiljön** för innehållskopieringsåtgärden.
 
-1. I dialogrutan **Kopiera innehåll** anger du käll- och målmiljöerna för kopieringsåtgärden.
-   * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
+   * Områden i en målmiljö måste vara en delmängd av regioner i en källmiljö.
+   * Kompatibilitetsproblem kontrolleras innan en innehållskopia körs. När du väljer miljön **Mål** valideras käll- och målmiljöerna automatiskt. Om valideringen misslyckas avbryts processen och ett felmeddelande visas i dialogrutan som förklarar orsaken till felet.
 
-1. Du kan välja att ta bort eller behålla de uteslutna sökvägarna i målmiljön. Markera kryssrutan `Do not delete exclude paths from destination` om du vill behålla `exclude paths` som anges i innehållsuppsättningen. Om kryssrutan inte är markerad tas uteslutna sökvägar bort i målmiljön.
+1. (Valfritt) Gör något av följande:
 
-1. Du kan välja att kopiera versionshistoriken för sökvägar som kopieras från källan till målmiljön. Markera kryssrutan `Copy Versions` om du vill kopiera all versionshistorik.
+   1. Markera **`Do not delete exclude paths from destination`** om du vill *behålla* de uteslutna sökvägarna i målmiljön. Den här inställningen bevarar de uteslutna sökvägarna som anges i innehållsuppsättningen intakta.
+   1. Om du vill *ta bort* de uteslutna sökvägarna i målmiljön avmarkerar du **`Do not delete exclude paths from destination`**. Den här inställningen tar bort de uteslutna sökvägarna som anges i innehållsuppsättningen.
+   1. Om du vill kopiera versionshistoriken för sökvägar från källmiljön till målmiljön ska du kontrollera **Kopiera versioner**.
 
-   ![Kopierar innehåll](/help/assets/copying-content.png)
+      ![Kopierar innehåll](/help/assets/copying-content.png)
 
-1. Klicka på **Kopiera**.
+1. Klicka på **Kopiera**. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 
-Kopieringsprocessen startar. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
-
-## Kopiera innehåll {#copy-activity}
+## Övervaka status för kopieringsaktivitet av innehåll {#copy-activity}
 
 Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera innehållsaktivitet**.
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj sedan rätt organisation och program.
+**Så här övervakar du status för kopieringsaktivitet för innehåll:**
 
-1. Navigera från sidan **Översikt** till skärmen **Miljö**.
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Gå till sidan **Kopiera innehållsaktivitet** på skärmen **Miljö**.
+1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-![Aktivitet för innehållskopia](/help/assets/copy-content-activity.png)
+1. Klicka på ikonen ![Historik ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_History_18_N.svg) **Kopiera innehållsaktivitet** på den vänstra menyn under **Tjänster**.
 
-### Status för innehållskopia {#statuses}
+   ![Aktivitet för innehållskopia](/help/assets/copy-content-activity.png)
 
-När du börjar kopiera innehåll kan processen ha någon av följande statusar.
+   En innehållsprocess för kopiering kan ha någon av följande statusvärden:
 
-| Status | Beskrivning |
-|---|---|
-| Pågår | Innehållskopieringen pågår |
-| Misslyckades | Åtgärden Kopiera innehåll misslyckades |
-| Slutförd | Innehållskopieringen har slutförts |
+   | Status | Beskrivning |
+   | --- | --- |
+   | Pågår | Kopiering av innehåll pågår. |
+   | Slutförd | Åtgärden Kopiera innehåll slutfördes. |
+   | Misslyckades | Åtgärden Kopiera innehåll misslyckades. |
+
 
 ## Begränsningar {#limitations}
 
-Verktyget för innehållskopiering har följande begränsningar.
+Verktyget för innehållskopiering har följande begränsningar:
 
 * En innehållskopia kan inte utföras från en lägre miljö till en högre miljö.
 * Innehållskopiering kan bara utföras inom samma nivå. Det vill säga författare/författare eller publicera/publicera.
