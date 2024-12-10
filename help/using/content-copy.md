@@ -2,9 +2,9 @@
 title: Konsekvens för innehållskopia för miljö
 description: Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 228006b424504306e916014bbe8543dc41ba43b5
+source-git-commit: 16cc1aa0ff45126df9100f337b6259a3f248038f
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ När du kopierar innehåll är källmiljön en källa till sanning.
 * Om du redigerar innehåll i målmiljön skrivs källinnehållet över om sökvägarna matchar.
 * Om banorna inte är likadana sammanfogas innehåll från källan med innehållet i målplatsen.
 
-## Behörigheter {#permissions}
+### Behörigheter {#permissions}
 
 Användaren måste tilldelas rollen **Distributionshanterare** i käll- och målmiljöerna för att kunna använda funktionen för innehållskopiering.
 
@@ -142,11 +142,11 @@ En miljö kan vara otillgänglig för markering om något av följande villkor g
 
 1. Klicka på **Kopiera**. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 
-## Övervaka innehållskopia, status {#copy-activity}
+## Kontrollera status för en innehållskopia {#copy-activity}
 
 Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera innehållsaktivitet**.
 
-**Så här övervakar du innehållskopieringsstatus:**
+**Så här kontrollerar du statusen för en innehållskopia:**
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
@@ -179,6 +179,6 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 * [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
 * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
 
-## Kända fel {#known-issues}
+## Kända fel i Content Copy {#known-issues}
 
 {{content-copy-known-issues}}
