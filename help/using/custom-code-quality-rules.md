@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 8811ed130b2c7a37a0c811c308b57acf0872e9c8
 workflow-type: tm+mt
-source-wordcount: '3482'
+source-wordcount: '3514'
 ht-degree: 0%
 
 ---
@@ -871,6 +871,15 @@ AEM Cloud Service tillåter inte att tokeniserare med felaktiga namn skapas i an
 * **Sedan**: Version 2024.7.0
 
 Det går inte att skapa indexdefinitioner som innehåller egenskaper med mellanslag.
+
+### Konfiguration av indexeringsdefinitioner får inte innehålla egenskapen haystack0 {#oakpal-indexing-haystack0-property}
+
+* **Nyckel**: HayStackPropertyCheck
+* **Typ**: Förbättring
+* **Allvarlighetsgrad**: Mindre
+* **Sedan**: Version 2024.12.0
+
+AEM Cloud Service tillåter inte att indexeringsdefinitioner som innehåller höstacksegenskaper skapas.
 
 ## Dispatcher optimeringsverktyg {#dispatcher-optimization-tool-rules}
 
