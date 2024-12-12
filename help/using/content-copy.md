@@ -2,7 +2,7 @@
 title: Konsekvens för innehållskopia för miljö
 description: Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: 16cc1aa0ff45126df9100f337b6259a3f248038f
+source-git-commit: e3a656605ac59ca1f95985426932fddf2b53b7c9
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 0%
@@ -32,8 +32,9 @@ Följande sökvägar tillåts i en innehållsuppsättning:
 
 När du kopierar innehåll är källmiljön en källa till sanning.
 
-* Om du redigerar innehåll i målmiljön skrivs källinnehållet över om sökvägarna matchar.
-* Om banorna inte är likadana sammanfogas innehåll från källan med innehållet i målplatsen.
+Om du redigerar innehåll i målmiljön skrivs källinnehållet över om sökvägarna matchar.
+
+Om banorna inte är likadana sammanfogas innehåll från källan med innehållet i målplatsen.
 
 ### Behörigheter {#permissions}
 
@@ -103,7 +104,6 @@ När du redigerar en innehållsuppsättning kan du behöva utöka de konfigurera
 
 ![Redigera innehållsuppsättning](/help/assets/edit-content-set.png)
 
-
 ## Kopiera innehåll {#copy-content}
 
 När en innehållsuppsättning har skapats kan du använda den för att kopiera innehåll.
@@ -138,8 +138,6 @@ En miljö kan vara otillgänglig för markering om något av följande villkor g
    1. Om du vill *ta bort* de uteslutna sökvägarna i målmiljön avmarkerar du **`Do not delete exclude paths from destination`**. Den här inställningen tar bort de uteslutna sökvägarna som anges i innehållsuppsättningen.
    1. Om du vill kopiera versionshistoriken för sökvägar från källmiljön till målmiljön ska du kontrollera **Kopiera versioner**. Processen för innehållskopiering är avsevärt snabbare när versionshistoriken *inte* kopieras.
 
-
-
 1. Klicka på **Kopiera**. Kopieringsprocessens status visas i konsolen för den valda innehållsuppsättningen.
 
 ## Kontrollera status för en innehållskopia {#copy-activity}
@@ -156,14 +154,13 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 
    ![Aktivitet för innehållskopia](/help/assets/copy-content-activity.png)
 
-   En innehållskopia-process kan ha någon av följande statusar:
+   En innehållskopia kan ha någon av följande statusar:
 
    | Status | Beskrivning |
    | --- | --- |
-   | Pågår | Kopiering av innehåll pågår. |
-   | Slutförd | Åtgärden Kopiera innehåll slutfördes. |
-   | Misslyckades | Åtgärden Kopiera innehåll misslyckades. |
-
+   | Pågår | Processen för innehållskopia pågår. |
+   | Slutförd | Innehållskopieringsprocessen har slutförts. |
+   | Misslyckades | Det gick inte att kopiera innehåll. |
 
 ## Begränsningar för innehållskopia {#limitations}
 
