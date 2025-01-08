@@ -2,9 +2,9 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: dcf2a4727b800f4364fcc7d757d281bde2738a55
 workflow-type: tm+mt
-source-wordcount: '2760'
+source-wordcount: '2789'
 ht-degree: 0%
 
 ---
@@ -48,14 +48,16 @@ Programmet implementerar det med en kombination av SonarQube-analys, innehållsp
 
 Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
->[!TIP]
+>[!IMPORTANT]
 >
->Du kan hämta den fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
+>Du kan hämta den aktuella fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
+>
+>Från och med torsdagen den 13 februari 2025 (Cloud Manager 2025.2.0) använder Cloud Manager Code Quality en uppdaterad version av SonarQube 9.9 och en uppdaterad lista över regler som du kan [hämta här](/help/assets/CodeQuality-rules-latest-AMS-2024-12-0.xlsx).
 
 Resultaten av kodkvalitetstestningen levereras som en klassificering enligt sammanfattningen i denna tabell.
 
 | Namn | Definition | Kategori | Feltröskel |
-|--- |--- |--- |--- |
+| --- | --- | --- | --- |
 | Säkerhetsbedömning | A = Ingen sårbarhet<br/>B = Minst 1 mindre sårbarhet<br/>C = Minst 1 större sårbarhet<br/>D = Minst 1 allvarlig sårbarhet<br/>E = Minst 1 blockerarsårbarhet | Kritisk | &lt; B |
 | Tillförlitlighetsgrad | A = Inga buggar<br/>B = Minst ett mindre fel <br/>C = Minst ett större fel <br/>D = Minst ett kritiskt fel <br/>E = Minst ett fel i en blockerare | Viktigt | &lt; C |
 | Underhållskvalitet | Definieras av den utestående reparationskostnaden för kod luktar som en procentandel av den tid som redan har gått in i programmet <br/><ul><li>A = &lt;=5%</li><li>B = 6-10 %</li><li>C = 11-20 %</li><li>D = 21-50 %</li><li>E = >50 %</li></ul> | Viktigt | &lt; A |
@@ -67,7 +69,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 
 >[!NOTE]
 >
->Mer detaljerad information finns i [SonarQube måttdefinitioner](https://docs.sonarsource.com/sonarqube/latest/user-guide/code-metrics/metrics-definition/).
+>Mer detaljerad information finns i [SonarQube måttdefinitioner](https://docs.sonarsource.com/sonarqube-server/latest/user-guide/code-metrics/metrics-definition/).
 
 >[!NOTE]
 >
@@ -188,14 +190,14 @@ Under 30 minuters testperiod:
 
 #### Testa och rapportera {#testing-reporting}
 
-Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida och olika värden på systemnivå (processor, minne, nätverksdata) för alla instanser.
+Cloud Manager kör prestandatestning för AEM Sites-program genom att begära sidor som en oautentiserad användare som standard på publiceringsservern för testperioden i 30 minuter. Den mäter de värden som genereras av virtuella användare (svarstid, felfrekvens, vyer per minut och så vidare) för varje sida och olika mätvärden på systemnivå (CPU, minne, nätverksdata) för alla instanser.
 
 I följande tabell sammanfattas prestandatestmatrisen med hjälp av ett gating-system med tre skikt.
 
 | Mått | Kategori | Feltröskel |
 |---|---|---|
 | Felfrekvens för sidbegäran | Kritisk | >= 2 % |
-| Processoranvändning | Kritisk | >= 80 % |
+| CPU utnyttjandegrad | Kritisk | >= 80 % |
 | Väntetid för disk-I/O | Kritisk | >= 50 % |
 | 95:e procentig svarstid | Viktigt | >= KPI på programnivå |
 | Tid för högsta svar | Viktigt | >= 18 sekunder |
@@ -268,7 +270,7 @@ Måttpanelerna kan expanderas för att visa ett diagram, ge en länk till en hä
 
 Den här funktionen är tillgänglig för följande mätvärden.
 
-* **Processoranvändning** - Ett diagram över processoranvändning under testperioden
+* **CPU-användning** - Ett diagram över CPU-användning under testperioden
 
 * **Diskens I/O-väntetid** - Ett diagram över diskens I/O-väntetid under testperioden
 
