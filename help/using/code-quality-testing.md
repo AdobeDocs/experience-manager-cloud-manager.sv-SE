@@ -2,7 +2,7 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: dcf2a4727b800f4364fcc7d757d281bde2738a55
+source-git-commit: f5e6ac81c6454730850bb7e884d82be48d2f8525
 workflow-type: tm+mt
 source-wordcount: '2789'
 ht-degree: 0%
@@ -48,9 +48,9 @@ Programmet implementerar det med en kombination av SonarQube-analys, innehållsp
 
 Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
+Du kan hämta den aktuella fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
+
 >[!IMPORTANT]
->
->Du kan hämta den aktuella fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
 >
 >Från och med torsdagen den 13 februari 2025 (Cloud Manager 2025.2.0) använder Cloud Manager Code Quality en uppdaterad version av SonarQube 9.9 och en uppdaterad lista över regler som du kan [hämta här](/help/assets/CodeQuality-rules-latest-AMS-2024-12-0.xlsx).
 
