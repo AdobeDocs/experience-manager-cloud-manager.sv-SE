@@ -2,7 +2,7 @@
 title: Konsekvens för innehållskopia för miljö
 description: Med Content Copy i Cloud Manager kan man kopiera muterbart innehåll On-demand från Adobe Experience Manager 6.x-produktionsmiljöer som ligger på Adobe Managed Services till lägre testmiljöer.
 exl-id: 97915e58-a1d3-453f-b5ce-cad55ed73262
-source-git-commit: e3a656605ac59ca1f95985426932fddf2b53b7c9
+source-git-commit: 84b3366481c2efd497583627eac67046452f6c38
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 0%
@@ -64,7 +64,7 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
    Endast sökvägar som börjar med `/content`, `/conf`, `/etc`, `/var/workflow/models` eller `/var/commerce` kan tas med.
 
-1. Klicka på ikonen **![Lägg till mapp](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderAdd_18_N.svg) Lägg till sökväg** om du vill lägga till (eller ta med) sökvägen till innehållsuppsättningen.
+1. Klicka på ikonen ![Lägg till mapp](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderAdd_18_N.svg) **Lägg till sökväg** för att lägga till (eller ta med) sökvägen till innehållsuppsättningen.
 
 1. (Valfritt) Om det behövs lägger du till tilläggsbanor (upp till 50) genom att upprepa de två föregående stegen. I annat fall fortsätter du till nästa steg.
 
