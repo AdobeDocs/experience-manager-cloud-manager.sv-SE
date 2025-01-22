@@ -2,9 +2,9 @@
 title: Anpassade regler för kodkvalitet
 description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på bästa praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 8811ed130b2c7a37a0c811c308b57acf0872e9c8
+source-git-commit: 1b7b703f7cba69878bd98aa971844741ebea7dba
 workflow-type: tm+mt
-source-wordcount: '3514'
+source-wordcount: '3490'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,13 @@ Lär dig mer om de anpassade regler för kodkvalitet som körs av Cloud Manager 
 
 >[!NOTE]
 >
->Kodexemplen här är endast avsedda som illustrationer. Mer information om koncept och kvalitetsregler finns i [SonarQube&#39;s Concepts-dokumentationen](https://docs.sonarsource.com/sonarqube/latest/).
+>Kodexemplen här är endast avsedda som illustrationer. Mer information om koncept och kvalitetsregler finns i [SonarQube&#39;s Concepts-dokumentationen](https://docs.sonarsource.com/sonarqube-server/latest/).
 
->[!NOTE]
+Fullständiga SonarQube-regler kan inte laddas ned på grund av Adobe egna information. Du kan hämta den fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx). Fortsätt läsa det här dokumentet för beskrivningar och exempel på reglerna.
+
+>[!IMPORTANT]
 >
->Fullständiga SonarQube-regler kan inte laddas ned på grund av Adobe egna information. Du kan hämta den fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx). Fortsätt läsa det här dokumentet för beskrivningar och exempel på reglerna.
+>Från och med torsdagen den 13 februari 2025 (Cloud Manager 2025.2.0) använder Cloud Manager Code Quality en uppdaterad version av SonarQube 9.9 och en uppdaterad lista över regler som du kan [hämta här](/help/assets/CodeQuality-rules-latest-AMS-2024-12-0.xlsx).
 
 ## SonarQube-regler {#sonarqube-rules}
 
@@ -179,7 +181,7 @@ public void orDoThis() {
 ### Objekten `ResourceResolver` ska alltid stängas {#resourceresolver-objects-should-always-be-closed}
 
 * **Nyckel**: CQRules:CQBP-72
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2018.4.0
 
@@ -221,7 +223,7 @@ public void orDoThis(Session session) throws Exception {
 ### Använd inte slingserversökvägar för att registrera servrar {#do-not-use-sling-servlet-paths-to-register-servlets}
 
 * **Nyckel**: CQRules:CQBP-75
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2018.4.0
 
@@ -241,7 +243,7 @@ public class DontDoThis extends SlingAllMethodsServlet {
 ### Undantag som fångas upp ska loggas eller kastas, inte båda {#caught-exceptions-should-be-logged-or-thrown-but-not-both}
 
 * **Nyckel**: CQRules:CQBP-44—CatchAndeitherLogOrThrow
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -283,7 +285,7 @@ public void orDoThis() throws MyCustomException {
 ### Undvik loggsatser som följs av throw-satser {#avoid-having-a-log-statement-immediately-followed-by-a-throw-statement}
 
 * **Nyckel**: CQRules:CQBP-44 - ConsecutiousLogAndThrow
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -309,7 +311,7 @@ public void doThis() throws Exception {
 ### Undvik att logga på INFO när du hanterar GET- eller HEAD-förfrågningar {#avoid-logging-at-info-when-handling-get-or-head-requests}
 
 * **Nyckel**: CQRules:CQBP-44—LogInfoInGetOrHeadRequests
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 
 I allmänhet bör INFO-loggnivån användas för att avgränsa viktiga åtgärder och AEM är som standard konfigurerad för att logga på INFO-nivå eller högre. Metoderna GET och HEAD bör aldrig vara skrivskyddade och därför inte utgöra några viktiga åtgärder. Loggning på INFO-nivå som svar på GET- eller HEAD-förfrågningar skapar troligen avsevärt loggbrus, vilket gör det svårare att identifiera användbar information i loggfiler. Vid hantering av GET- eller HEAD-begäranden ska loggningen vara på WARN- eller ERROR-nivå om något har gått fel. Mer detaljerad felsökningsinformation finns i loggningen på nivån DEBUG eller TRACE.
@@ -337,7 +339,7 @@ public void doGet() throws Exception {
 ### Använd inte `Exception.getMessage()` som den första parametern i en loggningssats {#do-not-use-exception-getmessage-as-the-first-parameter-of-a-logging-statement}
 
 * **Nyckel**: CQRules:CQBP-44—ExceptionGetMessageIsFirstLogParam
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -370,7 +372,7 @@ public void doThis() {
 ### Inloggning av catch-block ska ske på WARN- eller ERROR-nivå {#logging-in-catch-blocks-should-be-at-the-warn-or-error-level}
 
 * **Nyckel**: CQRules:CQBP-44—WrongLogLevelInCatchBlock
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -403,7 +405,7 @@ public void doThis() {
 ### Skriv inte ut stackspår till konsolen {#do-not-print-stack-traces-to-the-console}
 
 * **Nyckel**: CQRules:CQBP-44—ExceptionPrintStackTrace
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -436,7 +438,7 @@ public void doThis() {
 ### Exportera inte till standardutdata eller standardfel {#do-not-output-to-standard-output-or-standard-error}
 
 * **Nyckel**: CQRules:CQBP-44—LogLevelConsolePrinters
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -469,7 +471,7 @@ public void doThis() {
 ### Undvik hårdkodade `/apps`- och `/libs`-sökvägar {#avoid-hardcoded-apps-and-libs-paths}
 
 * **Nyckel**: CQRules:CQBP-71
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2018.4.0
 
@@ -494,7 +496,7 @@ public void doThis(Resource resource) {
 ### Sling Scheduler ska inte användas {#sonarqube-sling-scheduler}
 
 * **Nyckel**: CQRules:AMSCORE-554
-* **Typ**: Kompatibilitet med kod/Cloud Service
+* **Typ**: `Code Smell` / Cloud Service-kompatibilitet
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -505,7 +507,7 @@ Läs [dokumentationen om Apache Sling-händelser och jobbhantering](https://slin
 ### AEM inaktuella API:er ska inte användas {#sonarqube-aem-deprecated}
 
 * **Nyckel**: AMSCORE-553
-* **Typ**: Kompatibilitet med kod/Cloud Service
+* **Typ**: `Code Smell` / Cloud Service-kompatibilitet
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -627,7 +629,7 @@ Ungefär som [Paket får inte innehålla regeln för duplicerade OSGi-konfigurat
 ### Standardredigeringsläget får inte vara Classic UI {#oakpal-default-authoring}
 
 * **Nyckel**: ClassicUIAuthoringMode
-* **Typ**: Kompatibilitet med kodmeddelande/Cloud Service
+* **Typ**: `Code Smell` / Cloud Service-kompatibilitet
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -636,7 +638,7 @@ OSGi-konfigurationen `com.day.cq.wcm.core.impl.AuthoringUIModeServiceImpl` defin
 ### Komponenter med dialogrutor bör ha dialogrutor för användargränssnitt med pekfunktioner {#oakpal-components-dialogs}
 
 * **Nyckel**: ComponentWithOnlyClassicUIDialog
-* **Typ**: Kompatibilitet med kod/Cloud Service
+* **Typ**: `Code Smell` / Cloud Service-kompatibilitet
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -651,7 +653,7 @@ Dokumentationen för AEM finns information och verktyg för hur du konverterar k
 ### Omvända replikeringsagenter ska inte användas {#oakpal-reverse-replication}
 
 * **Nyckel**: ReverseReplication
-* **Typ**: Kompatibilitet med kod/Cloud Service
+* **Typ**: `Code Smell` / Cloud Service-kompatibilitet
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
@@ -693,7 +695,7 @@ AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt.
 ### Användning av arbetsflödesprocesser som inte är kompatibla med Cloud Service {#oakpal-usage-cloud-service}
 
 * **Nyckel**: CloudServiceIncompatibleWorkflowProcess
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Blockerare
 * **Sedan**: Version 2021.2.0
 
@@ -704,7 +706,7 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://g
 ### Användning av statiska mallar rekommenderas inte för redigerbara mallar {#oakpal-static-template}
 
 * **Nyckel**: StaticTemplateUsage
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -715,7 +717,7 @@ Migrering från statiska till redigerbara mallar kan till stor del automatiseras
 ### Användning av äldre baskomponenter rekommenderas inte {#oakpal-usage-legacy}
 
 * **Nyckel**: LegacyFoundationComponentUsage
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -726,7 +728,7 @@ De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation
 ### Definitionsnoder för anpassade sökindex måste vara direkt underordnade `/oak:index` {#oakpal-custom-search}
 
 * **Nyckel**: OakIndexLocation
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -735,7 +737,7 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 ### Definitionsnoder för anpassade sökindex måste ha en compatVersion av 2 {#oakpal-custom-search-compatVersion}
 
 * **Nyckel**: IndexCompatVersion
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -744,7 +746,7 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 ### Underordnade noder för anpassade sökindexdefinitionsnoder måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
 
 * **Nyckel**: IndexDescendantNodeType
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -753,7 +755,7 @@ Problem som är svåra att felsöka kan uppstå när en anpassad sökindexdefini
 ### Definitionsnoder för anpassade sökindex måste innehålla en underordnad nod med namnet `indexRules` som har underordnade noder {#oakpal-custom-search-index}
 
 * **Nyckel**: IndexRulesNode
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -762,7 +764,7 @@ En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en unde
 ### Definitionsnoder för anpassade sökindex måste följa namnkonventioner {#oakpal-custom-search-definitions}
 
 * **Nyckel**: IndexName
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -771,7 +773,7 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 ### Definitionsnoder för anpassade sökindex måste använda indextypen lucen {#oakpal-index-type-lucene}
 
 * **Nyckel**: IndexType
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -780,7 +782,7 @@ AEM Cloud Service kräver att anpassade sökindexdefinitioner (d.v.s. noder av t
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `seed` {#oakpal-property-name-seed}
 
 * **Nyckel**: IndexSeedProperty
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
@@ -789,7 +791,7 @@ AEM Cloud Service tillåter inte att anpassade sökindexdefinitioner (d.v.s. nod
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `reindex` {#oakpal-reindex-property}
 
 * **Nyckel**: IndexReindexProperty
-* **Typ**: kodmeddelande
+* **Typ**: `Code Smell`
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 

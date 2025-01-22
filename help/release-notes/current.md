@@ -1,20 +1,19 @@
 ---
-title: Versionsinformation för Cloud Manager 2024.12.0
-description: Läs om Cloud Manager 2024.12.0 på Adobe Managed Services.
+title: Versionsinformation för Cloud Manager 2025.1.0
+description: Läs om Cloud Manager 2025.1.0 på Adobe Managed Services.
 feature: Release Information
-exl-id: 811567af-66c9-4c1f-ae9e-60603b70ef80
-source-git-commit: 60db60be95318ebf6f2af91a94a9475604a15003
+source-git-commit: c25508b24f00b8f8cfa7bae3cc4b0d6ecf684db3
 workflow-type: tm+mt
-source-wordcount: '355'
+source-wordcount: '189'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation om Cloud Manager 2024.12.0 i Adobe Managed Services {#release-notes}
+# Versionsinformation om Cloud Manager 2025.1.0 i Adobe Managed Services {#release-notes}
 
 <!-- RELEASE WIKI  https://wiki.corp.adobe.com/display/DMSArchitecture/Cloud+Manager+2024.12.0+Release -->
 
-Läs mer om [!UICONTROL Cloud Manager] 2024.12.0 i Adobe Managed Services.
+Läs mer om [!UICONTROL Cloud Manager] 2025.1.0 i Adobe Managed Services.
 
 >[!NOTE]
 >
@@ -24,39 +23,33 @@ Läs mer om [!UICONTROL Cloud Manager] 2024.12.0 i Adobe Managed Services.
 
 <!-- SAVE FOR FUTURE POSSIBLE USE No notable bugs or features for the September release of Cloud Manager. -->
 
-Versionsdatumet för [!UICONTROL Cloud Manager] 2024.12.0 är 5 december 2024.
+Lanseringsdatumet för [!UICONTROL Cloud Manager] 2025.1.0 är onsdagen den 22 januari 2024.
 
-Nästa planerade version är 23 januari 2025.
+Nästa planerade version är torsdagen den 13 februari 2025.
 
 ## Nyheter {#what-is-new}
 
-<!-- * The AEM Code Quality step now uses SonarQube 9.9 Server, replacing the older 7.4 version. This upgrade brings additional security, performance, and code quality checks, offering more comprehensive analysis and coverage for your projects. --> <!-- CMGR-45683 -->
+**Regler för kodkvalitet:** Cloud Manager Code Quality step kommer att börja använda SonarQube Server 9.9 med Cloud Manager version 2025.2.0, som är planerad till torsdagen den 13 februari 2025.
 
-* Från och med torsdagen den 13 februari 2025 använder Cloud Manager-kodkvalitetssteget nu en uppgraderad SonarQube-version 9.9.5.90363.
+Uppdaterade SonarQube-regler finns nu tillgängliga på [Kodkvalitetsregler](/help/using/code-quality-testing.md#code-quality-testing-step) för att förbereda.
 
-  De uppdaterade reglerna, som är tillgängliga för AMS på [den här länken](/help/using/code-quality-testing.md#code-quality-testing-step), avgör säkerhetspoängen och kodkvaliteten för Cloud Manager-pipelines. Den här uppdateringen kan påverka dina kvalitetsportar och kan eventuellt blockera distributioner.
+Du kan&quot;kontrollera&quot; de nya reglerna tidigt genom att ange följande textvariabel för pipeline (se skärmbild nedan):
 
-## Program för tidigt antagande {#early-adoption}
+`CM_BUILD_IMAGE_OVERRIDE` = `self-service-build:sonar-99-upgrade-java17or21`
 
-Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa kommande funktioner.
+Ange dessutom följande variabel för att säkerställa att kodkvalitetssteget körs för samma implementering (som normalt hoppas över för samma `commitId`):
 
-### Använd din egen Git - nu med stöd för GitLab och Bitbucket {#gitlab-bitbucket}
+`CM_DISABLE_BUILD_REUSE` = `true`
 
-<!-- BOTH CS & AMS -->
-
-Funktionen **Hämta egen Git** har utökats med stöd för externa databaser, som GitLab och Bitbucket. Det nya stödet är utöver det stöd som redan finns för privata och företags GitHub-databaser. När du lägger till dessa nya rapporter kan du även länka dem direkt till dina rörledningar. Du kan lagra dessa databaser på publika molnplattformar eller i ditt privata moln eller din privata infrastruktur. Den här integreringen eliminerar också behovet av konstant kodsynkronisering med databasen Adobe och ger möjlighet att validera pull-begäranden innan de slås samman till en huvudgren.
-
-Pipelinjer som använder externa databaser (utom GitHub-värddatabaser) och **Distributionsutlösaren** som är inställd på **Vid Git-ändringar** startar nu automatiskt.
-
-Se [Lägg till externa databaser i Cloud Manager](/help/managing-code/external-repositories.md).
-
-![Dialogrutan Lägg till databas](/help/release-notes/assets/repositories-add-release-notes.png)
+![Konfigurationssida för variabler](/help/release-notes/assets/variables-config.png)
 
 >[!NOTE]
 >
->För närvarande gäller kvalitetskontrollerna av koden för pull-begäran som är klar endast för GitHub-värdbaserade databaser, men en uppdatering som utökar den här funktionen till andra Git-leverantörer finns i arbetsflödet.
+>Adobe rekommenderar att du skapar en ny CI/CD Code Quality-pipeline som är konfigurerad till samma gren som huvudproduktionsflödet. Ställ in lämpliga variabler *före* den 13 februari 2025 för att verifiera att de nya tvingande reglerna inte inför blockerare.
 
-Om du är intresserad av att testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till [Grp-CloudManager_BYOG@adobe.com](mailto:Grp-CloudManager_BYOG@adobe.com) från den e-postadress som är kopplad till din Adobe ID. Ta med vilken Git-plattform du vill använda och om du har en privat/offentlig eller företagsdatabasstruktur.
+<!-- ## Early adoption program {#early-adoption}
+
+Be a part of Cloud Manager's early adoption program and have a chance to test upcoming features. -->
 
 
 <!-- ## Bug fixes {#bug-fixes}
