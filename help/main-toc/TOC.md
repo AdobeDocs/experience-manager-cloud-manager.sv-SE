@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 27cd3bbcaa41600167e4d692bd94834c28b0826b
+source-git-commit: 9d9bf7d689c0ace41bce3f31febe8ba78636c01f
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '354'
 ht-degree: 9%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 9%
    + [Inloggning för första gången](/help/getting-started/first-time-login.md)
    + [Navigering](/help/getting-started/navigation.md)
    + [Programinställningar](/help/getting-started/program-setup.md)
-   + Skapa AEM {#project-creation}
+   + Skapa AEM-projekt {#project-creation}
       + [Använda guiden](/help/getting-started/using-the-wizard.md)
       + [Projektinställningar](/help/getting-started/project-setup.md)
       + [Byggmiljön](/help/getting-started/build-environment.md)
@@ -74,6 +74,8 @@ ht-degree: 9%
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell](/help/release-notes/current.md)
+   + 2025 {#rn-2025}
+      + [2025.1.0](/help/release-notes/2025/2025-1-0.md)
    + 2024 {#rn-2024}
       + [2024.12.0](/help/release-notes/2024/2024-12-0.md)
       + [2024.11.0](/help/release-notes/2024/2024-11-0.md)
