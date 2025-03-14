@@ -1,73 +1,61 @@
 ---
-title: Versionsinformation för Cloud Manager 2025.2.0
-description: Läs om Cloud Manager 2025.2.0 för Adobe Managed Services.
+title: Versionsinformation för Cloud Manager 2025.3.0
+description: Läs om Cloud Manager 2025.3.0 för Adobe Managed Services.
 feature: Release Information
-exlid: 669b1f2d8fc68526eb091e0f93f70ab93033d193
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 51dd060ec9b922ace9ce537cac669c61154284e8
+source-git-commit: 31ae069c9e121963b4609af3f10ac08ab5539fb8
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
 
-# Versionsinformation om Cloud Manager 2025.2.0 i Adobe Managed Services {#release-notes}
+# Versionsinformation om Cloud Manager 2025.3.0 i Adobe Managed Services {#release-notes}
 
 <!-- RELEASE WIKI  https://wiki.corp.adobe.com/display/DMSArchitecture/Cloud+Manager+2025.02.0+Release -->
 
-Läs mer om [!UICONTROL Cloud Manager] 2025.2.0 för Adobe Managed Services.
+Läs mer om [!UICONTROL Cloud Manager] 2025.3.0 för Adobe Managed Services.
 
 Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
-Lanseringsdatumet för [!UICONTROL Cloud Manager] 2025.2.0 är torsdagen den 13 februari 2025.
+Lanseringsdatumet för [!UICONTROL Cloud Manager] 2025.3.0 är torsdagen den 13 mars 2025.
 
-Nästa planerade version är torsdagen den 13 mars 2025.
+Nästa planerade version är torsdagen den 10 april 2025.
 
 ## Nyheter {#what-is-new}
 
-<!-- * The AEM Code Quality step now uses SonarQube 9.9 Server, replacing the older 7.4 version. This upgrade brings additional security, performance, and code quality checks, offering more comprehensive analysis and coverage for your projects. --> <!-- CMGR-45683 -->
+* **Kör flera pipelines**
 
-* **Uppgraderade SonarQube**
+  Möjligheten att köra flera rörledningar samtidigt har introducerats på sidan Pipelines. Användarna måste välja minst en pipeline men högst tio. Klicka på **Kör markerat (x)** i det övre högra hörnet på sidan för pipeline. En modal dialogruta visas med en lista över alla rörledningar som inte kan startas. Klicka på **Kör** om du vill initiera alla giltiga pipelines.
 
-  Från och med torsdagen den 13 februari 2025 använder Cloud Manager kodkvalitetssteg nu SonarQube 9.9.5.90363.
+  ![Dialogrutan Kör markerade pipelines](/help/release-notes/assets/run-selected-pipelines.png)
 
-  De uppdaterade reglerna, som är tillgängliga för AMS på [den här länken](/help/using/code-quality-testing.md#code-quality-testing-step), avgör säkerhetspoängen och kodkvaliteten för Cloud Manager-pipelines.
 
-* SonarQube 9.9 är nu standardmotor för kodkvalitetskontroll för alla kunder.
 
-* **Stöd för Java 17 och Java 21-byggmiljö**
+## Program för tidigt antagande {#early-adoption}
 
-  Kunderna kan nu bygga med Java 17 eller Java 21 som tillval, och dra nytta av prestandaförbättringar och nya språkfunktioner. Se [Byggmiljö](/help/getting-started/build-environment.md) för konfigurationssteg, inklusive uppdatering av projektbeskrivningen för Maven och vissa biblioteksversioner.
+Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa kommande funktioner.
 
-  >[!NOTE]
-  >I Cloud Service-miljöer, när byggversionen är inställd på Java 17 eller Java 21, är standardvärdet Java 21.
+### Självbetjäningsuppdateringar för AMS Cloud Manager-kunder
 
-* **Valideringar av innehållskopiering har utökats**
+Som en del av programmet för tidiga användare kan Adobe Managed Services Cloud Manager-kunder nu utföra självbetjäningsuppdateringar via användargränssnittet i **Cloud Manager** . Den här funktionen är för närvarande endast tillgänglig i *utvecklingsmiljöer* och innehåller begränsad felrapportering för fel.
 
-  Verifieringsreglerna för innehållskopiering har uppdaterats. I den här versionen kan användare inte längre utlösa en innehållskopia om det finns aktiva pipeline-körningar i käll- eller målmiljön. Användarna måste vänta tills alla pågående pipeline-körningar är klara innan de startar en innehållskopia.
+Kunder kan söka efter Service Pack-uppdateringar på sidan **Programöversikt** under avsnittet **Miljö** (**trepunktsmeny**).
 
-<!-- 
-## Early adoption program {#early-adoption}
+![Leta efter uppdateringsmenyalternativ](/help/release-notes/assets/check-for-updates-1.png)
 
-Be a part of Cloud Manager's early adoption program and have a chance to test upcoming features.
 
-### Bring Your Own Git - now with support for GitLab and Bitbucket {#gitlab-bitbucket}
+![Uppdatera Service Pack-dialogrutan](/help/release-notes/assets/check-for-updates-2.png)
 
-The **Bring Your Own Git** feature has been expanded to include support for external repositories, such as GitLab and Bitbucket. This new support is in addition to the already existing support for private and enterprise GitHub repositories. When you add these new repos, you can also link them directly to your pipelines. You can host these repositories on public cloud platforms or within your private cloud or infrastructure. This integration also removes the need for constant code synchronization with the Adobe repository and provides the ability to validate pull requests before merging them into a main branch.
+Installations- och uppgraderingsprocessen kan spåras på sidan **Aktivitet**.
 
-Pipelines using external repositories (excluding GitHub-hosted ones) and the **Deployment Trigger** set to **On Git Changes** now start automatically.
+När processen är klar måste kunderna **godkänna körningen** för uppgraderingen av Service Pack för att slutföra den.
 
-See [Add external repositories in Cloud Manager](/help/managing-code/external-repositories.md).
+![Godkänn uppdatering av tjänstsida](/help/release-notes/assets/check-for-updates-3.png)
 
-![Add Repository dialog box](/help/release-notes/assets/repositories-add-release-notes.png)
-
->[!NOTE]
->
->Currently, the out-of-the-box pull request code quality checks are exclusive to GitHub-hosted repositories, but an update to extend this functionality to other Git vendors is in the works.
-
-If you are interested in testing this new feature and sharing your feedback, send an email to [Grp-CloudManager_BYOG@adobe.com](mailto:Grp-CloudManager_BYOG@adobe.com) from your email address associated with your Adobe ID. Be sure to include which Git platform you want to use and whether you are on a private/public or enterprise repository structure. -->
+Om du är intresserad av att testa den nya funktionen och dela med dig av dina synpunkter kan du kontakta Adobe Customer Success Engineer.
 
 
 <!-- ## Bug fixes {#bug-fixes}
