@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 9d910e1b1a4aad000a8389ddc22ce380bbccd4ef
+source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '845'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Kortet **Pipelines** på sidan **Programöversikt** i Cloud Manager ger dig en �
 
 ![Förloppskort i Cloud Manager](/help/assets/configure-pipelines/pipelines-card.png)
 
-Genom att klicka på ellipsknappen bredvid varje pipeline kan du utföra följande åtgärder:
+Genom att klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid varje pipeline, kan du utföra följande åtgärder:
 
 * [Kör pipeline](#running-pipelines).
 * [Redigera pipeline](#editing-pipelines).
@@ -70,45 +70,56 @@ Klicka på **Visa information** om du vill granska [information om pipelinekörn
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 1. Navigera till kortet **Pipelines** från sidan **Programöversikt**.
-1. Klicka på ellipsknappen bredvid den pipeline som du kör och välj sedan **Kör** på menyn.
+1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid den pipeline som du kör och klicka sedan på **Kör**.
 
    Statuskolumnen anger när pipeline-körningen börjar.
 
-   Du kan se information om körningen genom att klicka på ellipsknappen igen och välja **[Visa information](#view-details)**.
+   Du kan visa information om körningen genom att klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) igen och klicka på **[Visa information](#view-details)**.
 
-   Beroende på typen av pipeline kan du eventuellt avbryta körningen genom att klicka på ellipsknappen igen och välja **Avbryt**.
+   Beroende på vilken typ av pipeline det gäller kan du eventuellt avbryta körningen genom att klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) igen och klicka på **Avbryt**.
 
 ## Redigera rörledningar {#editing-pipelines}
 
+Du kan inte redigera en pipeline som körs.
+
+**Så här redigerar du pipelines:**
+
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline som du vill redigera. Välj sedan **Redigera** på menyn.
+1. Navigera från sidan **Programöversikt** till kortet **Pipelines**.
 
-1. Dialogrutan **Redigera produktionspipeline** eller **Redigera icke-produktionspipeline** visas. Du kan redigera samma information som du angav när du skapade pipeline.
+1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid den pipeline som du vill redigera och klicka sedan på **Redigera**.
+
+1. I dialogrutorna **Redigera produktionspipeline** eller **Redigera icke-produktionspipeline** kan du redigera samma information som du angav när du skapade pipeline.
 
    Mer information om fälten och konfigurationsalternativen som är tillgängliga för pipelines finns i [Konfigurera produktionsförgreningar](/help/using/production-pipelines.md) och [Konfigurera icke-produktionsförlopp](/help/using/non-production-pipelines.md).
 
 1. Klicka på **Uppdatera** när du är klar.
 
->[!NOTE]
->
->Du kan inte redigera en pågående pipeline.
-
 ## Ta bort rörledningar {#deleting-pipelines}
 
-1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
+Du kan inte ta bort en pågående pipeline.
 
-1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör. Välj sedan **Ta bort** på menyn.
-
->[!NOTE]
->
->Du kan inte ta bort en pågående pipeline.
-
-## Visa detaljer {#view-details}
+**Så här tar du bort pipelines:**
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 
-1. Navigera till kortet **Pipelines** på sidan **Programöversikt** och klicka på ellipsknappen bredvid den pipeline du kör. Välj sedan **Visa information** på menyn.
+1. Navigera från sidan **Programöversikt** till kortet **Pipelines**.
+
+1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid den pipeline som du kör och klicka sedan på **Ta bort**.
+
+
+## Visa försäljningsförloppsinformation {#view-details}
+
+Du kan bara visa information om en pipeline som körs eller har körts minst en gång.
+
+**Så här visar du pipeline-information:**
+
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
+
+1. Navigera från sidan **Programöversikt** till kortet **Pipelines**.
+
+1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid den pipeline som du kör och klicka sedan på **Visa information**.
 
 1. Du dirigeras till informationssidan för den aktuella pipelinen.
 
@@ -126,15 +137,10 @@ Klicka på länken **Visa information** för att visa avsnittet **Varaktighet**.
 
 ![Varaktighet](/help/assets/configure-pipelines/duration.png)
 
-Om din pipeline innehöll ett **kodskanningssteg**, vilket gav upphov till problem, kan du klicka på knappen **Hämta detaljer** för att visa en lista över [kodkvalitetstester](/help/using/code-quality-testing.md) som inte godkänts.
+Om din pipeline innehöll ett **kodskanningssteg**, vilket gav upphov till problem, kan du klicka på **Hämta information** för att visa en lista över [kodkvalitetstester](/help/using/code-quality-testing.md) som inte godkänts.
 
 ![Kodkvalitetsproblem](assets/managing-pipelines-code-quality-issues.png)
 
 Det finns en **projektfilsplats**-kolumn i CSV-filen som anger platsen för den felaktiga koden. Den här kolumnen är den projektrelativa sökvägen, medan kolumnen **Filplats** är Maven-genererad.
 
 ![Information om problem med genomsökning av projektkod](assets/managing-pipelines-code-quality-details.png)
-
-
->[!NOTE]
->
->Du kan bara visa information om en pipeline som körs eller har körts minst en gång.

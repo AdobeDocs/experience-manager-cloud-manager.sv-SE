@@ -2,9 +2,9 @@
 title: Övervaka miljöer
 description: Lär dig övervaka dina miljöer i Cloud Manager.
 exl-id: 32886133-d6c0-4aed-8bb0-81b84f63e825
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 53fb666ab6caff7a697d7f1942ce25f2bf27a2ce
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,13 @@ Om ett mätvärde överskrider varningströskeln (men under det kritiska tröske
 
 Om ett mätvärde överstiger dess kritiska tröskelvärde anses det vara i ett kritiskt tillstånd.
 
-Adobe Managed Services anger tröskelvärden som du kan visa i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena desamma för kunderna, men det finns fall där Adobe Managed Services redigerar tröskelvärdena för att matcha specifika kundkrav. Skicka eventuella frågor om tröskelvärdena till er Customer Success Engineer (CSE).
+Adobe Managed Services anger tröskelvärden som du kan visa i [!UICONTROL Cloud Manager]. I de flesta fall är tröskelvärdena olika för olika kunder, men det finns fall där Adobe Managed Services redigerar tröskelvärdena så att de matchar specifika kundkrav. Skicka eventuella frågor om tröskelvärdena till er Customer Success Engineer (CSE).
 
 ## Övervakning av åtkomstsystem {#accessing-system-monitoring}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
-1. Klicka på ellipsknappen för det program som du vill övervaka.
+1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) för programmet som du vill övervaka.
 1. Klicka på **Visa övervakning** under rubriken **Hantera** på menyn för att öppna sidan **Rapporter** som visar information om systemövervakning.
 
    ![Inställningar](/help/assets/first-timea1.png)
@@ -73,7 +73,7 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 #### Värd {#host}
 
-* **Läs in per kärna**: Antalet processer som processorn kör. Eller så är antalet processer i kö som befinner sig i vänteläge i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
+* **Läs in per kärna**: Antalet processer som CPU kör. Eller så är antalet processer i kö som befinner sig i vänteläge i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
 * **Antal processer**: Antalet processer som är öppna.
 * **Antal användare**: Antalet användare med en aktiv gränssnittssession.
 * **Minnesanvändning**: Procentandel av systemminnet som är allokerat för tillfället.
@@ -88,7 +88,7 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 * **Diskutrymme**: Det använda diskutrymmet (i MB) för varje monteringspunkt på värden. Det finns olika mätvärden för varje monteringspunkt. Det finns minst mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
 * **Mappstorlek**
-* **AEM Segmentarkiv**: Använt diskutrymme (i gigabyte) för AEM.
+* **AEM Segment Store**: Använt diskutrymme (i gigabyte) för AEM Segment Store.
 
 #### Program {#application}
 
@@ -98,7 +98,7 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 ## SLA-rapportering {#sla-reporting}
 
-Du kan se hur väl din AEM presterar i förhållande till ditt avtalade servicenivåavtal (SLA).
+Du kan se hur din AEM-produktionsmiljö fungerar i förhållande till din avtalade service level agreement (SLA).
 
 I följande diagram visas SLA månatliga resultat för 2019.
 
@@ -114,7 +114,7 @@ Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incid
 
 ## SLA metrics {#sla-metrics}
 
-* **Författarkontrakt**: Den SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
+* **Författarkontrakt**: SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
 * **AMS Author SLA**: Uppmätt drifttid för produktionsförfattarnivån, factoringincidenter orsakade av leverantörer eller Adobe.
 * **Författare av SLA**: Den uppmätta drifttiden för författarnivån ignorerar schemalagd drifttid, till exempel underhållsfönster.
 * **Slutanvändaravtal**: SLA som definierats i ditt avtal med Adobe Managed Services för publiceringsnivån.

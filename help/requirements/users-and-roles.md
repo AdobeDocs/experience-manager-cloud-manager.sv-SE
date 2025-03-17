@@ -2,9 +2,9 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 53fb666ab6caff7a697d7f1942ce25f2bf27a2ce
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '717'
 ht-degree: 4%
 
 ---
@@ -23,7 +23,7 @@ Många funktioner i [!UICONTROL Cloud Manager] kräver specifika behörigheter f
 
 >[!NOTE]
 >
->Om du vill använda [!UICONTROL Cloud Manager] måste du ha en Adobe ID och produktkontexten för Adobe Managed Services.
+>Om du vill använda [!UICONTROL Cloud Manager] måste du ha en Adobe ID och Adobe Managed Services produktkontext.
 
 ## Rolldefinitioner {#role-definitions}
 
@@ -36,7 +36,7 @@ I följande tabell sammanfattas rollerna i Cloud Manager.
 | Deployment Manager | Hanterar distributionsåtgärder och använder [!UICONTROL Cloud Manager] för att utföra mellanlagrings- och produktionsdistributioner, redigera CI/CD-pipelines och godkänna kritiska 3-nivåfel vid behov. De har även tillgång till Git-databasen. |
 | Developer | Utvecklar och testar anpassad programkod och använder främst [!UICONTROL Cloud Manager] för att visa distributionsstatus och få åtkomst till Git-databasen för kodimplementeringar. |
 | Customer Success Engineer | CSE stöder vanligtvis kundframgångar för AMS-kunder. De interagerar med [!UICONTROL Cloud Manager] i syfte att köra distributioner som kräver CSE-övervakning. |
-| Innehållsförfattare | De interagerar vanligtvis inte med [!UICONTROL Cloud Manager], men de kan använda programväljaren [!UICONTROL Cloud Manager] för att komma åt AEM. |
+| Innehållsförfattare | De interagerar vanligtvis inte med [!UICONTROL Cloud Manager], men de kan använda programväljaren [!UICONTROL Cloud Manager] för att få åtkomst till AEM. |
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ I följande tabell sammanfattas rollerna i Cloud Manager.
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 En administratör måste skapa nya produktprofiler under produktkontexten [!UICONTROL AEM Managed Services] för att tilldela rollbaserade behörigheter för [!UICONTROL Cloud Manager] -användare, som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna.
 
@@ -95,24 +95,24 @@ När du har skapat produktprofiler kan du tilldela användare eller användargru
 
 1. Logga in på Admin Console på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
 
-1. Gå till Admin Console och välj fliken **Användare**.
+1. I Admin Console väljer du fliken **Användare**.
 
    ![Fliken Användare](/help/assets/admin-console-users.png)
 
 1. Klicka på **Användare** i den vänstra navigeringspanelen och klicka sedan på en användare för att ändra den.
 
-1. Klicka på ellipsknappen i avsnittet **Produkter** och välj **Redigera**.
+1. Klicka på ikonen ![Mer, ellips](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) i avsnittet **Produkter** och klicka på **Redigera**.
 
    ![Redigera användare](/help/assets/admin-console-edit-user.png)
 
-1. Klicka på plusknappen i dialogrutan **Redigera produkter och användargrupper** och välj de profiler som ska tilldelas till användaren.
+1. I dialogrutan **Redigera produkter och användargrupper** klickar du på ikonen ![Lägg till, plustecken](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Add_18_N.svg) och väljer de profiler som ska tilldelas till användaren.
 
-   * Om användaren redan är tilldelad rollerna är plusknappen en redigeringsknapp (en penna), men fungerar på samma sätt.
+   * Om användaren redan är tilldelad rollerna är knappen ![Lägg till plus](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Add_18_N.svg) en redigeringsknapp (en penna), men fungerar på samma sätt.
 
    ![Redigera produkter och användargrupper](/help/assets/admin-console-edit-products-and-user-groups.png)
 
 1. Klicka på **Spara** för att spara profilerna för användaren.
 
-Upprepa samma steg om du vill tilldela profiler till användargrupper, men välj **Användargrupper** i den vänstra navigeringspanelen på fliken **Användare**. Klicka på en användargrupp och välj fliken **Tilldelade produktprofiler** och klicka på **Tilldela produktprofil** för att tilldela profiler.
+Upprepa samma steg om du vill tilldela profiler till användargrupper, men välj **Användargrupper** i den vänstra navigeringspanelen på fliken **Användare**. Klicka på en användargrupp och välj **Tilldelade produktprofiler** och klicka på **Tilldela produktprofil** för att tilldela profiler.
 
 ![Tilldela profiler till gruppen](/help/assets/admin-console-edit-user-groups.png)

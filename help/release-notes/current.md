@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.3.0
 description: Läs om Cloud Manager 2025.3.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 31ae069c9e121963b4609af3f10ac08ab5539fb8
+source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,6 @@ Kunder kan söka efter Service Pack-uppdateringar på sidan **Programöversikt**
 
 ![Leta efter uppdateringsmenyalternativ](/help/release-notes/assets/check-for-updates-1.png)
 
-
 ![Uppdatera Service Pack-dialogrutan](/help/release-notes/assets/check-for-updates-2.png)
 
 Installations- och uppgraderingsprocessen kan spåras på sidan **Aktivitet**.
@@ -56,6 +55,8 @@ När processen är klar måste kunderna **godkänna körningen** för uppgraderi
 ![Godkänn uppdatering av tjänstsida](/help/release-notes/assets/check-for-updates-3.png)
 
 Om du är intresserad av att testa den nya funktionen och dela med dig av dina synpunkter kan du kontakta Adobe Customer Success Engineer.
+
+Se även [Service Pack-uppdateringar för utvecklingsmiljöer - tidig Adobe](/help/using/service-packs-environments.md).
 
 
 <!-- ## Bug fixes {#bug-fixes}

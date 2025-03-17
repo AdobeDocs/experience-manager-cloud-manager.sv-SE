@@ -1,10 +1,10 @@
 ---
-title: Lägg till externa databaser i Cloud Manager (tidig Adobe)
+title: Lägg till externa databaser i Cloud Manager - tidig Adobe
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub-, GitLab- och Bitbucket-databaser.
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: e7e2268f866105970e02d4bc54c46613749e5ac0
+source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
    | --- | --- |
    | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
    | **Lägg till ny åtkomsttoken** | **Databastyp: GitHub**<br> ・ Ange ett namn för åtkomsttoken som du skapar i textfältet **Token Name**.<br> ・ Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).<br> ・ behörigheter krävs:<br>  ・ `Read access to metadata`<br>  ・ `Read and write access to code and pull requests`.<br> ・ Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
-   |  | **Databastyp: GitLab**<br> ・ Ange ett namn för åtkomsttoken som du skapar i textfältet **Token Name**.<br> ・ Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).<br> ・ behörigheter krävs:<br>  ・ `api`<br>  ・ `read_api`<br>  ・ `read_repository`<br>  ・ `write_repository`<br> ・ Klistra in den token du just skapade i fältet **Åtkomsttoken** . |
+   |  | **Databastyp: GitLab**<br> ・ Ange ett namn för åtkomsttoken som du skapar i textfältet **Token Name**.<br> ・ Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).<br> ・ behörigheter krävs:<br>  ・ `api`<br>  ・ `read_api`<br>  ・ `read_repository`<br>  ・ `write_repository`<br> ・ Klistra in den token du just skapade i fältet **Åtkomsttoken** . |
    |  | **Databastyp: Bitbucket**<br> ・ I textfältet **Token Name** anger du ett namn för åtkomsttoken som du skapar.<br> ・ Skapa en databasåtkomsttoken med hjälp av [Bitbucket-dokumentationen](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).<br> ・ behörigheter krävs:<br>  ・ `Read and write access to code and pull requests` |
 
    >[!NOTE]

@@ -2,9 +2,9 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 53fb666ab6caff7a697d7f1942ce25f2bf27a2ce
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1439'
 ht-degree: 0%
 
 ---
@@ -50,15 +50,15 @@ Det finns två verktygsfält ovanpå varandra.
 
 Den första är Cloud Manager header. Sidhuvudet är beständigt när du navigerar i Cloud Manager. Det är en ankarpunkt som ger dig tillgång till inställningar och information som gäller för alla Cloud Manager-program.
 
-![Experience Cloud-huvudet](assets/experience-cloud-header.png)
+![Experience Cloud-rubriken](assets/experience-cloud-header.png)
 
-1. Hamburgerikonen till vänster om huvudet är en listruta som ger åtkomst till flikar för specifika delar av ett enskilt program. Beroende på sammanhanget kan du även växla mellan licensinstrumentpanelen och konsolen **[Mina program](#my-programs-console)** .
+1. Ikonen ![Visa meny, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) till vänster om huvudet är en nedrullningsbar meny som ger åtkomst till flikar för specifika delar av ett enskilt program. Beroende på sammanhanget kan du även växla mellan licensinstrumentpanelen och konsolen **[Mina program](#my-programs-console)** .
    * License Dashboard gäller endast AEM as a Cloud Service-program, inte AMS-program.
    * Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet.
 1. Med Cloud Manager-knappen kommer du tillbaka till My Programs-konsolen i Cloud Manager oavsett var du befinner dig i Cloud Manager.
-1. Klicka på knappen Feedback för att ge Adobe feedback om Cloud Manager.
+1. Klicka på **Feedback** om du vill lämna feedback till Adobe om Cloud Manager.
 1. Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera.
-1. Genom att klicka på lösningens väljare kan du snabbt gå över till andra Experience Cloud-lösningar.
+1. Genom att klicka på lösningväljaren kan du snabbt komma igång med andra Experience Cloud-lösningar.
 1. Ikonen Hjälp ger snabb åtkomst till utbildningsresurser och supportresurser.
 1. Aviseringsikonen är märkt med antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md)
 1. Välj den ikon som representerar användaren för att få åtkomst till dina användarinställningar. Om du inte väljer någon användarbild tilldelas ikonen slumpmässigt.
@@ -123,7 +123,7 @@ Informationsikonen ger dig även snabb åtkomst till ytterligare information om 
 
 ![Information](assets/information-view.png)
 
-Med ellipsikonen får du tillgång till ytterligare åtgärder som du kan vidta i programmet.
+Ikonen ![Mer, ellips](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg), ger dig tillgång till ytterligare åtgärder som du kan vidta i programmet.
 
 ![Ellipsknappen för program](assets/program-ellipsis.png)
 

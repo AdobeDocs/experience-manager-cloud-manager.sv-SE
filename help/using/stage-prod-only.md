@@ -1,21 +1,21 @@
 ---
-title: Pipeline med endast scener och endast prod
+title: Pipelines för endast scener och endast produkter - tidig redigering
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 03f7429fd2c4a6dd4c8ae3228eff9c8cdab1ded8
+source-git-commit: 2c6f5692ffa31e02d7338e68063d0c1c03a0c73b
 workflow-type: tm+mt
-source-wordcount: '932'
+source-wordcount: '936'
 ht-degree: 0%
 
 ---
 
-# Rörledningar endast för scener och produktion {#stage-prod-only}
+# Rörledningar endast för scener och enbart för produktion (tidig redigering) {#stage-prod-only}
 
 Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md#early-adoption).
+>Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/2024/2024-8-0.md).
 
 ## Ökning {#overview}
 
@@ -41,7 +41,7 @@ De här dedikerade rörledningarna ger större flexibilitet, men du bör notera 
 >I rörledningar som endast är avsedda för produktion används alltid artefakter från den pipeline som bara är till för scenen. Detta gäller även om standardproduktionsflödet under tiden har driftsatt något annat på scenen.
 >
 >* Scenariot kan leda till oönskade kodåterställningar.
->* Adobe rekommenderar att du slutar använda den standardiserade kopplade produktionskanalen när du väl har börjat använda pipelines som bara är för prod och enbart för stage.
+>* Adobe rekommenderar att du slutar använda den kopplade standardproduktionskanalen när du väl har börjat använda pipelines som endast är för prod och endast för scenen.
 >* Om du fortfarande bestämmer dig för att köra både standardrörledningarna och rörledningar för scen/endast för produkt, bör du tänka på att artefakter återanvänds för att undvika att koda om.
 
 ## Skapa pipeline {#pipeline-creation}
@@ -116,3 +116,4 @@ Om det inte finns någon pipeline som endast är avsedd för produktion uppmanas
 För rörledningar som endast är avsedda för produktion måste du identifiera de källartefakter som du vill distribuera till produktionen. De här detaljerna finns i steget **Förberedelse av felaktigheter**. Du kan navigera till dessa körningar för mer information och loggar.
 
 ![Information om felaktigheter](/help/assets/configure-pipelines/prod-only-pipeline-run.png)
+

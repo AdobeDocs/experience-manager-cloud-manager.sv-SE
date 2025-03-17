@@ -3,9 +3,9 @@ title: Lägg till privata databaser i Cloud Manager
 description: Lär dig hur du konfigurerar Cloud Manager så att det fungerar med dina egna privata GitHub-databaser.
 feature: Release Information
 exl-id: e0d103c9-c147-4040-bf53-835e93d78a0b
-source-git-commit: 5090d7ee9a6742d71122acda9901d074bc254305
+source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '815'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Lär dig hur du konfigurerar Cloud Manager så att det fungerar med dina egna pr
 
 ## Ökning {#overview}
 
-När du konfigurerar Cloud Manager med dina privata GitHub-databaser kan du validera kod direkt i GitHub, vilket eliminerar behovet av att synkronisera med databasen Adobe ofta.
+När du konfigurerar Cloud Manager med dina privata GitHub-databaser kan du validera koden direkt i GitHub, vilket eliminerar behovet av att synkronisera med Adobe-databasen ofta.
 
 >[!NOTE]
 >
@@ -56,7 +56,7 @@ Konfigurationen består av två huvudsteg:
 
 ### Validera ägarskap för en privat databas {#validate-ownership}
 
-Cloud Manager känner nu till din GitHub-databas, men den behöver fortfarande åtkomst till den. Om du vill bevilja åtkomst måste du installera appen Adobe GitHub och verifiera att du äger den angivna databasen.
+Cloud Manager känner nu till din GitHub-databas, men den behöver fortfarande åtkomst till den. Om du vill bevilja åtkomst måste du installera Adobe GitHub-appen och verifiera att du äger den angivna databasen.
 
 1. När du har lagt till din egen databas visas dialogrutan **Validering av privat databasägande**.
 
@@ -90,8 +90,7 @@ Till valideringen visas databasen med en röd ikon, som anger att den ännu inte
 
 Observera att kolumnen **Type** enkelt identifierar databaser som tillhandahålls av Adobe (**Adobe**) och dina egna GitHub-databaser (**GitHub**).
 
-Gå till sidan **Databaser** om du vill gå tillbaka till databasen senare och slutföra valideringen. Klicka på ellipsknappen bredvid GitHub-databasen som du lade till och välj **Verifiering av ägarskap** i listrutan.
-
+Gå till sidan **Databaser** om du vill gå tillbaka till databasen senare och slutföra valideringen. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid GitHub-databasen som du lade till och klicka sedan på **Verifiering av ägarskap**.
 
 
 ## Använda privata databaser med Cloud Manager {#using}
@@ -106,7 +105,7 @@ När GitHub-databasen har validerats i Cloud Manager slutförs integreringen och
 
 1. För varje pull-begäran skapas automatiskt en [fullständig kvalitetspipeline för stackkod](/help/using/managing-pipelines.md). Detta tillvägagångssätt startas vid varje uppdatering av pull-begäran.
 
-1. GitHub-kontrollen fortsätter att vara i ett körningsläge tills kodkvalitetskontrollerna är slutförda. Kodkvalitetsresultaten sprids sedan till GitHub-kontrollen.
+1. GitHub-kontrollen fortsätter att vara i ett körningsläge tills kodkvalitetskontrollerna har slutförts. Kodkvalitetsresultaten sprids sedan till GitHub-kontrollen.
 
    ![Kvalitetskontroller för GitHub-kod](/help/assets/repositories/github-code-quality.png)
 
@@ -134,7 +133,7 @@ Vissa begränsningar gäller när du använder privata databaser med Cloud Manag
 
 * Rörledningar för webbnivå och konfiguration stöds inte i privata databaser.
 * Ingen Git-tagg skapas och skickas när privata databaser används i produktion av rörledningar i en hel hög.
-* Om appen Adobe GitHub tas bort från din GitHb-organisation tar den här åtgärden bort funktionen för pull-begärandevalidering för alla databaser.
+* Om Adobe GitHub-appen tas bort från din GitHb-organisation tar den här åtgärden bort pull-begärandevalideringsfunktionen för alla databaser.
 * Pipeliner som använder privata databaser och utlösaren för bygge vid implementering startas inte automatiskt när en ny implementering överförs till den valda grenen.
 * [Återanvändning av felaktigheter](/help/getting-started/project-setup.md#build-artifact-reuse) gäller inte för privata databaser.
 * Du kan inte pausa pull-begärandevalideringen med GitHub-kontrollen från Cloud Manager. Om GitHub-databasen valideras i Cloud Manager försöker Cloud Manager validera pull-begäranden som skapas för den databasen.
