@@ -1,7 +1,8 @@
 ---
 title: Uppdateringar av Service Pack för utvecklingsmiljöer - tidig Adobe
 description: Läs om hur du nu kan initiera uppdateringspaket för utvecklingsmiljöer via Cloud Manager användargränssnitt.
-source-git-commit: 8da0e6cb4587bc7dfc79bec415ff3aeef2d12e3e
+exl-id: 996a8eee-843f-45a6-8f7a-31ea405c2b32
+source-git-commit: 91691878a2c135cc9fe123c06afcf775a962a2e0
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 0%
@@ -14,7 +15,7 @@ Lär dig hur du kan initiera Service Pack-uppdateringar för utvecklingsmiljöer
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md).
+>Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md#early-adoption).
 
 ## Ökning {#service-pack-updates-overview}
 
@@ -91,5 +92,3 @@ När installationen är klar måste du godkänna (eller avvisa) för att slutfö
 Service Pack-installationen avbryts och inga ändringar görs.
 
    ![Avvisning av Service Pack](/help/using/assets/service-pack-reject.png)
-
-

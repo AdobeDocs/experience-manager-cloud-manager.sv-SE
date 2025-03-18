@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
+source-git-commit: 91691878a2c135cc9fe123c06afcf775a962a2e0
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,7 @@ Om du klickar på ikonen `i` visas information om körningen av den valda pipeli
 
 Klicka på **Visa information** om du vill granska [information om pipelinekörningen](#view-details).
 
-## Köra rörledningar {#running-pipelines}
+## Köra en pipeline {#run-one-pipeline}
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 1. Navigera till kortet **Pipelines** från sidan **Programöversikt**.
@@ -77,6 +77,23 @@ Klicka på **Visa information** om du vill granska [information om pipelinekörn
    Du kan visa information om körningen genom att klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) igen och klicka på **[Visa information](#view-details)**.
 
    Beroende på vilken typ av pipeline det gäller kan du eventuellt avbryta körningen genom att klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) igen och klicka på **Avbryt**.
+
+## Köra flera rörledningar {#run-multiple-pipelines}
+
+Med Cloud Manager kan du köra flera olika rörledningar samtidigt, vilket förbättrar driftsättningseffektiviteten för Adobe Managed Services-kunder (AMS). Med funktionen **Kör markerad** kan du markera flera pipelines och utlösa dem för körning samtidigt. Det minskar det manuella arbetet med att behöva köra rörledningar individuellt och optimerar arbetsflödena för att bygga och driftsätta.
+
+**Så här kör du flera pipelines:**
+
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
+1. Klicka på ikonen ![Arbetsflöde ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Workflow_18_N.svg) **Förberedelser** på den vänstra menyn.
+1. Markera kryssrutorna intill de rörledningar du vill köra i tabellen på sidan **Rörledning**.
+Klicka vid behov på ![Filterikon, tratt](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Filter_18_N.svg) **Filter** för att sortera pipelines efter miljö, eller distribuerad kodtyp, eller båda.
+1. Klicka på **Kör markerat (x)** i sidans övre högra hörn.
+1. Klicka på **Kör (x)** i dialogrutan **Kör markerade pipelines (x)**.
+
+   Knappen **Kör** visar antalet pipelines som kan fortsätta. Du kan t.ex. ha valt fyra rörledningar, men en är redan igång. En miljö som är länkad till en vald pipeline finns inte längre. I sådana fall justeras systemet därefter. Knappen uppdateras till &quot;Kör (3)&quot; för att ange att tre rörledningar kan fortsätta.
+
+1. Pipelines börjar köras och deras status uppdateras i listan **Pipelines**.
 
 ## Redigera rörledningar {#editing-pipelines}
 
