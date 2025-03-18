@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.3.0
 description: Läs om Cloud Manager 2025.3.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: bb57be6d2cbab8ff47b368bab59cb3072f78b235
+source-git-commit: 55b33db1bf80f066b1a66bc87c0abeefa4771871
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
@@ -32,31 +32,34 @@ Nästa planerade version är torsdagen den 10 april 2025.
 
   ![Dialogrutan Kör markerade pipelines](/help/release-notes/assets/run-selected-pipelines.png)
 
+  Se även [Kör flera pipelines](/help/using/managing-pipelines.md#run-multiple-pipelines)
 
 
-## Program för tidigt antagande {#early-adoption}
+<!--
+## Early adoption program {#early-adoption}
 
-Bli en del av Cloud Manager program för tidig användning och få möjlighet att testa kommande funktioner.
+Be a part of Cloud Manager's early adoption program and have a chance to test upcoming features.
 
-### Självbetjäningsuppdateringar för AMS Cloud Manager-kunder
+### Self-service Service Pack updates for AMS Cloud Manager customers 
 
-Som en del av programmet för tidiga användare kan Adobe Managed Services Cloud Manager-kunder nu utföra självbetjäningsuppdateringar via användargränssnittet i **Cloud Manager** . Den här funktionen är för närvarande endast tillgänglig i *utvecklingsmiljöer* och innehåller begränsad felrapportering för fel.
+As part of the early adopters program, Adobe Managed Services Cloud Manager customers can now perform self-service service pack updates through the **Cloud Manager** user interface. This feature is currently available *only for development environments* and includes limited error reporting for failures.  
 
-Kunder kan söka efter Service Pack-uppdateringar på sidan **Programöversikt** under avsnittet **Miljö** (**trepunktsmeny**).
+Customers can check for service pack updates on the **Program Overview** page under the **Environments** section (**three-dot menu**).
 
-![Leta efter uppdateringsmenyalternativ](/help/release-notes/assets/check-for-updates-1.png)
+![Check for updates menu option](/help/release-notes/assets/check-for-updates-1.png)
 
-![Uppdatera Service Pack-dialogrutan](/help/release-notes/assets/check-for-updates-2.png)
+![Update Service Pack dialog box](/help/release-notes/assets/check-for-updates-2.png)
 
-Installations- och uppgraderingsprocessen kan spåras på sidan **Aktivitet**.
+The installation and upgrade process can be tracked on the **Activity** page. 
 
-När processen är klar måste kunderna **godkänna körningen** för uppgraderingen av Service Pack för att slutföra den.
+Once the process is complete, customers must **approve the execution** for the service pack upgrade to finalize successfully.
 
-![Godkänn uppdatering av tjänstsida](/help/release-notes/assets/check-for-updates-3.png)
+![Approve service page update](/help/release-notes/assets/check-for-updates-3.png)
 
-Om du är intresserad av att testa den nya funktionen och dela med dig av dina synpunkter kan du kontakta Adobe Customer Success Engineer.
+If you are interested in testing this new feature and sharing your feedback, contact your Adobe Customer Success Engineer.
 
-Se även [Service Pack-uppdateringar för utvecklingsmiljöer - tidig Adobe](/help/using/service-packs-environments.md).
+See also [Service Pack Updates for Development Environments - Early Adopter](/help/using/service-packs-environments.md).
+-->
 
 
 
