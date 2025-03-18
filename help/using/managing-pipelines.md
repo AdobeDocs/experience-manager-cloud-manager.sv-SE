@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: 91691878a2c135cc9fe123c06afcf775a962a2e0
+source-git-commit: d4a7d9ab72947b97b0dabb2f822ef268e4972685
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1060'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ Med Cloud Manager kan du köra flera olika rörledningar samtidigt, vilket förb
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
 1. Klicka på ikonen ![Arbetsflöde ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Workflow_18_N.svg) **Förberedelser** på den vänstra menyn.
 1. Markera kryssrutorna intill de rörledningar du vill köra i tabellen på sidan **Rörledning**.
-Klicka vid behov på ![Filterikon, tratt](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Filter_18_N.svg) **Filter** för att sortera pipelines efter miljö, eller distribuerad kodtyp, eller båda.
+Om det behövs klickar du på ![Filterikon, tratt](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Filter_18_N.svg) **Filter** för att sortera pipelines efter namn, miljö, distribuerad kodtyp eller en kombination av alla tre.
 1. Klicka på **Kör markerat (x)** i sidans övre högra hörn.
 1. Klicka på **Kör (x)** i dialogrutan **Kör markerade pipelines (x)**.
 
