@@ -1,20 +1,20 @@
 ---
 title: Använda guiden Nytt projekt
-description: Följ den här sidan om du vill lära dig hur du använder guiden för att skapa ett AEM Application Project.
+description: Följ den här sidan för att lära dig hur du använder guiden för att skapa ett AEM Application Project.
 exl-id: 9d7c6f4c-9379-471c-8dad-772a7099da54
-source-git-commit: 7bc874a8dd14544c22201ef2c470faab84d31f8b
+source-git-commit: f3617eb50147f5af33282cb0f25ada7dc423d434
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
 
 
-# Använda guiden Nytt projekt {#using-the-wizard}
+# Använd den nya projektguiden {#using-the-wizard}
 
-När du anslöt dig till Cloud Manager som ny kund fick du en tom Git-databas. Som hjälp att komma igång erbjuder Cloud Manager en guide för att skapa ett minimalt AEM baserat på [AEM Project Archetype](https://github.com/adobe/aem-project-archetype) som utgångspunkt.
+När du började hos Cloud Manager som ny kund fick du en tom Git-databas. Som hjälp att komma igång erbjuder Cloud Manager en guide för att skapa ett minimalt AEM-projekt baserat på [AEM Project Archetype](https://github.com/adobe/aem-project-archetype) som utgångspunkt.
 
-Följ de här stegen för att skapa ett AEM projekt med guiden.
+Följ de här stegen för att skapa ett AEM-projekt med guiden.
 
 1. Logga in på Cloud Manager på [`https://my.cloudmanager.adobe.com`](https://my.cloudmanager.adobe.com) och välj lämplig organisation.
 
@@ -29,7 +29,7 @@ Följ de här stegen för att skapa ett AEM projekt med guiden.
 
    ![Projektvärden](/help/assets/screen_shot_2018-10-08at55825am.png)
 
-1. Dialogrutan har en låda som du kan öppna genom att klicka på handtaget längst ned. I den utökade formen visas alla konfigurationsparametrar för AEM projekttyp. De här parametrarna har standardvärden som genereras baserat på den **Title** som du redan har angett och som inte behöver ändras. De förklaras här för din information.
+1. Dialogrutan har en låda som du kan öppna genom att klicka på handtaget längst ned. I den utökade versionen av dialogrutan visas alla konfigurationsparametrar för AEM-projekttypen. De här parametrarna har standardvärden som genereras baserat på den **Title** som du redan har angett och som inte behöver ändras. De förklaras här för din information.
 
    ![Detaljerade parametrar för arketyp](/help/assets/screen_shot_2018-10-08at60032am.png)
 
@@ -39,6 +39,6 @@ Du har nu ett basprojekt. Det är dags att lägga upp dina rörledningar.
 
 ## Befintliga eller migrerade kunder {#existing-migrating}
 
-Om du är en Adobe Managed Services-kund (AMS) eller en lokal AEM som migrerar till har du troligen redan en projektkod i Git eller ett annat versionskontrollsystem.
+Om du är en Adobe Managed Services-kund (AMS) eller en AEM-kund på plats som migrerar till har du troligen redan en projektkod i Git eller ett annat versionskontrollsystem.
 
 I så fall kan du importera ditt projekt till Cloud Manager Git-databasen.
