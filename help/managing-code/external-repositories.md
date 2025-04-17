@@ -2,7 +2,7 @@
 title: Lägg till externa databaser i Cloud Manager - tidig Adobe
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: a63d996b283396efa139bf567c40a51e6f46d9bc
+source-git-commit: 5ba12cdfa4a0d790561fd2f3da738bf697133bee
 workflow-type: tm+mt
 source-wordcount: '1866'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj lämplig organisation.
 
-1. På konsolen **Mina program** väljer du det program som du vill länka till en extern databas.
+1. På konsolen **[Mina program](/help/getting-started/navigation.md#my-programs-console)** väljer du det program som du vill länka till en extern databas.
 
 1. Klicka på ![Mappdispositionsikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderOutline_18_N.svg) **Databaser** på sidomenyn under **Program**.
 
@@ -121,7 +121,7 @@ För alla andra externa databaser som är inbyggda med en åtkomsttoken, som Git
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj lämplig organisation.
 
-1. På konsolen **Mina program** väljer du det program som du vill konfigurera en webkrok för en extern Git-databas.
+1. På konsolen **[Mina program](/help/getting-started/navigation.md#my-programs-console)** väljer du det program som du vill konfigurera en webkrok för en extern Git-databas.
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att visa den vänstra menyn.
 
