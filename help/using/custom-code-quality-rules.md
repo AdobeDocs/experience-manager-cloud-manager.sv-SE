@@ -747,7 +747,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 
 * **Nyckel**: IndexDescendantNodeType
 * **Typ**: `Code Smell`
-* **** Allvarlighetsgrad: Mindre
+* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
 * **Sedan**: Version 2021.2.0
 
 Problem som är svåra att felsöka kan uppstå när en definitionsnod för anpassat sökindex har osorterade underordnade noder. För att undvika sådana noder rekommenderar Adobe att alla underordnade noder till en `oak:QueryIndexDefinition` nod är av typen `nt:unstructured`.
@@ -756,7 +756,7 @@ Problem som är svåra att felsöka kan uppstå när en definitionsnod för anpa
 
 * **Nyckel**: IndexRulesNode
 * **Typ**: `Code Smell`
-* **** Allvarlighetsgrad: Mindre
+* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
 * **Sedan**: Version 2021.2.0
 
 En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en underordnad nod med namnet `indexRules` och den här noden måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen](https://jackrabbit.apache.org/oak/docs/query/lucene.html).
@@ -834,13 +834,13 @@ AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. n
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen](/help/release-notes/current.md) av [Cloud Manager.
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen[&#128279;](/help/release-notes/current.md) av Cloud Manager.
 
 ### Det är förbjudet att anpassa vissa färdiga indexdefinitioner {#oakpal-customizing-ootb-index}
 
 * **Nyckel**: RestrictIndexCustomization
 * **Typ**: Förbättring
-* **** Allvarlighetsgrad: Mindre
+* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
 * **Sedan**: Version 2024.6.0
 
 AEM Cloud Service tillåter inte obehöriga ändringar av följande OTB-index:
@@ -854,7 +854,7 @@ AEM Cloud Service tillåter inte obehöriga ändringar av följande OTB-index:
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen](/help/release-notes/current.md) av [Cloud Manager.
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen[&#128279;](/help/release-notes/current.md) av Cloud Manager.
 
 ### Konfigurationen av tokeniserare i analysverktyg ska skapas med namnet `tokenizer` {#oakpal-tokenizer}
 

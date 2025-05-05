@@ -66,6 +66,7 @@ Steget **Produktionsdistribution** innehåller följande åtgärder:
 * **Schemalägg produktionsdistribution**
    * Det här alternativet aktiveras när pipeline konfigureras.
    * Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
+
      ![Schemalägg distribution](/help/assets/Production_Deployment1.png)
 * **CSE-stöd** (om aktiverat)
 * **Distribuera till produktion**
