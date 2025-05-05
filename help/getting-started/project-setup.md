@@ -340,4 +340,4 @@ Om du vill kan återanvändningsbeteendet inaktiveras för specifika pipelines g
 
 ## Utveckla din kod baserat på bästa praxis {#develop-your-code-based-on-best-practices}
 
-Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med bästa praxis för AEM utvecklare](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/bestpractices/best-practices).
+Adobe tekniker och konsultteam har utvecklat en [omfattande uppsättning med bästa praxis för AEM utvecklare](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/developing/bestpractices/best-practices).

@@ -68,7 +68,7 @@ Om du gör det kan efterföljande distributioner fortfarande installeras när ve
 
 Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
-Mer information om versionshantering [finns här](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
+Mer information om versionshantering [finns här](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
 
 ## Hur fungerar paket- och paketversionshantering för driftsättning och produktion? {#staging-production}
 

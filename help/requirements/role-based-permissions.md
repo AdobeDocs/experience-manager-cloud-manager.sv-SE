@@ -18,11 +18,11 @@ ht-degree: 2%
 >
 >I den här dokumentationen beskrivs rollbaserade behörigheter för Cloud Manager för Adobe Managed Services (AMS).
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i dokumentet [Introduktion till Cloud Manager](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/concepts/cloud-manager-introduction#role-based-permissions) i dokumentationen för AEM as a Cloud Service.
+>Motsvarande dokumentation för AEM as a Cloud Service finns i dokumentet [Introduktion till Cloud Manager](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/onboarding/concepts/cloud-manager-introduction#role-based-permissions) i dokumentationen för AEM as a Cloud Service.
 
 ## Användarroller {#user-roles}
 
-Rollhanteringen för [!UICONTROL Cloud Manager] har slutförts med [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html). Alla användare av [!UICONTROL Cloud Manager] måste vara medlemmar i kundens IMS-organisation och ha produktkontexten Adobe Managed Services. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
+Rollhanteringen för [!UICONTROL Cloud Manager] har slutförts med [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html). Alla användare av [!UICONTROL Cloud Manager] måste vara medlemmar i kundens IMS-organisation och ha produktkontexten Adobe Managed Services. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil i Admin Console.
 
 Mer information om hur du konfigurerar dina roller finns i [Konfigurera användare och roller](/help/requirements/users-and-roles.md).
 

@@ -18,7 +18,7 @@ Precis som alla kraftfulla verktyg omfattar Cloud Manager många koncept och ter
 
 Ett program är den uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande [lösningen](#solution) (till exempel AEM Sites eller AEM Assets) för deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter](#artifact).
 
-Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/en/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview).
+Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview).
 
 ## Artefakt {#artifact}
 

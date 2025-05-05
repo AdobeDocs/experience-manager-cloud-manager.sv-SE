@@ -18,7 +18,7 @@ Lär dig mer om din Adobe ID och hur du använder den för att få tillgång til
 
 Som en del av introduktionsprocessen skapar Adobe en organisationsidentifierare för ditt företag i Adobe Identity Management System (IMS). IMS är den plats där alla användare och deras behörigheter hanteras. Varje användare, som måste vara medlem i den här organisationen och beviljas åtkomst till någon av [!UICONTROL Experience Cloud]-tjänsterna, måste ha sin egen Adobe ID.
 
-Om du vill komma igång med en Adobe ID går du till [Hantera identitetstyper för Adobe](https://helpx.adobe.com/enterprise/using/identity.html) för detaljerade instruktioner om hur du hämtar en Adobe ID med någon av de tillgängliga identitetstyperna.
+Om du vill komma igång med en Adobe ID går du till [Hantera identitetstyper för Adobe](https://helpx.adobe.com/se/enterprise/using/identity.html) för detaljerade instruktioner om hur du hämtar en Adobe ID med någon av de tillgängliga identitetstyperna.
 
 ### Användare och roller {#users-and-roles}
 

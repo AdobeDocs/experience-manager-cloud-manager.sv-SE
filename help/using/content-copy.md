@@ -172,8 +172,8 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 * Innehållskopiering kan inte utföras om det finns någon aktiv åtgärd som körs i mål- eller källmiljön, t.ex. en CI/CD-pipeline.
 * Innehållskopia ska inte användas som kloning eller speglingsverktyg eftersom det inte går att spåra flyttat eller borttaget innehåll i källan.
 * En innehållskopia kan inte pausas eller avbrytas när den väl har initierats.
-* Innehållskopia duplicerar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
-* [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
+* Innehållskopia duplicerar resurser och Dynamic Media-metadata från den högre miljön till den valda lägre miljön. Kopierade resurser måste sedan bearbetas på nytt med arbetsflödet [DAM-processresurser](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/assets/using/assets-workflow) i den nedre miljön om du vill använda respektive Dynamic Media-konfiguration.
+* [Dynamic Media-konfigurationer med resurser som är större än 2 GB aktiverade](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/assets/dynamic/config-dms7#optional-config-dms7-assets-larger-than-2gb) stöds inte.
 * Målmiljöns områden måste vara samma som eller en delmängd av källmiljöns regioner.
 
 ## Kända fel i Content Copy {#known-issues}

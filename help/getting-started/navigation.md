@@ -70,7 +70,7 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
 ![Verktygsfältet Program](assets/program-toolbar.png)
 
 1. Programväljaren öppnas i en listruta där du snabbt kan välja andra program eller vidta sammanhangsberoende åtgärder som att skapa ett nytt program
-1. Länken Komma igång ger dig tillgång till [dokumentationsresan för introduktion](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kan komma igång med Cloud Manager.
+1. Länken Komma igång ger dig tillgång till [dokumentationsresan för introduktion](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kan komma igång med Cloud Manager.
 Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma.
 1. Åtgärdsknappen innehåller sammanhangsberoende åtgärder som att skapa ett nytt program.
 
@@ -114,7 +114,7 @@ Ett kort eller en rad i en tabell representerar alla program och ger en översik
 * Programnamn
 * Tjänsttyp:
    * **Experience Manager** för AMS-program
-   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home)
+   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home)
 * Status
 * Konfigurerade lösningar
 * Skapad den

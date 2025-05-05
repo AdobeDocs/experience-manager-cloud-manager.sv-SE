@@ -14,6 +14,6 @@ ht-degree: 0%
 
 Kontakta Adobe Managed Services Customer Success Engineer (CSE) för hjälp med [!UICONTROL Cloud Manager]. De kan tala om för dig om de kan lösa problemet eller om du behöver lämna in en supportanmälan till Adobe kundtjänst.
 
-Använd [Enterprise Support](https://experienceleague.adobe.com/?support-tab=home#support) för att skapa supportärenden.
+Använd [Enterprise Support](https://experienceleague.adobe.com/sv?support-tab=home#support) för att skapa supportärenden.
 
-Mer information om hur du skapar supportärenden med Adobe kundtjänst finns i [Åtkomst till AEM supportportal](https://helpx.adobe.com/enterprise/using/support-and-expert-services.html).
+Mer information om hur du skapar supportärenden med Adobe kundtjänst finns i [Åtkomst till AEM supportportal](https://helpx.adobe.com/se/enterprise/using/support-and-expert-services.html).

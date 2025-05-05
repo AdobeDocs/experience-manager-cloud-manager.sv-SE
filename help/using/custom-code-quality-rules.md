@@ -657,7 +657,7 @@ Dokumentationen för AEM Moderniseringsverktyg innehåller information om och ve
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i Cloud Service-distributioner, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents).
+Stöd för omvänd replikering är inte tillgängligt i Cloud Service-distributioner, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents).
 
 Kunder som använder omvänd replikering bör kontakta Adobe för alternativa lösningar.
 
@@ -668,7 +668,7 @@ Kunder som använder omvänd replikering bör kontakta Adobe för alternativa l�
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/introduction/clientlibs#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
+AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/developing/introduction/clientlibs#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
 
 #### Kod som inte uppfyller kraven {#non-compliant-proxy-enabled}
 
@@ -710,7 +710,7 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://g
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Det har tidigare varit vanligt att använda statiska mallar i AEM Projects, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöd för ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable).
+Det har tidigare varit vanligt att använda statiska mallar i AEM Projects, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöd för ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable).
 
 Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM Moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/).
 
@@ -721,7 +721,7 @@ Migrering från statiska till redigerbara mallar kan till stor del automatiseras
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM-versioner till förmån för [Core Components](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/introduction). Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
+De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM-versioner till förmån för [Core Components](https://experienceleague.adobe.com/sv/docs/experience-manager-core-components/using/introduction). Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
 
 [AEM moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/) kan underlätta den här konverteringen.
 
@@ -732,7 +732,7 @@ De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkt underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud-tjänsten. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkt underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud-tjänsten. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing).
 
 ### Definitionsnoder för anpassade sökindex måste ha en compatVersion av 2 {#oakpal-custom-search-compatVersion}
 
@@ -741,7 +741,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud-tjänsten stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud-tjänsten stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing).
 
 ### Underordnade noder för definitionsnoder för anpassade sökindex måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
 
@@ -768,7 +768,7 @@ En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en unde
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex måste använda indextypen lucen {#oakpal-index-type-lucene}
 
@@ -777,7 +777,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type` -egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras före migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type` -egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras före migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `seed` {#oakpal-property-name-seed}
 
@@ -786,7 +786,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `reindex` {#oakpal-reindex-property}
 
@@ -795,7 +795,7 @@ AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. n
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Indexdefinitionsnoder får inte distribueras i UI-innehållspaket {#oakpal-ui-content-package}
 

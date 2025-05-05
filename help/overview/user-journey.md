@@ -46,7 +46,7 @@ Under uppgraderingen är du registrerad på Cloud Manager och får en URL för a
 
 Ditt befintliga AEM-projekt måste också följa de rekommenderade bästa metoderna eftersom du börjar använda [!UICONTROL Cloud Manager] för att distribuera nya kodändringar i dina AEM.
 
-Mer information om fördelarna med att uppgradera till AEM 6.5 finns i [Uppgradera till AEM 6.5](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/upgrading/upgrade).
+Mer information om fördelarna med att uppgradera till AEM 6.5 finns i [Uppgradera till AEM 6.5](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/upgrading/upgrade).
 
 ## Åtkomst [!UICONTROL Cloud Manager] {#accessing-cloud-manager}
 
@@ -56,7 +56,7 @@ När du har loggat in på [!UICONTROL Cloud Manager] för första gången får d
 
 Information om hur du kommer igång med [!UICONTROL Cloud Manager] finns i [Första gången du loggar in](/help/getting-started/first-time-login.md).
 
-Mer information om AEM finns i [Distribuera och underhålla](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/deploying/deploy).
+Mer information om AEM finns i [Distribuera och underhålla](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/deploying/deploy).
 
 ## Kom igång med [!UICONTROL Cloud Manager] {#getting-started-with-cloud-manager}
 
