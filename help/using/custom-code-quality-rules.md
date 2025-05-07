@@ -2,7 +2,7 @@
 title: Anpassade regler för kodkvalitet
 description: Upptäck detaljerna i de anpassade regler för kodkvalitet som körs av Cloud Manager vid kvalitetstestning av kod. Dessa regler bygger på god praxis från AEM Engineering.
 exl-id: 7d118225-5826-434e-8869-01ee186e0754
-source-git-commit: 8388edb5510ed4583a7bc703f3781af03d976948
+source-git-commit: 54987d6ccd8c31dab677d90b40466c458743f936
 workflow-type: tm+mt
 source-wordcount: '3644'
 ht-degree: 0%
@@ -657,7 +657,7 @@ Dokumentationen för AEM Moderniseringsverktyg innehåller information om och ve
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2020.5.0
 
-Stöd för omvänd replikering är inte tillgängligt i Cloud Service-distributioner, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents).
+Stöd för omvänd replikering är inte tillgängligt i Cloud Service-distributioner, vilket beskrivs i [Versionsinformation: Borttagning av replikeringsagenter](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/aem-cloud-changes#replication-agents).
 
 Kunder som använder omvänd replikering bör kontakta Adobe för alternativa lösningar.
 
@@ -668,7 +668,7 @@ Kunder som använder omvänd replikering bör kontakta Adobe för alternativa l�
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/developing/introduction/clientlibs#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
+AEM klientbibliotek kan innehålla statiska resurser som bilder och teckensnitt. Så som beskrivs i [Använda dokumentationen för klientbibliotek](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/introduction/clientlibs#using-preprocessors) måste dessa statiska resurser finnas i en underordnad mapp med namnet `resources` när du använder proxiderade klientbibliotek för att effektivt kunna refereras till på publiceringsinstanserna.
 
 #### Kod som inte uppfyller kraven {#non-compliant-proxy-enabled}
 
@@ -710,7 +710,7 @@ Migreringsverktyget i [AEM Assets as a Cloud Service GitHub-databasen](https://g
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Det har tidigare varit vanligt att använda statiska mallar i AEM Projects, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöd för ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable).
+Det har tidigare varit vanligt att använda statiska mallar i AEM Projects, men redigerbara mallar rekommenderas eftersom de ger den flexibilitet och stöd för ytterligare funktioner som inte finns i statiska mallar. Mer information finns i [Sidmallar - redigerbar dokumentation](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/platform/templates/page-templates-editable).
 
 Migrering från statiska till redigerbara mallar kan till stor del automatiseras med [AEM Moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/).
 
@@ -721,7 +721,7 @@ Migrering från statiska till redigerbara mallar kan till stor del automatiseras
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM-versioner till förmån för [Core Components](https://experienceleague.adobe.com/sv/docs/experience-manager-core-components/using/introduction). Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
+De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation`) har ersatts för flera AEM-versioner till förmån för [Core Components](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/introduction). Användning av de äldre Foundation-komponenterna som bas för anpassade komponenter, oavsett om det är genom övertäckning eller arv, rekommenderas inte och bör konverteras till motsvarande kärnkomponent.
 
 [AEM moderniseringsverktyg](https://opensource.adobe.com/aem-modernize-tools/) kan underlätta den här konverteringen.
 
@@ -732,7 +732,7 @@ De äldre Foundation-komponenterna (d.v.s. komponenterna under `/libs/foundation
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkt underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud-tjänsten. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) är direkt underordnade noder till `/oak:index`. Index på andra platser måste flyttas för att vara kompatibla med AEM Cloud-tjänsten. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
 
 ### Definitionsnoder för anpassade sökindex måste ha en compatVersion av 2 {#oakpal-custom-search-compatVersion}
 
@@ -741,22 +741,22 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud-tjänsten stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste ha egenskapen `compatVersion` inställd på `2`. AEM Cloud-tjänsten stöder inte något annat värde. Mer information om sökindex finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing).
 
-### Underordnade noder för definitionsnoder för anpassade sökindex måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
+### Underordnade noder för anpassade sökindexdefinitionsnoder måste vara av typen `nt:unstructured` {#oakpal-descendent-nodes}
 
 * **Nyckel**: IndexDescendantNodeType
 * **Typ**: `Code Smell`
-* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
+* **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-Problem som är svåra att felsöka kan uppstå när en definitionsnod för anpassat sökindex har osorterade underordnade noder. För att undvika sådana noder rekommenderar Adobe att alla underordnade noder till en `oak:QueryIndexDefinition` nod är av typen `nt:unstructured`.
+Problem som är svåra att felsöka kan uppstå när en anpassad sökindexdefinitionsnod har oordnade underordnade noder. För att undvika sådana noder rekommenderar Adobe att alla underordnade noder för en `oak:QueryIndexDefinition`-nod är av typen `nt:unstructured`.
 
 ### Definitionsnoder för anpassade sökindex måste innehålla en underordnad nod med namnet `indexRules` som har underordnade noder {#oakpal-custom-search-index}
 
 * **Nyckel**: IndexRulesNode
 * **Typ**: `Code Smell`
-* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
+* **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
 En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en underordnad nod med namnet `indexRules` och den här noden måste ha minst en underordnad nod. Mer information finns i [Oak-dokumentationen](https://jackrabbit.apache.org/oak/docs/query/lucene.html).
@@ -768,7 +768,7 @@ En korrekt definierad anpassad sökindexdefinitionsnod måste innehålla en unde
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) måste namnges efter ett specifikt mönster som beskrivs i [Innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex måste använda indextypen lucen {#oakpal-index-type-lucene}
 
@@ -777,7 +777,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type` -egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras före migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) har en `type` -egenskap med värdet `lucene`. Indexering med äldre indextyper måste uppdateras före migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `seed` {#oakpal-property-name-seed}
 
@@ -786,7 +786,7 @@ AEM Cloud-tjänsten kräver att anpassade sökindexdefinitioner (d.v.s. noder av
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `seed`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Definitionsnoder för anpassade sökindex får inte innehålla egenskapen `reindex` {#oakpal-reindex-property}
 
@@ -795,13 +795,13 @@ AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. n
 * **Allvarlighetsgrad**: Mindre
 * **Sedan**: Version 2021.2.0
 
-AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
+AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller en egenskap med namnet `reindex`. Indexering med den här egenskapen måste uppdateras innan migrering till AEM Cloud-tjänsten. Mer information finns i [dokumentationen för innehållssökning och indexering](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/operations/indexing#how-to-use).
 
 ### Indexdefinitionsnoder får inte distribueras i UI-innehållspaket {#oakpal-ui-content-package}
 
 * **Nyckel**: IndexNotUnderUIContent
 * **Typ**: Förbättring
-* **Allvarlighetsgrad**: Mindre
+* **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2024.6.0
 
 AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (noder av typen `oak:QueryIndexDefinition`) distribueras i UI-innehållspaketet.
@@ -814,7 +814,7 @@ AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (noder av
 
 * **Nyckel**: CustomFulltextIndexesOfTheDamAssetCheck
 * **Typ**: Förbättring
-* **Allvarlighetsgrad**: Mindre
+* **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2024.6.0
 
 AEM Cloud-tjänsten förhindrar att anpassade fulltextindexdefinitioner av typen `damAssetLucene` prefix med något annat än `damAssetLucene`.
@@ -827,23 +827,23 @@ AEM Cloud-tjänsten förhindrar att anpassade fulltextindexdefinitioner av typen
 
 * **Nyckel**: DuplicateNameProperty
 * **Typ**: Förbättring
-* **Allvarlighetsgrad**: Mindre
+* **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2024.6.0
 
 AEM Cloud-tjänsten tillåter inte att anpassade sökindexdefinitioner (d.v.s. noder av typen `oak:QueryIndexDefinition`) innehåller egenskaper med samma namn
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen[&#128279;](/help/release-notes/current.md) av Cloud Manager.
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
-### Det är förbjudet att anpassa vissa färdiga indexdefinitioner {#oakpal-customizing-ootb-index}
+### Det är inte tillåtet att anpassa vissa färdiga indexdefinitioner {#oakpal-customizing-ootb-index}
 
 * **Nyckel**: RestrictIndexCustomization
 * **Typ**: Förbättring
-* **&#x200B;**&#x200B;Allvarlighetsgrad: Mindre
+* **Allvarlighetsgrad**: Större
 * **Sedan**: Version 2024.6.0
 
-AEM Cloud Service tillåter inte obehöriga ändringar av följande OTB-index:
+AEM Cloud-tjänsten tillåter inte obehöriga ändringar av följande OOTB-index:
 
 * `nodetypeLucene`
 * `slingResourceResolver`
@@ -854,9 +854,9 @@ AEM Cloud Service tillåter inte obehöriga ändringar av följande OTB-index:
 
 >[!WARNING]
 >
->Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan leda till att pipelines misslyckas från och med augusti 2024-versionen[&#128279;](/help/release-notes/current.md) av Cloud Manager.
+>Du uppmanas att åtgärda det här problemet så snart som möjligt eftersom det kan orsaka att pipelines misslyckas med början i [Cloud Manager August 2024-utgåvan](/help/release-notes/current.md).
 
-### Konfigurationen av tokeniserare i analysverktyg ska skapas med namnet `tokenizer` {#oakpal-tokenizer}
+### Konfigurationen av tokeniserare i analysatorer ska skapas med namnet `tokenizer` {#oakpal-tokenizer}
 
 * **Nyckel**: AnalyzerTokenizerConfigCheck
 * **Typ**: Förbättring
@@ -941,12 +941,12 @@ I följande avsnitt visas de DOT-kontroller (Dispatcher Optimization Tool) som u
 
 * [Dispatcher-publiceringsservergruppens `gracePeriod`-egenskap bör vara >= 2](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-graceperiod-property-should-be--2)
 
-* [Varje Dispatcher-servergrupp ska ha ett unikt namn](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---each-dispatcher-farm-should-have-a-unique-name)
+* [Varje Dispatcher-servergrupp måste ha ett unikt namn](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---each-dispatcher-farm-should-have-a-unique-name)
 
-* [Reglerna för Dispatcher-publiceringsservergruppen bör konfigureras `ignoreUrlParams` på ett tillåtelselistesätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
+* [Dispatcher-publiceringsservergruppens cache bör ha sina `ignoreUrlParams`-regler konfigurerade på ett tillåtelselista sätt ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
 
-* [Filtren för publiceringsgruppen i Dispatcher ska ange de tillåtna Sling-väljarna på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
+* [Dispatcher-filtren för publiceringsgrupper bör ange tillåtna Sling-väljare på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
 
-* [Filtren för Dispatcher-publiceringsgruppen ska ange de tillåtna Sling-suffixmönstren på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-suffix-patterns-in-an-allow-list-manner)
+* [Dispatcher-filtren för publiceringsgrupper bör ange tillåtna Sling-suffixmönster på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-suffix-patterns-in-an-allow-list-manner)
 
-* [Använd inte direktivet &quot;Kräv att alla beviljas&quot; i ett VirtualHost Directory-avsnitt med en rotkatalogsökväg](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-require-all-granted-directive-should-not-be-used-in-a-virtualhost-directory-section-with-a-root-directory-path)
+* [Använd inte direktivet Kräv alla beviljade i ett VirtualHost-katalogavsnitt med en rotkatalogsökväg](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-require-all-granted-directive-should-not-be-used-in-a-virtualhost-directory-section-with-a-root-directory-path)
