@@ -7,10 +7,10 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 4c4ffeb689117620bd810f35d277f5ab20bda8d3
+source-git-commit: ecee095cfdf929e38823ace77f184db3108cab92
 workflow-type: tm+mt
-source-wordcount: '366'
-ht-degree: 8%
+source-wordcount: '368'
+ht-degree: 10%
 
 ---
 
@@ -18,14 +18,14 @@ ht-degree: 8%
 # Dokumentation om Cloud Manager {#content}
 
 + [Cloud Manager for AMS](/help/introduction.md)
-+ Översikt {#overview}
++ Ökning {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
    + [CI/CD-rör](/help/overview/ci-cd-pipelines.md)
    + [Säkerhet och integritet](/help/overview/security-and-privacy.md)
    + [Hjälpresurser](/help/overview/help-resources.md)
    + [Vanliga frågor om Cloud Manager](/help/overview/faqs.md)
-+ Detta behövs {#requirements}
++ Vad krävs {#requirements}
    + [Åtkomsträttigheter](/help/requirements/access-rights.md)
    + [Source Code Repository](/help/requirements/source-code-repository.md)
    + [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md)
@@ -43,7 +43,7 @@ ht-degree: 8%
    + [Konfigurera grenar](/help/getting-started/configuring-branches.md)
    + [Dispatcher Configurations](/help/getting-started/dispatcher-configurations.md)
 + Använd {#using}
-   + CI/CD-pipeline {#pipelines}
+   + CI/CD-rör {#pipelines}
       + [Konfigurera en produktionspipeline](/help/using/production-pipelines.md)
       + [Konfigurera en icke-produktionspipeline](/help/using/non-production-pipelines.md)
       + [Dela upp scenen och producera endast rörledningar (tidig redigering)](/help/using/stage-prod-only.md)
@@ -70,12 +70,13 @@ ht-degree: 8%
    + [Versionshantering för Maven Project](/help/managing-code/maven-project-version.md)
    + [Integrera med Git](/help/managing-code/git-integration.md)
    + [Arbeta med flera Git-databaser](/help/managing-code/multiple-git-repos.md)
-+ Produktuppdateringsguiden {#product-update-wizard}
++ Produktuppdateringsguide {#product-update-wizard}
    + [Ökning](/help/product-update-wizard/overview.md)
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell](/help/release-notes/current.md)
    + 2025 {#rn-2025}
+      + [2025.4.0](/help/release-notes/2025/2025-4-0.md)
       + [2025.3.0](/help/release-notes/2025/2025-3-0.md)
       + [2025.2.0](/help/release-notes/2025/2025-2-0.md)
       + [2025.1.0](/help/release-notes/2025/2025-1-0.md)
