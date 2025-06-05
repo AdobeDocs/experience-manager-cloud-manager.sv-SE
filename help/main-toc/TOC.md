@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: ecee095cfdf929e38823ace77f184db3108cab92
+source-git-commit: 35845e827b0a3fadfe2a55a2171b5e02100cf3eb
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '373'
 ht-degree: 10%
 
 ---
@@ -46,7 +46,7 @@ ht-degree: 10%
    + CI/CD-rör {#pipelines}
       + [Konfigurera en produktionspipeline](/help/using/production-pipelines.md)
       + [Konfigurera en icke-produktionspipeline](/help/using/non-production-pipelines.md)
-      + [Dela upp scenen och producera endast rörledningar (tidig redigering)](/help/using/stage-prod-only.md)
+      + [Dela upp scenen och endast produktion](/help/using/stage-prod-only.md)
       + [Hantera pipelines](/help/using/managing-pipelines.md)
    + [Koddistribution](/help/using/code-deployment.md)
    + [Testning av kodkvalitet](/help/using/code-quality-testing.md)
@@ -64,6 +64,7 @@ ht-degree: 10%
    + [Lägg till en Adobe-databas](/help/managing-code/adobe-repositories.md)
    + [Lägg till en privat databas](/help/managing-code/private-repositories.md)
    + [Lägg till en extern databas (tidig Adobe)](/help/managing-code/external-repositories.md)
+   + [Hantera åtkomsttoken (tidig Adobe)](/help/managing-code/manage-access-tokens.md)
    + [Stöd för Git-undermodul](/help/managing-code/git-submodules.md)
    + [GitHub Check Configuration](/help/managing-code/github-check-config.md)
    + [GitHub-kontrollanteckningar](/help/managing-code/github-annotations.md)
@@ -76,6 +77,7 @@ ht-degree: 10%
 + Versionsinformation {#release-notes}
    + [Aktuell](/help/release-notes/current.md)
    + 2025 {#rn-2025}
+      + [2025.5.0](/help/release-notes/2025/2025-5-0.md)
       + [2025.4.0](/help/release-notes/2025/2025-4-0.md)
       + [2025.3.0](/help/release-notes/2025/2025-3-0.md)
       + [2025.2.0](/help/release-notes/2025/2025-2-0.md)

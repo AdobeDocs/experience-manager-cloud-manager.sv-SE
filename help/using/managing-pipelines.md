@@ -2,9 +2,9 @@
 title: Hantera pipelines
 description: Lär dig hur du hanterar befintliga rörledningar, inklusive att köra, redigera och ta bort dem.
 exl-id: e36420d2-57c5-4375-99fb-dd47c1c8bffd
-source-git-commit: d4a7d9ab72947b97b0dabb2f822ef268e4972685
+source-git-commit: 91eda02d55134fba167f30830a142a80717e9083
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1170'
 ht-degree: 0%
 
 ---
@@ -49,6 +49,18 @@ Om du klickar på ikonen `i` visas information om den senaste eller aktuella kö
 ![Information om pipeline-körning](/help/assets/configure-pipelines/pipeline-status.png)
 
 Om du klickar på **Visa information** visas [information om pipelinekörningen](#view-details).
+
+### Markera pipeline-favoriter{#pipeline-favorites}
+
+Du kan markera specifika pipelines som favoriter så att de visas högst upp i listan på sidan **Pipelines** . Detta gör det enklare att hitta och köra rörledningar som du ofta använder.
+
+**Så här markerar du pipeline-favoriter:**
+
+1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com/) och välj rätt organisation och program.
+1. På sidan **Programöversikt** klickar du på fliken ![Pipeline - ikonen Arbetsflöde](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Workflow_18_N.svg) **Pipelines** .
+1. Klicka på ![Stjärndispositionsikonen ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_StarOutline_18_N.svg) till vänster om ett pipelinenamn och en pipelinetyp på sidan **Pipelines** för att lägga till den i din favoritlista.
+Du kan också klicka på ikonen ![Stjärna för en favoritpipeline](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Star_18_N.svg) om du vill ta bort pipelinen från favoritlistan.
+
 
 ## Aktivitetssida {#activity}
 

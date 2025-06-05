@@ -1,22 +1,17 @@
 ---
-title: Pipeline med endast scener och endast prod
+title: Dela endast scenen och endast produktion
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
-badge: label="Tidiga användare" type="Positive" url="/help/release-notes/current.md#staging-production-only-pipelines"
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: b830c30bb6b2b99ef442577325a30de6b9953ec8
+source-git-commit: 35845e827b0a3fadfe2a55a2171b5e02100cf3eb
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
 
-# Rörledningar endast för scener och produktion {#stage-prod-only}
+# Dela rörledningar enbart för stadier och endast för produktion {#stage-prod-only}
 
 Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
-
->[!NOTE]
->
->Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md#staging-production-only-pipelines).
 
 ## Ökning {#overview}
 
