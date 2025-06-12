@@ -1,9 +1,9 @@
 ---
 title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
-badge: label="Tidiga användare" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
+badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: 83ba61364d5a492bd7236d7fcaeabf8cf904627a
+source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
 workflow-type: tm+mt
 source-wordcount: '1871'
 ht-degree: 0%
@@ -16,7 +16,7 @@ Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager st
 
 >[!NOTE]
 >
->De funktioner som beskrivs i den här artikeln är endast tillgängliga via programmet för tidig användning. Mer information och om du vill registrera dig som tidig användare finns i [Hämta din egen Git](/help/release-notes/current.md#gitlab-bitbucket).
+>De funktioner som beskrivs i den här artikeln är endast tillgängliga via det privata betaprogrammet. Mer information och om du vill registrera dig för den privata betaversionen finns i [Hämta din egen Git](/help/release-notes/current.md#gitlab-bitbucket).
 
 ## Konfigurera en extern databas
 
@@ -79,7 +79,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
    >[!NOTE]
    >
-   >Funktionen **Lägg till ny åtkomsttoken** är för närvarande i fasen Tidiga Adobe-program. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
+   >Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
 
 1. Klicka på **Validera**.
 

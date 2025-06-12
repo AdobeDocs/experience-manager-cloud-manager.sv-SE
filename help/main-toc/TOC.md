@@ -7,7 +7,7 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 35845e827b0a3fadfe2a55a2171b5e02100cf3eb
+source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
 workflow-type: tm+mt
 source-wordcount: '373'
 ht-degree: 10%
@@ -52,7 +52,7 @@ ht-degree: 10%
    + [Testning av kodkvalitet](/help/using/code-quality-testing.md)
    + [Hantera miljöer](/help/using/managing-environments.md)
    + [Övervaka miljöer](/help/using/monitoring-environments.md)
-   + [Uppdateringar av Service Pack för utvecklingsmiljöer (tidig Adobe)](/help/using/service-packs-environments.md)
+   + [Service Pack-uppdateringar för utvecklingsmiljöer (privat beta)](/help/using/service-packs-environments.md)
    + [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/)
    + [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/main/README.md)
    + [Meddelanden](/help/using/notifications.md)
@@ -63,8 +63,8 @@ ht-degree: 10%
    + [Information om databasåtkomst](/help/managing-code/accessing-repositories.md)
    + [Lägg till en Adobe-databas](/help/managing-code/adobe-repositories.md)
    + [Lägg till en privat databas](/help/managing-code/private-repositories.md)
-   + [Lägg till en extern databas (tidig Adobe)](/help/managing-code/external-repositories.md)
-   + [Hantera åtkomsttoken (tidig Adobe)](/help/managing-code/manage-access-tokens.md)
+   + [Lägg till en extern databas (privat beta)](/help/managing-code/external-repositories.md)
+   + [Hantera åtkomsttoken (privat beta)](/help/managing-code/manage-access-tokens.md)
    + [Stöd för Git-undermodul](/help/managing-code/git-submodules.md)
    + [GitHub Check Configuration](/help/managing-code/github-check-config.md)
    + [GitHub-kontrollanteckningar](/help/managing-code/github-annotations.md)

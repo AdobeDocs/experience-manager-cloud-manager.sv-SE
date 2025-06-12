@@ -1,23 +1,23 @@
 ---
-title: Uppdateringar av Service Pack för utvecklingsmiljöer - tidig Adobe
+title: Service Pack-uppdateringar för utvecklingsmiljöer - privat beta
 description: Läs om hur du nu kan initiera uppdateringspaket för utvecklingsmiljöer via Cloud Manager användargränssnitt.
 hide: true
 hidefromtoc: true
 exl-id: 996a8eee-843f-45a6-8f7a-31ea405c2b32
-source-git-commit: 55b33db1bf80f066b1a66bc87c0abeefa4771871
+source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 0%
 
 ---
 
-# Uppdateringar av Service Pack för utvecklingsmiljöer (tidig Adobe) {#stage-prod-only}
+# Uppdateringar av Service Pack för utvecklingsmiljöer (privat beta) {#stage-prod-only}
 
 Lär dig hur du kan initiera Service Pack-uppdateringar för utvecklingsmiljöer via Cloud Manager användargränssnitt.
 
 >[!NOTE]
 >
->Den här funktionen är bara tillgänglig för [det tidiga adopterprogrammet](/help/release-notes/current.md#early-adoption).
+>Den här funktionen är bara tillgänglig för [det privata betaprogrammet](/help/release-notes/current.md#beta-program).
 
 ## Ökning {#service-pack-updates-overview}
 

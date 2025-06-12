@@ -3,7 +3,7 @@ title: Versionsinformation om Cloud Manager 2025.6.0
 description: Läs om Cloud Manager 2025.5.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: d0acd47ea6011dc5896d20d76ab0fcaa970df6ac
+source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.6.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -33,7 +33,7 @@ Nästa planerade version är torsdagen den 10 juli 2025.
 
 * **Rörledningar som endast är avsedda för mellanlagring och enbart för produktion**
 
-  Cloud Manager har nu stöd för rörledningar som endast är avsedda för staging och produktion. Med den här funktionen kan du dela upp produktionsdistributioner i högar i mindre, avsedda rörledningar. <!-- This feature went into GA from Early Adopter in the June 5, 2025 CM release -->
+  Cloud Manager har nu stöd för rörledningar som endast är avsedda för staging och produktion. Med den här funktionen kan du dela upp produktionsdistributioner i högar i mindre, avsedda rörledningar. <!-- This feature went into GA from Private beta in the June 5, 2025 CM release -->
 
   ![Lägg till en icke-produktionsförloppsdialogruta med alternativknappen Full Stack Code markerad och scenmiljön markerad](/help/release-notes/assets/add-non-production-pipeline.png)
 
@@ -48,11 +48,11 @@ Nästa planerade version är torsdagen den 10 juli 2025.
   Se [Markera pipeline-favoriter](/help/using/managing-pipelines.md#pipeline-favorites).
 
 
-## Program för tidigt antagande {#early-adoption}
+## Privat betatprogram {#beta-program}
 
-Delta i Cloud Manager tidiga Adobe-program och få exklusiv tillgång till kommande funktioner innan de släpps.
+Delta i Cloud Manager privata betaprogram och få exklusiv tillgång till kommande funktioner innan de släpps.
 
-Följande tidiga introduktionsmöjligheter finns för närvarande:
+Följande privata betaversioner är tillgängliga:
 
 
 ### Hantera åtkomsttoken{#access-tokens}
