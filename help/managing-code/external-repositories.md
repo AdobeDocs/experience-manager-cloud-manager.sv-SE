@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: dfdbc66c6a447d47d669eb84e6ddf8dca86fc632
+source-git-commit: 3958e36391eaca3450ef765676fcbbd485766318
 workflow-type: tm+mt
-source-wordcount: '1864'
+source-wordcount: '2050'
 ht-degree: 0%
 
 ---
@@ -150,6 +150,12 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
    All information om webbkrokkonfigurationen och de händelser som krävs för varje leverantör finns i [Lägg till en extern databas](#add-ext-repo). Se tabellen under steg 8.
 
+>[!BEGINTABS]
+
+>[!TAB GitHub Enterprise]
+
+### GitHub Enterprise
+
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
    1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
@@ -159,11 +165,43 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
 1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
 
-   | Databas | Nödvändiga webbkrokhändelser |
-   | --- | --- |
-   | GitHub Enterprise | Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrockshändelser:<ul><li>Dra in begäranden<li>Penslar<li>Skicka kommentarer</li></li></li></ul></ul></ul> |
-   | GitLab | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Push-händelser<li>Sammanfoga begäranhändelser<li>Anteckningshändelser</li></li></li></ul></ul></ul> |
-   | Bitbucket | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Dragningsbegäran: Skapad<li>Pull-begäran: Uppdaterad<li>Dragningsbegäranden: Sammanfogade<li>Pull-begäran: Kommentar<li>Databas: Tryck</li></li></li></ul></ul></ul> |
+   | Nödvändiga webbkrokhändelser |
+   | --- |
+   | Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrockshändelser:<ul><li>Dra in begäranden<li>Penslar<li>Skicka kommentarer</li></li></li></ul></ul></ul> |
+
+>[!TAB GitLab]
+
+1. Leta upp lösningsavsnittet **Webkrok** Settings.
+1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
+   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
+
+      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
+
+1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
+1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
+
+   | Nödvändiga webbkrokhändelser |
+   | --- |
+   | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Push-händelser<li>Sammanfoga begäranhändelser<li>Anteckningshändelser</li></li></li></ul></ul></ul> |
+
+>[!TAB Bitbucket]
+
+### Bitbucket
+
+1. Leta upp lösningsavsnittet **Webkrok** Settings.
+1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
+   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
+
+      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
+
+1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
+1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
+
+   | Nödvändiga webbkrokhändelser |
+   | --- |
+   | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Dragningsbegäran: Skapad<li>Pull-begäran: Uppdaterad<li>Dragningsbegäranden: Sammanfogade<li>Pull-begäran: Kommentar<li>Databas: Tryck</li></li></li></ul></ul></ul> |
+
+>[!ENDTABS]
 
 ### Validering av pull-begäranden med webhooks
 
