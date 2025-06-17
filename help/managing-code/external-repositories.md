@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
+source-git-commit: dfdbc66c6a447d47d669eb84e6ddf8dca86fc632
 workflow-type: tm+mt
-source-wordcount: '1871'
+source-wordcount: '1864'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,9 @@ Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager st
 Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 1. [Lägg till en extern databas](#add-external-repo) till ett valt program.
-1. Ange en åtkomsttoken för den externa databasen.
-1. Validera ägarskap för den privata GitHub-databasen.
+1. [Länka en validerad extern databas till en pipeline](#validate-ext-repo).
+<!-- 1. Provide an access token to the external repository.
+1. Validate ownership of the private GitHub repository. -->
 1. [Konfigurera en webkrok](#configure-webhook) till en extern databas.
 
 
