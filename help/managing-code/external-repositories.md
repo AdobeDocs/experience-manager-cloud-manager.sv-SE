@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: 3958e36391eaca3450ef765676fcbbd485766318
+source-git-commit: 073f1024891e1a1d4298c5c593df011f5572e820
 workflow-type: tm+mt
-source-wordcount: '2050'
+source-wordcount: '2295'
 ht-degree: 0%
 
 ---
@@ -51,14 +51,14 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 1. I dialogrutan **Lägg till databas** väljer du **Privat databas** för att länka en extern Git-databas till ditt program.
 
-   ![Lägg till egen databas](/help/managing-code/assets/repositories-private-repo-type.png)
+   ![Lägg till egen databas](/help/managing-code/assets/repository-add-private-dialogbox2.png)
 
 1. Ange följande information om din databas i varje fält:
 
    | Fält | Beskrivning |
    | --- | --- |
    | **Databasnamn** | Obligatoriskt. Ett uttrycksfullt namn för din nya databas. |
-   | **Databas-URL** | Obligatoriskt. Databasens URL.<br><br>Om du använder en GitHub-värdbaserad databas måste sökvägen sluta i `.git`.<br>Till exempel *`https://github.com/org-name/repo-name.git`* (URL-sökvägen är endast avsedd som illustration).<br><br>Om du använder en extern databas måste den använda följande URL-sökvägsformat:<br>`https://git-vendor-name.com/org-name/repo-name.git`<br> eller<br>`https://self-hosted-domain/org-name/repo-name.git`<br>Och matcha Git-leverantören. |
+   | **Databas-URL** | Obligatoriskt. Databasens URL.<br><br>Om du använder en GitHub-värdbaserad databas måste sökvägen sluta i `.git`.<br>Till exempel *`https://github.com/org-name/repo-name.git`* (URL-sökvägen är endast för illustration).<br><br>Om du använder en extern databas måste den använda följande URL-sökvägsformat:<br>`https://git-vendor-name.com/org-name/repo-name.git`<br> eller<br>`https://self-hosted-domain/org-name/repo-name.git`<br>Och matcha Git-leverantören. |
    | **Välj databastyp** | Obligatoriskt. Välj den databastyp som du använder:<ul><li>**GitHub** (GitHub Enterprise och den självhanterade versionen av GitHub)</li><li>**GitLab** (både `gitlab.com` och den självhanterade versionen av GitLab) </li><li>**Bitbucket** (endast `bitbucket.org` (molnversion) stöds. Den självhanterade versionen av Bitbucket är borttagen från och med den 15 februari 2024.)</li></ul>Om databasens URL-sökväg ovan innehåller Git-leverantörens namn, till exempel GitLab eller Bitbucket, är databastypen redan förvald. |
    | **Beskrivning** | Valfritt. En detaljerad beskrivning av databasen. |
 
@@ -67,20 +67,56 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 1. I dialogrutan **Validering av privat databasägande** anger du en åtkomsttoken för att validera ägarskapet för den externa databasen så att du kan komma åt den.
 
    ![Välja en befintlig åtkomsttoken för en databas](/help/managing-code/assets/repositories-exisiting-access-token.png)
-   *Väljer en befintlig åtkomsttoken för en Bitbucket-databas.*
+   *Välja en befintlig åtkomsttoken för en Bitbucket-databas (endast illustration).*
 
-   | Tokentyp | Beskrivning |
-   | --- | --- |
-   | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
-   | **Lägg till ny åtkomsttoken** | **Databastyp: GitHub Enterprise**<br><ul><li> Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).<li>Behörigheter som krävs för GitHub Enterprise Personal Access Token (PAT)<br>Dessa behörigheter säkerställer att Cloud Manager kan validera pull-begäranden, hantera implementeringsstatuskontroller och få tillgång till nödvändig repo-information.<br>När du genererar PAT i GitHub Enterprise måste du se till att det innehåller följande databasbehörigheter:<ul><li>Pull-begäran (läs och skriv)<li>Bekräfta status (läs och skriv)<li>Databasmetadata (skrivskyddade)</li></li></ul></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
-   | | **Databastyp: GitLab**<ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).<li>Behörigheter som krävs för GitLab Personal Access Token (PAT)<br>Dessa scope ger Cloud Manager åtkomst till databasdata och användarinformation som behövs för validering och webkrok-integrering.<br>När du genererar PAT i GitLab ska du kontrollera att det innehåller följande tokenomfång:<ul><li>api<li>read_user</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
-   | | **Databastyp: Bitbucket**<ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Bitbucket-dokumentationen](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).<li>Behörigheter som krävs för Bitbucket Personal Access Token (PAT)<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webboks-händelser.<br>När du skapar applösenordet i Bitbucket måste det innehålla följande lösenordsbehörigheter:<ul><li>Databas (skrivskyddad)<li>Hämta begäranden (läsa och skriva)<li>Webhooks (läs och skriv)</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+>[!BEGINTABS]
 
-   Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+>[!TAB GitHub Enterprise]
 
-   >[!NOTE]
-   >
-   >Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
+**GitHub Enterprise**
+
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li> Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).<li>Behörigheter som krävs för GitHub Enterprise Personal Access Token (PAT)<br>Dessa behörigheter säkerställer att Cloud Manager kan validera pull-begäranden, hantera implementeringsstatuskontroller och få tillgång till nödvändig repo-information.<br>När du genererar PAT i GitHub Enterprise måste du se till att det innehåller följande databasbehörigheter:<ul><li>Pull-begäran (läs och skriv)<li>Bekräfta status (läs och skriv)<li>Databasmetadata (skrivskyddade)</li></li></ul></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+
+>[!NOTE]
+>
+>Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
+
+>[!TAB GitLab]
+
+**GitLab**
+
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).<li>Behörigheter som krävs för GitLab Personal Access Token (PAT)<br>Dessa scope ger Cloud Manager åtkomst till databasdata och användarinformation som behövs för validering och webkrok-integrering.<br>När du genererar PAT i GitLab ska du kontrollera att det innehåller följande tokenomfång:<ul><li>api<li>read_user</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+
+>[!NOTE]
+>
+>Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
+
+>[!TAB Bitbucket]
+
+**Bitbucket**
+
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Bitbucket-dokumentationen](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).<li>Behörigheter som krävs för Bitbucket Personal Access Token (PAT)<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webboks-händelser.<br>När du skapar applösenordet i Bitbucket måste det innehålla följande lösenordsbehörigheter:<ul><li>Databas (skrivskyddad)<li>Hämta begäranden (läsa och skriva)<li>Webhooks (läs och skriv)</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+
+>[!NOTE]
+>
+>Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
+
+>[!ENDTABS]
 
 1. Klicka på **Validera**.
 
@@ -154,7 +190,7 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB GitHub Enterprise]
 
-### GitHub Enterprise
+**GitHub Enterprise**
 
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
@@ -171,6 +207,8 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB GitLab]
 
+**GitLab**
+
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
    1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
@@ -186,7 +224,7 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB Bitbucket]
 
-### Bitbucket
+**Bitbucket**
 
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
@@ -209,42 +247,51 @@ När webbhookar har konfigurerats korrekt utlöser Cloud Manager automatiskt pip
 
 Följande beteenden gäller:
 
-* **GitHub Enterprise**
+>[!BEGINTABS]
 
-  När kontrollen skapas ser den ut som följande skärmbild nedan. Den största skillnaden från `GitHub.com` är att `GitHub.com` använder en kontrollkörning, medan GitHub Enterprise (med personliga åtkomsttoken) genererar en implementeringsstatus:
+>[!TAB GitHub Enterprise]
 
-  ![Bekräfta status för att ange PR-valideringsprocess för GitHub Enterprise](/help/managing-code/assets/repository-webhook-github-pr-validation.png)
+**GitHub Enterprise**
 
-* **Bitbucket**
+När kontrollen skapas ser den ut som följande skärmbild nedan. Den största skillnaden från `GitHub.com` är att `GitHub.com` använder en kontrollkörning, medan GitHub Enterprise (med personliga åtkomsttoken) genererar en implementeringsstatus:
 
-  När validering av kodkvalitet körs:
+![Bekräfta status för att ange PR-valideringsprocess för GitHub Enterprise](/help/managing-code/assets/repository-webhook-github-pr-validation.png)
 
-  ![Status när kodkvalitetsvalideringen körs](/help/managing-code/assets/repository-webhook-bitbucket1.png)
+>[!TAB GitLab]
 
-  Använder bekräftelsestatus för spårning av PR-valideringsförlopp. I följande fall visar skärmbilden vad som händer när en kodkvalitetsvalidering misslyckas på grund av ett kundproblem. En kommentar läggs till med detaljerad felinformation och en implementeringskontroll skapas som visar felet (visas till höger):
+**GitLab**
 
-  ![Dra in begärandevalideringsstatus för Bitbucket](/help/managing-code/assets/repository-webhook-bitbucket2.png)
+GitLab-interaktioner är bara beroende av kommentarer. När valideringen börjar läggs en kommentar till. När valideringen är klar (vare sig den lyckades eller misslyckades) tas den inledande kommentaren bort och ersätts med en ny kommentar som innehåller valideringsresultat eller felinformation.
 
-* **GitLab**
+När validering av kodkvalitet körs:
 
-  GitLab-interaktioner är bara beroende av kommentarer. När valideringen börjar läggs en kommentar till. När valideringen är klar (vare sig den lyckades eller misslyckades) tas den inledande kommentaren bort och ersätts med en ny kommentar som innehåller valideringsresultat eller felinformation.
+![När validering av kodkvalitet körs](/help/managing-code/assets/repository-webhook-gitlab1.png)
 
-  När validering av kodkvalitet körs:
+När kvalitetsvalideringen är klar:
 
-  ![När validering av kodkvalitet körs](/help/managing-code/assets/repository-webhook-gitlab1.png)
+![När kvalitetsvalideringen är klar](/help/managing-code/assets/repository-webhook-gitlab2.png)
 
-  När kvalitetsvalideringen är klar:
+När validering av kodkvalitet misslyckas med ett fel:
 
-  ![När kvalitetsvalideringen är klar](/help/managing-code/assets/repository-webhook-gitlab2.png)
+![När kodkvalitetsvalideringen misslyckas och ett fel inträffar](/help/managing-code/assets/repository-webhook-gitlab3.png)
 
-  När validering av kodkvalitet misslyckas med ett fel:
+När valideringen av kodkvaliteten misslyckas på grund av kundproblem:
 
-  ![När kodkvalitetsvalideringen misslyckas och ett fel inträffar](/help/managing-code/assets/repository-webhook-gitlab3.png)
+![När kodkvalitetsvalideringen misslyckas på grund av kundproblem](/help/managing-code/assets/repository-webhook-gitlab4.png)
 
-  När valideringen av kodkvaliteten misslyckas på grund av kundproblem:
+>[!TAB Bitbucket]
 
-  ![När kodkvalitetsvalideringen misslyckas på grund av kundproblem](/help/managing-code/assets/repository-webhook-gitlab4.png)
+**Bitbucket**
 
+När validering av kodkvalitet körs:
+
+![Status när kodkvalitetsvalideringen körs](/help/managing-code/assets/repository-webhook-bitbucket1.png)
+
+Använder bekräftelsestatus för spårning av PR-valideringsförlopp. I följande fall visar skärmbilden vad som händer när en kodkvalitetsvalidering misslyckas på grund av ett kundproblem. En kommentar läggs till med detaljerad felinformation och en implementeringskontroll skapas som visar felet (visas till höger):
+
+![Dra in begärandevalideringsstatus för Bitbucket](/help/managing-code/assets/repository-webhook-bitbucket2.png)
+
+>[!ENDTABS]
 
 ## Felsöka webkrockproblem
 
