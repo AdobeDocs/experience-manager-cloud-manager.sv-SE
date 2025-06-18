@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: bacb4b6e79519e4fef4cf01e04154d492cc888e2
+source-git-commit: cd2a71bc83a8ac7173089daea9670d25b68e62ba
 workflow-type: tm+mt
-source-wordcount: '2035'
+source-wordcount: '2003'
 ht-degree: 0%
 
 ---
@@ -75,7 +75,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 >[!TAB GitHub Enterprise]
 
-| Tokentyp | Beskrivning |
+| Alternativ för åtkomsttoken | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
 | **Lägg till ny åtkomsttoken** | <ul><li> Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).<li>Behörigheter som krävs för GitHub Enterprise Personal Access Token (PAT)<br>Dessa behörigheter säkerställer att Cloud Manager kan validera pull-begäranden, hantera implementeringsstatuskontroller och få tillgång till nödvändig repo-information.<br>När du genererar PAT i GitHub Enterprise måste du se till att det innehåller följande databasbehörigheter:<ul><li>Pull-begäran (läs och skriv)<li>Bekräfta status (läs och skriv)<li>Databasmetadata (skrivskyddade)</li></li></ul></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
@@ -86,7 +86,7 @@ Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 >[!TAB GitLab]
 
-| Tokentyp | Beskrivning |
+| Alternativ för åtkomsttoken | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
 | **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).<li>Behörigheter som krävs för GitLab Personal Access Token (PAT)<br>Dessa scope ger Cloud Manager åtkomst till databasdata och användarinformation som behövs för validering och webkrok-integrering.<br>När du genererar PAT i GitLab ska du kontrollera att det innehåller följande tokenomfång:<ul><li>api<li>read_user</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
@@ -98,7 +98,7 @@ Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 >[!TAB Bitbucket]
 
-| Tokentyp | Beskrivning |
+| Alternativ för åtkomsttoken | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
 | **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Bitbucket-dokumentationen](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).<li>Behörigheter som krävs för Bitbucket Personal Access Token (PAT)<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webboks-händelser.<br>När du skapar applösenordet i Bitbucket måste det innehålla följande lösenordsbehörigheter:<ul><li>Databas (skrivskyddad)<li>Hämta begäranden (läsa och skriva)<li>Webhooks (läs och skriv)</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
@@ -188,21 +188,21 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB GitHub Enterprise]
 
-    | Nödvändiga webbkrokhändelser |
-    | — |
-    | Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkrokhändelser:&lt;ul>&lt;li>pull-begäranden&lt;li>push&lt;li>Issues-kommentarer&lt;/li>&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul> |0
+| Nödvändiga webbkrokhändelser |
+| --- |
+| Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrockshändelser:<ul><li>Dra in begäranden<li>Penslar<li>Skicka kommentarer</li></li></li></ul></ul></ul> |
 
 >[!TAB GitLab]
 
-    | Nödvändiga webbkrokhändelser |
-    | — |
-    | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkrockhändelser&lt;ul>&lt;li>Push-händelser&lt;li>Merge request-händelser&lt;li>Note-händelser&lt;/li>&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul> |0
+| Nödvändiga webbkrokhändelser |
+| --- |
+| Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Push-händelser<li>Sammanfoga begäranhändelser<li>Anteckningshändelser</li></li></li></ul></ul></ul> |
 
 >[!TAB Bitbucket]
 
-    | Nödvändiga webbkrokhändelser |
-    | — |
-    | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkroshändelser&lt;ul>&lt;li>Pull-begäran: Skapad&lt;li>Pull-begäran: Uppdaterad&lt;li>Pull-begäran: Sammanslagen&lt;li>Pull-begäran: Kommentar&lt;li>Databas: Push&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul>&lt;/ul> |0
+| Nödvändiga webbkrokhändelser |
+| --- |
+| Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Dragningsbegäran: Skapad<li>Pull-begäran: Uppdaterad<li>Dragningsbegäranden: Sammanfogade<li>Pull-begäran: Kommentar<li>Databas: Tryck</li></li></li></ul></ul></ul> |
 
 >[!ENDTABS]
 
