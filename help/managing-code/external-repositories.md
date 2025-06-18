@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: 073f1024891e1a1d4298c5c593df011f5572e820
+source-git-commit: 523e8ef1c90bf88aa846e067aa1cca9e6ed5d8ce
 workflow-type: tm+mt
-source-wordcount: '2295'
+source-wordcount: '2283'
 ht-degree: 0%
 
 ---
@@ -73,8 +73,6 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 >[!TAB GitHub Enterprise]
 
-**GitHub Enterprise**
-
 | Tokentyp | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
@@ -88,8 +86,6 @@ Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 >[!TAB GitLab]
 
-**GitLab**
-
 | Tokentyp | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
@@ -102,8 +98,6 @@ Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 >Funktionen **Lägg till ny åtkomsttoken** är för närvarande i den privata betaversionen. Ytterligare funktioner planeras. Därför kan de behörigheter som krävs för åtkomsttoken ändras. Dessutom kan användargränssnittet för hantering av tokens uppdateras, inklusive funktioner som utgångsdatum för token. Och automatiska kontroller för att säkerställa att tokens som är länkade till databaser förblir giltiga.
 
 >[!TAB Bitbucket]
-
-**Bitbucket**
 
 | Tokentyp | Beskrivning |
 | --- | --- |
@@ -190,8 +184,6 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB GitHub Enterprise]
 
-**GitHub Enterprise**
-
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
    1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
@@ -207,8 +199,6 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
 >[!TAB GitLab]
 
-**GitLab**
-
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
    1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
@@ -223,8 +213,6 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
    | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Push-händelser<li>Sammanfoga begäranhändelser<li>Anteckningshändelser</li></li></li></ul></ul></ul> |
 
 >[!TAB Bitbucket]
-
-**Bitbucket**
 
 1. Leta upp lösningsavsnittet **Webkrok** Settings.
 1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
@@ -251,15 +239,11 @@ Följande beteenden gäller:
 
 >[!TAB GitHub Enterprise]
 
-**GitHub Enterprise**
-
 När kontrollen skapas ser den ut som följande skärmbild nedan. Den största skillnaden från `GitHub.com` är att `GitHub.com` använder en kontrollkörning, medan GitHub Enterprise (med personliga åtkomsttoken) genererar en implementeringsstatus:
 
 ![Bekräfta status för att ange PR-valideringsprocess för GitHub Enterprise](/help/managing-code/assets/repository-webhook-github-pr-validation.png)
 
 >[!TAB GitLab]
-
-**GitLab**
 
 GitLab-interaktioner är bara beroende av kommentarer. När valideringen börjar läggs en kommentar till. När valideringen är klar (vare sig den lyckades eller misslyckades) tas den inledande kommentaren bort och ersätts med en ny kommentar som innehåller valideringsresultat eller felinformation.
 
@@ -280,8 +264,6 @@ När valideringen av kodkvaliteten misslyckas på grund av kundproblem:
 ![När kodkvalitetsvalideringen misslyckas på grund av kundproblem](/help/managing-code/assets/repository-webhook-gitlab4.png)
 
 >[!TAB Bitbucket]
-
-**Bitbucket**
 
 När validering av kodkvalitet körs:
 
