@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: a0836dd24dd3b711c9d1b78f28755e2db98b051c
+source-git-commit: 5bef5a1b8f54a245e1354b1b77c775a06b9b3faa
 workflow-type: tm+mt
-source-wordcount: '2210'
+source-wordcount: '2141'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 1. Välj **Spara** för att lägga till databasen.
 
-1. I dialogrutan **Validering av privat databasägande** anger du en åtkomsttoken för att validera ägarskapet för den externa databasen så att du kan komma åt den.
+1. I dialogrutan **Verifiering av privat databasägande** anger du en åtkomsttoken för att validera ägarskapet för den externa databasen så att du kan komma åt den. Klicka sedan på **Validera**.
 
    ![Välja en befintlig åtkomsttoken för en databas](/help/managing-code/assets/repositories-exisiting-access-token.png)
    *Välja en befintlig åtkomsttoken för en Bitbucket-databas (endast illustration).*
@@ -73,43 +73,37 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 >[!TAB GitHub Enterprise]
 
-    | Tokentyp | Beskrivning |
-    | — | — |
-    | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
-    | **Lägg till ny åtkomsttoken** |&lt;ul>&lt;li> I textfältet **Token Name** anger du ett namn för åtkomsttoken som du skapar.&lt;li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).&lt;li>Behörigheter som krävs för GitHub Enterprise Personal Access Token (PAT)&lt;br>Dessa behörigheter ser till att Cloud Manager kan validera pull-begäranden, hantera implementeringsstatuskontroller och få tillgång till nödvändig repo-information.&lt;br>När du genererar PAT i GitHub Enterprise måste du se till att det innehåller följande databasbehörigheter:&lt;ul>&lt;li>Pull-begäran (läsa och skriva)&lt;li>Verkställ status (läsa och skriva)&lt;li>Databasmetadata (skrivskyddad)&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul>&lt;/ul>&lt;/ul>&lt;ul>&lt;li>I **Access Token**-fält, klistra in den token du just skapade. |
-    
-    1. Klicka på **Validera**.
-    
-    Efter valideringen är den externa databasen klar att användas och länka till en pipeline.
-    
-    Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li> Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitHub-dokumentationen](https://docs.github.com/en/enterprise-server@3.14/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).<li>Behörigheter som krävs för GitHub Enterprise Personal Access Token (PAT)<br>Dessa behörigheter säkerställer att Cloud Manager kan validera pull-begäranden, hantera implementeringsstatuskontroller och få tillgång till nödvändig repo-information.<br>När du genererar PAT i GitHub Enterprise måste du se till att det innehåller följande databasbehörigheter:<ul><li>Pull-begäran (läs och skriv)<li>Bekräfta status (läs och skriv)<li>Databasmetadata (skrivskyddade)</li></li></ul></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
+
+Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 >[!TAB GitLab]
 
-    | Tokentyp | Beskrivning |
-    | — | — |
-    | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
-    | **Lägg till ny åtkomsttoken** |&lt;ul>&lt;li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.&lt;li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).&lt;li>Behörigheter som krävs för GitLab PAT-token (Personal Access Token)&lt;br>Dessa scope ger Cloud Manager åtkomst till databasdata och användarinformation efter behov för validering och webkrok-integrering.&lt;br>När du genererar PAT i GitLab ska du kontrollera att det innehåller följande tokenomfång:&lt;ul>&lt;li>api&lt;li>read_user&lt;/li>&lt;/li>&lt;/ul>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul>&lt;ul>&lt;li>Klistra in den token du just skapade i fältet **Access Token**. |0
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en personlig åtkomsttoken genom att följa instruktionerna i [GitLab-dokumentationen](https://docs.gitlab.com/user/profile/personal_access_tokens/).<li>Behörigheter som krävs för GitLab Personal Access Token (PAT)<br>Dessa scope ger Cloud Manager åtkomst till databasdata och användarinformation som behövs för validering och webkrok-integrering.<br>När du genererar PAT i GitLab ska du kontrollera att det innehåller följande tokenomfång:<ul><li>api<li>read_user</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
 
-1. Klicka på **Validera**.
+Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
 
-   Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
-
-   Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 
 >[!TAB Bitbucket]
 
-    | Tokentyp | Beskrivning |
-    | — | — |
-    | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
-    | **Lägg till ny åtkomsttoken** |&lt;ul>&lt;li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.&lt;li>Skapa en åtkomsttoken för databas med hjälp av [Bitbucket-dokumentation](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).&lt;li>Behörigheter som krävs för Bitbucket Personal Access Token (PAT)&lt;br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webkrokhändelser.&lt;br>När du skapar applösenordet i Bitbucket måste det innehålla följande lösenordsbehörigheter:&lt;ul>&lt;li>Databas (skrivskyddad)&lt;li>Pull-begäranden (läsa och skriva)&lt;li>Webhooks (läsa och skriva)&lt;/li>&lt;/li>&lt;/ul>&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul>&lt;ul>&lt;li>In i fältet **Access Token** klistrar du in den token du just skapade. |
-    
-    1. Klicka på **Validera**.
-    
-    Efter valideringen är den externa databasen klar att användas och länka till en pipeline.
-    
-    Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+| Tokentyp | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Bitbucket-dokumentationen](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/).<li>Behörigheter som krävs för Bitbucket Personal Access Token (PAT)<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webboks-händelser.<br>När du skapar applösenordet i Bitbucket måste det innehålla följande lösenordsbehörigheter:<ul><li>Databas (skrivskyddad)<li>Hämta begäranden (läsa och skriva)<li>Webhooks (läs och skriv)</li></li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
+
+Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 >[!ENDTABS]
 
