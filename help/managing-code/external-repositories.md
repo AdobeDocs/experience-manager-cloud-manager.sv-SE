@@ -3,9 +3,9 @@ title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: 06fa04f8a459885a20f2b626ccf5d648ccc5fb57
+source-git-commit: bacb4b6e79519e4fef4cf01e04154d492cc888e2
 workflow-type: tm+mt
-source-wordcount: '2150'
+source-wordcount: '2035'
 ht-degree: 0%
 
 ---
@@ -63,6 +63,8 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
    | **Beskrivning** | Valfritt. En detaljerad beskrivning av databasen. |
 
 1. Välj **Spara** för att lägga till databasen.
+
+   Ange nu en åtkomsttoken för att validera ägarskapet för den externa databasen.
 
 1. I dialogrutan **Verifiering av privat databasägande** anger du en åtkomsttoken för att validera ägarskapet för den externa databasen så att du kan komma åt den. Klicka sedan på **Validera**.
 
@@ -129,6 +131,7 @@ Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 >
 >Mer information om hur du hanterar databaser i Cloud Manager finns i [Cloud Manager-databaser](/help/managing-code/managing-repositories.md).
 
+
 ## Konfigurera en webkrok för en extern databas {#configure-webhook}
 
 Med Cloud Manager kan du konfigurera webbhooks för externa Git-databaser som du har lagt till. Se [Lägg till en extern databas](#add-ext-repo). Dessa webhooks gör det möjligt för Cloud Manager att ta emot händelser som är relaterade till olika åtgärder inom Git-leverantörslösningen.
@@ -172,60 +175,44 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 
    All information om webbkrokkonfigurationen och de händelser som krävs för varje leverantör finns i [Lägg till en extern databas](#add-ext-repo). Under steg 8, se tabellen med flikar.
 
+1. Leta upp lösningsavsnittet **Webkrok** Settings.
+1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
+   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
+
+      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
+
+1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
+1. Konfigurera webbokroken för att skicka de händelser som Cloud Manager kräver. Använd följande tabell för att fastställa rätt händelser för Git-leverantören.
+
 >[!BEGINTABS]
 
 >[!TAB GitHub Enterprise]
 
-1. Leta upp lösningsavsnittet **Webkrok** Settings.
-1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
-   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
-
-      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
-
-1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
-1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
-
-   | Nödvändiga webbkrokhändelser |
-   | --- |
-   | Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrockshändelser:<ul><li>Dra in begäranden<li>Penslar<li>Skicka kommentarer</li></li></li></ul></ul></ul> |
+    | Nödvändiga webbkrokhändelser |
+    | — |
+    | Dessa händelser gör att Cloud Manager kan svara på GitHub-aktivitet, som pull-begäran-validering, push-baserade utlösare för pipelines eller Edge Delivery Services-kodsynkronisering.&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkrokhändelser:&lt;ul>&lt;li>pull-begäranden&lt;li>push&lt;li>Issues-kommentarer&lt;/li>&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul> |0
 
 >[!TAB GitLab]
 
-1. Leta upp lösningsavsnittet **Webkrok** Settings.
-1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
-   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
-
-      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
-
-1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
-1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
-
-   | Nödvändiga webbkrokhändelser |
-   | --- |
-   | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Push-händelser<li>Sammanfoga begäranhändelser<li>Anteckningshändelser</li></li></li></ul></ul></ul> |
+    | Nödvändiga webbkrokhändelser |
+    | — |
+    | Dessa webkrofshändelser gör att Cloud Manager kan utlösa rörledningar när kod skickas eller när en sammanfogningsbegäran skickas. De spårar även kommentarer som rör validering av pull-begäran (via anteckningshändelser).&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkrockhändelser&lt;ul>&lt;li>Push-händelser&lt;li>Merge request-händelser&lt;li>Note-händelser&lt;/li>&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul> |0
 
 >[!TAB Bitbucket]
 
-1. Leta upp lösningsavsnittet **Webkrok** Settings.
-1. Klistra in webkroks-URL:en som du kopierade tidigare i URL-textfältet.
-   1. Ersätt frågeparametern `api_key` i webkrok-URL:en med din egen riktiga API-nyckel.
-
-      Om du vill generera en API-nyckel måste du skapa ett integreringsprojekt i Adobe Developer Console. Mer information finns i [Skapa ett API-integreringsprojekt](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/create-api-integration/).
-
-1. Klistra in webbkrokhemligheten som du kopierade tidigare i textfältet **Hemlig** (eller **Hemlig nyckel** eller **Hemlig token**).
-1. Konfigurera webkroken för att skicka de händelser som Cloud Manager förväntar sig.
-
-   | Nödvändiga webbkrokhändelser |
-   | --- |
-   | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Dragningsbegäran: Skapad<li>Pull-begäran: Uppdaterad<li>Dragningsbegäranden: Sammanfogade<li>Pull-begäran: Kommentar<li>Databas: Tryck</li></li></li></ul></ul></ul> |
+    | Nödvändiga webbkrokhändelser |
+    | — |
+    | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.&lt;br>Kontrollera att webkroken är inställd på att utlösas för följande obligatoriska webkroshändelser&lt;ul>&lt;li>Pull-begäran: Skapad&lt;li>Pull-begäran: Uppdaterad&lt;li>Pull-begäran: Sammanslagen&lt;li>Pull-begäran: Kommentar&lt;li>Databas: Push&lt;/li>&lt;/li>&lt;/ul>&lt;/ul>&lt;/ul>&lt;/ul> |0
 
 >[!ENDTABS]
 
+
 ### Validering av pull-begäranden med webhooks
 
-När webbhookar har konfigurerats korrekt utlöser Cloud Manager automatiskt pipelinekörningar eller PR-valideringskontroller för din databas.
+När webbhookar har konfigurerats korrekt utlöser Cloud Manager automatiskt pipelinekörningar eller PR-valideringskontroller (pull request) för din databas.
 
-Baserat på den externa databas som du använder gäller följande beteenden:
+Beteendet varierar beroende på vilken Git-leverantör du använder, vilket beskrivs nedan.
+
 
 >[!BEGINTABS]
 
