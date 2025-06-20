@@ -2,9 +2,9 @@
 title: Konfigurera grenar
 description: Lär dig hur du konfigurerar din första gren i Git och hur den används av CI/CD-flödet för att distribuera programkoden.
 exl-id: ff2ae28f-902e-4fb2-aeb1-3636cb5cd9bb
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '317'
 ht-degree: 0%
 
 ---
@@ -70,11 +70,11 @@ To <url>
 
 >[!NOTE]
 >
->Den specifika URL:en, tillsammans med dina autentiseringsuppgifter, tillhandahålls av din Adobe CSE (Customer Success Engineer) under introduktionen av [!UICONTROL Cloud Manager].
+>Den specifika URL:en, tillsammans med dina autentiseringsuppgifter, tillhandahålls av din Adobe CSE (Customer Success Engineer) under [!UICONTROL Cloud Manager]-introduktionen.
 
 ## Ytterligare grenar {#additional-branches}
 
-En enskild `main`-gren kan räcka för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som kallas `develop`. Utvecklingsgrenen sammanfogas sedan i grenen `main` när det är dags för en distribution.
+En enskild `main`-gren kan räcka för mycket enkla projekt, men i de flesta fall krävs en mer komplex förgreningsstrategi. Många kunder följer en process där dagliga utvecklingsaktiviteter utförs på en gren som kallas `develop`. `develop`-grenen sammanfogas sedan i `main`-grenen när det är dags för en distribution.
 
 >[!TIP]
 >

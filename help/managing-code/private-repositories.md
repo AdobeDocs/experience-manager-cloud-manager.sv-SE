@@ -3,7 +3,7 @@ title: Lägg till privata databaser i Cloud Manager
 description: Lär dig hur du konfigurerar Cloud Manager så att det fungerar med dina egna privata GitHub-databaser.
 feature: Release Information
 exl-id: e0d103c9-c147-4040-bf53-835e93d78a0b
-source-git-commit: 58cdebf819f2737be5d8e129ff5b9783888f3c21
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
 source-wordcount: '815'
 ht-degree: 0%
@@ -134,6 +134,6 @@ Vissa begränsningar gäller när du använder privata databaser med Cloud Manag
 * Rörledningar för webbnivå och konfiguration stöds inte i privata databaser.
 * Ingen Git-tagg skapas och skickas när privata databaser används i produktion av rörledningar i en hel hög.
 * Om Adobe GitHub-appen tas bort från din GitHb-organisation tar den här åtgärden bort pull-begärandevalideringsfunktionen för alla databaser.
-* Pipeliner som använder privata databaser och utlösaren för bygge vid implementering startas inte automatiskt när en ny implementering överförs till den valda grenen.
+* Pipeliner som använder privata databaser och utlösaren för bygge som inte har implementerats startas inte automatiskt när en ny implementering överförs till den valda grenen.
 * [Återanvändning av felaktigheter](/help/getting-started/project-setup.md#build-artifact-reuse) gäller inte för privata databaser.
 * Du kan inte pausa pull-begärandevalideringen med GitHub-kontrollen från Cloud Manager. Om GitHub-databasen valideras i Cloud Manager försöker Cloud Manager validera pull-begäranden som skapas för den databasen.

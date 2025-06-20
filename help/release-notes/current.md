@@ -3,9 +3,9 @@ title: Versionsinformation om Cloud Manager 2025.6.0
 description: Läs om Cloud Manager 2025.5.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 38d398caf2323b603afd293aa9152308fefd323f
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.6.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -73,7 +73,7 @@ Om du är intresserad av att testa den här nya funktionen och dela med dig av d
 
 #### Hantera åtkomsttoken{#access-tokens}
 
-Använd funktionen **Hantera åtkomsttoken** tillsammans med BYOG för att visa, byta namn på och ta bort åtkomsttoken som är associerade med externa Bring Your Own Git-databaser, som GitHub Enterprise, GitLab, Bitbucket och Azure DevOps.
+Använd **Hantera åtkomsttoken** med BYOG för att visa, byta namn på och ta bort åtkomsttoken som är associerade med externa Bring Your Own Git-databaser, som GitHub Enterprise, GitLab, Bitbucket och Azure DevOps.
 
 Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 

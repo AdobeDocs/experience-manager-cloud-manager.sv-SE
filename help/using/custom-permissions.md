@@ -2,9 +2,9 @@
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
 exl-id: a81eda9f-aa89-40ea-8e4c-52367a0a6aba
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1373'
 ht-degree: 1%
 
 ---
@@ -52,7 +52,7 @@ Skapa först en ny produktprofil som du kan tilldela anpassade behörigheter til
 
 1. Sök efter en instans med ett namn som matchar mönstret `*-cloud-manager` och klicka för att hantera användare och behörigheter.
 
-1. Du omdirigeras till fliken **Produkter** på Admin Console, där du kan hantera användare och behörigheter för Cloud Manager. Klicka på **Ny profil** i Admin Console.
+1. Du omdirigeras till fliken **Produkter** i Admin Console, där du kan hantera användare och behörigheter för Cloud Manager. Klicka på **Ny profil** i Admin Console.
 
 ![Knappen Ny profil](/help/assets/admin-console-new-profile.png)
 
@@ -65,13 +65,13 @@ Skapa först en ny produktprofil som du kan tilldela anpassade behörigheter til
 
 1. Klicka på **Spara**.
 
-Den nya produktprofilen sparas och visas i listan över produktprofiler på Admin Console.
+Den nya produktprofilen sparas och visas i listan över produktprofiler i Admin Console.
 
 ### Tilldela anpassade behörigheter till den nya produktprofilen {#assign-permissions}
 
 Nu när du har en ny produktprofil kan du tilldela den anpassade behörigheter.
 
-1. Klicka på namnet på den [nya produktprofilen som du nyss skapade](#create) i Admin Console.
+1. I Admin Console klickar du på namnet på den [nya produktprofilen som du nyss skapade](#create).
 
 1. I det fönster som öppnas väljer du fliken **Behörigheter** för att visa en lista med redigerbara behörigheter.
 
@@ -98,36 +98,36 @@ Din nya produktprofil sparas nu med anpassade behörigheter.
 
 Nu kan du tilldela användare till den nya produktprofilen som du skapade med anpassade behörigheter.
 
-1. Klicka på namnet på den [nya produktprofilen som du just har tilldelat anpassade behörigheter till i Admin Console ](#assign-permissions).
+1. I Admin Console klickar du på namnet på den [nya produktprofil som du just har tilldelat anpassade behörigheter till](#assign-permissions).
 
 1. I det fönster som öppnas väljer du fliken **Användare**.
 
 1. Klicka på **Lägg till användare** och tilldela användare till din nya produktprofil med anpassade behörigheter.
 
-Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html).
+Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
 
 ## Konfigurerbara behörigheter {#configurable-permissions}
 
 Följande behörigheter är tillgängliga för att skapa anpassade profiler.
 
 | Behörighet | Beskrivning |
-|---|---|
-| Programåtkomst | Ge användarna åtkomst till program |
-| Programredigering | Tillåt användare att redigera program |
-| Skapa pipeline | Tillåt användare att skapa nya rörledningar |
-| Ta bort pipeline | Tillåt användare att ta bort rörledningar |
-| Redigera pipeline | Tillåt användare att redigera rörledningar |
-| Godkänn/avvisa produktionsdistributioner | Tillåt användare att godkänna eller avvisa ett produktionsdistributionssteg |
-| Avbryt körning av pipeline | Tillåt användare att avbryta pipeline-körningar |
-| Körningsstart för pipeline | Tillåt användare att starta nya pipeline-körningar |
-| Åsidosätt/avvisa viktiga måttfel | Tillåt användare att åsidosätta/ignorera viktiga mätfel |
-| Produktionsdistributionsschema | Tillåt användare att schemalägga ett produktionsdistributionssteg |
-| Datainformationsåtkomst | Ge användarna åtkomst till databasinformation och generera ett lösenord för åtkomst |
-| Skapa databas | Tillåt användare att skapa nya Git-databaser |
-| Radera databas | Tillåt användare att ta bort Git-databaser |
-| Databasredigering | Tillåt användare att redigera Git-databaser |
-| Generera databaskod | Tillåt användare att generera projekt från arkityp |
-| Hantera innehållskopia | Tillåt användare att hantera kopieringsåtgärder för innehåll |
+| --- | --- |
+| `Program Access` | Ge användarna åtkomst till program |
+| `Program Edit` | Tillåt användare att redigera program |
+| `Pipeline Create` | Tillåt användare att skapa nya rörledningar |
+| `Pipeline Delete` | Tillåt användare att ta bort rörledningar |
+| `Pipeline Edit` | Tillåt användare att redigera rörledningar |
+| `Production Deployments Approve/Reject` | Tillåt användare att godkänna eller avvisa ett produktionsdistributionssteg |
+| `Pipeline Executions Cancel` | Tillåt användare att avbryta pipeline-körningar |
+| `Pipeline Executions Start` | Tillåt användare att starta nya pipeline-körningar |
+| `Override/Reject Important Metric Failures` | Tillåt användare att åsidosätta/ignorera viktiga mätfel |
+| `Production Deployments Schedule` | Tillåt användare att schemalägga ett produktionsdistributionssteg |
+| `Repository Info Access` | Ge användarna åtkomst till databasinformation och generera ett lösenord för åtkomst |
+| `Repository Create` | Tillåt användare att skapa nya Git-databaser |
+| `Repository Delete` | Tillåt användare att ta bort Git-databaser |
+| `Repository Edit` | Tillåt användare att redigera Git-databaser |
+| `Repository Code Generate` | Tillåt användare att generera projekt från arkityp |
+| `Content Copy Manage` | Tillåt användare att hantera kopieringsåtgärder för innehåll |
 
 ### Behörigheter på organisationsnivå {#organization-level}
 
@@ -142,21 +142,21 @@ Mer information finns i [Source-koddatabasen](/help/requirements/source-code-rep
 Följande termer används för att skapa och hantera anpassade behörigheter och fördefinierade roller.
 
 | Term | Beskrivning |
-|---|---|
+| --- | --- |
 | Fördefinierade behörigheter | Fördefinierade roller som **Business Owner**, **Deployment Manager** och så vidare. för att styra olika funktioner i Cloud Manager. Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md). |
 | Anpassade behörigheter | Cloud Manager-funktioner som gör att användare kan skapa behörighetsprofiler för att definiera roller som styr funktioner som stöds i Cloud Manager |
-| Behörighetsprofil | Skapat i Admin Console för att hantera konfigurerbara behörigheter som är tillämpliga för användare som är en del av behörighetsprofilen |
+| Behörighetsprofil | Skapat i Admin Console för att hantera konfigurerbara behörigheter som gäller för användare som ingår i behörighetsprofilen |
 | Konfigurerbar behörighet | Cloud Manager-behörigheter kan konfigureras i behörighetsprofilen |
 | Behörighetsobjekt | Ett program, en miljö eller en pipeline-resurs som en behörighet kan tillämpas på |
 
 Behörighetsobjekt avser det område där behörigheter tillämpas. Vanligtvis är det något av följande.
 
 | Typ av behörighetsobjekt | Exempel | Beskrivning |
-|---|---|---|
+| --- | --- | --- |
 | Organisation | organisation:företagA | Alla tillämpliga resurser i en organisation. En resurs kan vara ett program, en miljö eller en pipeline. Om användaren lägger till en organisation för någon behörighet har alla nya resurser i den organisationen också den behörigheten. |
-| Program | Program A | Alla tillämpliga resurser i ett program |
-| Miljö | Program A: miljö | Gäller i en viss miljö |
-| Pipeline | Program A: Pipeline | Gäller för en viss rörledning |
+| Program | Program A | Alla tillämpliga resurser i ett program. |
+| Miljö | Program A: miljö | Gäller i en viss miljö. |
+| Pipeline | Program A: Pipeline | Gäller för en viss rörledning. |
 
 ## Begränsningar {#limitations}
 
@@ -199,4 +199,4 @@ I det här scenariot kan användaren inte komma åt miljön eller pipelinen om d
 
 ### Vad händer om jag har både AEM as a Cloud Service- och AMS-program i samma IMS-organisation? Kan jag hantera behörigheter från en profil? {#ams-and-aemaacs}
 
-Skapa en separat profil för varje produkttyp. Det vill säga en för AEM som Cloud Service och en för Adobe Managed Services eller AMS.
+Skapa en separat profil för varje produkttyp. En för AEM som Cloud Service och en för Adobe Managed Services eller AMS.

@@ -2,9 +2,9 @@
 title: Övervaka miljöer
 description: Lär dig övervaka dina miljöer i Cloud Manager.
 exl-id: 32886133-d6c0-4aed-8bb0-81b84f63e825
-source-git-commit: 53fb666ab6caff7a697d7f1942ce25f2bf27a2ce
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '907'
+source-wordcount: '861'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Adobe Managed Services anger tröskelvärden som du kan visa i [!UICONTROL Cloud
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
 1. Klicka på ikonen ![Mer, ellipsen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) för programmet som du vill övervaka.
-1. Klicka på **Visa övervakning** under rubriken **Hantera** på menyn för att öppna sidan **Rapporter** som visar information om systemövervakning.
+1. Klicka på **Visa övervakning** under **Hantera** på menyn för att öppna sidan **Rapporter** som visar information om systemövervakning.
 
    ![Inställningar](/help/assets/first-timea1.png)
 
@@ -73,28 +73,28 @@ Om du till exempel klickar på varningströskelserien visas bara det kritiska tr
 
 #### Värd {#host}
 
-* **Läs in per kärna**: Antalet processer som CPU kör. Eller så är antalet processer i kö som befinner sig i vänteläge i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
-* **Antal processer**: Antalet processer som är öppna.
-* **Antal användare**: Antalet användare med en aktiv gränssnittssession.
-* **Minnesanvändning**: Procentandel av systemminnet som är allokerat för tillfället.
-* **JVM-minne**: Den allokerade Java-heapens storlek (i MB).
-* **Gammalt genereringsutrymme**: Procentandel av JVM-gammalt genereringsminne som för närvarande allokeras.
+* **`Load Per Core`**: Antalet processer som CPU kör. Eller så är antalet processer i kö som befinner sig i vänteläge i genomsnitt över en (load1), fem (load5) och femton (load15) minuter.
+* **P`rocess Count`**: Antal öppna processer.
+* **`User Count`**: Antalet användare med en aktiv gränssnittssession.
+* **`Memory Usage`**: Procentandelen systemminne som för närvarande allokeras.
+* **`JVM Memory`**: Den allokerade Java-heapens storlek (i MB).
+* **`Old Generation Space`**: Procentandel av JVM-gammalt genereringsminne som för närvarande allokeras.
 
 #### Nätverk {#network}
 
-* **CQ-portkontroll**: Svarstiden i sekunder för åtkomst till AEM- eller Dispatcher-porten. Det finns olika mätvärden för författare, publicering och Dispatcher.
+* **`CQ Port Check`**: Svarstiden i sekunder för åtkomst till AEM- eller Dispatcher-porten. Det finns olika mätvärden för författare, publicering och Dispatcher.
 
 #### Lagring {#storage}
 
-* **Diskutrymme**: Det använda diskutrymmet (i MB) för varje monteringspunkt på värden. Det finns olika mätvärden för varje monteringspunkt. Det finns minst mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
-* **Mappstorlek**
-* **AEM Segment Store**: Använt diskutrymme (i gigabyte) för AEM Segment Store.
+* **`Disk Space`**: Använt diskutrymme (i MB) för varje monteringspunkt på värden. Det finns olika mätvärden för varje monteringspunkt. Det finns minst mått för `/` och `/mnt`, men det kan finnas ytterligare värden för monteringspunkter beroende på den specifika instanskonfigurationen.
+* **`Folder Size`**
+* **`AEM Segment Store`**: Använt diskutrymme (i gigabyte) för AEM Segment Store.
 
 #### Program {#application}
 
-* **Replikeringsagent**: Tiden (i sekunder) för en testreplikeringshändelse
+* **`Replication Agent`**: Tiden (i sekunder) för en testreplikeringshändelse
    * Det finns olika mått för varje replikeringsagent.
-* **Dispatcher Flush**: Antalet objekt i Dispatcher tömningskön
+* **`Dispatcher Flush`**: Antalet objekt i Dispatcher tömningskön
 
 ## SLA-rapportering {#sla-reporting}
 
@@ -114,12 +114,12 @@ Avsnittet **Händelseanalys** i det här diagrammet visar den uppsättning incid
 
 ## SLA metrics {#sla-metrics}
 
-* **Författarkontrakt**: SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
-* **AMS Author SLA**: Uppmätt drifttid för produktionsförfattarnivån, factoringincidenter orsakade av leverantörer eller Adobe.
-* **Författare av SLA**: Den uppmätta drifttiden för författarnivån ignorerar schemalagd drifttid, till exempel underhållsfönster.
-* **Slutanvändaravtal**: SLA som definierats i ditt avtal med Adobe Managed Services för publiceringsnivån.
-* **AMS-slutanvändare SLA**: De uppmätta upptiderna för produktionens publiceringsnivå, factoringincidenter som orsakas av leverantörer eller av Adobe.
-* **Slutanvändare SLA**: Den uppmätta drifttiden för publiceringsskiktet ignorerar schemalagd drifttid, till exempel underhållsfönster.
+* **`Author Contract`**: Den SLA som definierats i ditt avtal med Adobe Managed Services för författarnivån.
+* **`AMS Author SLA`**: Uppmätt drifttid för produktionsförfattarnivån, factoringincidenter orsakade av leverantörer eller Adobe.
+* **`Author SLA`**: Den uppmätta drifttiden för författarskiktet ignorerar schemalagd drifttid, till exempel underhållsfönster.
+* **`End User Contract`**: Den SLA som definierats i ditt avtal med Adobe Managed Services för publiceringsnivån.
+* **`AMS End User SLA`**: De uppmätta upptiderna för produktionsskiktet, factoringincidenter som orsakas av leverantörer eller av Adobe.
+* **`End User SLA`**: Den uppmätta drifttiden för publiceringsskiktet ignorerar schemalagd drifttid, till exempel underhållsfönster.
 
 ## Videosjälvstudie {#video-tutorial}
 

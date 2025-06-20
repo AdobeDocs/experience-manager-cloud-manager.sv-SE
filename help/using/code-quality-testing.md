@@ -2,9 +2,9 @@
 title: Testning av kodkvalitet
 description: Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan förbättra kvaliteten på dina distributioner.
 exl-id: 6a574858-a30e-4768-bafc-8fe79f928294
-source-git-commit: f5e6ac81c6454730850bb7e884d82be48d2f8525
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '2789'
+source-wordcount: '2779'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Lär dig hur kodkvalitetstestning av rörledningar fungerar och hur det kan för
 
 ## Introduktion {#introduction}
 
-Under pipeline-körningen hämtar programvaran ett antal mätvärden. Dessa mått jämförs sedan med nyckeltal (KPI) som definieras av företagsägaren. Eller så jämförs de med de standarder som Adobe Managed Services har fastställt.
+Under pipeline-körningen hämtar programvaran ett antal mätvärden. Dessa mått jämförs sedan med nyckeltal (KPI) som definieras av företagsägaren. Eller så jämförs de med standarder som fastställts av Adobe Managed Services.
 
 Dessa resultat rapporteras med ett klassificeringssystem med tre nivåer.
 
@@ -46,7 +46,7 @@ Kodkvalitetstestning söker igenom källkoden för att säkerställa att den upp
 
 Programmet implementerar det med en kombination av SonarQube-analys, innehållspaketgranskning med OakPAL och Dispatcher-validering med Dispatcher Optimization Tool.
 
-Det finns mer än 100 regler som kombinerar allmänna Java-regler och AEM-specifika regler. Vissa av de AEM reglerna skapas baserat på bästa praxis från AEM och kallas för [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
+Det finns mer än 100 regler som kombinerar generiska Java-regler och AEM-specifika regler. Vissa av de AEM-specifika reglerna skapas baserat på bästa praxis från AEM Engineering och kallas [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md).
 
 Du kan hämta den aktuella fullständiga listan med regler [med den här länken](/help/assets/CodeQuality-rules-latest-AMS.xlsx).
 
@@ -65,7 +65,7 @@ Resultaten av kodkvalitetstestningen levereras som en klassificering enligt samm
 | Överhoppade enhetstester | Antal överhoppade enhetstester | Info | > 1 |
 | Öppna ärenden | Generella problemtyper - sårbarheter, fel och kodmellanslag | Info | > 0 |
 | Duplicerade rader | Definieras som antalet rader som ingår i duplicerade block. Ett kodblock anses duplicerat under följande villkor.<br>Projekt som inte är Java:<ul><li>Det ska finnas minst 100 efterföljande och duplicerade tokens.</li><li>Dessa variabler bör spridas över åtminstone </li><li>30 kodrader för COBOL </li><li>20 kodrader för ABAP </li><li>10 kodrader för andra språk</li></ul>Java-projekt:<ul></li><li> Det ska finnas minst 10 efterföljande och duplicerade satser oavsett antalet tokens och rader.</li></ul>Skillnader i indrag och i stränglitteraler ignoreras när dubbletter identifieras. | Info | > 1 % |
-| Kompatibilitet med Cloud Service | Antal identifierade kompatibilitetsproblem för Cloud Service | Info | > 0 |
+| Cloud Service-kompatibilitet | Antal identifierade Cloud Service-kompatibilitetsproblem | Info | > 0 |
 
 >[!NOTE]
 >
@@ -81,7 +81,7 @@ Kvalitetsskanningsprocessen är inte perfekt och identifierar ibland felaktigt p
 
 I dessa fall kan källkoden antecknas med Java `@SuppressWarnings`-standardanteckningen som anger regel-ID som anteckningsattribut. En vanlig positiv sak är att SonarQube-regeln för att identifiera hårdkodade lösenord kan vara aggressiv om hur ett hårdkodat lösenord identifieras.
 
-Följande kod är ganska vanlig i ett AEM projekt, som har kod för att ansluta till en extern tjänst.
+Följande kod är ganska vanlig i ett AEM-projekt, som har kod för att ansluta till en extern tjänst.
 
 ```java
 @Property(label = "Service Password")
@@ -111,7 +111,7 @@ Den rätta lösningen är sedan att ta bort det hårdkodade lösenordet.
 
 ## Säkerhetstestning {#security-testing}
 
-[!UICONTROL Cloud Manager] kör de befintliga AEM säkerhetshälsokontroller i mellanlagringsmiljön efter distributionen och rapporterar statusen via gränssnittet. Resultaten sammanställs från alla AEM instanser i miljön.
+[!UICONTROL Cloud Manager] kör de befintliga AEM Security Health Checks i mellanlagringsmiljön efter distributionen och rapporterar statusen via användargränssnittet. Resultaten sammanställs från alla AEM-instanser i miljön.
 
 Samma hälsokontroller kan utföras när som helst via webbkonsolen eller kontrollpanelen för åtgärder.
 
@@ -121,23 +121,23 @@ I följande tabell visas hälsokontrollerna.
 
 | Namn | Implementering av hälsokontroll | Kategori |
 |---|---|---|
-| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security-checklist#security) | Kritisk |
-| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security#users-and-groups-in-aem) | Kritisk |
-| Sling standardserver för GET är skyddad från DOS-attacker. | Sling Get Servlet | Kritisk |
-| Hanteraren för Sling JavaScript är korrekt konfigurerad. | Sling JavaScript Handler | Kritisk |
-| Hanteraren för Sling JSP-skript är korrekt konfigurerad. | Sling JSP Script Handler | Kritisk |
+| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Kritisk |
+| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security#users-and-groups-in-aem) | Kritisk |
+| GET-standardserver `Sling` är skyddad från DOS-attacker. | `Sling Get`-servlet | Kritisk |
+| JavaScript-hanteraren `Sling` har konfigurerats korrekt. | `Sling` JavaScript-hanterare | Kritisk |
+| JSP-skripthanteraren `Sling` har konfigurerats korrekt. | `Sling` JSP-skripthanterare | Kritisk |
 | SSL är korrekt konfigurerat. | SSL-konfiguration | Kritisk |
 | Inga uppenbart osäkra profiler för användarprofiler hittades. | Standardåtkomst för användarprofil | Kritisk |
-| Filtret Sling Reference är konfigurerat för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security-checklist#security) | Viktigt |
-| Bibliotekshanteraren för Adobe Granite HTML har konfigurerats korrekt. | CQ HTML Library Manager Config | Viktigt |
+| Refererarfiltret `Sling` har konfigurerats för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Viktigt |
+| Adobe Granite HTML Library Manager är korrekt konfigurerat. | CQ HTML Library Manager Config | Viktigt |
 | Supportpaketet för CRXDE är inaktiverat. | Stöd för CRXDE | Viktigt |
-| Sling DavEx-paket och -servlet är inaktiverade. | DavEx-hälsokontroll | Viktigt |
+| `Sling` DavEx-paket och -servlet är inaktiverade. | DavEx-hälsokontroll | Viktigt |
 | Exempelinnehåll är inte installerat. | Exempel på innehållspaket | Viktigt |
-| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/osgi-configuration-settings#configuring) | Viktigt |
-| Sling WebDAV-paket och -servlet är korrekt konfigurerade. | WebDAV-hälsokontroll | Viktigt |
+| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/osgi-configuration-settings#configuring) | Viktigt |
+| `Sling` WebDAV-paket och -servlet har konfigurerats korrekt. | WebDAV-hälsokontroll | Viktigt |
 | Webbservern är konfigurerad för att förhindra clickjacking. | Konfiguration av webbserver | Viktigt |
 | Replikeringen använder inte användaren `admin`. | Replikerings- och transportanvändare | Info |
 
@@ -155,7 +155,7 @@ Utifrån definierade KPI:er rensas upp till tio behållare som simulerar verklig
 
 #### Crawler {#crawler}
 
-Innan testperioden på 30 minuter inleds crawlar Cloud Manager testmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Från dessa URL:er granskas HTML på varje sida och länkar gås igenom på bredden först.
+Innan testperioden på 30 minuter inleds crawlar Cloud Manager testmiljön med en uppsättning av en eller flera URL:er som konfigurerats av kundens Success Engineer. Med utgångspunkt från dessa URL:er granskas HTML för varje sida och länkarna gås igenom på bredden först.
 
 * Denna crawlningsprocess är som standard begränsad till högst 5 000 sidor.
 * Det maximala antalet sidor som ska testas kan skrivas över genom att ange [pipeline-variabeln](/help/getting-started/build-environment.md#pipeline-variables) `CM_PERF_TEST_CRAWLER_MAX_PAGES`.
@@ -164,7 +164,7 @@ Innan testperioden på 30 minuter inleds crawlar Cloud Manager testmiljön med e
 
 #### Siduppsättningar för testning {#page-sets}
 
-Tre siduppsättningar markerar sidorna. Cloud Manager använder åtkomstloggarna från de AEM instanserna i olika produktions- och stagingmiljöer för att fastställa följande bukområden.
+Tre siduppsättningar markerar sidorna. Cloud Manager använder åtkomstloggarna från AEM-instanserna i olika produktions- och stagingmiljöer för att fastställa följande områden.
 
 * **Populära Live-sidor** - Ser till att de populäraste sidorna som besökarna kommer åt testas. Cloud Manager läser åtkomstloggen och fastställer de 25 mest använda sidorna för live-kunder för att generera en lista över de `Popular Live Pages` översta. Skärningspunkten mellan dessa sidor, som också finns i mellanlagringsmiljön, crawlas sedan i mellanlagringsmiljön.
 

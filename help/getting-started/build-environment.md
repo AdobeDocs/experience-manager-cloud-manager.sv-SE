@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Läs om den speciella byggmiljö som Cloud Manager-användare kan använda för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1262'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,11 @@ Cloud Manager byggmiljöer har följande attribut.
 
 * Byggmiljön är Linux-baserad och kommer från Ubuntu 2.04.
 * Apache Maven 3.9.4 är installerad.
-   * Adobe rekommenderar att användare [uppdaterar sina Maven-databaser så att HTTPS används i stället för HTTP](#https-maven).
+   * Adobe rekommenderar att användare [uppdaterar sina Maven-databaser så att de använder HTTPS i stället för HTTP](#https-maven).
 * Java-versionerna är Oracle JDK 8u401 och Oracle JDK 11.0.22.
    * `/usr/lib/jvm/jdk1.8.0_401`
    * `/usr/lib/jvm/jdk-11.0.22`
-* Miljövariabeln `JAVA_HOME` är som standard inställd på `/usr/lib/jvm/jdk1.8.0_401`, som innehåller Oraclet JDK 8u401. Mer information finns i avsnittet [Alternate Maven Execution JDK Version](#alternate-maven).
+* Miljövariabeln `JAVA_HOME` är som standard inställd på `/usr/lib/jvm/jdk1.8.0_401`, som innehåller Oracle JDK 8u401. Mer information finns i avsnittet [Alternate Maven Execution JDK Version](#alternate-maven).
 * Det finns ytterligare systempaket installerade som är nödvändiga.
    * `bzip2`
    * `unzip`
@@ -33,11 +33,11 @@ Cloud Manager byggmiljöer har följande attribut.
    * `graphicsmagick`
 * Andra paket kan installeras vid byggtillfället enligt beskrivningen i avsnittet [Installera ytterligare systempaket](#installing-additional-system-packages).
 * Varje bygge görs i en riktig miljö. Byggbehållaren behåller inte något läge mellan körningar.
-* Maven körs alltid med dessa tre kommandon:
+* Maven drivs med följande tre kommandon:
    * `mvn --batch-mode org.apache.maven.plugins:maven-dependency-plugin:3.1.2:resolve-plugins`
    * `mvn --batch-mode org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean -Dmaven.clean.failOnError=false`
    * `mvn --batch-mode org.jacoco:jacoco-maven-plugin:prepare-agent package`
-* Maven har konfigurerats på systemnivå med en `settings.xml`-fil, som automatiskt inkluderar den offentliga Adobe-artefaktdatabasen med en profil med namnet `adobe-public`. Mer information finns i [Adobe publika Maven-databasen](https://repo1.maven.org/).
+* Maven har konfigurerats på systemnivå med en `settings.xml`-fil, som automatiskt inkluderar den offentliga Adobe-artefaktdatabasen med en profil med namnet `adobe-public`. Mer information finns i [Adobe gemensamma Maven-databas](https://repo1.maven.org/).
 * Node.js 18 är tillgängligt för [frontendpipelines](/help/overview/ci-cd-pipelines.md).
 
 >[!NOTE]
@@ -58,11 +58,11 @@ Cloud Manager [2023.10.0](/help/release-notes/2023/2023-10-0.md) påbörjade en 
 
 Som ett resultat av den här säkerhetsförbättringen kan vissa användare råka ut för problem under byggfasen, särskilt när artefakter hämtas från Maven-databaser som använder osäkra HTTP-anslutningar.
 
-För att få en smidig upplevelse med den uppdaterade versionen rekommenderar Adobe att användare uppdaterar sina Maven-databaser till att använda HTTPS i stället för HTTP. Denna justering är anpassad efter branschens växande övergång till säkra kommunikationsprotokoll och hjälper till att upprätthålla en säker och tillförlitlig byggprocess.
+För att få en smidig upplevelse med den uppdaterade versionen rekommenderar Adobe att användare uppdaterar sina Maven-databaser så att HTTPS används istället för HTTP. Denna justering är anpassad efter branschens växande övergång till säkra kommunikationsprotokoll och hjälper till att upprätthålla en säker och tillförlitlig byggprocess.
 
 ## Använda en specifik Java-version {#using-java-version}
 
-Som standard används JDK för projekt som byggts med Cloud Manager-byggprocessen. Kunder som vill använda en alternativ JDK har två alternativ.
+Som standard används JDK för projekt som byggts med Cloud Manager. Kunder som vill använda en alternativ JDK har två alternativ.
 
 * [Maven Toolchains](#maven-toolchains)
 * [Välja en alternativ JDK-version för hela körningsprocessen för Maven](#alternate-maven)
@@ -94,9 +94,9 @@ Med plugin-programmet [Maven Toolchains](https://maven.apache.org/plugins/maven-
 </plugin>
 ```
 
-Den här processen gör att alla verktygskedjedåliga Maven-plugin-program använder Oraclet JDK, version 11.
+Den här processen gör att alla verktygskedjedåliga Maven-plugin-program använder Oracle JDK, version 11.
 
-När du använder den här metoden körs Maven fortfarande med standard-JDK (Oracle 8) och miljövariabeln `JAVA_HOME` ändras inte. Kontroll eller genomförande av Java-versionen via plugin-program som [Apache Maven Enforcer ](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar därför inte och sådana plugin-program får inte användas.
+När du använder den här metoden körs Maven fortfarande med standardvariabeln JDK (Oracle 8) och miljövariabeln `JAVA_HOME` ändras inte. Kontroll eller genomförande av Java-versionen via plugin-program som [Apache Maven Enforcer ](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar därför inte och sådana plugin-program får inte användas.
 
 De aktuella kombinationerna av leverantör/version är:
 
@@ -111,13 +111,13 @@ De aktuella kombinationerna av leverantör/version är:
 
 >[!NOTE]
 >
->Från och med april 2022 kommer Oracle-JDK att bli standard-JDK för utveckling och drift av AEM program. Cloud Manager byggprocess växlar automatiskt till att använda Oracle-JDK, även om ett alternativ uttryckligen har valts i verktygskedjan Maven. Mer information finns i versionsinformationen för [april](/help/release-notes/2022/2022-4-0.md).
+>Från och med april 2022 kommer Oracle JDK att bli standard-JDK för utveckling och drift av AEM-program. Cloud Manager byggprocess växlar automatiskt till att använda Oracle JDK, även om ett alternativt alternativ uttryckligen väljs i Maven-verktygskedjan. Mer information finns i versionsinformationen för [april](/help/release-notes/2022/2022-4-0.md).
 
 ### JDK-version för körning av alternativ Maven {#alternate-maven}
 
 Du kan också välja Oracle 8 eller Oracle 11 som JDK för hela Maven-exekveringen. Till skillnad från alternativen för verktygskedjor ändras det JDK som används för alla plugin-program, såvida inte konfigurationen för verktygskedjor också är inställd. I så fall används fortfarande konfigurationen för verktygskedjor för Maven-plugin-program som är medvetna för verktygskedjor. Det innebär att kontroll och genomförande av Java-versionen med plugin-programmet [Apache Maven Enforcer](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar.
 
-Om du vill göra det skapar du en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan ha antingen innehållet `11` eller `8`. Alla andra värden ignoreras. Om `11` anges används Oracle 11 och miljövariabeln `JAVA_HOME` anges till `/usr/lib/jvm/jdk-11.0.22`. Om `8` anges används Oracle 8 och miljövariabeln `JAVA_HOME` anges till `/usr/lib/jvm/jdk1.8.0_401`.
+Om du vill göra det skapar du en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan ha antingen innehållet `11` eller `8`. Alla andra värden ignoreras. Om `11` anges används Oracle 11 och miljövariabeln `JAVA_HOME` ställs in på `/usr/lib/jvm/jdk-11.0.22`. Om `8` anges används Oracle 8 och miljövariabeln `JAVA_HOME` ställs in på `/usr/lib/jvm/jdk1.8.0_401`.
 
 ## Miljövariabler {#environment-variables}
 
@@ -149,17 +149,17 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/sv/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/en/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
 >[!TIP]
 >
->Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
+>Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
 
 ### Pipeline-variabler {#pipeline-variables}
 
@@ -263,4 +263,4 @@ Den här tekniken kan även användas för att installera språkspecifika paket.
 
 >[!NOTE]
 >
->Om du installerar ett systempaket på det här sättet installeras det inte i den körningsmiljö som används för att köra Adobe Experience Manager. Om du behöver ett systempaket som är installerat i AEM ska du kontakta Adobe.
+>Om du installerar ett systempaket på det här sättet installeras det inte i den körningsmiljö som används för att köra Adobe Experience Manager. Kontakta din Adobe-representant om du behöver ett systempaket som är installerat i AEM-miljön.

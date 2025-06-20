@@ -2,7 +2,7 @@
 title: Programinställningar
 description: Efter introduktionen måste företagsägaren göra en inledande konfiguration av programmet.
 exl-id: 795c7112-d564-4fbf-96a1-152a6c286bf2
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 0%
@@ -84,7 +84,7 @@ Använd åtgärdsfältet för att växla till ett annat program, redigera det ak
 
 Platsens KPI:er mäts i tester som körs i mellanlagringsmiljön. Vanligtvis skalas dessa KPI:er ned för att passa funktionerna i mellanlagringsmiljön.
 
-En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktionsmiljö och har fyra Dispatcher/publiceringsservrar i produktion bör skala detta scenario till 250 sidvisningar per minut. I det här scenariot förutsätts att deras mellanlagringsmiljö endast består av ett enda dispatcher/publiceringsserverpar.
+En användare som t.ex. förväntar sig i genomsnitt 1 000 sidvisningar per minut i sin produktionsmiljö och har fyra Dispatcher/publiceringsservrar i produktion bör skala detta scenario till 250 sidvisningar per minut. I det här scenariot antas att deras testmiljö endast består av ett Dispatcher/publish server pair.
 
 Assets prestandatestning innebär att överföra resurser upprepade gånger under en 30-minutersperiod. Bearbetningstiden för varje tillgång och olika mätvärden på systemnivå mäts under hela testet.
 

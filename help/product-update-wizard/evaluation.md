@@ -3,9 +3,9 @@ title: Utvärderingsfas
 seo-title: Evaluation Phase
 description: Läs om hur utvärderingsfasen i guiden för produktuppdatering bedömer uppgraderingskomplexiteten med mönsteridentifieraren.
 exl-id: 1ffcbc21-dc36-435d-b83b-0209f81a15e7
-source-git-commit: 11a6a53d8cbfb689810a9a8e7d82293a49863084
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
@@ -13,19 +13,18 @@ ht-degree: 0%
 
 # Utvärderingsfas {#evaluation}
 
-Den första fasen i produktuppdateringsguiden är fasen **[!UICONTROL Evaluation]**, som utvärderar uppgraderingskomplexiteten med mönsterdetektorn direkt i guiden. Efter det här steget kan du öppna utvärderingsrapporten.
+Den första fasen i produktuppdateringsguiden är fasen **[!UICONTROL Evaluation]**. Mönsterdetektorn körs i guiden för att bedöma uppgraderingens komplexitet. I slutet av det här steget kan du visa utvärderingsrapporten.
 
-Med den genererade rapporten kan du kontrollera om författarinstansen är berättigad till en uppgradering genom att identifiera följande mönster:
+Rapporten kontrollerar om författarinstansen är redo att uppgradera genom att identifiera mönster för följande:
 
-* Bryt vissa regler för områden som påverkas eller skrivs över av uppgraderingen.
+* Regelfel i områden som påverkas eller skrivs över av uppgraderingen.
+* Den använder AEM 6.x-funktioner eller API:er som inte är bakåtkompatibla och som kan brytas efter uppgraderingen.
 
-* Använd en AEM 6.x-funktion eller ett API som inte är bakåtkompatibelt med den nya versionen av AEM och som kan brytas efter en uppgradering.
-
-Rapporten är en bedömning av den utvecklingsinsats som ingår i uppgraderingen till Adobe Experience Manager (AEM) 6.5.
+Den här rapporten är en uppskattning av den utvecklingsinsats som krävs för att uppgradera till Adobe Experience Manager (AEM) 6.5.
 
 >[!NOTE]
 >
->Mer information om mönsterdetektorn finns i [Utvärdera uppgraderingskomplexiteten med mönsterdetektorn](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/upgrading/pattern-detector).
+>Mer information om mönsterdetektorn finns i [Utvärdera uppgraderingskomplexiteten med mönsterdetektorn](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/upgrading/pattern-detector).
 
 ## Kör utvärderingsrapporten {#running}
 
@@ -45,4 +44,4 @@ Mönsterdetektorn kan köras i alla miljöer. Men för att öka avkänningsfrekv
 
    ![Rapporten skapades](/help/assets/Evaluation-1.png)
 
-Den aktuella versionen av produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen**. De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande**, kommer snart.
+Den aktuella produktuppdateringsguiden i Cloud Manager har endast stöd för **utvärderingsfasen**. De andra fyra faserna, **Reparation**, **Körning**, **Validering** och **Slutförande**, kommer snart.

@@ -2,9 +2,9 @@
 title: Hantera databaser i Cloud Manager
 description: Lär dig hur du visar, lägger till och tar bort Git-databaser i Cloud Manager.
 exl-id: 384b197d-f7a7-4022-9b16-9d83ab788966
-source-git-commit: ee84c682b6bd2b9144b3f75d544dea33a5ad944b
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Lär dig hur du visar, lägger till och tar bort en Git-databas i Cloud Manager.
 
 ## Ökning {#overview}
 
-Databaser i Cloud Manager används för att lagra och hantera projektkoden med Git. För varje *program* som du lägger till skapas en databas som hanteras av Adobe automatiskt.
+Databaser i Cloud Manager används för att lagra och hantera projektkoden med Git. För varje *program* som du lägger till skapas en Adobe-hanterad databas automatiskt.
 
 Dessutom kan du skapa fler Adobe-hanterade databaser eller lägga till egna privata databaser. Alla databaser som är länkade till ditt program kan visas på sidan **Databaser**.
 
@@ -28,7 +28,7 @@ Varje pipeline är länkad till en primär databas eller gren. Med stöd för [G
 
 På sidan **Databaser** kan du visa information om den valda databasen. Denna information omfattar vilken typ av databas som används. Om databasen är markerad som **Adobe** anger den att den är en Adobe-hanterad databas. Om den är märkt som **GitHub** refererar den till en privat GitHub-databas som du hanterar. Dessutom innehåller sidan information om t.ex. när databasen skapades och om de rörledningar som är kopplade till den.
 
-Om du vill vidta åtgärder för en vald databas kan du klicka på databasen och använda ikonen ![Mer](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) för att öppna en nedrullningsbar meny. För databaser som hanteras med Adobe kan du **[kontrollera grenar/skapa projekt](#check-branches)**.
+Om du vill vidta åtgärder för en vald databas kan du klicka på databasen och använda ikonen ![Mer](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) för att öppna en nedrullningsbar meny. För databaser som hanteras av Adobe kan du **[kontrollera grenar/skapa projekt](#check-branches)**.
 
 ![Databasåtgärder](assets/repository-actions.png)
 *Nedrullningsbar meny på sidan Databaser.*
@@ -56,7 +56,7 @@ Klicka på **Lägg till databas** på sidan **Databaser** i det övre högra hö
 ![Dialogrutan Lägg till databas.](assets/repository-add.png)
 *Dialogrutan Lägg till databas.*
 
-Cloud Manager har stöd för två typer av databaser: databaser som hanteras med Adobe (**Adobe-databas**) och självhanterade databaser (**Privat databas**). De obligatoriska fälten för konfiguration varierar beroende på vilken typ av databas du väljer att lägga till. Mer information finns i följande:
+Cloud Manager stöder två typer av databaser: Adobe-hanterade databaser (**Adobe-databas**) och självhanterade databaser (**Privat databas**). De obligatoriska fälten för konfiguration varierar beroende på vilken typ av databas du väljer att lägga till. Mer information finns i följande:
 
 * [Lägga till Adobe-databaser i Cloud Manager](/help/managing-code/adobe-repositories.md)
 * [Lägga till privata databaser i Cloud Manager](/help/managing-code/private-repositories.md)
@@ -65,7 +65,7 @@ Det finns en gräns på 300 databaser i alla program i ett visst företag eller 
 
 ## Åtkomst till databasinformation {#repo-info}
 
-När du visar dina databaser i fönstret **Databaser** kan du visa information om hur du kommer åt databaser som hanteras med Adobe genom att klicka på knappen **Åtkomstrepo-information** i verktygsfältet.
+När du visar dina databaser i fönstret **Databaser** kan du visa information om hur du får tillgång till de Adobe-hanterade databaserna programmatiskt genom att klicka på knappen **Åtkomstrepoinformation** i verktygsfältet.
 
 ![Databasinformation](assets/repository-access-repo-info2.png)
 
@@ -73,9 +73,9 @@ Fönstret **Databasinformation** öppnas med information. Mer information om hur
 
 ## Kontrollera grenar/Skapa projekt {#check-branches}
 
-I **AEM Cloud Manager** har åtgärden **Kontrollera grenar/Skapa projekt** två syften, beroende på databasens aktuella tillstånd.
+I **AEM Cloud Manager** har **Kontrollera grenar/Skapa projekt** två syften, beroende på databasens aktuella tillstånd.
 
-* Om databasen är nyskapad genererar den här åtgärden ett exempelprojekt med hjälp av [den AEM projekttypen](https://experienceleague.adobe.com/sv/docs/experience-manager-core-components/using/developing/archetype/overview).
+* Om databasen är nyskapad genererar den här åtgärden ett exempelprojekt med [AEM-projektarkitypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
 * Om exempelprojektet redan har skapats i databasen kontrollerar åtgärden databasens och dess grenars status och ger information om huruvida exempelprojektet redan finns.
 
   ![Åtgärden Kontrollera grenar](assets/check-branches.png)

@@ -2,16 +2,16 @@
 title: Dela endast scenen och endast produktion
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 35845e827b0a3fadfe2a55a2171b5e02100cf3eb
+source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '917'
 ht-degree: 0%
 
 ---
 
 # Dela rörledningar enbart för stadier och endast för produktion {#stage-prod-only}
 
-Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
+Du kan dela upp distributioner för staging och produktion med hjälp av dedikerade pipelines.
 
 ## Ökning {#overview}
 
@@ -75,7 +75,7 @@ Rörledningar som endast är avsedda för produktion och endast för scenen skap
 
 ### Rörledningar som endast är avsedda för produktion {#prod-only}
 
-1. När du har valt alternativet **Lägg till endast produktion i pipeline** öppnas dialogrutan **Lägg till endast produktion i pipeline** .
+1. När du har klickat på **Lägg till endast produktionspipeline** öppnas den tillhörande dialogrutan.
 1. Skriv det namn du vill ha i fältet **Pipelinenamn**. De återstående alternativen och funktionerna i dialogrutan fungerar på samma sätt som de alternativ som finns i den standarddialogruta där du skapar en kopplad pipeline.
 1. Klicka på **Spara** i dialogrutans nedre högra hörn.
 
