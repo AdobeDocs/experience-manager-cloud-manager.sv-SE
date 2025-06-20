@@ -2,10 +2,10 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: 53fb666ab6caff7a697d7f1942ce25f2bf27a2ce
+source-git-commit: 012359b4ecf872ece036b27b48fededf150493d2
 workflow-type: tm+mt
-source-wordcount: '717'
-ht-degree: 4%
+source-wordcount: '827'
+ht-degree: 3%
 
 ---
 
@@ -42,11 +42,11 @@ I följande tabell sammanfattas rollerna i Cloud Manager.
 >
 >Utvecklarrollen i Admin Console är inte relaterad till utvecklarrollen i [!UICONTROL Cloud Manager].
 
-## Skapa en profil med Admin Console {#using-admin-console-to-create-a-profile}
+## Skapa en produktprofil med Admin Console {#using-admin-console-to-create-a-profile}
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
+Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 En administratör måste skapa nya produktprofiler under produktkontexten [!UICONTROL AEM Managed Services] för att tilldela rollbaserade behörigheter för [!UICONTROL Cloud Manager] -användare, som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna.
 
@@ -55,7 +55,13 @@ En administratör måste skapa nya produktprofiler under produktkontexten [!UICO
 * Developer
 * Program Manager
 
-Du kan skapa eller lägga till användare eller grupper i dessa produktprofiler med Admin Console.
+Skapa eller lägg till användare eller grupper i dessa produktprofiler med Admin Console.
+
+>[!IMPORTANT]
+>
+>På grund av en aktuell begränsning i Admin Console och Cloud Manager kan profiler inte sparas med **Ingen behörighet** vald. Om du försöker göra det uppstår ett serverdelsfel. Det här beteendet påverkar skapandet av profiler för Distributionshanteraren. Du kan lösa det genom att välja minst en behörighet när du skapar en ny profil.
+
+**Så här skapar du en produktprofil med Admin Console:**
 
 1. Logga in på Admin Console på [`https://adminconsole.adobe.com`](https://adminconsole.adobe.com).
 
@@ -76,6 +82,10 @@ Du kan skapa eller lägga till användare eller grupper i dessa produktprofiler 
    * **Profilnamn** - **Profilnamn** kan vara vad som helst, men för att undvika missförstånd bör du använda värdena i kolumnen **Rekommenderat profilnamn**.
    * **Visningsnamn** - **Visningsnamn** måste vara det tekniska värde som definieras av [!UICONTROL Cloud Manager] (se följande tabell).
    * **Behörighetsgrupp** - Du kan välja en behörighetsgrupp för profilen (inte alltid tillgänglig).
+
+     >[!IMPORTANT]
+     >
+     >På grund av en aktuell begränsning i Admin Console och Cloud Manager kan profiler inte sparas med **Ingen behörighet** vald. Om du försöker göra det uppstår ett serverdelsfel. Det här beteendet påverkar skapandet av profiler för Distributionshanteraren. Du kan lösa det genom att välja minst en behörighet när du skapar en ny profil.
 
    ![Skapar en ny profil](/help/assets/screen_shot_2018-05-04at171819.png)
 

@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
+source-git-commit: 012359b4ecf872ece036b27b48fededf150493d2
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '372'
 ht-degree: 10%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 10%
    + [Åtkomsträttigheter](/help/requirements/access-rights.md)
    + [Source Code Repository](/help/requirements/source-code-repository.md)
    + [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md)
-   + [Konfigurera användare och roller](/help/requirements/users-and-roles.md)
+   + [Lägg till användare och roller](/help/requirements/users-and-roles.md)
    + [Anpassade behörigheter](/help/using/custom-permissions.md)
    + [Miljöprovisionering](/help/requirements/environment-provisioning.md)
 + Kom igång {#getting-started}
