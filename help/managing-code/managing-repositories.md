@@ -75,7 +75,7 @@ Fönstret **Databasinformation** öppnas med information. Mer information om hur
 
 I **AEM Cloud Manager** har **Kontrollera grenar/Skapa projekt** två syften, beroende på databasens aktuella tillstånd.
 
-* Om databasen är nyskapad genererar den här åtgärden ett exempelprojekt med [AEM-projektarkitypen](https://experienceleague.adobe.com/en/docs/experience-manager-core-components/using/developing/archetype/overview).
+* Om databasen är nyskapad genererar den här åtgärden ett exempelprojekt med [AEM-projektarkitypen](https://experienceleague.adobe.com/sv/docs/experience-manager-core-components/using/developing/archetype/overview).
 * Om exempelprojektet redan har skapats i databasen kontrollerar åtgärden databasens och dess grenars status och ger information om huruvida exempelprojektet redan finns.
 
   ![Åtgärden Kontrollera grenar](assets/check-branches.png)

@@ -121,22 +121,22 @@ I följande tabell visas hälsokontrollerna.
 
 | Namn | Implementering av hälsokontroll | Kategori |
 |---|---|---|
-| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
-| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Kritisk |
-| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security#users-and-groups-in-aem) | Kritisk |
+| Brandväggsberedskap för Attach API för deserialisering är i ett godtagbart tillstånd. | [Brandväggs API-beredskap för deserialisering](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering fungerar. | [Brandväggsfunktion för deserialisering](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Brandväggen för deserialisering har lästs in. | [Brandvägg för deserialisering har lästs in](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/mitigating-serialization-issues#security) | Kritisk |
+| Implementeringen av `AuthorizableNodeName` visar inte auktoriseringsbart ID i nodens namn/sökväg. | [Generering av auktoriseringsbart nodnamn](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security-checklist#security) | Kritisk |
+| Standardlösenordet har ändrats. | [Standardinloggningskonton](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security#users-and-groups-in-aem) | Kritisk |
 | GET-standardserver `Sling` är skyddad från DOS-attacker. | `Sling Get`-servlet | Kritisk |
 | JavaScript-hanteraren `Sling` har konfigurerats korrekt. | `Sling` JavaScript-hanterare | Kritisk |
 | JSP-skripthanteraren `Sling` har konfigurerats korrekt. | `Sling` JSP-skripthanterare | Kritisk |
 | SSL är korrekt konfigurerat. | SSL-konfiguration | Kritisk |
 | Inga uppenbart osäkra profiler för användarprofiler hittades. | Standardåtkomst för användarprofil | Kritisk |
-| Refererarfiltret `Sling` har konfigurerats för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/security/security-checklist#security) | Viktigt |
+| Refererarfiltret `Sling` har konfigurerats för att förhindra CSRF-attacker. | [Sling Referer-filter](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/security/security-checklist#security) | Viktigt |
 | Adobe Granite HTML Library Manager är korrekt konfigurerat. | CQ HTML Library Manager Config | Viktigt |
 | Supportpaketet för CRXDE är inaktiverat. | Stöd för CRXDE | Viktigt |
 | `Sling` DavEx-paket och -servlet är inaktiverade. | DavEx-hälsokontroll | Viktigt |
 | Exempelinnehåll är inte installerat. | Exempel på innehållspaket | Viktigt |
-| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/osgi-configuration-settings#configuring) | Viktigt |
+| Både WCM-begärandefiltret och WCM-felsökningsfiltret är inaktiverade. | [Konfiguration av WCM-filter](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/osgi-configuration-settings#configuring) | Viktigt |
 | `Sling` WebDAV-paket och -servlet har konfigurerats korrekt. | WebDAV-hälsokontroll | Viktigt |
 | Webbservern är konfigurerad för att förhindra clickjacking. | Konfiguration av webbserver | Viktigt |
 | Replikeringen använder inte användaren `admin`. | Replikerings- och transportanvändare | Info |

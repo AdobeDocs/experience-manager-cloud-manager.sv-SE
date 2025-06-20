@@ -24,7 +24,7 @@ Den här rapporten är en uppskattning av den utvecklingsinsats som krävs för 
 
 >[!NOTE]
 >
->Mer information om mönsterdetektorn finns i [Utvärdera uppgraderingskomplexiteten med mönsterdetektorn](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/upgrading/pattern-detector).
+>Mer information om mönsterdetektorn finns i [Utvärdera uppgraderingskomplexiteten med mönsterdetektorn](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/upgrading/pattern-detector).
 
 ## Kör utvärderingsrapporten {#running}
 

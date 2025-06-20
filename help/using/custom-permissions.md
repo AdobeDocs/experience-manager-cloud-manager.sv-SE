@@ -104,7 +104,7 @@ Nu kan du tilldela användare till den nya produktprofilen som du skapade med an
 
 1. Klicka på **Lägg till användare** och tilldela användare till din nya produktprofil med anpassade behörigheter.
 
-Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
+Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html).
 
 ## Konfigurerbara behörigheter {#configurable-permissions}
 
