@@ -2,10 +2,10 @@
 title: Lägg till användare och roller
 description: Lär dig hur du använder Admin Console för att lägga till användare och roller och skapa profiler.
 exl-id: 40086cf0-a1c4-4dde-9dbf-84ea5fa53b84
-source-git-commit: 012359b4ecf872ece036b27b48fededf150493d2
+source-git-commit: 9ad9af206fafea45f8bbf61b02950de0776b5a9f
 workflow-type: tm+mt
-source-wordcount: '827'
-ht-degree: 3%
+source-wordcount: '725'
+ht-degree: 4%
 
 ---
 
@@ -46,7 +46,7 @@ I följande tabell sammanfattas rollerna i Cloud Manager.
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
+Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 En administratör måste skapa nya produktprofiler under produktkontexten [!UICONTROL AEM Managed Services] för att tilldela rollbaserade behörigheter för [!UICONTROL Cloud Manager] -användare, som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna.
 
@@ -57,9 +57,10 @@ En administratör måste skapa nya produktprofiler under produktkontexten [!UICO
 
 Skapa eller lägg till användare eller grupper i dessa produktprofiler med Admin Console.
 
+<!-- CQDOC-22790
 >[!IMPORTANT]
 >
->På grund av en aktuell begränsning i Admin Console och Cloud Manager kan profiler inte sparas med **Ingen behörighet** vald. Om du försöker göra det uppstår ett serverdelsfel. Det här beteendet påverkar skapandet av profiler för Distributionshanteraren. Du kan lösa det genom att välja minst en behörighet när du skapar en ny profil.
+>Due to a current limitation in the Admin Console and Cloud Manager, profiles cannot be saved with **No permissions** selected. Attempting to do so results in a backend error. This behavior affects the creation of Deployment Manager profiles. As a workaround, select at least one permission when creating a new profile. -->
 
 **Så här skapar du en produktprofil med Admin Console:**
 
@@ -83,18 +84,19 @@ Skapa eller lägg till användare eller grupper i dessa produktprofiler med Admi
    * **Visningsnamn** - **Visningsnamn** måste vara det tekniska värde som definieras av [!UICONTROL Cloud Manager] (se följande tabell).
    * **Behörighetsgrupp** - Du kan välja en behörighetsgrupp för profilen (inte alltid tillgänglig).
 
-     >[!IMPORTANT]
-     >
-     >På grund av en aktuell begränsning i Admin Console och Cloud Manager kan profiler inte sparas med **Ingen behörighet** vald. Om du försöker göra det uppstår ett serverdelsfel. Det här beteendet påverkar skapandet av profiler för Distributionshanteraren. Du kan lösa det genom att välja minst en behörighet när du skapar en ny profil.
+<!-- CQDOC-22790
+      >[!IMPORTANT]
+      >
+      >Due to a current limitation in the Admin Console and Cloud Manager, profiles cannot be saved with **No permissions** selected. Attempting to do so results in a backend error. This behavior affects the creation of Deployment Manager profiles. As a workaround, select at least one permission when creating a new profile. -->
 
-   ![Skapar en ny profil](/help/assets/screen_shot_2018-05-04at171819.png)
+![Skapar en ny profil](/help/assets/screen_shot_2018-05-04at171819.png)
 
-   | Roll | Visningsnamn (obligatoriskt) | Rekommenderat profilnamn |
-   |---|---|---|
-   | Business Owner | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
-   | Deployment Manager | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
-   | Developer | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
-   | Program Manager | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - rollen programhanterare |
+| Roll | Visningsnamn (obligatoriskt) | Rekommenderat profilnamn |
+|---|---|---|
+| Business Owner | `CM_BUSINESS_OWNER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Roll för företagsägare |
+| Deployment Manager | `CM_DEPLOYMENT_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Distributionshanterarroll |
+| Developer | `CM_DEVELOPER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - Utvecklarroll |
+| Program Manager | `CM_PROGRAM_MANAGER_ROLE_PROFILE` | [!UICONTROL Cloud Manager] - rollen programhanterare |
 
 
 1. Klicka på **Klar** för att spara den nya profilen.
