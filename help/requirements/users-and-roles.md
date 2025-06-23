@@ -46,7 +46,7 @@ I följande tabell sammanfattas rollerna i Cloud Manager.
 
 [!UICONTROL Cloud Manager] roller hanteras från Admin Console. Specifika rollmedlemskap tillhandahålls genom att användaren läggs till i en [!UICONTROL Cloud Manager]-produktprofil.
 
-Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+Admin Console är en central plats för hantering av Adobe-berättiganden i hela organisationen. Mer information om Adobe Admin Console finns i [Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 En administratör måste skapa nya produktprofiler under produktkontexten [!UICONTROL AEM Managed Services] för att tilldela rollbaserade behörigheter för [!UICONTROL Cloud Manager] -användare, som motsvarar var och en av de fyra [!UICONTROL Cloud Manager] rollerna.
 
