@@ -3,9 +3,9 @@ title: Hantera åtkomsttoken i Cloud Manager
 description: Lär dig hur du visar, redigerar och tar bort åtkomsttoken som används för Använd egen Git i Cloud Manager i Adobe Managed Services.
 badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#access-tokens"
 exl-id: 873aad0b-d7c6-4bc3-a70d-bbfdc1e02193
-source-git-commit: b2a14280e84bb934053968b0e93e33d30fb6086a
+source-git-commit: 254ad0ac77e793657292e34ae4a6bf3baecea8d5
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '398'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,9 @@ Se även [Lägg till externa databaser i Cloud Manager](/help/managing-code/exte
 1. Klicka på ![Redigera-ikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Edit_18_N.svg) i dialogrutan **Hantera åtkomsttoken** till höger om ett tokennamn.
 1. I dialogrutan **Redigera åtkomsttoken** uppdaterar du **tokennamnet**, **åtkomsttoken** eller båda.
 
-   Om **åtkomsttoken** används för närvarande visas ett varningsmeddelande om att alla associerade databaser automatiskt valideras efter uppdateringen.
-
    ![Dialogrutan Redigera åtkomsttoken](/help/managing-code/assets/access-tokens-edit.png)
 
-1. Om token används visas ett meddelande om att alla associerade databaser automatiskt kommer att omvalideras.
+1. Om **åtkomsttoken** används för närvarande visas ett varningsmeddelande om att alla associerade databaser automatiskt valideras efter uppdateringen.
 
 1. Klicka på **Uppdatera** för att spara ändringarna.
 
