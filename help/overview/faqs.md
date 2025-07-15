@@ -2,9 +2,9 @@
 title: Vanliga frågor om Cloud Manager
 description: Läs mer om svar på de vanligaste frågorna om Cloud Manager för AMS-kunder.
 exl-id: 52c1ca23-5b42-4eae-b63a-4b22ef1a5aee
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: e7e9844b5f06552fc2104584c63935dee7a9fa89
 workflow-type: tm+mt
-source-wordcount: '748'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -14,12 +14,13 @@ ht-degree: 0%
 
 Det här dokumentet ger svar på de vanligaste frågorna om Cloud Manager för AMS-kunder.
 
-## Går det att använda Java 11 med Cloud Manager-byggen? {#java-11}
+<!-- 
+## Is it possible to use Java 11 with Cloud Manager builds? {#java-11}
 
-Ja. Du måste lägga till `maven-toolchains-plugin` med rätt inställningar för Java 11.
+Yes. You need to add the `maven-toolchains-plugin` with the correct settings for Java 11.
 
-* Den här processen dokumenteras [här](/help/getting-started/using-the-wizard.md).
-* Se till exempel [WKND-exempelprojektkoden](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75).
+* This process is documented [here](/help/getting-started/using-the-wizard.md).
+* For an example, see the [WKND sample project code](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75). -->
 
 ## Mitt bygge misslyckas med ett fel om maven-scr-plugin efter byte från Java 8 till Java 11. Vad kan jag göra? {#maven-src-plugin}
 
@@ -68,7 +69,7 @@ Om du gör det kan efterföljande distributioner fortfarande installeras när ve
 
 Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
-Mer information om versionshantering [finns här](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
+Mer information om versionshantering [finns här](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
 
 ## Hur fungerar paket- och paketversionshantering för driftsättning och produktion? {#staging-production}
 
@@ -102,6 +103,6 @@ setting variables... !
 Cannot set variables: https://cloudmanager.adobe.io/api/program/111/environment/222/variables (403 Forbidden)
 ```
 
-I det här fallet måste användaren som kör kommandona läggas till i rollen **Distributionshanteraren** i Admin Console.
+I det här fallet måste användaren som kör dessa kommandon läggas till i rollen **Distributionshanteraren** i Admin Console.
 
 Mer information finns i [API-behörigheter](https://developer.adobe.com/experience-cloud/cloud-manager/guides/getting-started/permissions/).

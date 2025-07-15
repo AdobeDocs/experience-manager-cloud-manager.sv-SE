@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Läs om den speciella byggmiljö som Cloud Manager-användare kan använda för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
+source-git-commit: e9f3ac70735a95a15b1f63cf40496672162de777
 workflow-type: tm+mt
-source-wordcount: '1262'
+source-wordcount: '1161'
 ht-degree: 0%
 
 ---
@@ -40,6 +40,9 @@ Cloud Manager byggmiljöer har följande attribut.
 * Maven har konfigurerats på systemnivå med en `settings.xml`-fil, som automatiskt inkluderar den offentliga Adobe-artefaktdatabasen med en profil med namnet `adobe-public`. Mer information finns i [Adobe gemensamma Maven-databas](https://repo1.maven.org/).
 * Node.js 18 är tillgängligt för [frontendpipelines](/help/overview/ci-cd-pipelines.md).
 
+>[!IMPORTANT]
+>Stödet för Maven-verktygskedjor togs bort från och med Cloud Manager 2025.06.0. JDK-markering stöds nu endast via `.cloudmanager/java-version`. Mer information finns i [Använda en specifik Java-version](#using-java-version).
+
 >[!NOTE]
 >
 >Även om Cloud Manager inte definierar någon specifik version av `jacoco-maven-plugin` måste den version som används vara minst `0.7.5.201505241946`.
@@ -62,14 +65,23 @@ För att få en smidig upplevelse med den uppdaterade versionen rekommenderar Ad
 
 ## Använda en specifik Java-version {#using-java-version}
 
-Som standard används JDK för projekt som byggts med Cloud Manager. Kunder som vill använda en alternativ JDK har två alternativ.
+Som standard används JDK för projekt som byggts med Cloud Manager. Kunder som vill använda en alternativ JDK kan välja en alternativ JDK-version för hela Maven-körningsprocessen.
 
-* [Maven Toolchains](#maven-toolchains)
-* [Välja en alternativ JDK-version för hela körningsprocessen för Maven](#alternate-maven)
+>[!IMPORTANT]
+>
+>Maven Toolchains stöds inte längre i Cloud Manager 2025.06.0. Observera att rörledningar som innehåller en konfiguration av maven-toolchains-plugin kommer att misslyckas med `Cannot find matching toolchain definitions.` Använd filen `.cloudmanager/java-version` för att välja JDK 11, 17 eller 21 i stället.
+>
+>**Migreringsvägledning:**
+>
+>1. Ta bort verktygskedjor genom att ta bort alla `org.apache.maven.plugins:maven-toolchains-plugin`-poster och alla `toolchains.xml` som har implementerats i källkontrollen.
+>1. Välj en JDK med `.cloudmanager/java-version`(21, 17 eller 11) enligt beskrivningen i [JDK-versionen för alternativ Maven-körning](#alternate-maven).
+>1. Adobe rekommenderar att du rensar Cloud Manager byggcache eller utlöser en ny pipeline-körning.
+>
 
+<!--DEPRECATED 
 ### Maven Toolchains {#maven-toolchains}
 
-Med plugin-programmet [Maven Toolchains](https://maven.apache.org/plugins/maven-toolchains-plugin/) kan projekt välja en specifik JDK (eller verktygskedja) som ska användas i kontexten för verktygskedjemedvetna Maven-plugin. Den här processen görs i projektets `pom.xml`-fil genom att ange en leverantör och ett versionsvärde. Ett exempelavsnitt i filen `pom.xml` är följande:
+The [Maven Toolchains plug-in](https://maven.apache.org/plugins/maven-toolchains-plugin/) lets projects select a specific JDK (or toolchain) to use in the context of toolchains-aware Maven plug-ins. This process is done in the project's `pom.xml` file by specifying a vendor and version value. A sample section in the `pom.xml` file is the following:
 
 ```xml
         <plugin>
@@ -92,30 +104,31 @@ Med plugin-programmet [Maven Toolchains](https://maven.apache.org/plugins/maven-
         </toolchains>
     </configuration>
 </plugin>
+
 ```
 
-Den här processen gör att alla verktygskedjedåliga Maven-plugin-program använder Oracle JDK, version 11.
+This process causes all toolchains-aware Maven plug-ins to use the Oracle JDK, version 11.
 
-När du använder den här metoden körs Maven fortfarande med standardvariabeln JDK (Oracle 8) och miljövariabeln `JAVA_HOME` ändras inte. Kontroll eller genomförande av Java-versionen via plugin-program som [Apache Maven Enforcer ](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar därför inte och sådana plugin-program får inte användas.
+When using this method, Maven itself still runs using the default JDK (Oracle 8) and the `JAVA_HOME` environment variable is not changed. Therefore, checking or enforcing the Java version through plug-ins like the [Apache Maven Enforcer Plug-in](https://maven.apache.org/enforcer/maven-enforcer-plugin/) does not work and such plug-ins must not be used.
 
-De aktuella kombinationerna av leverantör/version är:
+The currently available vendor/version combinations are:
 
-| Leverantör | Version |
+|Vendor|Version|
 |---|---|
-| Oracle | 1,8 |
-| Oracle | 1,11 |
-| Oracle | 11 |
-| Sun | 1,8 |
-| Sun | 1,11 |
-| Sun | 11 |
+| Oracle |1.8|
+| Oracle |1.11|
+| Oracle |11|
+| Sun |1.8|
+| Sun |1.11|
+| Sun |11|
 
 >[!NOTE]
 >
->Från och med april 2022 kommer Oracle JDK att bli standard-JDK för utveckling och drift av AEM-program. Cloud Manager byggprocess växlar automatiskt till att använda Oracle JDK, även om ett alternativt alternativ uttryckligen väljs i Maven-verktygskedjan. Mer information finns i versionsinformationen för [april](/help/release-notes/2022/2022-4-0.md).
+>Starting April 2022, Oracle JDK is going to be the default JDK for the development and operation of AEM applications. Cloud Manager's build process automatically switches to using Oracle JDK, even if an alternative option is explicitly selected in the Maven toolchain. See the [April release notes](/help/release-notes/2022/2022-4-0.md) for more details. -->
 
 ### JDK-version för körning av alternativ Maven {#alternate-maven}
 
-Du kan också välja Oracle 8 eller Oracle 11 som JDK för hela Maven-exekveringen. Till skillnad från alternativen för verktygskedjor ändras det JDK som används för alla plugin-program, såvida inte konfigurationen för verktygskedjor också är inställd. I så fall används fortfarande konfigurationen för verktygskedjor för Maven-plugin-program som är medvetna för verktygskedjor. Det innebär att kontroll och genomförande av Java-versionen med plugin-programmet [Apache Maven Enforcer](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar.
+Du kan välja Oracle 8 eller Oracle 11 som JDK för hela Maven-exekveringen. Detta arbetssätt ändrar den JDK som används för alla plugin-program. Det innebär att kontroll och genomförande av Java-versionen med plugin-programmet [Apache Maven Enforcer](https://maven.apache.org/enforcer/maven-enforcer-plugin/) fungerar.
 
 Om du vill göra det skapar du en fil med namnet `.cloudmanager/java-version` i Git-databasgrenen som används av pipeline. Den här filen kan ha antingen innehållet `11` eller `8`. Alla andra värden ignoreras. Om `11` anges används Oracle 11 och miljövariabeln `JAVA_HOME` ställs in på `/usr/lib/jvm/jdk-11.0.22`. Om `8` anges används Oracle 8 och miljövariabeln `JAVA_HOME` ställs in på `/usr/lib/jvm/jdk1.8.0_401`.
 
@@ -149,17 +162,17 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/sv/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/en/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
 >[!TIP]
 >
->Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
+>Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
 
 ### Pipeline-variabler {#pipeline-variables}
 
