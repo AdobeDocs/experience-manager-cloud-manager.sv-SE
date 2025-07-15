@@ -162,17 +162,17 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/en/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/sv/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
 >[!TIP]
 >
->Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
+>Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
 
 ### Pipeline-variabler {#pipeline-variables}
 
