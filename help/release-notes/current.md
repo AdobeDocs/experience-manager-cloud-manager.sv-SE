@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.7.0
 description: Läs om Cloud Manager 2025.7.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 106caded8056a8a667b6c702b573566f9358f401
+source-git-commit: a1f023b8ecc6fcae97832c5f3fad6bb8ae79ced1
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.7.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -48,9 +48,9 @@ Nästa planerade version är torsdagen den 7 augusti 2025.
   Se [Markera pipeline-favoriter](/help/using/managing-pipelines.md#pipeline-favorites).
 
 
-## Program för tidig användning {#beta-program}
+## Alpha/Beta {#beta-program}
 
-Delta i Cloud Manager alfa- och betaprogram för att få exklusiv tillgång till kommande funktioner innan de släpps.
+Delta i Cloud Manager alfa- och betaprogram och få exklusiv tillgång till kommande funktioner innan de släpps.
 
 Följande möjligheter är för närvarande tillgängliga:
 
