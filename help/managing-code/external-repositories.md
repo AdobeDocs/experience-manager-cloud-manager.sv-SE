@@ -1,11 +1,10 @@
 ---
 title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
-badge: label="Privat beta" type="Positive" url="/help/release-notes/current.md#gitlab-bitbucket"
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: c8ded11e36bc68d442a0296a599f40066be73867
+source-git-commit: d6f058c3f6dc010f08a5cb75a0fb152b56111e79
 workflow-type: tm+mt
-source-wordcount: '2003'
+source-wordcount: '1968'
 ht-degree: 0%
 
 ---
@@ -13,10 +12,6 @@ ht-degree: 0%
 # Lägga till externa databaser i Cloud Manager {#external-repositories}
 
 Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
-
->[!NOTE]
->
->De funktioner som beskrivs i den här artikeln är endast tillgängliga via det privata betaprogrammet. Mer information och om du vill registrera dig för den privata betaversionen finns i [Hämta din egen Git](/help/release-notes/current.md#gitlab-bitbucket).
 
 ## Konfigurera en extern databas
 
@@ -43,7 +38,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
 
 1. På konsolen **[Mina program](/help/getting-started/navigation.md#my-programs-console)** väljer du det program som du vill länka till en extern databas.
 
-1. Klicka på ![Mappdispositionsikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderOutline_18_N.svg) **Databaser** på sidomenyn under **Program**.
+1. Klicka på **Mappdispositionsikonen** ![Databaser](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderOutline_18_N.svg) på sidomenyn under **Program**.
 
    ![Sidan Databaser](/help/managing-code/assets/repositories-tab.png)
 
@@ -160,7 +155,7 @@ För alla andra externa databaser som är inbyggda med en åtkomsttoken, som Git
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att visa den vänstra menyn.
 
-1. Klicka på ![Mappdispositionsikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderOutline_18_N.svg) **Databaser** under rubriken **Program** på den vänstra menyn.
+1. Klicka på **Mappdispositionsikonen** ![Databaser](https://spectrum.adobe.com/static/icons/workflow_18/Smock_FolderOutline_18_N.svg) under rubriken **Program** på den vänstra menyn.
 
 1. På sidan **Databaser** använder du kolumnen **Typ** för att vägleda dig i ditt val, letar upp den databas du vill använda och klickar sedan på ikonen ![Ellips - Mer](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg) bredvid den.
 
@@ -172,7 +167,7 @@ För alla andra externa databaser som är inbyggda med en åtkomsttoken, som Git
 
 1. Gör följande i dialogrutan **Konfigurera webkrok**:
 
-   1. Klicka på ikonen ![Kopiera](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Copy_18_N.svg) bredvid fältet **Webkroks-URL**.
+   1. Klicka på ikonen **Kopiera** bredvid fältet ![Webkroks-URL](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Copy_18_N.svg).
 Klistra in URL:en i en vanlig textfil. Den kopierade URL:en krävs för din Git-leverantörs webkrok-inställningar.
    1. Klicka på **Generera** bredvid fältet **Webkrockhemlighet** och sedan på ![Kopiera-ikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Copy_18_N.svg).
 Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs för din Git-leverantörs webkrok-inställningar.
