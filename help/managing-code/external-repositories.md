@@ -1,17 +1,28 @@
 ---
 title: Lägg till externa databaser i Cloud Manager
-description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
+description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab-, Bitbucket- och Azure DevOps-databaser.
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: d6f058c3f6dc010f08a5cb75a0fb152b56111e79
+source-git-commit: 73a094f47f518e2782ac96357e1adc4e923a0b63
 workflow-type: tm+mt
-source-wordcount: '1968'
+source-wordcount: '2322'
 ht-degree: 0%
 
 ---
 
 # Lägga till externa databaser i Cloud Manager {#external-repositories}
 
+<!-- badge: label="Beta - Azure DevOps only" type="Positive" url="/help/implementing/cloud-manager/release-notes/current.md#gitlab-bitbucket" -->
+
 Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
+
+Kunderna kan nu även införliva sina Azure DevOps-Git-databaser (Beta) i Cloud Manager, med stöd för både moderna Azure DevOps-databaser och äldre VSTS-databaser (Visual Studio Team Services).
+
+* För Edge Delivery Services-användare kan den inbyggda databasen användas för att synkronisera och distribuera platskod.
+* För AEM as a Cloud Service- och Adobe Managed Services-användare (AMS) kan databasen länkas till både fullständiga och frontbaserade pipelines.
+
+>[!NOTE]
+>
+>Det stöd som lagts till för Azure DevOps som beskrivs i den här artikeln är endast tillgängligt via det privata betaprogrammet. Mer information och om du vill registrera dig för betaversionen finns i [Hämta din egen Git](/help/release-notes/current.md).
 
 ## Konfigurera en extern databas
 
@@ -54,7 +65,7 @@ Konfigurationen av en extern lagringsplats i Cloud Manager består av tre steg:
    | --- | --- |
    | **Databasnamn** | Obligatoriskt. Ett uttrycksfullt namn för din nya databas. |
    | **Databas-URL** | Obligatoriskt. Databasens URL.<br><br>Om du använder en GitHub-värdbaserad databas måste sökvägen sluta i `.git`.<br>Till exempel *`https://github.com/org-name/repo-name.git`* (URL-sökvägen är endast för illustration).<br><br>Om du använder en extern databas måste den använda följande URL-sökvägsformat:<br>`https://git-vendor-name.com/org-name/repo-name.git`<br> eller<br>`https://self-hosted-domain/org-name/repo-name.git`<br>Och matcha Git-leverantören. |
-   | **Välj databastyp** | Obligatoriskt. Välj den databastyp som du använder:<ul><li>**GitHub** (GitHub Enterprise och den självhanterade versionen av GitHub)</li><li>**GitLab** (både `gitlab.com` och den självhanterade versionen av GitLab) </li><li>**Bitbucket** (endast `bitbucket.org` (molnversion) stöds. Den självhanterade versionen av Bitbucket är borttagen från och med den 15 februari 2024.)</li></ul>Om databasens URL-sökväg ovan innehåller Git-leverantörens namn, till exempel GitLab eller Bitbucket, är databastypen redan förvald. |
+   | **Välj databastyp** | Obligatoriskt. Välj den databastyp som du använder:<ul><li>**GitHub** (GitHub Enterprise och den självhanterade versionen av GitHub)</li><li>**GitLab** (både `gitlab.com` och den självhanterade versionen av GitLab) </li><li>**Bitbucket** (endast `bitbucket.org` (molnversion) stöds. Den självhanterade versionen av Bitbucket är borttagen från och med den 15 februari 2024.)</li></ul>Om databasens URL-sökväg ovan innehåller Git-leverantörens namn, till exempel GitLab eller Bitbucket, är databastypen redan förvald.</li><li>**Azure DevOps** (`dev.azure.com`) </ul> |
    | **Beskrivning** | Valfritt. En detaljerad beskrivning av databasen. |
 
 1. Välj **Spara** för att lägga till databasen.
@@ -108,6 +119,19 @@ Efter valideringen är den externa databasen klar att användas och länkas till
 
 Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
+>[!TAB Azure DevOps (Beta)]
+
+<!-- https://git.corp.adobe.com/pages/experience-platform/cloud-manager-repository-service/#/./git-vendors/azure_devops -->
+
+| Alternativ för åtkomsttoken | Beskrivning |
+| --- | --- |
+| **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Azure DevOps-dokumentationen](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows).<li>Nödvändig behörighet för Azure DevOps Personal Access Token (PAT).<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webkrockshändelser.<br>När du skapar applösenordet i Azure DevOps måste det innehålla följande lösenordsbehörigheter för appen:<ul><li>Databas (skrivskyddad)</li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+
+Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
+
+Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
+
 >[!ENDTABS]
 
 
@@ -145,7 +169,7 @@ Med webbhooks kan Cloud Manager till exempel utlösa åtgärder som baseras på 
 
 Webkrok-konfiguration krävs inte för databaser på `GitHub.com` eftersom Cloud Manager integreras direkt via GitHub-appen.
 
-För alla andra externa databaser som är inbyggda med en åtkomsttoken, som GitHub Enterprise, GitLab och Bitbucket, är webkrok-konfigurationen tillgänglig och måste konfigureras manuellt.
+Webkrokkonfigurationen är tillgänglig för alla andra externa databaser som är inbyggda med en åtkomsttoken - som GitHub Enterprise, GitLab, Bitbucket och Azure DevOps - och måste konfigureras manuellt.
 
 **Så här konfigurerar du en webkrok för en extern databas:**
 
@@ -172,7 +196,7 @@ Klistra in URL:en i en vanlig textfil. Den kopierade URL:en krävs för din Git-
    1. Klicka på **Generera** bredvid fältet **Webkrockhemlighet** och sedan på ![Kopiera-ikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Copy_18_N.svg).
 Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs för din Git-leverantörs webkrok-inställningar.
 1. Klicka på **Stäng**.
-1. Navigera till din Git-leverantörslösning (GitHub Enterprise, GitLab eller Bitbucket).
+1. Navigera till din Git-leverantörslösning (GitHub Enterprise, GitLab, Bitbucket eller Azure DevOps).
 
    All information om webbkrokkonfigurationen och de händelser som krävs för varje leverantör finns i [Lägg till en extern databas](#add-ext-repo). Under steg 8, se tabellen med flikar.
 
@@ -210,6 +234,14 @@ Klistra in hemligheten i en vanlig textfil. Den kopierade hemligheten krävs fö
 | Nödvändiga webbkrokhändelser |
 | --- |
 | Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Dragningsbegäran: Skapad<li>Pull-begäran: Uppdaterad<li>Dragningsbegäranden: Sammanfogade<li>Pull-begäran: Kommentar<li>Databas: Tryck</li></li></li></ul></ul></ul> |
+
+>[!TAB Azure DevOps (Beta)]
+
+<!-- https://git.corp.adobe.com/pages/experience-platform/cloud-manager-repository-service/#/./git-vendors/azure_devops -->
+
+| Nödvändiga webkrockhändelser och autentisering |
+| --- |
+| Dessa händelser säkerställer att Cloud Manager kan validera pull-begäranden, svara på exekveringar och interagera med kommentarer för samordning av pipeline.<br>Kontrollera att webbkroken är konfigurerad för att aktiveras för följande obligatoriska webkrokrok-händelser<ul><li>Databas: Tryck</li></ul>Ange autentisering:<br>1. Skriv **i fältet** Användarnamn för grundläggande autentisering`cloudmanager`.<br>2. I fältet **Grundläggande autentiseringslösenord** skriver du den Webkrockhemlighet som genererats från Cloud Manager användargränssnitt. |
 
 >[!ENDTABS]
 
