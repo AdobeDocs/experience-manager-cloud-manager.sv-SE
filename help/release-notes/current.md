@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.8.0
 description: Läs om Cloud Manager 2025.8.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: cba5f331d2b4093822dce4470147966e2cac15b7
+source-git-commit: a96bc45242ee6c6b06b4354756a67562150f385c
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.8.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -81,12 +81,6 @@ Använd **Hantera åtkomsttoken** i Cloud Manager för att visa, byta namn på o
 Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 Om du är intresserad av att testa den här nya funktionen och dela med dig av dina synpunkter skickar du ett e-postmeddelande till [Grp-CloudManager_BYOG@adobe.com](mailto:grp-cloudmanager_byog@adobe.com) från den e-postadress som är kopplad till din Adobe ID.
-
-#### Hantera åtkomsttoken{#access-tokens}
-
-Använd **Hantera åtkomsttoken** med BYOG för att visa, byta namn på och ta bort åtkomsttoken som är associerade med externa Bring Your Own Git-databaser, som GitHub Enterprise, GitLab, Bitbucket och Azure DevOps.
-
-Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 <!-- If you are interested in testing this new feature and sharing your feedback, send an email to [Grp-CloudManager_BYOG@adobe.com](mailto:Grp-CloudManager_BYOG@adobe.com) from your email address associated with your Adobe ID. Be sure to include which Git platform you want to use and whether you are on a private/public or enterprise repository structure. -->
 
