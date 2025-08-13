@@ -16,7 +16,7 @@ Experience Hub introducerar en central startpunkt för hantering av innehåll, r
 
 Se en snabb genomgång av den omdesignade arbetsytan i AEM Experience Hub (1 minut, 27 sekunder).
 
->[!VIDEO](https://video.tv.adobe.com/v/3463267?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3463271?quality=12&learn=on&captions=swe)
 
 <!--
 Available as a private beta, Experience Hub offers an optimized experience focused on improving workflows, prioritizing goals, and delivering results. Opting in lets you influence Experience Hub's development by providing feedback that helps shape its future and enhances its value for the entire AEM community. -->
