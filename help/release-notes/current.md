@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.8.0
 description: Läs om Cloud Manager 2025.8.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 03e2a9b8cd1ad0a9446fc59a430895302fba21a3
+source-git-commit: b64b8529e4c6072c9bcb7438dc2d89098d29115d
 workflow-type: tm+mt
-source-wordcount: '401'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.8.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -31,7 +31,11 @@ Nästa planerade version är torsdagen den 4 september 2025.
 
 ## Nyheter {#what-is-new}
 
+* **Adobe Experience Hub kommer snart**
 
+  Från och med 19 augusti 2025 börjar Adobe med en stegvis lansering av nya Experience Hub för alla Adobe Experience Manager-användare.
+
+  Experience Hub är en enhetlig startpunkt som levererar personaliserade, sammanhangsbaserade upplevelser som hjälper användarna att nå målen snabbare. Lanseringen är slutförd den 26 augusti 2025 och gör den tillgänglig för alla användare. Den nya Experience Hub-versionen är tillgänglig direkt på [experience.adobe.com](https://experience.adobe.com/). Mer information finns i [Adobe Experience Hub](/help/experience-hub.md).
 
 * **Rörledningar som endast är avsedda för mellanlagring och enbart för produktion**
 
