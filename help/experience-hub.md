@@ -1,10 +1,11 @@
 ---
 title: Om Experience Hub
 description: Läs mer om Adobe Experience Hub.
-hide: false
-hidefromtoc: false
+hide: true
+hidefromtoc: true
+index: false
 exl-id: adc8996f-671a-4018-a195-1212ea662284
-source-git-commit: 2a67253253bb06b888bc0283d07838a6f0779532
+source-git-commit: ea64d9ac8d430642a5795c67d7e4d90bb1d62b9f
 workflow-type: tm+mt
 source-wordcount: '547'
 ht-degree: 0%
@@ -28,7 +29,7 @@ Available as a private beta, Experience Hub offers an optimized experience focus
 
    ![Adobe Experience Cloud hemsida](/help/assets/experience-cloud-experiencemanager.png)
 
-1. Klicka på **Experience Manager**&#x200B;[**i grupperingen** Snabbåtkomst](https://experience.adobe.com).
+1. Klicka på **Experience Manager**[**i grupperingen** Snabbåtkomst](https://experience.adobe.com).
 1. Första gången du öppnar den klickar du på önskat alternativ på sidan **Berätta för oss vad du vill göra** så att Adobe kan skräddarsy din upplevelse.
 
    Du kan ändra den här inställningen när som helst.
