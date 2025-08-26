@@ -3,7 +3,7 @@ title: Versionsinformation för Cloud Manager 2025.8.0
 description: Läs om Cloud Manager 2025.8.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: b64b8529e4c6072c9bcb7438dc2d89098d29115d
+source-git-commit: b34fe26f8c9a2d59a7df3d03717f302fe4456352
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.8.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -88,7 +88,7 @@ Se [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 
 ## Felkorrigeringar {#bug-fixes}
 
-Det finns inga viktiga felkorrigeringar i juliversionen av Cloud Manager.
+Det finns inga viktiga felkorrigeringar i augusti-versionen av Cloud Manager.
 
 <!--
 Known Issues {#known-issues}
