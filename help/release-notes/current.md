@@ -3,9 +3,9 @@ title: Versionsinformation för Cloud Manager 2025.8.0
 description: Läs om Cloud Manager 2025.8.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: b34fe26f8c9a2d59a7df3d03717f302fe4456352
+source-git-commit: 5df4852716a608c7497e93eef030b4b5bd27d42b
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.8.0 i Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -35,7 +35,7 @@ Nästa planerade version är torsdagen den 4 september 2025.
 
   Från och med 19 augusti 2025 börjar Adobe med en stegvis lansering av nya Experience Hub för alla Adobe Experience Manager-användare.
 
-  Experience Hub är en enhetlig startpunkt som levererar personaliserade, sammanhangsbaserade upplevelser som hjälper användarna att nå målen snabbare. Lanseringen är slutförd den 26 augusti 2025 och gör den tillgänglig för alla användare. Den nya Experience Hub-versionen är tillgänglig direkt på [experience.adobe.com](https://experience.adobe.com/). Mer information finns i [Adobe Experience Hub](/help/experience-hub.md).
+  Experience Hub är en enhetlig startpunkt som levererar personaliserade, sammanhangsbaserade upplevelser som hjälper användarna att nå målen snabbare. Lanseringen är slutförd den 26 augusti 2025 och gör den tillgänglig för alla användare. Den nya Experience Hub-versionen är tillgänglig direkt på [experience.adobe.com](https://experience.adobe.com/). Mer information finns i [Adobe Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub).
 
 * **Rörledningar som endast är avsedda för mellanlagring och enbart för produktion**
 
