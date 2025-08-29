@@ -52,7 +52,7 @@ Den första är Cloud Manager header. Sidhuvudet är beständigt när du naviger
 | 2 | Adobe Cloud Manager | Klicka för att öppna konsolen **Mina program** för Cloud Manager, oavsett var du befinner dig i Cloud Manager. |
 | 3 | Vald organisation | Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera organisationer. |
 | 4 | Feedback-ikon | Klicka för att ge Adobe feedback om Cloud Manager. |
-| 5 | AI Assistant, ikon | Innehåller ett konversationsgränssnitt som underlättar sökandet efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/ai-assistant/ai-assistant-in-aem) |
+| 5 | AI Assistant, ikon | Innehåller ett konversationsgränssnitt som underlättar sökandet efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/ai-assistant/ai-assistant-in-aem) |
 | 6 | ![Hjälpikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_HelpOutline_18_N.svg) | Klicka för att ge snabb åtkomst till utbildningsresurser och supportresurser. |
 | 7 | ![Bell-ikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Bell_18_N.svg) | Klicka för att visa antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md) |
 | 8 | ![Appikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Apps_18_N.svg) | Klicka för att snabbt gå mellan AEM hemsida och AEM lösningar |
@@ -80,7 +80,7 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
 |   | Område | Beskrivning |
 | --- | --- | --- |
 | 1 | Mina program | Klicka för att öppna en nedrullningsbar lista där du kan välja att lägga till ett program, välja andra befintliga program eller gå tillbaka till Experience Manager hemsida. |
-| 2 | Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
+| 2 | Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
 | 3 | Dynamisk åtgärdsknapp | Åtgärdsknappen innehåller sammanhangsberoende åtgärder som att lägga till ett program, lägga till en domän eller lägga till ett SSL-certifikat. |
 
 ### Samtal och statistik {#cta-statistics}
@@ -120,7 +120,7 @@ Ett kort eller en rad i en tabell representerar alla program och ger en översik
 * Programnamn
 * Tjänsttyp:
    * **Experience Manager** för AMS-program
-   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home)
+   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home)
 * Status
 * Konfigurerade lösningar
 * Skapad den
