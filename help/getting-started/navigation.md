@@ -2,10 +2,10 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: 5cde30f97eb4fb9e784179cb85fba36eccca9dbc
+source-git-commit: cc41d4716aa3c3683010b6dd392b5355b129d1ef
 workflow-type: tm+mt
-source-wordcount: '1501'
-ht-degree: 1%
+source-wordcount: '1530'
+ht-degree: 0%
 
 ---
 
@@ -44,20 +44,19 @@ Det finns två verktygsfält ovanpå varandra.
 
 Den första är Cloud Manager header. Sidhuvudet är beständigt när du navigerar i Cloud Manager. Det är en ankarpunkt som ger dig tillgång till inställningar och information som gäller för alla Cloud Manager-program.
 
-![Experience Cloud-rubriken](/help/getting-started/assets/cloud-manager-header.png)
+![Experience Cloud-rubriken](/help/getting-started/assets/cloud-manager-header-toolbar.png)
 
-|   | Område | Beskrivning |
-| --- | --- | --- |
-| 1 | ![Visa menyikon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) | En nedrullningsbar meny som ger åtkomst till flikar för specifika delar av ett enskilt program.<br>Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet. |
-| 2 | Adobe Cloud Manager | Klicka för att öppna konsolen **Mina program** för Cloud Manager, oavsett var du befinner dig i Cloud Manager. |
-| 3 | Vald organisation | Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet Foundation Internal). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera organisationer. |
-| 4 | Feedback-ikon | Klicka för att ge Adobe feedback om Cloud Manager. |
-| 5 | AI Assistant, ikon | Innehåller ett konversationsgränssnitt som underlättar sökandet efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/ai-assistant/ai-assistant-in-aem) |
-| 6 | ![Hjälpikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_HelpOutline_18_N.svg) | Klicka för att ge snabb åtkomst till utbildningsresurser och supportresurser. |
-| 7 | ![Bell-ikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Bell_18_N.svg) | Klicka för att visa antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md) |
-| 8 | ![Appikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Apps_18_N.svg) | Klicka för att snabbt gå mellan AEM hemsida och AEM lösningar |
-| 9 | Appikon | Klicka för att komma åt dina **kontoinställningar** och **programinställningar** eller för att logga ut. |
-
+| Område | Beskrivning |
+| --- | --- |
+| ![Visa menyikon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) | En nedrullningsbar meny som ger åtkomst till flikar för specifika delar av ett enskilt program.<br>Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet. |
+| ![Adobe röd och vit ikon](/help/getting-started/assets/AdobeLogoWhiteOnRed.svg) Cloud Manager | Klicka för att öppna konsolen **Mina program** för Cloud Manager, oavsett var du befinner dig i Cloud Manager. |
+| *`Name of selected organization`* | Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet *Foundation Internal*). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera organisationer. |
+| ![Feedback-ikon](/help/getting-started/assets/AppComment.svg) Feedback | Klicka för att ge Adobe feedback om Cloud Manager. |
+| ![AI Assistant-ikon](/help/getting-started/assets/AIChat.svg) | AI Assistant har ett gränssnitt för att effektivisera sökningen efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/ai-assistant/ai-assistant-in-aem) |
+| ![Hjälpikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_HelpOutline_18_N.svg) | Klicka för att ge snabb åtkomst till utbildningsresurser och supportresurser. |
+| ![Vit klockikon](/help/getting-started/assets/Bell.svg) | Klicka för att visa antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md) |
+| ![Appikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Apps_18_N.svg) | Klicka för att snabbt gå mellan AEM hemsida och AEM lösningar |
+| *`Dynamic Account icon`* | Klicka på din användarbild för att komma åt dina **kontoinställningar** och **programinställningar**, eller för att logga ut.<br>Om du väljer att inte lägga till en användarbild tilldelas en ikon slumpmässigt (vilket visas i verktygsfältsbilden ovan). |
 
 <!--
 1. The ![Show menu icon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) icon on the left side of the header is  
@@ -80,8 +79,8 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
 |   | Område | Beskrivning |
 | --- | --- | --- |
 | 1 | Mina program | Klicka för att öppna en nedrullningsbar lista där du kan välja att lägga till ett program, välja andra befintliga program eller gå tillbaka till Experience Manager hemsida. |
-| 2 | Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
-| 3 | Dynamisk åtgärdsknapp | Åtgärdsknappen innehåller sammanhangsberoende åtgärder som att lägga till ett program, lägga till en domän eller lägga till ett SSL-certifikat. |
+| 2 | ![Informationsikon](/help/getting-started/assets/Info.svg) Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
+| 3 | *`Dynamic action button`* | Åtgärdsknappen innehåller sammanhangsberoende åtgärder som du kan klicka på, till exempel **Lägg till program** (se exemplet ovan), eller lägga till en domän. |
 
 ### Samtal och statistik {#cta-statistics}
 
@@ -101,7 +100,7 @@ Beroende på vilka behörigheter du har kanske du inte kan välja vissa program.
 
 Du kan använda följande sorteringsalternativ för att snabbt hitta det program du vill ha:
 
-![Sorteringsalternativ](assets/my-programs-sorting.png)
+![Sorteringsalternativ](/help/getting-started/assets/cloud-manager-my-programs-sorting.png)
 
 * Sortera efter:
    * Skapad den
@@ -114,25 +113,26 @@ Du kan använda följande sorteringsalternativ för att snabbt hitta det program
 
 Ett kort eller en rad i en tabell representerar alla program och ger en översikt över programmet och snabblänkar för att vidta åtgärder.
 
-![Programkort](assets/program-card.png)
+![Programkort](/help/getting-started/assets/cloud-manager-program-card.png)
 
 * Programavbildning (om den är konfigurerad)
-* Programnamn
+* Programnamn (i ovanstående exempel: *WKND Magazine*)
 * Tjänsttyp:
    * **Experience Manager** för AMS-program
-   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home)
-* Status
+   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home)
+* Status (i exemplet ovan, *Ready*)
 * Konfigurerade lösningar
 * Skapad den
 
-Informationsikonen ger dig även snabb åtkomst till ytterligare information om programmet (användbart i listvyn).
+Klicka på ![informationsikonen](/help/getting-started/assets/Info.svg) för att få snabb åtkomst till ytterligare information om programmet (användbart i listvyn).
 
-![Information](assets/information-view.png)
+![Popup-fönstret Information i Cloud Manager AMS](/help/getting-started/assets/cloud-manager-information-view.png)
 
-Ikonen ![Mer, ellips](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg), ger dig tillgång till ytterligare åtgärder som du kan vidta i programmet.
+Klicka på ikonen ![Mer, ellips](https://spectrum.adobe.com/static/icons/workflow_18/Smock_More_18_N.svg), så får du tillgång till fler åtgärder som du kan vidta i programmet.
 
-![Ellipsknappen för program](assets/program-ellipsis.png)
+![Ellipsknappen för program](/help/getting-started/assets/cloud-manager-program-ellipsis.png)
 
+* Experience Manager Home
 * Navigera till en viss [miljö](/help/using/managing-environments.md) i programmet
 * Öppna [programöversikt](#program-overview)
 * [Redigera programmet](/help/getting-started/program-setup.md)
@@ -146,16 +146,15 @@ I avsnittet med snabblänkar får du tillgång till användbara, relaterade resu
 
 Om du väljer ett program i konsolen [**Mina program**](#my-programs-console) kommer du till sidan **Programöversikt** .
 
-![Programöversikt](assets/program-overview.png)
+![Programöversikt](/help/getting-started/assets/cloud-manager-program-overview.png)
 
-Programöversikten ger dig tillgång till alla detaljer i ett Cloud Manager-program. Precis som My Programs-konsolen består den av flera delar.
+**Programöversikt** ger dig tillgång till all information om ett Cloud Manager-program. Precis som **Mina program** består den av flera delar.
 
 1. [Verktygsfält](#program-overview-toolbar) om du snabbt vill gå tillbaka till konsolen **Mina program** och navigera i programmet.
-1. [Tabbar](#program-tabs) om du vill växla mellan olika aspekter av programmet.
+1. [Flikområdet](#program-tabs) om du vill växla mellan olika aspekter av programmet.
 1. En [call-to-action](#cta) som baseras på de senaste åtgärderna i programmet.
-1. En [översikt över programmets miljöer](#environments).
-1. En [översikt över programmets pipelines](#pipelines).
-1. Länkar till [användbara resurser](#useful-resources).
+1. Associerade [miljöer](#environments) i programmet.
+1. Associerade [pipeline](#pipelines) för programmet.
 
 ### Verktygsfält {#program-overview-toolbar}
 
