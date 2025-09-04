@@ -3,7 +3,7 @@ title: Versionsinformation för Cloud Manager 2025.9.0
 description: Läs om Cloud Manager 2025.9.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 979430b92a03abbc8c600e4cc0e10cff5041f425
+source-git-commit: 68e546c1337122f823d63529ebd68d6966bb132a
 workflow-type: tm+mt
 source-wordcount: '359'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.9.0 för Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -35,7 +35,7 @@ Nästa planerade version är torsdagen den 2 oktober 2025.
 
   Dokumentationsuppdateringarna innehåller konfigurationssteg för Bring Your Own Git with Azure DevOps och pull request validation. Se [Lägg till externa databaser i Cloud Manager](/help/managing-code/external-repositories.md).
 
-* **Pull-begärandekontroller för privata databaser**
+* **Dra in begärandekontroller för privata databaser**
 
   Cloud Manager har nu stöd för konfigureringspipelines med privata databaser över GitHub, Bitbucket, Azure DevOps och GitLab. Se ![Pull Request Checks for Private Repositories](/help/managing-code/github-check-config.md).
 
