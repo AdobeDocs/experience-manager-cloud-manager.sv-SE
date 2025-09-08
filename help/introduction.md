@@ -2,9 +2,9 @@
 title: Introduktion till Cloud Manager för AMS
 description: Börja här för att lära känna Cloud Manager för Adobe Managed Services (AMS) och hur det gör det möjligt för organisationer att självhantera Adobe Experience Manager i molnet.
 exl-id: 58344d8a-b869-4177-a9cf-6a8b7dfe9588
-source-git-commit: 4c4a2688cab8e5c81efa4b7b5e26f3c7b5dc30d6
+source-git-commit: 8f29a06f63b8dc10cb3d28e2f38da1ead84f32f5
 workflow-type: tm+mt
-source-wordcount: '1232'
+source-wordcount: '1226'
 ht-degree: 3%
 
 ---
@@ -18,8 +18,8 @@ Börja här för att lära känna Cloud Manager för AMS (Adobe Managed Services
 >id="aemcloud_cloudmanager_introduction"
 >title="Introduktion till Cloud Manager för AMS"
 >abstract="Organisationer kan själva hantera Adobe Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet."
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/cloud-manager/programs#cloud-manager" text="Skapa program"
->additional-url="https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/cloud-manager/environments#cloud-manager" text="Skapa miljöer"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/cloud-manager/programs#cloud-manager" text="Skapa program"
+>additional-url="https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/cloud-manager/environments#cloud-manager" text="Skapa miljöer"
 
 ## Introduktion {#introduction}
 
@@ -27,33 +27,30 @@ Börja här för att lära känna Cloud Manager för AMS (Adobe Managed Services
 
 >[!NOTE]
 >
->I denna dokumentation beskrivs Cloud Manager för Adobe Managed Services (AMS) funktioner.
+>I den här dokumentationen beskrivs funktioner och funktioner i Cloud Manager för Adobe Managed Services (AMS).
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home).
+>Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home).
 
 Med Cloud Manager får ditt utvecklingsteam följande funktioner:
 
 * Kontinuerlig integrering/kontinuerlig leverans (CI/CD) av kod för att minska time to market från månader/veckor till dagar/timmar.
-
 * Kodinspektion, prestandatestning och säkerhetsvalidering baserade på bästa praxis innan produktionen påbörjas för att minimera produktionsstörningar.
-
 * API-anslutning som komplement till befintliga DevOps-processer.
-
 * Automatisk skalning som intelligent upptäcker behovet av ökad kapacitet och automatiskt ger tillgång till ytterligare Dispatcher/publiceringssegment online.
 
 ![CI/CD-flöde](/help/assets/screen_shot_2018-05-12at73843pm.png)CI/CD-processflödet som används i [!UICONTROL Cloud Manager].
 
 ## Viktiga funktioner i [!UICONTROL Cloud Manager] {#key-features-in-cloud-manager}
 
-Här följer en djupdykning i några av de viktigaste funktionerna i Cloud Manager.
+I följande avsnitt beskrivs Cloud Manager viktigaste funktioner.
 
 ### Självbetjäningsgränssnitt {#self-service-interface}
 
+Information om hur du utforskar och kommer igång med användargränssnittet för [!UICONTROL Cloud Manager] finns i [Första gången du loggar in](/help/getting-started/first-time-login.md).
+
 Med användargränssnittet för [!UICONTROL Cloud Manager] kan du enkelt komma åt och hantera molnmiljön och CI/CD-flödet enkelt för dina Adobe Experience Manager-program.
 
-Du definierar programspecifika nyckeltal (KPI) som toppar sidvisningar per minut eller förväntade sidinläsningstider. Dessa nyckeltal är grunden för att mäta hur framgångsrik driftsättningen är. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Med självbetjäningsgränssnittet får du full kontroll. Där finns också länkar till resurser för bästa praxis och tillgång till Adobe experter för vägledning vid behov.
-
-Information om hur du utforskar och kommer igång med användargränssnittet för [!UICONTROL Cloud Manager] finns i [Första gången du loggar in](/help/getting-started/first-time-login.md).
+Du definierar programspecifika nyckeltal (KPI) som toppar sidvisningar per minut eller förväntade sidinläsningstider. Dessa nyckeltal är grunden för att mäta hur framgångsrik driftsättningen är. Roller och behörigheter för olika teammedlemmar kan enkelt definieras. Med självbetjäningsgränssnittet får du full kontroll. Där finns också länkar till resurser för god praxis och tillgång till Adobe experter för vägledning när det behövs.
 
 ### Rörledning för CI/CD {#ci-cd-pipeline}
 
@@ -75,7 +72,7 @@ Mer information om hur du distribuerar kod och kvalitetskontroller finns i [Dist
 
 ## Ytterligare funktioner i Cloud Manager {#optional-features-in-cloud-manager}
 
-Cloud Manager har ytterligare, avancerade funktioner som kan vara till nytta för ditt projekt beroende på din specifika miljö och dina behov. Om dessa funktioner är av intresse för dig kan du kontakta en Customer Success Engineer (CSE) eller Adobe för att diskutera mer.
+Cloud Manager har ytterligare, avancerade funktioner som kan vara till nytta för ditt projekt beroende på din specifika miljö och dina behov. Om dessa funktioner är av intresse för dig kan du kontakta din Customer Success Engineer (CSE) eller Adobe representant för att diskutera mer.
 
 ### Automatisk skalning {#autoscaling}
 
@@ -83,11 +80,11 @@ När produktionsmiljön utsätts för ovanligt hög belastning upptäcker [!UICO
 
 I en sådan händelse utlöser [!UICONTROL Cloud Manager] automatiskt provisioneringsprocessen för autoskalning, skickar ett meddelande om autoskalningshändelsen och lägger till ytterligare kapacitet online inom några minuter. Den extra kapaciteten tillhandahålls i produktionsmiljön, i samma regioner, och matchar samma systemspecifikationer som de Dispatcher/publiceringsnoder som körs.
 
-Funktionen för autoskalning gäller Dispatcher/publiceringsskiktet, där vågrät skalning används för att lägga till ett till tio segment i Dispatcher/publiceringspar. Eventuell ytterligare kapacitet som tillhandahålls skalas in manuellt inom tio arbetsdagar enligt Adobe CSE (Customer Success Engineer).
+Funktionen för autoskalning gäller Dispatcher/publiceringsskiktet, där vågrät skalning används för att lägga till ett till tio segment i Dispatcher/publiceringspar. All ytterligare kapacitet som tillhandahålls skalas in manuellt inom tio arbetsdagar enligt Adobe CSE (Customer Success Engineer).
 
 >[!NOTE]
 >
->Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kontaktar du CSE- eller Adobe-representanten.
+>Om du är intresserad av att ta reda på om autoskalning är lämpligt för ditt program kan du kontakta din CSE- eller Adobe-representant.
 
 ### Blågrön/grön distribution {#blue-green}
 
@@ -102,17 +99,17 @@ När som helst är det bara en av miljöerna som är aktiv, där den aktiva milj
 
 #### Blått/grönt distributionsflöde {#flow}
 
-När blå/grön distribution är aktiverat skiljer sig distributionsflödet från standardflödet för distribution av Cloud Service.
+När blå/grön distribution är aktiverat skiljer sig distributionsflödet från Cloud Service standardflöde.
 
 | Steg | Blå/grön driftsättning | Standarddistribution |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Distribution till författare | Distribution till författare |
 | 2 | Pausa för testning | - |
 | 3 | Grön infrastruktur skapas | - |
-| 4 | Distribution till gröna publicerings-/dispatchernivåer | Distribution till utgivare |
+| 4 | Driftsättning till grön publicering/Dispatcher-nivåer | Distribution till utgivare |
 | 5 | Paus för testning (upp till 24 timmar) | - |
 | 6 | Grön infrastruktur läggs till i produktionsbelastningsutjämnaren | - |
-| 7 | Blå infrastruktur tas bort från produktionsbelastningsutjämnaren - |
+| 7 | Blå infrastruktur tas bort från produktionsbelastningsutjämnaren | - |
 | 8 | Pausa för slutsignering (upp till 24 timmar) | - |
 | 9 | Blå infrastruktur avslutas automatiskt | - |
 | 10 | Pipelinen har slutförts | - |
