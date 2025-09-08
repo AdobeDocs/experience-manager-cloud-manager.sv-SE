@@ -18,8 +18,8 @@ Börja här för att lära känna Cloud Manager för AMS (Adobe Managed Services
 >id="aemcloud_cloudmanager_introduction"
 >title="Introduktion till Cloud Manager för AMS"
 >abstract="Organisationer kan själva hantera Adobe Experience Manager i molnet. Det innehåller ett ramverk för kontinuerlig integrering och kontinuerligt leverans (CI/CD) som gör att IT-team och implementeringspartners kan snabba upp leveransen av anpassningar eller uppdateringar utan att kompromissa med prestanda eller säkerhet."
->additional-url="https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/cloud-manager/programs#cloud-manager" text="Skapa program"
->additional-url="https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/cloud-manager/environments#cloud-manager" text="Skapa miljöer"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/cloud-manager/programs#cloud-manager" text="Skapa program"
+>additional-url="https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/cloud-manager/environments#cloud-manager" text="Skapa miljöer"
 
 ## Introduktion {#introduction}
 
@@ -29,7 +29,7 @@ Börja här för att lära känna Cloud Manager för AMS (Adobe Managed Services
 >
 >I den här dokumentationen beskrivs funktioner och funktioner i Cloud Manager för Adobe Managed Services (AMS).
 >
->Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home).
+>Motsvarande dokumentation för AEM as a Cloud Service finns i [AEM as a Cloud Service-dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home).
 
 Med Cloud Manager får ditt utvecklingsteam följande funktioner:
 
