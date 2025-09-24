@@ -2,7 +2,7 @@
 title: Dela endast scenen och endast produktion
 description: Lär dig hur du kan dela upp driftsättningar för staging och produktion med dedikerade pipelines.
 exl-id: b7dd0021-d346-464a-a49e-72864b01cce3
-source-git-commit: 34c0b39d50dd4998cb75cc032d71d24798dee729
+source-git-commit: 92237ea156e3921b5dc55cea3abdecee9d26b14b
 workflow-type: tm+mt
 source-wordcount: '917'
 ht-degree: 0%
@@ -103,7 +103,7 @@ En rörledning som bara fungerar på en scen fungerar på nästan samma sätt so
 
 ![En pipeline som endast är för scenen körs](/help/assets/configure-pipelines/stage-only-pipeline-run.png)
 
-Om du klickar på **Befordra bygge** uppmanas du att bekräfta körningen av den relaterade pipeline som bara är för scenen antingen som vanligt eller i [nödläge](#emergency-mode).
+Om du klickar på **Befordra bygge** uppmanas du att bekräfta körningen av den relaterade produktpipelinen antingen som vanligt eller i [nödläge](#emergency-mode).
 
 Om det inte finns någon pipeline som endast är avsedd för produktion uppmanas du att skapa en.
 
