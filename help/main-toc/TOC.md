@@ -18,7 +18,7 @@ ht-degree: 9%
 # Dokumentation om Cloud Manager {#content}
 
 + [Cloud Manager for AMS](/help/introduction.md)
-+ [Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
++ [Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
 + Ökning {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
