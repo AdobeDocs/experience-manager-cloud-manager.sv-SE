@@ -68,7 +68,7 @@ Skapa eller lägg till användare eller grupper i dessa produktprofiler med Admi
 
 1. Klicka på fliken **Översikt** och klicka sedan på den produkt du vill redigera på kortet **Produkter och tjänster**. Om den inte finns med i listan använder du fliken **Produkter** för att leta reda på produkten och klicka på den.
 
-   ![Översikt över Admin Console ](/help/assets/admin-console-overview.png)
+   ![Översikt över Admin Console &#x200B;](/help/assets/admin-console-overview.png)
 
 1. På fliken **Produkter** klickar du på den miljö som du vill lägga till användare/grupper för i produktprofiler.
 

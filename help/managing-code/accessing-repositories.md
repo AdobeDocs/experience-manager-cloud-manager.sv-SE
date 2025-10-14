@@ -60,4 +60,4 @@ Funktionen **Åtkomstrepo** är också tillgänglig från sidan [**Databaser**](
 
 Du kan återkalla ett lösenord när som helst.
 
-Om du vill göra det [skapar du en supportbiljett för den här begäran](https://experienceleague.adobe.com/sv?support-solution=Experience+Manager&amp;support-tab=home#support). Biljetten behandlas med hög prioritet och återkallas vanligen inom en dag.
+Om du vill göra det [skapar du en supportbiljett för den här begäran](https://experienceleague.adobe.com/sv?support-solution=Experience+Manager&support-tab=home#support). Biljetten behandlas med hög prioritet och återkallas vanligen inom en dag.

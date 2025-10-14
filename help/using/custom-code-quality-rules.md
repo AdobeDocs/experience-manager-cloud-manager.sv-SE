@@ -924,11 +924,11 @@ I följande avsnitt visas de DOT-kontroller (Dispatcher Optimization Tool) som u
 
 * [Dispatcher-konfigurationen saknar obligatorisk egenskap](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-missing-mandatory-property)
 
-* [Egenskapen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-deprecated-property) har tagits bort för Dispatcher-konfigurationen
+* [Egenskapen &#x200B;](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-deprecated-property) har tagits bort för Dispatcher-konfigurationen
 
 * [Det gick inte att hitta Dispatcher-konfigurationen](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-not-found)
 
-* [Det gick inte att hitta filen i HTTP-konfigurationen ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---httpd-configuration-include-file-not-found)
+* [Det gick inte att hitta filen i HTTP-konfigurationen &#x200B;](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---httpd-configuration-include-file-not-found)
 
 * [Dispatcher-konfiguration allmän](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---parsing-violation---dispatcher-configuration-general)
 
@@ -942,7 +942,7 @@ I följande avsnitt visas de DOT-kontroller (Dispatcher Optimization Tool) som u
 
 * [Varje Dispatcher-servergrupp måste ha ett unikt namn](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---each-dispatcher-farm-should-have-a-unique-name)
 
-* [Dispatcher-publiceringsservergruppens cache bör ha sina `ignoreUrlParams`-regler konfigurerade på ett tillåtelselista sätt ](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
+* [Dispatcher-publiceringsservergruppens cache bör ha sina `ignoreUrlParams`-regler konfigurerade på ett tillåtelselista sätt &#x200B;](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-cache-should-have-its-ignoreurlparams-rules-configured-in-an-allow-list-manner)
 
 * [Dispatcher-filtren för publiceringsgrupper bör ange tillåtna Sling-väljare på ett tillåtelselista sätt](https://github.com/adobe/aem-dispatcher-optimizer-tool/blob/main/docs/Rules.md#dot---the-dispatcher-publish-farm-filters-should-specify-the-allowed-sling-selectors-in-an-allow-list-manner)
 

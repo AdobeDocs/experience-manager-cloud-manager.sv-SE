@@ -91,4 +91,4 @@ Tänk på följande begränsningar när du använder Git-undermoduler med privat
 
 * Git-URL:erna för undermodulerna kan antingen vara i HTTPS- eller SSH-format, men de måste länka till en Github.com. Det går inte att lägga till en undermodul för databaser i Adobe i en GitHub-aggregeringsdatabas eller vice versa.
 * GitHub-undermodulerna måste vara tillgängliga för Adobe GitHub-appen.
-* [Begränsningarna för att använda Git-undermoduler med databaser som hanteras med Adobe ](#limitations-recommendations) gäller också.
+* [Begränsningarna för att använda Git-undermoduler med databaser som hanteras med Adobe &#x200B;](#limitations-recommendations) gäller också.

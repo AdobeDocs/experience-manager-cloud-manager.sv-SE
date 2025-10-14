@@ -50,7 +50,7 @@ Innan något innehåll kan kopieras måste en innehållsuppsättning definieras.
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn på sidan **Tjänster**.
+1. Klicka på ikonen ![Ruta &#x200B;](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn på sidan **Tjänster**.
 
 1. Klicka på **Lägg till innehållsuppsättning** i sidans övre högra hörn.
 
@@ -98,7 +98,7 @@ När du redigerar en innehållsuppsättning kan du behöva utöka de konfigurera
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
+1. Klicka på ikonen ![Ruta &#x200B;](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
 
 1. I tabellen på sidan **Innehållsuppsättningar** klickar du på ikonen ![Mer](https://spectrum.adobe.com/static/icons/ui_18/More.svg) till höger om en inkluderad innehållssökväg och sedan på **Redigera** eller **Ta bort** .
 
@@ -119,7 +119,7 @@ En miljö kan vara otillgänglig för markering om något av följande villkor g
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Klicka på ikonen ![Ruta ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
+1. Klicka på ikonen ![Ruta &#x200B;](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Box_18_N.svg) **Innehållsuppsättningar** på den vänstra menyn under **Tjänster**.
 
 1. I tabellen på sidan **Innehållsuppsättningar**, till höger om den innehållssökväg som du vill kopiera, klickar du på ![Mer ikon](https://spectrum.adobe.com/static/icons/ui_18/More.svg) och sedan på **Kopiera innehåll**.
 
@@ -150,7 +150,7 @@ Du kan övervaka statusen för dina kopieringsprocesser på sidan **Kopiera inne
 
 1. Klicka på ![Visa menyikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) i det övre vänstra hörnet på sidan för att öppna den vänstra menyn.
 
-1. Klicka på ikonen ![Historik ](https://spectrum.adobe.com/static/icons/workflow_18/Smock_History_18_N.svg) **Kopiera innehållsaktivitet** på den vänstra menyn under **Tjänster**.
+1. Klicka på ikonen ![Historik &#x200B;](https://spectrum.adobe.com/static/icons/workflow_18/Smock_History_18_N.svg) **Kopiera innehållsaktivitet** på den vänstra menyn under **Tjänster**.
 
    ![Aktivitet för innehållskopia](/help/assets/copy-content-activity.png)
 
