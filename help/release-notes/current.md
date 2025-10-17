@@ -3,7 +3,7 @@ title: Versionsinformation för Cloud Manager 2025.10.0
 description: Läs om Cloud Manager 2025.10.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: 8477b55292be4591b679200ff11b976a2da3a7be
+source-git-commit: f62191a1b9dd67ea1e999e2db0bb05de66bf73f2
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.10.0 för Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -41,7 +41,7 @@ Följande möjligheter är för närvarande tillgängliga:
 
 ### Experience Hub Extensibility and Customization {#exp-hub-extensibility}
 
-[Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub) fungerar som startpunkt för AEM och är anpassad efter organisationens behov. Berätta för Adobe om de befintliga AEM-gränssnittstilläggen så att du enkelt kan aktivera dem i Experience Hub.
+[Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) fungerar som startpunkt för AEM och är anpassad efter organisationens behov. Berätta för Adobe om de befintliga AEM-gränssnittstilläggen så att du enkelt kan aktivera dem i Experience Hub.
 
 ![Diagram över Experience Hub arbetsflöde för utbyggbarhet och anpassning](/help/release-notes/assets/experience-hub-extensibility-customization.png)
 
@@ -53,7 +53,8 @@ Intresserad av betaversionen? Mejla [beta_exphubextensibility@adobe.com](mailto:
 
 En ny byggmodell kompilerar endast ändrade moduler (i stället för hela repon) med cache-lagring på modulnivå för att korta byggtiden. Det gäller för rörledningar med kodkvalitet, fullständig stapel och enbart scener.
 
-![Dialogrutan Redigera icke-produktionspipeline med två alternativ för byggstrategi som är Fullständigt byggen och Smart bygge](/help/release-notes/assets/non-production-pipeline-edit.png) *Dialogrutan Redigera icke-produktionsförlopp som visar två alternativ för byggstrategi som är Fullständigt bygge och Smart bygge.*
+![Dialogrutan Redigera icke-produktionspipeline som visar två alternativ för byggstrategi som är Fullständigt bygge och Smart bygge](/help/release-notes/assets/non-production-pipeline-edit.png)
+*Dialogrutan Redigera icke-produktionsförlopp visar två alternativ för Build Strategy som är Full Build och Smart Build.*
 
 I dialogrutan **Lägg till/redigera pipeline**, under fliken **Source-kod**, finns ett nytt avsnitt i avsnittet **Skapa strategi** där du kan välja något av följande byggalternativ:
 
