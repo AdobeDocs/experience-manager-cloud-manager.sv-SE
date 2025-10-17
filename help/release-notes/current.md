@@ -3,7 +3,7 @@ title: Versionsinformation för Cloud Manager 2025.10.0
 description: Läs om Cloud Manager 2025.10.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: f62191a1b9dd67ea1e999e2db0bb05de66bf73f2
+source-git-commit: 696fae5ea39bd33a92e5e066338e129aee432cb1
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2025.10.0 för Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -41,7 +41,7 @@ Följande möjligheter är för närvarande tillgängliga:
 
 ### Experience Hub Extensibility and Customization {#exp-hub-extensibility}
 
-[Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub) fungerar som startpunkt för AEM och är anpassad efter organisationens behov. Berätta för Adobe om de befintliga AEM-gränssnittstilläggen så att du enkelt kan aktivera dem i Experience Hub.
+[Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) fungerar som startpunkt för AEM och är anpassad efter organisationens behov. Berätta för Adobe om de befintliga AEM-gränssnittstilläggen så att du enkelt kan aktivera dem i Experience Hub.
 
 ![Diagram över Experience Hub arbetsflöde för utbyggbarhet och anpassning](/help/release-notes/assets/experience-hub-extensibility-customization.png)
 
