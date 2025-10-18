@@ -2,9 +2,9 @@
 title: Koddistribution
 description: Lär dig hur du distribuerar kod och vad som händer i Cloud Manager när du gör det.
 exl-id: 3d6610e5-24c2-4431-ad54-903d37f4cdb6
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: b98e1711f1f98f52977dd6cb4cd2bc834d81a360
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1636'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Steg **Scendistribution** innehåller följande åtgärder:
 
 **Scentestningen** omfattar följande åtgärder:
 
-* **Säkerhetstestning**: I det här steget utvärderas hur säkerhetseffekten av koden påverkar AEM. Mer information om testprocessen finns i dokumentet [Förstå testresultat](/help/using/code-quality-testing.md).
+* **Säkerhetstestning**: I det här steget utvärderas kodens säkerhetseffekt i AEM-miljön. Mer information om testprocessen finns i dokumentet [Förstå testresultat](/help/using/code-quality-testing.md).
    * **Prestandatestning**: I det här steget utvärderas kodens prestanda. Mer information om testprocessen finns i [Förstå testresultat](/help/using/code-quality-testing.md).
 
 ### Distributionssteg för produktion {#production-deployment}
@@ -66,7 +66,6 @@ Steget **Produktionsdistribution** innehåller följande åtgärder:
 * **Schemalägg produktionsdistribution**
    * Det här alternativet aktiveras när pipeline konfigureras.
    * Det schemalagda datumet och den schemalagda tiden anges i användarens tidszon.
-
      ![Schemalägg distribution](/help/assets/Production_Deployment1.png)
 * **CSE-stöd** (om aktiverat)
 * **Distribuera till produktion**
@@ -110,18 +109,18 @@ När Cloud Manager använder icke-produktionstopologier är målet att slutföra
 
 1. Varje AEM-artefakt distribueras till varje AEM-instans via API:er för Package Manager, där paketberoenden avgör distributionsordningen.
 
-   * Läs mer om hur du kan använda paket för att installera nya funktioner, överföra innehåll mellan instanser och säkerhetskopiera databasinnehåll. Se [Package Manager](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/developer-tools/package-manager).
+   * Läs mer om hur du kan använda paket för att installera nya funktioner, överföra innehåll mellan instanser och säkerhetskopiera databasinnehåll. Se [Package Manager](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/developer-tools/package-manager).
 
    >[!NOTE]
    >
-   >Alla AEM artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma AEM för ett visst ändamål kan du läsa avsnittet [Körningslägen i dokumentet Distribuera till AEM as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/deploying/overview#runmodes).
+   >Alla AEM-artefakter distribueras till både författaren och utgivaren. Körningslägena bör utnyttjas när nodspecifika konfigurationer krävs. Om du vill veta mer om hur körningslägena gör att du kan trimma din AEM-instans för ett visst ändamål kan du läsa avsnittet [Körningslägen i dokumentet Distribuera till AEM as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/deploying/overview#runmodes).
 
 1. Dispatcher-artefakten distribueras till alla Dispatcher enligt följande:
 
    1. Aktuella konfigurationer säkerhetskopieras och kopieras till en tillfällig plats.
    1. Alla konfigurationer tas bort utom de oföränderliga filerna. Mer information finns i [Dispatcher Configurations](/help/getting-started/dispatcher-configurations.md). På så sätt rensas katalogerna så att inga överblivna filer lämnas kvar.
    1. Artefakten extraheras till katalogen `httpd`. Oändringsbara filer skrivs inte över. Alla ändringar du gör i oföränderliga filer i Git-databasen ignoreras vid distributionen. Dessa filer är viktiga för AMS Dispatcher-ramverket och kan inte ändras.
-   1. Apache utför ett konfigurationstest. Om inga fel hittas läses tjänsten in igen. Om ett fel inträffar återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
+   1. Apache utför ett konfigurationstest. Om inga fel hittas läses tjänsten in igen. Om fel hittas återställs konfigurationerna från en säkerhetskopia, tjänsten läses in igen och felet rapporteras tillbaka till Cloud Manager.
    1. Alla sökvägar som anges i pipeline-konfigurationen görs ogiltiga eller tömda från Dispatcher-cachen.
 
    >[!NOTE]
@@ -136,16 +135,16 @@ När Cloud Manager använder icke-produktionstopologier är målet att slutföra
 
 ### Distribution till produktionsfas {#deployment-production-phase}
 
-Processen för att distribuera till produktionstopologier skiljer sig något för att minimera påverkan för AEM besökare.
+Processen för att distribuera till produktionstopologier skiljer sig något för att minimera påverkan för besökare på AEM webbplats.
 
 Produktionsinstallationer följer i allmänhet samma steg som ovan, men på ett rullande sätt:
 
-1. Distribuera AEM som ska författas.
+1. Distribuera AEM-paket till författaren.
 1. Koppla loss dispatcher1 från belastningsutjämnaren.
-1. Distribuera AEM paket för att publicera1 och Dispatcher-paketet för att skicka1 parallellt, tömma Dispatcher-cachen.
+1. Distribuera AEM-paket för att publicera1 och Dispatcher-paketet för att skicka1 parallellt, tömma Dispatcher-cachen.
 1. Placera dispatcher1 i belastningsutjämnaren igen.
 1. När dispatcher1 är tillbaka i tjänst frigör du dispatcher2 från belastningsutjämnaren.
-1. Distribuera AEM paket för att publicera2 och Dispatcher-paketet till dispatcher2 parallellt, tömma Dispatcher-cachen.
+1. Distribuera AEM-paket för att publicera2 och Dispatcher-paketet till dispatcher2 parallellt, rensa Dispatcher-cachen.
 1. Placera dispatcher2 i belastningsutjämnaren igen.
 
 Den här processen fortsätter tills distributionen har nått alla utgivare och utgivare i topologin.
