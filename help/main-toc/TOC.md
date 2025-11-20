@@ -9,8 +9,8 @@ feature: Cloud Manager
 role: Admin
 source-git-commit: c08c4e4fdfa8927acf1f0bfd1fe346afdc3ce5a3
 workflow-type: tm+mt
-source-wordcount: '388'
-ht-degree: 9%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 9%
 # Dokumentation om Cloud Manager {#content}
 
 + [Cloud Manager for AMS](/help/introduction.md)
-+ [Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
++ [Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
 + Ökning {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
