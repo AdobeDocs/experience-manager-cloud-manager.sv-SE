@@ -58,4 +58,4 @@ Adobe tar gärna emot eventuella bidrag och granskar ditt bidrag om det läggs u
 
 ## Mer information
 
-Mer information om hur du använder GitHub-redigeringsplattformen finns i [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/en/docs/contributor/contributor-guide/introduction) .
+Mer information om hur du använder GitHub-redigeringsplattformen finns i [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/sv/docs/contributor/contributor-guide/introduction) .
