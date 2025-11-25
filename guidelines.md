@@ -1,5 +1,5 @@
 ---
-source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
+source-git-commit: d8380bf56891af7ce3fe833e209ae8663e4bc6fe
 workflow-type: tm+mt
 source-wordcount: '713'
 ht-degree: 0%
@@ -23,25 +23,25 @@ Adobe tar gärna emot bidrag till dokumentationen, men alla bidrag till AEM-doku
 
 Bidrag som inte uppfyller dessa standarder kan avvisas.
 
-### Standardanvändningsexempel finns på Adobe.
+### Standardanvändningsexempel dokumenteras på Adobe
 
 AEM dokumentation täcker standardanvändningsfall. Användningsfall som inte omfattas av standardinstallation och -användning ingår inte i AEM-dokumentationen.
 
-### Adobe dokumenterar vanligtvis inte buggar eller deras temporära lösningar.
+### Adobe dokumenterar vanligtvis inte buggar eller deras temporära lösningar
 
 AEM dokumentation täcker standardanvändningsfall. Av den anledningen dokumenteras inte buggar, effekter orsakade av buggar och tillfälliga lösningar för buggar.
 
 Undantag från den här regeln gäller versionsinformationen där kända problem kan listas med möjliga lösningar som produkthanteringen godkänner.
 
-### Dokumentationsbidragen är inte till för att besvara tekniska frågor.
+### Dokumentationsbidragen är inte till för att besvara tekniska frågor
 
 Alla idéer du behöver för att förbättra AEM dokumentation är välkomna som bidrag. Alla kommentarer, utgåvor och pull-begäranden är dock endast avsedda som *bidrag*. De ska inte besvara några frågor om hur man använder AEM, implementerar AEM-projekt eller löser tekniska problem.
 
-Du kan rapportera eventuella frågor om AEM användning eller tekniska fel. Använd den normala supportprocessen via [Experience Cloud Enterprise Support-portalen](https://experienceleague.adobe.com/sv?support-solution=General#support) eller beskrivs i [Experience Manager-communityn](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
+Du kan rapportera eventuella frågor om AEM användning eller tekniska fel. Använd den normala supportprocessen via [Experience Cloud Enterprise Support-portalen](https://experienceleague.adobe.com/?support-solution=General#support) eller beskrivs i [Experience Manager-communityn](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/ct-p/adobe-experience-manager-community).
 
 ***AEM dokumentationsbidrag ersätter inte Adobe kundtjänst*** och eventuella bidrag som söker svar på supportrelaterade frågor avvisas.
 
-### Bidragen ska tydligt hänvisa till berörda dokumentationssidor.
+### Bidragen ska tydligt hänvisa till berörda dokumentationssidor
 
 Om du skapar ett problem som kan föreslå förbättringar av dokumentationen måste du inkludera länkar till de sidor som påverkas. Om du skapar ett problem med länken **Redigera den här sidan** på en dokumentationssida skapas problemet automatiskt med en länk till sidan.
 
