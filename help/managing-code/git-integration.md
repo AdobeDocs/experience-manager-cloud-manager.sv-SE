@@ -1,8 +1,8 @@
 ---
 title: Git-integrering med Adobe Cloud Manager
-description: I den här videoserien går vi igenom hur en kundhanterad (lokal) Git-databas installeras och integreras med Adobe Cloud Manager.
+description: I den här videoserien går vi igenom hur man konfigurerar och integrerar en kundhanterad (lokal) Git-databas med Adobe Cloud Manager.
 exl-id: e517f8a4-23f0-4486-8278-91396dba76ec
-source-git-commit: 51bd685a17eb9d68b1ec8245e6167cab02101fc1
+source-git-commit: 75baacd1fd6f36ca1d6ea5c1993516569ab6ef47
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -65,6 +65,6 @@ Du kan synkronisera versionstaggar från en Cloud Manager Git-databas till en ku
 ## Ytterligare resurser {#additional-resources}
 
 * [Cloud Manager Introduktion](/help/introduction.md)
-* [GitHub-resurser](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git)
-* [Atlassisk Git Tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
+* [GitHub-resurser](https://docs.github.com/en/get-started/git-basics/set-up-git)
+* [Atlassiskt Git-självstudiekurser](https://www.atlassian.com/git/tutorials/what-is-version-control)
 * [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)

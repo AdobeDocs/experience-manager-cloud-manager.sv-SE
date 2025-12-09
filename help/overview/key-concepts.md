@@ -2,7 +2,7 @@
 title: Viktiga begrepp
 description: Precis som alla kraftfulla verktyg omfattar Cloud Manager många koncept och termer. I det här dokumentet sammanfattas några av de viktigaste för dig när du börjar använda Cloud Manager.
 exl-id: 86dfc976-f3da-479a-9faa-08f40ca909e0
-source-git-commit: f855fa91656e4b3806a617d61ea313a51fae13b4
+source-git-commit: 75baacd1fd6f36ca1d6ea5c1993516569ab6ef47
 workflow-type: tm+mt
 source-wordcount: '412'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Precis som alla kraftfulla verktyg omfattar Cloud Manager många koncept och ter
 
 Ett program är den uppsättning anpassningar och konfigurationer som skapas av en kund för att anpassa den underliggande [lösningen](#solution) (till exempel AEM Sites eller AEM Assets) för deras specifika användningsfall och behov. Ett program är en logisk enhet som kan bestå av flera [artefakter](#artifact).
 
-Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview).
+Ett exempelprogram är det fiktiva [WKND-livsstilprogrammet](https://experienceleague.adobe.com/en/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview).
 
 ## Artefakt {#artifact}
 
@@ -42,7 +42,7 @@ En instans är en specifik virtuell server som kör AEM [solution](#solution). F
 
 ## Organisation {#organization}
 
-En organisation är en Adobe-konstruktion som representerar en företagskund. Ett företag kan ha flera organisationer beroende på hur de etablerades i Adobe Identity Management System (IMS).
+En organisation är en Adobe-konstruktion som representerar en företagskund. Ett företag kan ha flera organisationer beroende på hur de etableras i Adobe Identity Management System (IMS).
 
 ## Pipeline {#pipeline}
 
