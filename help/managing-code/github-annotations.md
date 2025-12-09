@@ -30,7 +30,7 @@ Den exakta kodraden med problemet anges och du kan klicka på den för att visa 
 
 Alla kommenterade rader samlas på fliken **Filer ändrade** i GitHub-pull-begäran. Anteckningar för filer som inte har ändrats i pull-begäran visas i sina egna avsnitt.
 
-![Exempel på anteckningar i filer har ändrats på fliken ](assets/github-check-annotations-files-changed.png)
+![Exempel på anteckningar i filer har ändrats på fliken &#x200B;](assets/github-check-annotations-files-changed.png)
 
 ## Kodkvalitetsledningslinjer {#code-quality-pipelines}
 
