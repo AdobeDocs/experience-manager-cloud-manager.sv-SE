@@ -7,9 +7,9 @@ user-guide-description: Lär dig hur du använder Cloud Manager för att självh
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 19b8efeab20b07bdb71595fbff979ea11d8801c0
+source-git-commit: 28841719e820e47577b411a4034ebc7a8e1bb556
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '390'
 ht-degree: 9%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 9%
 # Dokumentation om Cloud Manager {#content}
 
 + [Cloud Manager for AMS](/help/introduction.md)
-+ [Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
++ [Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
 + Ökning {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
@@ -64,7 +64,7 @@ ht-degree: 9%
    + [Information om databasåtkomst](/help/managing-code/accessing-repositories.md)
    + [Lägg till en Adobe-databas](/help/managing-code/adobe-repositories.md)
    + [Lägg till en privat databas](/help/managing-code/private-repositories.md)
-   + [Lägg till en extern databas (privat beta)](/help/managing-code/external-repositories.md)
+   + [Lägg till en extern databas](/help/managing-code/external-repositories.md)
    + [Hantera åtkomsttoken (privat beta)](/help/managing-code/manage-access-tokens.md)
    + [Stöd för Git-undermodul](/help/managing-code/git-submodules.md)
    + [Pull Request Checks for Private Repositories](/help/managing-code/github-check-config.md)

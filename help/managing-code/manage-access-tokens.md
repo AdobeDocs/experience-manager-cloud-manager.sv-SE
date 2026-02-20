@@ -2,9 +2,9 @@
 title: Hantera åtkomsttoken i Cloud Manager
 description: Lär dig hur du visar, redigerar och tar bort åtkomsttoken som används för Använd egen Git i Cloud Manager i Adobe Managed Services.
 exl-id: 873aad0b-d7c6-4bc3-a70d-bbfdc1e02193
-source-git-commit: d6f058c3f6dc010f08a5cb75a0fb152b56111e79
+source-git-commit: 28841719e820e47577b411a4034ebc7a8e1bb556
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,11 @@ Nu kan du hantera tokens effektivare med **Hantera åtkomsttoken**. Du kan visa,
 
 Se även [Lägg till externa databaser i Cloud Manager](/help/managing-code/external-repositories.md).
 
+<!--
 >[!NOTE]
 >
->De funktioner som beskrivs i den här artikeln är endast tillgängliga via det privata betaprogrammet. Mer information och om du vill registrera dig för den privata betaversionen finns i [Hantera åtkomsttoken](/help/release-notes/current.md#access-tokens).
+>The features described in this article are only available through the private beta program. For more details and to sign up for  the private beta, see [Manage Access Tokens](/help/release-notes/current.md#access-tokens).
+-->
 
 ## Visa åtkomsttoken {#view-access-tokens}
 
