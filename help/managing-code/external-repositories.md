@@ -2,7 +2,7 @@
 title: Lägg till externa databaser i Cloud Manager
 description: Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab-, Bitbucket- och Azure DevOps-databaser.
 exl-id: 4500cacc-5e27-4bbb-b8f6-5144dac7e6da
-source-git-commit: 76a5cb04514bc1961c8f9008e9bea5d1d6fe1c19
+source-git-commit: 651d9fc9964d599cb51556f7b6ba255fe8092d7f
 workflow-type: tm+mt
 source-wordcount: '2453'
 ht-degree: 0%
@@ -15,15 +15,12 @@ ht-degree: 0%
 
 Lär dig hur du lägger till en extern databas i Cloud Manager. Cloud Manager stöder integrering med GitHub Enterprise-, GitLab- och Bitbucket-databaser.
 
-Kunderna kan nu även införliva sina Azure DevOps Git-databaser i Cloud Manager, med stöd för både moderna Azure DevOps-databaser och äldre VSTS-databaser (Visual Studio Team Services).
+Nu kan kunderna även lägga in sina Azure DevOps Git-databaser i Cloud Manager, med stöd för både moderna Azure DevOps-databaser och äldre VSTS-databaser (Visual Studio Team Services).
 
 * För Edge Delivery Services-användare kan den inbyggda databasen användas för att synkronisera och distribuera platskod.
 * För AEM as a Cloud Service- och Adobe Managed Services-användare (AMS) kan databasen länkas till både fullständiga och frontbaserade pipelines.
 
-<!--
->[!NOTE]
->
->The support added for Azure DevOps described in this article is available only through the private beta program. For more details and to sign up for the beta, see [Bring Your Own Git](/help/release-notes/current.md). -->
+
 
 ## Konfigurera en extern databas
 
@@ -127,7 +124,7 @@ Se även [Hantera åtkomsttoken](/help/managing-code/manage-access-tokens.md).
 | Alternativ för åtkomsttoken | Beskrivning |
 | --- | --- |
 | **Använd befintlig åtkomsttoken** | Om du redan har angett en åtkomsttoken för databasen för din organisation och har tillgång till flera databaser kan du välja en befintlig token. Använd listrutan **Tokennamn** för att välja den token som du vill använda för databasen. I annat fall lägger du till en ny åtkomsttoken. |
-| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Azure DevOps-dokumentationen](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows).<li>Nödvändig behörighet för Azure DevOps Personal Access Token (PAT).<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webkrockshändelser.<br>När du skapar applösenordet i Azure DevOps måste det innehålla följande lösenordsbehörigheter för appen:<ul><li>Kod (läs)</li><li>Kod (status)</li><li>Pull Request Threads (Läs och skriv)</li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
+| **Lägg till ny åtkomsttoken** | <ul><li>Skriv ett namn på åtkomsttoken som du skapar i textfältet **Token Name**.<li>Skapa en databasåtkomsttoken med hjälp av [Azure DevOps-dokumentationen](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows).<li>Behörigheter som krävs för Azure DevOps Personal Access Token (PAT).<br>Dessa behörigheter ger Cloud Manager åtkomst till databasinnehåll, hanterar pull-begäranden och konfigurerar eller reagerar på webkrockshändelser.<br>När du skapar applösenordet i Azure DevOps måste det innehålla följande lösenordsbehörigheter för appen:<ul><li>Kod (läs)</li><li>Kod (status)</li><li>Pull Request Threads (Läs och skriv)</li></ul></li></li></ul></ul></ul><ul><li>Klistra in den token du just skapade i fältet **Åtkomsttoken**. |
 
 Efter valideringen är den externa databasen klar att användas och länkas till en pipeline.
 
@@ -170,7 +167,7 @@ Med webbhooks kan Cloud Manager till exempel utlösa åtgärder som baseras på 
 
 Webkrok-konfiguration krävs inte för databaser på `GitHub.com` eftersom Cloud Manager integreras direkt via GitHub-appen.
 
-Webkrokkonfigurationen är tillgänglig för alla andra externa databaser som är inbyggda med en åtkomsttoken - som GitHub Enterprise, GitLab, Bitbucket och Azure DevOps - och måste konfigureras manuellt.
+Webkrokkonfigurationen är tillgänglig och måste konfigureras manuellt för alla andra externa databaser som är inbyggda med en åtkomsttoken, till exempel GitHub Enterprise, GitLab, Bitbucket och Azure DevOps.
 
 **Så här konfigurerar du en webkrok för en extern databas:**
 
@@ -300,7 +297,7 @@ Använder bekräftelsestatus för spårning av PR-valideringsförlopp. I följan
 
 >[!TAB Azure DevOps]
 
-Azure DevOps spårar pull-begärandevalidering via statuskontroller. När Cloud Manager kör pull-begärandevalidering läggs statuskontroller till som visas i Azure DevOps pull-begärandegränssnittet.
+Azure DevOps spårar pull-begärandevalidering via statuskontroller. När Cloud Manager kör pull-begärandevalidering läggs statuskontroller till som visas i Azure DevOps pull-begärangränssnittet.
 
 Vid validering av kodkvalitet visas en statuskontroll att processen pågår:
 
@@ -314,7 +311,7 @@ Om valideringen misslyckas visas detaljerad felinformation i statuskontrollinfor
 
 ![Azure DevOps-validering av pull-begäranden med webhooks-3](/help/managing-code/assets/azure-devops-validation-of-pull-requests-with-webhooks-3.png)
 
-För pull-begärankommentarer och feedback lägger Cloud Manager till kommentarer direkt i pull-begäran i Azure DevOps med verifieringsinformation och nödvändiga åtgärder.
+När det gäller pull-förfrågningskommentarer och feedback lägger Cloud Manager till kommentarer direkt i pull-begäran i Azure DevOps med valideringsinformation och nödvändiga åtgärder.
 
 ![Azure DevOps-validering av pull-begäranden med webhooks-4](/help/managing-code/assets/azure-devops-validation-of-pull-requests-with-webhooks-4.png)
 
