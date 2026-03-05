@@ -1,24 +1,24 @@
 ---
 product: Adobe Experience Manager
 sub-product: Cloud Manager
-user-guide-title: Dokumentation om Cloud Manager
-breadcrumb-title: Cloud Manager-dokumentation om AEM 6.x
+user-guide-title: Cloud Manager Documentation
+breadcrumb-title: Cloud Manager Documentation for AEM 6.x
 user-guide-description: Lär dig hur du använder Cloud Manager för att självhantera Adobe Experience Manager för AMS i molnet.
 feature-set: Experience Manager Cloud Manager, Experience Manager
 feature: Cloud Manager
 role: Admin
-source-git-commit: 8ceaefebdddefb508a4c296c00f053e6b4dfb248
+source-git-commit: 77f5000f0a237dc82e183eb074eddb23e3a2eb44
 workflow-type: tm+mt
-source-wordcount: '388'
-ht-degree: 9%
+source-wordcount: '334'
+ht-degree: 29%
 
 ---
 
 
-# Dokumentation om Cloud Manager {#content}
+# Cloud Manager Documentation {#content}
 
 + [Cloud Manager for AMS](/help/introduction.md)
-+ [Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
++ [Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
 + Ökning {#overview}
    + [Viktiga begrepp](/help/overview/key-concepts.md)
    + [Användarresa](/help/overview/user-journey.md)
@@ -54,8 +54,8 @@ ht-degree: 9%
    + [Hantera miljöer](/help/using/managing-environments.md)
    + [Övervaka miljöer](/help/using/monitoring-environments.md)
    + [Service Pack-uppdateringar för utvecklingsmiljöer (privat beta)](/help/using/service-packs-environments.md)
-   + [Cloud Manager API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/)
-   + [Cloud Manager CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/main/README.md)
+   + [CLOUD MANAGER API](https://developer.adobe.com/experience-cloud/cloud-manager/reference/api/)
+   + [CLOUD MANAGER CLI](https://github.com/adobe/aio-cli-plugin-cloudmanager/blob/main/README.md)
    + [Meddelanden](/help/using/notifications.md)
    + [Anpassade regler för kodkvalitet](/help/using/custom-code-quality-rules.md)
    + [Konsekvens för innehållskopia för miljö](/help/using/content-copy.md)
@@ -77,6 +77,9 @@ ht-degree: 9%
    + [Utvärdering](/help/product-update-wizard/evaluation.md)
 + Versionsinformation {#release-notes}
    + [Aktuell](/help/release-notes/current.md)
+   + 2026 {#rn-2026}
+      + [2026.2.0](/help/release-notes/2026/2026-2-0.md)
+      + [2026.1.0](/help/release-notes/2026/2026-1-0.md)
    + 2025 {#rn-2025}
       + [2025.12.0](/help/release-notes/2025/2025-12-0.md)
       + [2025.11.0](/help/release-notes/2025/2025-11-0.md)
