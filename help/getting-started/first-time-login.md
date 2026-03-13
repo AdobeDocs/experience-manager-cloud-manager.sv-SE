@@ -2,9 +2,9 @@
 title: Inloggning för första gången
 description: Följ den här sidan om du har konfigurerat dina allmänna konfigurationer och vill använda Cloud Manager för första gången.
 exl-id: eb043437-8566-4a8d-8c5c-c8cf1d33daeb
-source-git-commit: 89fa72fb3950f6040f42066fdcbca3a61bb76f5b
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '301'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 
 ## Logga in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in på Cloud Manager på [experience.adobe.com](https://experience.adobe.com/experiencemanager). Mer information finns i [Om Adobe Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
+1. Logga in på Cloud Manager på [experience.adobe.com](https://experience.adobe.com/experiencemanager). Mer information finns i [Om Adobe Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
 1. Klicka på **Cloud Manager** på den vänstra panelen.
 
    ![Cloud Manager i den vänstra panelen i Experience Manager](/help/getting-started/assets/cloud-manager-experiencemanager.png)
@@ -34,7 +34,8 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 
 1. Cloud Manager opens to the **Overview** page.
 
-   ![Cloud Manager overview page](/help/assets/program-overview-page.png) -->
+   ![Cloud Manager overview page](/help/assets/program-overview-page.png
+-->
 
 
 1. Om ditt program inte har konfigurerats ännu klickar du på **Konfigurera program** i [call-to-action](/help/getting-started/navigation.md#cta) för att konfigurera programbeskrivningen och definiera nyckeltal (KPI). Om ditt program redan är konfigurerat kan CTA erbjuda ytterligare steg.

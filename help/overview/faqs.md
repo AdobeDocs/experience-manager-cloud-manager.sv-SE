@@ -2,9 +2,9 @@
 title: Vanliga frågor om Cloud Manager
 description: Läs mer om svar på de vanligaste frågorna om Cloud Manager för AMS-kunder.
 exl-id: 52c1ca23-5b42-4eae-b63a-4b22ef1a5aee
-source-git-commit: e7e9844b5f06552fc2104584c63935dee7a9fa89
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,8 @@ Det här dokumentet ger svar på de vanligaste frågorna om Cloud Manager för A
 Yes. You need to add the `maven-toolchains-plugin` with the correct settings for Java 11.
 
 * This process is documented [here](/help/getting-started/using-the-wizard.md).
-* For an example, see the [WKND sample project code](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75). -->
+* For an example, see the [WKND sample project code](https://github.com/adobe/aem-guides-wknd/commit/6cb5238cb6b932735dcf91b21b0d835ae3a7fe75). 
+-->
 
 ## Mitt bygge misslyckas med ett fel om maven-scr-plugin efter byte från Java 8 till Java 11. Vad kan jag göra? {#maven-src-plugin}
 
@@ -69,7 +70,7 @@ Om du gör det kan efterföljande distributioner fortfarande installeras när ve
 
 Du kan också ange versionen till `-SNAPSHOT` för fas- och produktionsbyggen eller distributioner. Cloud Manager anger automatiskt rätt versionsnummer och skapar en tagg åt dig i Git. Om det behövs kan du hänvisa till den här taggen senare.
 
-Mer information om versionshantering [finns här](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
+Mer information om versionshantering [finns här](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/using-cloud-manager/managing-code/project-version-handling).
 
 ## Hur fungerar paket- och paketversionshantering för driftsättning och produktion? {#staging-production}
 

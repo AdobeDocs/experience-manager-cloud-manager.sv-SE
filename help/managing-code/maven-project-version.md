@@ -2,9 +2,9 @@
 title: Versionshantering för Maven Project
 description: Läs om hur Maven hanterar projektversioner i Cloud Manager.
 exl-id: a1d676e0-27cc-4b0d-8799-527c0520946a
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---

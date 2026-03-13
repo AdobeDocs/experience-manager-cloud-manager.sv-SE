@@ -2,10 +2,10 @@
 title: Anpassade behörigheter
 description: Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassade behörighetsprofiler med konfigureringsbara behörigheter för att begränsa åtkomst till program, pipelines och miljöer för användare av Cloud Managers.
 exl-id: a81eda9f-aa89-40ea-8e4c-52367a0a6aba
-source-git-commit: fb3c2b3450cfbbd402e9e0635b7ae1bd71ce0501
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '1373'
-ht-degree: 1%
+source-wordcount: '1391'
+ht-degree: 0%
 
 ---
 
@@ -17,10 +17,10 @@ Lär dig hur du kan använda anpassade behörigheter för att skapa nya anpassad
 
 Cloud Manager har en uppsättning fördefinierade roller som styr åtkomsten till olika funktioner i Cloud Manager:
 
-* Business Owner
-* Program Manager
-* Deployment Manager
-* Developer
+* Företagsägare
+* Programhanteraren
+* Distributionshanteraren
+* Utvecklare
 
 Med anpassade behörigheter kan användare skapa nya anpassade behörighetsprofiler med konfigurerbara behörigheter för att begränsa åtkomst för molnhanterare till program, rörledningar och miljöer.
 
@@ -104,7 +104,7 @@ Nu kan du tilldela användare till den nya produktprofilen som du skapade med an
 
 1. Klicka på **Lägg till användare** och tilldela användare till din nya produktprofil med anpassade behörigheter.
 
-Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/se/enterprise/using/manage-product-profiles.html).
+Mer information om hur du använder Admin Console finns i **Lägga till användare och användargrupper i en produktprofil** i dokumentet [Hantera produktprofiler för företagsanvändare](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
 
 ## Konfigurerbara behörigheter {#configurable-permissions}
 
@@ -141,7 +141,7 @@ Mer information finns i [Source-koddatabasen](/help/requirements/source-code-rep
 
 Följande termer används för att skapa och hantera anpassade behörigheter och fördefinierade roller.
 
-| Term | Beskrivning |
+| Villkor | Beskrivning |
 | --- | --- |
 | Fördefinierade behörigheter | Fördefinierade roller som **Business Owner**, **Deployment Manager** och så vidare. för att styra olika funktioner i Cloud Manager. Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md). |
 | Anpassade behörigheter | Cloud Manager-funktioner som gör att användare kan skapa behörighetsprofiler för att definiera roller som styr funktioner som stöds i Cloud Manager |
@@ -153,7 +153,7 @@ Behörighetsobjekt avser det område där behörigheter tillämpas. Vanligtvis �
 
 | Typ av behörighetsobjekt | Exempel | Beskrivning |
 | --- | --- | --- |
-| Organisation | organisation:företagA | Alla tillämpliga resurser i en organisation. En resurs kan vara ett program, en miljö eller en pipeline. Om användaren lägger till en organisation för någon behörighet har alla nya resurser i den organisationen också den behörigheten. |
+| Organisation | organisation:companyA | Alla tillämpliga resurser i en organisation. En resurs kan vara ett program, en miljö eller en pipeline. Om användaren lägger till en organisation för någon behörighet har alla nya resurser i den organisationen också den behörigheten. |
 | Program | Program A | Alla tillämpliga resurser i ett program. |
 | Miljö | Program A: miljö | Gäller i en viss miljö. |
 | Pipeline | Program A: Pipeline | Gäller för en viss rörledning. |
@@ -170,10 +170,10 @@ Tänk på följande begränsningar när du använder anpassade behörigheter:
 
 ### Vilka behörighetsprofiler är fördefinierade behörighetsprofiler?
 
-* Business Owner
-* Program Manager
-* Deployment Manager
-* Developer
+* Företagsägare
+* Programhanteraren
+* Distributionshanteraren
+* Utvecklare
 
 Mer information om fördefinierade roller finns i [Rollbaserade behörigheter](/help/requirements/role-based-permissions.md).
 

@@ -2,9 +2,9 @@
 title: Navigera i användargränssnittet i Cloud Manager
 description: Läs om hur Cloud Manager användargränssnitt är organiserat och hur du navigerar för att hantera program och miljöer.
 exl-id: 9c1545ce-1c6d-417f-a6f4-fe53caef3433
-source-git-commit: b98e1711f1f98f52977dd6cb4cd2bc834d81a360
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1657'
 ht-degree: 0%
 
 ---
@@ -48,15 +48,15 @@ Den första är Cloud Manager header. Sidhuvudet är beständigt när du naviger
 
 | Område | Beskrivning |
 | --- | --- |
-| ![Visa menyikon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) | En nedrullningsbar meny som ger åtkomst till flikar för specifika delar av ett enskilt program.<br>Information om vilken typ av tjänst ditt program har (AMS eller AEMaaCS) finns i avsnittet [Programkort](#program-cards) i det här dokumentet. |
+| ![Visa menyikon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) | En nedrullningsbar meny som ger åtkomst till flikar för specifika delar av ett enskilt program.<br>Om du vill ta reda på vilken typ av tjänst ditt program har (AMS eller AEMaaCS) kan du läsa avsnittet [Programkort](#program-cards) i det här dokumentet. |
 | ![Adobe röd och vit ikon](/help/getting-started/assets/AdobeLogoWhiteOnRed.svg) Cloud Manager | Klicka för att öppna konsolen **Mina program** för Cloud Manager, oavsett var du befinner dig i Cloud Manager. |
 | *`Name of selected organization`* | Organisationsväljaren visar organisationen som du är inloggad på (i det här exemplet *Foundation Internal*). Klicka för att växla till en annan organisation om din Adobe ID är kopplad till flera organisationer. |
 | ![Feedback-ikon](/help/getting-started/assets/AppComment.svg) Feedback | Klicka för att ge Adobe feedback om Cloud Manager. |
-| ![AI Assistant-ikon](/help/getting-started/assets/AIChat.svg) | AI Assistant har ett gränssnitt för att effektivisera sökningen efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/ai-in-aem/ai-assistant/ai-assistant-in-aem#) |
+| ![AI Assistant-ikon](/help/getting-started/assets/AIChat.svg) | AI Assistant har ett gränssnitt för att effektivisera sökningen efter svar på dina AEM-relaterade frågor. Se [AI-assistenten](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/ai-in-aem/ai-assistant/ai-assistant-in-aem#) |
 | ![Hjälpikon](https://spectrum.adobe.com/static/icons/workflow_18/Smock_HelpOutline_18_N.svg) | Klicka för att ge snabb åtkomst till utbildningsresurser och supportresurser. |
 | ![Vit klockikon](/help/getting-started/assets/Bell.svg) | Klicka för att visa antalet för närvarande tilldelade ofullständiga [meddelanden](/help/using/notifications.md) |
 | ![Appikonen](https://spectrum.adobe.com/static/icons/workflow_18/Smock_Apps_18_N.svg) | Klicka för att snabbt växla mellan AEM hemsida och AEM lösningar |
-| *`Dynamic Account icon`* | Klicka på din användarbild för att komma åt dina **kontoinställningar** och **programinställningar**, eller för att logga ut.<br>Om du väljer att inte lägga till en användarbild tilldelas en ikon slumpmässigt (vilket visas i verktygsfältsbilden ovan). |
+| *`Dynamic Account icon`* | Klicka på din användarbild för att komma åt dina **kontoinställningar** och **programinställningar**, eller för att logga ut.<br>Om du väljer att inte lägga till en användarbild tilldelas en ikon slumpmässigt (vilket visas i verktygsfältbilden ovan). |
 
 <!--
 1. The ![Show menu icon, hamburger](https://spectrum.adobe.com/static/icons/workflow_18/Smock_ShowMenu_18_N.svg) icon on the left side of the header is  
@@ -68,7 +68,8 @@ Den första är Cloud Manager header. Sidhuvudet är beständigt när du naviger
 1. Clicking the solutions switcher lets you quickly jump to other Experience Cloud solutions.
 1. The Help icon provides quick access to learning and support resources.
 1. The notifications icon is badged with the number of currently assigned incomplete [notifications](/help/using/notifications.md)
-1. Select the icon representing your user to access your user settings. If you do not select a user picture, an icon is randomly assigned. -->
+1. Select the icon representing your user to access your user settings. If you do not select a user picture, an icon is randomly assigned. 
+-->
 
 #### Verktygsfältet Program {#program-toolbar}
 
@@ -79,7 +80,7 @@ Verktygsfältet Program innehåller länkar för att växla mellan Cloud Manager
 |   | Område | Beskrivning |
 | --- | --- | --- |
 | 1 | Mina program | Klicka för att öppna en nedrullningsbar lista där du kan välja att lägga till ett program, välja andra befintliga program eller gå tillbaka till Experience Manager hemsida. |
-| 2 | ![Informationsikon](/help/getting-started/assets/Info.svg) Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS) och inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
+| 2 | ![Informationsikon](/help/getting-started/assets/Info.svg) Komma igång | Klicka för att komma åt [startdokumentationsresan](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/onboarding/journey/overview) så att du kommer igång med Cloud Manager.<br>Startresan är utformad för Cloud Manager på Adobe Experience Manager as a Cloud Service (AEMaaCS), inte för Cloud Manager på Adobe Managed Services (AMS). Många koncept är dock desamma. |
 | 3 | *`Dynamic action button`* | Åtgärdsknappen innehåller sammanhangsberoende åtgärder som du kan klicka på, till exempel **Lägg till program** (se exemplet ovan) eller lägga till en domän. |
 
 ### Samtal och statistik {#cta-statistics}
@@ -119,7 +120,7 @@ Ett kort eller en rad i en tabell representerar alla program och ger en översik
 * Programnamn (i ovanstående exempel: *WKND Magazine*)
 * Tjänsttyp:
    * **Experience Manager** för AMS-program
-   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/implementing/home)
+   * **Experience Manager Cloud** för [AEM as a Cloud Service-program](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/implementing/home)
 * Status (i exemplet ovan, *Ready*)
 * Konfigurerade lösningar
 * Skapad den

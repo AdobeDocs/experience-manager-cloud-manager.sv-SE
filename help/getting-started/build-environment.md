@@ -2,9 +2,9 @@
 title: Byggmiljön
 description: Läs om den speciella byggmiljö som Cloud Manager-användare kan använda för att skapa och testa din kod.
 exl-id: b3543320-66d4-4358-8aba-e9bdde00d976
-source-git-commit: e9f3ac70735a95a15b1f63cf40496672162de777
+source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
 workflow-type: tm+mt
-source-wordcount: '1161'
+source-wordcount: '1243'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,8 @@ Som standard används JDK för projekt som byggts med Cloud Manager. Kunder som 
 >1. Adobe rekommenderar att du rensar Cloud Manager byggcache eller utlöser en ny pipeline-körning.
 >
 
-<!--DEPRECATED 
+<!--
+DEPRECATED 
 ### Maven Toolchains {#maven-toolchains}
 
 The [Maven Toolchains plug-in](https://maven.apache.org/plugins/maven-toolchains-plugin/) lets projects select a specific JDK (or toolchain) to use in the context of toolchains-aware Maven plug-ins. This process is done in the project's `pom.xml` file by specifying a vendor and version value. A sample section in the `pom.xml` file is the following:
@@ -124,7 +125,8 @@ The currently available vendor/version combinations are:
 
 >[!NOTE]
 >
->Starting April 2022, Oracle JDK is going to be the default JDK for the development and operation of AEM applications. Cloud Manager's build process automatically switches to using Oracle JDK, even if an alternative option is explicitly selected in the Maven toolchain. See the [April release notes](/help/release-notes/2022/2022-4-0.md) for more details. -->
+>Starting April 2022, Oracle JDK is going to be the default JDK for the development and operation of AEM applications. Cloud Manager's build process automatically switches to using Oracle JDK, even if an alternative option is explicitly selected in the Maven toolchain. See the [April release notes](/help/release-notes/2022/2022-4-0.md) for more details.
+-->
 
 ### JDK-version för körning av alternativ Maven {#alternate-maven}
 
@@ -162,17 +164,17 @@ Både vanliga miljövariabler och hemligheter kan användas i redigerings-, för
 
 #### Dispatcher {#dispatcher}
 
-Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/sv/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
+Endast reguljära miljövariabler kan användas med [Dispatcher](https://experienceleague.adobe.com/en/docs/experience-manager-dispatcher/using/dispatcher). Hemligheter kan inte användas.
 
 Miljövariabler kan dock inte användas i `IfDefine`-direktiv.
 
 >[!TIP]
 >
->Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/sv/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
+>Verifiera din användning av miljövariabler med [Dispatcher lokalt](https://experienceleague.adobe.com/en/docs/experience-manager-learn/cloud-service/local-development-environment-set-up/dispatcher-tools) innan du distribuerar.
 
 #### OSGi-konfigurationer {#osgi}
 
-Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
+Både vanliga miljövariabler och hemligheter kan användas i [OSGi-konfigurationer](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/deploying/configuring/configuring-osgi).
 
 ### Pipeline-variabler {#pipeline-variables}
 
