@@ -20,7 +20,7 @@ När du har konfigurerat den allmänna konfigurationen för [!UICONTROL Cloud Ma
 
 ## Logga in för första gången {#logging-in-for-the-first-time}
 
-1. Logga in på Cloud Manager på [experience.adobe.com](https://experience.adobe.com/experiencemanager). Mer information finns i [Om Adobe Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub)
+1. Logga in på Cloud Manager på [experience.adobe.com](https://experience.adobe.com/experiencemanager). Mer information finns i [Om Adobe Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub)
 1. Klicka på **Cloud Manager** på den vänstra panelen.
 
    ![Cloud Manager i den vänstra panelen i Experience Manager](/help/getting-started/assets/cloud-manager-experiencemanager.png)
