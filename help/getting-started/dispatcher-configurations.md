@@ -30,7 +30,7 @@ Följ de här stegen nedan för att slutföra den första Dispatcher-konfigurati
 
 1. Hämta aktuella produktionskonfigurationsfiler från din CSE.
 1. Ta bort hårdkodade miljöspecifika data, till exempel IP för publiceringsrendering och ersätt med variabler.
-1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och lägg till dem i mappen [variables](https://experienceleague.adobe.com/docs/experience-manager-learn/ams/dispatcher/variables.html?lang=en#variables-files-(.vars)) för varje instans.
+1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och lägg till dem i mappen [variables](https://experienceleague.adobe.com/docs/experience-manager-learn/ams/dispatcher/variables.html?lang=sv-SE#variables-files-(.vars)) för varje instans.
 1. Testa de uppdaterade konfigurationerna i testmiljön.
 1. Begär att CSE distribuerar till produktionen när det har testats.
 1. Spara filerna i din Git-databas.
