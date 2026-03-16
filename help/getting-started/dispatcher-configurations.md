@@ -2,9 +2,9 @@
 title: Dispatcher Configurations
 description: Lär dig hur du distribuerar Dispatcher konfigurationsfiler med Cloud Manager.
 exl-id: ffc2b60e-bde7-48ca-b268-dea0f8fd4e30
-source-git-commit: 984269e5fe70913644d26e759fa21ccea0536bf4
+source-git-commit: 037a296c21adde6f7fa731c71ee4a75cea042780
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ Lär dig hur du distribuerar Dispatcher konfigurationsfiler med Cloud Manager
 
 ## Distribuera Dispatcher-konfigurationer med Cloud Manager {#deploying-dispatcher-configurations}
 
-Cloud Manager kan distribuera webbservrar och Dispatcher konfigurationsfiler under förutsättning att de lagras i Git-databasen tillsammans med vanliga AEM.
+Cloud Manager kan distribuera webbservrar och Dispatcher konfigurationsfiler under förutsättning att de lagras i Git-databasen tillsammans med AEM vanliga innehållspaket.
 
 För att kunna utnyttja den här funktionen bör Maven-bygget skapa en ZIP-fil som innehåller minst två kataloger: `conf` och `conf.d`. Den här ZIP-filen kan skapas med `maven-assembly-plugin`.
 
-Projekt som genererats av Cloud Manager med den inbyggda [projektguiden](/help/getting-started/using-the-wizard.md) har rätt projektstruktur i Maven som skapas automatiskt. Den här sökvägen rekommenderas om du inte tidigare använder Adobe Managed Services (AMS).
+Projekt som genererats av Cloud Manager med den inbyggda [projektguiden](/help/getting-started/using-the-wizard.md) har rätt projektstruktur i Maven som skapas automatiskt. Den här sökvägen rekommenderas om du inte har använt Adobe Managed Services (AMS) tidigare.
 
 När du distribuerar till en Dispatcher-instans ersätts katalogerna på instansen med dessa kataloger från din Git-databas. Eftersom webbservrar och Dispatcher konfigurationsfiler ofta kräver miljöspecifik information måste du samarbeta med dina Customer Success Engineers (CSE) för att ställa in lämpliga miljövariabler i `/etc/sysconfig/httpd` innan du använder den här funktionen på rätt sätt.
 
@@ -30,7 +30,7 @@ Följ de här stegen nedan för att slutföra den första Dispatcher-konfigurati
 
 1. Hämta aktuella produktionskonfigurationsfiler från din CSE.
 1. Ta bort hårdkodade miljöspecifika data, till exempel IP för publiceringsrendering och ersätt med variabler.
-1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och begär att CSE lägger till dem i `/etc/sysconfig/httpd` för varje instans.
+1. Definiera obligatoriska variabler i nyckelvärdepar för varje mål-Dispatcher och lägg till dem i mappen [variables](https://experienceleague.adobe.com/docs/experience-manager-learn/ams/dispatcher/variables.html?lang=en#variables-files-(.vars)) för varje instans.
 1. Testa de uppdaterade konfigurationerna i testmiljön.
 1. Begär att CSE distribuerar till produktionen när det har testats.
 1. Spara filerna i din Git-databas.
@@ -88,7 +88,7 @@ Den specifika fil- och katalogstrukturen kan variera beroende på projektets spe
    </project>
    ```
 
-   * Precis som i steg 1 kan artefactId och name här vara andra värden om du vill. `dispatcher` används här som ett exempel.
+   * Precis som i steg 1 kan artefactId och name här vara andra värden om du vill. `dispatcher` här används bara ett exempel.
 
 1. Plugin-programmet Maven Assembly kräver `descriptor` för att definiera hur ZIP-filen ska skapas. Om du vill skapa den här beskrivningen skapar du en fil i underkatalogen `dispatcher` med namnet `assembly.xml` med följande innehåll. Observera att det här filnamnet refereras på rad 26 i filen `pom.xml` ovan.
 
