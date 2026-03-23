@@ -2,7 +2,7 @@
 title: Lägg till en icke-produktionspipeline
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: 57de7b00b382e4fb65ad3e03948960022ec02de1
+source-git-commit: eaf3db69bd3cc0a06aafd1b415c5bdb467019c1b
 workflow-type: tm+mt
 source-wordcount: '1990'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Det finns två typer av icke-produktionsrörledningar:
 
 ## Lägg till en ny icke-produktionspipeline {#add-non-production-pipeline}
 
-När du har konfigurerat ett program och har minst en miljö med Cloud Manager UI kan du lägga till icke-produktionsrörledningar för att testa kodens kvalitet innan du distribuerar den till produktionsmiljöer.
+När du har konfigurerat ett program och minst en miljö i användargränssnittet i Cloud Manager kan du lägga till rörledningar som inte är avsedda för produktion. Använd de här rörledningarna för att testa kodkvaliteten innan du distribuerar till produktionsmiljöer.
 
 1. Logga in på Cloud Manager på [my.cloudmanager.adobe.com](https://my.cloudmanager.adobe.com) och välj rätt organisation och program.
 
