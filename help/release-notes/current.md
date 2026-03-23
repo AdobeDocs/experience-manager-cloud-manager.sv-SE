@@ -3,9 +3,9 @@ title: Versionsinformation om Cloud Manager 2026.3.0
 description: Läs om Cloud Manager 2026.3.0 för Adobe Managed Services.
 feature: Release Information
 exl-id: cc1dc94b-129d-4de7-8e57-8fc5dcba7d9f
-source-git-commit: ee49b0732fdb870c4f768764aa75b240fd101b59
+source-git-commit: b7e651b72d1943aef69c1c69915d4752a6163931
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Läs mer om [!UICONTROL Cloud Manager] 2026.3.0 för Adobe Managed Services.
 
-Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/sv/docs/experience-manager-cloud-service/content/release-notes/home).
+Se även [aktuell versionsinformation för Adobe Experience Manager as a Cloud Service](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/home).
 
 ## Releasedatum {#release-date}
 
@@ -30,7 +30,7 @@ Nästa planerade version är torsdagen den 2 april 2026.
 ## Nyheter {#what-is-new}
 
 * **Stöd för UI-utbyggbarhet i AEM Experience Hub**
-Stöd för gränssnittstillägg i [&#x200B; AEM Experience Hub &#x200B;](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub) är nu aktiverat, vilket gör att utvecklare kan utöka gränssnittet med anpassade funktioner och widgetar som skapats med Adobe App Builder.
+Stöd för gränssnittstillägg i [ AEM Experience Hub ](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) är nu aktiverat, vilket gör att utvecklare kan utöka gränssnittet med anpassade funktioner och widgetar som skapats med Adobe App Builder.
 
   Mer information finns i [AEM Experience Hub](https://developer.adobe.com/uix/docs/services/aem-experience-hub/).
 
@@ -41,7 +41,7 @@ Stöd för gränssnittstillägg i [&#x200B; AEM Experience Hub &#x200B;](https:/
   ![Alternativet Visa/redigera variabler på den nedrullningsbara menyn för en vald pipeline](/help/release-notes/assets/view-edit-variables-option.png)
   *Visa/redigera variabelalternativ i listrutan för en vald pipeline.*
 
-  ![Dialogrutan Variabelkonfiguration &#x200B;](/help/release-notes/assets/view-edit-variables-variablesconfig-dialogbox.png)*Dialogrutan Variabelkonfiguration.*
+  ![Dialogrutan Variabelkonfiguration ](/help/release-notes/assets/view-edit-variables-variablesconfig-dialogbox.png)*Dialogrutan Variabelkonfiguration.*
 
 * **Förbättrad stabilitet, prestanda och tillförlitlighet**
 
@@ -57,7 +57,7 @@ Följande möjligheter är för närvarande tillgängliga:
 <!--
 ### Experience Hub Extensibility and Customization {#exp-hub-extensibility}
 
-[Experience Hub](https://experienceleague.adobe.com/sv/docs/experience-manager-65/content/experience-hub/experience-hub) serves as your entry point to AEM, customized for your organization's needs. Tell Adobe about your existing AEM UI extensions so they can help you enable them in Experience Hub with minimal effort.
+[Experience Hub](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) serves as your entry point to AEM, customized for your organization's needs. Tell Adobe about your existing AEM UI extensions so they can help you enable them in Experience Hub with minimal effort.
 
 ![Diagram of Experience Hub extensibility and customization workflow](/help/release-notes/assets/experience-hub-extensibility-customization.png)
 
@@ -68,7 +68,7 @@ Interested in the beta? Email [beta_exphubextensibility@adobe.com](mailto:beta_e
 
 ### Bygger snabbare med modulcachning {#quick-build-cm-pipelines}
 
-En ny byggmodell kompilerar endast ändrade moduler (i stället för hela repon) med cache-lagring på modulnivå för att korta byggtiden. Det gäller för rörledningar med kodkvalitet, fullständig stapel och enbart scener.
+En ny byggmodell kompilerar endast ändrade moduler (i stället för hela repon) med cache-lagring på modulnivå för att korta byggtiden. Det gäller för kodkvalitet och rörledningar för hel hög.
 
 ![Dialogrutan Redigera icke-produktionspipeline som visar två alternativ för byggstrategi som är Fullständigt bygge och Smart bygge](/help/release-notes/assets/non-production-pipeline-edit.png)
 *Dialogrutan Redigera icke-produktionsförlopp visar två alternativ för Build Strategy som är Full Build och Smart Build.*
@@ -78,7 +78,9 @@ I dialogrutan **Lägg till/redigera pipeline**, under fliken **Source-kod**, fin
 * **Fullständigt bygge** - Skapar alla moduler i databasen vid varje körning.
 * **Smart Build** - Skapar bara moduler som ändrats sedan den senaste implementeringen, vilket förkortar den totala byggtiden.
 
-Du styr vilka pipelines som använder **Smart build**. Under betaversionen visas det här alternativet endast för **kodkvalitet**- och **dev-distribution**-pipelines.
+Se [Lägga till en icke-produktionspipeline](/help/using/non-production-pipelines.md#add-non-production-pipeline) och [Om att använda Smart Build i en icke-produktionspipeline](/help/using/non-production-pipelines.md#about-smart-build).
+
+Du styr vilka pipelines som använder **Smart build**. Under betaversionen visas det här alternativet endast för pipelines med **kodkvalitet** och **Dev Full Stack Code Deployment** .
 
 Intresserad? Mejla [beta_quickbuild_cmpipelines@adobe.com](mailto:beta_quickbuild_cmpipelines@adobe.com) med ditt Adobe OrgID och program-ID.
 
