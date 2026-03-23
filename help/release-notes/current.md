@@ -30,7 +30,7 @@ Nästa planerade version är torsdagen den 2 april 2026.
 ## Nyheter {#what-is-new}
 
 * **Stöd för UI-utbyggbarhet i AEM Experience Hub**
-Stöd för gränssnittstillägg i [ AEM Experience Hub ](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) är nu aktiverat, vilket gör att utvecklare kan utöka gränssnittet med anpassade funktioner och widgetar som skapats med Adobe App Builder.
+Stöd för gränssnittstillägg i [&#x200B; AEM Experience Hub &#x200B;](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/experience-hub/experience-hub) är nu aktiverat, vilket gör att utvecklare kan utöka gränssnittet med anpassade funktioner och widgetar som skapats med Adobe App Builder.
 
   Mer information finns i [AEM Experience Hub](https://developer.adobe.com/uix/docs/services/aem-experience-hub/).
 
@@ -41,7 +41,7 @@ Stöd för gränssnittstillägg i [ AEM Experience Hub ](https://experienceleagu
   ![Alternativet Visa/redigera variabler på den nedrullningsbara menyn för en vald pipeline](/help/release-notes/assets/view-edit-variables-option.png)
   *Visa/redigera variabelalternativ i listrutan för en vald pipeline.*
 
-  ![Dialogrutan Variabelkonfiguration ](/help/release-notes/assets/view-edit-variables-variablesconfig-dialogbox.png)*Dialogrutan Variabelkonfiguration.*
+  ![Dialogrutan Variabelkonfiguration &#x200B;](/help/release-notes/assets/view-edit-variables-variablesconfig-dialogbox.png)*Dialogrutan Variabelkonfiguration.*
 
 * **Förbättrad stabilitet, prestanda och tillförlitlighet**
 
