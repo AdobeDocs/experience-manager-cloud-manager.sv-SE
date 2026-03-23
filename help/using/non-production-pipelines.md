@@ -2,7 +2,7 @@
 title: Lägg till en icke-produktionspipeline
 description: Lär dig hur du använder Cloud Manager för att skapa och konfigurera rörledningar för icke-produktion för att distribuera koden.
 exl-id: ccf4b4a2-6e29-4ede-821c-36318b568e5c
-source-git-commit: eaf3db69bd3cc0a06aafd1b415c5bdb467019c1b
+source-git-commit: 2a022c10ce64bb42d4bffd63bea01de25af0bd41
 workflow-type: tm+mt
 source-wordcount: '1990'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Den prestandaökning som kan uppnås med Smart Build beror på flera faktorer, b
 * Kodändringarnas frekvens och omfattning.
 * Distributionen av beroenden mellan moduler.
 
-I allmänhet förbättras projekt med många oberoende moduler mest.
+I allmänhet kan projekt med många oberoende moduler se den största förbättringen.
 
 ### Cacheavanmälan per modul{#smart-build-cache-optout}
 
